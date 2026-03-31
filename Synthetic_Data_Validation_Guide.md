@@ -56,8 +56,8 @@ A Python script generates each review by:
 ### What We Need From You
 
 1. Fill in the yellow cells in all sheets
-2. Be honest — if reviews seem artificial, say so
-3. Suggest improvements — missing templates, unrealistic word choices, better distributions
+2. Be honest. If reviews seem artificial, say so
+3. Suggest improvements : missing templates, unrealistic word choices, better distributions
 4. Provide your final verdict on Sheet 4
 
 ### Time Estimate

@@ -47,20 +47,35 @@ class Stage5Pipeline:
         metrics = {}
 
         if method == "kto":
-            kto_data = self.collector.export_kto_data()
-            labels = [d["label"] for d in kto_data]
-            if prompts and responses and labels:
+            kto_data = self.collector.export_kto_data_with_text()
+            if kto_data:
                 metrics = self.kto.train(
-                    prompts=prompts[: len(labels)],
-                    responses=responses[: len(labels)],
-                    labels=labels,
+                    prompts=[d["prompt"] for d in kto_data],
+                    responses=[d["response"] for d in kto_data],
+                    labels=[d["label"] for d in kto_data],
                 )
+            elif prompts and responses:
+                # Fallback: use provided prompts/responses with basic labels
+                basic_labels = self.collector.export_kto_data()
+                labels = [d["label"] for d in basic_labels]
+                if labels:
+                    metrics = self.kto.train(
+                        prompts=prompts[: len(labels)],
+                        responses=responses[: len(labels)],
+                        labels=labels,
+                    )
 
         elif method == "dpo":
-            dpo_pairs = self.collector.export_dpo_data()
-            if dpo_pairs:
-                # For DPO we need the actual response texts — simplified here
-                metrics = {"method": "dpo", "pairs": len(dpo_pairs)}
+            dpo_data = self.collector.export_dpo_data()
+            if dpo_data:
+                dpo_prompts = [d["prompt"] for d in dpo_data]
+                dpo_chosen = [d["chosen"] for d in dpo_data]
+                dpo_rejected = [d["rejected"] for d in dpo_data]
+                metrics = self.dpo.train(
+                    prompts=dpo_prompts,
+                    chosen_responses=dpo_chosen,
+                    rejected_responses=dpo_rejected,
+                )
 
         elif method == "constrained_ppo":
             quality_data, compliance_data = self.collector.export_ppo_data()
