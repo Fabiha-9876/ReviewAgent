@@ -1,0 +1,20 @@
+rag:
+  chroma_path: data/chroma_db
+  top_k: 5
+  sources:
+    - past_responses
+    - changelogs
+    - faq
+    - issue_spec
+    - similar_responses
+
+response:
+  temperature: 0.4
+  max_tokens: 512
+
+self_refinement:
+  max_iterations: 3
+  critique_dimensions:
+    - specificity
+    - compliance
+    - empathy

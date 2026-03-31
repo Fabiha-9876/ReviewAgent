@@ -1,0 +1,23 @@
+knowledge_graph:
+  node_types:
+    - review
+    - aspect
+    - entity
+  edge_types:
+    - sentiment
+    - temporal
+    - mentions
+
+clustering:
+  min_cluster_size: 5
+  min_samples: 3
+  metric: euclidean
+  cluster_selection_method: eom
+  embedding_weight: 0.7
+  graph_feature_weight: 0.3
+
+priority:
+  pagerank_weight: 0.3
+  review_count_weight: 0.3
+  sentiment_intensity_weight: 0.2
+  recency_weight: 0.2

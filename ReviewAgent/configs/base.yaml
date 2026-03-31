@@ -1,0 +1,17 @@
+project:
+  name: ReviewAgent
+  data_dir: data/
+  models_dir: models/
+
+llm:
+  provider: openai
+  model: gpt-4o
+  temperature: 0.3
+  max_tokens: 2048
+
+embeddings:
+  model: all-MiniLM-L6-v2
+
+hitl:
+  confidence_threshold: 0.7
+  min_rubric_score: 3.0

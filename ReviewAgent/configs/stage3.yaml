@@ -1,0 +1,9 @@
+translation:
+  temperature: 0.3
+  max_tokens: 2048
+  retry_on_low_score: true
+  max_retries: 2
+
+hitl:
+  min_avg_score: 3.0
+  require_all_dimensions_above: 2

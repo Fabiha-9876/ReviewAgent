@@ -1,0 +1,29 @@
+classifier:
+  model_name: roberta-base
+  num_labels: 7
+  labels:
+    - bug_report
+    - feature_request
+    - performance
+    - usability
+    - compatibility
+    - praise
+    - other
+  training:
+    epochs: 5
+    learning_rate: 2e-5
+    batch_size: 16
+    max_length: 256
+    warmup_ratio: 0.1
+  confidence_threshold: 0.7
+  conflict_margin: 0.15
+
+aspect_sentiment:
+  model_name: yangheng/deberta-v3-base-absa-v1.1
+
+entity_extraction:
+  use_llm: true
+  regex_patterns:
+    device: "(iPhone|iPad|Samsung|Galaxy|Pixel|OnePlus|Huawei|Xiaomi)\\s*\\w*"
+    os: "(Android|iOS)\\s*\\d+\\.?\\d*"
+    version: "v?\\d+\\.\\d+\\.?\\d*"

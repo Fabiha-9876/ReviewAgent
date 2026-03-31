@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/processed/
+data/feedback/
+*.pt
+*.bin
+*.safetensors
+models/
+.venv/
+*.egg-info/
+dist/
+build/
+.ruff_cache/
+notebooks/.ipynb_checkpoints/

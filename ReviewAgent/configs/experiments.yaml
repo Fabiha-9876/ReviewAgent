@@ -1,0 +1,102 @@
+experiment1:
+  name: "Review-to-Issue Translation Quality"
+  rq: RQ1
+  n_clusters: 100
+  n_raters: 3
+  conditions:
+    - name: llm_with_taxonomy
+      taxonomy_grounding: true
+    - name: llm_free_form
+      taxonomy_grounding: false
+    - name: raw_summary
+      use_llm: false
+    - name: human_written
+      is_gold_standard: true
+  metrics:
+    - rubric_scores
+    - krippendorff_alpha
+    - bert_score
+    - completeness_ratio
+  statistical_test: wilcoxon
+  bonferroni_comparisons: 6
+
+experiment2:
+  name: "Coupled vs Uncoupled Response Generation"
+  rq: RQ2
+  n_clusters: 100
+  n_raters: 3
+  conditions:
+    - name: rrgen_baseline
+      use_rag: false
+      use_issue_spec: false
+    - name: core_baseline
+      use_rag: false
+      use_issue_spec: false
+      use_app_context: true
+    - name: reviewagent_no_spec
+      use_rag: true
+      use_issue_spec: false
+    - name: reviewagent_full
+      use_rag: true
+      use_issue_spec: true
+  metrics:
+    - bleu
+    - rouge_l
+    - bert_score
+    - human_helpfulness
+    - human_specificity
+    - human_empathy
+    - human_accuracy
+  statistical_test: friedman
+
+experiment3:
+  name: "Dual-Objective vs Single-Objective RLHF"
+  rq: RQ3
+  n_iterations: 3
+  responses_per_iteration: [500, 1000, 500]
+  test_responses_per_model: 200
+  conditions:
+    - name: kto_single
+      method: kto
+      objective: single
+    - name: dpo_single
+      method: dpo
+      objective: single
+    - name: constrained_ppo_dual
+      method: constrained_ppo
+      objective: dual
+  metrics:
+    - preference_win_rate
+    - safety_violation_rate
+    - per_dimension_improvement
+  statistical_test: bradley_terry
+
+ablations:
+  - id: A1
+    name: "No KG"
+    remove: kg
+    stage: 2
+  - id: A2
+    name: "No hierarchical clustering"
+    remove: hierarchical_clustering
+    stage: 2
+  - id: A3
+    name: "No taxonomy grounding"
+    remove: taxonomy
+    stage: 3
+  - id: A4
+    name: "No HITL at Stage 3"
+    remove: hitl_stage3
+    stage: 3
+  - id: A5
+    name: "No RAG"
+    remove: rag
+    stage: 4b
+  - id: A6
+    name: "No issue spec in response"
+    remove: issue_spec_in_response
+    stage: 4b
+  - id: A7
+    name: "Single-stream feedback"
+    remove: dual_objective
+    stage: 5

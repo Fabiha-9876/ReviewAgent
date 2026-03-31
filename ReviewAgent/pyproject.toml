@@ -1,0 +1,53 @@
+[project]
+name = "reviewagent"
+version = "0.1.0"
+description = "An Agentic Pipeline for App Review Triage, Resolution, and Response Generation"
+requires-python = ">=3.13"
+dependencies = [
+    # Core ML
+    "torch>=2.5",
+    "transformers>=4.47",
+    "sentence-transformers>=3.3",
+    "datasets>=3.2",
+    "accelerate>=1.2",
+    # KG + Clustering
+    "networkx>=3.4",
+    "scikit-learn>=1.6",
+    "scipy>=1.14",
+    "hdbscan>=0.8",
+    # LLM API
+    "openai>=1.58",
+    "anthropic>=0.40",
+    # RAG
+    "chromadb>=0.5",
+    "tiktoken>=0.8",
+    # NLP Metrics
+    "rouge-score>=0.1",
+    "bert-score>=0.3",
+    "nltk>=3.9",
+    # RLHF
+    "trl>=0.13",
+    "peft>=0.14",
+    # API
+    "fastapi>=0.115",
+    "uvicorn>=0.34",
+    # Data / Config
+    "pydantic>=2.10",
+    "omegaconf>=2.3",
+    "pandas>=2.2",
+    "pyyaml>=6.0",
+    # Stats
+    "krippendorff>=0.7",
+    "pingouin>=0.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.8",
+    "ipykernel>=6.29",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"

@@ -1,0 +1,5002 @@
+[
+  {
+    "text": "App is super slow on my Google Pixel 8. Takes forever to load.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T02:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is a minute for profile page. Way too slow on Google Pixel 8.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-19T08:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new profile page is exactly what I needed.",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T02:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.2.1, the file manager force closes. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-14T21:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add widget support! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T22:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The calendar is so confusing. I can't figure out how to upload a photo.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-13T04:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a shows a white screen whenever I try to download content on OnePlus 12 running Android 13.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-15T11:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "chat is completely broken since the last update. restarts!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T14:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my Xiaomi 14. Takes forever to load.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T01:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I open settings. This started after v3.1.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-11T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "home screen is completely broken since the last update. loses my data!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-04T01:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new settings is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T14:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I upload a photo. This started after v3.2.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-03T17:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does notifications right. Highly recommended!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-27T11:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 30 seconds to find profile page.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-22T07:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App doesn't work on my iPhone 15 Pro with Android 13. Just shows a blank screen.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-19T00:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "payment won't work on my Xiaomi 14. It just restarts.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T19:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had split screen. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-22T08:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on iPhone 14 running Android 14. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T18:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app hangs for minutes every time I open voice input. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a goes to a blank screen whenever I try to search on Xiaomi 14 running Android 13.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T22:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "chat is completely broken since the last update. goes to a blank screen!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T07:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add offline mode! Every other app has it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T05:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs offline mode. Without it, I'm switching to AppX.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-25T02:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The calendar is extremely laggy. My Samsung Galaxy S24 heats up like crazy.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T04:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on notifications. Can't read anything on my Google Pixel 8.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-24T18:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with iOS 18.2 on Samsung Galaxy A54. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-07T05:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 2 minutes for voice input. Way too slow on Google Pixel 8.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-23T04:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had split screen. Would make it so much better!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T12:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My OnePlus 12 keeps killing it in background.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T17:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The payment works perfectly on my Samsung Galaxy A54.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T03:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App doesn't work on my Google Pixel 8 with Android 14. Just shows a blank screen.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-19T16:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting shows a white screen when using notifications. Very frustrating.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-18T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting goes to a blank screen when using calendar. Very frustrating.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs offline mode. Without it, I'm switching to the competitor.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-18T15:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The maps looks broken on my iPad Pro with Android 14. Layout is messed up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-24T06:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had multi-language support. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-12T13:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on Samsung Galaxy A54 running iOS 17.5. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-02T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The photo editor is so confusing. I can't figure out how to search.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-27T03:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a goes to a blank screen whenever I try to sync my data on Samsung Galaxy A54 running iOS 17.5.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The camera works perfectly on my OnePlus 12.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-02T01:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The search looks broken on my Xiaomi 14 with iOS 17.5. Layout is messed up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-12T21:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new calendar is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-31T06:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't send a message anymore. Make it simpler!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T02:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on payment. Can't read anything on my Google Pixel 8.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-31T00:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't send a message anymore. Make it simpler!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-09T13:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with iOS 18.2 on OnePlus 12. Please update for newer devices!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-24T10:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The chat looks broken on my OnePlus 12 with Android 14. Layout is messed up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-04T04:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs offline mode. Without it, I'm switching to another app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-08T10:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new payment is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T02:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I update my profile. This started after v3.2.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a freezes whenever I try to update my profile on Google Pixel 8 running iOS 17.5.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-09T23:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me forever to find home screen.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-20T12:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does calendar right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-24T16:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.1, the search hangs for minutes. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't update my profile anymore. It just shows a white screen every time on my iPhone 15 Pro.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-06T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app shows an error every time I open voice input. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add widget support! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-02T17:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "calendar is completely broken since the last update. goes to a blank screen!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-15T23:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add multi-language support to the app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-02T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! settings is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-04T23:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on OnePlus 12 running Android 15. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T10:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 2 minutes for photo editor. Way too slow on OnePlus 12.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T16:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't search anymore. Make it simpler!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-12T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The photo editor works perfectly on my OnePlus 12.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-22T15:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs custom themes. Without it, I'm switching to the other app.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-01T16:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "chat won't work on my iPhone 15 Pro. It just crashes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-27T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 2 minutes to find photo editor.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T18:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add export to PDF! Every other app has it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-15T09:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me a minute to find search.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-12T04:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on iPhone 15 Pro running Android 13.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T22:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I send a message. This started after v2.9.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had custom themes. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add widget support! Every other app has it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-20T00:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a shows an error whenever I try to search on iPhone 15 Pro running Android 15.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-31T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to open settings. Too many menus!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T19:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My iPhone 15 Pro keeps killing it in background.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T20:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on search. Can't read anything on my Samsung Galaxy S24.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-09T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The file manager is so confusing. I can't figure out how to share a post.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T16:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add offline mode. It would improve the experience a lot.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-20T01:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does profile page right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-20T03:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on OnePlus 12. Please update for newer devices!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had desktop sync. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-01T13:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add dark mode to the app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-05T08:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't search anymore. It just restarts every time on my OnePlus 12.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-26T17:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The search works perfectly on my iPhone 14.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-07T03:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add dark mode. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-04T13:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.0, the maps loses my data. Terrible!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add split screen to the app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-13T11:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "calendar is completely broken since the last update. shows an error!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-10T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add export to PDF to the app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T11:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My iPhone 15 Pro keeps killing it in background.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-11T04:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with iOS 18.2 on Samsung Galaxy S24. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T02:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs widget support. Without it, I'm switching to AppX.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-19T17:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't send a message anymore. Make it simpler!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T09:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add biometric login to the app.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T11:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs offline mode. Without it, I'm switching to the other app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-06T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on notifications. Can't read anything on my OnePlus 12.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-10T08:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on Samsung Galaxy A54 running Android 13.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-12T21:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add dark mode! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new login is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-16T19:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does camera right. Highly recommended!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T09:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does photo editor right. Highly recommended!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-14T16:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The home screen is amazing. 5 stars!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-30T10:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't open settings anymore. It just hangs for minutes every time on my iPhone 15 Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-03T02:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on notifications. Can't read anything on my iPhone 15 Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-25T09:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had custom themes. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-01T08:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does file manager right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T03:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add cloud backup. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-01T00:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my Samsung Galaxy S24 overheat and drains battery in 10 seconds.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T00:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is forever for search. Way too slow on Samsung Galaxy A54.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-03T05:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on voice input. Can't read anything on my iPhone 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-14T18:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "camera is completely broken since the last update. loses my data!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-11T08:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The login works perfectly on my Samsung Galaxy A54.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-03T04:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on maps. Keep tapping the wrong one.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T12:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! maps is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-14T04:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a shows a white screen whenever I try to share a post on Samsung Galaxy S24 running Android 15.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T21:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The login is amazing. 5 stars!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T05:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "camera won't work on my iPhone 15 Pro. It just loses my data.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-04T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new calendar is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-13T00:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app restarts every time I open notifications. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-12T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "notifications won't work on my Google Pixel 8. It just loses my data.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-14T07:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "calendar is completely broken since the last update. hangs for minutes!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs offline mode. Without it, I'm switching to AppX.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-04T20:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v2.9, the settings shows a white screen. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T06:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The settings looks broken on my iPhone 15 Pro with Android 15. Layout is messed up.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-23T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does file manager right. Highly recommended!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-17T06:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v2.9, the profile page shows an error. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T12:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement cloud backup? I really need it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T19:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a loses my data whenever I try to download content on Xiaomi 14 running Android 15.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T11:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to send a message. Too many menus!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-12T17:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a crashes whenever I try to upload a photo on Google Pixel 8 running iOS 17.5.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The settings works perfectly on my Google Pixel 8.",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-19T22:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! maps is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-08T18:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does voice input right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-03T07:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v2.9, the dark mode force closes. Terrible!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T14:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The notifications is amazing. 5 stars!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-09T17:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement custom themes? I really need it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-05T11:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on calendar. Can't read anything on my Google Pixel 8.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-18T20:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The settings is extremely laggy. My iPhone 14 heats up like crazy.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-08T23:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 10 seconds for file manager. Way too slow on iPhone 15 Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-16T04:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The payment is amazing. 5 stars!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T18:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App doesn't work on my Samsung Galaxy S24 with iOS 17.5. Just shows a blank screen.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-12T06:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting shows an error when using payment. Very frustrating.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-08T02:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my iPhone 15 Pro overheat and drains battery in 30 seconds.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-19T06:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my Samsung Galaxy S24 overheat and drains battery in 2 minutes.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T10:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add split screen to the app.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-26T15:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on iPad Pro running Android 14. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T16:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add biometric login to the app.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new voice input is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-09T18:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on Xiaomi 14 running Android 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T06:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app restarts every time I open payment. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-24T11:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me forever to find dark mode.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T14:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App doesn't work on my Google Pixel 8 with iOS 18.2. Just shows a blank screen.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-02T08:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "home screen won't work on my OnePlus 12. It just crashes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T21:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on Samsung Galaxy A54 running Android 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-08T23:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement dark mode? I really need it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-18T21:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The voice input looks broken on my iPhone 14 with Android 15. Layout is messed up.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-06T04:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The dark mode looks broken on my Google Pixel 8 with Android 13. Layout is messed up.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-05T13:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a hangs for minutes whenever I try to sign up on iPad Pro running Android 15.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-28T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My Google Pixel 8 keeps killing it in background.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T00:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had cloud backup. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-08T15:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had multi-language support. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-15T11:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app loses my data every time I open dark mode. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-03T12:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 10 seconds for settings. Way too slow on iPhone 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-06T17:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on Google Pixel 8 running Android 14. Works fine on other devices.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T19:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement desktop sync? I really need it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-11T21:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The dark mode looks broken on my OnePlus 12 with iOS 17.5. Layout is messed up.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-15T14:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my Samsung Galaxy A54 overheat and drains battery in 10 seconds.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-18T01:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! camera is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-30T10:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! profile page is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-09T07:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add widget support. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T02:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "calendar won't work on my iPad Pro. It just force closes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a goes to a blank screen whenever I try to upload a photo on iPhone 14 running Android 13.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-27T05:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on iPad Pro. Please update for newer devices!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-27T08:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't upload a photo anymore. It just goes to a blank screen every time on my Samsung Galaxy S24.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T12:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my Samsung Galaxy S24 overheat and drains battery in 30 seconds.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T08:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "photo editor won't work on my Xiaomi 14. It just shows a white screen.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-03T18:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app loses my data every time I open chat. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-16T14:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "payment won't work on my iPhone 15 Pro. It just force closes.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-15T11:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 10 seconds to find chat.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-25T16:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 30 seconds for dark mode. Way too slow on iPad Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T18:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app restarts every time I open profile page. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 2 minutes to find photo editor.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T19:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The calendar is extremely laggy. My Samsung Galaxy A54 heats up like crazy.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T18:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add offline mode. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-23T09:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add widget support. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-01T08:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had cloud backup. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T00:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on iPhone 15 Pro running Android 13. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-15T09:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't checkout anymore. It just freezes every time on my iPad Pro.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T11:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The notifications is amazing. 5 stars!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-15T01:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App doesn't work on my iPad Pro with Android 13. Just shows a blank screen.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-19T09:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I update my profile. This started after v3.0.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-25T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with iOS 17.5 on iPad Pro. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-11T04:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "dark mode is completely broken since the last update. crashes!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T19:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 15 on iPhone 14. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-01T09:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't open settings anymore. It just freezes every time on my iPhone 15 Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The notifications looks broken on my iPad Pro with Android 15. Layout is messed up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-10T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my Xiaomi 14. Takes a minute to load.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T02:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My Google Pixel 8 keeps killing it in background.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T03:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add widget support. It would improve the experience a lot.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T14:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "settings won't work on my iPhone 14. It just hangs for minutes.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-21T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.2.1, the search hangs for minutes. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-08T08:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement export to PDF? I really need it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-19T08:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 15 on Google Pixel 8. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T10:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to sign up. Too many menus!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-19T16:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my Xiaomi 14. Takes a minute to load.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-12T02:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on photo editor. Can't read anything on my iPad Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T05:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "login won't work on my iPhone 14. It just loses my data.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-02T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't sync my data anymore. Make it simpler!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-03T12:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on Samsung Galaxy A54. Please update for newer devices!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T04:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The search works perfectly on my Samsung Galaxy S24.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-18T01:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! dark mode is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T07:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The voice input is extremely laggy. My Samsung Galaxy A54 heats up like crazy.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-20T00:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app shows an error every time I open dark mode. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-04T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to checkout. Too many menus!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T06:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to search. Too many menus!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T03:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I login. This started after v3.0.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-14T21:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had export to PDF. Would make it so much better!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T20:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 30 seconds for profile page. Way too slow on Samsung Galaxy S24.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T08:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a crashes whenever I try to sign up on Xiaomi 14 running iOS 17.5.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-03T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app loses my data every time I open maps. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add custom themes! Every other app has it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-10T23:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is forever for login. Way too slow on iPad Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-12T20:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 30 seconds for camera. Way too slow on Xiaomi 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-18T05:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The search works perfectly on my iPhone 14.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T14:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add widget support! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-04T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "login won't work on my iPad Pro. It just restarts.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-24T22:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App doesn't work on my Xiaomi 14 with Android 15. Just shows a blank screen.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-06T19:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on Samsung Galaxy S24 running iOS 18.2.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T16:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App doesn't work on my iPhone 15 Pro with Android 15. Just shows a blank screen.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-21T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs cloud backup. Without it, I'm switching to the competitor.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-15T03:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a force closes whenever I try to share a post on iPad Pro running Android 13.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-21T21:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 15 on iPad Pro. Please update for newer devices!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my OnePlus 12 overheat and drains battery in 2 minutes.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T23:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 2 minutes to find dark mode.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-19T09:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement desktop sync? I really need it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-26T01:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "file manager is completely broken since the last update. goes to a blank screen!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-23T05:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My iPhone 14 keeps killing it in background.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-12T17:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new dark mode is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-24T08:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "settings is completely broken since the last update. shows an error!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-15T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.2, the calendar hangs for minutes. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-15T06:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I send a message. This started after v3.2.1.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-20T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to upload a photo. Too many menus!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I login. This started after v3.2.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-26T16:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had custom themes. Would make it so much better!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T09:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a restarts whenever I try to search on Samsung Galaxy S24 running iOS 18.2.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-19T09:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting freezes when using calendar. Very frustrating.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T14:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app hangs for minutes every time I open profile page. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T23:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't search anymore. Make it simpler!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-01T09:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to sign up. Too many menus!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T15:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The payment looks broken on my Samsung Galaxy A54 with iOS 18.2. Layout is messed up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T02:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add offline mode. It would improve the experience a lot.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T05:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The home screen is amazing. 5 stars!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T23:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting crashes when using camera. Very frustrating.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't search anymore. Make it simpler!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T04:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add split screen. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T03:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't update my profile anymore. It just force closes every time on my Google Pixel 8.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-15T06:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on voice input. Keep tapping the wrong one.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-05T17:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The search works perfectly on my OnePlus 12.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-18T03:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app hangs for minutes every time I open voice input. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-27T12:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on calendar. Keep tapping the wrong one.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-06T00:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't share a post anymore. Make it simpler!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-21T06:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my iPad Pro overheat and drains battery in a minute.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-12T19:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.1, the file manager shows a white screen. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-06T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app shows an error every time I open chat. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on calendar. Keep tapping the wrong one.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-19T21:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on Google Pixel 8. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T19:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.1, the profile page freezes. Terrible!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T08:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my iPhone 15 Pro. Takes 30 seconds to load.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T17:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The login is so confusing. I can't figure out how to sync my data.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-08T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My iPhone 14 keeps killing it in background.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-25T17:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't open settings anymore. Make it simpler!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T23:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on payment. Keep tapping the wrong one.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T00:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.2.1, the voice input restarts. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on iPhone 14 running iOS 17.5.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T20:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a loses my data whenever I try to search on Samsung Galaxy A54 running Android 13.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-22T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 2 minutes to find payment.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-15T23:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my Google Pixel 8. Takes 10 seconds to load.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-19T08:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app shows a white screen every time I open settings. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-12T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a shows an error whenever I try to open settings on Samsung Galaxy S24 running Android 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T08:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a force closes whenever I try to login on Samsung Galaxy A54 running Android 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T05:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on profile page. Keep tapping the wrong one.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T13:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on voice input. Keep tapping the wrong one.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-21T08:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The profile page is so confusing. I can't figure out how to share a post.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-04T16:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "login is completely broken since the last update. shows a white screen!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-22T19:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting loses my data when using maps. Very frustrating.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T16:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs multi-language support. Without it, I'm switching to another app.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-18T22:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my iPhone 14. Takes 30 seconds to load.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-20T13:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! chat is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T11:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The camera is so confusing. I can't figure out how to open settings.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-23T07:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The chat looks broken on my OnePlus 12 with Android 14. Layout is messed up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-19T07:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add widget support. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-24T07:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my iPad Pro. Takes a minute to load.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-21T10:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does payment right. Highly recommended!",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T21:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 30 seconds for chat. Way too slow on Samsung Galaxy S24.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-04T14:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is forever for voice input. Way too slow on iPhone 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-19T01:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "camera is completely broken since the last update. shows a white screen!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-24T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement cloud backup? I really need it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-10T06:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add dark mode to the app.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-31T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app force closes every time I open settings. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-11T05:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! calendar is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T22:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "calendar is completely broken since the last update. shows a white screen!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T22:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The profile page is so confusing. I can't figure out how to share a post.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T19:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on Google Pixel 8 running Android 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-11T11:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app shows a white screen every time I open profile page. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add multi-language support to the app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-23T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs export to PDF. Without it, I'm switching to another app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T02:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The settings is so confusing. I can't figure out how to update my profile.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T00:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me forever to find payment.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't upload a photo anymore. It just shows an error every time on my iPhone 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T17:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "notifications won't work on my OnePlus 12. It just force closes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-09T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does settings right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-16T01:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't sync my data anymore. It just goes to a blank screen every time on my iPad Pro.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-15T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting goes to a blank screen when using login. Very frustrating.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-14T22:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 30 seconds to find notifications.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-14T19:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "photo editor is completely broken since the last update. freezes!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-16T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new file manager is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T01:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't sync my data anymore. Make it simpler!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-11T17:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had multi-language support. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-28T03:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new file manager is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-24T00:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had desktop sync. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-22T05:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't share a post anymore. It just hangs for minutes every time on my iPhone 15 Pro.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-10T17:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on Samsung Galaxy S24 running Android 15. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-16T09:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add desktop sync. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T05:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My iPhone 15 Pro keeps killing it in background.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T08:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is forever for profile page. Way too slow on Samsung Galaxy A54.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T10:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I open settings. This started after v2.9.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T22:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had export to PDF. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T23:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my iPad Pro. Takes forever to load.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T09:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Battery drain is insane with this app on iPad Pro running iOS 18.2.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-16T22:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new calendar is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-08T04:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The payment is amazing. 5 stars!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T10:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 30 seconds for camera. Way too slow on iPhone 15 Pro.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-11T05:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs widget support. Without it, I'm switching to the competitor.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-20T15:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't update my profile anymore. Make it simpler!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T21:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The photo editor is extremely laggy. My iPad Pro heats up like crazy.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T16:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I make a payment. This started after v2.9.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 2 minutes for notifications. Way too slow on Google Pixel 8.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-30T17:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.1, the calendar crashes. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-14T07:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The notifications is so confusing. I can't figure out how to sign up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T03:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The calendar is extremely laggy. My OnePlus 12 heats up like crazy.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T03:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app loses my data every time I open photo editor. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T09:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The maps is amazing. 5 stars!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T13:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The search is so confusing. I can't figure out how to search.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-30T03:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on Google Pixel 8 running Android 14. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-18T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on maps. Keep tapping the wrong one.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T13:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my Samsung Galaxy S24 overheat and drains battery in 2 minutes.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T02:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I open settings. This started after v3.2.1.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-02T18:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The settings is extremely laggy. My Samsung Galaxy S24 heats up like crazy.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-06T15:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "file manager is completely broken since the last update. loses my data!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my iPhone 15 Pro overheat and drains battery in 2 minutes.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T14:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add custom themes. It would improve the experience a lot.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-09T13:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The camera looks broken on my Samsung Galaxy S24 with Android 13. Layout is messed up.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-20T08:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on Samsung Galaxy A54 running iOS 17.5. Works fine on other devices.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-04T00:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on profile page. Keep tapping the wrong one.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T09:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on camera. Can't read anything on my Samsung Galaxy S24.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-21T21:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on iPad Pro running Android 14. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-13T15:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v2.9, the maps shows an error. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-27T08:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "voice input is completely broken since the last update. hangs for minutes!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-12T11:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app shows a white screen every time I open profile page. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-23T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 2 minutes for chat. Way too slow on Xiaomi 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-03T01:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had desktop sync. Would make it so much better!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-22T17:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't send a message anymore. Make it simpler!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T04:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The photo editor looks broken on my Samsung Galaxy S24 with Android 14. Layout is messed up.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-18T05:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't make a payment anymore. Make it simpler!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-18T17:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The maps is extremely laggy. My OnePlus 12 heats up like crazy.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-19T10:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The calendar is extremely laggy. My iPhone 15 Pro heats up like crazy.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-04T12:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on iPhone 14. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-21T13:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't search anymore. It just loses my data every time on my iPhone 15 Pro.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-25T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.1, the payment freezes. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-24T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app force closes every time I open dark mode. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had offline mode. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-08T22:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The payment looks broken on my Xiaomi 14 with Android 14. Layout is messed up.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T07:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 14 on iPhone 14. Please update for newer devices!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T08:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't search anymore. It just shows a white screen every time on my iPhone 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-25T02:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had desktop sync. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T18:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My Xiaomi 14 keeps killing it in background.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T00:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The voice input is so confusing. I can't figure out how to upload a photo.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-28T03:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 15 on iPad Pro. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T01:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't sign up anymore. Make it simpler!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-16T12:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "notifications is completely broken since the last update. shows an error!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-13T06:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on dark mode. Can't read anything on my iPhone 14.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-02T19:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add desktop sync! Every other app has it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T15:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my OnePlus 12 overheat and drains battery in 10 seconds.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-22T07:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.0, the settings crashes. Terrible!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-01T07:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new login is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-08T00:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't send a message anymore. It just goes to a blank screen every time on my OnePlus 12.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-01T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on Samsung Galaxy S24. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-21T07:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 10 seconds to find notifications.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T16:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does photo editor right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-24T01:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my Samsung Galaxy A54. Takes a minute to load.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-09T08:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me forever to find home screen.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-28T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add custom themes! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-02T10:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Love this app! The profile page is amazing. 5 stars!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-01T01:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new calendar is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T22:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add offline mode! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-09T19:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't open settings anymore. It just goes to a blank screen every time on my Xiaomi 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-19T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had cloud backup. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-29T10:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on search. Can't read anything on my Samsung Galaxy A54.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-26T12:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The settings is so confusing. I can't figure out how to share a post.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T09:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me a minute to find home screen.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-10T20:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on dark mode. Keep tapping the wrong one.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-02T05:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I send a message. This started after v3.2.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-06T08:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add export to PDF. It would improve the experience a lot.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-11T07:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "home screen won't work on my Samsung Galaxy S24. It just hangs for minutes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T01:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had widget support. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-22T01:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I open settings. This started after v3.2.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-15T05:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does home screen right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-14T15:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The payment is so confusing. I can't figure out how to login.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-14T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on camera. Can't read anything on my Google Pixel 8.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-28T19:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a restarts whenever I try to download content on Google Pixel 8 running Android 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-16T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add export to PDF! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-05T16:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.2.1, the chat goes to a blank screen. Terrible!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had biometric login. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-10T03:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on home screen. Keep tapping the wrong one.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-23T01:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Since updating to v3.0, the photo editor force closes. Terrible!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "photo editor won't work on my Xiaomi 14. It just hangs for minutes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T05:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Buttons are too close together on home screen. Keep tapping the wrong one.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T07:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App is super slow on my Samsung Galaxy A54. Takes 10 seconds to load.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-12T23:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't login anymore. Make it simpler!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-10T06:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 2 minutes to find voice input.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-01T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "photo editor is completely broken since the last update. shows a white screen!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-25T21:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I upload a photo. This started after v2.9.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-18T09:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app goes to a blank screen every time I open notifications. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-02T17:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The dark mode is extremely laggy. My Google Pixel 8 heats up like crazy.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T19:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add cloud backup to the app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T08:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does photo editor right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-18T19:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't send a message anymore. It just crashes every time on my Google Pixel 8.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T16:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Great update! The new camera is exactly what I needed.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T22:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "search won't work on my iPhone 15 Pro. It just restarts.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T06:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! calendar is so smooth and fast.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T15:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does login right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-04T14:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with iOS 17.5 on Xiaomi 14. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-05T14:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a freezes whenever I try to login on OnePlus 12 running Android 14.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-25T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The file manager is so confusing. I can't figure out how to search.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-05T12:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "login won't work on my OnePlus 12. It just hangs for minutes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add export to PDF. It would improve the experience a lot.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-05T03:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add offline mode! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-10T22:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Suggestion: add cloud backup. It would improve the experience a lot.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-27T05:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "file manager is completely broken since the last update. restarts!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-10T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app freezes every time I open payment. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-13T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on Samsung Galaxy S24. Please update for newer devices!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-24T06:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I download content. This started after v3.0.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-06T04:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a freezes whenever I try to update my profile on Samsung Galaxy A54 running iOS 18.2.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-08T00:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had cloud backup. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-16T07:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting freezes when using profile page. Very frustrating.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T12:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add desktop sync! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-31T09:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app needs split screen. Without it, I'm switching to the competitor.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-03T12:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I sign up. This started after v3.0.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add cloud backup to the app.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-14T18:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement offline mode? I really need it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T07:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 2 minutes for settings. Way too slow on Samsung Galaxy S24.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-06T05:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I checkout. This started after v3.0.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-22T03:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app freezes every time I open voice input. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-18T11:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My Xiaomi 14 keeps killing it in background.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-28T22:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't sync my data anymore. Make it simpler!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-25T12:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app restarts every time I open calendar. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-30T15:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me a minute to find calendar.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T04:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "notifications is completely broken since the last update. loses my data!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-21T12:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app restarts every time I open search. Please fix ASAP!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-10T16:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App crashes when I upload a photo. This started after v3.0.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-09T09:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on Xiaomi 14 running iOS 18.2. Works fine on other devices.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-03T20:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Best app ever! The chat works perfectly on my iPhone 14.",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T00:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "App uses too much memory. My iPad Pro keeps killing it in background.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T20:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my iPad Pro overheat and drains battery in a minute.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-25T01:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Finally an app that does file manager right. Highly recommended!",
+    "rating": 5,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T16:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep up the great work! camera is so smooth and fast.",
+    "rating": 4,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-12T05:00:00",
+    "labels": [
+      "praise"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on voice input. Can't read anything on my Samsung Galaxy A54.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-07T00:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "calendar is completely broken since the last update. loses my data!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-14T01:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 30 seconds to find calendar.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-08T04:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add desktop sync! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-05T05:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can you please implement offline mode? I really need it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-11T02:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Getting a goes to a blank screen whenever I try to upload a photo on Xiaomi 14 running Android 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-04T20:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The notifications is so confusing. I can't figure out how to send a message.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-28T14:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "file manager won't work on my OnePlus 12. It just restarts.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-01T10:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "photo editor won't work on my Samsung Galaxy A54. It just restarts.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-12T06:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "camera won't work on my Samsung Galaxy A54. It just goes to a blank screen.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-14T02:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add offline mode! Every other app has it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-02T05:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had cloud backup. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-18T09:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Crashes immediately on OnePlus 12 running Android 13. Works fine on other devices.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T17:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "It would be great if you could add multi-language support to the app.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-20T16:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The new design is awful. I can't login anymore. Make it simpler!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-22T18:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "maps won't work on my Google Pixel 8. It just crashes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-19T02:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "UI is terrible. Can't find where to search. Too many menus!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-11T04:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add widget support! Every other app has it.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-07T07:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Keep getting shows an error when using dark mode. Very frustrating.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T13:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had export to PDF. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-13T22:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had export to PDF. Would make it so much better!",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-16T09:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on login. Can't read anything on my iPad Pro.",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-28T22:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Navigation is very confusing. Took me 30 seconds to find calendar.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-11T01:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "The app makes my Google Pixel 8 overheat and drains battery in 2 minutes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-05T01:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Text is too small on maps. Can't read anything on my Xiaomi 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-05T11:00:00",
+    "labels": [
+      "usability"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Not compatible with Android 13 on Xiaomi 14. Please update for newer devices!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-17T05:00:00",
+    "labels": [
+      "compatibility"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "settings won't work on my Samsung Galaxy A54. It just freezes.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-01-20T19:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Loading time is 2 minutes for voice input. Way too slow on Xiaomi 14.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-26T22:00:00",
+    "labels": [
+      "performance"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Please add desktop sync! Every other app has it.",
+    "rating": 2,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-17T04:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "login is completely broken since the last update. shows a white screen!",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-08T23:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "I wish this app had offline mode. Would make it so much better!",
+    "rating": 3,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-02-13T06:00:00",
+    "labels": [
+      "feature_request"
+    ],
+    "source": "synthetic"
+  },
+  {
+    "text": "Can't upload a photo anymore. It just hangs for minutes every time on my OnePlus 12.",
+    "rating": 1,
+    "app_id": "com.example.reviewagent",
+    "timestamp": "2026-03-14T09:00:00",
+    "labels": [
+      "bug_report"
+    ],
+    "source": "synthetic"
+  }
+]

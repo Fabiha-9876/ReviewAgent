@@ -1,0 +1,41 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+dist/
+build/
+.ruff_cache/
+.venv/
+venv/
+
+# Large model files (DO NOT COMMIT)
+*.safetensors
+*.pt
+*.bin
+ReviewAgent/models/
+
+# Large data files (DO NOT COMMIT)
+ReviewAgent/data/raw/rrgen/data/
+ReviewAgent/data/raw/rrgen/rrgen_reviews.json
+ReviewAgent/data/raw/maalej/maalej_raw.csv
+ReviewAgent/data/raw/maalej/maalej_reviews.json
+ReviewAgent/data/raw/maalej/Maalej_Dataset.xlsx
+ReviewAgent/data/raw/maalej/Pan_Dataset.xlsx
+ReviewAgent/data/raw/guzman/Ground_truth.xlsx
+ReviewAgent/data/raw/guzman/Experiment_template.xlsx
+ReviewAgent/data/processed/
+ReviewAgent/data/feedback/
+ReviewAgent/data/chroma_db/
+
+# Keep these small data files (explicitly tracked)
+!ReviewAgent/data/raw/sample_reviews.json
+!ReviewAgent/data/raw/maalej/maalej_labeled.json
+!ReviewAgent/data/raw/maalej/app_reviews.csv
+!ReviewAgent/data/raw/guzman/guzman_reviews.json
+
+# Notebooks checkpoints
+notebooks/.ipynb_checkpoints/

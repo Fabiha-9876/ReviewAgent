@@ -1,0 +1,40 @@
+rlhf:
+  base_model: meta-llama/Llama-3.1-8B-Instruct
+  lora:
+    r: 16
+    lora_alpha: 32
+    target_modules:
+      - q_proj
+      - v_proj
+    lora_dropout: 0.05
+
+  kto:
+    epochs: 3
+    learning_rate: 5e-6
+    batch_size: 4
+
+  dpo:
+    epochs: 3
+    learning_rate: 5e-7
+    beta: 0.1
+    batch_size: 4
+
+  constrained_ppo:
+    epochs: 3
+    learning_rate: 1e-6
+    compliance_threshold: 0.95
+    kl_coeff: 0.05
+    batch_size: 4
+
+feedback:
+  quality_dimensions:
+    - helpfulness
+    - specificity
+    - empathy
+    - accuracy
+    - actionability
+  compliance_dimensions:
+    - no_false_promises
+    - no_info_leak
+    - tone_compliant
+    - legally_safe
