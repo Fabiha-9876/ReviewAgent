@@ -1,0 +1,175 @@
+{
+  "total_rows": 215583,
+  "anchor_model": "models/anchor_roberta",
+  "sources": {
+    "llm_kept": 171369,
+    "anchor_corrected_v2": 38985,
+    "human_verified": 5229
+  },
+  "total_changed": 44214,
+  "per_class_before": {
+    "bug_report": 80058,
+    "other": 46106,
+    "praise": 57940,
+    "feature_request": 26286,
+    "usability": 5001,
+    "performance": 184,
+    "compatibility": 8
+  },
+  "per_class_after": {
+    "bug_report": 71962,
+    "other": 44249,
+    "praise": 60704,
+    "feature_request": 23510,
+    "usability": 7504,
+    "performance": 7644,
+    "compatibility": 10
+  },
+  "top_transitions": [
+    {
+      "from": "other",
+      "to": "praise",
+      "count": 12069
+    },
+    {
+      "from": "praise",
+      "to": "other",
+      "count": 10808
+    },
+    {
+      "from": "bug_report",
+      "to": "performance",
+      "count": 5361
+    },
+    {
+      "from": "bug_report",
+      "to": "usability",
+      "count": 1799
+    },
+    {
+      "from": "bug_report",
+      "to": "other",
+      "count": 1439
+    },
+    {
+      "from": "usability",
+      "to": "praise",
+      "count": 1292
+    },
+    {
+      "from": "feature_request",
+      "to": "praise",
+      "count": 1231
+    },
+    {
+      "from": "other",
+      "to": "performance",
+      "count": 1091
+    },
+    {
+      "from": "other",
+      "to": "usability",
+      "count": 894
+    },
+    {
+      "from": "feature_request",
+      "to": "other",
+      "count": 831
+    },
+    {
+      "from": "feature_request",
+      "to": "performance",
+      "count": 642
+    },
+    {
+      "from": "praise",
+      "to": "usability",
+      "count": 610
+    },
+    {
+      "from": "feature_request",
+      "to": "usability",
+      "count": 545
+    },
+    {
+      "from": "other",
+      "to": "bug_report",
+      "count": 515
+    },
+    {
+      "from": "other",
+      "to": "feature_request",
+      "count": 369
+    },
+    {
+      "from": "praise",
+      "to": "performance",
+      "count": 320
+    },
+    {
+      "from": "praise",
+      "to": "bug_report",
+      "count": 152
+    },
+    {
+      "from": "bug_report",
+      "to": "praise",
+      "count": 108
+    },
+    {
+      "from": "bug_report",
+      "to": "feature_request",
+      "count": 86
+    },
+    {
+      "from": "usability",
+      "to": "performance",
+      "count": 43
+    },
+    {
+      "from": "praise",
+      "to": "feature_request",
+      "count": 40
+    },
+    {
+      "from": "feature_request",
+      "to": "bug_report",
+      "count": 25
+    },
+    {
+      "from": "praise",
+      "to": "compatibility",
+      "count": 6
+    },
+    {
+      "from": "usability",
+      "to": "bug_report",
+      "count": 5
+    },
+    {
+      "from": "compatibility",
+      "to": "performance",
+      "count": 4
+    },
+    {
+      "from": "usability",
+      "to": "feature_request",
+      "count": 3
+    },
+    {
+      "from": "usability",
+      "to": "other",
+      "count": 2
+    },
+    {
+      "from": "performance",
+      "to": "other",
+      "count": 1
+    }
+  ],
+  "thresholds": {
+    "min_anchor_conf": 0.7,
+    "max_llm_prob": 0.2
+  },
+  "cleanlab_flagged": 81464
+}

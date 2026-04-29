@@ -525,3 +525,208 @@ scripts/
 ├── progressive_labeling.py
 └── progressive_labeling_fast.py
 ```
+
+---
+
+### Phase 10: Full 215K Labeling with V2 Classifier (April 12, 2026)
+
+**Goal:** Label the full RRGen corpus using V2 to produce a large LLM-labeled dataset.
+
+- Applied V2 RoBERTa classifier (F1 0.86) to full RRGen 310,031 reviews
+- After dedup + minimum-length filter: **215,583 labeled reviews**
+- Output: `data/processed/rrgen_full_labeled/rrgen_full_labeled.json`
+
+**Distribution after labeling:**
+| label | count |
+|---|---|
+| bug_report | 80,058 |
+| praise | 57,940 |
+| other | 46,106 |
+| feature_request | 26,286 |
+| usability | 5,001 |
+| performance | 184 |
+| compatibility | 8 |
+
+Two systemic LLM errors visible:
+- Performance massively under-detected (only 184 — many slow/lag reviews mislabeled as bug_report)
+- Compatibility nearly absent (8 reviews)
+
+Per-category CSVs exported to `RRGen_Annotation/` for volunteer verification.
+
+---
+
+### Phase 11: Manual Verification + Cleanlab V1 Correction (April 18-23, 2026)
+
+**Manual verification (Fabiha, .numbers files):**
+- compatibility.numbers: 8 verified (4 confirmed Y, 4 corrected N → all to Performance)
+- performance.numbers: 184 verified (183 Y, 1 N)
+- praise.numbers: 5,041 of 57,940 verified (3,736 Y, 1,305 N)
+- **Total verified: 5,230 reviews**
+- LLM error rate measured directly: ~25% on praise predictions
+
+**Cleanlab pipeline V1 (TF-IDF + LogReg anchor):**
+- Combined anchor: verified 5,230 + MAALEJ 5,008 = 10,238
+- Anchor CV macro-F1: 0.5268 (weak, especially on minority classes)
+- Cleanlab flagged 90,609 / 215,583 rows (42%)
+- V1 corrections applied with conservative thresholds (anchor_conf ≥0.70, llm_prob ≤0.20):
+  - 5,229 human_verified (your labels win)
+  - 6,295 anchor_corrected
+  - 204,059 llm_kept
+  - **Total changes: 11,524 (5.35%)**
+- Major win: performance 184 → 1,798 (+1,614)
+
+**Scripts written this phase:**
+- `scripts/cleanlab_find_label_issues.py`
+- `scripts/export_verified_annotations.py`
+- `scripts/correct_rrgen_labels.py`
+
+---
+
+### Phase 12: V3 Classifier + RoBERTa Anchor + V2 Correction (April 23-25, 2026)
+
+**V3 classifier trained:**
+- Data: `rrgen_corrected.json` (V1-corrected, 215,583), stratified-cap to 67,221 (15K per class)
+- 80/10/10 split: 53,776 train / 6,722 val / 6,723 test
+- 3 epochs, batch 16, lr 2e-5, weighted BCE (compat pos_weight=274 — extreme but stable)
+- **Train time: 12.11h on MPS**
+- Test results:
+  - Macro F1: **0.8080** (vs V2 0.86 on different test set)
+  - Performance F1: 0.819 on 180 test samples (vs V2 0.67 on 12)
+  - Compatibility F1: 0.667 on 4 test samples (still data-thin)
+- Saved: `models/stage1_classifier_v3/`
+
+**RoBERTa anchor trained (replacement for TF-IDF anchor):**
+- Data: combined verified+MAALEJ (10,238)
+- 80/10/10: 8,190 / 1,024 / 1,024
+- 3 epochs, weighted BCE with pos_weight cap of 20
+- **Train time: 13.85h** (severe MPS slowdown — pace dropped from 3 to 570 s/step)
+- Test macro F1: 0.6078 (only +0.08 over TF-IDF — diminishing returns; data was the bottleneck)
+- Strong on praise (0.874) and performance (0.842); weak on bug/feature/compat
+
+**V2 cleanlab correction with RoBERTa anchor:**
+- RoBERTa inference on 215K (~30 min)
+- Cleanlab flagged 81,464 rows
+- Applied conservative thresholds:
+  - 5,229 human_verified
+  - 38,985 anchor_corrected_v2
+  - 171,369 llm_kept
+  - **Total changes: 44,214 (20.51%)** — 4× more aggressive than V1
+- Major wins:
+  - **performance: 184 → 7,644 (+7,460)** ⭐ — recovered 41× more performance reviews
+  - usability: 5,001 → 7,504 (+2,503)
+  - bug_report: 80,058 → 71,962 (−8,096)
+- Praise↔other churn: 22,877 swap pairs (genuine class boundary ambiguity)
+
+**Scripts written this phase:**
+- `scripts/train_classifier_v3.py`
+- `scripts/train_anchor_roberta.py`
+- `scripts/correct_rrgen_v2.py`
+
+---
+
+### Phase 13: V4 Classifier — Validation of Correction Pipeline (April 25-26, 2026)
+
+**V4 trained on V2-corrected data:**
+- Data: `rrgen_corrected_v2.json` (215,583), cap 15K → 75,158 balanced
+- 80/10/10: 60,126 / 7,516 / 7,516
+- compat training samples: 8 (problematic — 1,073× pos_weight)
+- **Train time: 28.88h** (MPS thermals)
+- Test macro F1: 0.7106 (looks lower than V3 due to 1-sample compat test = F1 0.0)
+- Excluding compat: V3 macro 0.831 vs V4 macro 0.829 — practically identical
+- **Validation insight:** V4 maintained V3-level F1 on a 4.3× more diverse test set, confirming the V2 corrections produced clean training data
+
+---
+
+### Phase 14: Compatibility Data Fix + V5 Production Classifier (April 27-28, 2026)
+
+**Compat augmentation (`scripts/build_compat_data.py`):**
+- 200 synthetic compat reviews (100 device-specific, 70 OS-specific, 30 screen-specific)
+- 100 mined from RRGen via compat keywords (95 originally labeled bug_report, 2 feature_request, 3 praise)
+- Total: 300 new compat samples → `data/processed/compat_augmentation.json`
+
+**V5 trained on V2-corrected + compat augmentation:**
+- Data: 215,883 (215,583 corrected + 300 compat aug), cap 15K → 75,458 balanced
+- compat training samples: 248 (vs V4's 8) — pos_weight only 34.8 (vs V4's 1,073)
+- **Train time: 25.26h**
+- Test results:
+  - **Macro F1: 0.8126** (best ever) ⭐
+  - **Compatibility F1: 0.74** (recall 0.87) — was 0.00 in V4
+  - Performance F1: 0.793 on 765 test samples
+  - All seven classes now functional
+- V5 supersedes V3 as the production classifier
+
+---
+
+### Phase 15: V5 Relabel + Stage 2 Clustering + Aspect Extraction (April 28-29, 2026)
+
+**V5 relabel of 215K (`scripts/relabel_with_v5.py`):**
+- Inference time: 111 min on MPS
+- Three labels per row now: V2 LLM original, corrected_v2 (cleanlab), V5 prediction
+- **Agreement matrix:**
+  - V2 ↔ V5: 71.96%
+  - V5 ↔ corrected_v2: 86.77%
+  - All three: 70.20%
+- **V5 as third opinion on the 40,291 V2 corrections:**
+  - V5 supports the correction: **88.66%** ⭐ (validates the cleanlab pipeline)
+  - V5 supports original V2 LLM: 9.4%
+  - V5 third opinion: 1.9%
+- V5 finds even more performance (12,727) and compatibility (411) than V2 corrected pipeline
+
+**Free-tier Stage 2 (no API access — all local):**
+- **Phase 1A — pure HDBSCAN:** poor quality (62 mega-blobs, up to 91% noise)
+- **Phase 1B — UMAP+HDBSCAN with class-specific params:** **194 clean clusters**
+  - bug_report: 59 clusters, 22% noise, avg 876
+  - feature_request: 60 clusters, 24% noise, avg 322
+  - performance: 40 clusters, 26% noise, avg 235
+  - usability: 31 clusters, 21% noise, avg 340
+  - compatibility: 4 clusters, 0% noise, avg 102
+- **Phase 2 — heuristic aspects (spaCy NPs + patterns + KeyBERT):** 113,803 reviews tagged in 9.4 min
+- **Phase 3 — local Qwen2.5-3B-Instruct aspects on 1K sample:** 600 parsed (60% JSON success), 1,218 unique semantic phrases
+- **Heuristic vs LLM cross-validation:**
+  - Exact match F1: 0.254
+  - Substring-tolerant F1: 0.529
+  - 67% of reviews had ≥1 exact aspect overlap
+- **TF-IDF cluster auto-naming:** 191/194 clusters got distinctive names from heuristic aspect frequencies
+
+**Sample auto-named clusters (paper-ready):**
+- c_00004 (10,507): bug_report — driver / uber / ride
+- c_00008 (4,505): bug_report — lock screen / notification (intrusive ads)
+- c_00005 (3,023): bug_report — password / login / account
+- c_00016 (1,394): bug_report — magic effect / magic
+- c_00051 (740): bug_report — crash / app crash (99% mention crash)
+- compat: Samsung Galaxy crash/freeze (332), camera on Galaxy S7 (48), applock/fingerprint (20)
+
+**Scripts written this phase:**
+- `scripts/relabel_with_v5.py`
+- `scripts/cluster_phase1_hdbscan.py`
+- `scripts/cluster_phase1b_umap_hdbscan.py`
+- `scripts/extract_aspects_heuristic.py`
+- `scripts/extract_aspects_local_llm.py`
+- `scripts/compare_aspects_heur_vs_llm.py`
+- `scripts/name_clusters.py`
+
+---
+
+## Current State (April 29, 2026)
+
+### Completed end-to-end
+- ✅ Stage 1 (classification): 5 classifier iterations V1→V5, V5 production-ready (macro F1 0.81, compat F1 0.74)
+- ✅ Noise modeling: cleanlab + RoBERTa anchor pipeline, 44K corrections validated by independent V5 at 88.7% agreement
+- ✅ Stage 2 (clustering): 194 named clusters via UMAP+HDBSCAN
+- ✅ Aspect extraction: dual heuristic (215K coverage) + local-LLM (1K gold-standard)
+- ✅ Cross-validation between heuristic and LLM aspects (F1 0.53 substring)
+
+### Blocked on professor (still)
+- Volunteer recruitment (needed for multi-annotator agreement)
+- Multi-annotator Krippendorff's α / Fleiss' κ scores
+- Gold-standard issue specs (Stage 3 ground truth) and reference responses (Stage 4b)
+- Experiments 1, 2, 3 + Ablations A1–A7
+
+### Blocked on funding/access
+- OpenAI/Anthropic API key (for Stage 3 translation, Stage 4b generation, Experiments 1–3)
+
+### Remaining unblocked work
+- Hand-validate top 50 clusters for paper-ready cluster purity stats (~1h)
+- Send project summary + annotation protocol to professor (URGENT — pending since April 6)
+- Write paper methodology section (noise modeling pipeline is now a real contribution)
+

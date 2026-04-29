@@ -1,0 +1,47 @@
+{
+  "input": "data/processed/rrgen_v5_relabeled/rrgen_v5_relabeled.json",
+  "label_field": "v5_label",
+  "total_clusters": 62,
+  "per_class": {
+    "bug_report": {
+      "n_reviews": 66187,
+      "n_clusters": 3,
+      "n_noise": 15387,
+      "noise_pct": 23.247767688518895,
+      "avg_cluster_size": 16933.333333333332
+    },
+    "feature_request": {
+      "n_reviews": 25351,
+      "n_clusters": 52,
+      "n_noise": 23222,
+      "noise_pct": 91.60190919490356,
+      "avg_cluster_size": 40.94230769230769
+    },
+    "performance": {
+      "n_reviews": 12727,
+      "n_clusters": 2,
+      "n_noise": 6194,
+      "noise_pct": 48.66818574683743,
+      "avg_cluster_size": 3266.5
+    },
+    "usability": {
+      "n_reviews": 13282,
+      "n_clusters": 5,
+      "n_noise": 8091,
+      "noise_pct": 60.917030567685586,
+      "avg_cluster_size": 1038.2
+    },
+    "compatibility": {
+      "n_reviews": 411,
+      "n_clusters": 0,
+      "n_noise": 411,
+      "noise_pct": 100.0,
+      "avg_cluster_size": 0
+    }
+  },
+  "embedding_model": "all-MiniLM-L6-v2",
+  "hdbscan_params": {
+    "min_cluster_size": 10,
+    "min_samples": 5
+  }
+}

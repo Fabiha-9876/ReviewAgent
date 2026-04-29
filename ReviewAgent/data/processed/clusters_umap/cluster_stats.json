@@ -1,0 +1,71 @@
+{
+  "input": "data/processed/rrgen_v5_relabeled/rrgen_v5_relabeled.json",
+  "label_field": "v5_label",
+  "total_clusters": 194,
+  "per_class": {
+    "bug_report": {
+      "n_reviews": 66187,
+      "n_clusters": 59,
+      "n_noise": 14482,
+      "noise_pct": 21.88,
+      "avg_cluster_size": 876.4
+    },
+    "feature_request": {
+      "n_reviews": 25351,
+      "n_clusters": 60,
+      "n_noise": 6033,
+      "noise_pct": 23.8,
+      "avg_cluster_size": 322.0
+    },
+    "performance": {
+      "n_reviews": 12727,
+      "n_clusters": 40,
+      "n_noise": 3344,
+      "noise_pct": 26.27,
+      "avg_cluster_size": 234.6
+    },
+    "usability": {
+      "n_reviews": 13282,
+      "n_clusters": 31,
+      "n_noise": 2730,
+      "noise_pct": 20.55,
+      "avg_cluster_size": 340.4
+    },
+    "compatibility": {
+      "n_reviews": 411,
+      "n_clusters": 4,
+      "n_noise": 1,
+      "noise_pct": 0.24,
+      "avg_cluster_size": 102.5
+    }
+  },
+  "embedding_model": "all-MiniLM-L6-v2",
+  "umap_dims": 50,
+  "class_params": {
+    "bug_report": {
+      "min_cluster_size": 200,
+      "min_samples": 20,
+      "umap_n_neighbors": 30
+    },
+    "feature_request": {
+      "min_cluster_size": 100,
+      "min_samples": 10,
+      "umap_n_neighbors": 25
+    },
+    "performance": {
+      "min_cluster_size": 60,
+      "min_samples": 8,
+      "umap_n_neighbors": 20
+    },
+    "usability": {
+      "min_cluster_size": 60,
+      "min_samples": 8,
+      "umap_n_neighbors": 20
+    },
+    "compatibility": {
+      "min_cluster_size": 10,
+      "min_samples": 3,
+      "umap_n_neighbors": 10
+    }
+  }
+}

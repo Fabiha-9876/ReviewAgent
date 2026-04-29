@@ -37,5 +37,37 @@ ReviewAgent/data/chroma_db/
 !ReviewAgent/data/raw/maalej/app_reviews.csv
 !ReviewAgent/data/raw/guzman/guzman_reviews.json
 
+# Keep paper-relevant artifacts (small JSONs, audit logs, eval metrics)
+!ReviewAgent/data/processed/rrgen_corrected/correction_stats.json
+!ReviewAgent/data/processed/rrgen_corrected/correction_log.csv
+!ReviewAgent/data/processed/rrgen_corrected_v2/correction_stats.json
+!ReviewAgent/data/processed/rrgen_corrected_v2/correction_log.csv
+!ReviewAgent/data/processed/rrgen_v5_relabeled/relabel_stats.json
+!ReviewAgent/data/processed/clusters_no_aspect/cluster_stats.json
+!ReviewAgent/data/processed/clusters_umap/cluster_stats.json
+!ReviewAgent/data/processed/clusters_umap/clusters_summary.json
+!ReviewAgent/data/processed/clusters_umap/clusters_named_summary.json
+!ReviewAgent/data/processed/aspects_heuristic/aspect_frequency.json
+!ReviewAgent/data/processed/aspects_heuristic/aspects_by_class.json
+!ReviewAgent/data/processed/aspects_local_llm/aspects_per_review.json
+!ReviewAgent/data/processed/aspects_local_llm/sample_indices.json
+!ReviewAgent/data/processed/aspect_comparison/comparison.json
+!ReviewAgent/data/processed/aspect_comparison/per_review.csv
+!ReviewAgent/data/processed/compat_augmentation.json
+!ReviewAgent/data/processed/compat_augmentation.csv
+
+# Keep model eval metrics + split info (no weights)
+!ReviewAgent/models/
+ReviewAgent/models/**/*.safetensors
+ReviewAgent/models/**/*.pt
+ReviewAgent/models/**/*.bin
+ReviewAgent/models/**/optimizer.pt
+ReviewAgent/models/**/scheduler.pt
+ReviewAgent/models/**/training_args.bin
+ReviewAgent/models/**/checkpoint-*/
+
+# Logs (don't commit)
+ReviewAgent/logs/
+
 # Notebooks checkpoints
 notebooks/.ipynb_checkpoints/

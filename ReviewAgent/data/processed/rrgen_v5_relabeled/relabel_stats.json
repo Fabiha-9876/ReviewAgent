@@ -1,0 +1,54 @@
+{
+  "total_rows": 215583,
+  "v5_inference_minutes": 110.9867521683375,
+  "agreement": {
+    "v2_v5": {
+      "count": 155133,
+      "pct": 71.95975563935932
+    },
+    "v5_corrected": {
+      "count": 187056,
+      "pct": 86.76750949750212
+    },
+    "all_three": {
+      "count": 151336,
+      "pct": 70.19848503824512
+    }
+  },
+  "v2_correction_validation": {
+    "rows_where_v2_was_corrected": 40291,
+    "v5_supports_the_correction": 35720,
+    "v5_supports_original_v2": 3797,
+    "v5_third_opinion": 774,
+    "support_rate_pct": 88.65503462311682
+  },
+  "label_distributions": {
+    "v2_llm": {
+      "bug_report": 80058,
+      "other": 46106,
+      "praise": 57940,
+      "feature_request": 26286,
+      "usability": 5001,
+      "performance": 184,
+      "compatibility": 8
+    },
+    "v5": {
+      "bug_report": 66187,
+      "other": 44393,
+      "praise": 53232,
+      "feature_request": 25351,
+      "performance": 12727,
+      "usability": 13282,
+      "compatibility": 411
+    },
+    "corrected_v2": {
+      "bug_report": 71962,
+      "other": 44249,
+      "praise": 60704,
+      "feature_request": 23510,
+      "usability": 7504,
+      "performance": 7644,
+      "compatibility": 10
+    }
+  }
+}

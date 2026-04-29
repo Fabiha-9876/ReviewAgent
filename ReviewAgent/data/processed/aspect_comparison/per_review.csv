@@ -1,0 +1,582 @@
+idx,n_heur,n_llm,exact_overlap,precision,recall,f1,precision_sub,recall_sub,f1_sub,heur_aspects,llm_aspects
+121,9,4,1,0.111,0.25,0.154,0.333,0.75,0.462,ad|bluetooth|edit|foto|friend|internet|internet it|pc|some other app,bluetooth|internet connection|photo editing|saving
+168,2,2,2,1.0,1.0,1.0,1.0,1.0,1.0,grid|photo,grid|photo
+500,1,3,0,0.0,0.0,0,0.0,0.0,0,phone,keep come back|keep take off|want
+969,9,4,3,0.333,0.75,0.462,0.444,1.0,0.615,do option|edit|filter|gallery|new updation|pic|pic hop|reply|stuff,filter|gallery|new updation|saving pic
+1048,8,3,0,0.0,0.0,0,0.375,0.667,0.48,ad|hate popup|lag|money|note|pay alot|phone|popup,phone lag|popup add|worst
+1685,2,4,1,0.5,0.25,0.333,0.5,0.25,0.333,device|news,cheeky|importance|news|uninstall
+1786,8,7,2,0.25,0.286,0.267,0.625,0.429,0.508,both picture|picture|same video|selective speed|speed|three thing|two wider range|video,dark mode|lapse|one at a time|range|search bar|speed|video
+1945,5,4,0,0.0,0.0,0,0.4,0.75,0.522,error|every song|next song|song|track,back error|constant login|error message|song playback
+2734,2,1,1,0.5,1.0,0.667,1.0,1.0,1.0,older version|version,older version
+2834,6,7,0,0.0,0.0,0,0.5,0.429,0.462,any further information|good app|hotel|its room|our <app|some problem,book|dark mode|information|problem|room|search bar|settings
+3663,3,3,1,0.333,0.333,0.333,1.0,0.667,0.8,edit|simple mistake|video,simple mistake|take out|video editing
+5483,6,5,1,0.167,0.2,0.182,0.167,0.2,0.182,another problem|digit|digit> different phone|every <app|game|phone,battery|dark mode|game|response|search bar
+5498,1,4,1,1.0,0.25,0.4,1.0,0.25,0.4,number,number|registration|uber app|work
+6673,2,1,0,0.0,0.0,0,0.0,0.0,0,chat|device,slow
+6872,1,3,0,0.0,0.0,0,1.0,0.667,0.8,disable people,disable|people|transport
+6964,3,2,0,0.0,0.0,0,0.667,0.5,0.571,notification|play store|unwanted notification,installation|unwanted notifications
+7026,2,1,0,0.0,0.0,0,0.5,1.0,0.667,background|digit> star,blurr background
+7470,19,5,1,0.053,0.2,0.083,0.263,0.6,0.366,ad|any other option|browser|day|developer|full version|its birth|mini option|mini version|no save page option|reply|save page option|simple answer|so two more star|some heaby page|ui|version|video|video mini,dark mode|mini version|save page|search bar|video playback
+7578,3,2,1,0.333,0.5,0.4,1.0,1.0,1.0,image|image quality|not right low quality,image quality|quality
+7602,4,1,1,0.25,1.0,0.4,0.25,1.0,0.4,ad|ads|all thing|embarrass,ads
+8571,2,1,0,0.0,0.0,0,0.0,0.0,0,its satisfactory|problem,lock
+8761,20,5,0,0.0,0.0,0,0.2,0.6,0.3,actual hotel|ad|advance|any room|book|constant traffic|desperation|even one room|fact|hotel|hour|move|no hotel|our party|phone|place|process|sync|these apps|very bad experience,dark mode|hotel availability|room|search bar|traffic
+9848,5,3,0,0.0,0.0,0,0.4,0.667,0.5,edit|every two minute|magic section phone|phone|problem,magic section|phone reboot|two minute interval
+10601,5,4,2,0.4,0.5,0.444,0.6,0.75,0.667,ad|game|main screen|phone|screen,game|glitch|main|screen
+11190,6,5,2,0.333,0.4,0.364,0.333,0.4,0.364,ad|any old sit nav app|friend|people|reason|route finder,beep|dark mode|friend|route finder|search bar
+11383,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,update,update
+11784,3,3,1,0.333,0.333,0.333,0.667,1.0,0.8,ad|ads|cool and useful but too many ads,ads|cool|useful
+12407,11,9,4,0.364,0.444,0.4,0.727,0.778,0.752,ad|ads|all type|creative option|few more day|home screen|hospital|lock screen|menu|omni swipe prime|screen,ads|creative options|dark mode|home screen|hospital app|lock screen|menu|search bar|swipe
+13594,11,3,0,0.0,0.0,0,0.273,0.667,0.387,ad|any contest|asap|contest page|entry|hell|no point|other contestant recent entry|others|photo|submission,recent entry|view others|view own
+13611,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,ad|phone|phone load,phone load
+13622,3,3,2,0.667,0.667,0.667,1.0,1.0,1.0,internet connection|own sticker|update,internet connection|sticker|update
+13699,3,2,1,0.333,0.5,0.4,1.0,1.0,1.0,edit|hang|pic app,edit pic app|hang
+13754,4,2,0,0.0,0.0,0,0.0,0.0,0,ad|long time|problem|user,app|hibernate
+14128,8,4,1,0.125,0.25,0.167,0.125,0.25,0.167,freeze|have use|its a good app|its the most frustrate thing|little bite|nd tap bac|phone|while,freeze|lg g6|search|smoothness
+15425,12,6,4,0.333,0.667,0.444,0.75,1.0,0.857,ad|advertisement|data|enough data|feature|good rat|our phone|phone|too many advertisement|total fake app|unlock feature|useless application,advertisement|data|fake app|phone|rat|useless application
+15619,2,3,1,0.5,0.333,0.4,1.0,0.667,0.8,layout|regional news,ease of use|good layout|regional news
+15749,10,8,4,0.4,0.5,0.444,0.8,0.625,0.702,ad|constant little circle load icon|ghost app placer|home screen|icon|lag|newest update|recent activity screen|screen|update,home screen|lag|load icon|motorola droid turbo2|nougat|recent activity screen|speed|update
+15855,11,5,2,0.182,0.4,0.25,0.545,0.8,0.649,ad|ads|adult|apps|battery|boost battery save|each screen|large size app|phone|screen|some ads,ads|adult ads|battery|hang|size
+17002,5,5,2,0.4,0.4,0.4,0.4,0.4,0.4,digit|free call|memory|one call|phone,dark mode|free call|memory|search bar|settings
+17175,7,4,2,0.286,0.5,0.364,0.571,1.0,0.727,ad|item|notification|opposite side|police|road|stick,notifications|opposite side|report item|stick
+18021,3,2,2,0.667,1.0,0.8,1.0,1.0,1.0,fare estimation|new update|update,fare estimation|update
+18167,8,2,0,0.0,0.0,0,0.375,1.0,0.545,edit|good application|great job|image|its quality|logo|problem|thnx team,image quality|logo editing
+18352,1,1,0,0.0,0.0,0,0.0,0.0,0,sometimes it,unreliability
+18501,2,1,0,0.0,0.0,0,0.5,1.0,0.667,font|gt,use font
+18587,8,4,2,0.25,0.5,0.333,0.375,0.5,0.429,ad|ads|application|device|lock screen|more than one device|screen|year,ads|exe|lock screen|modification
+18672,7,4,1,0.143,0.25,0.182,0.429,0.5,0.462,content provider|filter|fox news|news app|option|top news filter|ui,dark mode|remove fox news|search bar|top news filter
+18881,2,1,0,0.0,0.0,0,0.0,0.0,0,phone|trash,do my thing
+19012,12,4,2,0.167,0.5,0.25,0.417,0.75,0.536,account|ad|any account information|browser|email adress|error message|few day|many time|matter|message|no option|sign in,account information|change email address|error message|sign in
+19312,1,1,0,0.0,0.0,0,0.0,0.0,0,update,work
+19502,17,6,2,0.118,0.333,0.174,0.235,0.5,0.32,ad|app have some|app problem|cancel trip|car|customer service|driver|fine|help|just the order|message|money|same message|sentence|single word|some issue|worst customer service,conversation|customer service|dark mode|fine|search bar|trip
+20054,6,3,0,0.0,0.0,0,0.5,1.0,0.667,ad|battery|freeze|phone|picture|text,battery removal|phone startup|text addition
+20233,5,4,1,0.2,0.25,0.222,0.6,0.5,0.545,particular word|type matter|user> choice|very wonderful app|word,choice|highlight|particular word|type colour
+20606,1,1,0,0.0,0.0,0,1.0,1.0,1.0,more frame,more frames
+20939,6,5,1,0.167,0.2,0.182,0.667,0.8,0.727,ad|additional data|any overage|data|job|purchase,additional data|app suck|data usage|job data|overage
+21209,9,3,1,0.111,0.333,0.167,0.444,0.667,0.533,ad|big advert|last update|long time|phone|recent tab screen|screen|tab|update,advert|recent tab screen|uninstall
+21293,1,1,0,0.0,0.0,0,0.0,0.0,0,clip art,access
+21404,8,3,0,0.0,0.0,0,0.125,0.333,0.182,3or4 time|android4|cellphone|cellphone becuase|help|need|phone|screen,delay screen|samsung duos2|touch
+21756,1,1,0,0.0,0.0,0,0.0,0.0,0,still more option need,more options
+21783,1,1,0,0.0,0.0,0,0.0,0.0,0,new annoy apps,new apps
+22472,2,2,1,0.5,0.5,0.5,0.5,0.5,0.5,notification|phone,notification|turn off
+22660,4,3,2,0.5,0.667,0.571,0.75,1.0,0.857,ad|ads|screen|virus,ads|touch screen|virus
+22986,3,1,1,0.333,1.0,0.5,0.333,1.0,0.5,ad|ads|small fee,ads
+24372,3,4,0,0.0,0.0,0,1.0,0.75,0.857,back|bunch|date,bunch of apps|get back|play functionality|update status
+24507,4,1,1,0.25,1.0,0.4,0.5,1.0,0.667,no new tool|only big update|update|user,update
+24748,11,4,1,0.091,0.25,0.133,0.182,0.5,0.267,ad|annotation function|help|hour|patch|random time annotation|read pdf file|serious professional use|sloth|support|work,accessibility|annotation function|pdf file|responsibility
+24929,1,2,0,0.0,0.0,0,0.0,0.0,0,begginers,beginners|difficulty
+25540,14,4,2,0.143,0.5,0.222,0.357,0.75,0.484,feature|issue|lot|message|new version|older version|other apps|picture|save sign|save sign in|sign in|these issue|version|wrong message,feature|save sign in|send picture|something go wrong
+25588,3,4,1,0.333,0.25,0.286,1.0,0.5,0.667,message|purchase|purchase message,busy|check purchase|message|server
+25854,19,8,4,0.211,0.5,0.296,0.316,0.625,0.42,ad|administration|direction|driver|driver's route|fluctuate arrival time|language|management|mark|no sense|notification|notification screen|organisation's lack|pickup|regular use|screen|tab|update|use,administration|arrival time|attitude|driver's route|drop off|language|management|pick up
+25982,15,6,3,0.2,0.5,0.286,0.267,0.5,0.348,act|date card|digit|error|file|fund|gift card|help|issue|multiple time|purchase|ride|some reason|summer|uber gift card,confirmation process|dark mode|fund|gift card|ride|search bar
+26617,4,4,1,0.25,0.25,0.25,0.75,0.5,0.6,delete theirselves|notification|ringtone|ringtones,delete themselves|happy|notifications|ringtones
+26844,3,3,0,0.0,0.0,0,0.667,0.667,0.667,ad|down load at least <digit> time|long time traveler,<digit>|download|time
+26985,4,2,1,0.25,0.5,0.333,0.5,1.0,0.667,application|battery|battery life|crash,battery drain|crash
+27063,3,3,1,0.333,0.333,0.333,0.333,0.333,0.333,ad|help|reload,<app>|access|reload
+27294,5,2,2,0.4,1.0,0.571,0.4,1.0,0.571,digit|quite some time|twinkle|ui|work,twinkle|work
+27809,22,8,3,0.136,0.375,0.2,0.273,0.5,0.353,ad|again2|car|customer use|digit> star|driver|extra tip|location|map|okey|other people car|passenger|pick up place|place|please uber apps|rm5|seminar|uber|uber driver|ubers|why this <app|wrong place,dark mode|extra tip|location|search bar|settings|star rating|uber apps|uber driver
+28046,4,2,1,0.25,0.5,0.333,0.25,0.5,0.333,change|digit|minimum rs|paytm rule,minimum amount|paytm rule
+28533,4,4,1,0.25,0.25,0.25,0.25,0.25,0.25,ad|ads|hell|phone,ads|dark mode|search bar|speed
+28844,19,3,2,0.105,0.667,0.182,0.211,1.0,0.348,cellphone|consent use|contact|id|life|malware|mic|mistake|no star|permission|personal info|personal information|phone|pic|program|silver platter|star|stealer|these thing,malware|permissions|personal info
+29266,2,3,0,0.0,0.0,0,0.0,0.0,0,however it sometimes mis function|its a great app,dark mode|search bar|settings
+29400,16,4,1,0.062,0.25,0.1,0.25,0.75,0.375,complete gawars|customer care|day|driver|experience|help|its standard|kolkata|last ride|message|poor service|quality|street|uber|whole year|worst part,customer care|driver quality|rudeness|service
+29401,2,1,0,0.0,0.0,0,0.5,1.0,0.667,ad|pop,pop up
+30033,8,3,1,0.125,0.333,0.182,0.375,1.0,0.545,date|good article|guy|information|page|scroll|time|world,page at a time|scroll|smooth scroll
+30036,2,1,0,0.0,0.0,0,0.0,0.0,0,so many good thing|ui,install
+30223,4,5,0,0.0,0.0,0,0.25,0.2,0.222,ad|digit> nexus 6p|fact|fact that you,dark mode|download|internal storage|nexus 6p|search bar
+31380,8,4,1,0.125,0.25,0.167,0.5,0.75,0.6,ad|crash|destination|fact|issue|time|trip|update,add destination|crash|hang|update trip
+31663,2,1,0,0.0,0.0,0,1.0,1.0,1.0,edit|picture,edit picture
+31672,13,6,2,0.154,0.333,0.211,0.538,0.667,0.596,arrow|design|home|just flip leave|magazine|menu|new magazine style|old design|one hand|right|right menu|top|top leave corner,back arrow|flip back|home|magazine style|navigation|right menu
+31745,4,1,1,0.25,1.0,0.4,0.5,1.0,0.667,icon|phone|support|third party icon pack,third party icon pack
+32552,1,1,0,0.0,0.0,0,1.0,1.0,1.0,phone,mi phone
+32611,2,2,0,0.0,0.0,0,0.5,0.5,0.5,button|no light,keep switch|side button light
+33254,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,sign in,error message|sign in
+33286,5,2,1,0.2,0.5,0.286,0.2,0.5,0.286,ad|hell|lot|magic effect|time,loading|magic effect
+33330,4,2,2,0.5,1.0,0.667,0.75,1.0,0.857,ad|efx|photo|photography,efx|photography
+34122,9,6,1,0.111,0.167,0.133,0.333,0.333,0.333,data|not your <app> data|only use|password|password protect wifi|phone|tab|tablet|wifi,app data|dark mode|lock|search bar|settings|wifi
+34137,11,5,2,0.182,0.4,0.25,0.455,0.4,0.426,ad|ads|fullscreen ads|good app|latest version|need|overall the fullscreen ads|revenue|screen|tab|version,dark mode|exit|fullscreen ads|revenue|search bar
+34531,9,3,3,0.333,1.0,0.5,0.444,1.0,0.615,ad|cash option|fare|money|payment|payment option show|paytm|same drop|some people,cash option|fare|payment
+34985,4,1,0,0.0,0.0,0,0.25,1.0,0.4,ad|its trash|sign up|ur force,force sign up
+36003,2,1,1,0.5,1.0,0.667,0.5,1.0,0.667,ad|ads,ads
+36011,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,gallery,gallery|save
+36315,9,5,3,0.333,0.6,0.429,0.333,0.6,0.429,any word|best app|feature|gallery|gif|more than wonderful app|one problem|parse error|perfect and splendid feature,dark mode|gallery|gif|parse error|search bar
+36496,7,5,4,0.571,0.8,0.667,0.857,0.8,0.828,battery|battery repair|completion|cpu cooler|crash|entire <app> frequently crash|galaxy s7,battery repair|cpu cooler|crash|galaxy s7|nougat
+38464,10,4,2,0.2,0.5,0.286,0.5,0.75,0.6,browser|clean sit|no more spam video|play|same pop|store|update|user> spam video|video|worser thing,browser|pop up|spam video|update
+38696,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,video,video|write
+39127,10,5,0,0.0,0.0,0,0.3,0.6,0.4,enough info|express|less us centric article|main bug bear|main reaction|mood|no way|stuff|update|way,indifferent|info|mood reaction|update frequency|us articles
+39636,15,8,1,0.067,0.125,0.087,0.333,0.375,0.353,about trump|ad|all american focus|customization|every article|fashion celebrity junk|first three article|foreign paper|interest|international economics|not one article|politics|tab|total fail|world politics,articles|battery|customization|dark mode|international economics and politics|loading speed|search bar|world politics tab
+39639,1,1,0,0.0,0.0,0,1.0,1.0,1.0,phone,phone speed
+40051,4,3,1,0.25,0.333,0.286,0.25,0.333,0.286,accessability|digit|fix|somthing,accessibility setting|digit|enable
+40287,1,1,0,0.0,0.0,0,0.0,0.0,0,too many change,launch
+40293,4,3,2,0.5,0.667,0.571,0.5,0.667,0.571,clean boost|one app|phone|protection,clean boost|protection|virus
+40859,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,crap,crap
+40958,5,2,2,0.4,1.0,0.571,0.4,1.0,0.571,ad|advertisement|antivirus app|ui|user experience,advertisement|user experience
+41217,5,3,3,0.6,1.0,0.75,1.0,1.0,1.0,purchase|standstill traffic|traffic update|traffic update work|update,purchase|standstill traffic|traffic update
+41336,3,3,0,0.0,0.0,0,1.0,1.0,1.0,edit|its good edit app|save share option,edit app|save|share
+41414,1,2,0,0.0,0.0,0,1.0,0.5,0.667,avatar type,change avatar|type
+41834,5,4,2,0.4,0.5,0.444,0.8,0.5,0.615,camera|camera most of the time it|time|update|update camera,camera|performance|restarting|update
+42284,3,3,2,0.667,0.667,0.667,1.0,1.0,1.0,edit|gallery|photo,edit|gallery|photo saving
+42606,2,1,0,0.0,0.0,0,0.5,1.0,0.667,ad|video,download video
+43358,10,4,3,0.3,0.75,0.429,0.8,1.0,0.889,blank black background|button|entire video|filter|filter button|moment|no idea|transparent background|video|video switch,background|filter button|transparent background|video
+43803,7,6,2,0.286,0.333,0.308,0.286,0.333,0.308,inferior product|layout|money|most product|purchase|site|user> fan,dark mode|layout|product quality|purchase|reimbursement|search bar
+45368,8,4,1,0.125,0.25,0.167,0.375,0.5,0.429,ad|another update|another update once again topic|content|no content|still absolute rubbish|topic|update,content|sort|topic don't load|unrelated
+45632,6,4,1,0.167,0.25,0.2,0.5,0.75,0.6,horrible see|ios|italic memory management|new section|no such memory issue|otherwise a great app,flipboard|ios|memory management|whats new section
+46020,4,2,0,0.0,0.0,0,1.0,1.0,1.0,edit|feature|more feature|photo,edit photo|more features
+46205,17,7,3,0.176,0.429,0.25,0.412,0.714,0.522,1minute gap|ad|collage|edit|lag|layout|load|no crop option|or pic|pic|picture|problem|screen|single pic|time|update|work,collage|crop option|dark mode|layout|picture|search bar|white screen
+47782,2,2,0,0.0,0.0,0,0.0,0.0,0,phone|phone moto,slowly|work
+48811,4,3,0,0.0,0.0,0,0.75,1.0,0.857,account|glitch|seven character|username,create account|seven characters|username length
+49195,8,2,2,0.25,1.0,0.4,0.375,1.0,0.545,amaze app|collage|grid|kudos|lag|no problem|problem until recently when it|very long time,collage|grid
+49943,13,5,1,0.077,0.2,0.111,0.308,0.6,0.407,battery|change lock screen|everytime|inconvenience|one|original lock screen|other security battery saver|password|phone|phone lock|reason|screen|update,change|charging|lock screen|password|swipe
+50584,1,4,0,0.0,0.0,0,1.0,0.75,0.857,uber customer care,call|care|customer|uber
+50888,1,1,0,0.0,0.0,0,1.0,1.0,1.0,phone,phone speed
+50991,18,2,0,0.0,0.0,0,0.0,0.0,0,ad|block|cab|car|co passenger's location|crime|driver|experience|his money|location|matter|note|passenger|self respect|some action|uber|uberpool car|worst experience,dark mode|search bar
+51006,13,3,2,0.154,0.667,0.25,0.385,1.0,0.556,accidently close page|begin|bottom bar|close tab option|digit> star|last line|link|list|long press menu|menu|new tab|option|tab,bottom bar|close tab|long press menu
+51161,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,design,back to store|design
+51559,1,1,0,0.0,0.0,0,1.0,1.0,1.0,account,make account
+52327,29,6,0,0.0,0.0,0,0.241,0.667,0.354,ad|all source|all sport|all sport source|all the overseas news source|all very few uk publication|category|domestic news|even country|football news|load|more local publication|more support|name|news|news source|no interest|one|origin|source organise|sport|sport publication|staffordshire's sentinel news|support|topic|uk medium coverage|uk news publication|website|z google,coverage|dark mode|local publication|overseas news source|search bar|sport source
+52973,4,4,1,0.25,0.25,0.25,0.75,0.75,0.75,apps|gallery|photo|recent month,clean|erase photo|exclude apps|gallery
+53630,3,4,2,0.667,0.5,0.571,0.667,0.5,0.571,any link|history|safety,history|open link|safety|touch back
+53920,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,button|magic|option button,option button
+54183,15,7,2,0.133,0.286,0.182,0.467,0.571,0.514,ad|constant <app> crash|crash|digit|digit> app|grade|great app|no response|phone|phone cooler|review|shame|site|update|upgrade,crash|dark mode|email|os upgrade|phone cooler|response|search bar
+54426,7,5,2,0.286,0.4,0.333,0.286,0.4,0.333,ad|certain part|edit|eraser|image|size|variety,dark mode|edit|search bar|size|zoom
+54551,2,1,1,0.5,1.0,0.667,1.0,1.0,1.0,search|search engine,search engine
+54676,2,2,0,0.0,0.0,0,0.5,0.5,0.5,nice app|what news content,customize|news content
+54690,6,3,0,0.0,0.0,0,0.0,0.0,0,ad|block|continous alarm|download|make|while,annoying alarm|dark mode|search bar
+54743,15,9,2,0.133,0.222,0.167,0.4,0.556,0.465,ad|ads|background|battery|internet|its job|more battery run|no fake ads|only way|phone|popup ads|root download|such false advertise|such less memory hog|virus,ads|background processes|battery usage|dark mode|false advertise|greenify|popup ads|root access|search bar
+55109,2,5,0,0.0,0.0,0,0.0,0.0,0,function expert|slow annoy,boost function|dark mode|search bar|speed|weight
+55966,2,3,1,0.5,0.333,0.4,0.5,0.333,0.4,junk file bhi delete nhi krta|update,delete files|speed|update
+56206,10,4,1,0.1,0.25,0.143,0.5,0.5,0.5,ad|browser|new version|not interest|phone|shortcut|shortcut app|some shortcut|version|very bad and ugly shortcut,appearance|hide|interest|shortcut
+56349,7,4,1,0.143,0.25,0.182,0.286,0.5,0.364,application|digit|issue|people|some serious bug|trouble|update,bug|dark mode|search bar|update
+56987,7,4,1,0.143,0.25,0.182,0.286,0.25,0.267,ad|email|five star|help|map|republic|use map,dark mode|map|search bar|separation
+57064,15,8,3,0.2,0.375,0.261,0.4,0.5,0.444,ad|advertisement|afterwards information|battery|battery status|boost|change|format|guy|many advertisement|phone|phone status|temperature|very bad change|very disappoint change,advertisement|antivirus|battery status|boost scan|clean scan|dark mode|search bar|temperature
+57317,11,4,2,0.182,0.5,0.267,0.364,1.0,0.533,any problem|background data|background data usage|data|digit|high amount|new phone|permission|phone|previous phone|sore disappointment,app data|background data|data usage|permission
+57432,1,2,0,0.0,0.0,0,0.0,0.0,0,free swipe,inconsistently|swipe toggle
+58134,1,3,0,0.0,0.0,0,0.0,0.0,0,moderation,dark mode|search bar|settings
+58501,11,4,0,0.0,0.0,0,0.182,0.5,0.267,digit> minute|driver's <digit> minute|fee|fix|new update|no way|one spot|pay|ride|some driver|update,driver location|fee charging|request time|ride cancellation
+58523,5,3,0,0.0,0.0,0,0.0,0.0,0,actress gossip stuff|garbage|help|htc thing|rapper,dark mode|search bar|uninstall
+58807,4,2,0,0.0,0.0,0,0.25,0.5,0.333,battery|instal|more battery|phone,app|battery consumption
+59095,5,4,1,0.2,0.25,0.222,0.8,0.75,0.774,ad|battery|battery life|many sim card error|terrible app,app|battery life|scan|sim card error
+60038,6,4,2,0.333,0.5,0.4,0.5,0.75,0.6,correct time|difficulty|digit|example|only <digit> star|video,automatic change|correct time|cut video|difficulty
+60320,12,6,3,0.25,0.5,0.333,0.583,0.833,0.686,ad|blank screen|button|confirm button|destination|force|n't event|payment|payment method|ride|screen|ui,blank screen|destination|force quit|get a ride|not respond|payment method
+60726,21,14,4,0.19,0.286,0.229,0.333,0.429,0.375,ad|age limit|agree|article|bunch|chance|child|computer|contact|digit|fun|news source|others|own magazine|parent|parental permission|reader|some very young people|tab|tablet|teen,age limit|article|dark mode|disagree|investigate|like|magazine|news source|parental permission|search bar|settings|supervise|threaten|write
+61073,17,4,1,0.059,0.25,0.095,0.176,0.75,0.286,17th|actual driver|another driver|application|digit> minute|driver|edit|experience|hartebeespoort march|old credit card detail|option|peak time|rush|screen|show arrival time|their driver|whose time,arrival time|driver behavior|peak time|service availability
+62183,6,7,1,0.167,0.143,0.154,0.333,0.286,0.308,ad|face|more colour|one problem|option magic|process,colour|dark mode|decrease|increase|option magic|search bar|settings
+62386,8,4,3,0.375,0.75,0.5,0.625,0.75,0.682,ad|ads|advertise|battery|battery app|screen|some bs screen|worst app,ads|battery|pop up|screen
+62727,3,2,2,0.667,1.0,0.8,1.0,1.0,1.0,flow|recent update|update,flow|update
+62839,7,4,0,0.0,0.0,0,0.571,0.75,0.649,app zero star|apps|background|digit> apps|every two minute|feed|feedback,ignore feedback|optimize|run background|stop apps
+63002,1,1,0,0.0,0.0,0,1.0,1.0,1.0,site,site opening
+63010,3,2,0,0.0,0.0,0,0.667,0.5,0.571,ad|adjust|tool,adjust tool|speed
+63223,6,3,1,0.167,0.333,0.222,0.833,1.0,0.909,app crash|crash|edit|entire phone|phone|pic,app crash|phone crash|pic editing
+63558,4,4,0,0.0,0.0,0,0.0,0.0,0,ad|nice application|promots|so less one star,dark mode|promotions|search bar|settings
+63986,1,1,0,0.0,0.0,0,0.0,0.0,0,not user,user friendly
+64054,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,choice,choice|forced use
+64270,5,5,1,0.2,0.2,0.2,0.4,0.4,0.4,ad|addition|another reviewer|photo|their advertise,advertise|clunkiness|friendliness|photo|usability
+65230,1,1,0,0.0,0.0,0,0.0,0.0,0,phone,shut off
+65919,12,6,2,0.167,0.333,0.222,0.333,0.5,0.4,ad|bottom|icon|just a little icon|library|many thing|many thing the update|random sticker|search|sticker|stuff|update,dark mode|frame|library|search bar|settings|sticker
+66148,13,9,6,0.462,0.667,0.545,0.538,0.778,0.636,ad|build number|city|house number|info bar|map|miss address|place|search|time|time it|tip|ui,build number|city|dark mode|house number|info bar|map|miss address|navigation|search bar
+66295,3,1,1,0.333,1.0,0.5,0.333,1.0,0.5,its not work|its suck|update,update
+66394,5,6,0,0.0,0.0,0,0.2,0.167,0.182,active application|android samsung user|app> malaware|company|to instal look,application|dark mode|installation|malware|search bar|uninstall
+66584,1,2,0,0.0,0.0,0,0.0,0.0,0,its always show,confirmation|lock function
+67219,14,5,0,0.0,0.0,0,0.214,0.6,0.316,account|ad|apps|article|bank account|device|harm|many useless article|other user|point|point that i|purchase|sight|way,download apps|harmful site|redirect|uninstall|useless articles
+67234,4,3,1,0.25,0.333,0.286,1.0,0.667,0.8,edit|edit save option|picture|update,edit save option|internet connection|picture update
+67328,3,3,2,0.667,0.667,0.667,0.667,0.667,0.667,requirement|ui|update,<app>|requirement|update
+67475,7,4,2,0.286,0.5,0.364,0.714,0.75,0.732,almost a month|awesome app|crash|most recent update|permanent delete|self crash|update,app performance|crash|permanent delete|recent update
+67528,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,mail,mail
+68048,17,5,0,0.0,0.0,0,0.176,0.6,0.273,edit|even the quality|filter|first week|good app|help|instal|just one thing|make|message|opps|photo|problem|tab|tablet|usage|week,app behavior|book cover|filter font|installation|photo quality
+69022,17,7,5,0.294,0.714,0.417,0.471,0.857,0.608,ad|alreadi dun this|app> frustrate|app> upload|box|complete waste|edit|gallery|hop|money|offer|purchase|some time edit|step|time|unlimited min|unlimited min wuldnt,box|edit|facebook|gallery|purchase|unlimited min|upload
+69821,5,4,2,0.4,0.5,0.444,0.6,0.5,0.545,interest theme|nice application|phone|theme|wallpaper,dark mode|search bar|theme|wallpaper
+70201,14,6,1,0.071,0.167,0.1,0.286,0.5,0.364,ad|detail|greek island holiday|home|issue|latest update|matter|pain|route|support|support team|update|vladimir|yesterday update,back from holiday|home route|km length|route to greece|support team|tomtom
+70370,2,1,1,0.5,1.0,0.667,0.5,1.0,0.667,ad|flash,flash
+70502,5,2,1,0.2,0.5,0.286,0.6,1.0,0.75,ad|ads|more than half the screen|screen|too many ads,ads|screen coverage
+70583,1,2,0,0.0,0.0,0,1.0,0.5,0.667,much control,control|installation
+70601,4,4,1,0.25,0.25,0.25,0.5,0.5,0.5,cab|driver|driver say the cab|engine,cab service|distance|engine|further
+70657,10,3,1,0.1,0.333,0.154,0.4,1.0,0.571,account|any response|digit|lock screen|no option|one side news source|option|repeat request|screen|website,delete account|lock screen|news source
+70834,3,1,1,0.333,1.0,0.5,0.333,1.0,0.5,from specific source|specific source|update,update
+71915,4,1,1,0.25,1.0,0.4,0.5,1.0,0.667,ad|ads|annoy ads|stupid app,annoy ads
+72195,17,4,2,0.118,0.5,0.19,0.235,1.0,0.381,ad|app be tricky you|at least <digit> star|best gui|better'n|destination|digit> hour|digit> star|direction|loose voice|never <digit> star|one|road|support|thus <digit> star|ui|user manual,gui|support|user manual|voice
+72375,9,4,2,0.222,0.5,0.308,0.444,0.75,0.558,big and strong company|good and funcional app|message|phone|phone unlock|pic|pocket|trouble|ur logic,functionality|logic|message|phone unlock
+72681,2,2,2,1.0,1.0,1.0,1.0,1.0,1.0,account|sign in,account|sign in
+74202,10,4,0,0.0,0.0,0,0.4,0.75,0.522,background|bay|notification|operation|operation and the setting|phone|ram|setting|ui|unnecessary notification,background operations|intrusiveness|notifications|settings
+74289,2,2,0,0.0,0.0,0,0.5,0.5,0.5,icon|no clue,automatic removal|tap boost icon
+75088,4,4,1,0.25,0.25,0.25,0.5,0.5,0.5,ad|fabulous app|feature|pic,dark mode|debluring pic|feature|search bar
+75545,5,4,0,0.0,0.0,0,0.8,0.75,0.774,ad|ads|auto|tab|video,auto play|unacceptable|uninstalled|video ads
+75791,11,4,1,0.091,0.25,0.133,0.182,0.5,0.267,ad|best regard|clipboard|heavy torrent user|link|only one thing|option|rat|trouble|uc development team|update,clipboard|dark mode|link opening|search bar
+75941,2,2,0,0.0,0.0,0,0.5,0.5,0.5,ad|any software,adapt|software
+76180,14,5,2,0.143,0.4,0.211,0.286,0.6,0.387,bite|block|bug|censorship|comment|developer|facebook's side|functional lot|interface|issue|not at all vulgar|source nice interface|ui|ultimate judgment,censorship|comments|dark mode|interface|search bar
+76564,3,1,1,0.333,1.0,0.5,0.333,1.0,0.5,magic effect|new update|update,magic effect
+77743,13,6,1,0.077,0.167,0.105,0.385,0.333,0.357,car|car request|cheater|destination|digit> min|own car|pickup|place|reach destination|request|thrice|time|ui,car request|dark mode|pickup time|search bar|settings|uber
+78471,7,3,1,0.143,0.333,0.2,0.143,0.333,0.2,all exam|app name|dlb infotech|educational app|free online test|malware|online,dark mode|malware|search bar
+78624,1,1,0,0.0,0.0,0,0.0,0.0,0,ad,more graphic
+78788,7,7,4,0.571,0.571,0.571,0.714,0.714,0.714,ad|background|effect|more option|opacity animation|suggestion|text stiker,background|blend|burn effect|more option|opacity animation|pan|text stiker
+79268,1,2,0,0.0,0.0,0,0.0,0.0,0,most thing,improve performance|more features
+79349,5,5,0,0.0,0.0,0,0.4,0.4,0.4,day|excessive notification|few week|multiple time|notification,dark mode|excessive notifications|hour|notifications|search bar
+79413,10,5,1,0.1,0.2,0.133,0.1,0.2,0.133,ad|creation|devs|good thing|its inception|new ui|option|ui|whole app|work,lock|replica|share|social medium|ui
+79713,8,6,1,0.125,0.167,0.143,0.25,0.333,0.286,account|ad|frame|its suddenlly error|login|new frame|old acc reallyy|same time,dark mode|frame download|login|register|search bar|settings
+79914,4,3,0,0.0,0.0,0,0.25,0.333,0.286,battery|great clean app|more power|their battery saver,battery usage|dark mode|search bar
+79967,11,6,3,0.273,0.5,0.353,0.364,0.5,0.421,ad|delete download app|main website|network error|problem|sell|stuff|such <user> shame|ton|user|website,convenience|dark mode|main website|network error|search bar|sell
+80168,4,3,0,0.0,0.0,0,0.25,0.333,0.286,bbm|image|image or it|nightmare,dark mode|emojis|image sharing
+80740,2,3,1,0.5,0.333,0.4,1.0,0.667,0.8,group suck|vids,gifs|group|vids
+81362,10,4,2,0.2,0.5,0.286,0.7,0.75,0.724,ad|advertisement|advertisement app|lag|photo|photo collage|recent update|ui|update|use,advertisement|intuitive|photo collage maker|recent update
+81824,11,4,2,0.182,0.5,0.267,0.636,1.0,0.778,ad|another update|easy way|feature|feed|feedback|filter|issue|new feature new filter|oil paint|update,feedback|new filter|oil paint filter|update
+82597,2,1,0,0.0,0.0,0,1.0,1.0,1.0,picture|size,picture size
+83267,6,6,1,0.167,0.167,0.167,0.667,0.5,0.571,article|lag|phone|phone space|waste|whole phone,article update|dark mode|phone lag|phone space|search bar|uninstall
+83327,1,1,0,0.0,0.0,0,0.0,0.0,0,very slow app,speed
+83432,3,5,2,0.667,0.4,0.5,0.667,0.4,0.5,feature|variety|video,dark mode|feature|pic|search bar|video
+83747,2,1,1,0.5,1.0,0.667,0.5,1.0,0.667,battery|pokemon,battery
+84076,10,4,1,0.1,0.25,0.143,0.3,0.5,0.375,antivirus scan|benefit|every phone|lg stylo|no change|notification|notification bar symbol|phone|resolve|version,antivirus scan|dark mode|notification bar|search bar
+84672,8,4,0,0.0,0.0,0,0.125,0.25,0.167,new song|other app|pause song|player|request|song|uc <app> player|video,dark mode|pause function|search bar|song playback
+84745,3,3,0,0.0,0.0,0,0.667,0.667,0.667,all the notification setting|device|notification,morning notification|notification setting|remove app
+84865,5,3,1,0.2,0.333,0.25,0.6,0.667,0.632,business|customer support number|sign in|support|two fail,app functionality|customer support|sign in
+85082,5,2,2,0.4,1.0,0.571,0.8,1.0,0.889,ad|advertisement|battery|battery performance|performance,advertisement|battery performance
+85542,7,5,1,0.143,0.2,0.167,0.571,0.8,0.667,ass|good deal|major pain|one thing|post|problem|stuff,buy stuff|constant problems|good deal|post something|sell
+85752,4,1,1,0.25,1.0,0.4,0.5,1.0,0.667,ad|ads|app> up ads|ui,ads
+85769,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,phone,phone|remove
+85998,2,2,2,1.0,1.0,1.0,1.0,1.0,1.0,magic effect|option,magic effect|option
+86655,7,2,1,0.143,0.5,0.222,0.429,1.0,0.6,any way|best edit|edit|export|five star|process|speed,export process|speed
+88078,2,2,0,0.0,0.0,0,0.0,0.0,0,ad|ui,easy to use|quick upload
+88137,10,5,1,0.1,0.2,0.133,0.4,0.4,0.4,alternative|data|device|follow|long time malware|malware|malware notification|notification|samsung note|use,alternative app|dark mode|malware|search bar|smart manager
+89251,5,4,3,0.6,0.75,0.667,1.0,0.75,0.857,feature|gallery|gd feature|pay subscription|subscription,gallery|gd feature|pay subscription|saving video
+89485,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,zenfone,intel|zenfone
+90097,8,4,0,0.0,0.0,0,0.625,0.5,0.556,ad|article|fee|feed|htc one use blinkfeed|link|news republic's home page|throat,blinkfeed|dark mode|news republic|search bar
+91116,4,4,0,0.0,0.0,0,0.25,0.25,0.25,help|higher level|picture|some tool,dark mode|search bar|settings|tool
+91386,9,6,0,0.0,0.0,0,0.333,0.333,0.333,awesome feature|edit|fact|feature|gallery|people|photo|post|realistic editor,dark mode|editor|privacy options|publicly posting|saving privately|search bar
+91785,2,3,0,0.0,0.0,0,0.5,0.333,0.4,home screen|screen,apps|hide|homescreen
+92917,4,3,1,0.25,0.333,0.286,0.75,0.667,0.706,black screen|bloat piece|crap|screen,black screen|bloat|uninstall
+92988,6,2,0,0.0,0.0,0,0.167,0.5,0.25,ad|all notification|all notification message|all stuff|message|notification,notifications|switch off
+93140,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,ad|ads|too much ads,ads
+93932,3,2,2,0.667,1.0,0.8,1.0,1.0,1.0,phone|phone boost|speed,phone boost|speed
+94055,2,2,0,0.0,0.0,0,0.0,0.0,0,ad|too much ad,ads|app speed
+95162,15,7,2,0.133,0.286,0.182,0.333,0.714,0.455,arrow|background|current 2nd choice|customisations|data|default|developer comment|development|memory|need|not use|some good animation|some ms service|time|various card,animation|card|customisations|dark mode|data usage|memory|search bar
+95261,7,6,3,0.429,0.5,0.462,0.714,0.667,0.69,ad|all the tool|beginner|bite confuse|execution|other thing|tool,beginner|complexity|confusion|execution|tool|use
+95295,8,3,2,0.25,0.667,0.364,0.75,1.0,0.857,application|application i|cab|location|location map|map|notification|update,cab|location map|update notification
+95592,12,3,3,0.25,1.0,0.4,0.333,1.0,0.5,feed|interface|nicely present app|pleasant enough interface|previous version|shift|social aspect|social network|some people|source|ton|version,interface|social aspect|source
+95880,1,1,0,0.0,0.0,0,0.0,0.0,0,ad,download limit
+96110,4,3,2,0.5,0.667,0.571,0.5,0.667,0.571,alcatel pixi|camera|digit|show,alcatel pixi|brightness|camera
+96451,8,6,2,0.25,0.333,0.286,0.75,0.5,0.6,any file|any other laptop|desktop|laptop|last <digit> update|manager|uc browser file|update,dark mode|file|laptop|search bar|settings|update
+96753,10,7,4,0.4,0.571,0.471,0.7,0.571,0.629,alot|d update|internet|last update|mesage|message|samsug edge update version|update|version|voice,disconnected|internet|message|spend|update|voice|worth
+97600,3,2,2,0.667,1.0,0.8,0.667,1.0,0.8,fix|problem|rat,fix|problem
+97866,1,3,0,0.0,0.0,0,0.0,0.0,0,finger print,fingerprint support|samsung j1|samsung j2
+98810,22,4,3,0.136,0.75,0.231,0.364,1.0,0.533,ad|add|advertisement|annoy|app lock feature|area|bottom|button|code|design|devise|feature|lock screen|more advertisement|power button|procedure|screen|screen designate|some other app|tap|time|you tube,advertisement|app lock feature|code entry|screen
+99212,3,1,1,0.333,1.0,0.5,1.0,1.0,1.0,help|help photo|photo,help photo
+100019,8,4,3,0.375,0.75,0.5,0.5,0.75,0.6,ad|digit> star|download problem|news section|previous version|update|update problem|version,download problem|news section|previous version|star rating
+100107,2,7,0,0.0,0.0,0,0.5,0.143,0.222,ad|edit,artistic gt|dark mode|editing|fattal digit|fx gt|search bar|settings
+100169,18,7,3,0.167,0.429,0.24,0.222,0.429,0.293,account|app> map|approximately <digit> year|better job|follow|history|last review|map|new phone|phone|phone number|rare occasion|rat|rout|route information|tab|traffic|way,dark mode|favorite|history|map|search bar|settings|traffic
+100548,5,1,0,0.0,0.0,0,0.4,1.0,0.571,ad|boo|game|speed|work,game speed
+100885,2,1,0,0.0,0.0,0,0.5,1.0,0.667,application|ride,ride booking
+101168,2,2,0,0.0,0.0,0,0.5,0.5,0.5,start|trip,eta estimation|trip duration
+101303,2,4,0,0.0,0.0,0,0.5,0.25,0.333,default|phone,dark mode|default <app>|search bar|settings
+101712,2,2,1,0.5,0.5,0.5,1.0,1.0,1.0,login|password,login|password recovery
+101787,13,7,2,0.154,0.286,0.2,0.308,0.286,0.296,any internet|country|gps|gps location|its nice|location|map|no location|no opning|open app dosent|quick responce|ui|user,dark mode|internet connection|location|map|quick response|search bar|settings
+102044,11,3,1,0.091,0.333,0.143,0.182,0.333,0.235,ancient software guy|any problem|back then flipboards|different story|digit|immaculate widget|news republic|other news|phone|smartphone|widget,dark mode|search bar|widget
+102248,16,6,3,0.188,0.5,0.273,0.312,0.667,0.426,all notification and news source|complete trash|data|horrendous app|latest click bait|latest update|news|noise|nonsense|notification|people|phone|ride|space|update|worthless usage,dark mode|data|notification|search bar|space|updates
+103007,6,2,0,0.0,0.0,0,0.0,0.0,0,ad|digit|help|instal error code|new phone|phone,app|download
+103161,2,2,0,0.0,0.0,0,0.5,0.5,0.5,language|more option,font options|language options
+103648,4,2,2,0.5,1.0,0.667,1.0,1.0,1.0,crash|new version|new version crash|version,crash|new version
+103773,2,2,0,0.0,0.0,0,0.5,1.0,0.667,no reason|pop up problem,pop up|problem
+103986,4,3,1,0.25,0.333,0.286,0.75,0.667,0.706,malware|notification|push notification|update,automatic installation|malware|push notifications
+105024,6,4,1,0.167,0.25,0.2,0.333,0.25,0.286,help|home screen|icon|only option|problem|screen,hide|home screen|long press|remove app
+105041,4,3,0,0.0,0.0,0,0.75,0.667,0.706,automatically crop face|awesome app|photo|photo crop option,auto crop|face|photo crop
+105105,3,4,0,0.0,0.0,0,0.333,0.25,0.286,extra space|phone|random result,reliability|results|song lookup|space
+105374,6,4,2,0.333,0.5,0.4,0.5,0.75,0.6,ad|ads|apps|lag|lot|screen,ads|app opening|lag|screen lock
+105442,8,5,1,0.125,0.2,0.154,0.375,0.6,0.462,driver|latest update|little lazy imo|lyft do|post|ride|text|update,dark mode|driver pull up notification|post|ride cancellation|search bar
+105456,9,8,4,0.444,0.5,0.471,0.556,0.625,0.588,camera|effect|embellishment|filter|fool|good ring|name|panorama picture|picture,animal ear|camera|dark mode|effect|embellishment|filter|panorama|search bar
+105511,4,3,2,0.5,0.667,0.571,0.75,0.667,0.706,cutout|update|update version|version,<app>|cutout|update
+105612,2,5,0,0.0,0.0,0,0.0,0.0,0,day|so f king,battery|dark mode|loading speed|search bar|settings
+105846,22,4,0,0.0,0.0,0,0.227,1.0,0.37,ad|arrival|digit|estimate time|estimate time traffic problem|feature|great potential|home|hour journey|limit|long time customer|many feature|map|pity|premium|premium world|problem|rout|slightly different route|speed|traffic|upgrade,map movement|route suggestions|speed limits|traffic updates
+106983,1,1,0,0.0,0.0,0,0.0,0.0,0,very high rat,response speed
+106995,9,2,0,0.0,0.0,0,0.0,0.0,0,ad|crash|crazy app|crazy massage|danger|guy|instruction|message|phone,dark mode|search bar
+107677,10,4,1,0.1,0.25,0.143,0.2,0.25,0.222,ad|ads|as much power|charge phone|charger|full page ads|horrible system|phone|phone display|post,ads|charging|display off|power consumption
+107744,1,1,0,0.0,0.0,0,1.0,1.0,1.0,inequality,solve inequality
+108593,8,3,3,0.375,1.0,0.545,0.375,1.0,0.545,best tnx|fix|help|helpful app guy|location|problem|reply|tnx,fix|location|reply
+108781,7,3,1,0.143,0.333,0.2,0.429,0.667,0.522,ad|ads|apps|auto instal|good <app|phone|too many ads,ads|auto install|pop ups
+108923,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,prisma effect,prisma effect
+109006,8,5,3,0.375,0.6,0.462,0.875,0.8,0.836,account|edit|link account|login|same creditcard|support|tab|user login,creditcard|link account|support|user login|usernames
+109421,12,7,3,0.25,0.429,0.316,0.333,0.571,0.421,ad|blank beige screen|fix|huawei p10|info|issue|map|screen|sidebar|startup|total|update,blank screen|buggy|force stop|huawei p10|map|reboot|sidebar
+109437,2,2,1,0.5,0.5,0.5,0.5,0.5,0.5,clone tool|issue,clone tool|properly
+110316,4,3,1,0.25,0.333,0.286,1.0,1.0,1.0,crash|location|offline|search,crash|location search|offline functionality
+110477,17,5,0,0.0,0.0,0,0.176,0.4,0.245,any solution|app> round|digit> day|email|end|help|post|proof|reality|request|review|their own reply|their user|there customer care|uber reply|usage|use,customer care|customer care service|dark mode|reply|search bar
+112111,24,6,3,0.125,0.5,0.2,0.208,0.5,0.294,ad|basic uber|bill|car|complicate|driver|driver and you probably|expensive one|fifteen minute|glove|gps|impression|incorrect location|item|leave side|location|lyft|major headache|option|past few week|random goose chance|these issue|uber|while,contact|dark mode|driver|gps|incorrect location|search bar
+112320,4,3,1,0.25,0.333,0.286,0.75,1.0,0.857,ad|android phone|load|phone,android|download|phone
+113201,9,3,2,0.222,0.667,0.333,0.444,1.0,0.615,customer support|double check|help|new phone|password|phone|sms text|sms verification|support,customer support|password reset|sms verification
+113454,8,5,3,0.375,0.6,0.462,0.625,1.0,0.769,ad|bump|light|screen|these guy|ui|very simple app|web,ad|light|screen on|simple app|web
+113527,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,filter|some filter miss|update,filter
+113625,16,3,0,0.0,0.0,0,0.062,0.333,0.105,ad|blackberry|constant <app> notification|dev team|its constant notification|message|motion|nearly a decade|new phone|notification|one thing|phone|priv|release|screen|very trouble,constant notifications|dark mode|search bar
+114289,7,3,1,0.143,0.333,0.2,0.571,1.0,0.727,ad|background|no watermark|only thing|option|text|text tool,background around text|text tool|watermark
+114638,10,4,4,0.4,1.0,0.571,0.6,1.0,0.75,age|any problem|buffer|filter|latest update|nd you want to filter then that|past|search|trouble|update,buffer|filter|latest update|search
+115248,8,5,3,0.375,0.6,0.462,0.625,0.6,0.612,ad|ad blocker|ads|beep sound|phone|phone vibrate|sound|very bad ads,ad blocker|ads|automatic pop up|beep sound|vibration
+115328,1,3,0,0.0,0.0,0,0.0,0.0,0,front,convenience|dark mode|search bar
+115918,1,2,0,0.0,0.0,0,0.0,0.0,0,freeze,freezing|functionality
+115929,7,3,1,0.143,0.333,0.2,0.429,1.0,0.6,ad|edit|idea|photo|picture|please pic art|real photo,edit photo|real photo|save photo
+116147,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,battery|battery saver|its good,battery saver
+116671,6,2,0,0.0,0.0,0,0.667,1.0,0.8,ad|add free version|edit|photo|rest|version,free version|photo editor
+117168,8,4,2,0.25,0.5,0.333,0.75,1.0,0.857,incoming message|latest update|message|no sound notification|notification|popup|sound|update,incoming message|notifications|popup|sound notification
+117835,3,7,1,0.333,0.143,0.2,0.667,0.143,0.235,home screen|most annoy thing|screen,break|dark mode|home screen|instantly|pay now|search bar|settings
+117881,10,7,3,0.3,0.429,0.353,0.8,0.857,0.828,access|ad|contact|edit|favor|identity|last update|less intrusive edit app|location|update,access to contacts|edit app|identity|last update|less intrusive|location|uninstall
+118334,10,4,0,0.0,0.0,0,0.2,0.5,0.286,act|but this last update|chrome|crash|different app|feed|sometimes its open duplicate tab|tab|uc browser|update,browser crash|dark mode|duplicate tabs|search bar
+118373,3,1,0,0.0,0.0,0,0.333,1.0,0.5,filter|magic|more cool filter,filters
+118767,8,4,1,0.125,0.25,0.167,0.5,0.75,0.6,credit card|credit card information|edit|fix|flag|lag|ride|service,accept|credit card information|credit card invalid|request a ride
+119795,6,3,0,0.0,0.0,0,0.167,0.667,0.267,ad|digit|ita|load|way|yesterday,download time|internet speed|load speed
+120587,12,3,3,0.25,1.0,0.4,0.417,1.0,0.588,ad|ads|drive|full screen ads|good app|gps|last <app> update|no gps|screen|tab|update|use,ads|full screen ads|gps
+120829,2,1,0,0.0,0.0,0,0.0,0.0,0,dact|dact it,focus
+120922,1,1,0,0.0,0.0,0,0.0,0.0,0,ad,download
+121455,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,rate,ask|rate
+121525,3,4,1,0.333,0.25,0.286,0.667,0.5,0.571,celebrity voice|friend|point,celebrity voice|count point|functionality|settings
+121538,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,ad|new payment card|payment,new payment card
+122749,5,3,0,0.0,0.0,0,0.4,0.333,0.364,ad|any song|mobile|user> good app|user> song,dark mode|search bar|song
+122966,7,4,1,0.143,0.25,0.182,0.286,0.5,0.364,every time|help|home botton ommy iphone|ly|music|phone|screen,keep showing|musical . ly|press home button|screen
+124138,10,5,2,0.2,0.4,0.267,0.5,0.6,0.545,ad|crap|latest update|lock screen|news republic|permission|phone|screen|thumb|update,dark mode|lock screen|permissions|search bar|update
+124986,4,4,1,0.25,0.25,0.25,0.75,0.75,0.75,destination|huawei|no confirmation|ride,app functionality|destination input|huawei|ride request
+125679,2,1,1,0.5,1.0,0.667,1.0,1.0,1.0,internet speed booster|speed,internet speed booster
+125791,7,6,1,0.143,0.167,0.154,0.429,0.5,0.462,edit|gallery|lil blur|only thing|photo|pic|size,dark mode|gallery|photo blur|photo size|search bar|zoom
+126226,15,5,1,0.067,0.2,0.1,0.2,0.4,0.267,city|deivers|driver|give location|hell|location|one more thing|passenger|person|pessangers|rout|route|total injustice|trip|unprofessional behaviour,behaviour|communication|extra fair|inform|route
+126230,2,2,1,0.5,0.5,0.5,1.0,0.5,0.667,latest version|version,good|version
+126592,10,3,1,0.1,0.333,0.154,0.4,1.0,0.571,ad|any video|due copyright|new version|notice|problem|promblems|upgrade|version|video,copyright notice|download video|new version
+127722,16,8,4,0.25,0.5,0.333,0.375,0.625,0.469,ad|bad idea|divisiveness|echo chamber|feed|hatred|home screen|opinion|our country|people|phone|screen|swipe|their own newsfeeds|ui|viewpoint,curate|echo chamber|newsfeed|opinion|permanent app|swipe|uninstall|viewpoint
+128497,12,7,2,0.167,0.286,0.211,0.333,0.286,0.308,chrome|clear cache|cooky|even after update it still|network|other browser|other hand|other hand uc browser|phone|uc browser|update|work,battery|dark mode|loading speed|network|search bar|settings|uc browser
+129016,9,9,2,0.222,0.222,0.222,0.667,0.556,0.606,all sex relate|couple|message|message and call purpose|naked photo|people|photo|random people|use,annoy|call|dark mode|message|naked photos|random people|search bar|settings|sex related messages
+129342,15,4,3,0.2,0.75,0.316,0.267,0.75,0.393,ad|every new release|feature|gps|navigation|only nice new feature|premium|premium feature|problem|real view navigation|road|search|tab|ui|update,advertisement|navigation|search|update
+129687,15,9,4,0.267,0.444,0.333,0.533,0.667,0.593,ad|ads|apps|developer|each update|feature|file manager|more bloat|new file manager|notification|phone|plain file manager|rapid charge|support|update,ads|bloat|dark mode|file manager|notification|rapid charge|search bar|settings|uninstall apps
+131176,4,5,0,0.0,0.0,0,0.5,0.4,0.444,any message|call|message|prog,calls|enter app|logout|messages|reachability
+131672,3,1,0,0.0,0.0,0,0.667,1.0,0.8,ad|video|video show,video show add on
+131673,14,5,0,0.0,0.0,0,0.143,0.6,0.231,> messenger|ad|call|colleague|constantia guest house|edit|he service|interface|mistake|no option|our mistake|pizza hut shop mall|rat|star,dark mode|messenger integration|rat submission|search bar|user interface
+132074,2,1,0,0.0,0.0,0,0.5,1.0,0.667,any image|image,image visibility
+132403,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,watermark,watermark
+132410,8,3,0,0.0,0.0,0,0.25,0.333,0.286,ad|battery|battery charge protector thing|crap|latest update|phone|spam free app|update,battery charge protector|pop up|spare app
+132911,12,5,2,0.167,0.4,0.235,0.5,0.6,0.545,ad|ads|annoy ads|digit> buck|direction|good hardware|nexus|older hardware|other hand|performance|same hardware|tab,ads|hardware|performance|responsiveness|speed
+133086,9,3,1,0.111,0.333,0.167,0.222,0.333,0.267,ad|add|ads|all the <app> up ads|new phone|phone|phone call|virus|way,ads|dark mode|search bar
+133393,4,3,2,0.5,0.667,0.571,0.75,1.0,0.857,bicycle|no option|pedestrian|route,bicycle|pedestrian|route navigation
+133573,3,2,2,0.667,1.0,0.8,0.667,1.0,0.8,ad|crash|download,crash|download
+133635,2,1,1,0.5,1.0,0.667,0.5,1.0,0.667,crash|p10,crash
+133650,1,3,1,1.0,0.333,0.5,1.0,0.333,0.5,error,book|error|settings
+133677,3,2,1,0.333,0.5,0.4,0.333,0.5,0.4,digit> year|use|watermark,uninstall|watermark
+133856,2,4,2,1.0,0.5,0.667,1.0,0.5,0.667,save|video,export|save|share|video
+134615,14,10,3,0.214,0.3,0.25,0.5,0.7,0.583,ad|anton font|custom|edit|font one thing|grid|it's dimension asper|pg team|pic|reply|review|size|sticker|user,anton font|crop|custom add pic|dark mode|dimension|edit pic|grid|picsart|search bar|sticker
+135334,9,6,3,0.333,0.5,0.4,0.556,0.667,0.606,charger|digit> star|display screen notification|notification|screen|sound|these annoy alert|way|what a shame,charger|dark mode|notification|search bar|sound|star
+135776,3,2,0,0.0,0.0,0,0.333,0.5,0.4,incoming call lock option|nice work|very good work,easy to use|incoming call lock
+136366,20,6,3,0.15,0.5,0.231,0.3,1.0,0.462,ai format|best edit|but now no option|button|edit|format jpg png|help|image|issue|jpg format|more format|old vision|only auto save|option|png format pic art save|press save button|prob|save format|save image|sugestion,ai format|auto save|image format|jpg format|png format|save format
+136754,2,3,0,0.0,0.0,0,0.0,0.0,0,acct wth|freeze,dark mode|search bar|settings
+136863,2,3,1,0.5,0.333,0.4,1.0,0.667,0.8,fee|trash clog,clog|fee|shut off
+137033,7,4,4,0.571,1.0,0.727,0.571,1.0,0.727,ad|another ride|destination|extra money|extra time|system|wrong address,destination|extra money|extra time|wrong address
+137361,3,1,0,0.0,0.0,0,0.667,1.0,0.8,register|registration|registration page,close registration page
+137407,12,4,1,0.083,0.25,0.125,0.167,0.25,0.2,ad|ads|care|edit|even more ads|five star|guy|incredibly displease|one star|opinion|these issue|two star,ads|dark mode|rating request|search bar
+137727,11,4,1,0.091,0.25,0.133,0.364,0.5,0.421,change|edit|issue|it's intend purpose|oreo update|set|source|source of the|ui|update|wallpaper,automatic wallpaper change|dark mode|oreo update|search bar
+138968,9,3,0,0.0,0.0,0,0.222,0.333,0.267,ad|album|and so many sticker|any video|new change video background|one suggestion|very nice app picsart|video|wold,dark mode|search bar|video background
+139447,7,4,3,0.429,0.75,0.545,0.857,1.0,0.923,4g|ad|effect|new update|new update i|update|wifi,4g|download effect|new update|wifi
+139656,11,4,2,0.182,0.5,0.267,0.273,0.75,0.4,account|app> phone number|atleast|help|login|no option|own uber account|password|phone|same number|some problem,delete account|login|otp|password
+140139,9,5,4,0.444,0.8,0.571,0.667,0.8,0.727,ad|awesome interface|edit|feature|interface|presentation|some feature|sound|video,fade|feature|interface|presentation|sound
+140457,9,4,1,0.111,0.25,0.154,0.111,0.25,0.154,freak virus|game|money|our phone|phone|these people|very disappoint|whole entire phone|wow guy,dark mode|game|search bar|uninstall
+140495,11,5,2,0.182,0.4,0.25,0.364,0.6,0.453,another launcher|craziness|edit|launcher|new phone hop|one|phone|sleep|some time|time|wallpaper,dark mode|launcher|search bar|sleep mode|wallpaper
+140891,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,blank page,blank page
+141040,3,6,3,1.0,0.5,0.667,1.0,0.5,0.667,favourite news source|hindu|interface,bbc|cnn|favourite news source|hindu|interface|toi
+142452,5,3,2,0.4,0.667,0.5,0.8,1.0,0.889,ad|advertisement|annoy advertise|feature|other feature,advertisement|annoy|feature
+142458,10,5,3,0.3,0.6,0.4,0.5,0.8,0.615,ad|ads|apps|attention|especially these one|g0t2h4ve1t69 gmail|internet session|phone|their app|tire,ads|app|attention|infect|internet session
+142492,6,1,1,0.167,1.0,0.286,0.5,1.0,0.667,ad|download|speed|surf|wifi|wifi speed,wifi speed
+142861,7,3,2,0.286,0.667,0.4,0.571,0.667,0.615,ad|ads|job|one|pro version|version|way too many ads,ads|pro version|uninstall
+143167,2,2,0,0.0,0.0,0,0.0,0.0,0,inform|way,improve performance|more features
+143213,16,5,3,0.188,0.6,0.286,0.25,0.6,0.353,cancellation|cancellation amount|charge|charge rs|driver|help|location|one|past|prime example|receipt|ride|several problem|start|tax|uber,cancellation|dark mode|receipt|search bar|tax
+143480,2,1,0,0.0,0.0,0,0.0,0.0,0,guy|update,flash
+144041,1,2,0,0.0,0.0,0,1.0,0.5,0.667,phone,app|phone speed
+144292,14,5,1,0.071,0.2,0.105,0.429,0.8,0.558,ad|drivel|eye|interest|interface|large fullscreen <app|less information|multiple mini panel|new article|one article|revamp interface|screen|user|user> different news fee app,fullscreen|information|interface|mini panels|news fee app
+144459,8,4,1,0.125,0.25,0.167,0.25,0.5,0.333,case|device|different device|different place|last year|password|service|time,dark mode|password change|search bar|service
+144556,17,7,1,0.059,0.143,0.083,0.412,0.714,0.522,ad|any issue|app message|cab|chat|chat option|concern|customer|executive|help|issue|message|no altetnative|pre type message|support|their help option|uber support team,cab service|call support|chat option|dark mode|help option|search bar|uber support
+145496,10,5,2,0.2,0.4,0.267,0.3,0.6,0.4,ad|app> people|choice|community|enough social medium community|filter|instagram|picture|so nice app|way,community|dark mode|instagram|search bar|social medium
+146298,12,5,1,0.083,0.2,0.118,0.25,0.4,0.308,bid|latest update|moment|no use|other list|random lot|repair|ruin|time|ui|update|which item,bid viewing|dark mode|random selection|search bar|update
+146339,8,3,1,0.125,0.333,0.182,0.125,0.333,0.182,ad|all our server|all time|any style|bite|magic mode|problem|rainbow galaxy badlands,disgust|magic mode|server busy
+146923,1,1,0,0.0,0.0,0,0.0,0.0,0,two my <app,vr functionality
+147044,7,4,3,0.429,0.75,0.545,1.0,1.0,1.0,car use|offline|post|postcode search|search|terrible version|version,car use|offline functionality|postcode search|version
+147255,14,5,1,0.071,0.2,0.105,0.429,1.0,0.6,ad|already a good call screen app|cm's anti virus checker|credit|download|edit|internet|kind|phone|phone call|risk|screen|strong arm advertise|whatscall app,anti virus checker|call screen app|force download|internet calling|whatscall app
+147377,7,9,2,0.286,0.222,0.25,0.714,0.667,0.69,ad|creation|every update|new page|phone|phone create folder|update,ask|change|create|folder|new|page|phone|update|worse
+147937,5,3,2,0.4,0.667,0.5,0.8,1.0,0.889,its menu bar|keyboard|menu|space bar|update,keyboard|menu bar|space bar
+148284,4,4,0,0.0,0.0,0,0.25,0.25,0.25,amazon|limit variety|only reason|some people,cheap|month|search bar|variety
+148659,2,2,0,0.0,0.0,0,0.0,0.0,0,everytime|nocitafcatuons,new messages|notifications
+148979,1,1,0,0.0,0.0,0,1.0,1.0,1.0,device,device speed
+149091,1,3,0,0.0,0.0,0,1.0,1.0,1.0,fingerprint lock unlock apps,apps|fingerprint lock|unlock
+149356,5,3,1,0.2,0.333,0.25,0.2,0.333,0.25,anti virus|digit|low score|phone|reason,anti virus|booster|speed
+149717,4,2,0,0.0,0.0,0,0.0,0.0,0,new version|new version form|version|watch,<app>|stop start
+149957,9,5,0,0.0,0.0,0,0.444,0.4,0.421,ad|app user|download map|maharashtra offline map|map|offline|same download map screen|screen|very bad customer experience,customer experience|dark mode|loading|offline map|search bar
+150370,8,4,1,0.125,0.25,0.167,0.25,0.5,0.333,dp|edit|last update|no problem|pattern sticker|pic art|those free font|update,dark mode|font|pattern sticker|search bar
+150414,11,4,2,0.182,0.5,0.267,0.273,0.75,0.4,all the time|always clean drop temperature|battery|fake stuff|heat|junk file battery|one gig|one second|phone|second check|time,battery|heat|junk file|task
+150922,12,4,1,0.083,0.25,0.125,0.333,0.75,0.462,ad|another payment method|error|help|latest update break integration|message|no help|payment|payment method|paytm|problem|update,error message|integration|paytm|switch
+152871,6,4,2,0.333,0.5,0.4,0.333,0.5,0.4,ad|extra unnecessary step|just an irritation|save option|such a pity|update,privacy|save option|sharing|update
+153167,22,10,6,0.273,0.6,0.375,0.591,0.9,0.713,ad|amd|another go|best gps apps|case|close road|eye|gps|miss|navigation|no reason|one more thing|one way|one way street|only minor flaw|option|pass waypoint|road|route|route optimization|tab|waypoints,announcements|close road|flaw|gps|navigation|one way street|options|route optimization|stability|waypoints
+153279,3,3,0,0.0,0.0,0,0.0,0.0,0,ad|crap|use,ads|frequency|time
+154642,9,3,0,0.0,0.0,0,0.222,0.667,0.333,ad|even a person|language|neutral news|news|people|politics|site|their opinion,bias|language understanding|news delivery
+154764,1,2,0,0.0,0.0,0,1.0,0.5,0.667,memory release popup,disable|popup
+155110,3,4,0,0.0,0.0,0,0.333,0.5,0.4,masculine nature|not many theme|theme,choices|cost|nice themes|themes
+155723,14,8,3,0.214,0.375,0.273,0.5,0.625,0.556,ad|all troubleshoot option|charm|device|full connectivity|ios device|new note8 device|no avail|offline|recent update|reinstall|shazam|some issue|update,connectivity|dark mode|ios device|note8 device|offline|recent update|search bar|troubleshoot options
+156209,10,4,2,0.2,0.5,0.286,0.5,1.0,0.667,ad|ads|casual stuff|clotheless angel|data|feed|good wifi confection|news feed|regular usage|wifi,ads|data efficiency|news feed|wifi connection
+156540,10,7,3,0.3,0.429,0.353,0.7,0.857,0.771,ad|ads|battery|battery charger apps|easy collage maker|hybrid|lag|pinterest facebook|ton|use,ads|battery|collage maker|facebook|hybrid|morph|pinterest
+156707,2,1,0,0.0,0.0,0,0.0,0.0,0,ad|code24,download
+156860,1,2,0,0.0,0.0,0,0.0,0.0,0,best route,algorithm|routing
+156886,5,3,0,0.0,0.0,0,0.8,1.0,0.889,option|photo|privacy|save|some privacy issue,privacy issue|save option|share option
+157360,2,2,1,0.5,0.5,0.5,0.5,0.5,0.5,light|point,light|open
+157662,19,7,2,0.105,0.286,0.154,0.263,0.571,0.36,13mp|5mb image|800kb|ad|camera|digit|edit|export image|feature|image|load|mp|phone|phone camera|pixel|professional feature|reason|support|worst app,dark mode|export image|image quality|phone camera|resize image|resolution|search bar
+157768,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,watermark,watermark
+157903,3,3,0,0.0,0.0,0,1.0,0.667,0.8,latest update break|moto|update,app|latest update|moto x
+158251,13,10,2,0.154,0.2,0.174,0.308,0.2,0.242,ad|all the story|category|digit|fresh start|issue|latest <app> version|list|news|refresh mean|story|user|version,battery|dark mode|loading speed|month|priority|search bar|settings|story|unusable|version
+158576,7,1,0,0.0,0.0,0,0.0,0.0,0,ad|booster|build|just some crap|lie|phone|ui,download
+158595,1,1,0,0.0,0.0,0,0.0,0.0,0,i dont like it,cannot work
+159701,12,6,2,0.167,0.333,0.222,0.417,0.5,0.455,ad|app> security|applock|chat|chat head|content|lock screen|notification|notification panel|number|phone|screen,dark mode|lock screen|name|notification|number of notifications|search bar
+160729,14,5,4,0.286,0.8,0.421,0.429,1.0,0.6,access sms|accessibility|ad|kind|location|more permission|need|no need|phone|privacy|privacy guard|root access|sms|usage access,location|permission|root access|sms|usage access
+161224,8,3,2,0.25,0.667,0.364,0.75,1.0,0.857,ad|ads|convenient easy torch icon|icon|its worth|lock screen|screen|so many ads,ads|lock screen|torch icon
+161383,21,5,2,0.095,0.4,0.154,0.238,0.6,0.341,ad|all modern retro feature|best app|digital decade|edit|feature|good social active user|its feature|its team|online|online seminar|photo|photo shoot modern photo edit|record video|suggestion|team|technique|update|upgrade|video|world famous photographer,dark mode|online seminar|search bar|social active user|video
+161554,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,right number,right number|verify
+161694,16,6,2,0.125,0.333,0.182,0.438,0.667,0.528,ad|ads|article|bombardment|feature|genuine article|gossip story|magazine|magazine for the|meaningless article|page|page flip feature|sea|stupid pointless and gratuitous ads|tab|ui,ads|gossip stories|meaningless article|page flip|unstable|visual appeal
+162001,3,3,1,0.333,0.333,0.333,0.667,0.667,0.667,digit> year|unwanted news alert|use,irritate|news alert|use
+162353,3,4,2,0.667,0.5,0.571,1.0,0.75,0.857,check|ride|two people,can not launch the app|ride|split check|two people
+162557,5,5,1,0.2,0.2,0.2,0.8,0.6,0.686,complete separate app|default <app> app|one measly song|one song ans|refund,default app|pay|refund|separate app|song
+162636,2,3,0,0.0,0.0,0,0.0,0.0,0,battery|its eat,dark mode|search bar|settings
+162951,2,5,0,0.0,0.0,0,1.0,0.8,0.889,account|message,account deactivation|message notification|receive message|reply|stop message
+163004,7,5,4,0.571,0.8,0.667,0.714,0.8,0.755,different app|freeze|junk|phone|ranodmon number|update|update it,different app|freeze|junk|restart|update
+163095,1,2,0,0.0,0.0,0,1.0,1.0,1.0,some more work,more|work
+163355,1,2,0,0.0,0.0,0,1.0,0.5,0.667,its a worst app,app|speed
+163448,5,4,0,0.0,0.0,0,0.8,0.75,0.774,bottom line|data|just my data connection|offline|wifi,app functionality|data connection|offline detection|wifi connection
+163804,1,1,0,0.0,0.0,0,0.0,0.0,0,every thing,file size
+164281,7,4,2,0.286,0.5,0.364,0.571,1.0,0.727,account|change|corporate account|date|dynamic price|other personal no connect account|uber,corporate account|dynamic price|personal account|uber zip
+164442,10,4,1,0.1,0.25,0.143,0.3,0.75,0.429,account|answer|any answer|cause|feed|feedback session|nature|no rid|reason|unknown reason,account suspension|feedback session|ride requests|uber account
+164768,5,2,0,0.0,0.0,0,1.0,1.0,1.0,edit|edit picture|just a black screen|picture|screen,black screen|view edit picture
+164895,6,4,1,0.167,0.25,0.2,0.667,0.5,0.571,entire photoshoot|moto e|photo|photos|recent version|version,moto e|photoshoot|too good|work
+164963,8,9,2,0.25,0.222,0.235,0.375,0.333,0.353,ad|ads|blickfeed|even more disappoint|feed|full removal|highlight|htc,ads|alert|battery|dark mode|highlight|invasive|loading|removal|search bar
+165165,16,4,2,0.125,0.5,0.2,0.312,1.0,0.476,ad|ads|best virus fight engine|bunch|last update|latest update|more ads|more phone space|no update|phone|power|review|simplicity|time|update|useless addition,ads|power|space|virus fight engine
+165413,4,1,0,0.0,0.0,0,0.5,1.0,0.667,ad|feature|nyc app bite|some more feature,more feature
+165673,3,2,1,0.333,0.5,0.4,1.0,1.0,1.0,all bug|battery|battery drain,battery drain|fix all bug
+166218,10,4,2,0.2,0.5,0.286,0.4,1.0,0.571,account|app> account|attractive montage|choir|concert|good result|lot|our publicity|singer|twitter,concert|montage|publicity|twitter
+166724,2,1,0,0.0,0.0,0,0.5,1.0,0.667,good <app|update,more updates
+167423,16,4,1,0.062,0.25,0.1,0.125,0.25,0.167,app> credit|buy option|cancellation|customer service|edit|few option|its way|money|one|order|post|process|purchase|ridiculous customer service|wrong deal|wrong order,cancel option|customer service|dark mode|search bar
+168237,6,4,2,0.333,0.5,0.4,0.5,0.5,0.5,15th aug <digit|latest update|magic function|mail|team|update,dark mode|magic function|search bar|update
+168395,2,4,2,1.0,0.5,0.667,1.0,0.5,0.667,bug|notification,bug|delay|frequency|notification
+169734,12,5,1,0.083,0.2,0.118,0.167,0.4,0.235,ad|basically access|edit|entire phone|its a nice little photo editor|no use|period|phone|photo|product|ridiculous amount|specific reason,dark mode|permissions|phone access|search bar|specific reason
+170708,4,3,2,0.5,0.667,0.571,0.75,1.0,0.857,clone function|clone function inconvenience|little bite|update,clone function|inconvenience|update
+171056,4,3,0,0.0,0.0,0,0.0,0.0,0,2nd time|all girlie|change|good app,app quality|girlie elements|previous version
+171250,4,2,0,0.0,0.0,0,0.5,1.0,0.667,new <digit|phone|phone heat|version,heat|old version
+171473,15,6,4,0.267,0.667,0.381,0.467,1.0,0.636,ad|app cache|crash|edit|favorite news app|feed|feedback|few day|memory|point|popups|recent update|stability|tab|update,cache|crash|memory|news app|popups|update
+171710,3,3,1,0.333,0.333,0.333,0.667,0.667,0.667,customize pin|its not work|sms,customize pin|send sms|try 1million times
+172441,5,4,0,0.0,0.0,0,0.2,0.25,0.222,ad|clear cache|help|only problem|ram,additions|cache clearing|ram boost|usability
+172574,8,5,3,0.375,0.6,0.462,0.75,0.6,0.667,driver|help|help menu|menu|problem|trip|trip history|uber,dark mode|driver|help menu|search bar|trip history
+172960,3,4,1,0.333,0.25,0.286,0.333,0.25,0.286,notification|obnoxious amount|time,navigation|notification|setting|uninstall
+173608,3,2,0,0.0,0.0,0,0.0,0.0,0,ad|app> address|good app,free version|more features
+173825,7,7,0,0.0,0.0,0,0.286,0.286,0.286,but massive caveat|estimate|exorbitant rat|most impersonal assistance|time|uber's response|wall,assistance|charge|convenience|jargon|price fluctuation|response|robbed
+173952,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,search,search
+174157,14,7,4,0.286,0.571,0.381,0.643,0.714,0.677,ad|another complete uninstall|download|error|fresh clean install|just htc phone|m9|map|new map|new version|pain|phone|version|yet another new version,error|htc phone|m8|m9|map|new version|start
+175138,4,3,3,0.75,1.0,0.857,1.0,1.0,1.0,automatic selection|cutout|picture|picture cut,automatic selection|cutout|picture cut
+175283,1,2,0,0.0,0.0,0,1.0,0.5,0.667,video,export process|video export
+175889,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,sign in,app|sign in
+176212,2,5,1,0.5,0.2,0.286,1.0,0.4,0.571,expression|old emojis,change|expressions|new emojis|old emojis|visibility
+176296,4,2,0,0.0,0.0,0,0.25,0.5,0.333,ad|exect translate option|option|save file,exact translate|listen save file
+176396,11,4,1,0.091,0.25,0.133,0.182,0.5,0.267,another option|both rider|cab driver|daily rider|digit|more than 6km|pool price increase|ride|uber go|uber pool price|wait time,cancellation frequency|price increase|search bar|wait time
+176398,2,2,0,0.0,0.0,0,0.5,0.5,0.5,notification|notification bar,duplicates|notification management
+176617,8,2,2,0.25,1.0,0.4,0.25,1.0,0.4,ad|best browser app|best part|m4a type song|player|request|support|thanx,m4a type song|player
+176651,4,3,1,0.25,0.333,0.286,0.25,0.333,0.286,ad|ads|phone|ton,ads|corruption|recommendation
+176706,3,3,0,0.0,0.0,0,0.667,0.333,0.444,request|subscription|subscription pop,app behavior|print function|subscription pop up
+176723,12,4,2,0.167,0.5,0.25,0.5,0.75,0.6,ad|ads|article ads|crash|digit> break widget|fully stock pixel|latest version|original news sit|their stuff|these constant crash|version|widget,clickable|crash|in article ads|widget
+176948,2,2,1,0.5,0.5,0.5,1.0,0.5,0.667,new update|update,slowly|update
+178725,15,5,1,0.067,0.2,0.1,0.067,0.2,0.1,ad|crash|edit|favourite pic|image|install|limitless option|photo|photos|photoshop edit|program|stuff|stun image|text|two year,crash|dark mode|options|response|search bar
+178930,6,4,3,0.5,0.75,0.6,0.667,0.75,0.706,ad|ads|advertise|cleaner software|virus|virus protection,ads|advertising|cleaner software|virus
+178938,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,ad|functionality|uninstall functionality,uninstall functionality
+179082,10,5,2,0.2,0.4,0.267,0.3,0.4,0.343,30mins|ad|another ride|cancellation|driver|driver problem|his mistake|ride|suggestion|time,cancellation|dark mode|driver problem|penalization|search bar
+179608,7,5,3,0.429,0.6,0.5,0.429,0.6,0.5,cab driver|call|customer|fine|money|trip|waste time,cab driver|choose not to|complain|fine|trip
+180223,4,2,1,0.25,0.5,0.333,0.75,1.0,0.857,autofill page|page|pdf|support,autofill page|save page as pdf
+180480,13,6,1,0.077,0.167,0.105,0.308,0.5,0.381,ad|advance|but its miss|issue|its get|light app|other program|phone|program|reply|s3|search|version,dark mode|light app|porn hiding|program advancement|search bar|settings
+180646,3,3,2,0.667,0.667,0.667,0.667,0.667,0.667,edit|issue|pic,edit|pic|save
+180667,5,4,0,0.0,0.0,0,0.4,0.5,0.444,chargering fee|destination|driver|inaccurate rout|tab,charging fee|driver behavior|inaccurate route|wait time
+181886,12,4,2,0.167,0.5,0.25,0.5,0.75,0.6,call|call but it|description|end|fact|miss call|number|option|private number|recent call tab|safe browse option|tab,private number|recent call tab|safe browse|search bar
+181987,14,6,0,0.0,0.0,0,0.357,0.5,0.417,ad|apps|change|every theme|home screen|lol|new thing|person|screen|theme|use|way|widget|widget thing,app appearance|dark mode|home screen changes|search bar|theme download|widgets
+182702,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,update,update
+183202,7,5,1,0.143,0.2,0.167,0.429,0.4,0.414,amex card|instal|payment|payment method|ride|stupid app|try to get a ride my amex card,dark mode|payment method|ride request|search bar|ux
+183416,10,5,3,0.3,0.6,0.4,0.7,1.0,0.824,complete opposite direction|driver|majority|more time|navigation|people|pool|their navigation|time|way,direction|driver cancel|navigation|pool|time
+183656,12,4,1,0.083,0.25,0.125,0.667,1.0,0.8,ease|edit|excellent photo edit app|feature|new function|new photo edit app cause|past|photo|those function|ui|uninstalling|use,ease of use|favorite feature|new function|photo edit
+184120,14,7,1,0.071,0.143,0.095,0.286,0.429,0.343,ad|ads|ads i be always so late and i|alarm|be|bed|device|flash|ring alarm|screen|screen so you|some cheap wallpaper|time never stop i|wall paper,ads|dark mode|delete|search bar|set alarm|uninstall|wallpaper
+184305,2,4,0,0.0,0.0,0,0.5,0.25,0.333,op|virus,op functionality|scan feature|user satisfaction|virus detection
+184759,7,5,3,0.429,0.6,0.5,0.714,0.8,0.755,account|first and last name|password|password recovery|problem|support|use,account|first name|last name|password recovery|support
+185168,8,4,1,0.125,0.25,0.167,0.25,0.5,0.333,core|digit|force|limit|not a fan|order|problem|response,core mag|dark mode|limit|search bar
+185281,9,6,1,0.111,0.167,0.133,0.556,0.833,0.667,ad|balloon|last straw|lock screen nonsense|obtrusive mess|program|screen|simple antiviral protection|some additional system cleanup tool,additional system cleanup|antivirus protection|lock screen|mess|obtrusive|program
+186059,2,2,1,0.5,0.5,0.5,1.0,0.5,0.667,entire phone|phone,entire phone|take over
+186679,10,5,3,0.3,0.6,0.4,0.3,0.6,0.4,best <app> out there update|crash|edit|filter|guy|image|image edit screen|screen|slider|update,crash|dark mode|filter|search bar|slider
+186852,7,5,2,0.286,0.4,0.333,0.857,0.8,0.828,account|new account|new email|new number no access|new phone number|patronage|phone,account|email|new number access|patronage|phone number
+186969,6,3,2,0.333,0.667,0.444,0.667,1.0,0.8,ad|ads|cleaner app|page screen|screen|screen lock page,ads|cleaner app|screen lock
+187704,4,4,2,0.5,0.5,0.5,0.75,0.75,0.75,battery|battery app|favorite app|spam,battery notification|favorite app|spam|uninstalled
+187755,4,1,0,0.0,0.0,0,0.5,1.0,0.667,ad|best app|edit|edit tutorial function,edit tutorial
+187761,13,4,0,0.0,0.0,0,0.154,0.5,0.235,ad|background stuff|freeze|help|latest update|lead|lot|only concern|other launcher|phone|run apps|ui|update,background tasks|launcher|phone freezing|speed
+188006,5,3,1,0.2,0.333,0.25,0.4,0.333,0.364,ad|ads|aps|nice job|too many ads,add apps|ads|frequency
+188343,2,1,0,0.0,0.0,0,0.5,1.0,0.667,ad|video,video download
+188388,3,3,1,0.333,0.333,0.333,1.0,0.667,0.8,mu phone|phone|trash,cleaning|mu phone|trash detection
+188411,1,1,0,0.0,0.0,0,1.0,1.0,1.0,incorrect solution,solution
+188737,6,4,2,0.333,0.5,0.4,0.5,0.5,0.5,data|junk|network data|phone|problem|solution,app|junk|network data|speed
+188994,2,2,1,0.5,0.5,0.5,0.5,0.5,0.5,battery|fix,battery|security
+189548,4,1,0,0.0,0.0,0,0.25,1.0,0.4,card|fund|order|some problem,receive order
+190153,6,3,1,0.167,0.333,0.222,0.5,1.0,0.667,another app|developer's help|good app|help|tab|use,developer's help|instability|unstable
+190538,1,4,0,0.0,0.0,0,0.0,0.0,0,ad,app|clear|load|smiley
+190567,9,3,0,0.0,0.0,0,0.0,0.0,0,ad|application|deepest request|deepest requst|dians|great loss|threat|war|way,dark mode|search bar|settings
+190733,15,7,3,0.2,0.429,0.273,0.4,0.571,0.471,ad|ads|constant ads|gold version|last update|little virus|need|online|phone|shoot ads|so that everytime|such a great program|support|update|version,ads|constant ads|dark mode|gold version|loading speed|search bar|virus
+190785,4,3,2,0.5,0.667,0.571,1.0,1.0,1.0,gallery|new update|picture|update,gallery|picture saving|update
+191116,5,5,3,0.6,0.6,0.6,1.0,0.8,0.889,photo|song match|sync|user> video|video,photo|save|song|sync|video
+191383,9,5,3,0.333,0.6,0.429,0.667,0.8,0.727,background|booster|broom booster|float widget|notification|original version|phone|version|widget,background apps|broom booster|notification|search bar|widget
+191673,8,3,1,0.125,0.333,0.182,0.5,1.0,0.667,ad|ads|clean master ad|first place|incidentally ads|phone|phone mean|use,ads|clean master|phone open
+191722,6,4,2,0.333,0.5,0.4,1.0,0.75,0.857,fast n|folder|folder word|search|search bar|search bar word,dark mode|fast|folder|search bar
+192089,1,1,0,0.0,0.0,0,1.0,1.0,1.0,no manual blur option,manual blur option
+192203,5,1,0,0.0,0.0,0,0.6,1.0,0.75,best photo editor|edit|feature|interest feature|photo,photo editor
+192341,9,7,3,0.333,0.429,0.375,0.889,0.714,0.792,all my problem|entire phone|force close|friemd|her phone|lag|lag force|phone|reboot untill,fix|force close|friend|lag|phone|problem|reboot
+192504,13,4,0,0.0,0.0,0,0.154,0.5,0.235,ad|app be great but if i|device|digit> star|edit|fix|image|photo|point|problem|quality|rat|top,dark mode|quality retention|save photo|search bar
+192652,4,3,2,0.5,0.667,0.571,1.0,0.667,0.8,lag|tab|tablet|very lag,app|lag|tablet
+192876,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,crash,crash
+193995,3,2,1,0.333,0.5,0.4,1.0,1.0,1.0,edit|file|pic edit,pic edit|save file
+194932,3,3,1,0.333,0.333,0.333,0.333,0.333,0.333,bug|help|many pic,bug|open|picsart
+195430,4,1,0,0.0,0.0,0,0.25,1.0,0.4,at least <digit> min|begin|driver|horrible time estimation,time estimation
+196011,17,14,4,0.235,0.286,0.258,0.471,0.5,0.485,ad|another one|edit|feature|huge problem|just a line|last update|little square pixilated line|photo|pic|problem|rubber|ruin|some kind|ui|unwanted part|update,add|battery|dark mode|delete|delete unwanted part|feature|line|loading speed|photo|pixilated|rubber|search bar|settings|update
+196384,4,3,1,0.25,0.333,0.286,0.75,0.667,0.706,ad|ads|cyber crime|much ads,ads|commit cyber crime|recommend
+197155,2,1,1,0.5,1.0,0.667,0.5,1.0,0.667,good create|shortcut,shortcut
+197364,3,4,1,0.333,0.25,0.286,0.667,0.5,0.571,ad|ads|load,ads|annoyance|loading speed|usability
+197379,6,5,1,0.167,0.2,0.182,0.5,0.6,0.545,any device|cam|device|free crop|photo|tab,cutout photo|dark mode|free crop|search bar|stability
+197500,1,3,0,0.0,0.0,0,0.0,0.0,0,virus,dark mode|search bar|settings
+197504,3,3,0,0.0,0.0,0,0.333,0.667,0.444,digit|video|whole,save functionality|save video|video duration
+198059,2,3,1,0.5,0.333,0.4,1.0,1.0,1.0,encrypt sd card|internal storage and memory use,encrypt sd card|internal storage|memory use
+198358,1,1,1,1.0,1.0,1.0,1.0,1.0,1.0,filter,filter
+198363,10,3,1,0.1,0.333,0.154,0.3,0.333,0.316,ad|date|digit> use|new queensferry cross|no update|premium|premium european version|road|update|version,dark mode|search bar|update
+199729,4,3,1,0.25,0.333,0.286,0.5,0.667,0.571,ad|ads|device|its start,ads|device speed|opening app
+199860,11,6,3,0.273,0.5,0.353,0.364,0.667,0.471,digit> edge|eror|galaxy note|hi team|response|side|social medium|update|week|widget|widget scren,dark mode|galaxy note|response|search bar|update|widget screen
+200188,6,5,4,0.667,0.8,0.727,0.833,0.8,0.816,button|digit|failure|password|redo password|sign in,button|can't|failure|redo password|sign in
+200721,8,4,3,0.375,0.75,0.5,0.375,0.75,0.5,ad|ads|ass <app|background|chrome|every single <app|pain|problem,ads|background|chrome|performance
+201034,16,12,6,0.375,0.5,0.429,0.75,0.917,0.825,ad|ads|article|background|clear cache|content|crash|data|galaxys8|help|jag|offensive content|time|when open news article|white page|wifi,ads cover up content|app crash|article do not load|background|clear cache|data|jag to scroll|news article|offensive content|slow|white page|wifi
+201154,4,3,1,0.25,0.333,0.286,0.75,1.0,0.857,ad|add come|battery|phone,add come|cause phone|damage battery
+202699,6,2,1,0.167,0.5,0.25,0.833,1.0,0.909,best photo edit app|edit|lot|photo|so many photo edit|space,photo edit|space
+202869,1,1,0,0.0,0.0,0,1.0,1.0,1.0,account,create account
+203382,1,2,1,1.0,0.5,0.667,1.0,0.5,0.667,camera,blurry|camera
+203456,3,5,1,0.333,0.2,0.25,0.667,0.4,0.5,ad|keyboard|two lady fashion,dark mode|fashion|keyboard|search bar|settings
+203668,5,4,1,0.2,0.25,0.222,0.4,0.75,0.522,ad|article|digit> day|earlier <user> ghost press|new york time magazine,article age|article flip|flip advance|new york time magazine
+203873,8,4,1,0.125,0.25,0.167,0.25,0.25,0.25,digit|few month|g . wsj|more neutral story e|note|one side|story|taste,dark mode|neutrality|search bar|story
+203884,8,6,1,0.125,0.167,0.143,0.375,0.333,0.353,account|ad|bbm|message|other <app> subscriber|other messenger|sign up|two message,consequently|dark mode|message|search bar|settings|subscriber
+204129,3,3,2,0.667,0.667,0.667,0.667,0.667,0.667,lag|phone|use,heat|lag|phone
+204204,8,4,0,0.0,0.0,0,0.125,0.25,0.167,ad|advertise|anoying|any task|cell|last update|real business|update,advertisement|dark mode|search bar|speed
+204386,8,4,1,0.125,0.25,0.167,0.375,0.5,0.429,battery|battery and background data|data|date|day|luv browser app|why my both <app> gaving sign|work,background data|battery|uninstall|usage
+205177,2,2,1,0.5,0.5,0.5,0.5,0.5,0.5,its absolute shite|update,quality|update
+205352,4,3,1,0.25,0.333,0.286,0.75,1.0,0.857,b random notification|battery|music|notification,battery drain|music|notifications
+205777,9,4,1,0.111,0.25,0.154,0.333,0.25,0.286,apology|dozen|feed|grand fork|lovely place|news|news feed|people|pointless app,news feed|settings|subscription|uninstall
+206266,5,3,2,0.4,0.667,0.5,0.6,0.667,0.632,beta tester|fact|screen|widget|widget screen,permissions|screen|widget
+207290,3,2,1,0.333,0.5,0.4,1.0,1.0,1.0,edit|picture|quality,edit|picture quality
+207368,6,3,1,0.167,0.333,0.222,0.5,1.0,0.667,ad|beautiful emojis|dynoseurs|news alert|phone|pop,emojis|news alert|pop up
+207463,9,3,0,0.0,0.0,0,0.333,0.667,0.444,ad|book|destination|fare|issue|its double the customer support|respond|support|very bad experience,customer support|fare calculation|response time
+207673,3,2,0,0.0,0.0,0,0.333,0.5,0.4,another uber|trip|uber driver,driver response|trip cancellation
+208107,10,3,0,0.0,0.0,0,0.4,1.0,0.571,ad|best ever photo edit application|edit|edit photo|low picture quality|more internal storage|photo|picture|request|smudge tool effect,internal storage|picture quality|smudge tool
+208432,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,ad|new update|update,new update
+209066,7,6,0,0.0,0.0,0,0.429,0.333,0.375,battery|device|digit> vires|every <digit> sec|help|problem|warn,battery damage|dark mode|device warning|scan process|search bar|threat detection
+209861,8,9,4,0.5,0.444,0.471,0.875,0.889,0.882,button|create option|location|other person pickup|third other person|third person pickup|trip|trip pickup location,button|create|drop create option|drop location|easily|other person pickup|pickup location|third person pickup|trip
+210293,11,7,2,0.182,0.286,0.222,0.364,0.571,0.444,ad|advertise|age|crash|devs|fantastic app|focus|no fix|phone|scan loop|too much bloatware,advertising|bloatware|crash|dark mode|focus|restart phone|search bar
+210337,6,5,2,0.333,0.4,0.364,0.667,0.8,0.727,battery|help|its main activity|phone|ram|use,battery|main activity|phone speed|ram|uninstall
+210430,6,5,1,0.167,0.2,0.182,0.667,0.6,0.632,apple product news|content|news|selection|time|title,american favor|apple product news|content matching|news selection|objectivity
+210495,3,2,2,0.667,1.0,0.8,0.667,1.0,0.8,ad|background|hd wallpaper,background|hd wallpaper
+210569,9,4,1,0.111,0.25,0.154,0.111,0.25,0.154,ad|crash|fix|i read some review that it|problem|some review|test|ui|v20,crash|dark mode|nougat|search bar
+210580,3,3,2,0.667,0.667,0.667,0.667,0.667,0.667,ad|application|icon,add|application|icon
+211104,8,4,1,0.125,0.25,0.167,0.125,0.25,0.167,ad|device|device change address|item|latest version|purchase|unrecoverable error|version,address change|availability|error report|purchase
+211161,8,3,0,0.0,0.0,0,0.125,0.333,0.182,basturd|cab|car|his car|his house|house|location|pick,cab service|dark mode|search bar
+212437,4,5,2,0.5,0.4,0.444,1.0,0.6,0.75,artistic picture|color|life|picture,color|create artistic pictures|ease of use|fun|life
+212734,12,5,1,0.083,0.2,0.118,0.417,0.4,0.408,all the notification|barrage|barrage of notification|feature|ironic twist|multiple time|notification|op constant notification|other apps|phone|update|worst app,clean your phone|dark mode|notification|settings|toggle
+213124,9,4,0,0.0,0.0,0,0.222,0.5,0.308,destination|digit|fix|funny thing|gf|help|issue|trip|update,change destination|dark mode|search bar|update september
+213188,7,3,2,0.286,0.667,0.4,0.286,0.667,0.4,ad|bottom|comment banner|news story|option|start|these thing,comment banner|news story|shut off
+214093,3,1,1,0.333,1.0,0.5,0.667,1.0,0.8,ad|no watermark|watermark,watermark
+214241,3,3,1,0.333,0.333,0.333,1.0,0.667,0.8,edit|pic|quality,edit|pic quality|reduce
+214506,2,1,0,0.0,0.0,0,0.5,1.0,0.667,front cam flash update|update,front cam flash
+214657,2,1,0,0.0,0.0,0,0.5,1.0,0.667,screen|support,screen size
+214779,4,5,1,0.25,0.2,0.222,0.5,0.2,0.286,hey <app> group|phone|update|window phone,android|dark mode|grouping|search bar|window phone
+214876,9,2,2,0.222,1.0,0.364,0.444,1.0,0.615,battery|battery repair|fix|main reason|partner|phone|phone cooler|untill|work,battery repair|phone cooler
+215132,11,4,0,0.0,0.0,0,0.182,0.5,0.267,coincidence|gossip filler noise generator|interest|notification|picture|politcs|purpose|software|start|topic|user,dark mode|notification spam|picture representation|search bar
+215187,3,3,0,0.0,0.0,0,0.667,0.667,0.667,great experience|multiple option|need beautiful dashboard,dashboard|multiple options|personalize

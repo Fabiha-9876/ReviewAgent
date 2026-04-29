@@ -1,0 +1,167 @@
+{
+  "n_reviews_compared": 581,
+  "n_with_any_overlap": 390,
+  "n_zero_overlap": 191,
+  "exact": {
+    "macro_precision": 0.2274,
+    "macro_recall": 0.3423,
+    "macro_f1": 0.2542
+  },
+  "substring_tolerant": {
+    "macro_precision": 0.506,
+    "macro_recall": 0.6244,
+    "macro_f1": 0.5295
+  },
+  "top_aspect_pairs_substring": [
+    {
+      "heur": "ad",
+      "llm": "ads",
+      "count": 44
+    },
+    {
+      "heur": "ad",
+      "llm": "advertisement",
+      "count": 9
+    },
+    {
+      "heur": "screen",
+      "llm": "lock screen",
+      "count": 8
+    },
+    {
+      "heur": "ad",
+      "llm": "download",
+      "count": 8
+    },
+    {
+      "heur": "notification",
+      "llm": "notifications",
+      "count": 7
+    },
+    {
+      "heur": "ad",
+      "llm": "loading speed",
+      "count": 5
+    },
+    {
+      "heur": "screen",
+      "llm": "home screen",
+      "count": 4
+    },
+    {
+      "heur": "phone",
+      "llm": "phone speed",
+      "count": 4
+    },
+    {
+      "heur": "search",
+      "llm": "search bar",
+      "count": 4
+    },
+    {
+      "heur": "image",
+      "llm": "image quality",
+      "count": 3
+    },
+    {
+      "heur": "new update",
+      "llm": "update",
+      "count": 3
+    },
+    {
+      "heur": "data",
+      "llm": "data usage",
+      "count": 3
+    },
+    {
+      "heur": "battery",
+      "llm": "battery drain",
+      "count": 3
+    },
+    {
+      "heur": "ad",
+      "llm": "loading",
+      "count": 3
+    },
+    {
+      "heur": "update",
+      "llm": "recent update",
+      "count": 3
+    },
+    {
+      "heur": "too many ads",
+      "llm": "ads",
+      "count": 3
+    },
+    {
+      "heur": "cab",
+      "llm": "cab service",
+      "count": 3
+    },
+    {
+      "heur": "support",
+      "llm": "customer support",
+      "count": 3
+    },
+    {
+      "heur": "version",
+      "llm": "new version",
+      "count": 3
+    },
+    {
+      "heur": "latest update",
+      "llm": "update",
+      "count": 3
+    },
+    {
+      "heur": "phone",
+      "llm": "phone lag",
+      "count": 2
+    },
+    {
+      "heur": "lag",
+      "llm": "phone lag",
+      "count": 2
+    },
+    {
+      "heur": "error",
+      "llm": "error message",
+      "count": 2
+    },
+    {
+      "heur": "song",
+      "llm": "song playback",
+      "count": 2
+    },
+    {
+      "heur": "message",
+      "llm": "error message",
+      "count": 2
+    },
+    {
+      "heur": "permission",
+      "llm": "permissions",
+      "count": 2
+    },
+    {
+      "heur": "pop",
+      "llm": "pop up",
+      "count": 2
+    },
+    {
+      "heur": "data",
+      "llm": "app data",
+      "count": 2
+    },
+    {
+      "heur": "battery",
+      "llm": "battery repair",
+      "count": 2
+    },
+    {
+      "heur": "edit",
+      "llm": "edit app",
+      "count": 2
+    }
+  ]
+}

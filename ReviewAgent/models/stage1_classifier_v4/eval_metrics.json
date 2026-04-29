@@ -1,0 +1,154 @@
+{
+  "train_time_hours": 28.878790758649508,
+  "n_train": 60126,
+  "n_val": 7516,
+  "n_test": 7516,
+  "max_per_class_cap": 15000,
+  "balanced_distribution": {
+    "other": 15000,
+    "feature_request": 15000,
+    "performance": 7644,
+    "bug_report": 15000,
+    "praise": 15000,
+    "usability": 7504,
+    "compatibility": 10
+  },
+  "test_classification_report": {
+    "bug_report": {
+      "precision": 0.8317520556609741,
+      "recall": 0.8766666666666667,
+      "f1-score": 0.8536189548847777,
+      "support": 1500.0
+    },
+    "feature_request": {
+      "precision": 0.8652530779753762,
+      "recall": 0.8433333333333334,
+      "f1-score": 0.8541525995948683,
+      "support": 1500.0
+    },
+    "performance": {
+      "precision": 0.7885783718104495,
+      "recall": 0.8483660130718954,
+      "f1-score": 0.8173803526448362,
+      "support": 765.0
+    },
+    "usability": {
+      "precision": 0.7214285714285714,
+      "recall": 0.808,
+      "f1-score": 0.7622641509433963,
+      "support": 750.0
+    },
+    "compatibility": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "praise": {
+      "precision": 0.9104046242774566,
+      "recall": 0.84,
+      "f1-score": 0.8737864077669902,
+      "support": 1500.0
+    },
+    "other": {
+      "precision": 0.8338008415147266,
+      "recall": 0.7926666666666666,
+      "f1-score": 0.8127136021872864,
+      "support": 1500.0
+    },
+    "accuracy": 0.8360830228845131,
+    "macro avg": {
+      "precision": 0.7073167918096507,
+      "recall": 0.7155760971055088,
+      "f1-score": 0.7105594382888792,
+      "support": 7516.0
+    },
+    "weighted avg": {
+      "precision": 0.8390300402008014,
+      "recall": 0.8360830228845131,
+      "f1-score": 0.8366686308717045,
+      "support": 7516.0
+    }
+  },
+  "test_confusion_matrix": [
+    [
+      1315,
+      41,
+      39,
+      61,
+      0,
+      2,
+      42
+    ],
+    [
+      73,
+      1265,
+      50,
+      45,
+      0,
+      20,
+      47
+    ],
+    [
+      61,
+      13,
+      649,
+      13,
+      0,
+      1,
+      28
+    ],
+    [
+      36,
+      26,
+      23,
+      606,
+      0,
+      27,
+      32
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      20,
+      48,
+      24,
+      60,
+      0,
+      1260,
+      88
+    ],
+    [
+      76,
+      69,
+      38,
+      55,
+      0,
+      73,
+      1189
+    ]
+  ],
+  "labels": [
+    "bug_report",
+    "feature_request",
+    "performance",
+    "usability",
+    "compatibility",
+    "praise",
+    "other"
+  ],
+  "hyperparams": {
+    "epochs": 3,
+    "batch_size": 16,
+    "lr": 2e-05,
+    "max_length": 256,
+    "seed": 42
+  }
+}
