@@ -1,0 +1,13 @@
+metric,V3,V4,V5
+macro_f1,0.405,0.4123,0.3625
+micro_f1,0.7199,0.6507,0.5109
+weighted_f1,0.7504,0.7395,0.6192
+
+per_class_f1,V3,V4,V5
+bug_report,0.883,0.749,0.534
+feature_request,0.648,0.648,0.622
+performance,0.0,0.0,0.0
+usability,0.0,0.0,0.0
+compatibility,0.0,0.0,0.0
+praise,0.673,0.772,0.704
+other,0.632,0.718,0.677

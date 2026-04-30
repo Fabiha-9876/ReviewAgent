@@ -1,0 +1,68 @@
+{
+  "holdout_size": 4412,
+  "ground_truth_label": "corrected_v2_label",
+  "ground_truth_distribution": {
+    "bug_report": 1858,
+    "other": 909,
+    "praise": 1233,
+    "feature_request": 412
+  },
+  "stratification_label": "v5_label",
+  "per_v5_label_counts": {
+    "bug_report": 700,
+    "feature_request": 700,
+    "performance": 700,
+    "usability": 700,
+    "compatibility": 212,
+    "praise": 700,
+    "other": 700
+  },
+  "caveat": "V4 was trained on the corrected_v2_label distribution and may have a structural advantage. V5 trained on V2-corrected + compat aug. V3 trained on V1-corrected.",
+  "models": {
+    "v3": {
+      "macro_f1": 0.405,
+      "micro_f1": 0.7199,
+      "weighted_f1": 0.7504,
+      "per_class_f1": {
+        "bug_report": 0.883,
+        "feature_request": 0.648,
+        "performance": 0.0,
+        "usability": 0.0,
+        "compatibility": 0.0,
+        "praise": 0.673,
+        "other": 0.632
+      },
+      "inference_sec": 104.4
+    },
+    "v4": {
+      "macro_f1": 0.4123,
+      "micro_f1": 0.6507,
+      "weighted_f1": 0.7395,
+      "per_class_f1": {
+        "bug_report": 0.749,
+        "feature_request": 0.648,
+        "performance": 0.0,
+        "usability": 0.0,
+        "compatibility": 0.0,
+        "praise": 0.772,
+        "other": 0.718
+      },
+      "inference_sec": 116.6
+    },
+    "v5": {
+      "macro_f1": 0.3625,
+      "micro_f1": 0.5109,
+      "weighted_f1": 0.6192,
+      "per_class_f1": {
+        "bug_report": 0.534,
+        "feature_request": 0.622,
+        "performance": 0.0,
+        "usability": 0.0,
+        "compatibility": 0.0,
+        "praise": 0.704,
+        "other": 0.677
+      },
+      "inference_sec": 101.1
+    }
+  }
+}

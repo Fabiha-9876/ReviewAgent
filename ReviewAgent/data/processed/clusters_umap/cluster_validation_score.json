@@ -1,0 +1,252 @@
+{
+  "n_total": 50,
+  "n_judged": 50,
+  "overall_purity": 0.66,
+  "overall_counts": {
+    "P": 24,
+    "N": 5,
+    "Y": 21
+  },
+  "per_class": {
+    "bug_report": {
+      "purity": 0.6666666666666666,
+      "Y": 6,
+      "P": 8,
+      "N": 1,
+      "n": 15
+    },
+    "compatibility": {
+      "purity": 0.625,
+      "Y": 1,
+      "P": 3,
+      "N": 0,
+      "n": 4
+    },
+    "feature_request": {
+      "purity": 0.6333333333333333,
+      "Y": 6,
+      "P": 7,
+      "N": 2,
+      "n": 15
+    },
+    "performance": {
+      "purity": 0.8,
+      "Y": 7,
+      "P": 2,
+      "N": 1,
+      "n": 10
+    },
+    "usability": {
+      "purity": 0.5,
+      "Y": 1,
+      "P": 4,
+      "N": 1,
+      "n": 6
+    }
+  },
+  "failed_clusters": [
+    {
+      "cluster_id": "c_00004",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: driver / uber / ride",
+      "verdict": "P",
+      "notes": "Sample 5 is not a bug"
+    },
+    {
+      "cluster_id": "c_00008",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: lock screen / notification / screen",
+      "verdict": "N",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00026",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: video / gallery / edit",
+      "verdict": "P",
+      "notes": "Sample 3 is not a pure bug"
+    },
+    {
+      "cluster_id": "c_00018",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: quality / photo / image",
+      "verdict": "P",
+      "notes": "Sample 5 is not a bug"
+    },
+    {
+      "cluster_id": "c_00047",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: notification / push notification / message",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00048",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: device",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00042",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: virus / malware / antivirus",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00053",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: problem",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00021",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: new version / new update / old version",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00065",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: driver / uber / map",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00099",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: too many ads / advertisement / screen",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00066",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: video / sound / edit",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00097",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: news / article / feed",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00087",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: improvement",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00096",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: option",
+      "verdict": "N",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00079",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: sticker / more sticker / frame",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00075",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: old version / older version / new version",
+      "verdict": "N",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00114",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: photo / photo edit / edit",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00121",
+      "issue_type": "performance",
+      "auto_name": "performance: photo / picture / quality",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00144",
+      "issue_type": "performance",
+      "auto_name": "performance: too many ads / battery / too much ads",
+      "verdict": "N",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00122",
+      "issue_type": "performance",
+      "auto_name": "performance: driver / gps / map",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00187",
+      "issue_type": "usability",
+      "auto_name": "usability: news / article / notification",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00188",
+      "issue_type": "usability",
+      "auto_name": "usability: too many ads / screen / ui",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00161",
+      "issue_type": "usability",
+      "auto_name": "usability: driver / uber / ride",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00189",
+      "issue_type": "usability",
+      "auto_name": "usability: virus / battery / device",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00179",
+      "issue_type": "usability",
+      "auto_name": "usability: photo / edit / photo edit",
+      "verdict": "N",
+      "notes": "All are praise type"
+    },
+    {
+      "cluster_id": "c_00193",
+      "issue_type": "compatibility",
+      "auto_name": "compatibility: camera / samsung galaxy s7 / samsung galaxy s5",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00192",
+      "issue_type": "compatibility",
+      "auto_name": "compatibility: app> lock / applock / fingerprint",
+      "verdict": "P",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00191",
+      "issue_type": "compatibility",
+      "auto_name": "compatibility: internal error / galaxy s7 / sign in",
+      "verdict": "P",
+      "notes": ""
+    }
+  ]
+}
