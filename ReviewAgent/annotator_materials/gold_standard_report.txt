@@ -1,0 +1,52 @@
+==============================================================================
+EXPERT GOLD-STANDARD VALIDATION (n=490 reviews)
+==============================================================================
+
+METHODOLOGY:
+  490 reviews labeled by lead author (domain expert) using a stratified
+  sample (70 per class × 7 classes). Three classifiers serve as
+  independent annotators against this gold standard.
+
+EXPERT LABEL DISTRIBUTION:
+  bug_report           79
+  feature_request      35
+  performance          63
+  usability            60
+  compatibility        51
+  praise               84
+  other               117
+
+==============================================================================
+CLASSIFIER vs EXPERT (Cohen's κ — primary reliability metric)
+==============================================================================
+classifier                         n   accuracy    cohen_κ   macro_f1
+------------------------------------------------------------------------------
+V2_LLM_original                  489     0.3006     0.1633     0.2178
+corrected_v2_cleanlab            489     0.4417     0.3326     0.3788
+V5_classifier                    489     0.6503     0.5921     0.6533
+
+Interpretation of Cohen's κ:
+  > 0.81  almost perfect agreement
+  0.61-0.80  substantial agreement
+  0.41-0.60  moderate agreement
+  0.21-0.40  fair agreement
+  < 0.20  slight agreement
+
+==============================================================================
+PER-CLASS F1 vs EXPERT
+==============================================================================
+class                     V2_LLM_original  corrected_v2_cleanlab          V5_classifier
+bug_report                   0.417 (n= 79)           0.448 (n= 79)           0.577 (n= 79) 
+feature_request              0.319 (n= 35)           0.371 (n= 35)           0.571 (n= 35) 
+performance                  0.000 (n= 63)           0.473 (n= 63)           0.767 (n= 63) 
+usability                    0.105 (n= 60)           0.265 (n= 60)           0.554 (n= 60) 
+compatibility                0.000 (n= 51)           0.000 (n= 51)           0.826 (n= 51) 
+praise                       0.382 (n= 84)           0.623 (n= 84)           0.675 (n= 84) 
+other                        0.301 (n=117)           0.472 (n=117)           0.602 (n=117) 
+
+==============================================================================
+PAIRWISE COHEN κ (between classifiers, independent of expert)
+==============================================================================
+  V2_vs_corrected                κ = 0.7297
+  V2_vs_V5                       κ = 0.3130
+  corrected_vs_V5                κ = 0.4489
