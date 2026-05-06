@@ -1,0 +1,15 @@
+======================================================================
+Lagrangian Constrained PPO — Custom RL Loop
+======================================================================
+Method: REINFORCE-with-KL + Lagrangian dual update (trl-free)
+Constraint: avg_safety >= 0.5
+Steps: 30
+Batch size: 4
+Training time: 1.5 min
+
+Trajectory:
+  initial:  quality=0.368  safety=0.938  lambda=0.500
+  final:    quality=0.192    safety=0.979  lambda=0.000
+
+Constraint satisfied at end: YES
+Lambda growth: -0.500 (positive = constraint was active)

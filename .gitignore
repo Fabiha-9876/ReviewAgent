@@ -71,3 +71,14 @@ ReviewAgent/logs/
 
 # Notebooks checkpoints
 notebooks/.ipynb_checkpoints/
+
+# Aim 2: open-source app clones (too large for git)
+ReviewAgent/data/processed/aim2_real_resolution/AntennaPod/
+
+# RLHF model checkpoints (large, regeneratable)
+ReviewAgent/data/processed/rlhf/sft_base/
+ReviewAgent/data/processed/rlhf/kto_model/
+ReviewAgent/data/processed/rlhf/dpo_model/
+ReviewAgent/data/processed/rlhf/constrained_proxy/
+ReviewAgent/data/processed/rlhf/lagrangian_ppo/
+ReviewAgent/data/processed/rlhf/sft_base/checkpoint-*/

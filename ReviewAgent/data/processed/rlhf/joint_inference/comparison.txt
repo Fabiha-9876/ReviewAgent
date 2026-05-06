@@ -1,0 +1,30 @@
+======================================================================
+Joint Quality + Safety Inference (KTO+DPO logit ensemble)
+======================================================================
+alpha = 0.0 → pure DPO (paired quality preferences)
+alpha = 1.0 → pure KTO (binary safety/usefulness feedback)
+alpha = 0.5 → equal weight (joint quality+safety policy)
+
+----------------------------------------------------------------------
+prompt: Review: can't trust on it at all . when we need it most . it do not serve . i could have miss my fli
+  α=0.0:  hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+  α=0.25:  hi thank for your question . i have a question about your question . i have a question about your question . i have a q
+  α=0.5:  hi thank for your question . i have a question about the app . i have a question about the app . i have a question abou
+  α=0.75:  hi thank for your question . i have a question about the app . i have a question about the app . i have a question abou
+  α=1.0:  hi . i have to say that i have to be very careful with my app . i have to say that i have to be very careful with my ap
+
+----------------------------------------------------------------------
+prompt: Review: be work well until they put ads on the lock screen as well . thus totally screw up your alar
+  α=0.0:  hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+  α=0.25:  hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+  α=0.5:  hi thank for your question . we have a problem with the lock screen . we have to fix it . we have to fix it by the time
+  α=0.75:  hi thank for the question . we have a problem with the lock screen . we have to fix it . we have to fix it by the time 
+  α=1.0:  no, this is not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . 
+
+----------------------------------------------------------------------
+prompt: Review: guy your new update suck now i cant copy <user> select portion from <user> pic which i be us
+  α=0.0:  hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . 
+  α=0.25:  hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . 
+  α=0.5:  hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your fe
+  α=0.75:  hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your fe
+  α=1.0:  hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your fe

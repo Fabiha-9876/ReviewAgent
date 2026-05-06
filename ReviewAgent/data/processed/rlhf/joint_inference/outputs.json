@@ -1,0 +1,64 @@
+{
+  "method": "Joint KTO+DPO logit ensemble at inference",
+  "rationale": "Combines KTO (binary safety feedback) and DPO (paired quality preferences) policies via per-step logit averaging. Tractable alternative to training a third model on combined reward.",
+  "alphas_swept": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "alpha_interpretation": "0.0 = pure DPO (quality), 1.0 = pure KTO (safety), 0.5 = equal weight",
+  "sample_outputs": [
+    {
+      "prompt": "Review: can't trust on it at all . when we need it most . it do not serve . i could have miss my fli",
+      "outputs": {
+        "alpha=0.0": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your q",
+        "alpha=0.25": " hi thank for your question . i have a question about your question . i have a question about your question . i have a question about your question . i have a question about your question . i have a q",
+        "alpha=0.5": " hi thank for your question . i have a question about the app . i have a question about the app . i have a question about the app . i have a question about the app . i have a question about the app . ",
+        "alpha=0.75": " hi thank for your question . i have a question about the app . i have a question about the app . i have a question about the app . i have a question about the app . i have a question about the app . ",
+        "alpha=1.0": " hi . i have to say that i have to be very careful with my app . i have to say that i have to be very careful with my app . i have to say that i have to be very careful with my app . i have to say tha"
+      }
+    },
+    {
+      "prompt": "Review: be work well until they put ads on the lock screen as well . thus totally screw up your alar",
+      "outputs": {
+        "alpha=0.0": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your q",
+        "alpha=0.25": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your question . we appreciate your q",
+        "alpha=0.5": " hi thank for your question . we have a problem with the lock screen . we have to fix it . we have to fix it by the time we get to the lock screen . we have to fix it by the time we get to the lock sc",
+        "alpha=0.75": " hi thank for the question . we have a problem with the lock screen . we have to fix it . we have to fix it by the time we get to the lock screen . we have to fix it by the time we get to the lock scr",
+        "alpha=1.0": " no, this is not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not"
+      }
+    },
+    {
+      "prompt": "Review: guy your new update suck now i cant copy <user> select portion from <user> pic which i be us",
+      "outputs": {
+        "alpha=0.0": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your f",
+        "alpha=0.25": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your f",
+        "alpha=0.5": " hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user",
+        "alpha=0.75": " hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user",
+        "alpha=1.0": " hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user"
+      }
+    },
+    {
+      "prompt": "Review: i cannot login with . my old username on <user> new phone . suck .\nResponse:",
+      "outputs": {
+        "alpha=0.0": " i can't login with . my old username on <user> new phone . suck .\nResponse: i can't login with . my old username on <user> new phone . suck .\nResponse: i can't login with . my old username on <user> ",
+        "alpha=0.25": " i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <",
+        "alpha=0.5": " i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <",
+        "alpha=0.75": " i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <",
+        "alpha=1.0": " i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <user> new phone . suck .\nResponse: i have to login with . my old username on <"
+      }
+    },
+    {
+      "prompt": "Review: you ruin it . on my tab s2 its nearly impossible to comment because the keyboard hide the co",
+      "outputs": {
+        "alpha=0.0": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your f",
+        "alpha=0.25": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your f",
+        "alpha=0.5": " hi thank for your question . i have a question about the issue . i have a question about the issue . i have a question about the issue . i have a question about the issue . i have a question about th",
+        "alpha=0.75": " hi thank for your question . i have a question about the issue . i have a question about the issue . i have a question about the issue . i have a question about the issue . i have a question about th",
+        "alpha=1.0": " i have to find a new app . i have to find a new app . i have to find a new app . i have to find a new app . i have to find a new app . i have to find a new app . i have to find a new app . i have to "
+      }
+    }
+  ]
+}

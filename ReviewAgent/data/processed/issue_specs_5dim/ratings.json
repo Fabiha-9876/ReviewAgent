@@ -1,0 +1,4022 @@
+[
+  {
+    "cluster_id": "c_00004",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00008",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00019",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00005",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00045",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00026",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00018",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00016",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00047",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00048",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00042",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00053",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00011",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00021",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00027",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00051",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00039",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00046",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00040",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00032",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00041",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00025",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00022",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00055",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00044",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00038",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00037",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00049",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00023",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00058",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00065",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00099",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00066",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00097",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00087",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00111",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00096",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00074",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00079",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00075",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00069",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00092",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00081",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00114",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00116",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00100",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00076",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00101",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00064",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00073",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00098",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00105",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00094",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00068",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00109",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00095",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00088",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00117",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00070",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00060",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00121",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00144",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00145",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00132",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00122",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00153",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00137",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00151",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00142",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00146",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00157",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00127",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00140",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00158",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00159",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00124",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00129",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00135",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00134",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00138",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00187",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00188",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00161",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00177",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00189",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00179",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00160",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00185",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00183",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00184",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00180",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00171",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 2,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00173",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00166",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00168",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00170",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00194",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00193",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 5,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00192",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00191",
+    "condition": "llm_with_taxonomy",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 5,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 5,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00004",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00008",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00019",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00005",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00045",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00026",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00018",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00016",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00047",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00048",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00042",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00053",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00011",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00021",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00027",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00051",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00039",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 1,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 5
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00046",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00040",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00032",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00041",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 1,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00025",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00022",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00055",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00044",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 1,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00038",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 1,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00037",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00049",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00023",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00058",
+    "condition": "llm_free_form",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00065",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00099",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00066",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00097",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00087",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00111",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00096",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00074",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00079",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00075",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00069",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 5
+    }
+  },
+  {
+    "cluster_id": "c_00092",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00081",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00114",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00116",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00100",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00076",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00101",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00064",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00073",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00098",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00105",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00094",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00068",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00109",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00095",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00088",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00117",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00070",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00060",
+    "condition": "llm_free_form",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00121",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00144",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00145",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00132",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00122",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00153",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00137",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00151",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 1,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00142",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00146",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00157",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00127",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00140",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00158",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00159",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00124",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00129",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00135",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00134",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00138",
+    "condition": "llm_free_form",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00187",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00188",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00161",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00177",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00189",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00179",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00160",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00185",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00183",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00184",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00180",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00171",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00173",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 3
+    }
+  },
+  {
+    "cluster_id": "c_00166",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 3
+    },
+    "notes": "low specificity: relies on generic terms"
+  },
+  {
+    "cluster_id": "c_00168",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low specificity: relies on generic terms; low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00170",
+    "condition": "llm_free_form",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 3,
+      "template_adherence": 3,
+      "faithfulness": 2
+    },
+    "notes": "low token overlap with reviews (possibly inferred content)"
+  },
+  {
+    "cluster_id": "c_00194",
+    "condition": "llm_free_form",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00193",
+    "condition": "llm_free_form",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00192",
+    "condition": "llm_free_form",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00191",
+    "condition": "llm_free_form",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    }
+  },
+  {
+    "cluster_id": "c_00004",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00008",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00019",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00005",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00045",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00026",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00018",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00016",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00047",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00048",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00042",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00053",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00011",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00021",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00027",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00051",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00039",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00046",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00040",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00032",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00041",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00025",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00022",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00055",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00044",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00038",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00037",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00049",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00023",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00058",
+    "condition": "raw_summary",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00065",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00099",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00066",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00097",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00087",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00111",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00096",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00074",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00079",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00075",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00069",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00092",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00081",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00114",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00116",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00100",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00076",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00101",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00064",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00073",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00098",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00105",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00094",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00068",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00109",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00095",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00088",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00117",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00070",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00060",
+    "condition": "raw_summary",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 1,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00121",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00144",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00145",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00132",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00122",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00153",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00137",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00151",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00142",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00146",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00157",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00127",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00140",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00158",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00159",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00124",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00129",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00135",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00134",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00138",
+    "condition": "raw_summary",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00187",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00188",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00161",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00177",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00189",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00179",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00160",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00185",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00183",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00184",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00180",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00171",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00173",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00166",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00168",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00170",
+    "condition": "raw_summary",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00194",
+    "condition": "raw_summary",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00193",
+    "condition": "raw_summary",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00192",
+    "condition": "raw_summary",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00191",
+    "condition": "raw_summary",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 1,
+      "specificity": 1,
+      "severity_reasoning": 2,
+      "template_adherence": 2,
+      "faithfulness": 5
+    },
+    "notes": "raw_summary: only desc populated (verbatim review quotes); no title, no affected_component, severity defaults to P2; low specificity: relies on generic terms; severity poorly calibrated vs. rating distribution"
+  },
+  {
+    "cluster_id": "c_00004",
+    "condition": "human_written",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00008",
+    "condition": "human_written",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00019",
+    "condition": "human_written",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00005",
+    "condition": "human_written",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00045",
+    "condition": "human_written",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 5,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00026",
+    "condition": "human_written",
+    "issue_type": "bug_report",
+    "ratings": {
+      "completeness": 2,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00065",
+    "condition": "human_written",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00099",
+    "condition": "human_written",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00066",
+    "condition": "human_written",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00097",
+    "condition": "human_written",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00087",
+    "condition": "human_written",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 2,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms; human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00111",
+    "condition": "human_written",
+    "issue_type": "feature_request",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00121",
+    "condition": "human_written",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00144",
+    "condition": "human_written",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00145",
+    "condition": "human_written",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 3,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00132",
+    "condition": "human_written",
+    "issue_type": "performance",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 1,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "low specificity: relies on generic terms; human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00187",
+    "condition": "human_written",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00188",
+    "condition": "human_written",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00161",
+    "condition": "human_written",
+    "issue_type": "usability",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 4,
+      "severity_reasoning": 5,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  },
+  {
+    "cluster_id": "c_00194",
+    "condition": "human_written",
+    "issue_type": "compatibility",
+    "ratings": {
+      "completeness": 3,
+      "specificity": 5,
+      "severity_reasoning": 4,
+      "template_adherence": 3,
+      "faithfulness": 4
+    },
+    "notes": "human-written: hand-authored title/desc/severity/component only, no template-specific fields"
+  }
+]

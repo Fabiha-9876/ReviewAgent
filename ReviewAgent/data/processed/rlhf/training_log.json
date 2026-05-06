@@ -1,0 +1,84 @@
+{
+  "base_model": "distilgpt2",
+  "n_ratings": 400,
+  "kto_data_size": 296,
+  "dpo_data_size": 100,
+  "kto_trained_ok": true,
+  "dpo_trained_ok": true,
+  "sft_dir": "data/processed/rlhf/sft_base",
+  "kto_dir": "data/processed/rlhf/kto_model",
+  "dpo_dir": "data/processed/rlhf/dpo_model",
+  "constrained_ppo": "Skipped: trl 1.0 removed Constrained PPO; documented as future work",
+  "sample_outputs": [
+    {
+      "prompt": "Review: can't trust on it at all . when we need it most . it do not serve . i could have miss my fli",
+      "base": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " hi thank for the question . i have to say that i have a problem with the app . i have to say that i have a problem with",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: can't trust on it at all . when we need it most . it do not serve . i could have miss my fli",
+      "base": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " hi thank for the question . i have to say that i have a problem with the app . i have to say that i have a problem with",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: can't trust on it at all . when we need it most . it do not serve . i could have miss my fli",
+      "base": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " hi thank for the question . i have to say that i have a problem with the app . i have to say that i have a problem with",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: can't trust on it at all . when we need it most . it do not serve . i could have miss my fli",
+      "base": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " hi thank for the question . i have to say that i have a problem with the app . i have to say that i have a problem with",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: be work well until they put ads on the lock screen as well . thus totally screw up your alar",
+      "base": "\nI'm not sure if this is a good idea, but I'm sure it's a good idea.\nI'm not sure if this is a good idea, but I'm sure i",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " no, this is not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . ",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: be work well until they put ads on the lock screen as well . thus totally screw up your alar",
+      "base": "\nI'm not sure if this is a good idea, but I'm sure it's a good idea.\nI'm not sure if this is a good idea, but I'm sure i",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " no, this is not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . ",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: be work well until they put ads on the lock screen as well . thus totally screw up your alar",
+      "base": "\nI'm not sure if this is a good idea, but I'm sure it's a good idea.\nI'm not sure if this is a good idea, but I'm sure i",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " no, this is not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . ",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: be work well until they put ads on the lock screen as well . thus totally screw up your alar",
+      "base": "\nI'm not sure if this is a good idea, but I'm sure it's a good idea.\nI'm not sure if this is a good idea, but I'm sure i",
+      "sft": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . ",
+      "kto": " no, this is not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . ",
+      "dpo": " hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . "
+    },
+    {
+      "prompt": "Review: guy your new update suck now i cant copy <user> select portion from <user> pic which i be us",
+      "base": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "sft": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . ",
+      "kto": " hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your fe",
+      "dpo": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . "
+    },
+    {
+      "prompt": "Review: guy your new update suck now i cant copy <user> select portion from <user> pic which i be us",
+      "base": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "sft": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . ",
+      "kto": " hi thank for your feedback . <user> thank for your feedback . <user> thank for your feedback . <user> thank for your fe",
+      "dpo": " hi thank for your feedback . we appreciate your feedback . we appreciate your feedback . we appreciate your feedback . "
+    }
+  ]
+}

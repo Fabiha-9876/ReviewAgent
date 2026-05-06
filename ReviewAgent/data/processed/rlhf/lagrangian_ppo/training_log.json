@@ -1,0 +1,257 @@
+{
+  "method": "Lagrangian-Constrained Policy Gradient (custom RL loop)",
+  "rationale": "trl 1.0 removed PPOConfig/PPOTrainer; we implement minimal REINFORCE-with-KL + Lagrangian dual update directly.",
+  "constraint": "safety reward >= 0.5",
+  "n_steps": 30,
+  "batch_size": 4,
+  "kl_beta": 0.05,
+  "lr_policy": 1e-05,
+  "lr_lambda": 0.1,
+  "ppo_clip": 0.2,
+  "training_minutes": 1.47,
+  "final_lambda": 0.0,
+  "final_avg_quality": 0.1923,
+  "final_avg_safety": 0.9792,
+  "step_log": [
+    {
+      "step": 0,
+      "avg_quality": 0.3678,
+      "avg_safety": 0.9375,
+      "lambda": 0.4563,
+      "constraint_violated": false,
+      "loss": 33.9223
+    },
+    {
+      "step": 1,
+      "avg_quality": 0.388,
+      "avg_safety": 0.9375,
+      "lambda": 0.4125,
+      "constraint_violated": false,
+      "loss": 40.11
+    },
+    {
+      "step": 2,
+      "avg_quality": 0.4028,
+      "avg_safety": 0.9375,
+      "lambda": 0.3688,
+      "constraint_violated": false,
+      "loss": 31.4254
+    },
+    {
+      "step": 3,
+      "avg_quality": 0.4069,
+      "avg_safety": 1.0,
+      "lambda": 0.3188,
+      "constraint_violated": false,
+      "loss": 36.4643
+    },
+    {
+      "step": 4,
+      "avg_quality": 0.3114,
+      "avg_safety": 1.0,
+      "lambda": 0.2688,
+      "constraint_violated": false,
+      "loss": 26.9829
+    },
+    {
+      "step": 5,
+      "avg_quality": 0.3749,
+      "avg_safety": 0.9375,
+      "lambda": 0.225,
+      "constraint_violated": false,
+      "loss": 25.0033
+    },
+    {
+      "step": 6,
+      "avg_quality": 0.3692,
+      "avg_safety": 0.9375,
+      "lambda": 0.1813,
+      "constraint_violated": false,
+      "loss": 29.618
+    },
+    {
+      "step": 7,
+      "avg_quality": 0.3275,
+      "avg_safety": 0.9375,
+      "lambda": 0.1375,
+      "constraint_violated": false,
+      "loss": 11.3582
+    },
+    {
+      "step": 8,
+      "avg_quality": 0.3302,
+      "avg_safety": 1.0,
+      "lambda": 0.0875,
+      "constraint_violated": false,
+      "loss": 24.0264
+    },
+    {
+      "step": 9,
+      "avg_quality": 0.2908,
+      "avg_safety": 1.0,
+      "lambda": 0.0375,
+      "constraint_violated": false,
+      "loss": 20.6183
+    },
+    {
+      "step": 10,
+      "avg_quality": 0.2971,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 16.2996
+    },
+    {
+      "step": 11,
+      "avg_quality": 0.3036,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 19.6285
+    },
+    {
+      "step": 12,
+      "avg_quality": 0.3115,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 11.7495
+    },
+    {
+      "step": 13,
+      "avg_quality": 0.2616,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 11.7346
+    },
+    {
+      "step": 14,
+      "avg_quality": 0.3364,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 25.6866
+    },
+    {
+      "step": 15,
+      "avg_quality": 0.2437,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 9.988
+    },
+    {
+      "step": 16,
+      "avg_quality": 0.1124,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 3.36
+    },
+    {
+      "step": 17,
+      "avg_quality": 0.2636,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 13.7578
+    },
+    {
+      "step": 18,
+      "avg_quality": 0.2067,
+      "avg_safety": 0.875,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 9.4392
+    },
+    {
+      "step": 19,
+      "avg_quality": 0.1431,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 4.4834
+    },
+    {
+      "step": 20,
+      "avg_quality": 0.2208,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 7.8392
+    },
+    {
+      "step": 21,
+      "avg_quality": 0.2128,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 11.3468
+    },
+    {
+      "step": 22,
+      "avg_quality": 0.157,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 5.7914
+    },
+    {
+      "step": 23,
+      "avg_quality": 0.2933,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 6.5135
+    },
+    {
+      "step": 24,
+      "avg_quality": 0.1581,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 5.1976
+    },
+    {
+      "step": 25,
+      "avg_quality": 0.2924,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 13.0659
+    },
+    {
+      "step": 26,
+      "avg_quality": 0.317,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 11.0209
+    },
+    {
+      "step": 27,
+      "avg_quality": 0.168,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 3.6373
+    },
+    {
+      "step": 28,
+      "avg_quality": 0.1676,
+      "avg_safety": 1.0,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 6.2848
+    },
+    {
+      "step": 29,
+      "avg_quality": 0.2412,
+      "avg_safety": 0.9375,
+      "lambda": 0.0,
+      "constraint_violated": false,
+      "loss": 6.6566
+    }
+  ]
+}

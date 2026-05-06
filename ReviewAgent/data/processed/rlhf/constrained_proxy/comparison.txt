@@ -1,0 +1,26 @@
+======================================================================
+Constrained PPO Proxy — Reject-Sampling-Then-SFT
+======================================================================
+Constraint: quality >= 4 AND helpful = Y
+Constraint-satisfying samples: 120 of 400 (30.0%)
+Training time: 1.3 min
+
+Sample outputs comparing all four trained models:
+
+  prompt: Review: can't trust on it at all . when we need it most . it do not serve . i co
+    sft:          hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+    kto:          hi thank for the question . i have to say that i have a problem with the app . i have to say that i have a problem with
+    dpo:          hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+    constrained:  We appreciate you taking the time to write to us — we appreciate you taking the time to write to us — and we want to he
+
+  prompt: Review: can't trust on it at all . when we need it most . it do not serve . i co
+    sft:          hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+    kto:          hi thank for the question . i have to say that i have a problem with the app . i have to say that i have a problem with
+    dpo:          hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+    constrained:  We appreciate you taking the time to write to us — we appreciate you taking the time to write to us — and we want to he
+
+  prompt: Review: be work well until they put ads on the lock screen as well . thus totall
+    sft:          hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+    kto:          no, this is not work . it's not work . it's not work . it's not work . it's not work . it's not work . it's not work . 
+    dpo:          hi thank for your question . we appreciate your question . we appreciate your question . we appreciate your question . 
+    constrained:  We appreciate you taking the time to write in — we appreciate you taking the time to write in — and we want to hear wha
