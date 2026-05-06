@@ -1,0 +1,54 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "n_sampled": 200,
+  "summary_by_match_level": {
+    "exact": {
+      "micro": {
+        "precision": 0.0671,
+        "recall": 0.109,
+        "f1": 0.083,
+        "tp": 23,
+        "fp": 320,
+        "fn": 188
+      },
+      "macro": {
+        "precision": 0.0567,
+        "recall": 0.105,
+        "f1": 0.0689,
+        "n": 200
+      }
+    },
+    "lemma": {
+      "micro": {
+        "precision": 0.0729,
+        "recall": 0.119,
+        "f1": 0.0904,
+        "tp": 25,
+        "fp": 318,
+        "fn": 185
+      },
+      "macro": {
+        "precision": 0.0584,
+        "recall": 0.115,
+        "f1": 0.0718,
+        "n": 200
+      }
+    },
+    "substring": {
+      "micro": {
+        "precision": 0.3265,
+        "recall": 0.5308,
+        "f1": 0.4043,
+        "tp": 112,
+        "fp": 231,
+        "fn": 99
+      },
+      "macro": {
+        "precision": 0.2397,
+        "recall": 0.53,
+        "f1": 0.3083,
+        "n": 200
+      }
+    }
+  }
+}

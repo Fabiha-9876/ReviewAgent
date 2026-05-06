@@ -1,0 +1,149 @@
+{
+  "input_file": "data/raw/guzman/guzman_reviews.json",
+  "n_sentences_total": 2062,
+  "n_sentences_with_gold_aspects": 971,
+  "n_total_gold_aspects": 1040,
+  "summary_by_match_level": {
+    "exact": {
+      "micro": {
+        "precision": 0.0394,
+        "recall": 0.1769,
+        "f1": 0.0645,
+        "tp": 184,
+        "fp": 4484,
+        "fn": 856
+      },
+      "macro_all_sentences": {
+        "precision": 0.0459,
+        "recall": 0.0975,
+        "f1": 0.0585,
+        "n_sentences": 1695
+      },
+      "macro_gold_only_sentences": {
+        "precision": 0.08,
+        "recall": 0.1703,
+        "f1": 0.1022,
+        "n_sentences": 971
+      }
+    },
+    "lemma": {
+      "micro": {
+        "precision": 0.043,
+        "recall": 0.1867,
+        "f1": 0.0699,
+        "tp": 194,
+        "fp": 4316,
+        "fn": 845
+      },
+      "macro_all_sentences": {
+        "precision": 0.0514,
+        "recall": 0.1031,
+        "f1": 0.0644,
+        "n_sentences": 1695
+      },
+      "macro_gold_only_sentences": {
+        "precision": 0.0897,
+        "recall": 0.1801,
+        "f1": 0.1124,
+        "n_sentences": 971
+      }
+    },
+    "substring": {
+      "micro": {
+        "precision": 0.1877,
+        "recall": 0.8423,
+        "f1": 0.3069,
+        "tp": 876,
+        "fp": 3792,
+        "fn": 164
+      },
+      "macro_all_sentences": {
+        "precision": 0.2054,
+        "recall": 0.483,
+        "f1": 0.2673,
+        "n_sentences": 1695
+      },
+      "macro_gold_only_sentences": {
+        "precision": 0.3585,
+        "recall": 0.8431,
+        "f1": 0.4666,
+        "n_sentences": 971
+      }
+    }
+  },
+  "per_app_substring": {
+    "com.zentertain.photoeditor": {
+      "n_sentences": 70,
+      "precision": 0.3382,
+      "recall": 0.9079,
+      "f1": 0.4929,
+      "tp": 69,
+      "fp": 135,
+      "fn": 7
+    },
+    "B004LOMB2Q": {
+      "n_sentences": 170,
+      "precision": 0.2477,
+      "recall": 0.8798,
+      "f1": 0.3866,
+      "tp": 161,
+      "fp": 489,
+      "fn": 22
+    },
+    "B004SIIBGU": {
+      "n_sentences": 128,
+      "precision": 0.2638,
+      "recall": 0.7664,
+      "f1": 0.3925,
+      "tp": 105,
+      "fp": 293,
+      "fn": 32
+    },
+    "com.whatsapp": {
+      "n_sentences": 83,
+      "precision": 0.3021,
+      "recall": 0.8161,
+      "f1": 0.441,
+      "tp": 71,
+      "fp": 164,
+      "fn": 16
+    },
+    "B005ZXWMUS": {
+      "n_sentences": 170,
+      "precision": 0.2754,
+      "recall": 0.8098,
+      "f1": 0.411,
+      "tp": 149,
+      "fp": 392,
+      "fn": 35
+    },
+    "com.twitter.android": {
+      "n_sentences": 86,
+      "precision": 0.3185,
+      "recall": 0.8876,
+      "f1": 0.4688,
+      "tp": 79,
+      "fp": 169,
+      "fn": 10
+    },
+    "B0094BB4TW": {
+      "n_sentences": 145,
+      "precision": 0.2471,
+      "recall": 0.8377,
+      "f1": 0.3817,
+      "tp": 129,
+      "fp": 393,
+      "fn": 25
+    },
+    "com.spotify.music": {
+      "n_sentences": 119,
+      "precision": 0.3219,
+      "recall": 0.8692,
+      "f1": 0.4699,
+      "tp": 113,
+      "fp": 238,
+      "fn": 17
+    }
+  },
+  "extractor": "heuristic (spaCy NP + patterns + COMMON_ASPECTS vocab)"
+}

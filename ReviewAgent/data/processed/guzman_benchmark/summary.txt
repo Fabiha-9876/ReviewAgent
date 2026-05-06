@@ -1,0 +1,35 @@
+==============================================================================
+GUZMAN ASPECT-EXTRACTION BENCHMARK
+==============================================================================
+Source: Guzman & Maalej 2014 (via Dabrowski IS-22 alt corpus)
+Sentences: 2,062  (with gold aspects: 971)
+Total gold aspect annotations: 1,040
+Extractor: heuristic (spaCy NP-chunking + regex patterns + common-aspect vocab)
+
+Match levels:
+  exact:     predicted == gold (case-insensitive, normalized)
+  lemma:     spaCy lemmatized forms match
+  substring: predicted contains gold OR gold contains predicted (>=3 chars)
+
+==============================================================================
+RESULTS
+==============================================================================
+level           micro_P    micro_R   micro_F1    macro_P   macro_R   macro_F1
+------------------------------------------------------------------------------
+exact            0.0394     0.1769     0.0645     0.0800    0.1703     0.1022
+lemma            0.0430     0.1867     0.0699     0.0897    0.1801     0.1124
+substring        0.1877     0.8423     0.3069     0.3585    0.8431     0.4666
+
+(macro is averaged over 971 sentences with at least one gold aspect)
+
+Per-app (substring level):
+app                                 n_sent        P        R       F1
+------------------------------------------------------------------------------
+B004LOMB2Q                             170   0.2477   0.8798   0.3866
+B005ZXWMUS                             170   0.2754   0.8098   0.4110
+B0094BB4TW                             145   0.2471   0.8377   0.3817
+B004SIIBGU                             128   0.2638   0.7664   0.3925
+com.spotify.music                      119   0.3219   0.8692   0.4699
+com.twitter.android                     86   0.3185   0.8876   0.4688
+com.whatsapp                            83   0.3021   0.8161   0.4410
+com.zentertain.photoeditor              70   0.3382   0.9079   0.4929
