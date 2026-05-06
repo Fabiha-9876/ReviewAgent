@@ -1,0 +1,1002 @@
+[
+  {
+    "review_index": 0,
+    "cluster_id": "c_00004",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "core_baseline",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 1,
+    "cluster_id": "c_00008",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 2,
+    "cluster_id": "c_00019",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 3,
+    "cluster_id": "c_00005",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 4,
+    "cluster_id": "c_00045",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 5,
+    "cluster_id": "c_00026",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 6,
+    "cluster_id": "c_00018",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 7,
+    "cluster_id": "c_00016",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 8,
+    "cluster_id": "c_00047",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 9,
+    "cluster_id": "c_00048",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 10,
+    "cluster_id": "c_00042",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "core_baseline",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 11,
+    "cluster_id": "c_00053",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 12,
+    "cluster_id": "c_00011",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 13,
+    "cluster_id": "c_00021",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 14,
+    "cluster_id": "c_00027",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "core_baseline",
+      "C": "reviewagent_full",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 15,
+    "cluster_id": "c_00051",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 16,
+    "cluster_id": "c_00039",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 17,
+    "cluster_id": "c_00046",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 18,
+    "cluster_id": "c_00040",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 19,
+    "cluster_id": "c_00032",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 20,
+    "cluster_id": "c_00041",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 21,
+    "cluster_id": "c_00025",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 22,
+    "cluster_id": "c_00022",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 23,
+    "cluster_id": "c_00055",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 24,
+    "cluster_id": "c_00044",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "core_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 25,
+    "cluster_id": "c_00038",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 26,
+    "cluster_id": "c_00037",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 27,
+    "cluster_id": "c_00049",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 28,
+    "cluster_id": "c_00023",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 29,
+    "cluster_id": "c_00058",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 30,
+    "cluster_id": "c_00065",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 31,
+    "cluster_id": "c_00099",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 32,
+    "cluster_id": "c_00066",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 33,
+    "cluster_id": "c_00097",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 34,
+    "cluster_id": "c_00087",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 35,
+    "cluster_id": "c_00111",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 36,
+    "cluster_id": "c_00096",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 37,
+    "cluster_id": "c_00074",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 38,
+    "cluster_id": "c_00079",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 39,
+    "cluster_id": "c_00075",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 40,
+    "cluster_id": "c_00069",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 41,
+    "cluster_id": "c_00092",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 42,
+    "cluster_id": "c_00081",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 43,
+    "cluster_id": "c_00114",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 44,
+    "cluster_id": "c_00116",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 45,
+    "cluster_id": "c_00100",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 46,
+    "cluster_id": "c_00076",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 47,
+    "cluster_id": "c_00101",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 48,
+    "cluster_id": "c_00064",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "core_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 49,
+    "cluster_id": "c_00073",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 50,
+    "cluster_id": "c_00098",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 51,
+    "cluster_id": "c_00105",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 52,
+    "cluster_id": "c_00094",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 53,
+    "cluster_id": "c_00068",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 54,
+    "cluster_id": "c_00109",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 55,
+    "cluster_id": "c_00095",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_full",
+      "C": "core_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 56,
+    "cluster_id": "c_00088",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 57,
+    "cluster_id": "c_00117",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 58,
+    "cluster_id": "c_00070",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 59,
+    "cluster_id": "c_00060",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 60,
+    "cluster_id": "c_00121",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 61,
+    "cluster_id": "c_00144",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 62,
+    "cluster_id": "c_00145",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 63,
+    "cluster_id": "c_00132",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "core_baseline",
+      "C": "reviewagent_full",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 64,
+    "cluster_id": "c_00122",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 65,
+    "cluster_id": "c_00153",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 66,
+    "cluster_id": "c_00137",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 67,
+    "cluster_id": "c_00151",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 68,
+    "cluster_id": "c_00142",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_full",
+      "C": "core_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 69,
+    "cluster_id": "c_00146",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 70,
+    "cluster_id": "c_00157",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "core_baseline",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 71,
+    "cluster_id": "c_00127",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 72,
+    "cluster_id": "c_00140",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 73,
+    "cluster_id": "c_00158",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 74,
+    "cluster_id": "c_00159",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "core_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 75,
+    "cluster_id": "c_00124",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 76,
+    "cluster_id": "c_00129",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 77,
+    "cluster_id": "c_00135",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 78,
+    "cluster_id": "c_00134",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 79,
+    "cluster_id": "c_00138",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 80,
+    "cluster_id": "c_00187",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 81,
+    "cluster_id": "c_00188",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 82,
+    "cluster_id": "c_00161",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_full",
+      "C": "core_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 83,
+    "cluster_id": "c_00177",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 84,
+    "cluster_id": "c_00189",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 85,
+    "cluster_id": "c_00179",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 86,
+    "cluster_id": "c_00160",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 87,
+    "cluster_id": "c_00185",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 88,
+    "cluster_id": "c_00183",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "rrgen_baseline",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 89,
+    "cluster_id": "c_00184",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 90,
+    "cluster_id": "c_00180",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "rrgen_baseline",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 91,
+    "cluster_id": "c_00171",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "reviewagent_no_spec",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 92,
+    "cluster_id": "c_00173",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 93,
+    "cluster_id": "c_00166",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_no_spec",
+      "C": "reviewagent_full",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 94,
+    "cluster_id": "c_00168",
+    "blinding": {
+      "A": "rrgen_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "core_baseline"
+    }
+  },
+  {
+    "review_index": 95,
+    "cluster_id": "c_00170",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "rrgen_baseline",
+      "C": "core_baseline",
+      "D": "reviewagent_full"
+    }
+  },
+  {
+    "review_index": 96,
+    "cluster_id": "c_00194",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "reviewagent_full",
+      "C": "core_baseline",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 97,
+    "cluster_id": "c_00193",
+    "blinding": {
+      "A": "core_baseline",
+      "B": "reviewagent_full",
+      "C": "reviewagent_no_spec",
+      "D": "rrgen_baseline"
+    }
+  },
+  {
+    "review_index": 98,
+    "cluster_id": "c_00192",
+    "blinding": {
+      "A": "reviewagent_full",
+      "B": "core_baseline",
+      "C": "rrgen_baseline",
+      "D": "reviewagent_no_spec"
+    }
+  },
+  {
+    "review_index": 99,
+    "cluster_id": "c_00191",
+    "blinding": {
+      "A": "reviewagent_no_spec",
+      "B": "core_baseline",
+      "C": "reviewagent_full",
+      "D": "rrgen_baseline"
+    }
+  }
+]

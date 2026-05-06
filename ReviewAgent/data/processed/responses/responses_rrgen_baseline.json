@@ -1,0 +1,902 @@
+[
+  {
+    "response_id": "resp_b1_c_00004",
+    "review_index": 0,
+    "cluster_id": "c_00004",
+    "issue_type": "bug_report",
+    "review_text": "can't trust on it at all . when we need it most . it do not serve . i could have miss my flight because of it . at urgent time app log out . and while relogin it go on loop but do not login . not reliable . be such big company such glitch be not expect .",
+    "response_text": "Hi, we're really sorry about the trouble you experienced, especially at such a critical moment. Reliability is something we take seriously and we'll look into the login issue you described. Could you please reach out to our support team with more details so we can investigate further? Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00008",
+    "review_index": 1,
+    "cluster_id": "c_00008",
+    "issue_type": "bug_report",
+    "review_text": "be work well until they put ads on the lock screen as well . thus totally screw up your alarm clock on your phone !",
+    "response_text": "Thanks for sharing your feedback. We understand the frustration that lock-screen ads have caused and we take this kind of report seriously. We'll pass your concern along to the team for further review. Please feel free to contact our support channel if you'd like to share more details.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00019",
+    "review_index": 2,
+    "cluster_id": "c_00019",
+    "issue_type": "bug_report",
+    "review_text": "guy your new update suck now i cant copy <user> select portion from <user> pic which i be use to do use this app find <user> solution quickly .",
+    "response_text": "Hi, sorry to hear that the recent update affected a feature you relied on. We appreciate you letting us know and will share this feedback with the development team. If you can send us a few more details through our support channel, that would help us investigate further. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00005",
+    "review_index": 3,
+    "cluster_id": "c_00005",
+    "issue_type": "bug_report",
+    "review_text": "i cannot login with . my old username on <user> new phone . suck .",
+    "response_text": "Hi, sorry you're having trouble logging in on your new device. We'd like to help you sort this out. Please reach out to our support team with more details about your account so we can take a closer look. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00045",
+    "review_index": 4,
+    "cluster_id": "c_00045",
+    "issue_type": "bug_report",
+    "review_text": "you ruin it . on my tab s2 its nearly impossible to comment because the keyboard hide the comment area . many frequent crash everyttime i use it . i have no choice but to find another news magazine similar to this one .",
+    "response_text": "Thanks for the detailed feedback and we're sorry the app hasn't been working well on your device. Crashes and layout issues are something we want to address. We'll forward your comments to the team for review. If possible, please share more details with our support channel so we can investigate.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00026",
+    "review_index": 5,
+    "cluster_id": "c_00026",
+    "issue_type": "bug_report",
+    "review_text": "<app> file u choose may have be destroy what be this m nt able to make my video .",
+    "response_text": "Hi, sorry you're running into this error. We'd like to take a closer look so we can understand what's happening with your file. Please contact our support team with more details about your device and the file you were trying to use. Thanks for letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00018",
+    "review_index": 6,
+    "cluster_id": "c_00018",
+    "issue_type": "bug_report",
+    "review_text": "pixel go very bad please fix that .",
+    "response_text": "Thanks for reaching out. We're sorry you're seeing quality issues. We'd appreciate more details about what you're experiencing so the team can investigate. Please contact our support channel and we'll do our best to help.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00016",
+    "review_index": 7,
+    "cluster_id": "c_00016",
+    "issue_type": "bug_report",
+    "review_text": "why my <app> cant open the magic effect ? . always say sonething go wrong . i feel so sad for this problem .",
+    "response_text": "Hi, sorry you're having trouble with this feature. We'd like to help you get it working again. Please reach out to our support team with details about your device and the error message so we can look into it. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00047",
+    "review_index": 8,
+    "cluster_id": "c_00047",
+    "issue_type": "bug_report",
+    "review_text": "when ever i open ur app notification will be there cric score . and some other . always . stop it . i hate it almost stop open ur app .",
+    "response_text": "Thanks for the feedback and we're sorry the notifications have been bothering you. We'll pass your comments along to the team for consideration. In the meantime, please feel free to reach out to our support channel if you'd like to share more details. We appreciate your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00048",
+    "review_index": 9,
+    "cluster_id": "c_00048",
+    "issue_type": "bug_report",
+    "review_text": "and its take too much space on my phone . due to that i can't install other apps . i think that i could get rid off this <app> but it look like i can't . now i hate it . why can't i unistall this app ? please fix that",
+    "response_text": "Hi, sorry for the frustration this has caused. We hear your concerns about storage and uninstall behavior and will share your feedback with the team. If you can share more details through our support channel, we'd be glad to help look into it. Thanks for letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00042",
+    "review_index": 10,
+    "cluster_id": "c_00042",
+    "issue_type": "bug_report",
+    "review_text": "this <app> be so helpful to <app> that i instal it on my new device too but since its update it start to misbehave and now it isn't respond i'm unable to detect virus without it please fix the problem as soon as possible .",
+    "response_text": "Thanks for your loyalty and we're sorry the recent update has caused issues on your new device. We'd like to investigate this further with you. Please contact our support team with more details so we can get this resolved. We appreciate your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00053",
+    "review_index": 11,
+    "cluster_id": "c_00053",
+    "issue_type": "bug_report",
+    "review_text": "it's not work on <app> nougat <digit> . <digit> . plz fix it .",
+    "response_text": "Hi, sorry to hear the app isn't working on your version. We'd like to look into compatibility issues like this. Please reach out to our support team with details about your device and OS so we can investigate. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00011",
+    "review_index": 12,
+    "cluster_id": "c_00011",
+    "issue_type": "bug_report",
+    "review_text": "photo edit fix clip art sticker background frame . a lot to choose from and they always add more . my one drawback be that sometimes it will take a while to load .",
+    "response_text": "Thanks for the kind words and the honest feedback. We're glad you're enjoying the app overall, and we hear you on the loading times. We'll share this with the team to look into improvements. Please reach out to support if you'd like to share more details.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00021",
+    "review_index": 13,
+    "cluster_id": "c_00021",
+    "issue_type": "bug_report",
+    "review_text": "its really bad version than before . with not news update and bad user interfaca . fix that !",
+    "response_text": "Thanks for the feedback. We're sorry the latest version hasn't met your expectations and we appreciate you letting us know. Your comments will be shared with the team for review. Please feel free to reach out to support if you'd like to provide more details.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00027",
+    "review_index": 14,
+    "cluster_id": "c_00027",
+    "issue_type": "bug_report",
+    "review_text": "uc mini be a good browser but recently it have be behave like an addware . it download other <app> without permission . even if i uninstalled uc browser it download and install itself as soon as i connect to internet . then i reset to factory setting and erase all data to get rid of it .",
+    "response_text": "Hi, we take reports like this very seriously and are sorry for the experience you've described. We'd like to investigate further so we understand what happened. Please contact our support team with more details about your device and what you observed. Thanks for bringing this to our attention.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00051",
+    "review_index": 15,
+    "cluster_id": "c_00051",
+    "issue_type": "bug_report",
+    "review_text": "i really like this <app> but sometimes it crash on <app> and mention something about hardware acceleration which i don't get . please fix ?",
+    "response_text": "Thanks for sticking with the app and for letting us know about the crash. We'd like to dig into the hardware acceleration error you're seeing. Please reach out to our support team with details about your device and we'll take a look. We appreciate your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00039",
+    "review_index": 16,
+    "cluster_id": "c_00039",
+    "issue_type": "bug_report",
+    "review_text": "why dis app always say connection fail i be use wifi and the magic effect always problem pls fix it gr .",
+    "response_text": "Hi, sorry you're hitting connection errors. We'd like to take a closer look at what's happening for you. Please contact our support team with more details about when this occurs and your device. Thanks for your patience as we look into it.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00046",
+    "review_index": 17,
+    "cluster_id": "c_00046",
+    "issue_type": "bug_report",
+    "review_text": "this still crash or turn off when it like so annoy when try to change a big gas bottle at night to have a hot shower in the morning . fix it and it would be great .",
+    "response_text": "Thanks for letting us know about the crashes. We're sorry this has been a recurring problem. We'd like to investigate further, so please reach out to our support team with details about your device and when the crash happens. We appreciate your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00040",
+    "review_index": 18,
+    "cluster_id": "c_00040",
+    "issue_type": "bug_report",
+    "review_text": "sir the site u hve gven be nt open in my uc pls solve my problem l .",
+    "response_text": "Hi, sorry you're having trouble loading the site. We'd like to help look into this. Please contact our support team with more details about the page and your device so we can investigate. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00032",
+    "review_index": 19,
+    "cluster_id": "c_00032",
+    "issue_type": "bug_report",
+    "review_text": "download doesn't progress it happen many time .",
+    "response_text": "Hi, sorry for the trouble with downloads. We'd like to take a closer look. Please reach out to our support team with details about your device and connection so we can help investigate. Thanks for letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00041",
+    "review_index": 20,
+    "cluster_id": "c_00041",
+    "issue_type": "bug_report",
+    "review_text": "this be a bogus <app> i down load and keep for a while to try and it keep tell <app> that over <digit> percent of my memory be full and to run it to clean up space well not only do i find out it doesn't clean anything up but when i go in to check my space and storage i have more then half of memory and space so i take my phone in to get everything check out i be tell that this <app> doesn't help anything except take up alot of space feel let's down if there be a option of not give any stats i'd pick no star ps they also have and ask for to much private info becareful people .",
+    "response_text": "Thanks for the detailed feedback and we're sorry your experience hasn't been a good one. We take reports about accuracy and privacy seriously and will share your feedback with the team. If you'd like to share more details, please reach out to our support channel. We appreciate you taking the time.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00025",
+    "review_index": 21,
+    "cluster_id": "c_00025",
+    "issue_type": "bug_report",
+    "review_text": "<app> just isn't play . i use to be able to play one song before have to restart my phone to listen to another but now i can't get anything at all . other <app> like youtube work but this need to be fix . one job play music .",
+    "response_text": "Hi, sorry to hear playback has stopped working for you. We'd like to investigate further. Please reach out to our support team with more details about your device and what happens when you try to play. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00022",
+    "review_index": 22,
+    "cluster_id": "c_00022",
+    "issue_type": "bug_report",
+    "review_text": "dont get it its crappy asf and doesn't work .",
+    "response_text": "Hi, sorry the app hasn't worked well for you. We'd really like to understand what went wrong so we can improve. If you have a moment, please reach out to our support team with more details. Thanks for your feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00055",
+    "review_index": 23,
+    "cluster_id": "c_00055",
+    "issue_type": "bug_report",
+    "review_text": "very good app . very colourful and graphic interface be superb . they also look after their exist customer by the throw in useful package from time to time . why i couldn't give a <digit> star be because it doesn't allow you to input house number . other than that it's the best out there . recent upgrade have mess the application up to the point where it doesn't recognise any address input a feature which it pride itself of . please sort this up asap as the app be unusable as it be . very frustrate .",
+    "response_text": "Thanks for the kind words and detailed feedback. We're sorry the recent upgrade has affected address recognition for you. This will be passed along to the team for investigation. If you'd like to share more details, please reach out to our support channel and we'll do our best to help.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00044",
+    "review_index": 24,
+    "cluster_id": "c_00044",
+    "issue_type": "bug_report",
+    "review_text": "i dont know how it get instal now i can't uninstall it . avoid it like plague .",
+    "response_text": "Hi, sorry for the frustration. We'd like to help you understand what's happening with the install. Please reach out to our support team with more details about your device and we'll do our best to assist. Thanks for letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00038",
+    "review_index": 25,
+    "cluster_id": "c_00038",
+    "issue_type": "bug_report",
+    "review_text": "it's not work always and i only receive call and mag when i open the app . i never receive msg or call in normal way i always need to <app> open the app to discover if somebody send me sth .",
+    "response_text": "Hi, sorry you're missing notifications. We'd like to help look into this for you. Please reach out to our support team with details about your device and notification settings so we can investigate. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00037",
+    "review_index": 26,
+    "cluster_id": "c_00037",
+    "issue_type": "bug_report",
+    "review_text": "the <app> seem okay at first but then i find several drawback for it . <digit> . the <app> setting do not work properly . <digit> . the <app> drawer be a mess with no way to arrange the apps . <digit> . any newly instal <app> would create a new home screen to store the <app> shortcut . there be no way to disable this . totally the <app> management part be a mess with this launcher . the only good thing be it add a few of the clean master functionality into the launcher . but this be redundant if you already have <app> instal .",
+    "response_text": "Thanks for the detailed feedback and we're sorry the app management experience hasn't lived up to your expectations. We'll share your comments with the team so they can review. If you'd like to share more details please reach out to our support channel and we appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00049",
+    "review_index": 27,
+    "cluster_id": "c_00049",
+    "issue_type": "bug_report",
+    "review_text": "but when the new upate come my phone have become very slow but when it be the older version my phone be very nice and now it be very slow because of new version .",
+    "response_text": "Hi, sorry the latest update has slowed things down on your device. We'd like to look into this further. Please reach out to our support team with details about your device so we can investigate. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00023",
+    "review_index": 28,
+    "cluster_id": "c_00023",
+    "issue_type": "bug_report",
+    "review_text": "they fix most thing . better late than never .",
+    "response_text": "Thanks for sticking with us and for the feedback. We're glad to hear things are improving. We'll keep working to address remaining issues. If anything still feels off, please reach out to our support team and let us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00058",
+    "review_index": 29,
+    "cluster_id": "c_00058",
+    "issue_type": "bug_report",
+    "review_text": "do not work at all since the update for <app> please fix .",
+    "response_text": "Hi, sorry the recent update broke things for you. We'd like to investigate this further. Please reach out to our support team with more details about your device and we'll take a closer look. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00065",
+    "review_index": 30,
+    "cluster_id": "c_00065",
+    "issue_type": "feature_request",
+    "review_text": "interface be garbage . how do you plan a trip ? delete a credit card . edit you name . rubbish .",
+    "response_text": "Thanks for the feedback. We're sorry the interface hasn't been working for you. Your comments about discoverability of these flows will be shared with the team. If you'd like to share more specifics, please reach out to our support channel.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00099",
+    "review_index": 31,
+    "cluster_id": "c_00099",
+    "issue_type": "feature_request",
+    "review_text": "the ads be a pain in the neck eliminate them and it would be a great <app>",
+    "response_text": "Thanks for the feedback. We hear you on the ads and we'll share your comments with the team. If you'd like to share more details please reach out to our support channel. We appreciate you taking the time.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00066",
+    "review_index": 32,
+    "cluster_id": "c_00066",
+    "issue_type": "feature_request",
+    "review_text": "add fast forward and fast backward button in video player also include option for add subtitle file to video .",
+    "response_text": "Thanks for the suggestions. Feature requests like these are valuable to us and will be shared with the team for consideration. Please feel free to reach out to support if you'd like to share more ideas. We appreciate your feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00097",
+    "review_index": 33,
+    "cluster_id": "c_00097",
+    "issue_type": "feature_request",
+    "review_text": "there be plenty of good news story in the <app> but an equal amount of click bate . but the news fee be not fully customizable either . many news article often come from unaccredited source and i have no way to weed them out . you just aren't get the most accurate news from flipboard . edit that little downward arrow you speak of do not exist on my phone . perhaps you should see if it be a part of the <app> that be permanently instal on my phone . not a fan the flip interface for the download version .",
+    "response_text": "Thanks for the detailed feedback. We hear your concerns about content quality and customization, and we'll share your comments with the team. If you'd like to share more details about your device, please reach out to our support channel. We appreciate the time you've taken.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00087",
+    "review_index": 34,
+    "cluster_id": "c_00087",
+    "issue_type": "feature_request",
+    "review_text": "i think it should help us more on harder problem .",
+    "response_text": "Thanks for the suggestion. We're always looking to improve and will share your input with the team. If you'd like to share more specifics about what would help, please reach out to our support channel. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00111",
+    "review_index": 35,
+    "cluster_id": "c_00111",
+    "issue_type": "feature_request",
+    "review_text": "the thing be after edit pic i lose <user> lot of quality i already try reset pic size but in vain . im use this app for straight <digit> year and its go to be <digit> this year i have see all the change but now its reduce my pic quality secondly all the good thing in store be pay and third thing be plz im beg you to do some change like add more bigger size of image solve this problem of pic quality im use dslr picture btw .",
+    "response_text": "Thanks for being a long-time user and for the detailed feedback. We hear your concerns about image quality and feature availability and will pass them along to the team for consideration. If you'd like to share more details, please contact our support channel. We appreciate your continued support.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00096",
+    "review_index": 36,
+    "cluster_id": "c_00096",
+    "issue_type": "feature_request",
+    "review_text": "the <app> give too many link with malware and other junk . it need to be clean up .",
+    "response_text": "Thanks for raising this. We take content safety seriously and will share your feedback with the team for review. If you can share specific examples through our support channel, that would help us investigate. We appreciate you flagging this.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00074",
+    "review_index": 37,
+    "cluster_id": "c_00074",
+    "issue_type": "feature_request",
+    "review_text": "plz give some free effect filter theme for every update . and this be a great edit app . so plz do offer some font effect theme in free .",
+    "response_text": "Thanks for the kind words and the suggestion. We'll pass your request for more free content along to the team for consideration. Please keep an eye out for future updates and feel free to reach out to support with more ideas. We appreciate your support.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00079",
+    "review_index": 38,
+    "cluster_id": "c_00079",
+    "issue_type": "feature_request",
+    "review_text": "can you all magic and clipart sticker . background . lens flare all download in one place and sign of insure download also .",
+    "response_text": "Thanks for the suggestion. We'll share your idea about consolidated downloads with the team for consideration. If you'd like to share more details, please reach out to our support channel. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00075",
+    "review_index": 39,
+    "cluster_id": "c_00075",
+    "issue_type": "feature_request",
+    "review_text": "old version be better but new update be not so better .",
+    "response_text": "Thanks for the feedback. We're sorry the latest update hasn't been an improvement for you. Your comments will be shared with the team for review. If you'd like to share specifics, please reach out to our support channel.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00069",
+    "review_index": 40,
+    "cluster_id": "c_00069",
+    "issue_type": "feature_request",
+    "review_text": "i have be use this <app> for too long . it's usefull and entertain so please add indonesian language ! it would be helpfull for me to understand .",
+    "response_text": "Thanks for being a long-time user. Language support requests are valuable and we'll share your suggestion with the team for consideration. Please keep an eye out for future updates. We appreciate your support.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00092",
+    "review_index": 41,
+    "cluster_id": "c_00092",
+    "issue_type": "feature_request",
+    "review_text": "it would be great if we can select any <app> from application manager freely not just <app> lunch allow you to add also if we can have option to lock screen .",
+    "response_text": "Thanks for the suggestion. We'll share your ideas about flexible app selection and lock-screen options with the team for review. If you'd like to share more, please reach out to our support channel. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00081",
+    "review_index": 42,
+    "cluster_id": "c_00081",
+    "issue_type": "feature_request",
+    "review_text": "i want to know how to change the background black of any particular pic .",
+    "response_text": "Thanks for reaching out. For help with specific editing steps, our support team would be happy to walk you through what's available. Please contact our support channel and we'll do our best to help. Thanks for using the app.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00114",
+    "review_index": 43,
+    "cluster_id": "c_00114",
+    "issue_type": "feature_request",
+    "review_text": "app be good but i can't add photo during edit ! bakwaas app .",
+    "response_text": "Thanks for the feedback. We're sorry you're having trouble adding photos during edits. We'd like to look into what you're seeing. Please reach out to our support channel with more details and we'll do our best to help.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00116",
+    "review_index": 44,
+    "cluster_id": "c_00116",
+    "issue_type": "feature_request",
+    "review_text": "i be will to deal with the awkward save and storage feature and even will to deal with the lack of share to messenger feature . but instal additional span lade app of chargemaster on mymphone without my permission that i wont deal with . bye photo grid !",
+    "response_text": "Thanks for sharing your concerns. We take feedback about unexpected installations and missing features seriously and will pass your comments along to the team. If you'd like to share more details, please contact our support channel. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00100",
+    "review_index": 45,
+    "cluster_id": "c_00100",
+    "issue_type": "feature_request",
+    "review_text": "please add some option <digit> . bright ness controller like twilight . <digit> . notification tool bar editer . <digit> . and screenshot option <digit> . antivirous <digit> . add some customize option . <digit> . make it powerful luncher <digit> . add some beautiful wallpepar . please fllow the buzz luncher . then i will give you <digit> star . okay ?",
+    "response_text": "Thanks for the detailed list of suggestions. We appreciate the time you've taken and will share your ideas with the team for consideration. Please keep an eye on future updates. Feel free to reach out via our support channel for any other feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00076",
+    "review_index": 46,
+    "cluster_id": "c_00076",
+    "issue_type": "feature_request",
+    "review_text": "i love the old version . the latest one make the filter look more edit than before . turn it back to the old version please .",
+    "response_text": "Thanks for the feedback. We're sorry the new filters haven't worked for you and we'll share your comments with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate your support.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00101",
+    "review_index": 47,
+    "cluster_id": "c_00101",
+    "issue_type": "feature_request",
+    "review_text": "actually i use <user> tablet . so jus hv <digit> doubt dat be msgng option available in table or nt . ! if it be . plz let me know . nd help me out . !",
+    "response_text": "Hi, thanks for reaching out. For tablet-specific feature questions, our support team will be best placed to help. Please contact our support channel with details about your device and we'll get back to you. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00064",
+    "review_index": 48,
+    "cluster_id": "c_00064",
+    "issue_type": "feature_request",
+    "review_text": "well you should be able to use the flash light while use another app and its no brighter than the flash light that come on an apple iphone .",
+    "response_text": "Thanks for the suggestion and the feedback. We'll share your comments about multitasking and brightness with the team for consideration. If you'd like to add more details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00073",
+    "review_index": 49,
+    "cluster_id": "c_00073",
+    "issue_type": "feature_request",
+    "review_text": "nice but it take long to edit awesome .",
+    "response_text": "Thanks for the feedback. We're glad you like the app, and we hear you on the edit time. We'll share your comments with the team for review. Please feel free to reach out to support if you'd like to share more details.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00098",
+    "review_index": 50,
+    "cluster_id": "c_00098",
+    "issue_type": "feature_request",
+    "review_text": "not get small window mode feature update to latest version . of uc browser .",
+    "response_text": "Thanks for letting us know. We'll share your comment about the small window mode with the team for review. If you'd like to share more details about your device and version, please reach out to our support channel. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00105",
+    "review_index": 51,
+    "cluster_id": "c_00105",
+    "issue_type": "feature_request",
+    "review_text": "grt apps . plz add automatic blur . on camera .",
+    "response_text": "Thanks for the kind words and the suggestion. We'll share your idea for an automatic blur feature with the team for consideration. Please keep an eye out for future updates. We appreciate your support.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00094",
+    "review_index": 52,
+    "cluster_id": "c_00094",
+    "issue_type": "feature_request",
+    "review_text": "such an irritate app . it have an plug in to avoid unnecessary notification . but i see only annoy notification be from the <digit> <app> same app .",
+    "response_text": "Thanks for the feedback. We're sorry the notification controls aren't working as expected for you. Your comments will be shared with the team for review. If you'd like to share more details, please reach out to our support channel.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00068",
+    "review_index": 53,
+    "cluster_id": "c_00068",
+    "issue_type": "feature_request",
+    "review_text": "it's ok but this app couldn't search a word present in pdf so please improve this app to make search in document .",
+    "response_text": "Thanks for the suggestion. In-document search is a useful idea and we'll share it with the team for consideration. Please feel free to reach out to support if you'd like to share more ideas. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00109",
+    "review_index": 54,
+    "cluster_id": "c_00109",
+    "issue_type": "feature_request",
+    "review_text": "can you give us like norton anti virus <app> scan option before download a app .",
+    "response_text": "Thanks for the suggestion. A pre-download scan feature is interesting and we'll share your idea with the team for consideration. Please keep an eye out for future updates. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00095",
+    "review_index": 55,
+    "cluster_id": "c_00095",
+    "issue_type": "feature_request",
+    "review_text": "why be there not a paint bucket tool in the draw area ? why so few brush ? why ? please add these thing !",
+    "response_text": "Thanks for the suggestions. We'll share your ideas about additional drawing tools and brushes with the team for consideration. If you'd like to share more, please reach out to our support channel. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00088",
+    "review_index": 56,
+    "cluster_id": "c_00088",
+    "issue_type": "feature_request",
+    "review_text": "i can't find any magic effect on my app . pls help .",
+    "response_text": "Hi, sorry you're having trouble locating that feature. Our support team would be happy to help guide you. Please reach out to our support channel with details about your device and version. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00117",
+    "review_index": 57,
+    "cluster_id": "c_00117",
+    "issue_type": "feature_request",
+    "review_text": "can u pls add some more <app> like for <app> etc . reply me soon .",
+    "response_text": "Thanks for the suggestion. We'll share your request with the team for consideration. Please keep an eye on future updates and feel free to reach out to our support channel with more ideas. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00070",
+    "review_index": 58,
+    "cluster_id": "c_00070",
+    "issue_type": "feature_request",
+    "review_text": "a stupid application with no option to reset password . i haven't mention my e mail address when register yet they want my e mail id to reset password . i've never see any absurdity like this . !",
+    "response_text": "Hi, we're sorry for the trouble you're having with password recovery. We'd like to help look into your account. Please reach out to our support team with more details so we can assist. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00060",
+    "review_index": 59,
+    "cluster_id": "c_00060",
+    "issue_type": "feature_request",
+    "review_text": "why the watermark ? ! ? i understand want to promote your app and everything but that really just ruin the photo . you have <digit> million download . people know about you guy . please remove the watermark .",
+    "response_text": "Thanks for the feedback. We hear your concerns about the watermark and will share your comments with the team for consideration. If you'd like to share more, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00121",
+    "review_index": 60,
+    "cluster_id": "c_00121",
+    "issue_type": "performance",
+    "review_text": "the photo capture by this <app> color be poor quality . while camera open that's color be good but when we click a shoot that's color be change .",
+    "response_text": "Thanks for the feedback and we're sorry the captured photo color isn't matching the preview. We'd like to investigate this further. Please reach out to our support team with details about your device so we can take a closer look. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00144",
+    "review_index": 61,
+    "cluster_id": "c_00144",
+    "issue_type": "performance",
+    "review_text": "<app> up ads . always while wifi be on .",
+    "response_text": "Thanks for letting us know. We hear your concerns about the ads and will share your feedback with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00145",
+    "review_index": 62,
+    "cluster_id": "c_00145",
+    "issue_type": "performance",
+    "review_text": "this all eat up all your battery when run i have to turn it off .",
+    "response_text": "Hi, sorry to hear about the battery drain. We'd like to investigate this further. Please reach out to our support team with details about your device so we can look into it. Thanks for letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00132",
+    "review_index": 63,
+    "cluster_id": "c_00132",
+    "issue_type": "performance",
+    "review_text": "i hate it make my phone so slow .",
+    "response_text": "Hi, sorry to hear the app is slowing down your phone. We'd like to investigate further. Please reach out to our support team with details about your device so we can look into it. Thanks for the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00122",
+    "review_index": 64,
+    "cluster_id": "c_00122",
+    "issue_type": "performance",
+    "review_text": "always wrong direction . assign very far driver . much delay before start the trip . i always need to call driver to give him direction because of wrong map . the service could be great if there be not such fatal mistake .",
+    "response_text": "Thanks for the detailed feedback and we're sorry your trips haven't gone smoothly. We hear your concerns about routing and driver assignment and will share them with the team. If you'd like to share specific trip details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00153",
+    "review_index": 65,
+    "cluster_id": "c_00153",
+    "issue_type": "performance",
+    "review_text": "i love this application . but now it crash and be drain my battery life .",
+    "response_text": "Thanks for sticking with the app and we're sorry about the crashes and battery drain. We'd like to investigate further. Please reach out to our support team with details about your device so we can take a closer look. We appreciate your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00137",
+    "review_index": 66,
+    "cluster_id": "c_00137",
+    "issue_type": "performance",
+    "review_text": "it be very slow can u make it fast .",
+    "response_text": "Hi, sorry to hear about the slowness. We'd like to look into this further. Please reach out to our support team with more details about your device so we can investigate. Thanks for the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00151",
+    "review_index": 67,
+    "cluster_id": "c_00151",
+    "issue_type": "performance",
+    "review_text": "take way too much space i've see other <app> that take only <digit> mb .",
+    "response_text": "Thanks for the feedback. We hear your concerns about the app's size and will share your comments with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00142",
+    "review_index": 68,
+    "cluster_id": "c_00142",
+    "issue_type": "performance",
+    "review_text": "to slow download and add blocker not work",
+    "response_text": "Hi, sorry to hear about the slow downloads and ad blocker issues. We'd like to investigate further. Please reach out to our support team with more details about your device so we can look into it. Thanks for letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00146",
+    "review_index": 69,
+    "cluster_id": "c_00146",
+    "issue_type": "performance",
+    "review_text": "i heat this type apps . so unuseble noisy fyr .",
+    "response_text": "Thanks for the feedback. We're sorry the app hasn't been a good experience for you. Your comments will be shared with the team for review. If you'd like to share more details, please reach out to our support channel.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00157",
+    "review_index": 70,
+    "cluster_id": "c_00157",
+    "issue_type": "performance",
+    "review_text": "it take so much tym for access ! i get bore while use dis app . plz give me solution .",
+    "response_text": "Hi, sorry about the slow access times. We'd like to investigate further. Please reach out to our support team with details about your device and connection so we can take a closer look. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00127",
+    "review_index": 71,
+    "cluster_id": "c_00127",
+    "issue_type": "performance",
+    "review_text": "it try to download something off frostwire and it try to tell <app> it put <digit> virus in my battery and i have <digit> minute to install this <app> and i have to keep it for <digit> day to get rid of the virus . nothing happen . they will try to scam you . do not use .",
+    "response_text": "Thanks for raising this. We take reports about misleading prompts and security very seriously and will share your comments with the team for review. If you can share more details through our support channel, that would help us investigate. We appreciate you flagging this.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00140",
+    "review_index": 72,
+    "cluster_id": "c_00140",
+    "issue_type": "performance",
+    "review_text": "my phone be hang . not good apps its fake ram very slow . please solve the problem .",
+    "response_text": "Hi, sorry your phone is hanging while using the app. We'd like to investigate further. Please reach out to our support team with details about your device so we can take a closer look. Thanks for the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00158",
+    "review_index": 73,
+    "cluster_id": "c_00158",
+    "issue_type": "performance",
+    "review_text": "great app however after latest update to <digit> . <digit> . <digit> . <digit> version during call map do not return to screen which be crucial for hand free drive .",
+    "response_text": "Thanks for the kind words and for reporting this. We're sorry the latest update has affected map behavior during calls and we'd like to look into it. Please reach out to our support team with more details so we can investigate. We appreciate your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00159",
+    "review_index": 74,
+    "cluster_id": "c_00159",
+    "issue_type": "performance",
+    "review_text": "i use my phone regularly from start of day it's <digit> and i end with <digit> but after instal the app i end with <digit> of battery",
+    "response_text": "Thanks for the feedback and we're sorry about the battery drain you've noticed. We'd like to look into this further. Please reach out to our support team with details about your device so we can investigate. Thanks for letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00124",
+    "review_index": 75,
+    "cluster_id": "c_00124",
+    "issue_type": "performance",
+    "review_text": "laggy !",
+    "response_text": "Hi, sorry to hear about the lag. We'd like to investigate further. Please reach out to our support team with details about your device so we can take a closer look. Thanks for the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00129",
+    "review_index": 76,
+    "cluster_id": "c_00129",
+    "issue_type": "performance",
+    "review_text": "worst update . new update very slow and take more ram than older .",
+    "response_text": "Thanks for the feedback. We're sorry the latest update has affected performance for you. Your comments will be shared with the team for review. If you'd like to share specifics about your device, please reach out to our support channel.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00135",
+    "review_index": 77,
+    "cluster_id": "c_00135",
+    "issue_type": "performance",
+    "review_text": "we can't remove quick access notification from notification bar . we need to force stop the notification through system . size be very big . always run in background . annoy ucmusic notification . as the time be pass the experience be get worse .",
+    "response_text": "Thanks for the detailed feedback. We hear your concerns about notifications, app size, and background behavior, and will share them with the team for review. If you'd like to share more, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00134",
+    "review_index": 78,
+    "cluster_id": "c_00134",
+    "issue_type": "performance",
+    "review_text": "freeze up my phone . slow to access my apps . don't like anymore .",
+    "response_text": "Hi, sorry to hear about the freezing and slowdowns. We'd like to investigate further. Please reach out to our support team with details about your device so we can take a closer look. Thanks for the feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00138",
+    "review_index": 79,
+    "cluster_id": "c_00138",
+    "issue_type": "performance",
+    "review_text": "it take much time to load and also its dow load speed be worst .",
+    "response_text": "Hi, sorry about the slow load and download speeds. We'd like to look into this further. Please reach out to our support team with more details about your device and connection so we can investigate. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00187",
+    "review_index": 80,
+    "cluster_id": "c_00187",
+    "issue_type": "usability",
+    "review_text": "the app i have on my phone now be a joke s7 . they don't provide any real news just gossip column . the version i have on my note edge be great and have real news let you pick more than <digit> topic etc . i can't believe people give this <digit> star it's worse than the garbage news channel on tv .",
+    "response_text": "Thanks for the candid feedback. We're sorry the experience on your S7 hasn't matched what you had previously and we'll share your comments with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate your input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00188",
+    "review_index": 81,
+    "cluster_id": "c_00188",
+    "issue_type": "usability",
+    "review_text": "if you want one <app> after another get this none stop solicitation <app> really a joke no sooner instal ads keep come on !",
+    "response_text": "Thanks for the feedback. We hear your concerns about the volume of ads and prompts and will share them with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00161",
+    "review_index": 82,
+    "cluster_id": "c_00161",
+    "issue_type": "usability",
+    "review_text": "the worst thing that have be add here in brazil be the cash payment . it's a robbery after another put in danger both driver and passenger . this servive have be make to be virtual payment . those who don't have credit card open account in a bank or use paypal method . quite simple ! it's all about security for all . cash have attract with success thieve and more thieve . they be not ask to fill any form to add any document . cash payment provide no security at all . in addition the map show lot of car near the <app> we be and then when we call the driver aren't that near . <digit> minute away .",
+    "response_text": "Thanks for sharing your concerns. We take feedback about safety and accuracy seriously and will share your comments with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00177",
+    "review_index": 83,
+    "cluster_id": "c_00177",
+    "issue_type": "usability",
+    "review_text": "very bad lot of ads !",
+    "response_text": "Thanks for the feedback. We hear your concerns about the ads and will share them with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00189",
+    "review_index": 84,
+    "cluster_id": "c_00189",
+    "issue_type": "usability",
+    "review_text": "it do the job i recommend this app for virus and for speed on yourbphone .",
+    "response_text": "Thanks for the recommendation and the kind words. We're glad the app is working well for you. We'll keep working to make it even better. Please feel free to reach out via support if you have any other feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00179",
+    "review_index": 85,
+    "cluster_id": "c_00179",
+    "issue_type": "usability",
+    "review_text": "this app be really easy and fun to use its useful and it actually work . it's the best i've come across . there be so many thing that you can add into your photo sticker text etc . it bring up all you photo on your phone so you can choose which picture s you want to edit . i don't regret ever try this app .",
+    "response_text": "Thanks so much for the wonderful review. We're really glad you've been enjoying the app. Feedback like this means a lot to the team. Please feel free to reach out via support if you ever have ideas or suggestions.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00160",
+    "review_index": 86,
+    "cluster_id": "c_00160",
+    "issue_type": "usability",
+    "review_text": "work perfectly well with an internet connection but be useless without . i drive from slovakia to the uk yesterday and for <digit> of the time it didn't know where we be . delete today as will not use again .",
+    "response_text": "Thanks for the feedback and we're sorry the offline experience hasn't worked for you. We hear your concerns and will share them with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00185",
+    "review_index": 87,
+    "cluster_id": "c_00185",
+    "issue_type": "usability",
+    "review_text": "convenient to opperate neat in arrangement .",
+    "response_text": "Thanks for the kind words. We're glad you're finding the app convenient and well organized. We'll keep working to make it even better. Please feel free to reach out via support if you have any suggestions.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00183",
+    "review_index": 88,
+    "cluster_id": "c_00183",
+    "issue_type": "usability",
+    "review_text": "since the last update the app install an ad overlay on my lock screen . you guy find a great way to ruin your reputation . what a stupid move .",
+    "response_text": "Thanks for the feedback. We're sorry the recent update has caused this experience and we'll pass your comments along to the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate you letting us know.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00184",
+    "review_index": 89,
+    "cluster_id": "c_00184",
+    "issue_type": "usability",
+    "review_text": "i have <digit> free rid but this app doesn't allow me to use it . nice market bad costumer support .",
+    "response_text": "Hi, sorry you weren't able to use your free rides. We'd like to help look into this for you. Please reach out to our support team with more details about your account so we can investigate. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00180",
+    "review_index": 90,
+    "cluster_id": "c_00180",
+    "issue_type": "usability",
+    "review_text": "this be always my favourite and most use app for many year . they take a perfect app and turn it into more of a social network then a photo edit app . don't fix thing that aren't break . it's a pain just to save a photo to my phone without have to <app> through the share process . still some good feature to edit but it's always freeze and this app be ten time better in the previous version . after year i have give up and delete this app . new version suck !",
+    "response_text": "Thanks for being a long-time user and for the candid feedback. We're sorry the recent direction hasn't worked for you, and we'll share your comments with the team for review. If you'd like to share more details, please reach out to our support channel. We appreciate the input.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00171",
+    "review_index": 91,
+    "cluster_id": "c_00171",
+    "issue_type": "usability",
+    "review_text": "love the variety of frame and add on it's <user> very cute collage app !",
+    "response_text": "Thanks so much for the kind words. We're glad you're enjoying the variety of frames and add-ons. We'll keep working to bring more options. Please feel free to reach out via support if you ever have ideas or suggestions.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00173",
+    "review_index": 92,
+    "cluster_id": "c_00173",
+    "issue_type": "usability",
+    "review_text": "the new effect give it more crunch to the video and help teen like <app> to enhance our artistry .",
+    "response_text": "Thanks for the lovely feedback. We're really glad the new effects are helping you create. We'll keep working to add more options. Please feel free to reach out via support with any suggestions.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00166",
+    "review_index": 93,
+    "cluster_id": "c_00166",
+    "issue_type": "usability",
+    "review_text": "it seem to be able to meet my need so far work great and easy . keep up on new theme and quick to do what i want when i want . i try switch back to <app> and it be such a bad thing after use <app> nothing else come close thank . im back after a long break .",
+    "response_text": "Thanks so much for coming back and for the kind words. We're really glad the app is meeting your needs. We'll keep working on new themes and improvements. Please feel free to reach out via support if you have any feedback.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00168",
+    "review_index": 94,
+    "cluster_id": "c_00168",
+    "issue_type": "usability",
+    "review_text": "it make ur phone look really weird and tell u to put a wallpaper of their choice not yours . all the theme be rubbish .",
+    "response_text": "Thanks for the feedback. We're sorry the themes and wallpaper experience hasn't worked for you. Your comments will be shared with the team for review. If you'd like to share more, please reach out to our support channel.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00170",
+    "review_index": 95,
+    "cluster_id": "c_00170",
+    "issue_type": "usability",
+    "review_text": "easy to use and it keep me busy edit pic of my son daughter",
+    "response_text": "Thanks so much for the kind words. We're glad you and your family are enjoying the app. We'll keep working to make it even better. Please feel free to reach out via support if you have any suggestions.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00194",
+    "review_index": 96,
+    "cluster_id": "c_00194",
+    "issue_type": "compatibility",
+    "review_text": "hang with blank white screen every time after the first time . app do not work . i'm uninstalling . android <digit> . <digit> samsung galaxy s6 sm g920a .",
+    "response_text": "Hi, sorry the app is hanging on your device. We'd like to investigate this further on your specific Android version and model. Please reach out to our support team with more details so we can look into it. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00193",
+    "review_index": 97,
+    "cluster_id": "c_00193",
+    "issue_type": "compatibility",
+    "review_text": "update <digit> . <digit> . <digit> the <app> ratio get back to normal at first open then the pic ratio get mess up again . would really like to know what to do as i love this <app> and would like to be able to use it completely . before funny sticker update it work fine on my samsung galaxy s4 mini now the inner camera image ratio be crazy and can't take selfies . that's bad cause i love the filter of this app . <digit> star and gonna reinstall it if it get back to normal .",
+    "response_text": "Thanks for the detailed feedback and we're sorry the camera ratio has been off since the update. We'd like to investigate further on your device. Please reach out to our support team with more details so we can take a closer look. We appreciate your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00192",
+    "review_index": 98,
+    "cluster_id": "c_00192",
+    "issue_type": "compatibility",
+    "review_text": "i be use samsung galaxy s4 <app> app lock be not work in my handset i will give <digit> star if it be solve .",
+    "response_text": "Hi, sorry to hear AppLock isn't working on your handset. We'd like to look into this further. Please reach out to our support team with more details about your device so we can investigate. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  },
+  {
+    "response_id": "resp_b1_c_00191",
+    "review_index": 99,
+    "cluster_id": "c_00191",
+    "issue_type": "compatibility",
+    "review_text": "i can't sign in on my samsung galaxy s5 . even samsung say that many galaxy s5 owner be experience the same issue and it be up to <app> to fond <user> fix . please help .",
+    "response_text": "Hi, sorry you're having trouble signing in on your device. We'd like to investigate this further. Please reach out to our support team with more details about your account and device so we can help. Thanks for your patience.",
+    "condition": "rrgen_baseline"
+  }
+]

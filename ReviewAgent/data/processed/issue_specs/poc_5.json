@@ -1,0 +1,117 @@
+[
+  {
+    "issue_id": "is_c_00004",
+    "cluster_id": "c_00004",
+    "title": "Ride-hailing app: login loops, payment failures, unhelpful in-app support",
+    "issue_type": "bug_report",
+    "description": "Across 10,507 reviews (63% one-star), users report being logged out at critical moments (e.g. en route to a flight) and getting trapped in a re-login loop. Card payments are repeatedly rejected ('it can't accept my card'), and the in-app help menu only offers canned templates that don't match real issues such as overcharges, ghost cancellation fees, or unreachable drivers. Reviewers conclude the app 'cannot be trusted when needed most'.",
+    "severity": "P0",
+    "affected_component": "authentication / login flow, payment processing, and in-app help/support menu",
+    "steps_to_reproduce": [
+      "Open the ride-hailing app while signed in and request or schedule a ride",
+      "Observe that the app silently logs the user out at the moment of booking",
+      "Re-enter credentials; the login screen submits and immediately returns to itself in a loop",
+      "Alternatively, attempt to add or use a saved credit/debit card at checkout and observe repeated 'card not accepted' errors",
+      "Open Help to report the issue and find no menu option matches; only canned auto-replies are returned"
+    ],
+    "expected_behavior": "Sessions should persist across app launches, login should succeed on first valid attempt, valid cards should be accepted, and the help menu should route users to a real agent for issues outside the listed templates.",
+    "actual_behavior": "The app logs users out at the worst time, the re-login screen loops without authenticating, valid cards are rejected, and the help system returns canned, non-applicable answers, leaving overcharge and refund requests unresolved.",
+    "user_story": null,
+    "acceptance_criteria": null,
+    "nfr_category": null,
+    "nielsen_heuristic": null,
+    "device_os_matrix": null
+  },
+  {
+    "issue_id": "is_c_00008",
+    "cluster_id": "c_00008",
+    "title": "Lock-screen / notification ads hijack device and break alarms",
+    "issue_type": "bug_report",
+    "description": "4,505 reviews (52% one-star) complain that the app started pushing full-screen ads, screensavers, and persistent notifications onto the lock screen and status bar. Users report this 'totally screws up the alarm clock', forces them to dismiss ads before they can unlock the phone, and that video ads slow the device and consume memory. Many state they have uninstalled because there is no toggle to disable lock-screen / notification ads.",
+    "severity": "P0",
+    "affected_component": "lock-screen ad / notification subsystem (out-of-app advertising surfaces)",
+    "steps_to_reproduce": [
+      "Install the app and grant default permissions",
+      "Lock the device and wait for the screen to turn off",
+      "Wake the device and observe a full-screen advertisement or unsolicited screensaver overlaying the lock screen",
+      "Pull down the notification shade and observe persistent promotional notifications from the app",
+      "Search the app's settings for an option to disable lock-screen ads or promotional notifications and find none"
+    ],
+    "expected_behavior": "The app should not draw on the lock screen or post promotional notifications by default; any ads should be confined to the app itself, and users should be able to fully disable promotional surfaces from settings without interfering with system alarms.",
+    "actual_behavior": "Ads and screensavers appear on the lock screen, blocking access to alarms and the unlock gesture, and persistent notifications cannot be turned off from within the app, leading users to uninstall.",
+    "user_story": null,
+    "acceptance_criteria": null,
+    "nfr_category": null,
+    "nielsen_heuristic": null,
+    "device_os_matrix": null
+  },
+  {
+    "issue_id": "is_c_00019",
+    "cluster_id": "c_00019",
+    "title": "Photo editor: latest update breaks image loading, selection, and saving to gallery",
+    "issue_type": "bug_report",
+    "description": "3,297 reviews (60% rated 1-2 stars) report that after a recent update the photo editor fails to load images from the device gallery (showing only 'blank square blocks'), can no longer select a portion of a picture for cut-out, and provides no folder option when saving so edited photos never reach the gallery. Multiple users have rolled back to the older version because reinstalling the new build does not fix the regression.",
+    "severity": "P1",
+    "affected_component": "photo editor: gallery picker, selection/cut-out tool, and save-to-gallery pipeline",
+    "steps_to_reproduce": [
+      "Update the app to the latest version and open the photo editor",
+      "Tap 'Add photo' and observe the device gallery loads slowly or shows blank square placeholders instead of thumbnails",
+      "Select an image and try to lasso/select a portion of the picture and observe the selection tool no longer works",
+      "Apply any edit and tap Save; observe there is no prompt to choose a destination folder",
+      "Open the device gallery and confirm the edited photo is missing"
+    ],
+    "expected_behavior": "Photos should load with proper thumbnails, the partial-selection / cut-out tool should work as in prior versions, and Save should offer a destination folder and reliably write the edited image to the device gallery.",
+    "actual_behavior": "Thumbnails render as blank blocks, partial selection is unavailable, and Save completes silently without writing the image to any gallery folder, forcing users to uninstall the update or downgrade.",
+    "user_story": null,
+    "acceptance_criteria": null,
+    "nfr_category": null,
+    "nielsen_heuristic": null,
+    "device_os_matrix": null
+  },
+  {
+    "issue_id": "is_c_00005",
+    "cluster_id": "c_00005",
+    "title": "Account login broken: registration loop, can't sign in on new device, lost profile",
+    "issue_type": "bug_report",
+    "description": "3,023 reviews (73% one-star) report that account login is unusable: users cannot sign in on a new phone with their old username, registration 'goes round in circles' and rejects emails/phones as 'already in use' while also refusing to log them in, and signing in on a second device wipes content settings and saved lists. There is no customer-care number and password reset flows do not recover the original profile.",
+    "severity": "P0",
+    "affected_component": "authentication: login, registration, and cross-device account/profile sync",
+    "steps_to_reproduce": [
+      "Install the app on a new device and tap Log In, entering the existing username and password from the old device",
+      "Observe login fails or the app does not recognize the credentials",
+      "Tap Register and enter the same email/phone; observe an 'already in use' error that loops back to the start of the registration flow",
+      "Successfully log in on a second device with the same account and check the original device's content settings, magazine list, or saved profile",
+      "Observe that personal settings and saved lists have been reset on at least one of the devices"
+    ],
+    "expected_behavior": "Existing credentials should authenticate on any device, registration should detect an existing account and route the user to password recovery rather than looping, and signing in on multiple devices should preserve (not reset) content settings and saved lists.",
+    "actual_behavior": "Login is rejected on new devices, registration loops with contradictory 'already in use / not recognized' errors, and signing in on another device resets the user's content settings and saved lists, with no support channel to recover the profile.",
+    "user_story": null,
+    "acceptance_criteria": null,
+    "nfr_category": null,
+    "nielsen_heuristic": null,
+    "device_os_matrix": null
+  },
+  {
+    "issue_id": "is_c_00065",
+    "cluster_id": "c_00065",
+    "title": "Ride app: restore fare estimate and add in-trip rating / concern reporting",
+    "issue_type": "feature_request",
+    "description": "2,650 reviews (48% one-star, 27% three-star) ask for ride-experience features that are missing or were removed: a pre-booking fare estimate ('now I couldn't estimate how much fare I should pay, please bring back the feature'), the ability to rate drivers and raise a concern while the trip is still in progress, and a way to give feedback on drivers who bid then cancel or no-show. Users also request improvements to UberPool and to the trip-planning / credit-card / profile-edit screens.",
+    "severity": "P1",
+    "affected_component": "rider trip lifecycle: fare estimator, in-trip rating / concern reporting, post-cancel driver feedback, and account/payment management screens",
+    "steps_to_reproduce": null,
+    "expected_behavior": null,
+    "actual_behavior": null,
+    "user_story": "As a rider, I want to see an upfront fare estimate before booking and to be able to rate or raise a concern about my driver while the trip is still in progress (including drivers who accepted then cancelled), so that I can make informed booking decisions and report safety or service issues in real time rather than after the fact.",
+    "acceptance_criteria": [
+      "Before confirming a ride, the rider sees an estimated fare range for the selected vehicle class and route, matching the post-trip charge within a documented tolerance.",
+      "An in-trip 'Rate / Report' control is reachable from the active-trip screen and lets the rider submit a star rating and a free-text concern without ending the trip.",
+      "When a driver cancels after accepting or fails to arrive, the rider is prompted to rate and leave feedback on that specific driver, and the feedback is attached to the driver's record.",
+      "Account screens expose clear paths to edit name, delete a saved credit card, and plan a future trip from a single entry point.",
+      "UberPool flow surfaces shared-ride pickup expectations and lets the rider opt out before being matched."
+    ],
+    "nfr_category": null,
+    "nielsen_heuristic": null,
+    "device_os_matrix": null
+  }
+]

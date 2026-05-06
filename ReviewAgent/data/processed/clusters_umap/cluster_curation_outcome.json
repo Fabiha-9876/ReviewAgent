@@ -1,0 +1,309 @@
+{
+  "n_curated": 100,
+  "actions": {
+    "Split": 21,
+    "Keep": 61,
+    "Merge": 12,
+    "Rename": 6
+  },
+  "curation_purity_score": 0.814,
+  "estimated_post_curation_clusters_in_sample": 119.5,
+  "estimated_total_clusters": 214.0,
+  "splits": [
+    {
+      "cluster_id": "c_00004",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: driver / uber / ride",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00008",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: lock screen / notification / screen",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00045",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: article / news / story",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00042",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: virus / malware / antivirus",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00011",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: sticker / frame / purchase",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00055",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: digit> star / rat / crash",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00065",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: driver / uber / map",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00097",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: news / article / feed",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00096",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: option",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00092",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: applock / lock screen / password",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00114",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: photo / photo edit / edit",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00116",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: gallery / share / save",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00100",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: digit> star / option / edit",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00121",
+      "issue_type": "performance",
+      "auto_name": "performance: photo / picture / quality",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00144",
+      "issue_type": "performance",
+      "auto_name": "performance: too many ads / battery / too much ads",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00127",
+      "issue_type": "performance",
+      "auto_name": "performance: virus / battery / anti virus",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00158",
+      "issue_type": "performance",
+      "auto_name": "performance: speed / lag / tab",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00135",
+      "issue_type": "performance",
+      "auto_name": "performance: notification / battery / news",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00187",
+      "issue_type": "usability",
+      "auto_name": "usability: news / article / notification",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00189",
+      "issue_type": "usability",
+      "auto_name": "usability: virus / battery / device",
+      "verdict": "Split",
+      "notes": ""
+    },
+    {
+      "cluster_id": "c_00184",
+      "issue_type": "usability",
+      "auto_name": "usability: too many ads / digit> star / screen",
+      "verdict": "Split",
+      "notes": ""
+    }
+  ],
+  "merges": [
+    {
+      "cluster_id": "c_00018",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: quality / photo / image",
+      "verdict": "Merge:c_00111",
+      "notes": "",
+      "merge_target": "c_00111"
+    },
+    {
+      "cluster_id": "c_00051",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: crash / app crash",
+      "verdict": "Merge:c_00046",
+      "notes": "",
+      "merge_target": "c_00046"
+    },
+    {
+      "cluster_id": "c_00044",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: i dont know how it get instal now i can't uninstall it . avo...",
+      "verdict": "Merge:c_00048",
+      "notes": "",
+      "merge_target": "c_00048"
+    },
+    {
+      "cluster_id": "c_00098",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: uc browser / uc news / browser",
+      "verdict": "Merge:c_00027",
+      "notes": "",
+      "merge_target": "c_00027"
+    },
+    {
+      "cluster_id": "c_00088",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: magic effect / magic feature / magic",
+      "verdict": "Merge:c_00016",
+      "notes": "",
+      "merge_target": "c_00016"
+    },
+    {
+      "cluster_id": "c_00070",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: account / password / login",
+      "verdict": "Merge:c_00005",
+      "notes": "",
+      "merge_target": "c_00005"
+    },
+    {
+      "cluster_id": "c_00153",
+      "issue_type": "performance",
+      "auto_name": "performance: battery / battery life / help",
+      "verdict": "Merge:c_00145",
+      "notes": "",
+      "merge_target": "c_00145"
+    },
+    {
+      "cluster_id": "c_00157",
+      "issue_type": "performance",
+      "auto_name": "performance: load",
+      "verdict": "Merge:c_00137",
+      "notes": "",
+      "merge_target": "c_00137"
+    },
+    {
+      "cluster_id": "c_00159",
+      "issue_type": "performance",
+      "auto_name": "performance: battery / digit> hour / battery life",
+      "verdict": "Merge:c_00145",
+      "notes": "",
+      "merge_target": "c_00145"
+    },
+    {
+      "cluster_id": "c_00124",
+      "issue_type": "performance",
+      "auto_name": "performance: lag",
+      "verdict": "Merge:c_00132",
+      "notes": "",
+      "merge_target": "c_00132"
+    },
+    {
+      "cluster_id": "c_00138",
+      "issue_type": "performance",
+      "auto_name": "performance: load / server",
+      "verdict": "Merge:c_00137",
+      "notes": "",
+      "merge_target": "c_00137"
+    },
+    {
+      "cluster_id": "c_00177",
+      "issue_type": "usability",
+      "auto_name": "usability: too many ads / many ads",
+      "verdict": "Merge:c_00188",
+      "notes": "",
+      "merge_target": "c_00188"
+    }
+  ],
+  "renames": [
+    {
+      "cluster_id": "c_00053",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: problem",
+      "verdict": "Rename:bug_report: update / install failure",
+      "notes": "",
+      "new_name": "bug_report: update / install failure"
+    },
+    {
+      "cluster_id": "c_00040",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: sir the site u hve gven be nt open in my uc pls solve my pro...",
+      "verdict": "Rename:bug_report: site not loading / app not opening",
+      "notes": "",
+      "new_name": "bug_report: site not loading / app not opening"
+    },
+    {
+      "cluster_id": "c_00022",
+      "issue_type": "bug_report",
+      "auto_name": "bug_report: dont get it its crappy asf and doesn't work ....",
+      "verdict": "Rename:bug_report: app not working / broken functionality",
+      "notes": "",
+      "new_name": "bug_report: app not working / broken functionality"
+    },
+    {
+      "cluster_id": "c_00087",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: improvement",
+      "verdict": "Rename:feature_request: general improvements / more options",
+      "notes": "",
+      "new_name": "feature_request: general improvements / more options"
+    },
+    {
+      "cluster_id": "c_00101",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: help / ui",
+      "verdict": "Rename:feature_request: general help / unclear requests",
+      "notes": "",
+      "new_name": "feature_request: general help / unclear requests"
+    },
+    {
+      "cluster_id": "c_00117",
+      "issue_type": "feature_request",
+      "auto_name": "feature_request: feature / ui",
+      "verdict": "Rename:feature_request: vague improvement requests",
+      "notes": "",
+      "new_name": "feature_request: vague improvement requests"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+==============================================================================
+EXPERIMENT 1 — Stage 3 IssueSpec Quality
+==============================================================================
+
+metric                                 (a)taxonomy   (b)free-form     (c)raw-sum
+------------------------------------------------------------------------------
+completeness_ratio_mean                          1         0.6914         0.3457
+template_adherence_pct                          76              0              0
+description_length_mean_words                 47.8           82.5           94.8
+description_length_median_words                 48           84.5             84
+
+Severity distribution:
+  llm_with_taxonomy         {'P0': 10, 'P1': 48, 'P2': 28, 'P3': 14}
+  llm_free_form             {'P0': 13, 'P1': 49, 'P2': 22, 'P3': 16}
+  raw_summary               {'P2': 100}

@@ -1,0 +1,91 @@
+{
+  "llm_with_taxonomy": {
+    "n": 100,
+    "completeness_ratio_mean": 1.0,
+    "completeness_ratio_median": 1.0,
+    "completeness_pct_above_80": 100.0,
+    "template_adherence_pct": 76.0,
+    "description_length_mean_words": 47.8,
+    "description_length_median_words": 48.0,
+    "description_length_min": 32,
+    "description_length_max": 86,
+    "severity_distribution": {
+      "P0": 10,
+      "P1": 48,
+      "P2": 28,
+      "P3": 14
+    },
+    "issue_type_distribution": {
+      "bug_report": 30,
+      "feature_request": 30,
+      "performance": 20,
+      "usability": 16,
+      "compatibility": 4
+    }
+  },
+  "llm_free_form": {
+    "n": 100,
+    "completeness_ratio_mean": 0.6914,
+    "completeness_ratio_median": 0.6667,
+    "completeness_pct_above_80": 40.0,
+    "template_adherence_pct": 0.0,
+    "description_length_mean_words": 82.5,
+    "description_length_median_words": 84.5,
+    "description_length_min": 52,
+    "description_length_max": 113,
+    "severity_distribution": {
+      "P0": 13,
+      "P1": 49,
+      "P2": 22,
+      "P3": 16
+    },
+    "issue_type_distribution": {
+      "bug_report": 30,
+      "feature_request": 30,
+      "performance": 20,
+      "usability": 16,
+      "compatibility": 4
+    }
+  },
+  "raw_summary": {
+    "n": 100,
+    "completeness_ratio_mean": 0.3457,
+    "completeness_ratio_median": 0.3333,
+    "completeness_pct_above_80": 0.0,
+    "template_adherence_pct": 0.0,
+    "description_length_mean_words": 94.8,
+    "description_length_median_words": 84.0,
+    "description_length_min": 12,
+    "description_length_max": 298,
+    "severity_distribution": {
+      "P2": 100
+    },
+    "issue_type_distribution": {
+      "bug_report": 30,
+      "feature_request": 30,
+      "performance": 20,
+      "usability": 16,
+      "compatibility": 4
+    }
+  },
+  "human_written": {
+    "n": 20,
+    "completeness_ratio_mean": 0.6914,
+    "completeness_ratio_median": 0.6667,
+    "description_length_mean_words": 39.9,
+    "description_length_median_words": 39.0,
+    "severity_distribution": {
+      "P0": 4,
+      "P1": 12,
+      "P2": 3,
+      "P3": 1
+    },
+    "issue_type_distribution": {
+      "bug_report": 6,
+      "feature_request": 6,
+      "performance": 4,
+      "usability": 3,
+      "compatibility": 1
+    }
+  }
+}

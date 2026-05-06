@@ -1,0 +1,227 @@
+{
+  "summary": {
+    "rrgen_baseline": {
+      "n": 100,
+      "quality_mean": 2.31,
+      "quality_std": 0.761,
+      "specificity_mean": 2.31,
+      "specificity_std": 0.761,
+      "helpful_y": 19,
+      "helpful_n": 81,
+      "helpful_pct": 19.0,
+      "per_issue_type": {
+        "bug_report": {
+          "n": 30,
+          "quality_mean": 2.133,
+          "specificity_mean": 2.133
+        },
+        "feature_request": {
+          "n": 30,
+          "quality_mean": 2.2,
+          "specificity_mean": 2.2
+        },
+        "performance": {
+          "n": 20,
+          "quality_mean": 2.05,
+          "specificity_mean": 2.05
+        },
+        "usability": {
+          "n": 16,
+          "quality_mean": 3.25,
+          "specificity_mean": 3.25
+        },
+        "compatibility": {
+          "n": 4,
+          "quality_mean": 2.0,
+          "specificity_mean": 2.0
+        }
+      }
+    },
+    "core_baseline": {
+      "n": 100,
+      "quality_mean": 2.98,
+      "quality_std": 0.71,
+      "specificity_mean": 2.96,
+      "specificity_std": 0.695,
+      "helpful_y": 84,
+      "helpful_n": 16,
+      "helpful_pct": 84.0,
+      "per_issue_type": {
+        "bug_report": {
+          "n": 30,
+          "quality_mean": 3.367,
+          "specificity_mean": 3.3
+        },
+        "feature_request": {
+          "n": 30,
+          "quality_mean": 2.9,
+          "specificity_mean": 2.9
+        },
+        "performance": {
+          "n": 20,
+          "quality_mean": 2.95,
+          "specificity_mean": 2.95
+        },
+        "usability": {
+          "n": 16,
+          "quality_mean": 2.188,
+          "specificity_mean": 2.188
+        },
+        "compatibility": {
+          "n": 4,
+          "quality_mean": 4.0,
+          "specificity_mean": 4.0
+        }
+      }
+    },
+    "reviewagent_no_spec": {
+      "n": 100,
+      "quality_mean": 2.26,
+      "quality_std": 0.597,
+      "specificity_mean": 2.26,
+      "specificity_std": 0.597,
+      "helpful_y": 31,
+      "helpful_n": 69,
+      "helpful_pct": 31.0,
+      "per_issue_type": {
+        "bug_report": {
+          "n": 30,
+          "quality_mean": 2.133,
+          "specificity_mean": 2.133
+        },
+        "feature_request": {
+          "n": 30,
+          "quality_mean": 2.0,
+          "specificity_mean": 2.0
+        },
+        "performance": {
+          "n": 20,
+          "quality_mean": 2.8,
+          "specificity_mean": 2.8
+        },
+        "usability": {
+          "n": 16,
+          "quality_mean": 2.0,
+          "specificity_mean": 2.0
+        },
+        "compatibility": {
+          "n": 4,
+          "quality_mean": 3.5,
+          "specificity_mean": 3.5
+        }
+      }
+    },
+    "reviewagent_full": {
+      "n": 100,
+      "quality_mean": 4.62,
+      "quality_std": 0.93,
+      "specificity_mean": 4.62,
+      "specificity_std": 0.93,
+      "helpful_y": 92,
+      "helpful_n": 8,
+      "helpful_pct": 92.0,
+      "per_issue_type": {
+        "bug_report": {
+          "n": 30,
+          "quality_mean": 4.8,
+          "specificity_mean": 4.8
+        },
+        "feature_request": {
+          "n": 30,
+          "quality_mean": 4.833,
+          "specificity_mean": 4.833
+        },
+        "performance": {
+          "n": 20,
+          "quality_mean": 5.0,
+          "specificity_mean": 5.0
+        },
+        "usability": {
+          "n": 16,
+          "quality_mean": 3.312,
+          "specificity_mean": 3.312
+        },
+        "compatibility": {
+          "n": 4,
+          "quality_mean": 5.0,
+          "specificity_mean": 5.0
+        }
+      }
+    }
+  },
+  "paired_wilcoxon": {
+    "reviewagent_full_vs_reviewagent_no_spec_quality": {
+      "n_pairs": 100,
+      "z": 8.491,
+      "p_value": 0.0,
+      "mean_diff": 2.36
+    },
+    "reviewagent_full_vs_core_baseline_quality": {
+      "n_pairs": 100,
+      "z": 8.315,
+      "p_value": 0.0,
+      "mean_diff": 1.64
+    },
+    "reviewagent_full_vs_rrgen_baseline_quality": {
+      "n_pairs": 100,
+      "z": 7.48,
+      "p_value": 0.0,
+      "mean_diff": 2.31
+    },
+    "reviewagent_no_spec_vs_core_baseline_quality": {
+      "n_pairs": 100,
+      "z": -6.535,
+      "p_value": 0.0,
+      "mean_diff": -0.72
+    },
+    "reviewagent_no_spec_vs_rrgen_baseline_quality": {
+      "n_pairs": 100,
+      "z": 0.015,
+      "p_value": 0.9881,
+      "mean_diff": -0.05
+    },
+    "core_baseline_vs_rrgen_baseline_quality": {
+      "n_pairs": 100,
+      "z": 4.977,
+      "p_value": 0.0,
+      "mean_diff": 0.67
+    },
+    "reviewagent_full_vs_reviewagent_no_spec_specificity": {
+      "n_pairs": 100,
+      "z": 8.491,
+      "p_value": 0.0,
+      "mean_diff": 2.36
+    },
+    "reviewagent_full_vs_core_baseline_specificity": {
+      "n_pairs": 100,
+      "z": 8.322,
+      "p_value": 0.0,
+      "mean_diff": 1.66
+    },
+    "reviewagent_full_vs_rrgen_baseline_specificity": {
+      "n_pairs": 100,
+      "z": 7.48,
+      "p_value": 0.0,
+      "mean_diff": 2.31
+    },
+    "reviewagent_no_spec_vs_core_baseline_specificity": {
+      "n_pairs": 100,
+      "z": -6.516,
+      "p_value": 0.0,
+      "mean_diff": -0.7
+    },
+    "reviewagent_no_spec_vs_rrgen_baseline_specificity": {
+      "n_pairs": 100,
+      "z": 0.015,
+      "p_value": 0.9881,
+      "mean_diff": -0.05
+    },
+    "core_baseline_vs_rrgen_baseline_specificity": {
+      "n_pairs": 100,
+      "z": 4.957,
+      "p_value": 0.0,
+      "mean_diff": 0.65
+    }
+  },
+  "n_pairs": 100
+}
