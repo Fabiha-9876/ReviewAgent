@@ -1,8 +1,16 @@
-# ReviewAgent — Full Paper Draft
+# ReviewAgent: A Three-Layer Knowledge Pipeline with Multi-Agent Code Resolution and Dual-Objective RLHF Alignment for App Review Mining
 
-**Working title:** *Verified-Anchor Confident Learning for Cleaning LLM-Annotated App-Review Datasets: An Iterative Pipeline with Independent Cross-Validation*
-
+**Target venue:** CIKM 2026 — Long Research Paper track
 **Status:** Draft assembled from per-section markdown files. References in `references.bib`.
+
+## Title mapping to research aims
+
+| title phrase | research aim |
+|---|---|
+| **Three-Layer Knowledge Pipeline** | Aim 1 — KG + hierarchical clustering + standardized schema mapping |
+| **Multi-Agent Code Resolution** | Aim 2 — Planner / Navigator / Editor / Executor (verified end-to-end on AntennaPod) |
+| **Dual-Objective RLHF Alignment** | Aim 3 — KTO / DPO / Constrained PPO with joint quality+safety optimization |
+| **App Review Mining** | empirical scope (215,583 RRGen reviews) |
 
 ---
 
@@ -10,7 +18,7 @@
 
 # Abstract
 
-App-store review datasets labeled by large language models (LLMs) contain systematic annotation noise that propagates into downstream classifiers, clusters, and response-generation models. We present **ReviewAgent**, a four-stage pipeline that detects and corrects this noise using a small expert-verified anchor and confident-learning, and demonstrates measurable downstream gains in classification accuracy, cluster purity, and human-rated response quality.
+We present **ReviewAgent**, a three-layer knowledge pipeline that mines app-store reviews end-to-end across three coordinated research aims: (1) a *knowledge-graph construction + hierarchical clustering + standardized schema mapping* layer that converts raw reviews into structured, taxonomy-grounded issue specifications; (2) a *multi-agent code-resolution* layer (Planner → Navigator → Editor → Executor) that consumes validated specifications and proposes real source-code patches with resolution-aware response generation; and (3) a *dual-objective RLHF alignment* layer (progressive KTO → DPO → Constrained PPO) that embeds human oversight at three pipeline stages and jointly optimizes for quality and safety. Auto-annotation noise in the upstream classifier is detected and corrected via a verified-anchor confident-learning method; downstream gains are measured against a 490-review expert gold standard, a 50-cluster purity validation, a 320-spec 5-dimension rubric, and a 400-rating blinded human evaluation.
 
 We measure the LLM annotation error rate directly on a 5,230-review verified subset of RRGen (a corpus of 215,583 deduplicated app reviews): **25%** of reviews labeled `praise` by the LLM are actually misassigned, with 1,049 reviews incorrectly absorbed from the `other` class. Applying confident-learning with a RoBERTa-based verified anchor (trained on 5,230 expert-verified labels plus 5,008 MAALEJ human-annotated reviews) flags **44,214 corrections** (20.51% of the corpus), recovering +7,460 misclassified `performance` reviews and +2,503 misclassified `usability` reviews — two classes the LLM was effectively blind to.
 
@@ -30,9 +38,11 @@ The work makes three contributions: (1) an empirical demonstration that LLM-labe
 
 # 1. Introduction
 
-App-store reviews are among the largest, freshest, and most opinionated sources of feedback available to software development teams \cite{maalej2016, gao2019rrgen, dabrowski2022analysing}. The volume — Google Play alone receives millions of new reviews per day — makes manual triage infeasible, motivating a generation of automated approaches: classifiers that route reviews into actionable categories, clusterers that group recurring complaints, and generators that produce developer-style replies at scale. Recent work has scaled these pipelines using large language models (LLMs) for annotation \cite{laban2023llm, chen2024llm}: an LLM is prompted to assign a category label (bug, feature request, performance, etc.) to each review, producing a labeled dataset that is then used to train downstream classifiers.
+App-store reviews are among the largest, freshest, and most opinionated sources of feedback available to software development teams \cite{maalej2016, gao2019rrgen, dabrowski2022analysing}. The volume — Google Play alone receives millions of new reviews per day — makes manual triage infeasible, motivating a generation of automated approaches: classifiers that route reviews into actionable categories, clusterers that group recurring complaints, and generators that produce developer-style replies at scale.
 
-We argue this approach has a **systematic and quantifiable noise problem**, and show that small amounts of expert verification — combined with confident-learning \cite{northcutt2021cleanlab} — can correct it.
+We present **ReviewAgent**, a three-layer knowledge pipeline that addresses three coordinated research aims simultaneously: (Aim 1) a *unified clustering-to-issue translation framework* combining knowledge-graph construction, aspect-grounded hierarchical clustering, and standardized schema mapping that converts raw reviews into taxonomy-grounded issue specifications; (Aim 2) a *coupled resolution-and-response system* with a four-agent code-resolution pipeline (Planner / Navigator / Editor / Executor) that produces real source-code patches alongside resolution-aware responses that reference specific fix locations; and (Aim 3) a *dual-objective RLHF loop* that embeds human oversight at three pipeline stages and progressively trains KTO, DPO, and Constrained PPO objectives, jointly optimizing for response quality and safety constraints.
+
+A foundational sub-component of this pipeline is the cleaning of upstream auto-annotated training data — a problem we measure directly and correct via verified-anchor confident learning \cite{northcutt2021cleanlab}.
 
 ## 1.1 The LLM Annotation Noise Problem
 
