@@ -20,8 +20,13 @@ from pathlib import Path
 
 OUT_DIR = Path("data/processed/issue_specs")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
-N_FETCH = 100   # over-fetch then filter
-N_TARGET = 30   # ~30 quality issues for the gold standard
+
+REPOS = [
+    "AntennaPod/AntennaPod",
+    "TeamNewPipe/NewPipe",
+    "thunderbird/thunderbird-android",   # K-9 Mail's current home
+]
+N_PER_REPO = 100   # over-fetch per repo then filter
 
 
 def fetch_issues(repo: str = "AntennaPod/AntennaPod", n: int = 100) -> list[dict]:
@@ -125,7 +130,7 @@ def extract_field(body: str, field_pattern: str) -> str | None:
     return text[:500] if text else None
 
 
-def issue_to_spec(issue: dict) -> dict | None:
+def issue_to_spec(issue: dict, repo: str = "") -> dict | None:
     """Map a GitHub issue into our IssueSpec schema."""
     issue_type = infer_issue_type(issue)
     if issue_type == "other":
@@ -139,9 +144,11 @@ def issue_to_spec(issue: dict) -> dict | None:
     description = re.sub(r"\s+", " ", body).strip()[:500]
 
     # Type-specific extraction
+    repo_short = repo.split("/")[-1] if repo else "unknown"
     spec = {
-        "issue_id": f"is_gh_{issue['number']}",
-        "cluster_id": f"github_{issue['number']}",
+        "issue_id": f"is_gh_{repo_short}_{issue['number']}",
+        "cluster_id": f"github_{repo_short}_{issue['number']}",
+        "repo": repo,
         "title": title[:120],
         "issue_type": issue_type,
         "description": description,
@@ -183,53 +190,92 @@ def issue_to_spec(issue: dict) -> dict | None:
 
 
 def main():
-    print(f"Fetching up to {N_FETCH} closed issues from AntennaPod...")
-    raw = fetch_issues(n=N_FETCH)
-    print(f"  Fetched {len(raw)} non-PR issues with non-empty body")
+    all_specs = []
+    per_repo_stats = {}
 
-    specs = []
-    for issue in raw:
-        spec = issue_to_spec(issue)
-        if spec:
-            specs.append(spec)
+    for repo in REPOS:
+        print(f"\n=== {repo} ===")
+        print(f"  Fetching up to {N_PER_REPO} closed issues...")
+        raw = fetch_issues(repo=repo, n=N_PER_REPO)
+        print(f"  Fetched {len(raw)} non-PR issues with non-empty body")
 
-    # Diversify across types for the gold standard
+        repo_specs = []
+        for issue in raw:
+            spec = issue_to_spec(issue, repo=repo)
+            if spec:
+                repo_specs.append(spec)
+
+        type_counts = Counter(s["issue_type"] for s in repo_specs)
+        print(f"  Parsed by type: {dict(type_counts)}")
+        per_repo_stats[repo] = {"fetched": len(raw), "parsed": len(repo_specs),
+                                 "by_type": dict(type_counts)}
+        all_specs.extend(repo_specs)
+
+    # Diversify across types for the gold standard (now across ALL repos)
     by_type = {}
-    for s in specs:
+    for s in all_specs:
         by_type.setdefault(s["issue_type"], []).append(s)
 
-    print(f"\nIssues parsed by type:")
-    for t, items in by_type.items():
-        print(f"  {t}: {len(items)}")
+    print(f"\n=== Combined across {len(REPOS)} repos ===")
+    print(f"Total parsed: {len(all_specs)}")
+    print(f"By type: {dict(Counter(s['issue_type'] for s in all_specs))}")
 
-    # Pick balanced sample
+    # Pick balanced sample (with per-type cap balanced across repos where possible)
     target_per_type = {
-        "bug_report": 12,
-        "feature_request": 10,
-        "performance": 4,
-        "usability": 2,
-        "compatibility": 2,
+        "bug_report": 30,
+        "feature_request": 25,
+        "performance": 8,
+        "usability": 5,
+        "compatibility": 5,
     }
     selected = []
     for t, n in target_per_type.items():
         pool = by_type.get(t, [])
-        selected.extend(pool[:n])
+        # Round-robin across repos for diversity
+        by_repo = {}
+        for s in pool:
+            by_repo.setdefault(s["repo"], []).append(s)
+        picked = []
+        idx = 0
+        while len(picked) < n and any(by_repo.values()):
+            for repo in REPOS:
+                if by_repo.get(repo):
+                    picked.append(by_repo[repo].pop(0))
+                    if len(picked) >= n:
+                        break
+            if not any(by_repo.get(r) for r in REPOS):
+                break
+        selected.extend(picked)
 
     print(f"\nSelected {len(selected)} GitHub issues for comparison set:")
     for t, n in target_per_type.items():
         actual = sum(1 for s in selected if s["issue_type"] == t)
         print(f"  {t:20s} {actual} (target {n})")
 
+    print(f"\nSelected by repo:")
+    repo_counts = Counter(s["repo"] for s in selected)
+    for r, c in repo_counts.items():
+        print(f"  {r}: {c}")
+
     out = OUT_DIR / "specs_human_github.json"
     with open(out, "w") as f:
         json.dump(selected, f, indent=2)
     print(f"\nSaved {out} ({len(selected)} specs)")
 
-    # Show 3 examples
+    stats_out = OUT_DIR / "specs_human_github_stats.json"
+    with open(stats_out, "w") as f:
+        json.dump({
+            "n_total": len(selected),
+            "repos": REPOS,
+            "per_repo_fetch_stats": per_repo_stats,
+            "selected_by_type": {t: sum(1 for s in selected if s["issue_type"] == t)
+                                  for t in target_per_type},
+            "selected_by_repo": dict(repo_counts),
+        }, f, indent=2)
+
     print(f"\nSample specs:")
-    for s in selected[:3]:
+    for s in selected[:5]:
         print(f"  [{s['cluster_id']}] {s['issue_type']:18s} {s['title'][:80]}")
-        print(f"     URL: {s['github_url']}")
 
 
 if __name__ == "__main__":

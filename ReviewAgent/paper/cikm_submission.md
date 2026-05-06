@@ -8,7 +8,7 @@
 
 App-store reviews are the loudest, freshest user feedback channel a software team has, and at any reasonable scale they're impossible to read by hand. Recent pipelines bootstrap classifiers, clusterers, and reply generators using auto-labeled training data, but errors compound: noisy labels feed messy clusters that feed generic responses. We ask a single question: *how accurately can an LLM agent translate noisy app review clusters into structured issue specifications compared to human-written GitHub issues?* We answer it by building ReviewAgent, a three-layer pipeline that (1) maps reviews to taxonomy-grounded issue specs via a knowledge graph, hierarchical clustering, and standardized schema mapping; (2) couples a multi-agent code-resolution pipeline (Planner / Navigator / Editor / Executor) with resolution-aware response generation; and (3) trains preference-aligned policies (KTO, DPO, Constrained PPO via a custom Lagrangian loop) on real human ratings.
 
-We evaluate on RRGen (215,583 reviews) plus AntennaPod for the code-resolution side. Compared against 23 real GitHub issues mined from AntennaPod's tracker, our taxonomy-grounded LLM condition matches human writers on user-story coverage (100% vs 100%), substantially exceeds them on bug-report steps coverage (100% vs 58%), and on overall structural completeness (1.00 vs 0.74). The classifier closes the gap from Cohen κ = 0.16 against expert labels to κ = 0.59, with an independent third-opinion classifier endorsing 88.66% of our corrections. Three machine-generated patches apply cleanly to AntennaPod and one passes all 44 unit tests in its module. In a 400-rating blinded evaluation, the full ReviewAgent response system scores 4.62/5 versus 2.26/5 for retrieval-only (paired Wilcoxon p < 0.001). Code, data, and 11 paper figures: https://github.com/Fabiha-9876/ReviewAgent.
+We evaluate on RRGen (215,583 reviews) plus AntennaPod for the code-resolution side. Compared against 64 real GitHub issues mined from three open-source Android repos (AntennaPod, NewPipe, Thunderbird Android), our taxonomy-grounded LLM condition matches human writers on user-story coverage (100% vs 100%), substantially exceeds them on bug-report steps coverage (100% vs 37%), and on overall structural completeness (1.00 vs 0.70). Per-repo completeness lands tightly between 0.68 and 0.73, confirming the gap is structural rather than project-specific. The classifier closes the gap from Cohen κ = 0.16 against expert labels to κ = 0.59, with an independent third-opinion classifier endorsing 88.66% of our corrections. Three machine-generated patches apply cleanly to AntennaPod and one passes all 44 unit tests in its module. In a 400-rating blinded evaluation, the full ReviewAgent response system scores 4.62/5 versus 2.26/5 for retrieval-only (paired Wilcoxon p < 0.001). Code, data, and 11 paper figures: https://github.com/Fabiha-9876/ReviewAgent.
 
 ---
 
@@ -34,7 +34,7 @@ Three sub-questions structure the investigation, one per pipeline layer:
 
 A short list of what we found, before the details:
 
-1. We mined 23 real closed GitHub issues from AntennaPod's tracker. On bug + feature reports (where GitHub coverage is solid), our LLM-with-taxonomy condition **matches** human writers on user-story coverage (100% vs 100%), **exceeds** them on bug-report steps coverage (100% vs 58%), and **exceeds** them on overall completeness (1.00 vs 0.74). The trade-off: real GitHub bodies are longer (70.6 words vs 48.5) — humans free-form their prose; the LLM stays disciplined about template fields.
+1. We mined 64 real closed GitHub issues from three open-source Android repos: **AntennaPod**, **NewPipe**, and **Thunderbird Android** (the K-9 Mail successor). On bug + feature reports (where GitHub coverage is solid across all three), our LLM-with-taxonomy condition **matches** human writers on user-story coverage (100% vs 100%), **exceeds** them on bug-report steps coverage (100% vs 37%), and **exceeds** them on overall completeness (1.00 vs 0.70). Per-repo completeness is tight (0.68–0.73), confirming the gap isn't a single-project artifact. The one place humans win: descriptive prose length (67.7 words vs 48.5) — humans pad with context, the LLM stays terse on template fields.
 2. The auto-labeled training data has roughly 25% noise on the praise category, measured directly by manual verification of 5,230 reviews. A RoBERTa-anchored cleanlab pass corrects 44,214 reviews (20.51% of the corpus). A separately trained classifier endorses 88.66% of those corrections.
 3. Three sample machine-generated patches apply cleanly to AntennaPod. One of them passes all 44 unit tests in its module. Differential JUnit tests show all three actually change behavior in the patched direction (tests fail when we reverse the patch).
 4. The full response system, which sees both retrieval results and the structured issue spec, scores 4.62/5 in human evaluation. Retrieval alone scores 2.26/5. The gap is 2.36 points and highly significant (paired Wilcoxon p < 0.001). Retrieval *without* the structure actually loses to a generic dev-rel baseline — a finding that pushes back on the assumption that RAG always helps.
@@ -70,7 +70,7 @@ The corpus is RRGen: 310,031 review-response pairs from 58 Android apps. After d
 
 A 490-review expert subset is annotated by the lead author for end-to-end evaluation, drawn stratified across the seven categories with 70 reviews per class. A separate 5,230-review verified subset (most of it concentrated on praise predictions, where the noise is densest) becomes the anchor for the noise-correction step.
 
-For the human-written GitHub-issue comparison set, we mined 23 closed issues from the **AntennaPod GitHub tracker** (open-source Android podcast app) using the public REST API. We parsed each issue's title and body into our IssueSpec schema, inferring the issue type from labels and keyword heuristics (12 bug_report, 10 feature_request, 1 usability). For the multi-agent code-resolution layer we use the same AntennaPod codebase (611 source files) as a substitute for the closed-source RRGen apps.
+For the human-written GitHub-issue comparison set, we mined **64 closed issues from three different open-source Android apps** via the public GitHub REST API: AntennaPod (podcast player), NewPipe (lightweight YouTube client), and Thunderbird Android (the K-9 Mail successor). The three repos cover different software domains — media playback, content discovery, and email — so the comparison isn't dominated by a single project's issue-template conventions. We parsed each issue's title and body into our IssueSpec schema, inferring the issue type from labels and keyword heuristics (30 bug_report, 25 feature_request, 5 usability, 2 performance, 2 compatibility). For the multi-agent code-resolution layer (§3.3) we use the AntennaPod codebase (611 source files) as the substitute for closed-source RRGen apps.
 
 ### 3.2 Layer 1 — Translation from Reviews to Issue Specifications (RQ1)
 
@@ -125,24 +125,34 @@ For RQ3, we report training metrics for KTO, DPO, the Constrained-PPO proxy, and
 
 ### 4.1 RQ1 — LLM Translation vs Human-Written GitHub Issues
 
-This is the central result. We restrict to bug + feature issue types, where the GitHub sample has solid coverage:
+This is the central result. We restrict to bug + feature issue types, where GitHub coverage is solid across all three repos. The GitHub sample (n=55 in this restriction) is drawn proportionally from AntennaPod, NewPipe, and Thunderbird Android.
 
 | condition | n | completeness | desc words | title words | bugs with steps | features with user_story |
 |---|---|---|---|---|---|---|
 | (a) **LLM with taxonomy** | 60 | **1.000** ⭐ | 48.5 | 9.6 | **100%** ⭐ | **100%** |
 | (b) LLM free-form | 60 | 0.619 | 91.2 | 9.4 | 0% | 0% |
 | (d) lead-author reference | 12 | 0.619 | 38.4 | 11.1 | 0% | 0% |
-| **(e) real human GitHub** | 22 | 0.738 | **70.6** | 8.7 | 58% | 100% |
+| **(e) real GitHub (3 repos)** | 55 | 0.700 | **67.7** | 9.0 | 37% | 100% |
+
+**Per-repo GitHub breakdown** (to confirm the comparison isn't a single-project artifact):
+
+| repo | n | completeness | desc words | bugs with steps |
+|---|---|---|---|---|
+| AntennaPod | 19 | 0.729 | 70.6 | 50% |
+| NewPipe | 18 | 0.693 | 61.1 | 0% |
+| Thunderbird (K-9 successor) | 18 | 0.677 | 71.4 | 60% |
+
+Completeness across the three repos varies in a tight band (0.677–0.729), confirming that the LLM-vs-human gap isn't a quirk of one project's issue-template conventions. NewPipe has zero bug reports with explicit reproduction steps in our sample — its tracker culture clearly differs from AntennaPod's and Thunderbird's, but the overall completeness number stays in range.
 
 Three findings:
 
-**The taxonomy-grounded LLM matches GitHub on user stories and exceeds it on bug-report structure.** Both the LLM-with-taxonomy condition and the real GitHub set hit 100% on user-story coverage for feature requests. On bug reports, the LLM provides reproduction steps for 100% of cases versus 58% for real GitHub bugs — confirming a result that AntennaPod maintainers would probably nod at: humans don't always include steps, even when the issue is genuinely a bug.
+**The taxonomy-grounded LLM matches GitHub on user stories and decisively exceeds it on bug-report structure.** Both the LLM-with-taxonomy condition and the real GitHub set hit 100% on user-story coverage for feature requests. On bug reports, the LLM provides reproduction steps for 100% of cases versus 37% across the three GitHub repos — a 63-point gap. Reading the actual GitHub issues makes the gap obvious: many human-written bugs are short paragraphs about what's broken without a step-by-step trail.
 
-**On overall structural completeness (the fraction of required template fields filled), the LLM-with-taxonomy condition exceeds GitHub** (1.00 vs 0.74). This is what the structured prompting buys us. Templates are easy for an LLM to fill exhaustively; humans fill the fields they think are important and skip the rest.
+**On overall structural completeness, the LLM-with-taxonomy condition exceeds GitHub** (1.00 vs 0.70). This is what structured prompting buys us. Templates are easy for an LLM to fill exhaustively; humans fill the fields they think are important and skip the rest, and the per-repo data shows even disciplined open-source projects don't push this number above ~0.73.
 
-**Real GitHub issues have richer descriptive prose** (70.6 words on average versus 48.5 for the LLM). Humans pad descriptions with context, motivation, and complaints; the LLM stays terse and directly addresses the template fields. Whether this is a feature or a bug depends on the downstream consumer. For automated triage and routing, the structured fields matter more than the prose. For developers reading the issue, the prose probably helps.
+**Real GitHub issues have richer descriptive prose** (67.7 words on average versus 48.5 for the LLM). Humans pad descriptions with context, motivation, and complaints; the LLM stays terse and directly addresses template fields. Whether this is a feature or a bug depends on the downstream consumer. For automated triage and routing, the structured fields matter more than the prose. For developers reading the issue, the prose probably helps.
 
-**Aggregate answer to the main RQ:** the LLM-with-taxonomy condition **matches or exceeds** real GitHub issues on every structural metric we measured, with the single exception of description length. This is a positive result for using LLM agents in the issue-specification pipeline — at least for the bug + feature categories where direct comparison is possible.
+**Aggregate answer to the main RQ:** the LLM-with-taxonomy condition **matches or exceeds** real GitHub issues on every structural metric we measured, *across three different open-source Android apps*, with the single exception of description length. This is a positive result for using LLM agents in the issue-specification pipeline — and the three-repo replication strengthens the claim from "true on AntennaPod" to "true across heterogeneous open-source Android projects."
 
 The rubric on the broader 320-spec set (covering performance, usability, and compatibility too) shows a similar pattern. Taxonomy-grounded specs lead on completeness (5.00) and template adherence (5.00). Real-GitHub-style condition (the lead-author reference, our proxy when actual GitHub coverage was thin) leads on specificity (3.95) and severity reasoning (4.40).
 
@@ -215,7 +225,7 @@ Automatic metrics rank the conditions opposite to human evaluation. This is a kn
 
 ### 5.5 Limitations
 
-**GitHub sample is from one app.** The 23 GitHub issues come from AntennaPod alone. A multi-repo extension (e.g., K-9 Mail + Termux + NewPipe) would harden the comparison. Within AntennaPod, the bug + feature coverage was solid; perf/usability/compatibility coverage was thinner.
+**GitHub sample size is moderate and skewed toward bug + feature reports.** 64 issues across three repos is enough to land a structural-completeness gap that's robust across project conventions, but performance, usability, and compatibility issues are thinly represented (5 + 2 + 2 = 9 specs in those three categories combined). A larger sample with explicit balanced sampling on rare types would tighten that part of the comparison.
 
 **Single-annotator gold standard.** The 490-review expert set and the 400 response ratings are both lead-author work. We address this with the Gilardi 2023 LLM-rater methodology but a 2-or-3 human rater extension is the right next step.
 
@@ -237,7 +247,7 @@ Two pieces of this should transfer beyond app reviews. The verified-anchor confi
 
 ## 7. Future Work
 
-1. **Multi-repo GitHub extension.** Replicate the RQ1 comparison on K-9 Mail, Termux, and NewPipe to confirm the LLM-vs-GitHub finding generalizes beyond AntennaPod. Mining 30 issues from each repo is a one-day exercise.
+1. **Larger GitHub sample with balanced rare-class coverage.** The 3-repo n=64 sample lands the structural gap robustly for bug + feature, but performance, usability, and compatibility need 30+ issues each before claims about those categories carry weight. Adding repos with strong issue-template enforcement (e.g., Mozilla projects) would help.
 2. **Multi-human inter-rater extension.** Recruit two more annotators and rerun the gold-standard κ + α with three real humans on a 100–200 review subsample. The methodology is in place; only the volunteer recruitment is gating.
 3. **Production-scale RLHF.** Given GPU access, port the same KTO / DPO / Constrained PPO recipe onto a 7B base. Our hyperparameters should transfer; the question is whether the rewards/margins and rewards/accuracies hold up at scale.
 4. **End-to-end joint training.** Currently each layer trains independently. Joint training across all three layers, with a unified loss that backprops through cluster-to-spec-to-response, might reveal whether layer-level corrections compound or interfere.
