@@ -1,0 +1,18 @@
+==============================================================================
+INTER-ANNOTATOR AGREEMENT — 3 RATERS (1 EXPERT + 2 LLMs)
+==============================================================================
+Sample: 99 reviews from the 490 expert gold standard
+Annotator-1: lead-author expert
+Annotator-2: Qwen/Qwen2.5-3B-Instruct (concise prompt)
+Annotator-3: Qwen/Qwen2.5-3B-Instruct (chain-of-thought prompt)
+
+Pairwise Cohen's κ:
+  E vs LLM-concise:    0.2750
+  E vs LLM-CoT:        0.3826
+  LLM-concise vs CoT:  0.2608
+
+Krippendorff α (3 annotators): 0.4509
+
+Interpretation: Landis-Koch (κ): >0.81 almost-perfect, 0.61-0.80 substantial,
+                                 0.41-0.60 moderate, 0.21-0.40 fair, <0.20 slight.
+                Krippendorff (α): >=0.667 acceptable, >=0.80 strong.

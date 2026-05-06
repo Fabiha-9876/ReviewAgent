@@ -1,0 +1,8 @@
+{
+  "flat_umap_hdbscan_clusters": 194,
+  "hierarchical_kg_clusters": 605,
+  "flat_avg_cluster_size": 375.17999999999995,
+  "hierarchical_avg_cluster_size": 15.943801652892562,
+  "flat_method": "UMAP-50d + HDBSCAN per issue type (flat)",
+  "hierarchical_method": "KG-grounded aspect-grouping + HDBSCAN sub-clustering (Aim-1 design)"
+}

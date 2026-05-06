@@ -1,0 +1,260 @@
+{
+  "n_reviews_in_kg": 8404,
+  "n_nodes": 18938,
+  "n_edges": 31763,
+  "n_review_nodes": 8404,
+  "n_aspect_nodes": 10534,
+  "n_entity_nodes": 0,
+  "top_aspects_by_pagerank": [
+    {
+      "aspect": "aspect:ad",
+      "pagerank": 0.040122,
+      "n_reviews": 3210
+    },
+    {
+      "aspect": "aspect:phone",
+      "pagerank": 0.011309,
+      "n_reviews": 876
+    },
+    {
+      "aspect": "aspect:ads",
+      "pagerank": 0.009821,
+      "n_reviews": 854
+    },
+    {
+      "aspect": "aspect:edit",
+      "pagerank": 0.008959,
+      "n_reviews": 735
+    },
+    {
+      "aspect": "aspect:battery",
+      "pagerank": 0.006903,
+      "n_reviews": 541
+    },
+    {
+      "aspect": "aspect:update",
+      "pagerank": 0.005639,
+      "n_reviews": 447
+    },
+    {
+      "aspect": "aspect:digit",
+      "pagerank": 0.004973,
+      "n_reviews": 406
+    },
+    {
+      "aspect": "aspect:photo",
+      "pagerank": 0.004822,
+      "n_reviews": 389
+    },
+    {
+      "aspect": "aspect:feature",
+      "pagerank": 0.00437,
+      "n_reviews": 349
+    },
+    {
+      "aspect": "aspect:help",
+      "pagerank": 0.003612,
+      "n_reviews": 289
+    },
+    {
+      "aspect": "aspect:lag",
+      "pagerank": 0.003127,
+      "n_reviews": 250
+    },
+    {
+      "aspect": "aspect:crash",
+      "pagerank": 0.002703,
+      "n_reviews": 216
+    },
+    {
+      "aspect": "aspect:screen",
+      "pagerank": 0.002637,
+      "n_reviews": 216
+    },
+    {
+      "aspect": "aspect:device",
+      "pagerank": 0.002322,
+      "n_reviews": 182
+    },
+    {
+      "aspect": "aspect:data",
+      "pagerank": 0.002298,
+      "n_reviews": 185
+    },
+    {
+      "aspect": "aspect:picture",
+      "pagerank": 0.002275,
+      "n_reviews": 179
+    },
+    {
+      "aspect": "aspect:notification",
+      "pagerank": 0.00226,
+      "n_reviews": 180
+    },
+    {
+      "aspect": "aspect:version",
+      "pagerank": 0.00194,
+      "n_reviews": 159
+    },
+    {
+      "aspect": "aspect:driver",
+      "pagerank": 0.00179,
+      "n_reviews": 138
+    },
+    {
+      "aspect": "aspect:ui",
+      "pagerank": 0.001726,
+      "n_reviews": 131
+    },
+    {
+      "aspect": "aspect:video",
+      "pagerank": 0.001654,
+      "n_reviews": 128
+    },
+    {
+      "aspect": "aspect:lot",
+      "pagerank": 0.001589,
+      "n_reviews": 132
+    },
+    {
+      "aspect": "aspect:account",
+      "pagerank": 0.001551,
+      "n_reviews": 125
+    },
+    {
+      "aspect": "aspect:image",
+      "pagerank": 0.001438,
+      "n_reviews": 114
+    },
+    {
+      "aspect": "aspect:freeze",
+      "pagerank": 0.001419,
+      "n_reviews": 112
+    },
+    {
+      "aspect": "aspect:problem",
+      "pagerank": 0.0014,
+      "n_reviews": 113
+    },
+    {
+      "aspect": "aspect:digit> star",
+      "pagerank": 0.001347,
+      "n_reviews": 110
+    },
+    {
+      "aspect": "aspect:camera",
+      "pagerank": 0.001267,
+      "n_reviews": 91
+    },
+    {
+      "aspect": "aspect:option",
+      "pagerank": 0.001235,
+      "n_reviews": 96
+    },
+    {
+      "aspect": "aspect:news",
+      "pagerank": 0.001225,
+      "n_reviews": 94
+    },
+    {
+      "aspect": "aspect:filter",
+      "pagerank": 0.001215,
+      "n_reviews": 95
+    },
+    {
+      "aspect": "aspect:download",
+      "pagerank": 0.001191,
+      "n_reviews": 103
+    },
+    {
+      "aspect": "aspect:speed",
+      "pagerank": 0.001135,
+      "n_reviews": 83
+    },
+    {
+      "aspect": "aspect:button",
+      "pagerank": 0.001045,
+      "n_reviews": 83
+    },
+    {
+      "aspect": "aspect:feed",
+      "pagerank": 0.001003,
+      "n_reviews": 83
+    },
+    {
+      "aspect": "aspect:issue",
+      "pagerank": 0.001002,
+      "n_reviews": 81
+    },
+    {
+      "aspect": "aspect:time",
+      "pagerank": 0.000982,
+      "n_reviews": 79
+    },
+    {
+      "aspect": "aspect:pic",
+      "pagerank": 0.00097,
+      "n_reviews": 76
+    },
+    {
+      "aspect": "aspect:tab",
+      "pagerank": 0.000966,
+      "n_reviews": 80
+    },
+    {
+      "aspect": "aspect:background",
+      "pagerank": 0.000955,
+      "n_reviews": 79
+    },
+    {
+      "aspect": "aspect:new update",
+      "pagerank": 0.00092,
+      "n_reviews": 77
+    },
+    {
+      "aspect": "aspect:message",
+      "pagerank": 0.000885,
+      "n_reviews": 69
+    },
+    {
+      "aspect": "aspect:application",
+      "pagerank": 0.000849,
+      "n_reviews": 70
+    },
+    {
+      "aspect": "aspect:map",
+      "pagerank": 0.000847,
+      "n_reviews": 66
+    },
+    {
+      "aspect": "aspect:browser",
+      "pagerank": 0.0008,
+      "n_reviews": 65
+    },
+    {
+      "aspect": "aspect:location",
+      "pagerank": 0.000799,
+      "n_reviews": 60
+    },
+    {
+      "aspect": "aspect:article",
+      "pagerank": 0.000778,
+      "n_reviews": 62
+    },
+    {
+      "aspect": "aspect:work",
+      "pagerank": 0.000761,
+      "n_reviews": 56
+    },
+    {
+      "aspect": "aspect:last update",
+      "pagerank": 0.000759,
+      "n_reviews": 66
+    },
+    {
+      "aspect": "aspect:day",
+      "pagerank": 0.000733,
+      "n_reviews": 59
+    }
+  ]
+}
