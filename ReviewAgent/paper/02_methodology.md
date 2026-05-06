@@ -76,6 +76,20 @@ Sample auto-names: *bug_report: lock screen / notification* (n=4,505), *bug_repo
 
 The lead author validated 50 clusters (balanced across the five actionable issue types) by reading 5 sample reviews per cluster and rating coherence: **Y** (5/5 reviews share theme), **P** (3-4/5 share theme), **N** (incoherent). Weighted purity (Y=1, P=0.5, N=0) was **0.660** on the initial sample. After lead-author curation of 100 clusters (61 Keep, 6 Rename, 12 Merge, 21 Split), curation-aware purity rose to **0.814**.
 
+### 3.4.3 Aspect-Extraction Validation Against GUZMAN
+
+To validate the aspect extraction underlying our cluster auto-naming (§3.4.1), we benchmarked both extractors against the **Guzman & Maalej 2014 gold standard** \cite{guzman2014}, accessed via the alternative corpus released by Dąbrowski et al. \cite{dabrowski2022analysing}. This dataset contains **2,062 sentences from 8 mobile applications** (4 iOS via Amazon, 4 Android), with **971 sentences carrying a total of 1,040 manually annotated aspect-sentiment-intensity tuples**. Each gold annotation is a `(aspect, sentiment, intensity)` triple where `aspect` is a 1–3 word noun phrase identified by the original annotators as a salient feature, component, or named entity.
+
+We evaluate matching at three levels of strictness:
+
+- **Exact:** predicted aspect string equals gold aspect string after lowercase + punctuation normalization.
+- **Lemma:** spaCy-lemmatized forms match (handles "install" ↔ "installs" ↔ "installed").
+- **Substring:** predicted contains gold or vice versa with both strings ≥3 characters (handles "ads" ↔ "advertisement", "interface" ↔ "user interface").
+
+We report micro-averaged precision/recall/F1 (aggregated TP/FP/FN counts across all sentences) and macro-averaged metrics (mean per-sentence F1, restricted to the 971 sentences with at least one gold aspect). The substring level is the paper-defensible operating point because it tolerates morphological variation in single-token annotations.
+
+The heuristic extractor (spaCy NP-chunking + regex patterns + the COMMON_ASPECTS vocabulary) was evaluated on the **full 2,062 sentences**. The local-LLM extractor (Qwen2.5-3B-Instruct) was evaluated on a **200-sentence stratified sample** drawn proportionally per app (max 30 per app, seed = 42). Results are reported in §4.5.
+
 ## 3.5 Stage 3: Taxonomy-Grounded Issue Specifications
 
 Stage 3 maps each cluster to a structured `IssueSpec` using issue-type-specific templates:

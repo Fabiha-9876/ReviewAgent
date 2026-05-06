@@ -1,0 +1,341 @@
+% =====================================================================
+% References for ReviewAgent paper
+% =====================================================================
+% Verify each entry against the actual publication before camera-ready.
+% =====================================================================
+
+% --- App-review classification core ---------------------------------------
+
+@article{maalej2016,
+  author    = {Maalej, Walid and Nabil, Hadeer},
+  title     = {Bug report, feature request, or simply praise? On automatically classifying app reviews},
+  journal   = {Requirements Engineering},
+  volume    = {21},
+  number    = {3},
+  pages     = {311--331},
+  year      = {2016},
+  publisher = {Springer},
+  doi       = {10.1007/s00766-016-0251-9}
+}
+
+@article{gao2019rrgen,
+  author    = {Gao, Cuiyun and Zeng, Jichuan and Lyu, Michael R. and King, Irwin},
+  title     = {Automating App Review Response Generation},
+  booktitle = {Proceedings of the 34th IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+  pages     = {163--175},
+  year      = {2019},
+  organization = {IEEE},
+  doi       = {10.1109/ASE.2019.00026}
+}
+
+@inproceedings{chen2014arminer,
+  author    = {Chen, Ning and Lin, Jialiu and Hoi, Steven C. H. and Xiao, Xiaokui and Zhang, Boshen},
+  title     = {AR-miner: Mining informative reviews for developers from mobile app marketplace},
+  booktitle = {Proceedings of the 36th International Conference on Software Engineering (ICSE)},
+  pages     = {767--778},
+  year      = {2014},
+  organization = {ACM}
+}
+
+@inproceedings{villarroel2016,
+  author    = {Villarroel, Lorenzo and Bavota, Gabriele and Russo, Barbara and Oliveto, Rocco and Di Penta, Massimiliano},
+  title     = {Release planning of mobile apps based on user reviews},
+  booktitle = {Proceedings of the 38th International Conference on Software Engineering (ICSE)},
+  pages     = {14--24},
+  year      = {2016},
+  organization = {ACM}
+}
+
+@inproceedings{disorbo2016surf,
+  author    = {Di Sorbo, Andrea and Panichella, Sebastiano and Alexandru, Carol V. and Visaggio, Corrado A. and Canfora, Gerardo and Gall, Harald C.},
+  title     = {SURF: Summarizer of user reviews feedback},
+  booktitle = {Proceedings of the 39th International Conference on Software Engineering (ICSE) Companion},
+  year      = {2016},
+  organization = {IEEE}
+}
+
+@article{dabrowski2022analysing,
+  author    = {Dąbrowski, Jacek and Letier, Emmanuel and Perini, Anna and Susi, Angelo},
+  title     = {Analysing app reviews for software engineering: A systematic literature review},
+  journal   = {Empirical Software Engineering},
+  volume    = {27},
+  number    = {2},
+  pages     = {43},
+  year      = {2022},
+  publisher = {Springer}
+}
+
+@article{guzman2014,
+  author    = {Guzman, Emitza and Maalej, Walid},
+  title     = {How do users like this feature? A fine grained sentiment analysis of app reviews},
+  booktitle = {Proceedings of the 22nd International Requirements Engineering Conference (RE)},
+  pages     = {153--162},
+  year      = {2014},
+  organization = {IEEE}
+}
+
+% --- Confident learning / label-noise correction --------------------------
+
+@article{northcutt2021cleanlab,
+  author    = {Northcutt, Curtis G. and Jiang, Lu and Chuang, Isaac L.},
+  title     = {Confident Learning: Estimating uncertainty in dataset labels},
+  journal   = {Journal of Artificial Intelligence Research},
+  volume    = {70},
+  pages     = {1373--1411},
+  year      = {2021}
+}
+
+@inproceedings{patrini2017making,
+  author    = {Patrini, Giorgio and Rozza, Alessandro and Krishna Menon, Aditya and Nock, Richard and Qu, Lizhen},
+  title     = {Making deep neural networks robust to label noise: A loss correction approach},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {1944--1952},
+  year      = {2017}
+}
+
+@inproceedings{lee2018cleannet,
+  author    = {Lee, Kuang-Huei and He, Xiaodong and Zhang, Lei and Yang, Linjun},
+  title     = {CleanNet: Transfer learning for scalable image classifier training with label noise},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {5447--5456},
+  year      = {2018}
+}
+
+@inproceedings{han2018coteaching,
+  author    = {Han, Bo and Yao, Quanming and Yu, Xingrui and Niu, Gang and Xu, Miao and Hu, Weihua and Tsang, Ivor and Sugiyama, Masashi},
+  title     = {Co-teaching: Robust training of deep neural networks with extremely noisy labels},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2018}
+}
+
+% --- LLM annotation behavior ----------------------------------------------
+
+@inproceedings{wang2021want,
+  author    = {Wang, Shuohang and Liu, Yang and Xu, Yichong and Zhu, Chenguang and Zeng, Michael},
+  title     = {Want to reduce labeling cost? GPT-3 can help},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP},
+  pages     = {4195--4205},
+  year      = {2021}
+}
+
+@article{gilardi2023chatgpt,
+  author    = {Gilardi, Fabrizio and Alizadeh, Meysam and Kubli, Maël},
+  title     = {ChatGPT outperforms crowd workers for text-annotation tasks},
+  journal   = {Proceedings of the National Academy of Sciences (PNAS)},
+  volume    = {120},
+  number    = {30},
+  year      = {2023}
+}
+
+@article{pangakis2023automated,
+  author    = {Pangakis, Nicholas and Wolken, Samuel and Fasching, Nicolaus},
+  title     = {Automated annotation with generative AI requires validation},
+  journal   = {arXiv preprint arXiv:2306.00176},
+  year      = {2023}
+}
+
+@article{reiss2023testing,
+  author    = {Reiss, Michael V.},
+  title     = {Testing the reliability of ChatGPT for text annotation and classification: A cautionary remark},
+  journal   = {arXiv preprint arXiv:2304.11085},
+  year      = {2023}
+}
+
+@article{laban2023llm,
+  author    = {Laban, Philippe and Kryściński, Wojciech and Agarwal, Divyansh and Fabbri, Alexander R. and Xiong, Caiming and Joty, Shafiq and Wu, Chien-Sheng},
+  title     = {LLMs as factual reasoners: Insights from existing benchmarks and beyond},
+  journal   = {arXiv preprint arXiv:2305.14540},
+  year      = {2023}
+}
+
+@article{chen2024llm,
+  author    = {Chen, Banghao and Zhang, Zhaofeng and Langren{\'e}, Nicolas and Zhu, Shengxin},
+  title     = {Unleashing the potential of prompt engineering in large language models: A comprehensive review},
+  journal   = {arXiv preprint},
+  year      = {2024}
+}
+
+% --- Issue-specification templates ----------------------------------------
+
+@article{zimmermann2010,
+  author    = {Zimmermann, Thomas and Premraj, Rahul and Bettenburg, Nicolas and Just, Sascha and Schröter, Adrian and Weiss, Cathrin},
+  title     = {What makes a good bug report?},
+  journal   = {IEEE Transactions on Software Engineering},
+  volume    = {36},
+  number    = {5},
+  pages     = {618--643},
+  year      = {2010}
+}
+
+@book{cohn2004user,
+  author    = {Cohn, Mike},
+  title     = {User Stories Applied: For Agile Software Development},
+  publisher = {Addison-Wesley Professional},
+  year      = {2004}
+}
+
+@book{wynne2017cucumber,
+  author    = {Wynne, Matt and Hellesøy, Aslak and Tooke, Steve},
+  title     = {The Cucumber Book: Behaviour-Driven Development for Testers and Developers},
+  publisher = {Pragmatic Bookshelf},
+  year      = {2017}
+}
+
+@misc{iso25010,
+  author       = {{International Organization for Standardization}},
+  title        = {{ISO/IEC 25010: Systems and software engineering---Systems and software Quality Requirements and Evaluation (SQuaRE)---System and software quality models}},
+  year         = {2011},
+  publisher    = {ISO},
+  howpublished = {Standard}
+}
+
+@book{nielsen1994,
+  author    = {Nielsen, Jakob},
+  title     = {Usability Engineering},
+  publisher = {Morgan Kaufmann},
+  year      = {1994}
+}
+
+% --- Models / methods used in the pipeline --------------------------------
+
+@article{liu2019roberta,
+  author    = {Liu, Yinhan and Ott, Myle and Goyal, Naman and Du, Jingfei and Joshi, Mandar and Chen, Danqi and Levy, Omer and Lewis, Mike and Zettlemoyer, Luke and Stoyanov, Veselin},
+  title     = {{RoBERTa}: A robustly optimized BERT pretraining approach},
+  journal   = {arXiv preprint arXiv:1907.11692},
+  year      = {2019}
+}
+
+@inproceedings{reimers2019sentencebert,
+  author    = {Reimers, Nils and Gurevych, Iryna},
+  title     = {Sentence-{BERT}: Sentence embeddings using Siamese BERT-networks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  pages     = {3982--3992},
+  year      = {2019}
+}
+
+@article{mcinnes2018umap,
+  author    = {McInnes, Leland and Healy, John and Melville, James},
+  title     = {{UMAP}: Uniform manifold approximation and projection for dimension reduction},
+  journal   = {arXiv preprint arXiv:1802.03426},
+  year      = {2018}
+}
+
+@article{mcinnes2017hdbscan,
+  author    = {McInnes, Leland and Healy, John and Astels, Steve},
+  title     = {{HDBSCAN}: Hierarchical density based clustering},
+  journal   = {Journal of Open Source Software},
+  volume    = {2},
+  number    = {11},
+  pages     = {205},
+  year      = {2017}
+}
+
+@inproceedings{lewis2020rag,
+  author    = {Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and Küttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rocktäschel, Tim and Riedel, Sebastian and Kiela, Douwe},
+  title     = {Retrieval-augmented generation for knowledge-intensive {NLP} tasks},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020}
+}
+
+% --- RAG and retrieval in SE applications ---------------------------------
+
+@inproceedings{robillard2017demand,
+  author    = {Robillard, Martin P. and Marcus, Andrian and Treude, Christoph and Bavota, Gabriele and Chaparro, Oscar and Ernst, Neil and Gerosa, Marco Aurélio and Godfrey, Michael and Lanza, Michele and Linares-Vásquez, Mario and others},
+  title     = {On-demand developer documentation},
+  booktitle = {Proceedings of the IEEE International Conference on Software Maintenance and Evolution (ICSME)},
+  pages     = {479--483},
+  year      = {2017}
+}
+
+@inproceedings{nashid2023codequery,
+  author    = {Nashid, Noor and Sintaha, Mifta and Mesbah, Ali},
+  title     = {Retrieval-based prompt selection for code-related few-shot learning},
+  booktitle = {Proceedings of the 45th International Conference on Software Engineering (ICSE)},
+  pages     = {2450--2462},
+  year      = {2023}
+}
+
+@article{ahmed2024automatic,
+  author    = {Ahmed, Toufique and Devanbu, Premkumar},
+  title     = {Few-shot training {LLMs} for project-specific code-summarization},
+  journal   = {arXiv preprint},
+  year      = {2024}
+}
+
+% --- Inter-annotator reliability ------------------------------------------
+
+@book{krippendorff2004content,
+  author    = {Krippendorff, Klaus},
+  title     = {Content Analysis: An Introduction to its Methodology},
+  edition   = {2},
+  publisher = {Sage Publications},
+  year      = {2004}
+}
+
+@article{fleiss1971,
+  author    = {Fleiss, Joseph L.},
+  title     = {Measuring nominal scale agreement among many raters},
+  journal   = {Psychological Bulletin},
+  volume    = {76},
+  number    = {5},
+  pages     = {378--382},
+  year      = {1971}
+}
+
+@article{cohen1960,
+  author    = {Cohen, Jacob},
+  title     = {A coefficient of agreement for nominal scales},
+  journal   = {Educational and Psychological Measurement},
+  volume    = {20},
+  number    = {1},
+  pages     = {37--46},
+  year      = {1960}
+}
+
+@article{landis1977,
+  author    = {Landis, J. Richard and Koch, Gary G.},
+  title     = {The measurement of observer agreement for categorical data},
+  journal   = {Biometrics},
+  volume    = {33},
+  number    = {1},
+  pages     = {159--174},
+  year      = {1977}
+}
+
+% --- Evaluation of generation: known limitations of n-gram metrics --------
+
+@inproceedings{liu2016how,
+  author    = {Liu, Chia-Wei and Lowe, Ryan and Serban, Iulian and Noseworthy, Mike and Charlin, Laurent and Pineau, Joelle},
+  title     = {How {NOT} to evaluate your dialogue system: An empirical study of unsupervised evaluation metrics for dialogue response generation},
+  booktitle = {Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  pages     = {2122--2132},
+  year      = {2016}
+}
+
+@article{sai2022survey,
+  author    = {Sai, Ananya B. and Mohankumar, Akash Kumar and Khapra, Mitesh M.},
+  title     = {A survey of evaluation metrics used for {NLG} systems},
+  journal   = {ACM Computing Surveys},
+  volume    = {55},
+  number    = {2},
+  pages     = {1--39},
+  year      = {2022}
+}
+
+% --- Aspect-based sentiment analysis benchmarks ---------------------------
+
+@inproceedings{pontiki2014semeval,
+  author    = {Pontiki, Maria and Galanis, Dimitris and Pavlopoulos, John and Papageorgiou, Harris and Androutsopoulos, Ion and Manandhar, Suresh},
+  title     = {{SemEval-2014} Task 4: Aspect based sentiment analysis},
+  booktitle = {Proceedings of the 8th International Workshop on Semantic Evaluation (SemEval 2014)},
+  pages     = {27--35},
+  year      = {2014}
+}
+
+@inproceedings{hu2004mining,
+  author    = {Hu, Minqing and Liu, Bing},
+  title     = {Mining and summarizing customer reviews},
+  booktitle = {Proceedings of the 10th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages     = {168--177},
+  year      = {2004}
+}
