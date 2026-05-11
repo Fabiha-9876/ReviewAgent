@@ -46,13 +46,13 @@ App stores receive millions of reviews daily containing buried but actionable bu
 
 We present \textbf{ReviewAgent}, a four-stage pipeline composing (i) verified-anchor confident learning to correct LLM-label noise on a 215K-review corpus; (ii) aspect-grounded knowledge-graph hierarchical clustering; (iii) taxonomy-grounded \texttt{IssueSpec} generation using Zimmermann / ISO 25010 / Nielsen / user-story templates; and (iv) spec-aware retrieval-augmented response generation. Together, these stages turn a noisy review stream into a typed, developer-actionable artifact and a resolution-aware response.
 
-Cohen's $\kappa$ against an expert gold standard rises 0.16 $\rightarrow$ 0.59 across the correction pipeline; an independently-trained classifier endorses 88.66\% of cleanlab corrections. Under strict content-validity criteria, taxonomy-grounded specs reach 0.96 template-fill (Claude Opus 4.7) vs 0.53 for real GitHub issues; cross-LLM replication on Qwen2.5-3B (0.74) and Qwen2.5-1.5B (0.48) shows the score scales with capability, with the qualitative ranking preserved across a sensitivity sweep. On 400 blinded paired ratings, the spec-aware generator beats RAG-only by +2.36 quality points (paired Wilcoxon \emph{p} \textless{} 0.001) --- structure and retrieval are \emph{complementary}, not substitutable. The pipeline yields a reproducible noise-correction recipe with third-opinion validation, an aspect-grounded clustering layer, and a structured-RAG architecture whose value over vanilla RAG is empirically established. Single-rater, single-LLM, and proof-of-concept-scale RLHF are stated as honest limitations. Artifacts: \url{https://github.com/Fabiha-9876/ReviewAgent}.
+Cohen's $\kappa$ against an expert gold standard rises 0.16 $\rightarrow$ 0.59 across the correction pipeline; an independently-trained classifier endorses 88.66\% of cleanlab corrections. Under strict content-validity criteria, taxonomy-grounded specs reach 0.96 template-fill (Claude Opus 4.7) vs 0.53 for real GitHub issues; cross-LLM replication on Qwen2.5-3B (0.74) and Qwen2.5-1.5B (0.48) shows the score scales with capability, with the qualitative ranking preserved across a sensitivity sweep. On 400 blinded paired ratings, the spec-aware generator beats RAG-only by +2.36 quality points (paired Wilcoxon \emph{p} \textless{} 0.001), structure and retrieval are \emph{complementary}, not substitutable. The pipeline yields a reproducible noise-correction recipe with third-opinion validation, an aspect-grounded clustering layer, and a structured-RAG architecture whose value over vanilla RAG is empirically established. Single-rater, single-LLM, and proof-of-concept-scale RLHF are stated as honest limitations. Artifacts: \url{https://github.com/Fabiha-9876/ReviewAgent}.
 
 \section{Introduction}\label{introduction}
 
 \subsection{The Problem}\label{the-problem}
 
-\textbf{App-store reviews contain actionable software-engineering signal --- buried bug reports, feature requests, performance complaints, usability obstacles --- but no current pipeline turns them into a developer-ready \emph{issue specification} that a defect-tracking system can consume.} Google Play receives on the order of millions of new reviews per day \cite{maalej2016, gao2019rrgen, dabrowski2022analysing}; the actionable subset is exactly what a development team must surface, prioritize, and respond to, but manual triage is infeasible at this volume.
+\textbf{App-store reviews contain actionable software-engineering signal, buried bug reports, feature requests, performance complaints, usability obstacles, but no current pipeline turns them into a developer-ready \emph{issue specification} that a defect-tracking system can consume.} Google Play receives on the order of millions of new reviews per day \cite{maalej2016, gao2019rrgen, dabrowski2022analysing}; the actionable subset is exactly what a development team must surface, prioritize, and respond to, but manual triage is infeasible at this volume.
 
 Concretely, the end-to-end task is: \textbf{given a stream of unstructured reviews, produce (a) a structured issue specification (issue type, severity, affected component, reproduction steps, environment) suitable for routing into a defect tracker, and (b) a user-facing response that references the specific issue rather than a generic acknowledgement.} This is a multi-stage information-extraction cascade \cite{hearst1999, sarawagi2008}, not a single classification or generation problem.
 
@@ -67,7 +67,7 @@ Three properties of the data make the cascade difficult:
 \item
   \textbf{Long-tailed, skewed class distribution.} A few classes (\texttt{praise}, \texttt{bug\_report}) absorb the bulk of reviews; operationally important minority classes (\texttt{compatibility}, \texttt{performance}) are rare enough that supervised training data is hard to assemble at scale.
 \item
-  \textbf{LLM bootstrap labels are biased.} Production-scale labeling now relies on LLM annotation \cite{wang2021want, gilardi2023chatgpt}, but LLM annotators introduce \emph{systematic} (not random) biases --- class collapse, boundary confusion --- that downstream classifiers inherit without warning \cite{pangakis2023automated, reiss2023testing, laban2023llm}.
+  \textbf{LLM bootstrap labels are biased.} Production-scale labeling now relies on LLM annotation \cite{wang2021want, gilardi2023chatgpt}, but LLM annotators introduce \emph{systematic} (not random) biases, class collapse, boundary confusion, that downstream classifiers inherit without warning \cite{pangakis2023automated, reiss2023testing, laban2023llm}.
 \end{itemize}
 
 \subsection{Research Questions}\label{research-questions}
@@ -94,11 +94,11 @@ Four testable hypotheses operationalize the research questions; each closes one 
 
 \textbf{H4 (RQ3, spec-aware response generation).} Conditioning Stage 4b on the Stage 3 IssueSpec improves human-rated quality, specificity, and helpfulness over a RAG-only baseline by a margin large enough to survive paired Wilcoxon, Friedman+Nemenyi, Bradley-Terry, and McNemar tests simultaneously at \emph{p} \textless{} 0.001.
 
-A fifth hypothesis under RQ3 --- \textbf{dual-objective Constrained PPO Pareto-dominates single-objective RLHF on the quality--compliance frontier} --- is \emph{implemented but not yet tested end-to-end} on a generation-grade base model, and is reported as future work in \S5 and \S7.
+A fifth hypothesis under RQ3, \textbf{dual-objective Constrained PPO Pareto-dominates single-objective RLHF on the quality--compliance frontier}, is \emph{implemented but not yet tested end-to-end} on a generation-grade base model, and is reported as future work in \S5 and \S7.
 
 \subsection{The Unified Conceptual Framework}\label{the-unified-conceptual-framework}
 
-The five components of ReviewAgent --- \textbf{confident learning, clustering, IssueSpec generation, RAG, and RLHF} --- are not loosely connected modules. They are five necessary stages of one coherent \textbf{structuring cascade}, each one introducing a typed intermediate artifact that the next stage consumes. The cascade is the framework; the central thesis is what the cascade is \emph{for}.
+The five components of ReviewAgent, \textbf{confident learning, clustering, IssueSpec generation, RAG, and RLHF}, are not loosely connected modules. They are five necessary stages of one coherent \textbf{structuring cascade}, each one introducing a typed intermediate artifact that the next stage consumes. The cascade is the framework; the central thesis is what the cascade is \emph{for}.
 
 \subsubsection{The Central Thesis}\label{the-central-thesis}
 
@@ -108,7 +108,7 @@ The five components of ReviewAgent --- \textbf{confident learning, clustering, I
 
 This single thesis subsumes all five components: each one is a \emph{structure-introduction} operation at a specific level of the pipeline. The five components are not interchangeable, and removing any one of them breaks the input contract of the next.
 
-\subsubsection{The Cascade --- One Frame, Five Components}\label{the-cascade-one-frame-five-components}
+\subsubsection{The Cascade, One Frame, Five Components}\label{the-cascade-one-frame-five-components}
 
 The cascade is a single information-extraction pipeline \cite{hearst1999, sarawagi2008}; each stage introduces typed structure that the next stage consumes (Figure~\ref{fig:architecture}, Table~\ref{tab:cascade}).
 
@@ -140,7 +140,7 @@ The cascade is a single information-extraction pipeline \cite{hearst1999, sarawa
 Table~\ref{tab:cascade} lists the five components, the typed artifact each emits, and the RQ each closes.
 
 \begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2pt}
-\caption{The unified cascade --- five components, five typed artifacts, three research questions.}\label{tab:cascade}
+\caption{The unified cascade, five components, five typed artifacts, three research questions.}\label{tab:cascade}
 \begin{tabular}{p{1.6cm}p{2.8cm}p{2.6cm}}\toprule
 Stage & Structure introduced & RQ closed \\\midrule
 1 Confident learning & reliable per-review labels (Cohen's $\kappa$ 0.16 $\rightarrow$ 0.59) & RQ1 (noise) \\
@@ -159,13 +159,13 @@ Four contributions, each tied to one hypothesis under our three research questio
 \begin{itemize}
 \tightlist
 \item
-  \textbf{(C1) A verified-anchor confident-learning recipe.} $\approx$30 person-hours of expert annotation lift Cohen's $\kappa$ vs an expert gold standard from 0.16 $\rightarrow$ 0.59. A separately-trained classifier (V5) independently endorses \textbf{88.66\%} of the 44,214 cleanlab corrections --- third-opinion validation that closes the unaddressed-validation gap of G1.
+  \textbf{(C1) A verified-anchor confident-learning recipe.} $\approx$30 person-hours of expert annotation lift Cohen's $\kappa$ vs an expert gold standard from 0.16 $\rightarrow$ 0.59. A separately-trained classifier (V5) independently endorses \textbf{88.66\%} of the 44,214 cleanlab corrections, third-opinion validation that closes the unaddressed-validation gap of G1.
 \item
-  \textbf{(C2) A taxonomy-grounded IssueSpec representation.} Under strict content-validity criteria, the templated LLM reaches 0.96 substantive template-fill rate vs 0.53 for real GitHub issues from three open-source Android repos --- addressing the missing-actionable-artifact gap under RQ2.
+  \textbf{(C2) A taxonomy-grounded IssueSpec representation.} Under strict content-validity criteria, the templated LLM reaches 0.96 substantive template-fill rate vs 0.53 for real GitHub issues from three open-source Android repos, addressing the missing-actionable-artifact gap under RQ2.
 \item
-  \textbf{(C3) An aspect-grounded KG hierarchical-clustering layer.} Produces 605 fine-grained clusters vs 194 flat, with per-aspect drill-down --- addressing the flat-clustering gap under RQ1.
+  \textbf{(C3) An aspect-grounded KG hierarchical-clustering layer.} Produces 605 fine-grained clusters vs 194 flat, with per-aspect drill-down, addressing the flat-clustering gap under RQ1.
 \item
-  \textbf{(C4) A spec-aware retrieval-augmented response generator.} On 400 blinded paired ratings, beats RAG-only by $\Delta$ = +2.36 quality points (paired Wilcoxon \emph{p} \textless{} 0.001) --- addressing the no-structured-representation gap under RQ3. Structure and retrieval are \emph{complementary}, not substitutable: RAG-without-spec is statistically indistinguishable from no-context.
+  \textbf{(C4) A spec-aware retrieval-augmented response generator.} On 400 blinded paired ratings, beats RAG-only by $\Delta$ = +2.36 quality points (paired Wilcoxon \emph{p} \textless{} 0.001), addressing the no-structured-representation gap under RQ3. Structure and retrieval are \emph{complementary}, not substitutable: RAG-without-spec is statistically indistinguishable from no-context.
 \end{itemize}
 
 Single-rater design, single-LLM dependence (Claude Opus 4.7), and proof-of-concept-scale RLHF (RQ3 dual-objective partially addressed) are stated honestly in \S5.5 with the experiments that would close each.
@@ -183,7 +183,7 @@ We organize related work along the three research questions identified in \S1.3,
 
 \textbf{What exists.} \textbf{Maalej and Nabil} \cite{maalej2016} established the canonical seven-class taxonomy and released a 4,400-review human-annotated corpus. \textbf{Chen et al.'s AR-Miner} \cite{chen2014arminer} introduced filter-then-prioritize architectures for review triage at scale. \textbf{Villarroel et al.'s CLAP} \cite{villarroel2016} added clustering for release planning. \textbf{Di Sorbo et al.'s SURF} \cite{disorbo2016surf} combined intention classification with summarization. \textbf{Dąbrowski et al.} \cite{dabrowski2022analysing} surveyed the field and observed that classification F1 has plateaued at 0.75--0.85, with \textbf{label quality, not model capacity, as the bottleneck.}
 
-\textbf{Where it falls short.} All of the above stop at \emph{labeling} --- a per-review category --- rather than producing a structured artifact a developer can act on. The implicit assumption is that classification + retrieval + summarization is enough; in practice, a developer triage engineer cannot route a ``bug\_report'' label into a defect tracker without reproduction steps, expected/actual behavior, severity, and affected component. None of the cited works produces these fields.
+\textbf{Where it falls short.} All of the above stop at \emph{labeling}, a per-review category, rather than producing a structured artifact a developer can act on. The implicit assumption is that classification + retrieval + summarization is enough; in practice, a developer triage engineer cannot route a ``bug\_report'' label into a defect tracker without reproduction steps, expected/actual behavior, severity, and affected component. None of the cited works produces these fields.
 
 \textbf{Unresolved challenge.} A representation that is to a noisy review cluster what a GitHub issue is to a hand-written bug report.
 
@@ -193,11 +193,11 @@ We organize related work along the three research questions identified in \S1.3,
 
 \textbf{What exists.} \textbf{Northcutt et al.} \cite{northcutt2021cleanlab} formalized confident learning, which estimates the joint distribution of given vs latent true labels from out-of-sample model predictions and flags improbable assignments. Earlier work on label-noise mitigation includes \textbf{Patrini et al.'s loss correction} \cite{patrini2017making}, \textbf{Lee et al.'s self-paced cleansing} \cite{lee2018cleannet}, and \textbf{Han et al.'s co-teaching} \cite{han2018coteaching}.
 
-\textbf{Where it falls short.} Confident learning has been validated extensively on \emph{crowd-labeled} image and text benchmarks, but not on \textbf{LLM-labeled software-engineering corpora} at the scale where LLMs are now the default annotator. The systematic class-collapse failure mode of LLM annotation is qualitatively different from random crowd noise --- it is correlated with the LLM's own confidence and training distribution.
+\textbf{Where it falls short.} Confident learning has been validated extensively on \emph{crowd-labeled} image and text benchmarks, but not on \textbf{LLM-labeled software-engineering corpora} at the scale where LLMs are now the default annotator. The systematic class-collapse failure mode of LLM annotation is qualitatively different from random crowd noise, it is correlated with the LLM's own confidence and training distribution.
 
 \textbf{Unresolved challenge.} A correction pipeline that handles \emph{LLM-flavored} noise (concentrated on minority classes, structurally biased) using a small, affordable expert anchor.
 
-\textbf{Our contribution.} \S3.3 introduces \emph{verified-anchor confident learning}: a two-tier procedure where a small expert-verified set + a public human-annotated set jointly train a RoBERTa anchor whose probabilities, not the LLM's, drive the cleanlab corrections. We contribute the empirical finding (\S4.1) that an independently-trained classifier (V5) endorses 88.66\% of those corrections --- the strongest available third-opinion check.
+\textbf{Our contribution.} \S3.3 introduces \emph{verified-anchor confident learning}: a two-tier procedure where a small expert-verified set + a public human-annotated set jointly train a RoBERTa anchor whose probabilities, not the LLM's, drive the cleanlab corrections. We contribute the empirical finding (\S4.1) that an independently-trained classifier (V5) endorses 88.66\% of those corrections, the strongest available third-opinion check.
 
 \subsection{LLM Annotation and Its Limitations (RQ1)}\label{llm-annotation-and-its-limitations-gap-g1-characterization}
 
@@ -225,13 +225,13 @@ We document four critical limitations:
 
 \textbf{What exists.} RAG \cite{lewis2020rag} has become a standard pattern for grounding LLM outputs in domain-specific text. \textbf{Robillard et al.} \cite{robillard2017demand} survey retrieval for code documentation; \textbf{Nashid et al.} \cite{nashid2023codequery} and \textbf{Ahmed et al.} \cite{ahmed2024automatic} apply RAG to code generation and summarization. In review-response specifically, \textbf{Gao et al.'s RRGen} \cite{gao2019rrgen} learns a sequence-to-sequence model over (review, response) pairs; \textbf{Gao et al.'s CoRe} \cite{gao2020core} adds contextual encoding of past responses.
 
-\textbf{Where it falls short.} All of these condition generation on retrieval and/or raw text. None conditions on a \emph{structured intermediate representation} (typed issue spec, severity, component). Empirically (\S4.3), RAG \emph{without} an issue spec is statistically indistinguishable from no-context baselines on our evaluation --- retrieval anchors style but does not supply structural understanding of \emph{what} the user is complaining about.
+\textbf{Where it falls short.} All of these condition generation on retrieval and/or raw text. None conditions on a \emph{structured intermediate representation} (typed issue spec, severity, component). Empirically (\S4.3), RAG \emph{without} an issue spec is statistically indistinguishable from no-context baselines on our evaluation, retrieval anchors style but does not supply structural understanding of \emph{what} the user is complaining about.
 
 \textbf{Unresolved challenge.} Distinguishing the value-add of \emph{structure} (an IssueSpec) from the value-add of \emph{retrieval} (RAG), and demonstrating that they are complementary rather than substitutable.
 
 \textbf{Our contribution.} Stage 4b is a spec-aware retrieval-augmented composer; the four-condition ablation in \S4.3 isolates the contribution of structure ($\Delta$ = +2.36 quality points) vs retrieval ($\approx$ 0).
 
-We also clarify in \S3.6 the relationship between our system and the \emph{Agentic RAG} literature: ReviewAgent is best described as \textbf{structured-RAG with light agentic orchestration} --- there is a Planner-Navigator-Editor-Executor stub (Stage 4a, future work), but the headline pipeline is non-iterative retrieval + structured composition rather than the multi-turn tool-use loop that defines fully-agentic RAG.
+We also clarify in \S3.6 the relationship between our system and the \emph{Agentic RAG} literature: ReviewAgent is best described as \textbf{structured-RAG with light agentic orchestration}, there is a Planner-Navigator-Editor-Executor stub (Stage 4a, future work), but the headline pipeline is non-iterative retrieval + structured composition rather than the multi-turn tool-use loop that defines fully-agentic RAG.
 
 \subsection{RLHF Alignment for Generation (RQ3)}\label{rlhf-alignment-for-generation-gap-g5}
 
@@ -241,7 +241,7 @@ We also clarify in \S3.6 the relationship between our system and the \emph{Agent
 
 \textbf{Unresolved challenge.} A dual-objective RLHF pipeline whose constraint is grounded in a domain-specific compliance rubric, with empirical validation that dual outperforms single on the quality--compliance frontier.
 
-\textbf{Our contribution.} \S3.0 motivates the CMDP formulation; \texttt{src/stage5/} implements KTO, DPO, and Lagrangian Constrained PPO. We honestly report (\S5.5) that end-to-end empirical validation was performed only at proof-of-concept scale (distilGPT2, 400 SFT samples) --- full Llama-3-8B training is the highest-priority future work.
+\textbf{Our contribution.} \S3.0 motivates the CMDP formulation; \texttt{src/stage5/} implements KTO, DPO, and Lagrangian Constrained PPO. We honestly report (\S5.5) that end-to-end empirical validation was performed only at proof-of-concept scale (distilGPT2, 400 SFT samples), full Llama-3-8B training is the highest-priority future work.
 
 \subsection{Comparative Positioning}\label{comparative-positioning}
 
@@ -257,14 +257,14 @@ We compare ReviewAgent against prior systems across the five categories the pipe
 \toprule
 System & Classify & Cluster & IssueSpec & Response & RLHF \\
 \midrule
-AR-Miner \cite{chen2014arminer} & filter & filter & --- & --- & --- \\
-CLAP \cite{villarroel2016} & rating & flat $k$-means & --- & --- & --- \\
-SURF \cite{disorbo2016surf} & intention & LDA & --- & summary & --- \\
-RRGen \cite{gao2019rrgen} & --- & --- & --- & seq2seq & --- \\
-CoRe \cite{gao2020core} & --- & --- & --- & contextual+RAG & --- \\
-Maalej \cite{maalej2016} & 7-class & --- & --- & --- & --- \\
-ReviewGraph \cite{xu2025reviewgraph} & rating & KG & --- & --- & --- \\
-Safe-RLHF \cite{dai2023} & --- & --- & --- & general & dual-CMDP \\
+AR-Miner \cite{chen2014arminer} & filter & filter &, &, &, \\
+CLAP \cite{villarroel2016} & rating & flat $k$-means &, &, &, \\
+SURF \cite{disorbo2016surf} & intention & LDA &, & summary &, \\
+RRGen \cite{gao2019rrgen} &, &, &, & seq2seq &, \\
+CoRe \cite{gao2020core} &, &, &, & contextual+RAG &, \\
+Maalej \cite{maalej2016} & 7-class &, &, &, &, \\
+ReviewGraph \cite{xu2025reviewgraph} & rating & KG &, &, &, \\
+Safe-RLHF \cite{dai2023} &, &, &, & general & dual-CMDP \\
 \textbf{ReviewAgent (ours)} & \textbf{V5 corrected} & \textbf{flat + KG} & \textbf{type-routed} & \textbf{structured RAG} & \textbf{dual-CMDP (PoC)} \\
 \bottomrule
 \end{tabular}
@@ -286,11 +286,11 @@ The pipeline rests on three established frameworks that motivate its structural 
 \item
   \textbf{Information-Extraction Cascade Theory} \cite{hearst1999, sarawagi2008}. Progressive structuring from free text $\rightarrow$ entities $\rightarrow$ relations $\rightarrow$ records is well-established as more accurate and easier to audit than monolithic end-to-end extraction. Stages 1 $\rightarrow$ 2 $\rightarrow$ 3 (classify $\rightarrow$ cluster $\rightarrow$ schema-map) implement this cascade explicitly: each stage emits a strictly more structured intermediate artifact, and each can be evaluated and corrected independently.
 \item
-  \textbf{Human--AI Complementarity} \cite{kamar2016, bansal2019}. Mixed-initiative systems outperform either humans or models alone when human oversight is placed at points where the model is least confident or where errors propagate furthest. We therefore embed human-in-the-loop checkpoints at exactly three stages --- classification verification (the verified anchor), cluster/spec validation (the 50-cluster purity audit), and response review (the 400-rating blinded eval) --- chosen because each gates a downstream training signal.
+  \textbf{Human--AI Complementarity} \cite{kamar2016, bansal2019}. Mixed-initiative systems outperform either humans or models alone when human oversight is placed at points where the model is least confident or where errors propagate furthest. We therefore embed human-in-the-loop checkpoints at exactly three stages, classification verification (the verified anchor), cluster/spec validation (the 50-cluster purity audit), and response review (the 400-rating blinded eval), chosen because each gates a downstream training signal.
 \item
   \textbf{Constrained Markov Decision Processes} \cite{altman1999, dai2023}. Response generation is a constrained-optimization problem: maximize quality subject to safety/policy constraints (no unauthorized promises, no PII leakage, on-tone). The Stage 5 RLHF design (KTO \cite{ethayarajh2024} $\rightarrow$ DPO \cite{rafailov2023} $\rightarrow$ Constrained PPO \cite{dai2023}) is a direct realization of CMDP, with quality as the reward and policy compliance as the constraint.
 
-  \textbf{Why dual-objective rather than single-objective.} Single-objective methods (DPO, KTO) optimize one scalar reward that mixes ``is this response helpful?'' with ``is this response policy-compliant?'' into a single signal. The two surfaces are not aligned in this domain: a maximally helpful dev-rel response can violate compliance (over-promising a fix date, leaking that an internal team is aware of the bug), and a maximally compliant response can be useless (a generic acknowledgement). Mixing them into one scalar lets the optimizer trade compliance for quality at any rate the rater happens to imply, which is exactly the class of failure Safe RLHF \cite{dai2023} was designed to prevent. Constrained PPO under a Lagrangian formulation enforces compliance as a hard threshold (\texttt{avg\_safety\ $\geq$\ $\tau$}) and maximizes quality on the remaining degrees of freedom --- i.e., it navigates the \emph{Pareto frontier} of the two objectives rather than a weighted average. The progression KTO $\rightarrow$ DPO $\rightarrow$ Constrained PPO mirrors the data-scale progression: KTO needs only binary feedback (cheapest), DPO needs paired preferences (medium), Constrained PPO needs both preference data and a compliance signal (most expensive). We report the empirical status of this stack honestly in \S3.8.5 and \S5.5.
+  \textbf{Why dual-objective rather than single-objective.} Single-objective methods (DPO, KTO) optimize one scalar reward that mixes ``is this response helpful?'' with ``is this response policy-compliant?'' into a single signal. The two surfaces are not aligned in this domain: a maximally helpful dev-rel response can violate compliance (over-promising a fix date, leaking that an internal team is aware of the bug), and a maximally compliant response can be useless (a generic acknowledgement). Mixing them into one scalar lets the optimizer trade compliance for quality at any rate the rater happens to imply, which is exactly the class of failure Safe RLHF \cite{dai2023} was designed to prevent. Constrained PPO under a Lagrangian formulation enforces compliance as a hard threshold (\texttt{avg\_safety\ $\geq$\ $\tau$}) and maximizes quality on the remaining degrees of freedom, i.e., it navigates the \emph{Pareto frontier} of the two objectives rather than a weighted average. The progression KTO $\rightarrow$ DPO $\rightarrow$ Constrained PPO mirrors the data-scale progression: KTO needs only binary feedback (cheapest), DPO needs paired preferences (medium), Constrained PPO needs both preference data and a compliance signal (most expensive). We report the empirical status of this stack honestly in \S3.8.5 and \S5.5.
 \end{itemize}
 
 \subsection{Problem Setting and Datasets}\label{problem-setting-and-datasets}
@@ -305,7 +305,7 @@ We seed initial training with 5,008 human-annotated reviews from MAALEJ \cite{ma
 \caption{Data-pipeline transparency: every transformation, count, and script. Duplicate removal $-30.5\%$; cleanlab corrections $20.51\%$; V5 third-opinion endorses $88.66\%$ of corrections.}\label{tab:data-stats}
 \begin{tabular}{p{2.6cm}p{1.6cm}p{2.4cm}}\toprule
 Step & In $\to$ Out & Script / artifact \\\midrule
-Download RRGen & --- $\to$ 310,031 pairs & \texttt{download\_datasets.py} \\
+Download RRGen &, $\to$ 310,031 pairs & \texttt{download\_datasets.py} \\
 Deduplicate (exact text) & 310,031 $\to$ 215,583 ($-94{,}448 = -30.5\%$) & \texttt{correct\_rrgen\_labels.py} \\
 LLM auto-labeling (V0) & 215,583 $\to$ 215,583 labeled & \texttt{llm\_label\_rrgen.py} \\
 Expert verification (praise/perf/compat strata) & 5,233 $\to$ 5,230 verified ($\approx$30 person-hr) & \texttt{correct\_rrgen\_v2.py} \\
@@ -316,7 +316,7 @@ V5 third-opinion endorsement of corrections & 40,291 $\to$ 35,720 supported (\te
 Expert gold-standard sampling (stratified) & 215,583 $\to$ 490 (70$\times$7 classes) & \texttt{build\_frozen\_holdout\_and\_eval.py} \\
 \bottomrule\end{tabular}\end{table}
 
-\textbf{LLM-vs-expert annotation deviation.} On the praise stratum (n=5,041 LLM-labeled), expert verification finds \textbf{25\% mislabeling} (1,305 / 5,041 corrected to a non-praise category, predominantly \texttt{other} with 1,049 corrections; remaining 256 scattered across actionable classes --- direct evidence of LLM class-collapse on minority categories). The V2 cleanlab pass concentrates corrections on classes the LLM under-predicted: \textbf{+7,460 performance reviews} (184 $\to$ 7,644) and \textbf{+2,503 usability reviews} (5,001 $\to$ 7,504), the two classes most heavily mislabeled.
+\textbf{LLM-vs-expert annotation deviation.} On the praise stratum (n=5,041 LLM-labeled), expert verification finds \textbf{25\% mislabeling} (1,305 / 5,041 corrected to a non-praise category, predominantly \texttt{other} with 1,049 corrections; remaining 256 scattered across actionable classes, direct evidence of LLM class-collapse on minority categories). The V2 cleanlab pass concentrates corrections on classes the LLM under-predicted: \textbf{+7,460 performance reviews} (184 $\to$ 7,644) and \textbf{+2,503 usability reviews} (5,001 $\to$ 7,504), the two classes most heavily mislabeled.
 
 \subsection{Stage 1: Iterative Classifier Refinement}\label{stage-1-iterative-classifier-refinement}
 
@@ -365,12 +365,12 @@ We compare four conditions on 100 stratified clusters: (a) LLM with taxonomy gro
 
 \subsection{Stage 4a (Future Work): Multi-Agent Code Resolution and Planner Scope}\label{stage-4a-future-work-multi-agent-code-resolution-and-planner-scope}
 
-Stage 4a is the optional code-resolution layer that consumes a validated IssueSpec and proposes a source-code patch via a Planner $\rightarrow$ Navigator $\rightarrow$ Editor $\rightarrow$ Executor pipeline. The headline pipeline (Stages 1--3 + 4b + 5) does \emph{not} depend on Stage 4a --- it is reported as future work because RRGen's anonymized review-only data does not include the source repositories needed for end-to-end patch evaluation.
+Stage 4a is the optional code-resolution layer that consumes a validated IssueSpec and proposes a source-code patch via a Planner $\rightarrow$ Navigator $\rightarrow$ Editor $\rightarrow$ Executor pipeline. The headline pipeline (Stages 1--3 + 4b + 5) does \emph{not} depend on Stage 4a, it is reported as future work because RRGen's anonymized review-only data does not include the source repositories needed for end-to-end patch evaluation.
 
 \textbf{Planner scope and generalizability.} Reviewers have asked three explicit questions about the Planner's scope: \emph{is it domain-specific? reusable across repositories/tasks? or a general-purpose planning agent?} Direct answers in Table~\ref{tab:planner-scope}.
 
 \begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{3pt}
-\caption{Planner scope and generalizability --- direct answers to the three scope questions.}\label{tab:planner-scope}
+\caption{Planner scope and generalizability, direct answers to the three scope questions.}\label{tab:planner-scope}
 \begin{tabular}{p{3.6cm}p{1cm}p{3.2cm}}\toprule
 Question & Answer & Why \\\midrule
 Is the Planner \textbf{domain-specific}? & Yes & To 5 mobile-app issue types (bug, feature, performance, usability, compatibility); plan templates use issue-type-specific workflows (Zimmermann reproduce-localize-fix-test for bugs; ISO 25010 profile-then-optimize for performance; Nielsen-aligned audit for usability). \\
@@ -412,9 +412,9 @@ Condition
 
 The RAG index is populated from RRGen's developer-response corpus (10,000 past responses + 5,000 similar responses + 60 changelogs + 40 FAQ entries).
 
-Condition (1) responses are LLM-generated with no context. Conditions (2), (3), (4) responses use rule-based composers parameterized by their condition-specific context, controlling for LLM stochasticity across the comparison. Reference responses for automatic-metric evaluation come from RRGen's \texttt{original\_response} field --- i.e., the actual developer reply paired with each review in the source dataset.
+Condition (1) responses are LLM-generated with no context. Conditions (2), (3), (4) responses use rule-based composers parameterized by their condition-specific context, controlling for LLM stochasticity across the comparison. Reference responses for automatic-metric evaluation come from RRGen's \texttt{original\_response} field, i.e., the actual developer reply paired with each review in the source dataset.
 
-\textbf{Vanilla RAG vs structured RAG vs agentic RAG --- where ReviewAgent sits.} The terms are often conflated; we adopt operational definitions and place each Stage 4b condition (Table~\ref{tab:rag-arch}). \textbf{The headline ReviewAgent system is structured RAG, not agentic RAG.} The Stage 4a multi-agent stub is a forward-looking agentic-RAG demonstration; the +2.36-quality-point gain measured in \S4.3 comes from the typed structured intermediate (the \texttt{IssueSpec}), not from agentic iteration.
+\textbf{Vanilla RAG vs structured RAG vs agentic RAG, where ReviewAgent sits.} The terms are often conflated; we adopt operational definitions and place each Stage 4b condition (Table~\ref{tab:rag-arch}). \textbf{The headline ReviewAgent system is structured RAG, not agentic RAG.} The Stage 4a multi-agent stub is a forward-looking agentic-RAG demonstration; the +2.36-quality-point gain measured in \S4.3 comes from the typed structured intermediate (the \texttt{IssueSpec}), not from agentic iteration.
 
 \begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2pt}
 \caption{RAG architecture taxonomy. ReviewAgent's headline system is structured RAG; the agentic variant is a forward-looking PoC stub.}\label{tab:rag-arch}
@@ -444,31 +444,31 @@ Three evaluation regimes run in concert:
 
 Statistical tests: paired Wilcoxon signed-rank for response-quality comparisons; agreement reported as Cohen's $\kappa$ with the standard interpretation thresholds (\textgreater0.80 almost-perfect; 0.60--0.80 substantial; 0.40--0.60 moderate).
 
-\subsubsection{Faithfulness Metric --- Value, Meaning, Justification}\label{faithfulness-metric}
+\subsubsection{Faithfulness Metric, Value, Meaning, Justification}\label{faithfulness-metric}
 
 \textbf{Value (what the metric is).} For each generated \texttt{IssueSpec} we compute substantive-token overlap (length $\geq$ 5 alphabetic, stopwords filtered) between spec text and the source review cluster, then bin to 1--5: $\geq$18 overlap or $\geq$2 quoted strings $\to$ 5; $\geq$10 or $\geq$1 quoted $\to$ 4; $\geq$5 $\to$ 3; $\geq$2 $\to$ 2; else 1. Coverage bonuses adjust by $\pm 1$. Per-condition floors apply: \texttt{raw\_summary} forced to $\geq$ 5 (verbatim review text by construction), \texttt{human\_written} to $\geq$ 4. Computed deterministically by \texttt{score\_specs.py:305--355}.
 
-\textbf{Meaning (which sub-type of faithfulness this targets).} The faithfulness literature \cite{maynez2020faithfulness, ji2023hallucination} distinguishes four sub-types: factual consistency, intent preservation, semantic consistency, and hallucination avoidance. Our metric targets primarily \emph{extractive coverage} --- a known correlate of factual consistency \cite{grusky2018newsroom, maynez2020faithfulness} but identical to none of the four. A faithful paraphrase using synonyms scores low; a hallucinated paraphrase recycling source vocabulary scores high. We disclose this scope explicitly so reviewers can interpret the \S4.2 numbers within their construct-validity bounds.
+\textbf{Meaning (which sub-type of faithfulness this targets).} The faithfulness literature \cite{maynez2020faithfulness, ji2023hallucination} distinguishes four sub-types: factual consistency, intent preservation, semantic consistency, and hallucination avoidance. Our metric targets primarily \emph{extractive coverage}, a known correlate of factual consistency \cite{grusky2018newsroom, maynez2020faithfulness} but identical to none of the four. A faithful paraphrase using synonyms scores low; a hallucinated paraphrase recycling source vocabulary scores high. We disclose this scope explicitly so reviewers can interpret the \S4.2 numbers within their construct-validity bounds.
 
 \textbf{Justification (why this proxy is defensible).} Three lines of grounding from the faithful-summarization literature support the choice:
 \textbf{(i)} Extractive coverage \cite{grusky2018newsroom} is the canonical lexical correlate of factual consistency in summarization \cite{maynez2020faithfulness, kryscinski2020factcc}.
 \textbf{(ii)} Source-grounded metrics (input $\to$ generation) are the right family for faithfulness, distinct from reference-grounded metrics (BLEU, ROUGE, BERTScore) which compare to a target output and conflate fluency with faithfulness \cite{kryscinski2020factcc, fabbri2021summeval, sai2022survey}.
-\textbf{(iii)} For \texttt{IssueSpec} generation specifically, the dominant hallucination mode is introducing devices, OS versions, or components absent from the source --- a failure that token-overlap penalizes naturally; this domain property makes lexical proxies less noisy than they are for general abstractive summarization.
+\textbf{(iii)} For \texttt{IssueSpec} generation specifically, the dominant hallucination mode is introducing devices, OS versions, or components absent from the source, a failure that token-overlap penalizes naturally; this domain property makes lexical proxies less noisy than they are for general abstractive summarization.
 
 The construct-correct alternative is NLI-based contradiction detection per spec sentence \cite{laban2022summac, kryscinski2020factcc, honovich2022true} or a question-generation/QA pipeline (FEQA \cite{durmus2020feqa}); both are documented as future work.
 
-\subsubsection{Human Evaluation Dimensions --- Theoretical Grounding}\label{human-evaluation-dimensions-theoretical-grounding}
+\subsubsection{Human Evaluation Dimensions, Theoretical Grounding}\label{human-evaluation-dimensions-theoretical-grounding}
 
 The Stage 4b human-evaluation dimensions (helpfulness, specificity, quality, helpful Y/N) are not chosen ad hoc. \textbf{Helpfulness} and \textbf{specificity} are standard dimensions in dialogue-system human evaluation \cite{liu2016how, sai2022survey}; \textbf{helpful Y/N} is the binary collapse used in KTO-style binary-feedback work \cite{ethayarajh2024} and is operationally defined as \emph{would this response, if read by the original reviewer, plausibly help them resolve their issue or feel heard}. The single-rater limitation of these scores is documented in \S5.5.
 
-\subsubsection{RLHF Empirical Status --- What Was Trained, What Was Not}\label{rlhf-empirical-status-what-was-trained-what-was-not}
+\subsubsection{RLHF Empirical Status, What Was Trained, What Was Not}\label{rlhf-empirical-status-what-was-trained-what-was-not}
 
 The Stage 5 RLHF stack (KTO, DPO, Lagrangian Constrained PPO) is implemented in \texttt{src/stage5/} (86 unit tests pass). Empirical training status:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{SFT base} (\textbf{distilGPT2} \cite{sanh2019distilbert, radford2019gpt2}, 400 review$\rightarrow$response samples): trained, checkpoint at \texttt{data/processed/rlhf/sft\_base/}. \emph{Why distilGPT2:} a small (82M params), open-license, MPS-compatible base that allows full-stack RLHF training (KTO, DPO, Constrained PPO) end-to-end on a single laptop. The known limitation --- distilGPT2's restricted output distribution prevents the operational compliance violations from being plausibly produced --- is the same constraint that motivates \S7 item 3 (re-run on Llama-3-8B with multi-GPU).
+  \textbf{SFT base} (\textbf{distilGPT2} \cite{sanh2019distilbert, radford2019gpt2}, 400 review$\rightarrow$response samples): trained, checkpoint at \texttt{data/processed/rlhf/sft\_base/}. \emph{Why distilGPT2:} a small (82M params), open-license, MPS-compatible base that allows full-stack RLHF training (KTO, DPO, Constrained PPO) end-to-end on a single laptop. The known limitation, distilGPT2's restricted output distribution prevents the operational compliance violations from being plausibly produced, is the same constraint that motivates \S7 item 3 (re-run on Llama-3-8B with multi-GPU).
 \item
   \textbf{KTO model} (296 binary samples, derived from the 400 ratings): trained, checkpoint at \texttt{data/processed/rlhf/kto\_model/}.
 \item
@@ -539,7 +539,7 @@ praise & 0.382 & 0.623 & 0.675 & 84 \\
 \end{tabular}
 \end{table*}
 
-Two classes were effectively unrecoverable by cleanlab alone (compatibility F1 = 0.000 in the corrected set). The targeted V5 augmentation --- 200 synthetic compatibility samples plus 100 mined from the LLM's own bug\_report bucket --- is what raises compatibility from 0 $\rightarrow$ 0.83.
+Two classes were effectively unrecoverable by cleanlab alone (compatibility F1 = 0.000 in the corrected set). The targeted V5 augmentation, 200 synthetic compatibility samples plus 100 mined from the LLM's own bug\_report bucket, is what raises compatibility from 0 $\rightarrow$ 0.83.
 
 \textbf{V5 as third-opinion validator.} Applying V5 to the full 215,583-review corpus, we measure agreement with each prior stage's labels (Table 2):
 
@@ -578,7 +578,7 @@ The user-story comparison is informative: the loose check (any non-empty string)
 
 \subsection{Experiment 2: Response Generation Quality (Stage 4b)}\label{experiment-2-response-generation-quality-stage-4b}
 
-Stage 4b compares four conditions on 100 reviews: (1) \texttt{rrgen\_baseline}, (2) \texttt{prompt\_baseline} (\emph{not} CoRe --- we do not retrain Gao et al.'s attentional encoder), (3) \texttt{reviewagent\_no\_spec}, (4) \texttt{reviewagent\_full}. Reference responses come from RRGen's \texttt{original\_response} field.
+Stage 4b compares four conditions on 100 reviews: (1) \texttt{rrgen\_baseline}, (2) \texttt{prompt\_baseline} (\emph{not} CoRe, we do not retrain Gao et al.'s attentional encoder), (3) \texttt{reviewagent\_no\_spec}, (4) \texttt{reviewagent\_full}. Reference responses come from RRGen's \texttt{original\_response} field.
 
 \begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2pt}
 \caption{Stage 4b automatic + human-rated quality on 100 paired reviews. Lead-author rated, blinded.}\label{tab:stage4b}
@@ -590,9 +590,9 @@ quality (1--5) & 2.31 & 2.98 & 2.26 & \textbf{4.62} \\
 helpful \% & 19 & 84 & 31 & \textbf{92} \\\bottomrule
 \end{tabular}\end{table}
 
-\textbf{Automatic metrics rank \texttt{reviewagent\_no\_spec} first;} the full system's 3$\times$-longer responses are surface-penalized by overlap-based metrics --- a known limitation of n-gram metrics for response generation \cite{liu2016how, sai2022survey}.
+\textbf{Automatic metrics rank \texttt{reviewagent\_no\_spec} first;} the full system's 3$\times$-longer responses are surface-penalized by overlap-based metrics, a known limitation of n-gram metrics for response generation \cite{liu2016how, sai2022survey}.
 
-\textbf{Human evaluation reverses the ranking.} The full system achieves quality 4.62/5 vs 2.26 for RAG-only ($\Delta = +2.36$, paired Wilcoxon $p < 0.001$; Friedman $\chi^2(3) = 199.3$, $p = 5.9 \times 10^{-43}$; Bradley-Terry strength separation $> 4.0$ units; McNemar's test significant on 5 of 6 pairs). RAG-without-IssueSpec is statistically indistinguishable from no-context baseline --- the IssueSpec is the load-bearing structural component (\S5.3).
+\textbf{Human evaluation reverses the ranking.} The full system achieves quality 4.62/5 vs 2.26 for RAG-only ($\Delta = +2.36$, paired Wilcoxon $p < 0.001$; Friedman $\chi^2(3) = 199.3$, $p = 5.9 \times 10^{-43}$; Bradley-Terry strength separation $> 4.0$ units; McNemar's test significant on 5 of 6 pairs). RAG-without-IssueSpec is statistically indistinguishable from no-context baseline, the IssueSpec is the load-bearing structural component (\S5.3).
 
 
 
@@ -608,7 +608,7 @@ mean response words & 41.0 & 43.6 \\\bottomrule
 \end{tabular}\end{table}
 
 
-\subsection{Cluster Validation (Stage 2) --- Flat vs Hierarchical vs KG-Guided}\label{cluster-validation-stage-2-flat-vs-hierarchical-vs-kg-guided}
+\subsection{Cluster Validation (Stage 2), Flat vs Hierarchical vs KG-Guided}\label{cluster-validation-stage-2-flat-vs-hierarchical-vs-kg-guided}
 
 We compare three Stage 2 designs head-to-head, multi-metric, with formal definitions of intrinsic cluster-quality metrics from \cite{rousseeuw1987silhouettes, davies1979cluster, calinski1974dendrite, manning2008introduction}.
 
@@ -625,7 +625,7 @@ Y/P/N purity (50-cluster audit) & n/a & 0.660 & (queued) \\
 Curated purity (top-100) & n/a & \textbf{0.814} & (queued) \\
 \bottomrule\end{tabular}\end{table*}
 
-The KG-guided design produces \textbf{3.1$\times$ more clusters} at \textbf{17$\times$ smaller size}, supporting per-aspect drill-down (e.g., \texttt{battery $\to$ Samsung drain} separated from \texttt{battery $\to$ fast-charge complaints}). Davies-Bouldin is 5.4$\times$ lower and Calinski-Harabasz is 1.9$\times$ higher --- direct quantitative evidence that KG produces more compact, better-separated clusters, not just more of them.
+The KG-guided design produces \textbf{3.1$\times$ more clusters} at \textbf{17$\times$ smaller size}, supporting per-aspect drill-down (e.g., \texttt{battery $\to$ Samsung drain} separated from \texttt{battery $\to$ fast-charge complaints}). Davies-Bouldin is 5.4$\times$ lower and Calinski-Harabasz is 1.9$\times$ higher, direct quantitative evidence that KG produces more compact, better-separated clusters, not just more of them.
 
 \textbf{Does KG-clustering improve downstream GitHub-issue translation quality?} A natural follow-up question (often raised by reviewers) is whether the finer KG-driven clusters produce \emph{better} \texttt{IssueSpec}s when fed into Stage 3. We tested this directly via Ablation A1 (Table~\ref{tab:ablations}, row A1): on the same 100-cluster headline sample, downstream IssueSpec quality is \textbf{statistically unchanged} between flat-cluster centroids (194 clusters) and hierarchical KG-cluster centroids (605 clusters), because Stage 3 reads cluster \emph{centroids} (representative reviews) rather than the cluster \emph{structure}. So the KG's contribution to Stage 3 IssueSpec generation is \textbf{none directly} on the headline sample. The KG's value is elsewhere: (i) finer triage drill-down (sub-aspect groups for the engineer), (ii) corpus-wide PageRank \cite{page1999pagerank} prioritization of central aspects (top: \texttt{ad} 0.040, \texttt{phone} 0.011, \texttt{battery} 0.007), and (iii) intrinsic-metric improvements above. Reviewers should read the Stage 3 quality findings (\S4.2) as flat-clustering-grounded, with the KG's value documented in this section as triage-side rather than spec-quality-side.
 
@@ -646,9 +646,9 @@ A6 & No issue spec in response gen (RAG-only) & Quality drops from 4.62 (full) t
 A7 & Single-stream feedback (merge quality + compliance) & Deferred (compute + annotator constraints). \\\bottomrule
 \end{tabular}\end{table*}
 
-\subsection{RLHF --- Honest Validation Report}\label{rlhf-honest-validation-report}
+\subsection{RLHF, Honest Validation Report}\label{rlhf-honest-validation-report}
 
-\textbf{Why dual-objective Constrained PPO --- the gap, the constraint, the validation depth.} Single-objective RLHF (DPO \cite{rafailov2023}, KTO \cite{ethayarajh2024}) collapses quality and policy compliance into one scalar reward, which Safe RLHF \cite{dai2023} showed produces unreliable safety enforcement at the margin. Dual-objective Constrained PPO under a Lagrangian formulation \cite{altman1999, dai2023} separates them formally: maximize $R_\text{quality}$ subject to $C_\text{compliance}\le\tau$. To our knowledge, no prior work has applied a CMDP formulation to app-review response generation. Table~\ref{tab:rlhf-design} summarizes the design gap and our coverage.
+\textbf{Why dual-objective Constrained PPO, the gap, the constraint, the validation depth.} Single-objective RLHF (DPO \cite{rafailov2023}, KTO \cite{ethayarajh2024}) collapses quality and policy compliance into one scalar reward, which Safe RLHF \cite{dai2023} showed produces unreliable safety enforcement at the margin. Dual-objective Constrained PPO under a Lagrangian formulation \cite{altman1999, dai2023} separates them formally: maximize $R_\text{quality}$ subject to $C_\text{compliance}\le\tau$. To our knowledge, no prior work has applied a CMDP formulation to app-review response generation. Table~\ref{tab:rlhf-design} summarizes the design gap and our coverage.
 
 \begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2pt}
 \caption{Stage 5 dual-objective design: gap $\to$ constraint $\to$ validation. Architecture is complete; empirical validation is at PoC scale and is the highest-priority extension.}\label{tab:rlhf-design}
@@ -658,9 +658,9 @@ Reward & one scalar mixing quality + compliance & quality reward + compliance co
 Failure mode & quality-vs-compliance trade implicit; safety unreliable at margin & compliance enforced as hard threshold ($C\le\tau$); quality maximized on remaining surface \\
 Domain prior use & general LM safety (Safe-RLHF) & not applied to app-review response generation \\
 \addlinespace
-Implementation & --- & KTO + DPO + Lagrangian Constrained PPO trainers complete (86 unit tests pass); released in \texttt{src/stage5/} \\
-Training base & --- & distilGPT2 (PoC); Llama-3-8B is queued (\S7) \\
-Empirical validation & --- & head-to-head BLEU/ROUGE/BERTScore (Table~\ref{tab:rlhf-h2h}); active-constraint test \emph{not yet possible} because distilGPT2 cannot plausibly violate the rubric \\\bottomrule
+Implementation &, & KTO + DPO + Lagrangian Constrained PPO trainers complete (86 unit tests pass); released in \texttt{src/stage5/} \\
+Training base &, & distilGPT2 (PoC); Llama-3-8B is queued (\S7) \\
+Empirical validation &, & head-to-head BLEU/ROUGE/BERTScore (Table~\ref{tab:rlhf-h2h}); active-constraint test \emph{not yet possible} because distilGPT2 cannot plausibly violate the rubric \\\bottomrule
 \end{tabular}\end{table}
 
 The Stage 5 RLHF stack was trained at proof-of-concept scale and evaluated on automatic metrics. The empirical status:
@@ -701,11 +701,11 @@ lagrangian\_ppo (REINFORCE+KL+$\lambda$-dual, 30 steps) & 0.0874 & 0.0149 & 0.09
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \textbf{The base model is distilGPT2 (82M params).} The trained policies produce visibly degenerate outputs --- sample completions in \texttt{logs/rlhf\_poc.log} show repetitive phrases like \emph{``hi thank for your question. we appreciate your question. we appreciate your question.''} This is a known failure mode of small-scale RLHF on under-trained backbones.
+  \textbf{The base model is distilGPT2 (82M params).} The trained policies produce visibly degenerate outputs, sample completions in \texttt{logs/rlhf\_poc.log} show repetitive phrases like \emph{``hi thank for your question. we appreciate your question. we appreciate your question.''} This is a known failure mode of small-scale RLHF on under-trained backbones.
 \item
   \textbf{The Lagrangian PPO constraint never bound.} Initial safety = 0.94 was already above the threshold $\tau$ = 0.5; $\lambda$ went to zero; quality dropped 0.368 $\rightarrow$ 0.192. The CMDP machinery was never tested under an \emph{active} constraint, so the dual-objective claim of \S3.0 is \textbf{architecturally implemented but empirically untested} in the regime where it should matter.
 \item
-  \textbf{No human preference evaluation.} Bradley-Terry preference strengths and McNemar safety-violation tests, both in the experiment design (\texttt{src/evaluation/experiment3.py}), require $\geq$ 2 independent human raters scoring policy outputs blindly --- not done.
+  \textbf{No human preference evaluation.} Bradley-Terry preference strengths and McNemar safety-violation tests, both in the experiment design (\texttt{src/evaluation/experiment3.py}), require $\geq$ 2 independent human raters scoring policy outputs blindly, not done.
 \end{enumerate}
 
 	extbf{Summary.} Stage 5 contributes (a) a complete and tested implementation of KTO, DPO, and Lagrangian Constrained PPO trainers (\texttt{src/stage5/}, 86 unit tests pass); (b) a reproducible toy-scale training run that demonstrates the pipeline executes end-to-end; (c) head-to-head automatic metrics that are \emph{suggestive but not conclusive} about dual-objective dominance. We do \textbf{not} claim the dual-objective hypothesis is empirically supported. The full validation requires: a generation-grade base model (Llama-3-8B or comparable), the 400-rating preference data already collected (re-purposed for DPO/Constrained-PPO training), and $\geq$ 2 independent human raters for the head-to-head preference evaluation. This is the highest-priority future-work item (\S5.6, \S7).
@@ -714,9 +714,9 @@ lagrangian\_ppo (REINFORCE+KL+$\lambda$-dual, 30 steps) & 0.0874 & 0.0149 & 0.09
 
 \subsection{What the Cohen $\kappa$ Progression Means}\label{what-the-cohen-ux3ba-progression-means}
 
-The cleanest empirical signal from our experiments is the Cohen $\kappa$ progression against expert gold-standard labels: \textbf{0.16 $\rightarrow$ 0.33 $\rightarrow$ 0.59} for V2 LLM original $\rightarrow$ cleanlab-corrected $\rightarrow$ V5 trained on corrections. By the standard interpretation thresholds \cite{landis1977}, this trajectory crosses three of the four agreement bands --- from ``slight'' (0.00--0.20) to ``fair'' (0.21--0.40) to ``moderate'' approaching ``substantial'' (0.41--0.60). Each step in the pipeline corresponds to a meaningful, externally-validated improvement.
+The cleanest empirical signal from our experiments is the Cohen $\kappa$ progression against expert gold-standard labels: \textbf{0.16 $\rightarrow$ 0.33 $\rightarrow$ 0.59} for V2 LLM original $\rightarrow$ cleanlab-corrected $\rightarrow$ V5 trained on corrections. By the standard interpretation thresholds \cite{landis1977}, this trajectory crosses three of the four agreement bands, from ``slight'' (0.00--0.20) to ``fair'' (0.21--0.40) to ``moderate'' approaching ``substantial'' (0.41--0.60). Each step in the pipeline corresponds to a meaningful, externally-validated improvement.
 
-A particularly notable result is that the V5 classifier, trained only on the V2-corrected dataset, \textbf{independently endorses 88.66\% of the cleanlab corrections} when applied as a third-opinion judge to the full 215K corpus. This is the strongest evidence that the corrections are not artifacts of the cleanlab procedure --- a separately-trained classifier with no exposure to the anchor agrees with them at near-substantial-agreement rates.
+A particularly notable result is that the V5 classifier, trained only on the V2-corrected dataset, \textbf{independently endorses 88.66\% of the cleanlab corrections} when applied as a third-opinion judge to the full 215K corpus. This is the strongest evidence that the corrections are not artifacts of the cleanlab procedure, a separately-trained classifier with no exposure to the anchor agrees with them at near-substantial-agreement rates.
 
 \subsection{The Specificity-vs-Overlap Tradeoff in Stage 4b}\label{the-specificity-vs-overlap-tradeoff-in-stage-4b}
 
@@ -740,7 +740,7 @@ A counterintuitive headline finding from Experiment 2 is that \texttt{reviewagen
 
 \subsection{Compatibility Class Recovery as a Limitation Becoming a Result}\label{compatibility-class-recovery-as-a-limitation-becoming-a-result}
 
-Of the seven categories, \texttt{compatibility} initially appeared problematic: only 8 out of 215,583 LLM-labeled reviews were placed in this class, far below the dataset's true incidence. Rather than suppress this finding, we treat it as a measurable failure mode of LLM annotation. The targeted augmentation --- 200 synthetic + 100 keyword-mined samples (95\% of which the LLM had originally labeled \texttt{bug\_report}) --- raises V5's compatibility F1 from \textbf{0.00 (V4) to 0.74 (V5 own-test) and 0.83 (vs expert)}. The 100 mined samples themselves provide direct evidence of the LLM's mislabeling pattern: device-conditioned failures (Samsung-specific crashes, Android version regressions) are systematically forced into the larger \texttt{bug\_report} bucket.
+Of the seven categories, \texttt{compatibility} initially appeared problematic: only 8 out of 215,583 LLM-labeled reviews were placed in this class, far below the dataset's true incidence. Rather than suppress this finding, we treat it as a measurable failure mode of LLM annotation. The targeted augmentation, 200 synthetic + 100 keyword-mined samples (95\% of which the LLM had originally labeled \texttt{bug\_report}), raises V5's compatibility F1 from \textbf{0.00 (V4) to 0.74 (V5 own-test) and 0.83 (vs expert)}. The 100 mined samples themselves provide direct evidence of the LLM's mislabeling pattern: device-conditioned failures (Samsung-specific crashes, Android version regressions) are systematically forced into the larger \texttt{bug\_report} bucket.
 
 \subsection{Limitations}\label{limitations}
 
@@ -754,25 +754,25 @@ Of the seven categories, \texttt{compatibility} initially appeared problematic: 
 
 \textbf{The English / lowercase-tokenized review corpus.} RRGen reviews come pre-anonymized with placeholders (\texttt{\textless{}app\textgreater{}}, \texttt{\textless{}user\textgreater{}}, \texttt{\textless{}digit\textgreater{}}, \texttt{\textless{}email\textgreater{}}) and lowercase-tokenized text. This affects readability but, as the human evaluation shows (helpfulness 92\% on the full system), is not a barrier to producing useful responses.
 
-\textbf{Compute constraints throughout.} The classifier training (V3, V4, V5) ran on Apple MPS and took 12, 29, and 25 hours respectively per version --- far longer than a GPU-equipped workstation would require. This limited iteration speed and informed our choice to use stratified-cap balancing (cap = 15,000 per class) rather than full-corpus training.
+\textbf{Compute constraints throughout.} The classifier training (V3, V4, V5) ran on Apple MPS and took 12, 29, and 25 hours respectively per version, far longer than a GPU-equipped workstation would require. This limited iteration speed and informed our choice to use stratified-cap balancing (cap = 15,000 per class) rather than full-corpus training.
 
-\textbf{Single-LLM dependence --- partly mitigated by the \S4.2.y cross-LLM run.} The headline Stage 3 IssueSpecs and the Stage 4b condition-1 baseline use Anthropic Claude Opus 4.7 \cite{anthropic2025claude}. To address the single-LLM-bias concern (), we ran a real cross-LLM replication using the local \textbf{Qwen2.5-3B-Instruct} model --- the same model already used elsewhere in this paper for aspect extraction (\S4.5) and inter-annotator agreement (\S4.6) --- on a 15-cluster subset. Results in \S4.2.y, summarized:
+\textbf{Single-LLM dependence, partly mitigated by the \S4.2.y cross-LLM run.} The headline Stage 3 IssueSpecs and the Stage 4b condition-1 baseline use Anthropic Claude Opus 4.7 \cite{anthropic2025claude}. To address the single-LLM-bias concern (), we ran a real cross-LLM replication using the local \textbf{Qwen2.5-3B-Instruct} model, the same model already used elsewhere in this paper for aspect extraction (\S4.5) and inter-annotator agreement (\S4.6), on a 15-cluster subset. Results in \S4.2.y, summarized:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Both capable LLMs reach the rubric ceiling on the loose template-fill check} --- i.e., the loose-fill score is structurally guaranteed for any reasonably capable instruction-following LLM and is therefore demoted from headline status (\S4.2 Table 3 reports only strict numbers).
+  \textbf{Both capable LLMs reach the rubric ceiling on the loose template-fill check}, i.e., the loose-fill score is structurally guaranteed for any reasonably capable instruction-following LLM and is therefore demoted from headline status (\S4.2 Table 3 reports only strict numbers).
 \item
-  \textbf{Claude scores 0.971 vs Qwen 0.743 on the strict \S3.8.1.x criteria} --- a 23-point gap consistent with the expected capability differential between a frontier model and a 3B-parameter local model.
+  \textbf{Claude scores 0.971 vs Qwen 0.743 on the strict \S3.8.1.x criteria}, a 23-point gap consistent with the expected capability differential between a frontier model and a 3B-parameter local model.
 \item
-  \textbf{Field-level cross-LLM agreement is 71.4\%} across 105 strict-fill judgments --- moderate, with disagreement concentrated on substantive-content checks (not on whether the LLM follows the template).
+  \textbf{Field-level cross-LLM agreement is 71.4\%} across 105 strict-fill judgments, moderate, with disagreement concentrated on substantive-content checks (not on whether the LLM follows the template).
 \item
   \textbf{The qualitative claim} (templated LLM \textgreater{} free-form / human-GitHub on substantive completeness) \textbf{holds across both LLMs from different families} (frontier-proprietary Claude vs open-source local Qwen).
 \end{itemize}
 
-The remaining single-LLM concerns --- model-specific stylistic biases (Claude's hedged tone, its safety-training preferences) potentially propagating into Stage 4b's response generation, and the absence of a third frontier model (GPT-4o, Gemini-Ultra) in the comparison --- are not closed by the local-LLM replication. We propose for the camera-ready / journal version (\S5.6, \S7 item 4): rerun Stage 3 condition (a) and Stage 4b condition (4) on \textbf{GPT-4o and Llama-3-70B}, report deltas vs Claude, and verify that the IssueSpec-vs-RAG-only ordering is preserved across all four LLM families. The Qwen-on-15-clusters PoC (\S4.2.y) is the \textbf{first step} of that program, completed in this paper; the API-based extension is the next.
+The remaining single-LLM concerns, model-specific stylistic biases (Claude's hedged tone, its safety-training preferences) potentially propagating into Stage 4b's response generation, and the absence of a third frontier model (GPT-4o, Gemini-Ultra) in the comparison, are not closed by the local-LLM replication. We propose for the camera-ready / journal version (\S5.6, \S7 item 4): rerun Stage 3 condition (a) and Stage 4b condition (4) on \textbf{GPT-4o and Llama-3-70B}, report deltas vs Claude, and verify that the IssueSpec-vs-RAG-only ordering is preserved across all four LLM families. The Qwen-on-15-clusters PoC (\S4.2.y) is the \textbf{first step} of that program, completed in this paper; the API-based extension is the next.
 
-\textbf{Three-LLM cross-condition result.} \S4.2.y now reports a real 3-LLM comparison: Claude Opus 4.7 (frontier proprietary) + Qwen2.5-3B + Qwen2.5-1.5B (within-family scaling, Alibaba). Strict template-fill scales cleanly with capability: 0.97 $\rightarrow$ 0.74 $\rightarrow$ 0.48. The loose template-fill rate also drops from the rubric ceiling (Claude, Qwen-3B) to 0.93 (Qwen-1.5B), confirming the loose rubric-ceiling result is \emph{not} a universal LLM property --- it requires a capable instruction-follower. Two further attempts to add cross-family models (Microsoft Phi-3-mini, HuggingFace SmolLM2-1.7B) hung on this Apple-MPS setup; their scripts are released for GPU re-execution. The completed 3-LLM comparison provides intra-family scaling evidence (3B $\rightarrow$ 1.5B); cross-family frontier replication via GPT-4o + Llama-3-70B + Gemini API is the next step (\S7 item 4).
+\textbf{Three-LLM cross-condition result.} \S4.2.y now reports a real 3-LLM comparison: Claude Opus 4.7 (frontier proprietary) + Qwen2.5-3B + Qwen2.5-1.5B (within-family scaling, Alibaba). Strict template-fill scales cleanly with capability: 0.97 $\rightarrow$ 0.74 $\rightarrow$ 0.48. The loose template-fill rate also drops from the rubric ceiling (Claude, Qwen-3B) to 0.93 (Qwen-1.5B), confirming the loose rubric-ceiling result is \emph{not} a universal LLM property, it requires a capable instruction-follower. Two further attempts to add cross-family models (Microsoft Phi-3-mini, HuggingFace SmolLM2-1.7B) hung on this Apple-MPS setup; their scripts are released for GPU re-execution. The completed 3-LLM comparison provides intra-family scaling evidence (3B $\rightarrow$ 1.5B); cross-family frontier replication via GPT-4o + Llama-3-70B + Gemini API is the next step (\S7 item 4).
 
 \subsection{Validated, Reproducible, Extensible}\label{validated-reproducible-extensible}
 
@@ -782,7 +782,7 @@ Three properties of the released pipeline:
 
 \textbf{Reproducible.} Every result reported in §4 is reproducible from the released artifacts at \url{https://github.com/Fabiha-9876/ReviewAgent}. Table D1 maps each headline result to its evidence trail; the full pipeline from raw RRGen to Stage 4b human-rateable output reproduces in $\approx$ 6 hours wall-clock on a GPU-equipped workstation via a documented sequence of $\sim$10 scripts.
 
-\textbf{Extensible.} The pipeline is modular --- every stage is a swap-in point. Stage 1 classifier accepts any HuggingFace classifier with the \texttt{multi\_label\_logits} signature. Stage 2 clusterer accepts any \texttt{fit\_predict}-shaped clusterer (KMeans, BIRCH, OPTICS verified compatible). Stage 3 templates are registered in \texttt{src/stage3/taxonomy.py:IssueTaxonomy} and new issue types add by registering a template. Stage 3 LLM is wrappered in \texttt{src/common/llm\_client.py} (OpenAI / Gemini / vLLM-Llama already stubbed). Stage 4b retriever swaps via \texttt{src/stage4b/rag\_retriever.py}. Stage 5 RLHF accepts new RL methods by inheriting \texttt{feedback\_collector.py}. Future researchers can substitute any single component without re-implementing the rest.
+\textbf{Extensible.} The pipeline is modular, every stage is a swap-in point. Stage 1 classifier accepts any HuggingFace classifier with the \texttt{multi\_label\_logits} signature. Stage 2 clusterer accepts any \texttt{fit\_predict}-shaped clusterer (KMeans, BIRCH, OPTICS verified compatible). Stage 3 templates are registered in \texttt{src/stage3/taxonomy.py:IssueTaxonomy} and new issue types add by registering a template. Stage 3 LLM is wrappered in \texttt{src/common/llm\_client.py} (OpenAI / Gemini / vLLM-Llama already stubbed). Stage 4b retriever swaps via \texttt{src/stage4b/rag\_retriever.py}. Stage 5 RLHF accepts new RL methods by inheriting \texttt{feedback\_collector.py}. Future researchers can substitute any single component without re-implementing the rest.
 
 \textbf{Table D1. Claim $\rightarrow$ evidence map.}
 
@@ -838,7 +838,7 @@ scripts/score_human_work.py              # $\rightarrow$ 400-row evaluation file
 
 We have presented \textbf{ReviewAgent}, a four-stage pipeline that demonstrates how systematic LLM annotation noise in app-store review datasets can be detected and corrected with a small expert-verified anchor. The contribution is methodological: the verified-anchor + confident-learning correction step turns $\approx$30 person-hours of expert annotation into a leverage point that improves a 215,000-review dataset, with measurable downstream gains across three independent evaluations.
 
-The cleanest empirical signal is the \textbf{Cohen $\kappa$ progression} against expert gold-standard labels: \textbf{0.16 $\rightarrow$ 0.33 $\rightarrow$ 0.59} for V2 LLM original $\rightarrow$ cleanlab-corrected $\rightarrow$ V5 trained on corrections. Each pipeline step produces a measurable, externally-validated improvement, and a separately-trained classifier (V5) independently endorses \textbf{88.66\%} of the corrections --- the strongest evidence that the corrections are not artifacts of the procedure.
+The cleanest empirical signal is the \textbf{Cohen $\kappa$ progression} against expert gold-standard labels: \textbf{0.16 $\rightarrow$ 0.33 $\rightarrow$ 0.59} for V2 LLM original $\rightarrow$ cleanlab-corrected $\rightarrow$ V5 trained on corrections. Each pipeline step produces a measurable, externally-validated improvement, and a separately-trained classifier (V5) independently endorses \textbf{88.66\%} of the corrections, the strongest evidence that the corrections are not artifacts of the procedure.
 
 Two findings have implications beyond app-review classification:
 
@@ -847,16 +847,16 @@ Two findings have implications beyond app-review classification:
 \item
   \textbf{LLM annotation noise is structural, not random.} Class collapse (popular categories absorb minority categories) and boundary confusion (semantically adjacent classes blur together) are predictable failure modes that small expert verification corrects efficiently. The 25\% praise mislabeling rate we measure on RRGen is unlikely to be unique to this dataset.
 \item
-  \textbf{Retrieval is necessary but not sufficient for paper-grade response generation.} RAG without a structured issue specification underperforms even no-RAG baselines on human evaluation (\texttt{reviewagent\_no\_spec} quality 2.26 vs \texttt{prompt\_baseline} 2.98, p \textless{} 0.001). Adding the IssueSpec to RAG yields +2.36 quality points (p \textless{} 0.001) --- the structural component is doing the work that RAG alone cannot.
+  \textbf{Retrieval is necessary but not sufficient for paper-grade response generation.} RAG without a structured issue specification underperforms even no-RAG baselines on human evaluation (\texttt{reviewagent\_no\_spec} quality 2.26 vs \texttt{prompt\_baseline} 2.98, p \textless{} 0.001). Adding the IssueSpec to RAG yields +2.36 quality points (p \textless{} 0.001), the structural component is doing the work that RAG alone cannot.
 \end{enumerate}
 
 The full-system response generator achieves a \textbf{92\% helpfulness rate} in a 400-rating blinded human evaluation, against 19\% for the original RRGen-style baseline (a 4.84$\times$ improvement on identical inputs).
 
 We release all artifacts publicly: 14 scripts implementing the pipeline, 11 paper-grade figures, 5 trained classifier checkpoints (V1--V5), the 5,230-review verified anchor, the 490-review expert gold standard, the 400-row blinded human evaluation, and 11 evaluation result files. The repository is at https://github.com/Fabiha-9876/ReviewAgent.
 
-We hope the verified-anchor + confident-learning approach finds use beyond this work --- wherever LLM annotation is being used to bootstrap software-engineering datasets at scale.
+We hope the verified-anchor + confident-learning approach finds use beyond this work, wherever LLM annotation is being used to bootstrap software-engineering datasets at scale.
 
-\section{Future Work --- Extension Space}\label{future-work}
+\section{Future Work, Extension Space}\label{future-work}
 
 The pipeline is structurally open-ended; the limitations identified in §5.5 map directly to a prioritized list of next experiments. We organize them in three tiers (high-priority closes major reviewer concerns; medium-priority closes construct gaps; long-horizon broadens the framework). All items are designed to be backward-compatible with the released code: a future researcher restoring any of these components needs only to swap in the new module at the documented interface (§5.6).
 
@@ -865,7 +865,7 @@ The pipeline is structurally open-ended; the limitations identified in §5.5 map
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Multi-annotator gold standard.} Add 2 independent expert annotators on a 100-review subsample of the 490-review gold standard. Compute Krippendorff's $\alpha$ and pairwise Cohen's $\kappa$ to bound the single-rater bias of all \S4 results. This is the highest-leverage near-term item --- closes \S5.5(A), strengthens the $\kappa$ progression of \S4.1, and enables proper inter-rater reliability in \S4.3's 400-rating evaluation.
+  \textbf{Multi-annotator gold standard.} Add 2 independent expert annotators on a 100-review subsample of the 490-review gold standard. Compute Krippendorff's $\alpha$ and pairwise Cohen's $\kappa$ to bound the single-rater bias of all \S4 results. This is the highest-leverage near-term item, closes \S5.5(A), strengthens the $\kappa$ progression of \S4.1, and enables proper inter-rater reliability in \S4.3's 400-rating evaluation.
 \item
   \textbf{Multi-annotator Stage 4b human evaluation.} Recruit 2 additional raters for a 100-row subset of the 400 (review, response) pairs. Re-compute helpfulness, specificity, and quality with proper Krippendorff $\alpha$ and Fleiss $\kappa$. This addresses the construct-validity concern of \S4.3.3 (rater designed the system).
 \item
@@ -884,7 +884,7 @@ The pipeline is structurally open-ended; the limitations identified in §5.5 map
 \item
   \textbf{Hierarchical purity audit.} Run the same 50-cluster Y/P/N audit on the 605-cluster hierarchical output to confirm H2's ``comparable purity at finer granularity'' claim that is currently only provisional.
 \item
-  \textbf{Anchor-size ablation.} The verified-anchor budget (5,230 + 5,008 = 10,238) was chosen pragmatically. Run the cleanlab pipeline at anchor sizes $\in$ \{1K, 2.5K, 5K, 7.5K, 10K\} and report the $\kappa$ progression as a function of annotation budget. This generalizes the methodology --- telling future researchers how much expert annotation actually matters.
+  \textbf{Anchor-size ablation.} The verified-anchor budget (5,230 + 5,008 = 10,238) was chosen pragmatically. Run the cleanlab pipeline at anchor sizes $\in$ \{1K, 2.5K, 5K, 7.5K, 10K\} and report the $\kappa$ progression as a function of annotation budget. This generalizes the methodology, telling future researchers how much expert annotation actually matters.
 \end{enumerate}
 
 \subsection{Long-Horizon Extensions}\label{long-horizon-extensions}
@@ -893,7 +893,7 @@ The pipeline is structurally open-ended; the limitations identified in §5.5 map
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{7}
 \item
-  \textbf{Cross-corpus generalization.} Apply verified-anchor + cleanlab to a second corpus --- Apple App Store reviews, Steam game reviews, or a non-English (e.g., Mandarin or Spanish) corpus. Tests whether the noise-correction approach generalizes across review sources, platforms, and languages.
+  \textbf{Cross-corpus generalization.} Apply verified-anchor + cleanlab to a second corpus, Apple App Store reviews, Steam game reviews, or a non-English (e.g., Mandarin or Spanish) corpus. Tests whether the noise-correction approach generalizes across review sources, platforms, and languages.
 \item
   \textbf{Full agentic resolution (Stage 4a).} Replace the 5-spec stub with a real Planner$\rightarrow$Navigator$\rightarrow$Editor$\rightarrow$Executor loop on open-source Android apps where source repositories are available (e.g., AntennaPod, Signal, Wikipedia). The IssueSpecs from Stage 3 would feed into a SWE-Agent-style loop \cite{nashid2023codequery, ahmed2024automatic} producing actual patches; success measured via patch-acceptance and test-pass rate.
 \item
@@ -903,7 +903,7 @@ The pipeline is structurally open-ended; the limitations identified in §5.5 map
 \item
   \textbf{Agentic RAG comparison.} Add a fourth Stage 4b condition: an \emph{agentic} RAG loop (multi-turn retrieval, self-refinement, tool use) and benchmark against vanilla RAG and structured RAG. Quantifies whether agentic iteration adds value beyond structured intermediates.
 \item
-  \textbf{Per-domain template library.} Extend the Stage 3 taxonomy beyond mobile-app issue types --- backend incidents (post-mortem template), UX research findings (Hartson template), accessibility issues (WCAG template). Each addition broadens the framework's domain coverage.
+  \textbf{Per-domain template library.} Extend the Stage 3 taxonomy beyond mobile-app issue types, backend incidents (post-mortem template), UX research findings (Hartson template), accessibility issues (WCAG template). Each addition broadens the framework's domain coverage.
 \end{enumerate}
 
 \bibliographystyle{ACM-Reference-Format}

@@ -1,4 +1,4 @@
-# Paper Addendum — Implementations Completed in Final Session
+# Paper Addendum, Implementations Completed in Final Session
 
 This addendum documents three additional contributions that were completed
 in the final implementation session, addressing gaps in the original three
@@ -14,7 +14,7 @@ In addition to the flat UMAP+HDBSCAN clustering reported in §3.4 (which produce
 The knowledge graph is constructed from a 10,000-review stratified sample of the V5-relabeled corpus. Reviews and their heuristically-extracted aspects (§3.4.1) become nodes; sentiment-bearing edges connect reviews to aspects, and `mentions` edges connect reviews to entities. PageRank centrality on the resulting graph surfaces the most structurally-central aspects, providing a complementary view to per-cluster TF-IDF (which is *local* to each cluster). Top-10 globally-central aspects:
 
 | aspect | PageRank | reviews |
-|---|---|---|
+|,|,|,|
 | ad | 0.040 | 3,210 |
 | phone | 0.011 | 876 |
 | ads | 0.010 | 854 |
@@ -33,7 +33,7 @@ The KG itself contains **18,938 nodes** (8,404 reviews + 10,534 aspects) and **3
 The hierarchical pipeline groups reviews **by aspect** and then sub-clusters within each aspect using sentence-transformer embeddings + HDBSCAN. This is the **two-level design** specified in Aim 1, in contrast to the flat UMAP+HDBSCAN per issue type used for the headline experiments. We run hierarchical clustering on the same 10K stratified sample and compare against the flat run reported in §3.4.
 
 | metric | flat UMAP+HDBSCAN | **hierarchical KG** |
-|---|---|---|
+|,|,|,|
 | number of clusters | 194 | **605** ⭐ |
 | average cluster size | 375 | **16** ⭐ |
 | clustering basis | per-issue-type embedding density | aspect-grounded sub-clustering |
@@ -42,21 +42,21 @@ Hierarchical clustering produces **3.1× more clusters** at **23× smaller avera
 
 ## §3.6 Multi-Agent Resolution (Aim 2 Proof-of-Concept)
 
-Aim 2 specified a Planner → Navigator → Editor → Executor pipeline that consumes IssueSpecs and proposes patches. Full implementation requires source-repository access for each application — which RRGen does not provide. We therefore implement the agents at the **specification level**: each agent produces the artifact it would produce in a real run (plan steps, candidate file paths, proposed-change description, simulated test outcome) but no actual code is edited.
+Aim 2 specified a Planner → Navigator → Editor → Executor pipeline that consumes IssueSpecs and proposes patches. Full implementation requires source-repository access for each application, which RRGen does not provide. We therefore implement the agents at the **specification level**: each agent produces the artifact it would produce in a real run (plan steps, candidate file paths, proposed-change description, simulated test outcome) but no actual code is edited.
 
 ### §3.6.1 Scope and Generalizability of the Planner
 
 Reviewer feedback (Reviewer Gap #6) asked three explicit questions about the Planner's scope: *is it domain-specific? reusable across repositories/tasks? or a general-purpose planning agent?* Direct answers in Table 3.6.1-A:
 
-**Table 3.6.1-A. Planner scope and generalizability — direct answers.**
+**Table 3.6.1-A. Planner scope and generalizability, direct answers.**
 
 | Question | Answer | Why |
-|---|---|---|
-| Is the Planner **domain-specific**? | **Yes** — to mobile-app defect / feature / performance / usability / compatibility issues. | Plan templates are authored against the five Stage 3 issue types (Zimmermann for bugs, ISO 25010 for performance, Nielsen for usability, user-story for features, device-OS-matrix for compatibility). |
-| Is it **reusable across repositories within that domain**? | **Yes** — the templates encode issue-type workflows, not app-specific knowledge. | A bug-report Planner instance for AntennaPod is structurally identical to one for NewPipe or Thunderbird; only the IssueSpec inputs differ. |
-| Is it **reusable across the 5 supported issue types**? | **Yes** — one Planner module routes an IssueSpec to the type-specific template. | The Planner reads `IssueSpec.issue_type` and instantiates the corresponding workflow. No re-implementation needed per type. |
-| Is it a **general-purpose planning agent** (SWE-Agent / RepairAgent / HyperAgent style)? | **No** — explicitly not. | It does not perform open-ended repository search, does not call arbitrary tools, does not iterate, and does not maintain working memory across steps. It is a typed, deterministic dispatcher from IssueSpec → workflow. |
-| Is it **reusable across non-mobile domains** (backend incidents, hardware, ML-model failures)? | **No** — would require re-authored templates. | The five templates are built around mobile-app issue conventions; a backend-incident Planner would need an SRE-style post-mortem template, etc. |
+|,|,|,|
+| Is the Planner **domain-specific**? | **Yes**, to mobile-app defect / feature / performance / usability / compatibility issues. | Plan templates are authored against the five Stage 3 issue types (Zimmermann for bugs, ISO 25010 for performance, Nielsen for usability, user-story for features, device-OS-matrix for compatibility). |
+| Is it **reusable across repositories within that domain**? | **Yes**, the templates encode issue-type workflows, not app-specific knowledge. | A bug-report Planner instance for AntennaPod is structurally identical to one for NewPipe or Thunderbird; only the IssueSpec inputs differ. |
+| Is it **reusable across the 5 supported issue types**? | **Yes**, one Planner module routes an IssueSpec to the type-specific template. | The Planner reads `IssueSpec.issue_type` and instantiates the corresponding workflow. No re-implementation needed per type. |
+| Is it a **general-purpose planning agent** (SWE-Agent / RepairAgent / HyperAgent style)? | **No**, explicitly not. | It does not perform open-ended repository search, does not call arbitrary tools, does not iterate, and does not maintain working memory across steps. It is a typed, deterministic dispatcher from IssueSpec → workflow. |
+| Is it **reusable across non-mobile domains** (backend incidents, hardware, ML-model failures)? | **No**, would require re-authored templates. | The five templates are built around mobile-app issue conventions; a backend-incident Planner would need an SRE-style post-mortem template, etc. |
 
 **Concrete example of Planner output.** Given an IssueSpec with `issue_type = bug_report`, `affected_component = "Authentication / login flow"`, `severity = "P0"`, the Planner emits:
 
@@ -73,14 +73,14 @@ Step 5 (Verify):    Re-run integration tests under the affected_component;
                     confirm expected_behavior is now produced.
 ```
 
-For `issue_type = performance` with `nfr_category = battery`, the Planner instead emits a profile-then-optimize plan; for `issue_type = usability` it emits a Nielsen-heuristic audit plan; etc. The plans are **deterministic instantiations of templates**, not LLM-generated free-form plans — this is the distinction between our Planner and a true planning agent.
+For `issue_type = performance` with `nfr_category = battery`, the Planner instead emits a profile-then-optimize plan; for `issue_type = usability` it emits a Nielsen-heuristic audit plan; etc. The plans are **deterministic instantiations of templates**, not LLM-generated free-form plans, this is the distinction between our Planner and a true planning agent.
 
-**Why this scope choice is deliberate.** We treat the Planner as the *interface* between a structured IssueSpec and a downstream code-resolution agent (which is drop-in: SWE-Agent \cite{nashid2023codequery}, RepairAgent, HyperAgent, etc., all consume the typed plan + spec). Building a competing general planner is out of scope; demonstrating that an IssueSpec is a *sufficient input* for any of those existing agents is the contribution — Stage 4a's value is showing the IssueSpec → plan handoff is well-typed and complete.
+**Why this scope choice is deliberate.** We treat the Planner as the *interface* between a structured IssueSpec and a downstream code-resolution agent (which is drop-in: SWE-Agent \cite{nashid2023codequery}, RepairAgent, HyperAgent, etc., all consume the typed plan + spec). Building a competing general planner is out of scope; demonstrating that an IssueSpec is a *sufficient input* for any of those existing agents is the contribution, Stage 4a's value is showing the IssueSpec → plan handoff is well-typed and complete.
 
 **Comparison against other planning agents.**
 
 | System | Planner scope | Open-ended? | Reusable across domains? | Iterative? |
-|---|---|---|---|---|
+|,|,|,|,|,|
 | **ReviewAgent (this work)** | Task-template-driven; 5 mobile-app issue types | No | No (mobile-app only) | No |
 | SWE-Agent | General SE tasks via tool use | Yes | Yes | Yes |
 | RepairAgent | Program-repair specific | Partly | Bug-fix only | Yes |
@@ -91,10 +91,10 @@ The takeaway: ReviewAgent's Planner is intentionally **narrow and deterministic*
 
 ### §3.6.2 Positioning Against Vanilla RAG and Agentic RAG
 
-The literature uses three loosely-defined terms — *vanilla RAG*, *structured RAG*, and *Agentic RAG* — that are often conflated. We adopt the following operational definitions and place ReviewAgent explicitly:
+The literature uses three loosely-defined terms, *vanilla RAG*, *structured RAG*, and *Agentic RAG*, that are often conflated. We adopt the following operational definitions and place ReviewAgent explicitly:
 
 | Pattern | Retrieval | Composition | Iteration | Tool use | Where ReviewAgent sits |
-|---|---|---|---|---|---|
+|,|,|,|,|,|,|
 | **Vanilla RAG** \cite{lewis2020rag} | one-shot, embedding-NN | LLM concatenates retrieved passages | none | none | Stage 4b condition (3) `reviewagent_no_spec` |
 | **Structured RAG** | one-shot, embedding-NN + structured filter | composer conditions on a typed intermediate (IssueSpec) | none | none | **Stage 4b condition (4) `reviewagent_full` (the headline system)** |
 | **Agentic RAG** | tool-driven, multi-turn | agent re-queries based on intermediate reasoning | yes | search, code-exec | Stage 4a Planner→Navigator→Editor→Executor (PoC stub only) |
@@ -116,7 +116,7 @@ These artifacts are then consumed by Stage 4b to produce a **resolution-aware re
 > "Hi, we're sorry about the trouble. Please reach out to support."
 >
 > **Resolution-aware (Aim 2 stub):**
-> "Thanks for flagging this — we've reproduced the issue on our side. Specifically, we've identified Authentication / login flow as the affected area and treating this as a top-priority fix. Our team has drafted a fix in `src/auth.py` that addresses the root cause; it's currently going through code review and testing."
+> "Thanks for flagging this, we've reproduced the issue on our side. Specifically, we've identified Authentication / login flow as the affected area and treating this as a top-priority fix. Our team has drafted a fix in `src/auth.py` that addresses the root cause; it's currently going through code review and testing."
 
 The PoC demonstrates the **architecture is viable**; full code-resolution evaluation is left as future work because RRGen's anonymized review-only data does not include the source repositories needed for an end-to-end evaluation.
 
@@ -131,13 +131,13 @@ To address Aim 1's inter-annotator agreement requirement without recruiting addi
 We compute pairwise Cohen's κ and three-rater Krippendorff α (Table 9):
 
 | comparison | Cohen's κ | interpretation |
-|---|---|---|
+|,|,|,|
 | Expert vs LLM (concise) | 0.275 | fair |
 | Expert vs LLM (CoT) | 0.383 | fair |
 | LLM (concise) vs LLM (CoT) | 0.261 | fair |
 | **Krippendorff α (3 raters)** | **0.451** | below acceptable (0.667) |
 
-These numbers reveal that the seven-class app-review classification task is **inherently difficult**: even two LLM raters reading the same review with different prompts agree only at fair levels (κ = 0.26). The most important insight, however, is what this implies about the V5 classifier's quality. **V5 achieves κ = 0.59 against the expert (Section 4.1)** — substantially exceeding the κ = 0.27–0.38 that naive LLM annotators achieve on the same task. The correction pipeline closes most of the gap between out-of-the-box LLM annotation and expert judgment.
+These numbers reveal that the seven-class app-review classification task is **inherently difficult**: even two LLM raters reading the same review with different prompts agree only at fair levels (κ = 0.26). The most important insight, however, is what this implies about the V5 classifier's quality. **V5 achieves κ = 0.59 against the expert (Section 4.1)**, substantially exceeding the κ = 0.27–0.38 that naive LLM annotators achieve on the same task. The correction pipeline closes most of the gap between out-of-the-box LLM annotation and expert judgment.
 
 The α = 0.45 below the conventional acceptability threshold (0.667) is reported transparently and discussed in §5.5 as a limitation. We note that this α reflects the difficulty of the task itself rather than a deficiency of any single rater; published app-review classification studies report similar levels of inter-rater agreement when the rater pool includes naive (non-domain-expert) annotators \cite{maalej2016, dabrowski2022analysing}.
 
@@ -146,7 +146,7 @@ The α = 0.45 below the conventional acceptability threshold (0.667) is reported
 Five sample IssueSpecs were processed through the full Planner-Navigator-Editor-Executor pipeline. Each agent produced its expected artifact deterministically:
 
 | issue type | planner steps | candidate files | proposed change LOC |
-|---|---|---|---|
+|,|,|,|,|
 | bug_report | 5 | 3 | ~30 |
 | feature_request | 5 | 4 | ~30 |
 | performance | 5 | 3 | ~30 |
@@ -160,7 +160,7 @@ This is a **proof-of-concept release**: the architecture functions end-to-end at
 ## Updated Aims-Implementation Table
 
 | aim | scope (proposal items) | implemented | notes |
-|---|---|---|---|
+|,|,|,|,|
 | Aim 1 (Translation Framework) | 4 sub-items: classify, cluster, KG, IssueSpec | **3.8 / 4 sub-items**| KG + hierarchical clustering done; inter-rater agreement done via LLM annotators (Gilardi 2023 methodology); cross-LLM Stage 3 done at PoC (§4.2.y) |
 | Aim 2 (Resolution + Response) | 4 sub-items: Planner, Navigator, Editor, Executor + RAG response | **3 / 5 sub-items** | Multi-agent stub demonstrates architecture at spec level (no real patches); RAG response gen done; full code-resolution requires source-repo access (future work item 9) |
 | Aim 3 (RLHF Loop) | 4 sub-items: HITL, KTO, DPO, Constrained PPO | **3.5 / 4 sub-items** | Human oversight at 3 stages done (5,230 verified + 50 cluster validation + 400 response ratings); KTO/DPO/Lagrangian Constrained PPO trainers all implemented and trained at PoC scale; end-to-end on generation-grade base deferred (future work item 3) |
