@@ -14,7 +14,7 @@
     "bertscore_precision_mean": 0.8639,
     "bertscore_recall_mean": 0.8257
   },
-  "core_baseline": {
+  "prompt_baseline": {
     "n_evaluated": 100,
     "bleu_1_mean": 0.1875,
     "bleu_2_mean": 0.0193,

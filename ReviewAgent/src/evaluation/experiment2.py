@@ -31,7 +31,7 @@ class Experiment2Results:
 class Experiment2Runner:
     """Runs Experiment 2: Coupled vs Uncoupled Response Generation."""
 
-    CONDITIONS = ["rrgen_baseline", "core_baseline", "reviewagent_no_spec", "reviewagent_full"]
+    CONDITIONS = ["rrgen_baseline", "prompt_baseline", "reviewagent_no_spec", "reviewagent_full"]
 
     def __init__(
         self,
@@ -64,7 +64,7 @@ class Experiment2Runner:
         # Condition (b): CoRe baseline — app context but no structured issue spec
         print("  Condition (b): CoRe baseline...")
         pipeline_b = Stage4bPipeline(self.llm, retriever=self.retriever)
-        self.results.condition_responses["core_baseline"] = await pipeline_b.process(
+        self.results.condition_responses["prompt_baseline"] = await pipeline_b.process(
             issue_specs, reviews, include_rag=True, include_issue_spec=False, refine=False
         )
 

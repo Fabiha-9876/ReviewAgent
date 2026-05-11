@@ -1,0 +1,242 @@
+[
+  {
+    "review_index": 0,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 1,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 10,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 12,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 13,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 14,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 15,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 26,
+    "A_quality": 5,
+    "A_helpful": "Y",
+    "B_quality": 3,
+    "B_helpful": "N",
+    "preferred": "A"
+  },
+  {
+    "review_index": 28,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 30,
+    "A_quality": 5,
+    "A_helpful": "Y",
+    "B_quality": 3,
+    "B_helpful": "Y",
+    "preferred": "A"
+  },
+  {
+    "review_index": 32,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 36,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 40,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 50,
+    "A_quality": 3,
+    "A_helpful": "N",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 53,
+    "A_quality": 5,
+    "A_helpful": "Y",
+    "B_quality": 3,
+    "B_helpful": "N",
+    "preferred": "A"
+  },
+  {
+    "review_index": 56,
+    "A_quality": 3,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 57,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 62,
+    "A_quality": 3,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 64,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 65,
+    "A_quality": 5,
+    "A_helpful": "Y",
+    "B_quality": 4,
+    "B_helpful": "Y",
+    "preferred": "A"
+  },
+  {
+    "review_index": 70,
+    "A_quality": 3,
+    "A_helpful": "N",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 71,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 73,
+    "A_quality": 3,
+    "A_helpful": "N",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 75,
+    "A_quality": 3,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "A"
+  },
+  {
+    "review_index": 76,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 78,
+    "A_quality": 3,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 79,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 82,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 86,
+    "A_quality": 4,
+    "A_helpful": "Y",
+    "B_quality": 5,
+    "B_helpful": "Y",
+    "preferred": "B"
+  },
+  {
+    "review_index": 98,
+    "A_quality": 5,
+    "A_helpful": "Y",
+    "B_quality": 4,
+    "B_helpful": "Y",
+    "preferred": "A"
+  }
+]

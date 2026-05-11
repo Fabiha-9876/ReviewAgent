@@ -4,7 +4,7 @@
     "cluster_id": "c_00004",
     "blinding": {
       "A": "reviewagent_no_spec",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
     }
@@ -16,14 +16,14 @@
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
     "review_index": 2,
     "cluster_id": "c_00019",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -33,7 +33,7 @@
     "review_index": 3,
     "cluster_id": "c_00005",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
       "D": "reviewagent_full"
@@ -43,7 +43,7 @@
     "review_index": 4,
     "cluster_id": "c_00045",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
@@ -53,7 +53,7 @@
     "review_index": 5,
     "cluster_id": "c_00026",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -64,7 +64,7 @@
     "cluster_id": "c_00018",
     "blinding": {
       "A": "reviewagent_no_spec",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_full"
     }
@@ -73,7 +73,7 @@
     "review_index": 7,
     "cluster_id": "c_00016",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -85,7 +85,7 @@
     "blinding": {
       "A": "rrgen_baseline",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_full"
     }
   },
@@ -96,7 +96,7 @@
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -104,7 +104,7 @@
     "cluster_id": "c_00042",
     "blinding": {
       "A": "reviewagent_no_spec",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
     }
@@ -115,7 +115,7 @@
     "blinding": {
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -124,7 +124,7 @@
     "cluster_id": "c_00011",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
     }
@@ -135,7 +135,7 @@
     "blinding": {
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -144,7 +144,7 @@
     "cluster_id": "c_00027",
     "blinding": {
       "A": "rrgen_baseline",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_full",
       "D": "reviewagent_no_spec"
     }
@@ -156,14 +156,14 @@
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
     "review_index": 16,
     "cluster_id": "c_00039",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -173,7 +173,7 @@
     "review_index": 17,
     "cluster_id": "c_00046",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -185,7 +185,7 @@
     "blinding": {
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -194,7 +194,7 @@
     "cluster_id": "c_00032",
     "blinding": {
       "A": "rrgen_baseline",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "reviewagent_full"
     }
@@ -206,7 +206,7 @@
       "A": "rrgen_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -216,14 +216,14 @@
       "A": "rrgen_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
     "review_index": 22,
     "cluster_id": "c_00022",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -236,7 +236,7 @@
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -245,7 +245,7 @@
     "blinding": {
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_full"
     }
   },
@@ -253,7 +253,7 @@
     "review_index": 25,
     "cluster_id": "c_00038",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -265,7 +265,7 @@
     "blinding": {
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -273,7 +273,7 @@
     "review_index": 27,
     "cluster_id": "c_00049",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -284,7 +284,7 @@
     "cluster_id": "c_00023",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
     }
@@ -294,7 +294,7 @@
     "cluster_id": "c_00058",
     "blinding": {
       "A": "rrgen_baseline",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "reviewagent_full"
     }
@@ -306,7 +306,7 @@
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -316,7 +316,7 @@
       "A": "rrgen_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -324,7 +324,7 @@
     "cluster_id": "c_00066",
     "blinding": {
       "A": "rrgen_baseline",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "reviewagent_full"
     }
@@ -333,7 +333,7 @@
     "review_index": 33,
     "cluster_id": "c_00097",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -343,7 +343,7 @@
     "review_index": 34,
     "cluster_id": "c_00087",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
       "D": "reviewagent_full"
@@ -353,7 +353,7 @@
     "review_index": 35,
     "cluster_id": "c_00111",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
@@ -363,7 +363,7 @@
     "review_index": 36,
     "cluster_id": "c_00096",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
       "D": "reviewagent_full"
@@ -375,7 +375,7 @@
     "blinding": {
       "A": "rrgen_baseline",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_full"
     }
   },
@@ -383,7 +383,7 @@
     "review_index": 38,
     "cluster_id": "c_00079",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
       "D": "reviewagent_no_spec"
@@ -394,7 +394,7 @@
     "cluster_id": "c_00075",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
     }
@@ -404,7 +404,7 @@
     "cluster_id": "c_00069",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
     }
@@ -414,7 +414,7 @@
     "cluster_id": "c_00092",
     "blinding": {
       "A": "reviewagent_no_spec",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_full"
     }
@@ -424,7 +424,7 @@
     "cluster_id": "c_00081",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
     }
@@ -436,14 +436,14 @@
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
     "review_index": 44,
     "cluster_id": "c_00116",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
       "D": "reviewagent_no_spec"
@@ -456,7 +456,7 @@
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -464,7 +464,7 @@
     "cluster_id": "c_00076",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
     }
@@ -473,7 +473,7 @@
     "review_index": 47,
     "cluster_id": "c_00101",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
       "D": "reviewagent_full"
@@ -485,7 +485,7 @@
     "blinding": {
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_no_spec"
     }
   },
@@ -493,7 +493,7 @@
     "review_index": 49,
     "cluster_id": "c_00073",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
@@ -504,7 +504,7 @@
     "cluster_id": "c_00098",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
     }
@@ -513,7 +513,7 @@
     "review_index": 51,
     "cluster_id": "c_00105",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -526,7 +526,7 @@
       "A": "rrgen_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -536,7 +536,7 @@
       "A": "rrgen_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -546,7 +546,7 @@
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -555,7 +555,7 @@
     "blinding": {
       "A": "rrgen_baseline",
       "B": "reviewagent_full",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_no_spec"
     }
   },
@@ -564,7 +564,7 @@
     "cluster_id": "c_00088",
     "blinding": {
       "A": "rrgen_baseline",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "reviewagent_full"
     }
@@ -573,7 +573,7 @@
     "review_index": 57,
     "cluster_id": "c_00117",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
@@ -585,7 +585,7 @@
     "blinding": {
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -596,14 +596,14 @@
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
     "review_index": 60,
     "cluster_id": "c_00121",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
@@ -616,14 +616,14 @@
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
     "review_index": 62,
     "cluster_id": "c_00145",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -634,7 +634,7 @@
     "cluster_id": "c_00132",
     "blinding": {
       "A": "rrgen_baseline",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_full",
       "D": "reviewagent_no_spec"
     }
@@ -646,7 +646,7 @@
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -654,7 +654,7 @@
     "cluster_id": "c_00153",
     "blinding": {
       "A": "reviewagent_no_spec",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_full"
     }
@@ -663,7 +663,7 @@
     "review_index": 66,
     "cluster_id": "c_00137",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
       "D": "reviewagent_full"
@@ -674,7 +674,7 @@
     "cluster_id": "c_00151",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
     }
@@ -685,7 +685,7 @@
     "blinding": {
       "A": "rrgen_baseline",
       "B": "reviewagent_full",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_no_spec"
     }
   },
@@ -693,7 +693,7 @@
     "review_index": 69,
     "cluster_id": "c_00146",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
       "D": "reviewagent_full"
@@ -704,7 +704,7 @@
     "cluster_id": "c_00157",
     "blinding": {
       "A": "reviewagent_no_spec",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
     }
@@ -713,7 +713,7 @@
     "review_index": 71,
     "cluster_id": "c_00127",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -726,7 +726,7 @@
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -736,7 +736,7 @@
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -745,7 +745,7 @@
     "blinding": {
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_no_spec"
     }
   },
@@ -755,7 +755,7 @@
     "blinding": {
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -763,7 +763,7 @@
     "review_index": 76,
     "cluster_id": "c_00129",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -773,7 +773,7 @@
     "review_index": 77,
     "cluster_id": "c_00135",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
@@ -785,7 +785,7 @@
     "blinding": {
       "A": "rrgen_baseline",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_full"
     }
   },
@@ -796,7 +796,7 @@
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -806,7 +806,7 @@
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -815,7 +815,7 @@
     "blinding": {
       "A": "rrgen_baseline",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_full"
     }
   },
@@ -825,7 +825,7 @@
     "blinding": {
       "A": "rrgen_baseline",
       "B": "reviewagent_full",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_no_spec"
     }
   },
@@ -836,7 +836,7 @@
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -846,14 +846,14 @@
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
     "review_index": 85,
     "cluster_id": "c_00179",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
@@ -863,7 +863,7 @@
     "review_index": 86,
     "cluster_id": "c_00160",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
       "D": "reviewagent_full"
@@ -873,7 +873,7 @@
     "review_index": 87,
     "cluster_id": "c_00185",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -886,7 +886,7 @@
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
       "C": "rrgen_baseline",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -896,7 +896,7 @@
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -906,7 +906,7 @@
       "A": "reviewagent_full",
       "B": "rrgen_baseline",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -915,7 +915,7 @@
     "blinding": {
       "A": "reviewagent_full",
       "B": "reviewagent_no_spec",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -924,7 +924,7 @@
     "cluster_id": "c_00173",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
     }
@@ -936,7 +936,7 @@
       "A": "rrgen_baseline",
       "B": "reviewagent_no_spec",
       "C": "reviewagent_full",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -946,7 +946,7 @@
       "A": "rrgen_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
-      "D": "core_baseline"
+      "D": "prompt_baseline"
     }
   },
   {
@@ -955,7 +955,7 @@
     "blinding": {
       "A": "reviewagent_no_spec",
       "B": "rrgen_baseline",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "reviewagent_full"
     }
   },
@@ -965,7 +965,7 @@
     "blinding": {
       "A": "reviewagent_no_spec",
       "B": "reviewagent_full",
-      "C": "core_baseline",
+      "C": "prompt_baseline",
       "D": "rrgen_baseline"
     }
   },
@@ -973,7 +973,7 @@
     "review_index": 97,
     "cluster_id": "c_00193",
     "blinding": {
-      "A": "core_baseline",
+      "A": "prompt_baseline",
       "B": "reviewagent_full",
       "C": "reviewagent_no_spec",
       "D": "rrgen_baseline"
@@ -984,7 +984,7 @@
     "cluster_id": "c_00192",
     "blinding": {
       "A": "reviewagent_full",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "rrgen_baseline",
       "D": "reviewagent_no_spec"
     }
@@ -994,7 +994,7 @@
     "cluster_id": "c_00191",
     "blinding": {
       "A": "reviewagent_no_spec",
-      "B": "core_baseline",
+      "B": "prompt_baseline",
       "C": "reviewagent_full",
       "D": "rrgen_baseline"
     }

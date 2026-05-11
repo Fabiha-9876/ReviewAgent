@@ -1,5 +1,5 @@
 """
-Stage 4b condition (2): core_baseline.
+Stage 4b condition (2): prompt_baseline.
 Generates one developer-style response per review using ONLY review_text and issue_type.
 No RAG, no IssueSpec. A senior dev-rel quality-oriented system prompt steers tone.
 """
@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 
 INPUT = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/responses/sample_100_reviews_with_rag.json")
-OUTPUT = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/responses/responses_core_baseline.json")
+OUTPUT = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/responses/responses_prompt_baseline.json")
 
 # ---------------------------------------------------------------------------
 # Lightweight keyword extraction so responses stay specific to each review.
@@ -274,7 +274,7 @@ def main() -> None:
                 "issue_type": r["issue_type"],
                 "review_text": r["review_text"],
                 "response_text": resp_text,
-                "condition": "core_baseline",
+                "condition": "prompt_baseline",
             }
         )
 

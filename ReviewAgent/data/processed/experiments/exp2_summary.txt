@@ -4,7 +4,7 @@ EXPERIMENT 2 — Stage 4b Response Quality
 
 References from RRGen original_response field: 100/100
 
-metric                      rrgen_baseline core_baselinereviewagent_noreviewagent_fu
+metric                      rrgen_baselineprompt_baselinreviewagent_noreviewagent_fu
 ------------------------------------------------------------------------------------
 bleu_1_mean                         0.2101        0.1875        0.2308        0.1294
 bleu_2_mean                         0.0278        0.0193        0.0399        0.0121

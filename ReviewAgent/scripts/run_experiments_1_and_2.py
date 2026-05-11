@@ -14,7 +14,7 @@ Metrics (no reference needed):
 
 Experiment 2 — Stage 4b response quality across 4 conditions:
   (1) rrgen_baseline   (no RAG, no spec)
-  (2) core_baseline    (no RAG, no spec, with system guidance)
+  (2) prompt_baseline    (no RAG, no spec, with system guidance)
   (3) reviewagent_no_spec (RAG only)
   (4) reviewagent_full (RAG + IssueSpec)
 
@@ -208,7 +208,7 @@ def run_experiment_2():
     # Load all 4 condition outputs
     conditions = {
         "rrgen_baseline":      "data/processed/responses/responses_rrgen_baseline.json",
-        "core_baseline":       "data/processed/responses/responses_core_baseline.json",
+        "prompt_baseline":       "data/processed/responses/responses_prompt_baseline.json",
         "reviewagent_no_spec": "data/processed/responses/responses_reviewagent_no_spec.json",
         "reviewagent_full":    "data/processed/responses/responses_reviewagent_full.json",
     }
@@ -296,7 +296,7 @@ def run_experiment_2():
     metrics = ["bleu_1_mean", "bleu_2_mean", "bleu_3_mean", "bleu_4_mean",
                "rouge_l_mean", "bertscore_f1_mean",
                "response_length_mean_words", "distinct_1", "distinct_2"]
-    cond_order = ["rrgen_baseline", "core_baseline", "reviewagent_no_spec", "reviewagent_full"]
+    cond_order = ["rrgen_baseline", "prompt_baseline", "reviewagent_no_spec", "reviewagent_full"]
     lines.append(f"{'metric':28s}" + "".join(f"{c[:14]:>14}" for c in cond_order))
     lines.append("-"*84)
     for metric in metrics:

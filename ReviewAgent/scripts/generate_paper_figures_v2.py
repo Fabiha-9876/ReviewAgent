@@ -75,7 +75,7 @@ def fig09_human_eval():
     """Human evaluation scores per condition (Stage 4b)."""
     he = json.load(open("data/processed/experiments/exp2_human_eval.json"))["summary"]
 
-    conds = ["rrgen_baseline", "core_baseline", "reviewagent_no_spec", "reviewagent_full"]
+    conds = ["rrgen_baseline", "prompt_baseline", "reviewagent_no_spec", "reviewagent_full"]
     short = ["RRGen\nbaseline", "Core\nbaseline", "ReviewAgent\nno-spec", "ReviewAgent\n+ spec (full)"]
     quality = [he[c]["quality_mean"] for c in conds]
     quality_std = [he[c]["quality_std"] for c in conds]
@@ -126,11 +126,11 @@ def fig10_paired_wilcoxon():
 
     pairs = [
         ("ReviewAgent_full vs no_spec", "reviewagent_full_vs_reviewagent_no_spec_quality"),
-        ("ReviewAgent_full vs core",    "reviewagent_full_vs_core_baseline_quality"),
+        ("ReviewAgent_full vs core",    "reviewagent_full_vs_prompt_baseline_quality"),
         ("ReviewAgent_full vs RRGen",   "reviewagent_full_vs_rrgen_baseline_quality"),
-        ("no_spec vs core",             "reviewagent_no_spec_vs_core_baseline_quality"),
+        ("no_spec vs core",             "reviewagent_no_spec_vs_prompt_baseline_quality"),
         ("no_spec vs RRGen",            "reviewagent_no_spec_vs_rrgen_baseline_quality"),
-        ("core vs RRGen",               "core_baseline_vs_rrgen_baseline_quality"),
+        ("core vs RRGen",               "prompt_baseline_vs_rrgen_baseline_quality"),
     ]
     labels = [p[0] for p in pairs]
     deltas = [pw[p[1]]["mean_diff"] for p in pairs]

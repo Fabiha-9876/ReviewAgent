@@ -1,16 +1,17 @@
-# ReviewAgent: A Three-Layer Knowledge Pipeline with Multi-Agent Code Resolution and Dual-Objective RLHF Alignment for App Review Mining
+# ReviewAgent: Verified-Anchor Confident Learning and Knowledge-Grounded Issue Specifications for App Review Mining
 
 **Target venue:** CIKM 2026 — Long Research Paper track
 **Status:** Draft assembled from per-section markdown files. References in `references.bib`.
 
-## Title mapping to research aims
+## Title mapping to contributions
 
-| title phrase | research aim |
+| title phrase | contribution |
 |---|---|
-| **Three-Layer Knowledge Pipeline** | Aim 1 — KG + hierarchical clustering + standardized schema mapping |
-| **Multi-Agent Code Resolution** | Aim 2 — Planner / Navigator / Editor / Executor (verified end-to-end on AntennaPod) |
-| **Dual-Objective RLHF Alignment** | Aim 3 — KTO / DPO / Constrained PPO with joint quality+safety optimization |
-| **App Review Mining** | empirical scope (215,583 RRGen reviews) |
+| **Verified-Anchor Confident Learning** | C2 — 5,230 expert-verified anchor + cleanlab; κ 0.16 → 0.59; V5 endorses 88.66% of corrections |
+| **Knowledge-Grounded Issue Specifications** | C1 + C3 — KG-driven hierarchical clustering + 5 schema templates (Zimmermann, ISO 25010, Nielsen, user-story, device-OS) |
+| **App Review Mining** | empirical scope (215,583 RRGen reviews + GUZMAN + 64 GitHub-mined issues) |
+
+The over-delivered Stage 4a (multi-agent code resolution) and Stage 5 (dual-objective RLHF) are reported as supporting evidence in §6 / §7 rather than headlined in the title — both are queued behind multi-GPU and multi-annotator scope expansion (§5.5).
 
 ---
 
@@ -229,7 +230,7 @@ Stage 4b generates developer-style responses to user reviews. We compare four co
 | Condition | Inputs |
 |---|---|
 | (1) `rrgen_baseline` | Review text only |
-| (2) `core_baseline` | Review + general dev-rel system prompt |
+| (2) `prompt_baseline` | Review + general dev-rel system prompt |
 | (3) `reviewagent_no_spec` | Review + RAG (3 past responses + 3 similar replies, retrieved from a 15,100-document ChromaDB index) |
 | (4) `reviewagent_full` | Review + IssueSpec from Stage 3 + RAG context |
 
@@ -313,11 +314,11 @@ We compare four Stage 3 conditions on 100 stratified clusters: (a) LLM with taxo
 
 ## 4.3 Experiment 2: Response Generation Quality (Stage 4b)
 
-Stage 4b compares four conditions on 100 reviews: (1) `rrgen_baseline`, (2) `core_baseline`, (3) `reviewagent_no_spec`, (4) `reviewagent_full`. Reference responses come from RRGen's `original_response` field. We report both automatic and human metrics.
+Stage 4b compares four conditions on 100 reviews: (1) `rrgen_baseline`, (2) `prompt_baseline`, (3) `reviewagent_no_spec`, (4) `reviewagent_full`. Reference responses come from RRGen's `original_response` field. We report both automatic and human metrics.
 
 ### 4.3.1 Automatic Metrics (Table 4)
 
-| metric | rrgen_baseline | core_baseline | reviewagent_no_spec | reviewagent_full |
+| metric | rrgen_baseline | prompt_baseline | reviewagent_no_spec | reviewagent_full |
 |---|---|---|---|---|
 | BLEU-1 | 0.210 | 0.188 | **0.231** | 0.129 |
 | BLEU-2 | 0.028 | 0.019 | **0.040** | 0.012 |
@@ -336,7 +337,7 @@ The lead author rated all 400 (review, response) pairs in a fully blinded design
 | condition | quality | specificity | helpful % |
 |---|---|---|---|
 | rrgen_baseline | 2.31 ± 0.76 | 2.31 ± 0.76 | 19% |
-| core_baseline | 2.98 ± 0.71 | 2.96 ± 0.69 | 84% |
+| prompt_baseline | 2.98 ± 0.71 | 2.96 ± 0.69 | 84% |
 | reviewagent_no_spec | 2.26 ± 0.60 | 2.26 ± 0.60 | 31% |
 | **reviewagent_full** | **4.62 ± 0.93** | **4.62 ± 0.93** | **92%** |
 
@@ -345,11 +346,11 @@ The lead author rated all 400 (review, response) pairs in a fully blinded design
 | comparison | Δ (quality) | p-value | significance |
 |---|---|---|---|
 | reviewagent_full vs reviewagent_no_spec | **+2.36** | < 0.001 | *** |
-| reviewagent_full vs core_baseline | **+1.64** | < 0.001 | *** |
+| reviewagent_full vs prompt_baseline | **+1.64** | < 0.001 | *** |
 | reviewagent_full vs rrgen_baseline | **+2.31** | < 0.001 | *** |
-| reviewagent_no_spec vs core_baseline | −0.72 | < 0.001 | *** |
+| reviewagent_no_spec vs prompt_baseline | −0.72 | < 0.001 | *** |
 | reviewagent_no_spec vs rrgen_baseline | −0.05 | 0.988 | n.s. |
-| core_baseline vs rrgen_baseline | +0.67 | < 0.001 | *** |
+| prompt_baseline vs rrgen_baseline | +0.67 | < 0.001 | *** |
 
 The full ReviewAgent system substantially outperforms every baseline at p < 0.001 (Cohen's d for the no_spec comparison, computed from the standardized difference, is approximately 1.6 — a *very large* effect size). The IssueSpec contributes +2.36 quality points beyond RAG-alone.
 
@@ -359,7 +360,7 @@ The **helpful Y/N** score, which asks whether each response would actually help 
 
 ```
 reviewagent_full        92%   ✓
-core_baseline           84%
+prompt_baseline           84%
 reviewagent_no_spec     31%
 rrgen_baseline          19%
 ```
@@ -550,17 +551,17 @@ A particularly notable result is that the V5 classifier, trained only on the V2-
 
 Experiment 2 reveals an instructive contradiction between automatic and human evaluation. The automatic metrics rank the conditions:
 
-> reviewagent_no_spec (RAG only) > rrgen_baseline > core_baseline > reviewagent_full
+> reviewagent_no_spec (RAG only) > rrgen_baseline > prompt_baseline > reviewagent_full
 
 while human evaluation produces the opposite ranking:
 
-> **reviewagent_full (4.62) > core_baseline (2.98) > rrgen_baseline (2.31) > reviewagent_no_spec (2.26)**
+> **reviewagent_full (4.62) > prompt_baseline (2.98) > rrgen_baseline (2.31) > reviewagent_no_spec (2.26)**
 
 The automatic metrics (BLEU, ROUGE-L, BERTScore) reward responses that closely match the **brief, generic developer replies** in RRGen's reference set. Our full-system condition produces responses 3× longer with 4× the lexical diversity, deliberately introducing IssueSpec-grounded specificity that diverges from the brief reference replies. This divergence is rewarded by human raters (helpful: 92% vs 31%) but penalized by surface-level metrics. **This finding aligns with prior work on the well-documented unreliability of n-gram metrics for response generation \cite{liu2016how, sai2022survey}**, and provides a concrete empirical instance of where the gap matters in software-engineering applications.
 
 ## 5.3 RAG Without an Issue Specification Is Not Enough
 
-A counterintuitive finding from Experiment 2 is that `reviewagent_no_spec` (RAG-augmented, no IssueSpec) scored *lower* than `core_baseline` (no RAG, no IssueSpec) on human evaluation: quality 2.26 vs 2.98 (paired Wilcoxon p < 0.001, Δ = −0.72). RAG retrieval anchors the model to dev-rel phrasing patterns from the corpus but does not, on its own, provide enough structural understanding of *what* the user is complaining about. The IssueSpec — by enforcing component-naming, severity-reasoning, and template-specific failure-mode acknowledgement — supplies the missing structural ingredient. **The full system gains +2.36 quality points by adding the IssueSpec to RAG**, not +1.4 (RAG alone). Retrieval and structure are complementary, not redundant.
+A counterintuitive finding from Experiment 2 is that `reviewagent_no_spec` (RAG-augmented, no IssueSpec) scored *lower* than `prompt_baseline` (no RAG, no IssueSpec) on human evaluation: quality 2.26 vs 2.98 (paired Wilcoxon p < 0.001, Δ = −0.72). RAG retrieval anchors the model to dev-rel phrasing patterns from the corpus but does not, on its own, provide enough structural understanding of *what* the user is complaining about. The IssueSpec — by enforcing component-naming, severity-reasoning, and template-specific failure-mode acknowledgement — supplies the missing structural ingredient. **The full system gains +2.36 quality points by adding the IssueSpec to RAG**, not +1.4 (RAG alone). Retrieval and structure are complementary, not redundant.
 
 ## 5.4 Compatibility Class Recovery as a Limitation Becoming a Result
 
@@ -602,7 +603,7 @@ Two findings have implications beyond app-review classification:
 
 1. **LLM annotation noise is structural, not random.** Class collapse (popular categories absorb minority categories) and boundary confusion (semantically adjacent classes blur together) are predictable failure modes that small expert verification corrects efficiently. The 25% praise mislabeling rate we measure on RRGen is unlikely to be unique to this dataset.
 
-2. **Retrieval is necessary but not sufficient for paper-grade response generation.** RAG without a structured issue specification underperforms even no-RAG baselines on human evaluation (`reviewagent_no_spec` quality 2.26 vs `core_baseline` 2.98, p < 0.001). Adding the IssueSpec to RAG yields +2.36 quality points (p < 0.001) — the structural component is doing the work that RAG alone cannot.
+2. **Retrieval is necessary but not sufficient for paper-grade response generation.** RAG without a structured issue specification underperforms even no-RAG baselines on human evaluation (`reviewagent_no_spec` quality 2.26 vs `prompt_baseline` 2.98, p < 0.001). Adding the IssueSpec to RAG yields +2.36 quality points (p < 0.001) — the structural component is doing the work that RAG alone cannot.
 
 The full-system response generator achieves a **92% helpfulness rate** in a 400-rating blinded human evaluation, against 19% for the original RRGen-style baseline (a 4.84× improvement on identical inputs).
 

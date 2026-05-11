@@ -220,7 +220,7 @@ def score_response_ratings():
     # Per-condition aggregate
     by_cond = {c: {"quality": [], "specificity": [], "helpful_y": 0, "helpful_n": 0,
                    "per_issue_type": defaultdict(list)}
-               for c in ["rrgen_baseline", "core_baseline", "reviewagent_no_spec", "reviewagent_full"]}
+               for c in ["rrgen_baseline", "prompt_baseline", "reviewagent_no_spec", "reviewagent_full"]}
     # Per (review, condition) for paired tests
     paired = defaultdict(dict)  # review_idx -> {cond: {q, s, h}}
 
@@ -281,7 +281,7 @@ def score_response_ratings():
     # Print summary table
     print(f"\n{'condition':25s} {'n':>4} {'quality':>10} {'specificity':>13} {'helpful%':>10}")
     print("-"*70)
-    for cond in ["rrgen_baseline", "core_baseline", "reviewagent_no_spec", "reviewagent_full"]:
+    for cond in ["rrgen_baseline", "prompt_baseline", "reviewagent_no_spec", "reviewagent_full"]:
         if cond not in summary: continue
         s = summary[cond]
         print(f"{cond:25s} {s['n']:>4} "
@@ -334,11 +334,11 @@ def score_response_ratings():
     print("\nPaired Wilcoxon — quality scores:")
     pairs = [
         ("reviewagent_full", "reviewagent_no_spec"),
-        ("reviewagent_full", "core_baseline"),
+        ("reviewagent_full", "prompt_baseline"),
         ("reviewagent_full", "rrgen_baseline"),
-        ("reviewagent_no_spec", "core_baseline"),
+        ("reviewagent_no_spec", "prompt_baseline"),
         ("reviewagent_no_spec", "rrgen_baseline"),
-        ("core_baseline", "rrgen_baseline"),
+        ("prompt_baseline", "rrgen_baseline"),
     ]
     pair_results = {}
     for a, b in pairs:

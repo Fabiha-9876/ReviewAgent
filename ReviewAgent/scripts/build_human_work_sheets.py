@@ -266,7 +266,7 @@ def build_response_ratings():
     print("\nBuilding #9 response_ratings.xlsx ...")
     paths = {
         "rrgen_baseline":      "data/processed/responses/responses_rrgen_baseline.json",
-        "core_baseline":       "data/processed/responses/responses_core_baseline.json",
+        "prompt_baseline":       "data/processed/responses/responses_prompt_baseline.json",
         "reviewagent_no_spec": "data/processed/responses/responses_reviewagent_no_spec.json",
         "reviewagent_full":    "data/processed/responses/responses_reviewagent_full.json",
     }

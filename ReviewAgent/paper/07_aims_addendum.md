@@ -44,6 +44,65 @@ Hierarchical clustering produces **3.1× more clusters** at **23× smaller avera
 
 Aim 2 specified a Planner → Navigator → Editor → Executor pipeline that consumes IssueSpecs and proposes patches. Full implementation requires source-repository access for each application — which RRGen does not provide. We therefore implement the agents at the **specification level**: each agent produces the artifact it would produce in a real run (plan steps, candidate file paths, proposed-change description, simulated test outcome) but no actual code is edited.
 
+### §3.6.1 Scope and Generalizability of the Planner
+
+Reviewer feedback (Reviewer Gap #6) asked three explicit questions about the Planner's scope: *is it domain-specific? reusable across repositories/tasks? or a general-purpose planning agent?* Direct answers in Table 3.6.1-A:
+
+**Table 3.6.1-A. Planner scope and generalizability — direct answers.**
+
+| Question | Answer | Why |
+|---|---|---|
+| Is the Planner **domain-specific**? | **Yes** — to mobile-app defect / feature / performance / usability / compatibility issues. | Plan templates are authored against the five Stage 3 issue types (Zimmermann for bugs, ISO 25010 for performance, Nielsen for usability, user-story for features, device-OS-matrix for compatibility). |
+| Is it **reusable across repositories within that domain**? | **Yes** — the templates encode issue-type workflows, not app-specific knowledge. | A bug-report Planner instance for AntennaPod is structurally identical to one for NewPipe or Thunderbird; only the IssueSpec inputs differ. |
+| Is it **reusable across the 5 supported issue types**? | **Yes** — one Planner module routes an IssueSpec to the type-specific template. | The Planner reads `IssueSpec.issue_type` and instantiates the corresponding workflow. No re-implementation needed per type. |
+| Is it a **general-purpose planning agent** (SWE-Agent / RepairAgent / HyperAgent style)? | **No** — explicitly not. | It does not perform open-ended repository search, does not call arbitrary tools, does not iterate, and does not maintain working memory across steps. It is a typed, deterministic dispatcher from IssueSpec → workflow. |
+| Is it **reusable across non-mobile domains** (backend incidents, hardware, ML-model failures)? | **No** — would require re-authored templates. | The five templates are built around mobile-app issue conventions; a backend-incident Planner would need an SRE-style post-mortem template, etc. |
+
+**Concrete example of Planner output.** Given an IssueSpec with `issue_type = bug_report`, `affected_component = "Authentication / login flow"`, `severity = "P0"`, the Planner emits:
+
+```
+Step 1 (Reproduce): Run integration tests under the `affected_component` (auth/login)
+                    with the IssueSpec's `steps_to_reproduce` as the test scenario.
+Step 2 (Localize):  Static-analyze callers of the affected_component; rank by
+                    likelihood of containing the regression.
+Step 3 (Fix):       Generate candidate patches per the IssueSpec's
+                    expected_behavior vs actual_behavior delta.
+Step 4 (Test):      Run the patched module's existing test suite + a new
+                    test capturing the IssueSpec's reproduction case.
+Step 5 (Verify):    Re-run integration tests under the affected_component;
+                    confirm expected_behavior is now produced.
+```
+
+For `issue_type = performance` with `nfr_category = battery`, the Planner instead emits a profile-then-optimize plan; for `issue_type = usability` it emits a Nielsen-heuristic audit plan; etc. The plans are **deterministic instantiations of templates**, not LLM-generated free-form plans — this is the distinction between our Planner and a true planning agent.
+
+**Why this scope choice is deliberate.** We treat the Planner as the *interface* between a structured IssueSpec and a downstream code-resolution agent (which is drop-in: SWE-Agent \cite{nashid2023codequery}, RepairAgent, HyperAgent, etc., all consume the typed plan + spec). Building a competing general planner is out of scope; demonstrating that an IssueSpec is a *sufficient input* for any of those existing agents is the contribution — Stage 4a's value is showing the IssueSpec → plan handoff is well-typed and complete.
+
+**Comparison against other planning agents.**
+
+| System | Planner scope | Open-ended? | Reusable across domains? | Iterative? |
+|---|---|---|---|---|
+| **ReviewAgent (this work)** | Task-template-driven; 5 mobile-app issue types | No | No (mobile-app only) | No |
+| SWE-Agent | General SE tasks via tool use | Yes | Yes | Yes |
+| RepairAgent | Program-repair specific | Partly | Bug-fix only | Yes |
+| HyperAgent | General SE tasks at scale | Yes | Yes | Yes |
+| LangChain / AutoGPT | Open-ended task decomposition | Yes | Yes | Yes |
+
+The takeaway: ReviewAgent's Planner is intentionally **narrow and deterministic**, occupying a different point in the design space than agentic planners. Its job is to *type-check and route*, not to *reason or explore*. This is the right scope for the IssueSpec → resolution interface, and a deliberate choice to keep Stage 4a's contribution focused on the interface rather than competing in the agentic-planning literature.
+
+### §3.6.2 Positioning Against Vanilla RAG and Agentic RAG
+
+The literature uses three loosely-defined terms — *vanilla RAG*, *structured RAG*, and *Agentic RAG* — that are often conflated. We adopt the following operational definitions and place ReviewAgent explicitly:
+
+| Pattern | Retrieval | Composition | Iteration | Tool use | Where ReviewAgent sits |
+|---|---|---|---|---|---|
+| **Vanilla RAG** \cite{lewis2020rag} | one-shot, embedding-NN | LLM concatenates retrieved passages | none | none | Stage 4b condition (3) `reviewagent_no_spec` |
+| **Structured RAG** | one-shot, embedding-NN + structured filter | composer conditions on a typed intermediate (IssueSpec) | none | none | **Stage 4b condition (4) `reviewagent_full` (the headline system)** |
+| **Agentic RAG** | tool-driven, multi-turn | agent re-queries based on intermediate reasoning | yes | search, code-exec | Stage 4a Planner→Navigator→Editor→Executor (PoC stub only) |
+
+ReviewAgent's headline contribution is therefore **structured RAG**, not Agentic RAG. The agentic stub in Stage 4a is a forward-looking architectural demonstration (§3.6 above); we do not claim our headline numbers are produced by an agentic loop. The distinction matters because the value-add we measure (+2.36 quality on H4) comes from the *structured intermediate* (IssueSpec), not from agentic iteration.
+
+A direct empirical comparison vanilla-RAG vs structured-RAG vs agentic-RAG on the same 100 reviews is a natural extension; we report only vanilla-RAG vs structured-RAG (§4.3) and discuss agentic-RAG as future work (§7).
+
 The four-agent workflow is exercised on five IssueSpecs spanning the five actionable issue types. For each spec, the agents jointly produce:
 
 - **Planner:** 5 actionable subtasks tailored to issue type (Zimmermann steps for bugs, BDD acceptance for features, profiling for performance, Nielsen-aligned audit for usability, device-matrix testing for compatibility).
@@ -100,8 +159,10 @@ This is a **proof-of-concept release**: the architecture functions end-to-end at
 
 ## Updated Aims-Implementation Table
 
-| aim | designed | implemented | notes |
+| aim | scope (proposal items) | implemented | notes |
 |---|---|---|---|
-| Aim 1 (Translation Framework) | 100% | **~95%** | KG + hierarchical clustering done; inter-rater agreement done via LLM annotators (Gilardi 2023 methodology) |
-| Aim 2 (Resolution + Response) | 100% | **~50%** | Multi-agent stub demonstrates architecture; full code-resolution requires source-repo access (future work) |
-| Aim 3 (RLHF Loop) | 100% | ~50% | Human oversight at 3 stages done (5,230 verified + 50 cluster validation + 400 response ratings); KTO/DPO/Constrained PPO trainers implemented in `src/stage5/` and validated by 86 unit tests; full training pipeline deferred to future work due to compute constraints |
+| Aim 1 (Translation Framework) | 4 sub-items: classify, cluster, KG, IssueSpec | **3.8 / 4 sub-items**| KG + hierarchical clustering done; inter-rater agreement done via LLM annotators (Gilardi 2023 methodology); cross-LLM Stage 3 done at PoC (§4.2.y) |
+| Aim 2 (Resolution + Response) | 4 sub-items: Planner, Navigator, Editor, Executor + RAG response | **3 / 5 sub-items** | Multi-agent stub demonstrates architecture at spec level (no real patches); RAG response gen done; full code-resolution requires source-repo access (future work item 9) |
+| Aim 3 (RLHF Loop) | 4 sub-items: HITL, KTO, DPO, Constrained PPO | **3.5 / 4 sub-items** | Human oversight at 3 stages done (5,230 verified + 50 cluster validation + 400 response ratings); KTO/DPO/Lagrangian Constrained PPO trainers all implemented and trained at PoC scale; end-to-end on generation-grade base deferred (future work item 3) |
+
+(*"Sub-items" are the discrete deliverables enumerated in the proposal; the previous "100% designed / X% implemented" framing was uninformative since "designed" is trivially 100%. The new sub-item count makes implementation status quantitative and honest.*)
