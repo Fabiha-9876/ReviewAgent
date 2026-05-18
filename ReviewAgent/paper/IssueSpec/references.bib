@@ -1,0 +1,936 @@
+% =====================================================================
+% References for ReviewAgent paper
+% =====================================================================
+% Verify each entry against the actual publication before camera-ready.
+% =====================================================================
+
+% --- App-review classification core ---------------------------------------
+
+@article{maalej2016,
+  author    = {Maalej, Walid and Nabil, Hadeer},
+  title     = {Bug report, feature request, or simply praise? On automatically classifying app reviews},
+  journal   = {Requirements Engineering},
+  volume    = {21},
+  number    = {3},
+  pages     = {311--331},
+  year      = {2016},
+  publisher = {Springer},
+  doi       = {10.1007/s00766-016-0251-9}
+}
+
+@inproceedings{gao2019rrgen,
+  author    = {Gao, Cuiyun and Zeng, Jichuan and Lyu, Michael R. and King, Irwin},
+  title     = {Automating App Review Response Generation},
+  booktitle = {Proc. ASE},
+  pages     = {163--175},
+  year      = {2019}
+}
+
+@inproceedings{chen2014arminer,
+  author    = {Chen, Ning and Lin, Jialiu and Hoi, Steven C. H. and Xiao, Xiaokui and Zhang, Boshen},
+  title     = {AR-miner: Mining informative reviews for developers from mobile app marketplace},
+  booktitle = {Proc. ICSE},
+  pages     = {767--778},
+  year      = {2014},
+  organization = {ACM}
+}
+
+@inproceedings{villarroel2016,
+  author    = {Villarroel, Lorenzo and Bavota, Gabriele and Russo, Barbara and Oliveto, Rocco and Di Penta, Massimiliano},
+  title     = {Release planning of mobile apps based on user reviews},
+  booktitle = {Proc. ICSE},
+  pages     = {14--24},
+  year      = {2016},
+  organization = {ACM}
+}
+
+@inproceedings{disorbo2016surf,
+  author    = {Di Sorbo, Andrea and Panichella, Sebastiano and Alexandru, Carol V. and Visaggio, Corrado A. and Canfora, Gerardo and Gall, Harald C.},
+  title     = {SURF: Summarizer of user reviews feedback},
+  booktitle = {Proc. ICSE Companion},
+  year      = {2016},
+  organization = {IEEE}
+}
+
+@article{dabrowski2022analysing,
+  author    = {Dąbrowski, Jacek and Letier, Emmanuel and Perini, Anna and Susi, Angelo},
+  title     = {Analysing app reviews for software engineering: A systematic literature review},
+  journal   = {Empirical Software Engineering},
+  volume    = {27},
+  number    = {2},
+  pages     = {43},
+  year      = {2022},
+  publisher = {Springer}
+}
+
+@inproceedings{guzman2014,
+  author    = {Guzman, Emitza and Maalej, Walid},
+  title     = {How do users like this feature? A fine grained sentiment analysis of app reviews},
+  booktitle = {Proc. RE},
+  pages     = {153--162},
+  year      = {2014}
+}
+
+% --- Confident learning / label-noise correction --------------------------
+
+@article{northcutt2021cleanlab,
+  author    = {Northcutt, Curtis G. and Jiang, Lu and Chuang, Isaac L.},
+  title     = {Confident Learning: Estimating uncertainty in dataset labels},
+  journal   = {Journal of Artificial Intelligence Research},
+  volume    = {70},
+  pages     = {1373--1411},
+  year      = {2021}
+}
+
+@inproceedings{patrini2017making,
+  author    = {Patrini, Giorgio and Rozza, Alessandro and Krishna Menon, Aditya and Nock, Richard and Qu, Lizhen},
+  title     = {Making deep neural networks robust to label noise: A loss correction approach},
+  booktitle = {Proc. CVPR},
+  pages     = {1944--1952},
+  year      = {2017}
+}
+
+@inproceedings{lee2018cleannet,
+  author    = {Lee, Kuang-Huei and He, Xiaodong and Zhang, Lei and Yang, Linjun},
+  title     = {CleanNet: Transfer learning for scalable image classifier training with label noise},
+  booktitle = {Proc. CVPR},
+  pages     = {5447--5456},
+  year      = {2018}
+}
+
+@inproceedings{han2018coteaching,
+  author    = {Han, Bo and Yao, Quanming and Yu, Xingrui and Niu, Gang and Xu, Miao and Hu, Weihua and Tsang, Ivor and Sugiyama, Masashi},
+  title     = {Co-teaching: Robust training of deep neural networks with extremely noisy labels},
+  booktitle = {NeurIPS},
+  year      = {2018}
+}
+
+% --- LLM annotation behavior ----------------------------------------------
+
+@inproceedings{wang2021want,
+  author    = {Wang, Shuohang and Liu, Yang and Xu, Yichong and Zhu, Chenguang and Zeng, Michael},
+  title     = {Want to reduce labeling cost? GPT-3 can help},
+  booktitle = {Findings of ACL: EMNLP},
+  pages     = {4195--4205},
+  year      = {2021}
+}
+
+@article{gilardi2023chatgpt,
+  author    = {Gilardi, Fabrizio and Alizadeh, Meysam and Kubli, Maël},
+  title     = {ChatGPT outperforms crowd workers for text-annotation tasks},
+  journal   = {Proceedings of the National Academy of Sciences (PNAS)},
+  volume    = {120},
+  number    = {30},
+  year      = {2023}
+}
+
+@article{pangakis2023automated,
+  author    = {Pangakis, Nicholas and Wolken, Samuel and Fasching, Nicolaus},
+  title     = {Automated annotation with generative AI requires validation},
+  journal   = {arXiv preprint arXiv:2306.00176},
+  year      = {2023}
+}
+
+@article{reiss2023testing,
+  author    = {Reiss, Michael V.},
+  title     = {Testing the reliability of ChatGPT for text annotation and classification: A cautionary remark},
+  journal   = {arXiv preprint arXiv:2304.11085},
+  year      = {2023}
+}
+
+@article{laban2023llm,
+  author    = {Laban, Philippe and Kryściński, Wojciech and Agarwal, Divyansh and Fabbri, Alexander R. and Xiong, Caiming and Joty, Shafiq and Wu, Chien-Sheng},
+  title     = {LLMs as factual reasoners: Insights from existing benchmarks and beyond},
+  journal   = {arXiv preprint arXiv:2305.14540},
+  year      = {2023}
+}
+
+@article{chen2024llm,
+  author    = {Chen, Banghao and Zhang, Zhaofeng and Langren{\'e}, Nicolas and Zhu, Shengxin},
+  title     = {Unleashing the potential of prompt engineering in large language models: A comprehensive review},
+  journal   = {arXiv preprint},
+  year      = {2024}
+}
+
+% --- Issue-specification templates ----------------------------------------
+
+@article{zimmermann2010,
+  author    = {Zimmermann, Thomas and Premraj, Rahul and Bettenburg, Nicolas and Just, Sascha and Schröter, Adrian and Weiss, Cathrin},
+  title     = {What makes a good bug report?},
+  journal   = {IEEE TSE},
+  volume    = {36},
+  number    = {5},
+  pages     = {618--643},
+  year      = {2010}
+}
+
+@book{cohn2004user,
+  author    = {Cohn, Mike},
+  title     = {User Stories Applied: For Agile Software Development},
+  publisher = {Addison-Wesley Professional},
+  year      = {2004}
+}
+
+@book{wynne2017cucumber,
+  author    = {Wynne, Matt and Hellesøy, Aslak and Tooke, Steve},
+  title     = {The Cucumber Book: Behaviour-Driven Development for Testers and Developers},
+  publisher = {Pragmatic Bookshelf},
+  year      = {2017}
+}
+
+@misc{iso25010,
+  author       = {{International Organization for Standardization}},
+  title        = {{ISO/IEC 25010: Systems and software engineering, Systems and software Quality Requirements and Evaluation (SQuaRE), System and software quality models}},
+  year         = {2011},
+  publisher    = {ISO},
+  howpublished = {Standard}
+}
+
+@book{nielsen1994,
+  author    = {Nielsen, Jakob},
+  title     = {Usability Engineering},
+  publisher = {Morgan Kaufmann},
+  year      = {1994}
+}
+
+% --- Models / methods used in the pipeline --------------------------------
+
+@article{liu2019roberta,
+  author    = {Liu, Yinhan and Ott, Myle and Goyal, Naman and Du, Jingfei and Joshi, Mandar and Chen, Danqi and Levy, Omer and Lewis, Mike and Zettlemoyer, Luke and Stoyanov, Veselin},
+  title     = {{RoBERTa}: A robustly optimized BERT pretraining approach},
+  journal   = {arXiv preprint arXiv:1907.11692},
+  year      = {2019}
+}
+
+@inproceedings{reimers2019sentencebert,
+  author    = {Reimers, Nils and Gurevych, Iryna},
+  title     = {Sentence-{BERT}: Sentence embeddings using Siamese BERT-networks},
+  booktitle = {Proc. EMNLP},
+  pages     = {3982--3992},
+  year      = {2019}
+}
+
+@article{mcinnes2018umap,
+  author    = {McInnes, Leland and Healy, John and Melville, James},
+  title     = {{UMAP}: Uniform manifold approximation and projection for dimension reduction},
+  journal   = {arXiv preprint arXiv:1802.03426},
+  year      = {2018}
+}
+
+@article{mcinnes2017hdbscan,
+  author    = {McInnes, Leland and Healy, John and Astels, Steve},
+  title     = {{HDBSCAN}: Hierarchical density based clustering},
+  journal   = {Journal of Open Source Software},
+  volume    = {2},
+  number    = {11},
+  pages     = {205},
+  year      = {2017}
+}
+
+@inproceedings{lewis2020rag,
+  author    = {Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and Küttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rocktäschel, Tim and Riedel, Sebastian and Kiela, Douwe},
+  title     = {Retrieval-augmented generation for knowledge-intensive {NLP} tasks},
+  booktitle = {NeurIPS},
+  year      = {2020}
+}
+
+% --- RAG and retrieval in SE applications ---------------------------------
+
+@inproceedings{robillard2017demand,
+  author    = {Robillard, Martin P. and Marcus, Andrian and Treude, Christoph and Bavota, Gabriele and Chaparro, Oscar and Ernst, Neil and Gerosa, Marco Aurélio and Godfrey, Michael and Lanza, Michele and Linares-Vásquez, Mario and others},
+  title     = {On-demand developer documentation},
+  booktitle = {Proc. ICSME},
+  pages     = {479--483},
+  year      = {2017}
+}
+
+@inproceedings{nashid2023codequery,
+  author    = {Nashid, Noor and Sintaha, Mifta and Mesbah, Ali},
+  title     = {Retrieval-based prompt selection for code-related few-shot learning},
+  booktitle = {Proc. ICSE},
+  pages     = {2450--2462},
+  year      = {2023}
+}
+
+@article{ahmed2024automatic,
+  author    = {Ahmed, Toufique and Devanbu, Premkumar},
+  title     = {Few-shot training {LLMs} for project-specific code-summarization},
+  journal   = {arXiv preprint},
+  year      = {2024}
+}
+
+% --- LLM model citations (used in this work) ------------------------------
+
+@article{yang2024qwen2_5,
+  author    = {Yang, An and Yang, Baosong and Hui, Binyuan and Zheng, Bo and Yu, Bowen and Zhou, Chang and Li, Chengpeng and Li, Chengyuan and Liu, Dayiheng and Huang, Fei and others},
+  title     = {{Qwen2.5} Technical Report},
+  journal   = {arXiv preprint arXiv:2412.15115},
+  year      = {2024}
+}
+
+@article{sanh2019distilbert,
+  author    = {Sanh, Victor and Debut, Lysandre and Chaumond, Julien and Wolf, Thomas},
+  title     = {{DistilBERT}, a distilled version of {BERT}: smaller, faster, cheaper and lighter},
+  journal   = {arXiv preprint arXiv:1910.01108},
+  year      = {2019}
+}
+
+@article{radford2019gpt2,
+  author    = {Radford, Alec and Wu, Jeffrey and Child, Rewon and Luan, David and Amodei, Dario and Sutskever, Ilya},
+  title     = {Language models are unsupervised multitask learners},
+  journal   = {OpenAI Technical Report},
+  year      = {2019}
+}
+
+@article{abdin2024phi3,
+  author    = {Abdin, Marah and Aneja, Jyoti and Awadalla, Hany and Awadallah, Ahmed and Awan, Ammar Ahmad and Bach, Nguyen and Bahree, Amit and Bakhtiari, Arash and Bao, Jianmin and Behl, Harkirat and others},
+  title     = {{Phi-3} Technical Report: A highly capable language model locally on your phone},
+  journal   = {arXiv preprint arXiv:2404.14219},
+  year      = {2024}
+}
+
+@article{allal2025smollm,
+  author    = {Allal, Loubna Ben and Lozhkov, Anton and Bakouch, Elie and Blázquez, Gabriel Martín and Penedo, Guilherme and Tunstall, Lewis and Marafioti, Andrés and Kydlíček, Hynek and Lajarín, Agustín Piqueres and Srivastav, Vaibhav and others},
+  title     = {{SmolLM2}: When smol goes big, data-centric training of a small language model},
+  journal   = {arXiv preprint arXiv:2502.02737},
+  year      = {2025}
+}
+
+% --- Cluster-quality metrics ----------------------------------------------
+
+@article{rousseeuw1987silhouettes,
+  author    = {Rousseeuw, Peter J.},
+  title     = {Silhouettes: A graphical aid to the interpretation and validation of cluster analysis},
+  journal   = {Journal of Computational and Applied Mathematics},
+  volume    = {20},
+  pages     = {53--65},
+  year      = {1987}
+}
+
+@article{davies1979cluster,
+  author    = {Davies, David L. and Bouldin, Donald W.},
+  title     = {A cluster separation measure},
+  journal   = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume    = {PAMI-1},
+  number    = {2},
+  pages     = {224--227},
+  year      = {1979}
+}
+
+@article{calinski1974dendrite,
+  author    = {Caliński, Tadeusz and Harabasz, Jerzy},
+  title     = {A dendrite method for cluster analysis},
+  journal   = {Communications in Statistics},
+  volume    = {3},
+  number    = {1},
+  pages     = {1--27},
+  year      = {1974}
+}
+
+@article{strehl2002cluster,
+  author    = {Strehl, Alexander and Ghosh, Joydeep},
+  title     = {Cluster ensembles, a knowledge reuse framework for combining multiple partitions},
+  journal   = {Journal of Machine Learning Research},
+  volume    = {3},
+  pages     = {583--617},
+  year      = {2002}
+}
+
+@inproceedings{amigo2009comparison,
+  author    = {Amigó, Enrique and Gonzalo, Julio and Artiles, Javier and Verdejo, Felisa},
+  title     = {A comparison of extrinsic clustering evaluation metrics based on formal constraints},
+  journal   = {Information Retrieval},
+  volume    = {12},
+  number    = {4},
+  pages     = {461--486},
+  year      = {2009}
+}
+
+% --- Knowledge graphs, centrality, and review-KG prior work ---------------
+
+@techreport{page1999pagerank,
+  author      = {Page, Lawrence and Brin, Sergey and Motwani, Rajeev and Winograd, Terry},
+  title       = {The {PageRank} citation ranking: Bringing order to the web},
+  institution = {Stanford InfoLab},
+  year        = {1999},
+  number      = {1999-66}
+}
+
+@inproceedings{brin1998anatomy,
+  author    = {Brin, Sergey and Page, Lawrence},
+  title     = {The anatomy of a large-scale hypertextual web search engine},
+  booktitle = {Proceedings of the Seventh International Conference on World Wide Web (WWW)},
+  pages     = {107--117},
+  year      = {1998}
+}
+
+@inproceedings{xu2025reviewgraph,
+  author    = {de Vink, A.J.W. and Amat-Lefort, Natalia and Han, Lifeng},
+  title     = {{ReviewGraph}: A knowledge graph embedding based framework for review rating prediction with sentiment features},
+  booktitle = {Proc. ICKG},
+  year      = {2025}
+}
+
+@article{kgcpn2023,
+  author    = {Yu, Z. and Wu, S. and Jiang, J. and others},
+  title     = {A knowledge-graph based text summarization scheme for mobile edge computing},
+  journal   = {J. Cloud Comput.},
+  volume    = {13},
+  pages     = {9},
+  year      = {2024}
+}
+
+@inproceedings{keertipati2016,
+  author    = {Keertipati, Saraswathy and Savarimuthu, Bastin Tony Roy and Licorish, Sherlock A.},
+  title     = {Approaches for prioritizing feature improvements extracted from app reviews},
+  booktitle = {Proc. EASE},
+  year      = {2016}
+}
+
+@inproceedings{joorabchi2013real,
+  author    = {Joorabchi, Mona Erfani and Mesbah, Ali and Kruchten, Philippe},
+  title     = {Real challenges in mobile app development},
+  booktitle = {Proc. ESEM},
+  pages     = {15--24},
+  year      = {2013}
+}
+
+@article{freeman1977bc,
+  author    = {Freeman, Linton C.},
+  title     = {A set of measures of centrality based on betweenness},
+  journal   = {Sociometry},
+  volume    = {40},
+  number    = {1},
+  pages     = {35--41},
+  year      = {1977}
+}
+
+@article{demsar2006statistical,
+  author    = {Dem{\v{s}}ar, Janez},
+  title     = {Statistical comparisons of classifiers over multiple data sets},
+  journal   = {Journal of Machine Learning Research},
+  volume    = {7},
+  pages     = {1--30},
+  year      = {2006}
+}
+
+% --- RLHF foundations -----------------------------------------------------
+
+@article{schulman2017ppo,
+  author    = {Schulman, John and Wolski, Filip and Dhariwal, Prafulla and Radford, Alec and Klimov, Oleg},
+  title     = {Proximal policy optimization algorithms},
+  journal   = {arXiv preprint arXiv:1707.06347},
+  year      = {2017}
+}
+
+@inproceedings{ouyang2022instructgpt,
+  author    = {Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll L. and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and others},
+  title     = {Training language models to follow instructions with human feedback},
+  booktitle = {NeurIPS},
+  year      = {2022}
+}
+
+@article{christiano2017deep,
+  author    = {Christiano, Paul F. and Leike, Jan and Brown, Tom B. and Martic, Miljan and Legg, Shane and Amodei, Dario},
+  title     = {Deep reinforcement learning from human preferences},
+  booktitle = {NeurIPS},
+  year      = {2017}
+}
+
+% --- RLHF: surveys, alternatives, challenges ------------------------------
+
+@article{casper2023open,
+  author    = {Casper, Stephen and Davies, Xander and Shi, Claudia and Gilbert, Thomas Krendl and Scheurer, Jérémy and Rando, Javier and Freedman, Rachel and Korbak, Tomasz and Lindner, David and Freire, Pedro and others},
+  title     = {Open problems and fundamental limitations of reinforcement learning from human feedback},
+  journal   = {Transactions on Machine Learning Research},
+  year      = {2023}
+}
+
+@article{bai2022constitutional,
+  author    = {Bai, Yuntao and Kadavath, Saurav and Kundu, Sandipan and Askell, Amanda and Kernion, Jackson and Jones, Andy and Chen, Anna and Goldie, Anna and Mirhoseini, Azalia and McKinnon, Cameron and others},
+  title     = {Constitutional {AI}: Harmlessness from {AI} feedback},
+  journal   = {arXiv preprint arXiv:2212.08073},
+  year      = {2022}
+}
+
+@article{kirk2024prism,
+  author    = {Kirk, Hannah Rose and Vidgen, Bertie and Röttger, Paul and Hale, Scott A.},
+  title     = {The {PRISM} alignment dataset: What participatory, representative and individualised human feedback reveals about the subjective and multicultural alignment of {LLMs}},
+  journal   = {NeurIPS},
+  year      = {2024}
+}
+
+@inproceedings{zheng2023llm,
+  author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and others},
+  title     = {Judging {LLM}-as-a-judge with {MT-Bench} and Chatbot Arena},
+  booktitle = {NeurIPS},
+  year      = {2023}
+}
+
+@article{wu2024reward,
+  author    = {Wu, Tianhao and Zhu, Banghua and Zhang, Ruoyu and Wen, Zhaojin and Ramchandran, Kannan and Jiao, Jiantao},
+  title     = {Pairwise proximal policy optimization: Harnessing relative feedback for {LLM} alignment},
+  journal   = {arXiv preprint arXiv:2310.00212},
+  year      = {2024}
+}
+
+@article{stiennon2020learning,
+  author    = {Stiennon, Nisan and Ouyang, Long and Wu, Jeffrey and Ziegler, Daniel and Lowe, Ryan and Voss, Chelsea and Radford, Alec and Amodei, Dario and Christiano, Paul F.},
+  title     = {Learning to summarize with human feedback},
+  journal   = {NeurIPS},
+  year      = {2020}
+}
+
+@article{ziegler2019finetuning,
+  author    = {Ziegler, Daniel M. and Stiennon, Nisan and Wu, Jeffrey and Brown, Tom B. and Radford, Alec and Amodei, Dario and Christiano, Paul and Irving, Geoffrey},
+  title     = {Fine-tuning language models from human preferences},
+  journal   = {arXiv preprint arXiv:1909.08593},
+  year      = {2019}
+}
+
+% --- Faithfulness, factual consistency, grounded generation ---------------
+
+@inproceedings{maynez2020faithfulness,
+  author    = {Maynez, Joshua and Narayan, Shashi and Bohnet, Bernd and McDonald, Ryan},
+  title     = {On faithfulness and factuality in abstractive summarization},
+  booktitle = {Proc. ACL},
+  pages     = {1906--1919},
+  year      = {2020}
+}
+
+@inproceedings{cao2018faithful,
+  author    = {Cao, Ziqiang and Wei, Furu and Li, Wenjie and Li, Sujian},
+  title     = {Faithful to the original: Fact aware neural abstractive summarization},
+  booktitle = {AAAI},
+  year      = {2018}
+}
+
+@article{honovich2022true,
+  author    = {Honovich, Or and Aharoni, Roee and Herzig, Jonathan and Taitelbaum, Hagai and Kukliansy, Doron and Cohen, Vered and Scialom, Thomas and Szpektor, Idan and Hassidim, Avinatan and Matias, Yossi},
+  title     = {{TRUE}: Re-evaluating factual consistency evaluation},
+  journal   = {Proceedings of NAACL-HLT},
+  year      = {2022}
+}
+
+@article{laban2022summac,
+  author    = {Laban, Philippe and Schnabel, Tobias and Bennett, Paul N. and Hearst, Marti A.},
+  title     = {{SummaC}: Re-visiting NLI-based models for inconsistency detection in summarization},
+  journal   = {Transactions of the Association for Computational Linguistics},
+  volume    = {10},
+  pages     = {163--177},
+  year      = {2022}
+}
+
+@inproceedings{kryscinski2020factcc,
+  author    = {Kryscinski, Wojciech and McCann, Bryan and Xiong, Caiming and Socher, Richard},
+  title     = {Evaluating the factual consistency of abstractive text summarization},
+  booktitle = {Proc. EMNLP},
+  year      = {2020}
+}
+
+@article{fabbri2021summeval,
+  author    = {Fabbri, Alexander R. and Kryściński, Wojciech and McCann, Bryan and Xiong, Caiming and Socher, Richard and Radev, Dragomir},
+  title     = {{SummEval}: Re-evaluating summarization evaluation},
+  journal   = {Transactions of the Association for Computational Linguistics},
+  volume    = {9},
+  pages     = {391--409},
+  year      = {2021}
+}
+
+@inproceedings{goyal2020dependency,
+  author    = {Goyal, Tanya and Durrett, Greg},
+  title     = {Evaluating factuality in generation with dependency-level entailment},
+  booktitle = {Findings of ACL: EMNLP},
+  year      = {2020}
+}
+
+@inproceedings{durmus2020feqa,
+  author    = {Durmus, Esin and He, He and Diab, Mona},
+  title     = {{FEQA}: A question answering evaluation framework for faithfulness assessment in abstractive summarization},
+  booktitle = {Proc. ACL},
+  year      = {2020}
+}
+
+@article{ji2023hallucination,
+  author    = {Ji, Ziwei and Lee, Nayeon and Frieske, Rita and Yu, Tiezheng and Su, Dan and Xu, Yan and Ishii, Etsuko and Bang, Yejin and Madotto, Andrea and Fung, Pascale},
+  title     = {Survey of hallucination in natural language generation},
+  journal   = {ACM Computing Surveys},
+  volume    = {55},
+  number    = {12},
+  pages     = {1--38},
+  year      = {2023}
+}
+
+@inproceedings{grusky2018newsroom,
+  author    = {Grusky, Max and Naaman, Mor and Artzi, Yoav},
+  title     = {Newsroom: A dataset of 1.3 million summaries with diverse extractive strategies},
+  booktitle = {NAACL-HLT},
+  year      = {2018}
+}
+
+% --- RAG limitations and structured-context grounding ---------------------
+
+@inproceedings{shi2023distract,
+  author    = {Shi, Freda and Chen, Xinyun and Misra, Kanishka and Scales, Nathan and Dohan, David and Chi, Ed H. and Schärli, Nathanael and Zhou, Denny},
+  title     = {Large language models can be easily distracted by irrelevant context},
+  booktitle = {Proc. ICML},
+  year      = {2023}
+}
+
+@article{liu2024lost,
+  author    = {Liu, Nelson F. and Lin, Kevin and Hewitt, John and Paranjape, Ashwin and Bevilacqua, Michele and Petroni, Fabio and Liang, Percy},
+  title     = {Lost in the middle: How language models use long contexts},
+  journal   = {Transactions of the Association for Computational Linguistics},
+  volume    = {12},
+  pages     = {157--173},
+  year      = {2024}
+}
+
+@inproceedings{asai2024selfrag,
+  author    = {Asai, Akari and Wu, Zeqiu and Wang, Yizhong and Sil, Avirup and Hajishirzi, Hannaneh},
+  title     = {{Self-RAG}: Learning to retrieve, generate, and critique through self-reflection},
+  booktitle = {Proc. ICLR},
+  year      = {2024}
+}
+
+@article{gao2024ragsurvey,
+  author    = {Gao, Yunfan and Xiong, Yun and Gao, Xinyu and Jia, Kangxiang and Pan, Jinliu and Bi, Yuxi and Dai, Yi and Sun, Jiawei and Wang, Meng and Wang, Haofen},
+  title     = {Retrieval-augmented generation for large language models: A survey},
+  journal   = {arXiv preprint arXiv:2312.10997},
+  year      = {2024}
+}
+
+@inproceedings{khattab2022demonstrate,
+  author    = {Khattab, Omar and Santhanam, Keshav and Li, Xiang Lisa and Hall, David and Liang, Percy and Potts, Christopher and Zaharia, Matei},
+  title     = {Demonstrate-search-predict: Composing retrieval and language models for knowledge-intensive {NLP}},
+  journal   = {arXiv preprint arXiv:2212.14024},
+  year      = {2022}
+}
+
+@article{mialon2023augmented,
+  author    = {Mialon, Grégoire and Dessì, Roberto and Lomeli, Maria and Nalmpantis, Christoforos and Pasunuru, Ram and Raileanu, Roberta and Rozière, Baptiste and Schick, Timo and Dwivedi-Yu, Jane and Celikyilmaz, Asli and Grave, Edouard and LeCun, Yann and Scialom, Thomas},
+  title     = {Augmented language models: A survey},
+  journal   = {Transactions on Machine Learning Research},
+  year      = {2023}
+}
+
+@inproceedings{wei2022chain,
+  author    = {Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed H. and Le, Quoc V. and Zhou, Denny},
+  title     = {Chain-of-thought prompting elicits reasoning in large language models},
+  booktitle = {NeurIPS},
+  year      = {2022}
+}
+
+% --- Inter-annotator reliability ------------------------------------------
+
+@book{krippendorff2004content,
+  author    = {Krippendorff, Klaus},
+  title     = {Content Analysis: An Introduction to its Methodology},
+  edition   = {2},
+  publisher = {Sage Publications},
+  year      = {2004}
+}
+
+@article{fleiss1971,
+  author    = {Fleiss, Joseph L.},
+  title     = {Measuring nominal scale agreement among many raters},
+  journal   = {Psychological Bulletin},
+  volume    = {76},
+  number    = {5},
+  pages     = {378--382},
+  year      = {1971}
+}
+
+@article{cohen1960,
+  author    = {Cohen, Jacob},
+  title     = {A coefficient of agreement for nominal scales},
+  journal   = {Educational and Psychological Measurement},
+  volume    = {20},
+  number    = {1},
+  pages     = {37--46},
+  year      = {1960}
+}
+
+@article{landis1977,
+  author    = {Landis, J. Richard and Koch, Gary G.},
+  title     = {The measurement of observer agreement for categorical data},
+  journal   = {Biometrics},
+  volume    = {33},
+  number    = {1},
+  pages     = {159--174},
+  year      = {1977}
+}
+
+% --- Evaluation of generation: known limitations of n-gram metrics --------
+
+@inproceedings{liu2016how,
+  author    = {Liu, Chia-Wei and Lowe, Ryan and Serban, Iulian and Noseworthy, Mike and Charlin, Laurent and Pineau, Joelle},
+  title     = {How {NOT} to evaluate your dialogue system: An empirical study of unsupervised evaluation metrics for dialogue response generation},
+  booktitle = {Proc. EMNLP},
+  pages     = {2122--2132},
+  year      = {2016}
+}
+
+@article{sai2022survey,
+  author    = {Sai, Ananya B. and Mohankumar, Akash Kumar and Khapra, Mitesh M.},
+  title     = {A survey of evaluation metrics used for {NLG} systems},
+  journal   = {ACM Computing Surveys},
+  volume    = {55},
+  number    = {2},
+  pages     = {1--39},
+  year      = {2022}
+}
+
+% --- Clustering quality / IR foundations ----------------------------------
+
+@book{manning2008introduction,
+  author    = {Manning, Christopher D. and Raghavan, Prabhakar and Schütze, Hinrich},
+  title     = {Introduction to Information Retrieval},
+  publisher = {Cambridge University Press},
+  year      = {2008}
+}
+
+@inproceedings{steinbach2000comparison,
+  author    = {Steinbach, Michael and Karypis, George and Kumar, Vipin},
+  title     = {A comparison of document clustering techniques},
+  booktitle = {KDD Workshop on Text Mining},
+  year      = {2000}
+}
+
+% --- HCI evaluation foundations -------------------------------------------
+
+@book{hartson2018ux,
+  author    = {Hartson, Rex and Pyla, Pardha S.},
+  title     = {The UX Book: Agile UX Design for a Quality User Experience},
+  edition   = {2},
+  publisher = {Morgan Kaufmann},
+  year      = {2018}
+}
+
+@book{tullis2013measuring,
+  author    = {Tullis, Tom and Albert, Bill},
+  title     = {Measuring the User Experience: Collecting, Analyzing, and Presenting Usability Metrics},
+  edition   = {2},
+  publisher = {Morgan Kaufmann},
+  year      = {2013}
+}
+
+% --- Aspect-based sentiment analysis benchmarks ---------------------------
+
+@inproceedings{pontiki2014semeval,
+  author    = {Pontiki, Maria and Galanis, Dimitris and Pavlopoulos, John and Papageorgiou, Harris and Androutsopoulos, Ion and Manandhar, Suresh},
+  title     = {{SemEval-2014} Task 4: Aspect based sentiment analysis},
+  booktitle = {Proceedings of the 8th International Workshop on Semantic Evaluation (SemEval 2014)},
+  pages     = {27--35},
+  year      = {2014}
+}
+
+@inproceedings{hu2004mining,
+  author    = {Hu, Minqing and Liu, Bing},
+  title     = {Mining and summarizing customer reviews},
+  booktitle = {Proc. KDD},
+  pages     = {168--177},
+  year      = {2004}
+}
+
+@inproceedings{hearst1999,
+  author    = {Hearst, Marti A.},
+  title     = {Untangling text data mining},
+  booktitle = {Proc. ACL},
+  pages     = {3--10},
+  year      = {1999}
+}
+
+@article{sarawagi2008,
+  author    = {Sarawagi, Sunita},
+  title     = {Information Extraction},
+  journal   = {Foundations and Trends in Databases},
+  volume    = {1},
+  number    = {3},
+  pages     = {261--377},
+  year      = {2008}
+}
+
+@inproceedings{kamar2016,
+  author    = {Kamar, Ece},
+  title     = {Directions in hybrid intelligence: Complementing AI systems with human intelligence},
+  booktitle = {Proc. IJCAI},
+  pages     = {4070--4073},
+  year      = {2016}
+}
+
+@inproceedings{bansal2019,
+  author    = {Bansal, Gagan and Nushi, Besmira and Kamar, Ece and Lasecki, Walter S. and Weld, Daniel S. and Horvitz, Eric},
+  title     = {Beyond accuracy: The role of mental models in human-AI team performance},
+  booktitle = {HCOMP},
+  volume    = {7},
+  pages     = {2--11},
+  year      = {2019}
+}
+
+@book{altman1999,
+  author    = {Altman, Eitan},
+  title     = {Constrained Markov Decision Processes},
+  publisher = {CRC Press},
+  year      = {1999}
+}
+
+@inproceedings{dai2023,
+  author    = {Dai, Josef and Pan, Xuehai and Sun, Ruiyang and Ji, Jiaming and Xu, Xinbo and Liu, Mickel and Wang, Yizhou and Yang, Yaodong},
+  title     = {{Safe RLHF}: Safe Reinforcement Learning from Human Feedback},
+  booktitle = {Proc. ICLR},
+  year      = {2024},
+  note      = {arXiv:2310.12773, 2023}
+}
+
+@article{ethayarajh2024,
+  author    = {Ethayarajh, Kawin and Xu, Winnie and Muennighoff, Niklas and Jurafsky, Dan and Kiela, Douwe},
+  title     = {{KTO}: Model Alignment as Prospect Theoretic Optimization},
+  journal   = {arXiv preprint arXiv:2402.01306},
+  year      = {2024}
+}
+
+@inproceedings{rafailov2023,
+  author    = {Rafailov, Rafael and Sharma, Archit and Mitchell, Eric and Manning, Christopher D. and Ermon, Stefano and Finn, Chelsea},
+  title     = {Direct preference optimization: Your language model is secretly a reward model},
+  booktitle = {NeurIPS},
+  year      = {2023}
+}
+
+@inproceedings{gao2020core,
+  author    = {Gao, Cuiyun and Zeng, Jichuan and Lyu, Michael R. and King, Irwin},
+  title     = {{CoRe}: Automating review response generation with contextual encoding},
+  booktitle = {Proc. ASE},
+  year      = {2020}
+}
+
+@misc{anthropic2025claude,
+  author       = {{Anthropic}},
+  title        = {Claude (Opus 4.7), Large Language Model},
+  year         = {2025},
+  howpublished = {\url{https://www.anthropic.com/claude}},
+  note         = {Used as a writing and formatting assistant during manuscript preparation; see Acknowledgments.}
+}
+
+@article{feinstein1990high,
+  title   = {High agreement but low kappa: {I}. The problems of two paradoxes},
+  author  = {Feinstein, Alvan R and Cicchetti, Domenic V},
+  journal = {Journal of Clinical Epidemiology},
+  volume  = {43},
+  number  = {6},
+  pages   = {543--549},
+  year    = {1990},
+  publisher = {Elsevier}
+}
+
+@article{sim2005kappa,
+  title   = {The kappa statistic in reliability studies: use, interpretation, and sample size requirements},
+  author  = {Sim, Julius and Wright, Chris C},
+  journal = {Physical Therapy},
+  volume  = {85},
+  number  = {3},
+  pages   = {257--268},
+  year    = {2005},
+  publisher = {American Physical Therapy Association}
+}
+
+@inproceedings{yang2024sweagent,
+  title     = {{SWE-agent}: Agent-Computer Interfaces Enable Automated Software Engineering},
+  author    = {Yang, John and Jimenez, Carlos E. and Wettig, Alexander and Lieret, Kilian and Yao, Shunyu and Narasimhan, Karthik and Press, Ofir},
+  booktitle = {NeurIPS},
+  year      = {2024}
+}
+
+BibTeX entry — paste into references.bib
+
+  @inproceedings{jimenez2024swebench,
+    title     = {{SWE-bench}: Can Language Models Resolve Real-World {GitHub} Issues?},
+    author    = {Jimenez, Carlos E. and Yang, John and Wettig, Alexander and Yao, Shunyu and
+  Pei, Kexin and Press, Ofir and Narasimhan, Karthik},
+    booktitle = {ICLR},
+    year      = {2024}
+  }
+
+@article{bouzenia2024repairagent,
+  title   = {{RepairAgent}: An Autonomous, {LLM}-Based Agent for Program Repair},
+  author  = {Bouzenia, Islem and Devanbu, Premkumar and Pradel, Michael},
+  journal = {arXiv preprint arXiv:2403.17134},
+  year    = {2024}
+}
+
+@article{phan2024hyperagent,
+  title   = {{HyperAgent}: Generalist Software Engineering Agents to Solve Coding Tasks at Scale},
+  author  = {Phan, Huy Nhat and Nguyen, Phong X. and Bui, Nghi D. Q.},
+  journal = {arXiv preprint arXiv:2409.16299},
+  year    = {2024}
+}
+
+% --- Added for proposal-aligned rewrite ---
+@inproceedings{geifman2017selective,
+  author    = {Geifman, Yonatan and El-Yaniv, Ran},
+  title     = {Selective classification for deep neural networks},
+  booktitle = {NeurIPS},
+  year      = {2017}
+}
+
+@inproceedings{chaparro2017detecting,
+  author    = {Chaparro, Oscar and Lu, Jing and Zampetti, Fiorella and Moreno, Laura and Di Penta, Massimiliano and Marcus, Andrian and Bavota, Gabriele and Ng, Vincent},
+  title     = {Detecting missing information in bug descriptions},
+  booktitle = {Proc. FSE},
+  year      = {2017}
+}
+
+@article{kaur2023bertrcnn,
+  author    = {Kaur, Arvinder and Sahu, Akanksha},
+  title     = {A {BERT-RCNN} hybrid approach for app review classification},
+  journal   = {arXiv preprint},
+  year      = {2023}
+}
+
+@article{shah2021reviewmining,
+  author    = {Shah, Faiz Ali and others},
+  title     = {Mining user opinions to support requirements engineering for mobile applications},
+  journal   = {arXiv preprint arXiv:2108.00663},
+  year      = {2021}
+}
+
+% --- Recent (2024) LLM-as-judge / RAG / faithfulness ----------------------
+
+@inproceedings{zheng2023llmjudge,
+  author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and Zhang, Hao and Gonzalez, Joseph E. and Stoica, Ion},
+  title     = {Judging {LLM}-as-a-judge with {MT-Bench} and {Chatbot Arena}},
+  booktitle = {NeurIPS},
+  year      = {2023}
+}
+
+@inproceedings{chen2024ragbench,
+  author    = {Chen, Jiawei and Lin, Hongyu and Han, Xianpei and Sun, Le},
+  title     = {Benchmarking large language models in retrieval-augmented generation},
+  booktitle = {AAAI},
+  year      = {2024}
+}
+
+@inproceedings{wei2024longform,
+  author    = {Wei, Jerry and Yang, Chengrun and Song, Xinying and Lu, Yifeng and Hu, Nathan and Tran, Dustin and Peng, Daiyi and Liu, Ruibo and Huang, Da and Du, Cosmo and Le, Quoc V.},
+  title     = {Long-form factuality in large language models},
+  booktitle = {NeurIPS},
+  year      = {2024}
+}
+
+@inproceedings{romano2006appropriate,
+  author    = {Romano, Jeanine and Kromrey, Jeffrey D. and Coraggio, Jesse and Skowronek, Jeff},
+  title     = {Appropriate statistics for ordinal level data: Should we really be using {t-test} and {Cohen's d} for evaluating group differences on the {NSSE} and other surveys?},
+  booktitle = {Annual meeting of the Florida Association of Institutional Research},
+  pages     = {1--33},
+  year      = {2006}
+}
+
+@article{cliff1993dominance,
+  author    = {Cliff, Norman},
+  title     = {Dominance statistics: Ordinal analyses to answer ordinal questions},
+  journal   = {Psychological Bulletin},
+  volume    = {114},
+  number    = {3},
+  pages     = {494--509},
+  year      = {1993}
+}

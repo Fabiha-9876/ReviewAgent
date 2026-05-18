@@ -204,6 +204,9 @@ CONDITIONS = {
     "raw_summary":         "specs_raw_summary.json",
     "human_written":       "specs_human_written.json",
     "human_github":        "specs_human_github.json",
+    "llama_groq_70b":      "specs_llama_groq_flat.json",
+    "qwen2_5_3b":          "specs_qwen2_5_3b.json",
+    "qwen2_5_1_5b":        "specs_qwen2_5_1_5b.json",
 }
 
 print("=" * 100)

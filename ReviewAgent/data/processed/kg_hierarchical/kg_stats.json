@@ -256,5 +256,258 @@
       "pagerank": 0.000733,
       "n_reviews": 59
     }
-  ]
+  ],
+  "top_aspects_by_betweenness": [
+    {
+      "aspect": "aspect:ad",
+      "betweenness": 0.583818,
+      "n_reviews": 3210
+    },
+    {
+      "aspect": "aspect:phone",
+      "betweenness": 0.117049,
+      "n_reviews": 876
+    },
+    {
+      "aspect": "aspect:edit",
+      "betweenness": 0.101562,
+      "n_reviews": 735
+    },
+    {
+      "aspect": "aspect:battery",
+      "betweenness": 0.061675,
+      "n_reviews": 541
+    },
+    {
+      "aspect": "aspect:update",
+      "betweenness": 0.056659,
+      "n_reviews": 447
+    },
+    {
+      "aspect": "aspect:digit",
+      "betweenness": 0.050681,
+      "n_reviews": 406
+    },
+    {
+      "aspect": "aspect:photo",
+      "betweenness": 0.031991,
+      "n_reviews": 389
+    },
+    {
+      "aspect": "aspect:feature",
+      "betweenness": 0.031837,
+      "n_reviews": 349
+    },
+    {
+      "aspect": "aspect:help",
+      "betweenness": 0.027892,
+      "n_reviews": 289
+    },
+    {
+      "aspect": "aspect:ads",
+      "betweenness": 0.022245,
+      "n_reviews": 854
+    },
+    {
+      "aspect": "aspect:crash",
+      "betweenness": 0.02037,
+      "n_reviews": 216
+    },
+    {
+      "aspect": "aspect:device",
+      "betweenness": 0.016092,
+      "n_reviews": 182
+    },
+    {
+      "aspect": "aspect:lag",
+      "betweenness": 0.01565,
+      "n_reviews": 250
+    },
+    {
+      "aspect": "aspect:account",
+      "betweenness": 0.015237,
+      "n_reviews": 125
+    },
+    {
+      "aspect": "aspect:problem",
+      "betweenness": 0.013282,
+      "n_reviews": 113
+    },
+    {
+      "aspect": "aspect:picture",
+      "betweenness": 0.012807,
+      "n_reviews": 179
+    },
+    {
+      "aspect": "aspect:version",
+      "betweenness": 0.012683,
+      "n_reviews": 159
+    },
+    {
+      "aspect": "aspect:data",
+      "betweenness": 0.01195,
+      "n_reviews": 185
+    },
+    {
+      "aspect": "aspect:camera",
+      "betweenness": 0.011756,
+      "n_reviews": 91
+    },
+    {
+      "aspect": "aspect:notification",
+      "betweenness": 0.010566,
+      "n_reviews": 180
+    },
+    {
+      "aspect": "aspect:ui",
+      "betweenness": 0.010366,
+      "n_reviews": 131
+    },
+    {
+      "aspect": "aspect:speed",
+      "betweenness": 0.010253,
+      "n_reviews": 83
+    },
+    {
+      "aspect": "aspect:driver",
+      "betweenness": 0.010026,
+      "n_reviews": 138
+    },
+    {
+      "aspect": "aspect:screen",
+      "betweenness": 0.009616,
+      "n_reviews": 216
+    },
+    {
+      "aspect": "aspect:option",
+      "betweenness": 0.009195,
+      "n_reviews": 96
+    },
+    {
+      "aspect": "aspect:message",
+      "betweenness": 0.008897,
+      "n_reviews": 69
+    },
+    {
+      "aspect": "aspect:digit> star",
+      "betweenness": 0.008171,
+      "n_reviews": 110
+    },
+    {
+      "aspect": "aspect:issue",
+      "betweenness": 0.007987,
+      "n_reviews": 81
+    },
+    {
+      "aspect": "aspect:lot",
+      "betweenness": 0.007731,
+      "n_reviews": 132
+    },
+    {
+      "aspect": "aspect:video",
+      "betweenness": 0.007153,
+      "n_reviews": 128
+    },
+    {
+      "aspect": "aspect:button",
+      "betweenness": 0.007003,
+      "n_reviews": 83
+    },
+    {
+      "aspect": "aspect:news",
+      "betweenness": 0.006731,
+      "n_reviews": 94
+    },
+    {
+      "aspect": "aspect:freeze",
+      "betweenness": 0.006293,
+      "n_reviews": 112
+    },
+    {
+      "aspect": "aspect:work",
+      "betweenness": 0.005879,
+      "n_reviews": 56
+    },
+    {
+      "aspect": "aspect:tab",
+      "betweenness": 0.005561,
+      "n_reviews": 80
+    },
+    {
+      "aspect": "aspect:filter",
+      "betweenness": 0.005533,
+      "n_reviews": 95
+    },
+    {
+      "aspect": "aspect:money",
+      "betweenness": 0.005297,
+      "n_reviews": 41
+    },
+    {
+      "aspect": "aspect:feed",
+      "betweenness": 0.005242,
+      "n_reviews": 83
+    },
+    {
+      "aspect": "aspect:interface",
+      "betweenness": 0.005237,
+      "n_reviews": 49
+    },
+    {
+      "aspect": "aspect:background",
+      "betweenness": 0.004961,
+      "n_reviews": 79
+    },
+    {
+      "aspect": "aspect:guy",
+      "betweenness": 0.004928,
+      "n_reviews": 46
+    },
+    {
+      "aspect": "aspect:support",
+      "betweenness": 0.004883,
+      "n_reviews": 52
+    },
+    {
+      "aspect": "aspect:location",
+      "betweenness": 0.004749,
+      "n_reviews": 60
+    },
+    {
+      "aspect": "aspect:time",
+      "betweenness": 0.004723,
+      "n_reviews": 79
+    },
+    {
+      "aspect": "aspect:image",
+      "betweenness": 0.004336,
+      "n_reviews": 114
+    },
+    {
+      "aspect": "aspect:article",
+      "betweenness": 0.004193,
+      "n_reviews": 62
+    },
+    {
+      "aspect": "aspect:layout",
+      "betweenness": 0.003873,
+      "n_reviews": 33
+    },
+    {
+      "aspect": "aspect:charge",
+      "betweenness": 0.003741,
+      "n_reviews": 57
+    },
+    {
+      "aspect": "aspect:good app",
+      "betweenness": 0.003739,
+      "n_reviews": 48
+    },
+    {
+      "aspect": "aspect:new update",
+      "betweenness": 0.003689,
+      "n_reviews": 77
+    }
+  ],
+  "betweenness_method": "networkx betweenness_centrality on undirected projection, k=500 sampling, seed=42"
 }
