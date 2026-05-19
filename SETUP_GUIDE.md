@@ -1,0 +1,426 @@
+# IssueSpec / ReviewAgent — Setup & Reproducibility Guide
+
+This document walks a new collaborator (or reviewer) through the full project
+end-to-end: cloning the code, downloading data and models, running each pipeline
+stage, and reproducing every numerical claim in the CIKM 2026 paper.
+
+---
+
+## 1. What is this project?
+
+**Paper:** *IssueSpec: A Framework for Structured Review-to-Issue Translation*
+(CIKM 2026 submission).
+
+**One-sentence summary:** A five-stage pipeline that converts noisy app-store
+reviews into typed, developer-routable GitHub-issue-quality specifications via
+knowledge-graph clustering, LLM-based template-filled IR generation, and
+CMDP-grounded RLHF response alignment.
+
+**Five stages:**
+1. **Intake, classification, aspect extraction** (RoBERTa V5 + cleanlab)
+2. **Three-layer knowledge graph** (aspect → cluster → PageRank prioritize)
+3. **Review-to-issue translation** (LLM agent fills 5 standards-body templates)
+4. **RAG response generation** (uses validated IssueSpec as first-class source)
+5. **CMDP-grounded RLHF** (KTO → DPO → constrained-proxy → Lagrangian PPO)
+
+---
+
+## 2. Folder layout (what's where)
+
+After everything is set up, the project root looks like this:
+
+```
+Review Agent/
+├── ReviewAgent/                ← main code repository (cloned from GitHub)
+│   ├── paper/                  ← paper LaTeX + figures
+│   │   └── IssueSpec/          ← final paper: main.tex + figures + IssueSpec.pdf
+│   ├── scripts/                ← ~80 pipeline scripts (Stage 1–5 + ablations)
+│   ├── src/                    ← core library
+│   ├── verify_paper_results.py ← reproduces every numerical claim
+│   ├── data/                   ← (downloaded separately — see §4)
+│   │   ├── raw/                ← RRGen 310,031 reviews CSV
+│   │   └── processed/          ← anchor, gold, ratings, RLHF metrics
+│   └── models/                 ← (downloaded separately — see §4)
+│       ├── stage1_classifier_v5/   ← headline V5 RoBERTa (κ = 0.59)
+│       ├── anchor_roberta/         ← anchor classifier
+│       └── ...
+├── RRGen/                      ← original Gao et al. 2019 RRGen code (reference)
+├── RRGen_Annotation/           ← annotation tooling
+├── RRGen_Full_Dataset.csv      ← raw 310,031 review-response pairs (46 MB)
+├── ReviewAgent_Detailed_Architecture.md
+├── ReviewAgent_Experimental_Design.md
+└── SETUP_GUIDE.md              ← (this file)
+```
+
+---
+
+## 3. Prerequisites
+
+| Tool | Minimum version | Why |
+|---|---|---|
+| **Python** | 3.10+ | Project tooling |
+| **Git** | 2.x | Clone repo |
+| **pip** | 22+ | Install dependencies |
+| **LaTeX** (optional) | TeX Live 2023+ | Compile the paper PDF |
+| **CUDA GPU** (optional) | 12.x, 16 GB+ VRAM | Re-train V5 / run RLHF |
+| **Docker** (optional) | 24+ | Pinned-environment reproducibility |
+
+Recommended for full pipeline retraining:
+- Single GPU machine (e.g., RTX 3090 / A100)
+- ~50 GB free disk (project + models)
+- Anthropic API key (Claude Opus 4.7 — for Stage 3 generation)
+- Optional: Hugging Face Inference Endpoint or local Llama-3.3-70B + Qwen2.5
+
+---
+
+## 4. Where to get the code, data, and models
+
+### 4.1 Code (GitHub)
+
+```bash
+cd ~/Desktop
+git clone https://github.com/Fabiha-9876/ReviewAgent.git "Review Agent/ReviewAgent"
+cd "Review Agent/ReviewAgent"
+```
+
+The repo includes:
+- All Python scripts (`scripts/`, `src/`)
+- The final paper LaTeX (`paper/IssueSpec/main.tex` + `IssueSpec.pdf`)
+- Figure-generation scripts and PNGs
+- `verify_paper_results.py` (reproduces every numerical claim)
+- `Dockerfile` (optional pinned environment)
+- Documentation (`ANNOTATION_PROTOCOL.md`, `IMPLEMENTATION_GUIDE.md`)
+
+The repo **excludes** large files: `data/`, `models/`, `logs/`. These are
+released separately (see §4.2–§4.4).
+
+### 4.2 Raw dataset (RRGen)
+
+The raw 310,031 review-response pairs come from:
+- **Original release:** Gao et al., *"Automating App Review Response Generation"*,
+  ASE 2019. See https://github.com/CuriousG102/rrgen.
+- **Pre-processed CSV** (single 46 MB file): `RRGen_Full_Dataset.csv` — placed
+  one level above the cloned `ReviewAgent/` folder (so the relative path
+  `../RRGen_Full_Dataset.csv` works from `ReviewAgent/`).
+
+Place it at: `Review Agent/RRGen_Full_Dataset.csv`
+
+### 4.3 Processed data (~2 GB)
+
+The processed JSON files (verified anchor, 100-cluster benchmark, 400-row
+human ratings, RLHF head-to-head results, cluster quality metrics, etc.) are
+released as a single bundle.
+
+**Download:** `issuespec-data-bundle.tar.gz` (~2 GB)
+- **Anonymous review link:** `<REDACTED for anonymous review>`
+- **DOI (camera-ready):** `<filled in after Zenodo upload>`
+
+**Extract into:**
+```bash
+cd "Review Agent/ReviewAgent"
+tar -xzf ~/Downloads/issuespec-data-bundle.tar.gz
+# This creates ./data/processed/ with all the JSON artifacts
+```
+
+**Minimal verify-only bundle:** if you only want to run
+`verify_paper_results.py`, a 10 MB `issuespec-verify-data.zip` is sufficient.
+
+### 4.4 Model checkpoints (~21 GB total)
+
+Five RoBERTa classifier checkpoints (V1–V5) plus the anchor RoBERTa, hosted
+on Hugging Face Hub:
+
+| Model | What | HF path |
+|---|---|---|
+| **V5 (headline)** | Production classifier (κ = 0.592) | `Anonymous/issuespec-v5-classifier` |
+| V4 | Anchor + targeted augmentation | `Anonymous/issuespec-v4-classifier` |
+| V3 | Anchor correction | `Anonymous/issuespec-v3-classifier` |
+| V2 | LLM-labeled trained | `Anonymous/issuespec-v2-classifier` |
+| V1 | Baseline | `Anonymous/issuespec-v1-classifier` |
+| Anchor RoBERTa | Verified-anchor head | `Anonymous/issuespec-anchor-roberta` |
+
+**Download all five:**
+```bash
+pip install huggingface_hub
+python3 -c "
+from huggingface_hub import snapshot_download
+for tag in ['v1', 'v2', 'v3', 'v4', 'v5']:
+    snapshot_download(repo_id=f'Anonymous/issuespec-{tag}-classifier',
+                      local_dir=f'models/stage1_classifier_{tag}')
+snapshot_download(repo_id='Anonymous/issuespec-anchor-roberta',
+                  local_dir='models/anchor_roberta')
+"
+```
+
+For most reproductions you only need **V5** (the headline production model).
+
+---
+
+## 5. Environment setup
+
+### 5.1 Install Python dependencies
+
+```bash
+cd "Review Agent/ReviewAgent"
+pip install -e .          # uses pyproject.toml
+# or:
+pip install -r requirements.txt    # if a flat requirements file is preferred
+```
+
+Key packages: `torch`, `transformers`, `sentence-transformers`, `umap-learn`,
+`hdbscan`, `cleanlab`, `networkx`, `chromadb`, `scikit-learn`, `pandas`.
+
+### 5.2 (Optional) Use Docker for pinned environment
+
+```bash
+cd "Review Agent/ReviewAgent"
+docker build -t issuespec .
+docker run --gpus all -v "$(pwd):/work" -it issuespec bash
+```
+
+### 5.3 Set up API keys (only for Stage 3 LLM calls)
+
+Copy `.env.example` to `.env` and fill in:
+```
+ANTHROPIC_API_KEY=sk-ant-...           # for Claude Opus Stage 3
+HF_TOKEN=hf_...                         # for Llama-3.3-70B via Groq, Qwen models
+GROQ_API_KEY=gsk_...                    # for Llama-3.3-70B (cross-family control)
+```
+
+If you skip these, the saved outputs (in `data/processed/issue_specs/`) still
+let `verify_paper_results.py` reproduce every paper number.
+
+---
+
+## 6. Quick start — verify the paper without re-running training
+
+This is the fastest path. Takes < 1 minute. No GPU, no API keys needed.
+
+```bash
+cd "Review Agent/ReviewAgent"
+
+# 1. Download verify bundle (10 MB)  — replace URL with actual link
+curl -L <URL>/issuespec-verify-data.zip -o /tmp/verify.zip
+unzip /tmp/verify.zip
+
+# 2. Run all 10 verification segments
+python3 verify_paper_results.py
+
+# Or run a single segment:
+python3 verify_paper_results.py 5    # Stage 3 SpecCov scorer only
+python3 verify_paper_results.py 9    # Stage 5 RLHF policies only
+```
+
+Expected output: every numerical claim from the paper printed alongside the
+recomputed value, all matching within rounding.
+
+---
+
+## 7. Full pipeline reproduction (from raw RRGen to paper results)
+
+This re-runs the entire five-stage pipeline. Allow ~6 hours on a single
+GPU-equipped workstation.
+
+### 7.1 Place the raw dataset
+Put `RRGen_Full_Dataset.csv` at `Review Agent/RRGen_Full_Dataset.csv`.
+
+### 7.2 Stage 1 — Intake, classification, aspect extraction
+
+```bash
+cd "Review Agent/ReviewAgent"
+
+# Dedupe + initial preprocessing
+python3 scripts/preprocess_rrgen.py \
+    --input ../RRGen_Full_Dataset.csv \
+    --output data/processed/working_corpus.json
+
+# Train V1 baseline
+python3 scripts/train_stage1_classifier.py --version v1
+
+# V2: re-train with LLM-generated labels
+python3 scripts/run_v2_llm_annotation.py
+python3 scripts/train_stage1_classifier.py --version v2
+
+# Verified anchor (lead-author 5,230 reviews)
+# — this step requires the anchor JSON; see data bundle
+
+# V3: cleanlab correction
+python3 scripts/cleanlab_find_label_issues.py
+python3 scripts/train_stage1_classifier.py --version v3
+
+# V4: targeted augmentation for compatibility class
+python3 scripts/build_compat_data.py          # 200 synthetic + 100 mined
+python3 scripts/train_stage1_classifier.py --version v4
+
+# V5: full pipeline
+python3 scripts/train_stage1_classifier.py --version v5
+```
+
+Expected: V5 reaches κ ≈ 0.59 on the 490-review expert gold (Table 8).
+
+### 7.3 Stage 2 — Three-layer knowledge graph
+
+```bash
+python3 scripts/build_kg_layer1_graph.py
+python3 scripts/build_kg_layer2_clusters.py   # UMAP + HDBSCAN → 605 sub-clusters
+python3 scripts/build_kg_layer3_pagerank.py   # PageRank prioritization
+
+# Cluster quality (Table 11)
+python3 scripts/compute_cluster_quality_metrics.py
+```
+
+### 7.4 Stage 3 — LLM-based IR generation
+
+Requires `ANTHROPIC_API_KEY` (Claude Opus 4.7).
+
+```bash
+python3 scripts/run_stage3_with_taxonomy.py     # headline (LLM + taxonomy)
+python3 scripts/run_stage3_free_form.py         # baseline (no taxonomy)
+python3 scripts/run_stage3_raw_summary.py       # lower-bound
+python3 scripts/score_specs.py                  # 5-dim rubric
+
+# Standalone SpecCov scorer
+python3 scripts/speccov.py \
+    --specs data/processed/issue_specs/specs_with_taxonomy.json \
+    --clusters data/processed/issue_specs/sample_100_clusters.json \
+    --out data/processed/speccov_scores.json
+```
+
+### 7.5 Stage 4 — RAG response generation
+
+```bash
+python3 scripts/build_chromadb_index.py         # 15,100 docs
+python3 scripts/generate_reviewagent_full.py
+python3 scripts/generate_reviewagent_no_spec.py
+python3 scripts/generate_rrgen_baseline.py
+python3 scripts/generate_prompt_baseline.py
+
+# Agentic-RAG comparison (Self-RAG / DSP feasibility study)
+python3 scripts/_agentic_vs_vanilla_rag.py      # n = 10, max 2 iterations
+```
+
+Human evaluation: open the rating workbooks under `human_work/` and follow
+`ANNOTATION_PROTOCOL.md`.
+
+### 7.6 Stage 5 — CMDP-grounded RLHF
+
+Requires GPU. distilGPT2 proof-of-concept, takes ~30 minutes.
+
+```bash
+python3 scripts/run_rlhf_proof_of_concept.py    # train 5 policies
+python3 scripts/run_rlhf_head_to_head.py        # head-to-head BLEU/ROUGE/BERTScore
+```
+
+Expected (Table 8 in §5.3):
+- constrained-proxy: BLEU-1 0.137 (+52% over SFT-base 0.090)
+
+### 7.7 Compile the paper
+
+```bash
+cd paper/IssueSpec
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
+# IssueSpec.pdf — 14 pages, matches the submitted PDF
+```
+
+---
+
+## 8. Verifying everything matches the paper
+
+The `verify_paper_results.py` script re-runs the computation behind ten
+families of paper claims and prints each value side-by-side with the paper
+claim. Ten segments cover:
+
+| # | Segment | Verifies |
+|---|---|---|
+| 1 | Corpus + provenance | 215,583 working corpus, 5,230 anchor, 79.49/18.08/2.43% |
+| 2 | Stage 1 κ progression | Table 8: V2 0.163, cleanlab 0.333, V5 0.592 |
+| 3 | Stage 2 cluster quality | Table 11: DB, CH, 5.4× and 1.9× ratios |
+| 4 | A1b ablation | §5.5 count-matched flat-605 vs KG-605 |
+| 5 | SpecCov scorer | §4.4 4.16/3.33/5.00/4.00 (all 4 conditions) |
+| 6 | Stage 4 human eval | Table 10: 2.31/2.98/2.26/4.62; +2.36 paired Δ |
+| 7 | A5 no-RAG ablation | §5.5 ΔBLEU/ROUGE/BERTScore |
+| 8 | Agentic vs vanilla | §5.2 0.58→0.70, 0%→60% citation |
+| 9 | Stage 5 RLHF | §5.3 five policies + +52% BLEU-1 gain |
+| 10 | Inter-rater α | Table 4: α = 0.451 (99 reviews) |
+
+Run all at once:
+```bash
+python3 verify_paper_results.py
+```
+
+Or a single segment:
+```bash
+python3 verify_paper_results.py 5      # SpecCov only
+python3 verify_paper_results.py 9      # RLHF only
+```
+
+---
+
+## 9. Folder-by-folder reference
+
+| Folder | What lives here |
+|---|---|
+| `paper/IssueSpec/` | Final paper LaTeX, figures, compiled PDF |
+| `paper/build_v2/` | Figure-generation Python scripts + intermediate PNGs |
+| `paper/experiments/` | Pre-submission experiment scripts + curation rubric + labmate handoff bundle |
+| `scripts/` | All pipeline scripts (Stage 1–5, ablations, scorers) |
+| `scripts/speccov.py` | Standalone SpecCov faithfulness scorer |
+| `scripts/run_rlhf_head_to_head.py` | Stage 5 head-to-head policy evaluation |
+| `scripts/audit_hierarchical_cluster_purity_llm.py` | LLM-as-judge cluster purity |
+| `scripts/compute_3rater_krippendorff.py` | Inter-rater agreement on 99 reviews |
+| `scripts/_agentic_vs_vanilla_rag.py` | Agentic-RAG vs vanilla feasibility study |
+| `src/` | Core library modules (taxonomies, schema, utils) |
+| `api/` | Optional API wrappers |
+| `configs/` | YAML configuration files |
+| `notebooks/` | Exploratory Jupyter notebooks |
+| `annotator_materials/` | Templates and instructions for human-in-the-loop annotation |
+| `human_work/` | Lead-author rating spreadsheets (anonymized) |
+| `tests/` | Unit tests |
+| `data/raw/` | Place `RRGen_Full_Dataset.csv` here (or symlink from parent dir) |
+| `data/processed/` | All processed JSON outputs (released bundle) |
+| `models/` | V1–V5 + anchor classifier checkpoints (Hugging Face download) |
+| `verify_paper_results.py` | Reproduces every numerical claim in the paper |
+| `verify_paper_results.ipynb` | Notebook version for cell-by-cell exploration |
+
+---
+
+## 10. Troubleshooting
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| `FileNotFoundError: data/processed/...` | Data bundle not extracted | Re-download and extract (§4.3) |
+| `OSError: cannot find Anonymous/issuespec-v5-classifier` | HF download failed | Check internet / try `HF_TOKEN` |
+| LaTeX compile fails with `\Bbbk` redefined | Old `amssymb` conflict | Already handled by `\let\Bbbk\relax` in preamble |
+| Out of GPU memory during V5 training | < 16 GB VRAM | Lower batch size in `configs/stage1.yaml` |
+| `verify_paper_results.py` reports mismatch | Stale data files | Re-download data bundle |
+| Stage 3 LLM call fails | `ANTHROPIC_API_KEY` missing | Set in `.env`; or skip (use saved outputs) |
+
+---
+
+## 11. License and citation
+
+Code: MIT License (see `ReviewAgent/LICENSE`).
+
+If you use this code, data, or models, please cite the CIKM 2026 paper.
+
+```bibtex
+@inproceedings{anonymous2026issuespec,
+  title     = {IssueSpec: A Framework for Structured Review-to-Issue Translation},
+  author    = {Anonymous Author(s)},
+  booktitle = {Proceedings of the ACM International Conference on Information and Knowledge Management (CIKM)},
+  year      = {2026},
+  note      = {Under review; anonymous submission.}
+}
+```
+
+---
+
+## 12. Where to ask for help
+
+- **Code / scripts:** open an issue at https://github.com/Fabiha-9876/ReviewAgent/issues
+- **Data / models:** check `RELEASE.md` in the cloned repo
+- **Paper claims:** the `verify_paper_results.py` script returns the
+  ground-truth recomputed value for every numerical claim.
