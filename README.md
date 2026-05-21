@@ -13,8 +13,6 @@ aligned, compliant developer responses:
 4. **Spec-aware RAG** — response generation over five fixed sources
 5. **CMDP-grounded RLHF** — constrained alignment (KTO → DPO → Constrained PPO)
 
-The compiled paper is in [`paper/IssueSpec/IssueSpec.pdf`](paper/IssueSpec/IssueSpec.pdf).
-
 ---
 
 ## Quick start — verify every paper number (no GPU, no API keys)
