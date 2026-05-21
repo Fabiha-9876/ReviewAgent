@@ -99,10 +99,6 @@ model = AutoModelForSequenceClassification.from_pretrained("Fabiha9876/issuespec
 | Stage-5 constrained-proxy BLEU-1 over SFT | **+52%** |
 | Cross-family replication | 4 LLMs, 3 families (rank order preserved) |
 
-## License
-
-MIT — see [`LICENSE`](LICENSE).
-
 ## Citation
 
 This work is **under review at CIKM 2026 and is not yet published.** If you

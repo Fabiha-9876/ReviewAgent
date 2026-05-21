@@ -420,9 +420,7 @@ python3 verify_paper_results.py 9      # RLHF only
 
 ---
 
-## 11. License and citation
-
-Code: MIT License (see `LICENSE`).
+## 11. Data and citation
 
 Data: the review text comes from the RRGen corpus (Gao et al., "Automating App
 Review Response Generation", ASE 2019) and remains under its original terms;
