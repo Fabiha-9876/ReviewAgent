@@ -420,7 +420,7 @@ python3 verify_paper_results.py 9      # RLHF only
 
 ---
 
-## 11. Data and citation
+## 11. Data
 
 Data: the review text comes from the RRGen corpus (Gao et al., "Automating App
 Review Response Generation", ASE 2019) and remains under its original terms;
@@ -428,16 +428,6 @@ refer to the original authors. The other files are derived artifacts (labels,
 IssueSpecs, results, metrics).
 
 This work is under review at CIKM 2026 and is not yet published.
-
-```bibtex
-@inproceedings{anonymous2026issuespec,
-  title     = {IssueSpec: A Framework for Structured Review-to-Issue Translation},
-  author    = {Anonymous Author(s)},
-  booktitle = {Proceedings of the ACM International Conference on Information and Knowledge Management (CIKM)},
-  year      = {2026},
-  note      = {Under review; anonymous submission.}
-}
-```
 
 ---
 
