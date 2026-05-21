@@ -257,18 +257,13 @@ CMDP RLHF + benchmark & constrained-proxy $+52\%$ BLEU-1 over SFT base (\S\ref{e
 \bottomrule\end{tabular}\end{table}
 
  \begin{figure*}[t]\centering
-  \includegraphics[width=\textwidth]{fig1_architecture.png}
-  \caption{The IssueSpec architecture across four panels. \textbf{(b)} Intake (RoBERTa
-  classifier, ABSA, entity extraction, verified-anchor noise correction) followed by the
-  three-layer knowledge graph (review-aspect graph, hierarchical clustering, PageRank
-  prioritization). \textbf{(c)} IR translation: the LLM agent routes each cluster to one of five
-   standards-body templates (Zimmermann, Cohn, ISO/IEC~25010, Nielsen, device-OS) and the output
-   is validated by \textsc{SpecCov}. \textbf{(d)} RAG response generation conditions on five
-  fixed sources (changelogs, FAQ, past pairs, semantic neighbors, IssueSpec) over the ChromaDB
-  index. \textbf{(e)} CMDP-grounded RLHF trainer chain (KTO~$\to$~DPO~$\to$~Constrained PPO)
-  jointly optimizes a quality reward and four compliance constraints. HITL checkpoints (yellow,
-  dashed) follow the selective prediction protocol~\cite{geifman2017selective,
-  bansal2019}.}\label{fig:architecture}
+  \includegraphics[width=\textwidth]{fig_architecture.pdf}
+  \caption{The IssueSpec five-stage pipeline. Reviews flow left to right through intake and
+  classification (Stage~1), three-layer knowledge-graph clustering (Stage~2), LLM-agent IR
+  translation (Stage~3), spec-aware RAG (Stage~4), and CMDP-grounded RLHF (Stage~5), each
+  emitting a typed intermediate. Yellow checkpoints mark human-in-the-loop review under
+  selective prediction~\cite{geifman2017selective, bansal2019}; the red loop propagates Stage~5
+  corrections upstream.}\label{fig:architecture}
   \end{figure*}
 %% =====================================================================
 \section{Related Work}\label{related-work}
@@ -805,7 +800,7 @@ Every numerical claim in Section~\ref{results} is backed by a saved data file an
 \item the 5{,}230-review verified anchor and 490-review classification gold;
 \item the 400-row blinded evaluation and the count-controlled A1b output;
 \item the \textsc{SpecCov} extractive-coverage scorer;
-\item the CMDP-RLHF testbed (KTO, DPO, constrained-proxy, and Lagrangian Constrained PPO trainers); ;
+\item the CMDP-RLHF testbed (KTO, DPO, constrained-proxy, and Lagrangian Constrained PPO trainers);
 \item the 100-cluster benchmark with 99-review three-rater $\alpha = 0.451$ subsample;
 \item a pinned-environment Docker image (single-command build on any CUDA~12.x host).
 \end{itemize}
