@@ -109,48 +109,41 @@ Place it at: `Review Agent/RRGen_Full_Dataset.csv`
 
 The processed JSON files (verified anchor, 100-cluster benchmark, 400-row
 human ratings, RLHF head-to-head results, cluster quality metrics, etc.) are
-released as a single bundle.
+released as a single bundle on Zenodo.
 
-**Download:** `issuespec-data-bundle.tar.gz` (~2 GB)
-- **Anonymous review link:** `<REDACTED for anonymous review>`
-- **DOI (camera-ready):** `<filled in after Zenodo upload>`
+**Download:** `issuespec-data-bundle.tar.gz` (~10 MB)
+- **Zenodo DOI:** [10.5281/zenodo.20320410](https://doi.org/10.5281/zenodo.20320410)
 
 **Extract into:**
 ```bash
 cd "Review Agent/ReviewAgent"
+# download from the Zenodo record above, then:
 tar -xzf ~/Downloads/issuespec-data-bundle.tar.gz
 # This creates ./data/processed/ with all the JSON artifacts
 ```
 
-**Minimal verify-only bundle:** if you only want to run
-`verify_paper_results.py`, a 10 MB `issuespec-verify-data.zip` is sufficient.
+This bundle contains everything `verify_paper_results.py` needs to reproduce
+every numerical claim in the paper (no GPU or API keys required).
 
-### 4.4 Model checkpoints (~21 GB total)
+### 4.4 Model checkpoints
 
-Five RoBERTa classifier checkpoints (V1–V5) plus the anchor RoBERTa, hosted
-on Hugging Face Hub:
+The headline V5 production classifier (the κ = 0.592 model used throughout the
+paper) is hosted on the Hugging Face Hub:
 
 | Model | What | HF path |
 |---|---|---|
-| **V5 (headline)** | Production classifier (κ = 0.592) | `Anonymous/issuespec-v5-classifier` |
-| V4 | Anchor + targeted augmentation | `Anonymous/issuespec-v4-classifier` |
-| V3 | Anchor correction | `Anonymous/issuespec-v3-classifier` |
-| V2 | LLM-labeled trained | `Anonymous/issuespec-v2-classifier` |
-| V1 | Baseline | `Anonymous/issuespec-v1-classifier` |
-| Anchor RoBERTa | Verified-anchor head | `Anonymous/issuespec-anchor-roberta` |
+| **V5 (headline)** | Production classifier (κ = 0.592) | [`Fabiha9876/issuespec-v5-classifier`](https://huggingface.co/Fabiha9876/issuespec-v5-classifier) |
 
-**Download all five:**
-```bash
-pip install huggingface_hub
-python3 -c "
-from huggingface_hub import snapshot_download
-for tag in ['v1', 'v2', 'v3', 'v4', 'v5']:
-    snapshot_download(repo_id=f'Anonymous/issuespec-{tag}-classifier',
-                      local_dir=f'models/stage1_classifier_{tag}')
-snapshot_download(repo_id='Anonymous/issuespec-anchor-roberta',
-                  local_dir='models/anchor_roberta')
-"
+**Download + load V5:**
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+tok   = AutoTokenizer.from_pretrained("Fabiha9876/issuespec-v5-classifier")
+model = AutoModelForSequenceClassification.from_pretrained("Fabiha9876/issuespec-v5-classifier")
 ```
+
+The intermediate V1–V4 checkpoints and the anchor RoBERTa head (~21 GB total)
+are available on request; V5 alone suffices to reproduce all Stage-1 results
+in the paper. To re-train any version from scratch, see §7.2.
 
 For most reproductions you only need **V5** (the headline production model).
 
@@ -199,9 +192,9 @@ This is the fastest path. Takes < 1 minute. No GPU, no API keys needed.
 ```bash
 cd "Review Agent/ReviewAgent"
 
-# 1. Download verify bundle (10 MB)  — replace URL with actual link
-curl -L <URL>/issuespec-verify-data.zip -o /tmp/verify.zip
-unzip /tmp/verify.zip
+# 1. Download the data bundle (10 MB) from Zenodo: 10.5281/zenodo.20320410
+#    https://doi.org/10.5281/zenodo.20320410
+tar -xzf ~/Downloads/issuespec-data-bundle.tar.gz
 
 # 2. Run all 10 verification segments
 python3 verify_paper_results.py
@@ -392,7 +385,7 @@ python3 verify_paper_results.py 9      # RLHF only
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | `FileNotFoundError: data/processed/...` | Data bundle not extracted | Re-download and extract (§4.3) |
-| `OSError: cannot find Anonymous/issuespec-v5-classifier` | HF download failed | Check internet / try `HF_TOKEN` |
+| `OSError: cannot find Fabiha9876/issuespec-v5-classifier` | HF download failed | Check internet / try `HF_TOKEN` |
 | LaTeX compile fails with `\Bbbk` redefined | Old `amssymb` conflict | Already handled by `\let\Bbbk\relax` in preamble |
 | Out of GPU memory during V5 training | < 16 GB VRAM | Lower batch size in `configs/stage1.yaml` |
 | `verify_paper_results.py` reports mismatch | Stale data files | Re-download data bundle |
