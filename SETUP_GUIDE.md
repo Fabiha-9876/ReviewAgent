@@ -422,9 +422,14 @@ python3 verify_paper_results.py 9      # RLHF only
 
 ## 11. License and citation
 
-Code: MIT License (see `ReviewAgent/LICENSE`).
+Code: MIT License (see `LICENSE`).
 
-If you use this code, data, or models, please cite the CIKM 2026 paper.
+Data: the review text comes from the RRGen corpus (Gao et al., "Automating App
+Review Response Generation", ASE 2019) and remains under its original terms;
+refer to the original authors. The other files are derived artifacts (labels,
+IssueSpecs, results, metrics).
+
+This work is under review at CIKM 2026 and is not yet published.
 
 ```bibtex
 @inproceedings{anonymous2026issuespec,

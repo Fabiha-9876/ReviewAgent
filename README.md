@@ -105,10 +105,13 @@ MIT — see [`LICENSE`](LICENSE).
 
 ## Citation
 
+This work is **under review at CIKM 2026 and is not yet published.** If you
+reference it, please cite it as work under review:
+
 ```bibtex
-@inproceedings{issuespec2026,
-  title     = {IssueSpec: A Framework for Structured Review-to-Issue Translation},
-  booktitle = {Proceedings of the ACM International Conference on Information and Knowledge Management (CIKM)},
-  year      = {2026}
+@unpublished{issuespec2026,
+  title = {IssueSpec: A Framework for Structured Review-to-Issue Translation},
+  year  = {2026},
+  note  = {Under review at CIKM 2026; not yet published.}
 }
 ```
