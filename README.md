@@ -101,7 +101,7 @@ model = AutoModelForSequenceClassification.from_pretrained("Fabiha9876/issuespec
 
 ## License
 
-MIT — see [`ReviewAgent/LICENSE`](ReviewAgent/LICENSE) where present.
+MIT — see [`LICENSE`](LICENSE).
 
 ## Citation
 
