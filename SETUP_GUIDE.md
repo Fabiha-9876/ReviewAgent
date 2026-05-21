@@ -214,6 +214,16 @@ recomputed value, all matching within rounding.
 This re-runs the entire five-stage pipeline. Allow ~6 hours on a single
 GPU-equipped workstation.
 
+**One-command orchestrator** (`run_pipeline.sh`) runs the stages in order:
+```bash
+./run_pipeline.sh            # all five stages
+./run_pipeline.sh 2          # only Stage 2
+./run_pipeline.sh 2 3 4      # Stages 2-4
+./run_pipeline.sh verify     # just re-verify paper numbers (needs data bundle)
+```
+The script does pre-flight checks and prints the expected headline result after
+each stage. The per-stage commands below are what it runs internally.
+
 ### 7.1 Place the raw dataset
 Put `RRGen_Full_Dataset.csv` at `Review Agent/RRGen_Full_Dataset.csv`.
 
