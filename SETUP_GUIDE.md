@@ -217,36 +217,35 @@ GPU-equipped workstation.
 ### 7.1 Place the raw dataset
 Put `RRGen_Full_Dataset.csv` at `Review Agent/RRGen_Full_Dataset.csv`.
 
+> Each script carries a docstring describing its exact inputs and outputs.
+> Run scripts from the repository root. Stage 1, 3, and 5 need an LLM (Gemini/
+> Qwen/Claude) and/or a GPU; Stage 2 is CPU-bound.
+
 ### 7.2 Stage 1 — Intake, classification, aspect extraction
 
 ```bash
 cd "Review Agent/ReviewAgent"
 
-# Dedupe + initial preprocessing
-python3 scripts/preprocess_rrgen.py \
-    --input ../RRGen_Full_Dataset.csv \
-    --output data/processed/working_corpus.json
+# V2 labels: LLM-label the keyword-filtered RRGen corpus
+python3 scripts/llm_label_rrgen.py
 
-# Train V1 baseline
-python3 scripts/train_stage1_classifier.py --version v1
-
-# V2: re-train with LLM-generated labels
-python3 scripts/run_v2_llm_annotation.py
-python3 scripts/train_stage1_classifier.py --version v2
-
-# Verified anchor (lead-author 5,230 reviews)
-# — this step requires the anchor JSON; see data bundle
-
-# V3: cleanlab correction
+# Find suspected label errors against the verified anchor (cleanlab)
 python3 scripts/cleanlab_find_label_issues.py
-python3 scripts/train_stage1_classifier.py --version v3
 
-# V4: targeted augmentation for compatibility class
-python3 scripts/build_compat_data.py          # 200 synthetic + 100 mined
-python3 scripts/train_stage1_classifier.py --version v4
+# Second-pass correction using the anchor RoBERTa head
+python3 scripts/correct_rrgen_v2.py
 
-# V5: full pipeline
-python3 scripts/train_stage1_classifier.py --version v5
+# Ingest human-verified labels into the training set
+python3 scripts/ingest_verified_labels.py
+
+# Compatibility-class augmentation (200 synthetic + 100 mined)
+python3 scripts/build_compat_data.py
+
+# Train + cross-validate the V5 RoBERTa classifier
+python3 scripts/kfold_classifier.py
+
+# Cross-protocol generalization check on Maalej's labels
+python3 scripts/_eval_v5_on_maalej.py
 ```
 
 Expected: V5 reaches κ ≈ 0.59 on the 490-review expert gold (Table 8).
@@ -254,41 +253,52 @@ Expected: V5 reaches κ ≈ 0.59 on the 490-review expert gold (Table 8).
 ### 7.3 Stage 2 — Three-layer knowledge graph
 
 ```bash
-python3 scripts/build_kg_layer1_graph.py
-python3 scripts/build_kg_layer2_clusters.py   # UMAP + HDBSCAN → 605 sub-clusters
-python3 scripts/build_kg_layer3_pagerank.py   # PageRank prioritization
+# Aspect extraction (local Qwen2.5-3B, no API key needed)
+python3 scripts/extract_aspects_local_llm.py
 
-# Cluster quality (Table 11)
+# Aspect-grounded sub-clustering: UMAP + class-specific HDBSCAN → 605 clusters
+python3 scripts/cluster_phase1b_umap_hdbscan.py
+
+# Cluster quality metrics (Table 11: DB, CH, silhouette)
 python3 scripts/compute_cluster_quality_metrics.py
+
+# Count-controlled ablation (A1b) and LLM-judge purity audit
+python3 scripts/ablation_a1b_fine_flat_vs_kg.py
+python3 scripts/audit_hierarchical_cluster_purity_llm.py
 ```
 
 ### 7.4 Stage 3 — LLM-based IR generation
 
-Requires `ANTHROPIC_API_KEY` (Claude Opus 4.7).
+Uses a local Qwen2.5-3B for the cross-LLM comparison; the headline Claude run
+needs `ANTHROPIC_API_KEY`.
 
 ```bash
-python3 scripts/run_stage3_with_taxonomy.py     # headline (LLM + taxonomy)
-python3 scripts/run_stage3_free_form.py         # baseline (no taxonomy)
-python3 scripts/run_stage3_raw_summary.py       # lower-bound
-python3 scripts/score_specs.py                  # 5-dim rubric
+# Generate IssueSpecs across LLMs (taxonomy / free-form / raw conditions)
+python3 scripts/multi_llm_stage3_comparison.py
 
-# Standalone SpecCov scorer
+# SpecCov extractive-coverage faithfulness scorer
 python3 scripts/speccov.py \
     --specs data/processed/issue_specs/specs_with_taxonomy.json \
     --clusters data/processed/issue_specs/sample_100_clusters.json \
     --out data/processed/speccov_scores.json
+
+# 5-dimension rubric (Qwen-as-judge) + GitHub-issue baseline
+python3 scripts/_qwen_judge_5dim_rubric.py
+python3 scripts/mine_github_issues.py
 ```
 
 ### 7.5 Stage 4 — RAG response generation
 
 ```bash
-python3 scripts/build_chromadb_index.py         # 15,100 docs
+# Build the 15,100-document ChromaDB index over the five sources
+python3 scripts/populate_rag.py
+
+# Generate responses for the full system and the no-spec ablation
 python3 scripts/generate_reviewagent_full.py
 python3 scripts/generate_reviewagent_no_spec.py
-python3 scripts/generate_rrgen_baseline.py
-python3 scripts/generate_prompt_baseline.py
 
-# Agentic-RAG comparison (Self-RAG / DSP feasibility study)
+# A5 no-RAG ablation + agentic-vs-vanilla feasibility study
+python3 scripts/run_ablation_a5_no_rag.py
 python3 scripts/_agentic_vs_vanilla_rag.py      # n = 10, max 2 iterations
 ```
 
@@ -297,15 +307,22 @@ Human evaluation: open the rating workbooks under `human_work/` and follow
 
 ### 7.6 Stage 5 — CMDP-grounded RLHF
 
-Requires GPU. distilGPT2 proof-of-concept, takes ~30 minutes.
+Requires GPU. distilGPT2 proof-of-concept, ~30 minutes.
 
 ```bash
-python3 scripts/run_rlhf_proof_of_concept.py    # train 5 policies
-python3 scripts/run_rlhf_head_to_head.py        # head-to-head BLEU/ROUGE/BERTScore
+# Train the policies (SFT-base, KTO, DPO)
+python3 scripts/run_rlhf_proof_of_concept.py
+
+# Constrained-PPO variants
+python3 scripts/run_constrained_ppo_proxy.py
+python3 scripts/run_lagrangian_constrained_ppo.py
+
+# Head-to-head evaluation + rubric scoring
+python3 scripts/run_rlhf_head_to_head.py
+python3 scripts/score_rlhf_policies_with_rubric.py
 ```
 
-Expected (Table 8 in §5.3):
-- constrained-proxy: BLEU-1 0.137 (+52% over SFT-base 0.090)
+Expected (§5.3): constrained-proxy BLEU-1 0.137 (+52% over SFT-base 0.090).
 
 ### 7.7 Compile the paper
 
