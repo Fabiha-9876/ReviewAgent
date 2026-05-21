@@ -98,16 +98,3 @@ model = AutoModelForSequenceClassification.from_pretrained("Fabiha9876/issuespec
 | Stage-4 IssueSpec-in-RAG quality gain | **+2.36** Likert (p < 0.001) |
 | Stage-5 constrained-proxy BLEU-1 over SFT | **+52%** |
 | Cross-family replication | 4 LLMs, 3 families (rank order preserved) |
-
-## Citation
-
-This work is **under review at CIKM 2026 and is not yet published.** If you
-reference it, please cite it as work under review:
-
-```bibtex
-@unpublished{issuespec2026,
-  title = {IssueSpec: A Framework for Structured Review-to-Issue Translation},
-  year  = {2026},
-  note  = {Under review at CIKM 2026; not yet published.}
-}
-```
