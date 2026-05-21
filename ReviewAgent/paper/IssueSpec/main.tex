@@ -804,7 +804,7 @@ Every numerical claim in Section~\ref{results} is backed by a saved data file an
 \item the 100-cluster benchmark with 99-review three-rater $\alpha = 0.451$ subsample;
 \item a pinned-environment Docker image (single-command build on any CUDA~12.x host).
 \end{itemize}
-The pipeline is composable by construction: because each stage emits a typed intermediate, components (classifier, clusterer, taxonomy template, alignment trainer) can be substituted independently without breaking downstream contracts. Future researchers can adopt or replace any single component while keeping the rest of the IR-centered evaluation harness intact.
+The pipeline is composable by construction: because each stage emits a typed intermediate, components (classifier, clusterer, taxonomy template, alignment trainer) can be substituted independently without breaking downstream contracts. Future researchers can adopt or replace any single component while keeping the rest of the IR-centered evaluation harness intact. Deterministic components (clustering, classifier training) use fixed seeds; the LLM-dependent stages (annotation, IR generation, and response generation) reproduce statistically rather than bit-identically, reflecting the inherent sampling variance of the underlying models.
 
 \subsection{Future Work}\label{future-work}
 Five extensions map directly to the limitations above; each starts from a resource released with this paper.
