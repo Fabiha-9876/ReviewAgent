@@ -116,7 +116,7 @@ def segment_4():
 
 def segment_5():
     banner(5, "Stage 3 — SpecCov scorer")
-    print("Paper §4.4: LLM+tax 4.16, LLM-free 3.33, raw 5.00, human 4.00")
+    print("Paper SpecCov: LLM+tax 4.19, LLM-free 3.38, raw 5.00, human 4.00")
     print()
     from speccov import speccov_detail
     with open(DP / "issue_specs/sample_100_clusters.json") as f:
@@ -124,8 +124,8 @@ def segment_5():
     cluster_by_id = {c["cluster_id"]: c for c in clusters_100}
 
     for cond_file, cond, paper in [
-        ("specs_with_taxonomy.json",  "llm_taxonomy",  4.16),
-        ("specs_free_form.json",      "llm_free_form", 3.33),
+        ("specs_with_taxonomy.json",  "llm_taxonomy",  4.19),
+        ("specs_free_form.json",      "llm_free_form", 3.38),
         ("specs_raw_summary.json",    "raw_summary",   5.00),
         ("specs_human_written.json",  "human_ref",     4.00),
     ]:
@@ -225,9 +225,27 @@ def segment_10():
           f"{ia['krippendorff_alpha_3raters']:.4f} -> rounds to 0.451")
 
 
+def segment_11():
+    banner(11, "Stage 2 — PageRank coverage (Section 5.4)")
+    print("Paper Sec 5.4: top-5 aspects in 55% of reviews, top-10 in 66% (unique-review dedup)")
+    print()
+    ks = json.load(open(DP / "kg_hierarchical" / "kg_stats.json"))
+    N = ks["n_review_nodes"]
+    pr = ks["top_aspects_by_pagerank"]
+    s5 = sum(a["n_reviews"] for a in pr[:5])
+    s10 = sum(a["n_reviews"] for a in pr[:10])
+    print(f"  NAIVE (sum of per-aspect n_reviews / {N}, double-counts reviews):")
+    print(f"     top-5 {s5} ({100*s5/N:.1f}%)   top-10 {s10} ({100*s10/N:.1f}%)")
+    cov = json.load(open(DP / "kg_hierarchical" / "aspect_coverage.json"))["raw"]
+    print("  DEDUP (unique reviews touching top-K; via scripts/compute_aspect_coverage.py):")
+    print(f"     top-5 {cov['dedup_top5_pct']}%   top-10 {cov['dedup_top10_pct']}%"
+          f"   [matches paper 55/66]")
+
+
 SEGMENTS = {
     "1": segment_1, "2": segment_2, "3": segment_3, "4": segment_4, "5": segment_5,
     "6": segment_6, "7": segment_7, "8": segment_8, "9": segment_9, "10": segment_10,
+    "11": segment_11,
 }
 
 
