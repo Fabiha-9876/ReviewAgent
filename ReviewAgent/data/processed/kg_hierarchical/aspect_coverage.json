@@ -1,0 +1,40 @@
+{
+  "raw": {
+    "reviews": 8404,
+    "aspects": 10534,
+    "dedup_top5_pct": 55.3,
+    "dedup_top10_pct": 66.1,
+    "naive_top5_pct": 74.0,
+    "top10": [
+      "ad",
+      "phone",
+      "ads",
+      "edit",
+      "battery",
+      "update",
+      "photo",
+      "digit",
+      "feature",
+      "help"
+    ]
+  },
+  "merged": {
+    "reviews": 8404,
+    "aspects": 10488,
+    "dedup_top5_pct": 59.0,
+    "dedup_top10_pct": 67.3,
+    "naive_top5_pct": 69.1,
+    "top10": [
+      "ad",
+      "phone",
+      "edit",
+      "battery",
+      "update",
+      "photo",
+      "digit",
+      "feature",
+      "help",
+      "lag"
+    ]
+  }
+}
