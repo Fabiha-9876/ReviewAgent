@@ -44,3 +44,8 @@ rating does not produce: the two additional raters deviated from the lead author
 400 rows, with zero overlap between those deviation sets and every deviation exactly one point.
 The second round passes the same check. Both rounds and the check are released, in
 `data/processed/inter_annotator/` and `scripts/run_stage4_llm_rerun.py`.
+
+## Archived artifact
+
+The corrected reproduction bundle is Zenodo DOI 10.5281/zenodo.21982774 (v2.0). It supersedes
+10.5281/zenodo.20320410, which predates this correction.

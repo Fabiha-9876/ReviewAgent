@@ -22,8 +22,8 @@ git clone https://github.com/Fabiha-9876/ReviewAgent.git
 cd ReviewAgent
 
 # Download the data bundle (10 MB) from Zenodo and extract it here:
-#   https://doi.org/10.5281/zenodo.20320410
-tar -xzf issuespec-data-bundle.tar.gz
+#   https://doi.org/10.5281/zenodo.21982774
+tar -xzf issuespec-data-bundle-v2.tar.gz
 
 # Reproduce every numerical claim in the paper (~1 minute)
 python3 verify_paper_results.py
@@ -50,7 +50,8 @@ stage-by-stage instructions.
 | Artifact | Location |
 |---|---|
 | **Code + paper** | this repository |
-| **Data bundle** (verification, 10 MB) | Zenodo DOI [10.5281/zenodo.20320410](https://doi.org/10.5281/zenodo.20320410) |
+| **Data bundle** (verification, 16 MB, v2.0) | Zenodo DOI [10.5281/zenodo.21982774](https://doi.org/10.5281/zenodo.21982774) |
+| *Superseded bundle (pre-correction, do not use)* | [10.5281/zenodo.20320410](https://doi.org/10.5281/zenodo.20320410) |
 | **V5 classifier** (κ = 0.592) | Hugging Face [`Fabiha9876/issuespec-v5-classifier`](https://huggingface.co/Fabiha9876/issuespec-v5-classifier) |
 | **Raw RRGen data** | `RRGen_Full_Dataset.csv` (in this repo) + Gao et al., ASE 2019 |
 
