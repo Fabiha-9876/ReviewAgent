@@ -944,14 +944,15 @@ which is what it is, and we do not claim the two signals are independent.
 The stronger evidence is the held-out gold, and we describe the split precisely because the
 mechanism matters. V5's training corpus is built with a stratified per-class cap of 15{,}000
 rows at seed 42. Replaying that cap identifies which corpus rows survived into training: 183 of
-the 490 gold reviews did, and 307 were capped out and never seen. The split is therefore an artifact of class-balancing rather than of anchor membership. It is not, however, unbiased in the way we
+the 490 gold reviews did, and 307 were capped out and never seen, of which 306 carry a gold
+label and are scorable. The split is therefore an artifact of class-balancing rather than of anchor membership. It is not, however, unbiased in the way we
 first described. The cap binds only on the four classes V5 predicts most often, so membership of
 the unseen set is decided by V5's \emph{predicted} class rather than at random. Scored by expert
 label, which is what $\kappa$ is computed against, the unseen 307 still spans all seven classes
 and includes 38 \texttt{compatibility}, 32 \texttt{usability}, and 31 \texttt{performance}
 reviews, so the held-out comparison does cover the classes carrying the recovery. What it cannot
 rule out is a subtler selection effect: the reviews V5 predicted confidently into large classes
-are over-represented among the unseen, and those may be easier. On the 307 unseen reviews V5 reaches $\kappa = 0.616$,
+are over-represented among the unseen, and those may be easier. On the unseen reviews V5 reaches $\kappa = 0.616$, computed on the 306 of them that carry a gold label,
 slightly \emph{above} the 0.592 it scores on the full 490. A model that had merely memorised its
 training labels would fall on unseen items rather than hold. One caveat belongs with this. The
 split is reconstructed by replaying the cap rather than read from a saved training manifest, so
@@ -1440,7 +1441,7 @@ Three claims travel beyond app reviews. \emph{First}, LLM annotation noise on
 Every numerical claim in Section~\ref{results} is backed by a saved data file and runs end-to-end from raw RRGen to Stage~4 output in approximately six hours on a single GPU-equipped workstation. The release bundles:
 \begin{itemize}\setlength{\itemsep}{1pt}
 \item V1--V5 classifier checkpoints + cleanlab correction procedure;
-\item the 5{,}230-review verified anchor and 490-review classification gold;
+\item the 5{,}230-record verified anchor, which covers 5{,}229 distinct corpus rows and 490-review classification gold;
 \item both Stage-4 rating rounds, the discarded 400-row one and the reported 200-row re-run, together with the same-model generated replies and the rating-provenance check that distinguishes them;
 \item the count-controlled A1b output;
 \item the \textsc{SpecCov} scorer plus the 60-spec, three-rater human faithfulness ratings and the validation analysis;
@@ -1582,7 +1583,7 @@ We thank the human annotators who produced the verified anchor and the lead-auth
   the paper reports its withdrawal. Separately, two Qwen2.5-3B-Instruct prompts (concise
   role-based and chain-of-thought) served as the second and third raters in the 99-review
   cluster-purity Krippendorff $\alpha$ calibration, which is an LLM-assisted panel and not one of
-  the human rounds. For the 5{,}230-review verified anchor, annotators classified each review into
+  the human rounds. For the 5{,}230-record verified anchor, which covers 5{,}229 distinct corpus rows, annotators classified each review into
   one of seven Maalej-Nabil classes (\texttt{bug\_report}, \texttt{feature\_request},
   \texttt{performance}, \texttt{usability}, \texttt{compatibility}, \texttt{praise},
   \texttt{other}) with multi-label assignment permitted when a review carried multiple concerns;

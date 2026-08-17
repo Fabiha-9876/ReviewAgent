@@ -83,7 +83,7 @@ def apply_thresholds(pred_probs: np.ndarray, llm_labels_idx: np.ndarray,
 
 
 def main() -> int:
-    base = Path(__file__).resolve().parent
+    base = Path(__file__).resolve().parent.parent
     pp_path = base / "data/processed/rrgen_corrected_v2/anchor_probs.npy"
     llm_path = base / "data/processed/rrgen_full_labeled/rrgen_full_labeled.json"
     v5_path = base / "data/processed/rrgen_v5_relabeled/rrgen_v5_relabeled.json"
