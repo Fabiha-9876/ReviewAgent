@@ -77,7 +77,9 @@ def build_and_report(sampled, normalize):
     review_nodes = [n for n, d in g.nodes(data=True) if d["node_type"] == "review"]
     aspect_nodes = [n for n, d in g.nodes(data=True) if d["node_type"] == "aspect"]
     N = len(review_nodes)
-    pr = nx.pagerank(g)
+    # kg_builder.compute_pagerank runs on the undirected projection; match it so this
+    # reproduction script prints the same centralities the paper reports.
+    pr = nx.pagerank(g.to_undirected())
     ranked = sorted(aspect_nodes, key=lambda n: -pr[n])
 
     def reviews_for(aid):

@@ -740,10 +740,14 @@ F8 & Run-to-run generation noise is about 0.03 on template-fill, which is the ya
 
 \subsection{Is the IR Producible at Scale?}\label{exp1-results}
 
-Template-fill measures schema conformance, and we state its limit before the number. The
-criterion is the templates' own required fields, so a generator that was never asked for a
-reproduction-step list cannot score on one; the comparison shows that routing produces the
-fields, not that routed specs are better written. Under strict content-validity criteria (at
+Template-fill measures schema conformance, and its limit is worth stating exactly rather than
+in general terms. The criterion is the templates' own required fields, and the free-form
+condition fills the four shared fields and none of the type-specific ones, so its score is
+determined entirely by the issue-type mix: $(30 \cdot 4/7 + 30 \cdot 4/6 + 40 \cdot 4/5)/100 =
+0.691$, with zero variance across specs and a strict-minus-loose difference of exactly zero. The
+0.69 is therefore a constant, not a measurement, and the 0.96-versus-0.69 gap says that routing
+produces type-specific fields at all. It carries no information about whether the routed text is
+better written. Under strict content-validity criteria (at
 least three reproduction steps with action verbs, descriptions $\geq 30$ words, and a full
 As-a/I-want/So-that triple for user stories), the LLM-with-taxonomy condition achieves a
 substantive template-fill rate of 0.96 (Table~\ref{tab:stage3}). Free-form LLM reaches 0.69, the same as the lead-author reference set ($n=20$). Raw concatenation lands at 0.34, and real GitHub issues mined from three open-source Android projects reach 0.53. The LLM-vs-GitHub gap reflects coverage rather than content quality: the LLM is prompted to fill every field, whereas humans leave optional fields blank. A very-strict sensitivity sweep preserves the ordering, Claude drops from 0.97 to 0.71, with the Claude-vs-GitHub gap shifting only $-0.085$.
@@ -1202,7 +1206,11 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   DB of 12.15 and CH of 0.98 measure random labelling rather than the flat partition. The KG
   column was computed on a correctly paired set, so the comparison was a valid measurement against
   a broken one. Table~\ref{tab:cluster-quality} keeps the KG column and marks the flat intrinsic
-  column as withdrawn. The count-controlled A1b ablation below is unaffected, uses a separate
+  column as withdrawn. Repairing the alignment does not make the two columns comparable in any
+  case: the flat side embeds 10{,}000 full reviews while the KG side embeds three representative
+  reviews per cluster, so the two are computed over different kinds of object. That asymmetry is
+  a second reason not to reinstate the comparison, and the count-matched A1b ablation, which
+  embeds representatives on both sides, is the only intrinsic comparison we report. The count-controlled A1b ablation below is unaffected, uses a separate
   correctly paired script, and is what our Stage-2 conclusion now rests on. Extrinsic purity is
   also unaffected: the KG's finer clusters score 0.39 against the flat baseline's 0.625 under the
   same Qwen judge. By Landis-Koch~\cite{landis1977measurement} convention adapted to weighted purity, the flat baseline's

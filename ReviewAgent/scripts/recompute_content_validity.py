@@ -27,7 +27,7 @@ import re
 from pathlib import Path
 from collections import defaultdict
 
-BASE = Path(str(Path(__file__).resolve().parent) + "/data/processed/issue_specs")
+BASE = Path(__file__).resolve().parent.parent / "data" / "processed" / "issue_specs"
 
 # Required fields per type (matches original score_specs.py)
 REQUIRED = {
