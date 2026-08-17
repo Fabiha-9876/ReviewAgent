@@ -394,9 +394,11 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   battery'' as two separate pairs instead of averaging it into one star rating. The third is
   entity extraction for devices, OS versions, and named features. Stage~3 needs those entities
   as typed fields for the device-OS and bug-report templates.
-  Low-confidence reviews route to HITL-1 under selective-prediction
-  theory~\cite{geifman2017selective}: when the classifier cannot decide,
-  the expert does, and the correction feeds the next training round.
+  Low-confidence reviews route to HITL-1 by a fixed confidence threshold, so that when the
+  classifier cannot decide the expert does and the correction feeds the next training round. The
+  idea of letting a model abstain is a familiar one~\cite{geifman2017selective}, but we implement
+  a threshold rather than a calibrated selective-prediction procedure, and we do not report
+  risk-coverage behaviour, so the citation is background rather than a description of what runs.
 
   LLM annotation noise is the main challenge here. On the
   5{,}041-review praise stratum, 25\% of LLM labels are wrong,
@@ -408,28 +410,45 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   ceiling on the LLM label (Appendix~\ref{appendix:settings}); this keeps the good labels and
   corrects only the wrong ones. The compatibility class needs a separate fix:
   only 8 of 215{,}583 LLM labels are tagged \texttt{compatibility}, and
-  Maalej has none. We seed it with template-generated synthetic
-  reviews~\cite{joorabchi2013real} and keyword-mined RRGen reviews, each checked by the lead
-  author before training; counts are in Appendix~\ref{appendix:settings}.
+  Maalej has none. We seed it with 200 template-generated synthetic
+  reviews~\cite{joorabchi2013real} and 100 keyword-mined RRGen reviews. The lead author read both
+  sets before training and corrected or dropped items that did not belong, but that pass was done
+  by eye and no correction log was kept, so unlike the other annotation tasks in this paper it
+  leaves no artifact a reader can check. We flag it because 300 of the 310 \texttt{compatibility}
+  rows in V5's training set come from here, so the per-class F1 of 0.83 rests on data whose
+  verification is asserted rather than evidenced. The synthetic half is constructed from device
+  and OS templates and its label follows by construction; the mined half is where judgement was
+  required.
   
   \textbf{Stage 2: Three-Layer Knowledge Graph.} Stage~2 organizes
   reviews into an aspect-grounded knowledge graph: build, cluster,
   prioritize. The first layer builds the graph: each review is a node
-  linked to its aspects and entities by sentiment and temporal edges. A
+  linked to its aspects, with edges typed for sentiment and, where available, recency. We should
+  be precise about what the released run actually populated. The builder supports entity nodes for
+  devices, OS versions, app versions, and screens, and supports signed sentiment edges, but the
+  run that produced our results passes empty entity lists and a constant neutral sentiment, so the
+  released graph has 8{,}404 review nodes, 10{,}534 aspect nodes, and no entity nodes. It is in
+  practice a bipartite review-aspect graph, which is the structure PageRank runs over, and the
+  sentiment and entity layers should be read as available in the implementation rather than
+  exercised in the experiments. A
   graph beats a flat list because reviews share aspects across users,
   and that co-occurrence is what later layers cluster and rank on.
-  Aspects come from dependency-parse noun phrases following Hu and
-  Liu~\cite{hu2004mining}, pruned by frequency and centrality to drop
-  one-off terms.
+  Aspects come from spaCy noun chunks combined with a curated keyword list and
+  regular-expression patterns, pruned by frequency and centrality to drop one-off terms. Hu and
+  Liu's frequent-itemset aspect mining~\cite{hu2004mining} is the ancestor of this approach
+  rather than what we implement.
 
   The second layer clusters reviews first by aspect, then sub-clusters
   within each aspect using sentence
   embeddings~\cite{reimers2019sentence}, UMAP~\cite{mcinnes2018umap},
   and HDBSCAN~\cite{mcinnes2017hdbscan}. Aspect-first keeps each
   sub-cluster on one theme: a flat clusterer mixes ``battery on Samsung''
-  with ``battery in dark mode'' because both share lexical content. The
-  result is 605 aspect-grounded sub-clusters with mean size 3.0, against
-  194 from a flat baseline. The third layer prioritizes via
+  with ``battery in dark mode'' because both share lexical content. The result is 605 aspect-grounded sub-clusters of mean size 15.9, against 194 flat clusters of
+  mean size 471.0. An earlier version of this paper reported 3.0 and 51.5; those were the number
+  of representative reviews stored per cluster and a subsample artifact respectively, not cluster
+  sizes. One scale caveat belongs here too: the knowledge graph is built over a 10{,}000-review
+  sample that yields 8{,}404 usable reviews, not the full 215{,}583-review corpus, so every
+  Stage-2 number in this paper describes 3.9\% of the corpus. The third layer prioritizes via
   PageRank~\cite{brin1998anatomy, page1999pagerank} on the bipartite
   review-aspect graph, ranking aspects by cross-review prevalence so
   developers see the most-affected first. Each
@@ -478,8 +497,9 @@ released pipeline and because the negative result only makes sense against its d
   \centering
   \footnotesize
   \caption{IssueSpec standardized issue schema. Each issue type follows the dominant industry or
-   HCI standard; templates are verified against their standards-body citations, producing
-  GitHub-issue-quality artifacts a defect tracker can consume directly.}\label{tab:templates}
+  HCI standard. Each template is drawn from a published standard or reference and reproduces its
+  named fields; we ran no conformance check against the standards documents themselves, so
+  ``drawn from'' should not be read as ``certified against''.}\label{tab:templates}
   \begin{tabular}{@{}p{2.2cm}p{8.5cm}p{6.0cm}@{}}
   \toprule
   Issue type & Template (citation) & Justification \\
@@ -491,10 +511,12 @@ released pipeline and because the negative result only makes sense against its d
   \texttt{feature\_request} & Cohn user-story~\cite{cohn2004user} (As-a / I-want / So-that) +
   behavior-driven development (BDD) acceptance criteria~\cite{hellesoy2017cucumber} & Dominant
   industry format (Agile, Scrum, SAFe); BDD standardizes testable outcomes \\
-  \texttt{performance} & ISO/IEC~25010~\cite{international2011systems} performance-efficiency
-  sub-characteristics: time behavior (speed, responsiveness), resource utilization (memory,
-  battery), capacity (scalability) & International standard for software-quality NFR taxonomy;
-  the parenthesized terms map ISO sub-characteristics to mobile-app vocabulary \\
+  \texttt{performance} & Fields are \texttt{latency}, \texttt{startup\_time},
+  \texttt{memory\_consumption}, \texttt{battery\_drain}, \texttt{network\_usage}, mapped onto
+  ISO/IEC~25010~\cite{international2011systems} performance-efficiency sub-characteristics: the
+  first two to time behaviour, the last three to resource utilization; capacity is not covered &
+  International standard for software-quality NFR taxonomy. The field names are ours, chosen for
+  mobile-app vocabulary, and are mapped to ISO categories rather than reproducing ISO terms \\
   \texttt{usability} & Nielsen-10 heuristics~\cite{nielsen1994usability} (visibility, match-real-world,
   user control, etc.) & Most-cited usability evaluation framework in human-computer interaction
   \\ 
@@ -1143,8 +1165,9 @@ downstream payoff in response generation.
   \label{fig:purity}
 \end{figure}
 
-  Stage~2 was redesigned from a flat UMAP+HDBSCAN baseline (194 clusters, mean size 51.5) to the
-   three-layer KG-hierarchical design (605 sub-clusters, mean size 3.0). We compute two
+  Stage~2 was redesigned from a flat UMAP+HDBSCAN baseline (194 clusters, mean size 471.0) to the
+   three-layer KG-hierarchical design (605 sub-clusters, mean size 15.9), both over the
+   8{,}404-review sample the knowledge graph is built on. We compute two
   complementary validity axes. \emph{Intrinsic geometry},
   Davies-Bouldin~\cite{davies1979cluster}, Calinski-Harabasz~\cite{calinski1974dendrite},
   silhouette~\cite{rousseeuw1987silhouettes}, follows standard IR/clustering
@@ -1184,7 +1207,7 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   \begin{tabular}{@{}p{3.4cm}rrr@{}}\toprule
   metric & Pure HDB & Flat U+H & \textbf{KG hier.} \\\midrule
   n\_clusters & 3 (deg.) & 194 & \textbf{605} \\
-  mean cluster size & $\sim$16{,}933 & 51.5 & \textbf{3.0} \\
+  mean cluster size & $\sim$16{,}933 & 471.0 & \textbf{15.9} \\
   Davies-Bouldin ($\downarrow$) & n/a & \emph{withdrawn} & 2.24 \\
   Calinski-Harabasz ($\uparrow$) & n/a & \emph{withdrawn} & 1.85 \\
   Y/P/N purity (lead-author) & n/a & 0.66 & queued \\
@@ -1523,8 +1546,8 @@ set. The authors verified all technical content, experimental results, and claim
   reported in Section~\ref{exp1-results}. The \texttt{compatibility} stratum is seeded with 200
   template-generated synthetic reviews (device, OS, and screen templates) plus 100 keyword-mined
   RRGen reviews, all human-checked. Stage~2 embeds with Sentence-BERT, reduces with UMAP, and
-  clusters with HDBSCAN, aspect-first, producing 605 sub-clusters of mean size 3.0 against 194
-  flat clusters of mean size 51.5; PageRank runs on the bipartite review-aspect graph. Stage~3
+  clusters with HDBSCAN, aspect-first, producing 605 sub-clusters of mean size 15.9 against 194
+  flat clusters of mean size 471.0, over an 8{,}404-review sample rather than the full corpus; PageRank runs on the bipartite review-aspect graph. Stage~3
   routes to one of five templates and re-prompts once with dimension-level feedback on any
   rubric failure. Stage~4 retrieves over a 15{,}100-document ChromaDB index built from five
   sources, with the IssueSpec injected per query rather than pre-indexed. Stage~5 trains five
