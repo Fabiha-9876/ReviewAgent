@@ -33,7 +33,7 @@ These two differ in exactly one respect. They average 105 and 97 words with dist
 and 0.760, so a rater cannot separate them on surface features. The reported result comes from
 these, rated by three people across all 200 blinded rows:
 
-    pooled gain +0.03 Likert, 95% CI [-0.10, +0.18], paired Wilcoxon p = 0.38
+    pooled gain +0.04 Likert, 95% CI [-0.10, +0.18], paired Wilcoxon p = 0.38
 
 Reproduce with `python3 scripts/run_stage4_llm_rerun.py`, which also runs the independence check
 on the three rating sheets.

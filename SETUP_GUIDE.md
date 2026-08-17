@@ -105,20 +105,20 @@ The raw 310,031 review-response pairs come from:
 
 Place it at: `Review Agent/RRGen_Full_Dataset.csv`
 
-### 4.3 Processed data (~2 GB)
+### 4.3 Processed data (~18 MB, verification data only, not the full processed corpus)
 
 The processed JSON files (verified anchor, 100-cluster benchmark, 400-row
 human ratings, RLHF head-to-head results, cluster quality metrics, etc.) are
 released as a single bundle on Zenodo.
 
-**Download:** `issuespec-data-bundle.tar.gz` (~10 MB)
-- **Zenodo DOI:** [10.5281/zenodo.20320410](https://doi.org/10.5281/zenodo.20320410)
+**Download:** `issuespec-data-bundle-v2.tar.gz` (~18 MB)
+- **Zenodo DOI:** [10.5281/zenodo.21982774](https://doi.org/10.5281/zenodo.21982774)
 
 **Extract into:**
 ```bash
 cd "Review Agent/ReviewAgent"
 # download from the Zenodo record above, then:
-tar -xzf ~/Downloads/issuespec-data-bundle.tar.gz
+tar -xzf ~/Downloads/issuespec-data-bundle-v2.tar.gz
 # This creates ./data/processed/ with all the JSON artifacts
 ```
 
@@ -192,9 +192,9 @@ This is the fastest path. Takes < 1 minute. No GPU, no API keys needed.
 ```bash
 cd "Review Agent/ReviewAgent"
 
-# 1. Download the data bundle (10 MB) from Zenodo: 10.5281/zenodo.20320410
-#    https://doi.org/10.5281/zenodo.20320410
-tar -xzf ~/Downloads/issuespec-data-bundle.tar.gz
+# 1. Download the data bundle (10 MB) from Zenodo: 10.5281/zenodo.21982774
+#    https://doi.org/10.5281/zenodo.21982774
+tar -xzf ~/Downloads/issuespec-data-bundle-v2.tar.gz
 
 # 2. Run all 18 verification segments
 python3 verify_paper_results.py

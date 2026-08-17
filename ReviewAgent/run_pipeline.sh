@@ -29,7 +29,7 @@ preflight() {
   command -v "$PY" >/dev/null || { echo "ERROR: $PY not found"; exit 1; }
   [ -d scripts ] || { echo "ERROR: run from the repository root (no scripts/ here)"; exit 1; }
   if [ ! -d data/processed ]; then
-    warn "data/processed/ not found — download the Zenodo bundle (10.5281/zenodo.20320410)"
+    warn "data/processed/ not found — download the Zenodo bundle (10.5281/zenodo.21982774)"
     warn "and extract it here, or Stage scripts will regenerate it from raw RRGen."
   fi
   [ -f .env ] || warn ".env not found — Stage 1/3/4 LLM steps may need ANTHROPIC_API_KEY / HF_TOKEN."
@@ -67,7 +67,7 @@ stage3() {
       --out      data/processed/speccov_scores.json
   run "$PY" scripts/_qwen_judge_5dim_rubric.py
   run "$PY" scripts/mine_github_issues.py
-  log "Stage 3 done — expect template-fill 0.96 vs 0.53 GitHub, rubric 3.89/5."
+  log "Stage 3 done — expect template-fill 0.96 vs 0.69 without type routing, rubric 3.94/5 over all 100 specs."
 }
 
 stage4() {
@@ -77,7 +77,7 @@ stage4() {
   run "$PY" scripts/generate_reviewagent_no_spec.py
   run "$PY" scripts/run_ablation_a5_no_rag.py
   run "$PY" scripts/_agentic_vs_vanilla_rag.py
-  log "Stage 4 done — expect +2.36 Likert (full vs no_spec)."
+  log "Stage 4 done — expect no measurable difference, +0.04 Likert, p=0.38 (see NOTICE_CORRECTION.md)."
 }
 
 stage5() {

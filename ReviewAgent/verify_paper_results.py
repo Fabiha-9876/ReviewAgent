@@ -269,6 +269,35 @@ def segment_12():
     print(f"  majority gold: {rep['majority_gold']['n']} items, "
           f"{rep['majority_gold']['n_three_way_ties']} three-way ties")
 
+    # recompute the classifier-vs-majority-gold column that Table 8 prints
+    gold_path = DP / "inter_annotator/round2_majority_gold.json"
+    key_path = BASE / "annotator_materials/master_key.json"
+    if gold_path.exists() and key_path.exists():
+        with open(gold_path) as f:
+            gold = json.load(f)["gold"]
+        with open(key_path) as f:
+            key = json.load(f)
+
+        def kappa(pred, truth):
+            n = len(pred)
+            po = sum(1 for a, b in zip(pred, truth) if a == b) / n
+            cp, ct = Counter(pred), Counter(truth)
+            pe = sum(cp[c] / n * ct[c] / n for c in set(cp) | set(ct))
+            return (po - pe) / (1 - pe) if pe < 1 else float("nan")
+
+        print("\n  classifiers vs the 3-rater majority gold (Table 8, third column):")
+        for name, field, claimed in (("V2 LLM", "main_v2_labels", 0.165),
+                                     ("cleanlab-corrected", "main_corrected_v2_labels", 0.334),
+                                     ("V5 classifier", "main_v5_labels", 0.590)):
+            lab = key[field]
+            ids = [i for i in gold if i in lab or str(i) in lab]
+            truth = [gold[i]["label"] for i in ids]
+            pred = [str(lab.get(i, lab.get(str(i)))).strip().lower().replace(" ", "_")
+                    for i in ids]
+            k = kappa(pred, truth)
+            flag = "OK " if abs(k - claimed) < 0.005 else "DIFF"
+            print(f"    [{flag}] {name:20s} n={len(ids)}  kappa={k:.4f}  paper={claimed}")
+
 
 def segment_13():
     banner(13, "Stage 4 — DISCARDED template-composer round (kept for the record)")
