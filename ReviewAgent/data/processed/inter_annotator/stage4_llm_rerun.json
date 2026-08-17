@@ -28,6 +28,8 @@
     "E_deviations_from_A": 145,
     "overlap_observed": 101,
     "overlap_expected_if_independent": 96.4,
+    "p_zero_overlap_under_independence": 0.0,
+    "distinct_deviation_magnitudes": 4,
     "D_magnitudes": {
       "1.0": 73,
       "2.0": 39,
@@ -65,7 +67,18 @@
       "cliffs_delta": 0.461,
       "wins": 59,
       "losses": 5,
-      "ties": 36
+      "ties": 36,
+      "position_strata": {
+        "full_at_A": {
+          "n": 64,
+          "mean": 0.625
+        },
+        "full_at_B": {
+          "n": 36,
+          "mean": 0.444
+        }
+      },
+      "position_controlled_gain": 0.535
     },
     "D": {
       "condition_means": {
@@ -91,7 +104,18 @@
       "cliffs_delta": -0.132,
       "wins": 20,
       "losses": 35,
-      "ties": 45
+      "ties": 45,
+      "position_strata": {
+        "full_at_A": {
+          "n": 64,
+          "mean": -0.375
+        },
+        "full_at_B": {
+          "n": 36,
+          "mean": -0.139
+        }
+      },
+      "position_controlled_gain": -0.257
     },
     "E": {
       "condition_means": {
@@ -117,12 +141,24 @@
       "cliffs_delta": -0.084,
       "wins": 19,
       "losses": 28,
-      "ties": 53
+      "ties": 53,
+      "position_strata": {
+        "full_at_A": {
+          "n": 64,
+          "mean": -0.078
+        },
+        "full_at_B": {
+          "n": 36,
+          "mean": -0.278
+        }
+      },
+      "position_controlled_gain": -0.178
     }
   },
   "pooled": {
     "n_pairs": 100,
     "mean_gain": 0.04,
+    "position_controlled_gain": 0.033,
     "ci95": [
       -0.103,
       0.18

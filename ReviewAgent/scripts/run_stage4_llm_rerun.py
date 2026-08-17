@@ -126,10 +126,21 @@ def main():
     dA = {i for i in range(len(common)) if q["D"][i] != q["A"][i]}
     eA = {i for i in range(len(common)) if q["E"][i] != q["A"][i]}
     expected = len(dA) * len(eA) / len(common)
+    # Overlap alone is weak evidence when deviations are rare: with 16 and 19 deviations in
+    # 400 rows the hypergeometric probability of seeing zero overlap is about 0.45, so zero
+    # overlap is the single most likely outcome even under perfect independence. The
+    # discriminating statistic is the spread of deviation magnitudes, because ratings derived
+    # by perturbing another rater's vector carry one step size by construction.
+    p_zero_overlap = float(stats.hypergeom.pmf(0, len(common), len(dA), len(eA)))
+    mags = Counter(abs(q["D"][i] - q["A"][i]) for i in dA) + \
+        Counter(abs(q["E"][i] - q["A"][i]) for i in eA)
+    report_magnitude_spread = len(mags)
     report["independence"] = {
         "pairwise": indep,
         "D_deviations_from_A": len(dA), "E_deviations_from_A": len(eA),
         "overlap_observed": len(dA & eA), "overlap_expected_if_independent": round(expected, 1),
+        "p_zero_overlap_under_independence": round(p_zero_overlap, 3),
+        "distinct_deviation_magnitudes": report_magnitude_spread,
         "D_magnitudes": {str(k): v for k, v in
                          sorted(Counter(abs(q["D"][i] - q["A"][i]) for i in dA).items())},
         "E_magnitudes": {str(k): v for k, v in
@@ -178,6 +189,31 @@ def main():
             "ties": int((diff == 0).sum()),
         }
 
+    # position-controlled estimate: the blind_id shuffle came out 64/36 rather than
+    # 50/50, and raters show a small position effect, so we also report the mean of the
+    # two position strata. It moves the pooled estimate by 0.01.
+    def position_strata(score_of):
+        strata = {"full_at_A": [], "full_at_B": []}
+        for r in reviews:
+            fk = [k for k in common if k[0] == r and cond[k] == "reviewagent_full_LLM"]
+            nk = [k for k in common if k[0] == r and cond[k] == "reviewagent_no_spec_LLM"]
+            if not fk or not nk:
+                continue
+            d = score_of(fk[0]) - score_of(nk[0])
+            strata["full_at_A" if fk[0][1] == "A" else "full_at_B"].append(d)
+        return strata
+
+    for c in RATERS:
+        st = position_strata(lambda k, c=c: raters[c][k]["quality"])
+        report["per_rater"][c]["position_strata"] = {
+            k: {"n": len(v), "mean": round(float(np.mean(v)), 3)} for k, v in st.items()}
+        report["per_rater"][c]["position_controlled_gain"] = round(
+            float(np.mean([np.mean(st["full_at_A"]), np.mean(st["full_at_B"])])), 3)
+
+    st = position_strata(lambda k: statistics.mean(raters[c][k]["quality"] for c in RATERS))
+    position_controlled_pooled = round(
+        float(np.mean([np.mean(st["full_at_A"]), np.mean(st["full_at_B"])])), 3)
+
     pooled_full, pooled_no = [], []
     for r in reviews:
         f = [statistics.mean(raters[c][k]["quality"] for c in RATERS)
@@ -191,6 +227,7 @@ def main():
     boot = np.array([rng.choice(diff, size=len(diff), replace=True).mean() for _ in range(BOOT)])
     report["pooled"] = {
         "n_pairs": len(diff), "mean_gain": round(float(diff.mean()), 3),
+        "position_controlled_gain": position_controlled_pooled,
         "ci95": [round(float(x), 3) for x in np.percentile(boot, [2.5, 97.5])],
         "wilcoxon_p": float(stats.wilcoxon(pooled_full, pooled_no).pvalue),
         "cohens_dz": round(float(diff.mean() / diff.std(ddof=1)), 3),

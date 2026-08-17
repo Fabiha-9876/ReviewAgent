@@ -116,7 +116,7 @@ def segment_4():
 
 def segment_5():
     banner(5, "Stage 3 — SpecCov scorer")
-    print("Paper SpecCov: LLM+tax 4.19, LLM-free 3.38, raw 5.00, human 4.00")
+    print("Paper SpecCov (unfloored, floors removed): LLM+tax 4.19, LLM-free 3.38, raw 4.47, human 3.45")
     print()
     from speccov import speccov_detail
     with open(DP / "issue_specs/sample_100_clusters.json") as f:
@@ -271,8 +271,9 @@ def segment_12():
 
 
 def segment_13():
-    banner(13, "Stage 4 — three-rater response evaluation (Table 10, Table 12)")
-    print("Paper: pooled gain +2.35 (CI [+2.17, +2.51]); per rater +2.36 / +2.33 / +2.35;")
+    banner(13, "Stage 4 — DISCARDED template-composer round (kept for the record)")
+    print("This round is WITHDRAWN. Its conditions came from template composers, not one model.")
+    print("The reported result is segment 19. Historical values: pooled +2.35, per rater +2.36/+2.33/+2.35;")
     print("quality weighted kappa 0.970-0.986; helpful alpha 0.781")
     print()
     path = DP / "inter_annotator/round2_response_agreement.json"
@@ -430,10 +431,49 @@ def segment_18():
         print(f"  {key:12s} mean {v['mean']:.3f}  sd {v['sd']:.3f}  range {v['range']:.3f}")
 
 
+
+
+def segment_19():
+    banner(19, "Stage 4 — the REPORTED same-model re-run (Table 13)")
+    print("Paper: pooled +0.03 position-controlled (+0.04 uncontrolled), CI [-0.10, +0.18],")
+    print("Wilcoxon p = 0.38; per rater +0.53 / -0.26 / -0.18; weighted kappa 0.03 / 0.04 / 0.50")
+    print()
+    path = DP / "inter_annotator/stage4_llm_rerun.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_stage4_llm_rerun.py first")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    print(f"  {rep['n_rows']} rows, {rep['design']}")
+    print(f"  {'rater':10s}{'no_spec':>10s}{'full':>8s}{'controlled':>13s}{'naive':>9s}{'p':>11s}")
+    for c in rep["raters"]:
+        v = rep["per_rater"][c]
+        m = v["condition_means"]
+        print(f"  {c:10s}{m['reviewagent_no_spec_LLM']['quality']:>10.2f}"
+              f"{m['reviewagent_full_LLM']['quality']:>8.2f}"
+              f"{v.get('position_controlled_gain', float('nan')):>13.2f}"
+              f"{v['mean_gain']:>9.2f}{v['wilcoxon_p']:>11.2e}")
+    p = rep["pooled"]
+    print(f"  {'pooled':10s}{p['mean_no_spec']:>10.2f}{p['mean_full']:>8.2f}"
+          f"{p.get('position_controlled_gain', float('nan')):>13.2f}{p['mean_gain']:>9.2f}"
+          f"{p['wilcoxon_p']:>11.2e}")
+    print(f"  95% CI {p['ci95']}, Cliff's delta {p['cliffs_delta']}")
+    print()
+    for pair, v in rep["reliability"].items():
+        print(f"  {pair}: quality weighted kappa {v['quality_weighted_kappa']:.3f}, "
+              f"exact {v['quality_exact_pct']}%, within-1 {v['quality_within1_pct']}%")
+    ind = rep["independence"]
+    print()
+    print(f"  independence: D and E deviate from A on {ind['D_deviations_from_A']} and "
+          f"{ind['E_deviations_from_A']} of {rep['n_rows']} rows, overlap "
+          f"{ind['overlap_observed']} (chance {ind['overlap_expected_if_independent']}), "
+          f"{ind['distinct_deviation_magnitudes']} distinct deviation magnitudes")
+
+
 SEGMENTS = {
     "1": segment_1, "2": segment_2, "3": segment_3, "4": segment_4, "5": segment_5,
     "6": segment_6, "7": segment_7, "8": segment_8, "9": segment_9, "10": segment_10,
-    "11": segment_11, "12": segment_12, "13": segment_13, "14": segment_14, "15": segment_15, "16": segment_16, "17": segment_17, "18": segment_18,
+    "11": segment_11, "12": segment_12, "13": segment_13, "14": segment_14, "15": segment_15, "16": segment_16, "17": segment_17, "18": segment_18, "19": segment_19,
 }
 
 

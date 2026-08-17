@@ -23,3 +23,6 @@ notebooks/.ipynb_checkpoints/
 !data/processed/ablations/
 !data/processed/ablations/*.json
 !data/processed/ablations/*.txt
+!data/processed/responses/responses_reviewagent_full_LLM.json
+!data/processed/responses/responses_reviewagent_no_spec_LLM.json
+!data/processed/responses/responses_ablation_a5_no_rag.json
