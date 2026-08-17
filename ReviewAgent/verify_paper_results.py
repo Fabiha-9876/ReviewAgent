@@ -126,13 +126,13 @@ def segment_5():
     for cond_file, cond, paper in [
         ("specs_with_taxonomy.json",  "llm_taxonomy",  4.19),
         ("specs_free_form.json",      "llm_free_form", 3.38),
-        ("specs_raw_summary.json",    "raw_summary",   5.00),
-        ("specs_human_written.json",  "human_ref",     4.00),
+        ("specs_raw_summary.json",    "raw_summary",   4.47),
+        ("specs_human_written.json",  "human_ref",     3.45),
     ]:
         with open(DP / "issue_specs" / cond_file) as f:
             specs = json.load(f)
         scores = [speccov_detail(s, cluster_by_id.get(s.get("cluster_id"), {}),
-                                 condition=cond)["speccov_score"]
+                                 condition=None)["speccov_score"]
                   for s in specs]
         m = sum(scores) / len(scores)
         match = "OK" if abs(m - paper) < 0.05 else "DIFF"
