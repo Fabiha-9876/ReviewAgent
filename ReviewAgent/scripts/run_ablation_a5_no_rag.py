@@ -22,7 +22,7 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+ROOT = Path(__file__).resolve().parent
 SAMPLE_FULL = ROOT / "data/processed/responses/sample_100_reviews_with_rag.json"
 SAMPLE_NORAG = ROOT / "data/processed/responses/sample_100_reviews_no_rag.json"
 OUT_RESPONSES = ROOT / "data/processed/responses/responses_ablation_a5_no_rag.json"

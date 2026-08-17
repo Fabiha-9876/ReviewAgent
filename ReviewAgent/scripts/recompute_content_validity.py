@@ -27,7 +27,7 @@ import re
 from pathlib import Path
 from collections import defaultdict
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/issue_specs")
+BASE = Path(str(Path(__file__).resolve().parent) + "/data/processed/issue_specs")
 
 # Required fields per type (matches original score_specs.py)
 REQUIRED = {
@@ -284,7 +284,7 @@ for cond, r in results.items():
           f"{r['n_feats']:>8} {r['feat_userstory_loose_pct']:>18.1f} {r['feat_userstory_strict_pct']:>20.1f}")
 
 # Save results
-out_path = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/issue_specs_5dim/strict_validity_recomputation.json")
+out_path = Path(str(Path(__file__).resolve().parent) + "/data/processed/issue_specs_5dim/strict_validity_recomputation.json")
 out_path.parent.mkdir(parents=True, exist_ok=True)
 with open(out_path, "w") as f:
     json.dump(results, f, indent=2)

@@ -29,7 +29,8 @@ tar -xzf issuespec-data-bundle.tar.gz
 python3 verify_paper_results.py
 ```
 
-Each of the ten segments prints the recomputed value next to the paper claim.
+Each of the eighteen segments prints the recomputed value next to the paper claim. Segments
+that need a data file you do not have print `[SKIP]` and name the file rather than crashing.
 
 ## Run the full pipeline
 
@@ -72,7 +73,7 @@ model = AutoModelForSequenceClassification.from_pretrained("Fabiha9876/issuespec
 │   ├── src/                    Core library modules
 │   ├── api/ · configs/         API wrappers, YAML configs
 │   ├── tests/                  Unit tests
-│   ├── verify_paper_results.py 10-segment paper-claim verifier
+│   ├── verify_paper_results.py 18-segment paper-claim verifier
 │   └── run_pipeline.sh         One-command Stage 1-5 orchestrator
 ├── RRGen_Full_Dataset.csv      Raw 310,031 review-response pairs (46 MB)
 ├── SETUP_GUIDE.md              Full reproducibility walkthrough
@@ -82,17 +83,27 @@ model = AutoModelForSequenceClassification.from_pretrained("Fabiha9876/issuespec
 
 > Large artifacts (`models/` ~21 GB, `data/` ~8.8 GB: embeddings, vector DB,
 > RLHF rollouts) are not stored in git — they regenerate from the code, and the
-> 10 MB verification bundle on Zenodo covers every reported number.
+> verification bundle on Zenodo covers every reported number.
 
 ---
 
 ## Headline results
 
-| Result | Value |
-|---|---|
-| Stage-1 classifier (Cohen's κ vs expert gold) | 0.16 → **0.59** |
-| Stage-3 template-fill (vs human GitHub issues) | **0.96** vs 0.53 |
-| Stage-3 IssueSpec rubric | **3.89 / 5** |
-| Stage-4 IssueSpec-in-RAG quality gain | **+2.36** Likert (p < 0.001) |
-| Stage-5 constrained-proxy BLEU-1 over SFT | **+52%** |
-| Cross-family replication | 4 LLMs, 3 families (rank order preserved) |
+> **Correction, please read before using these numbers.** An earlier version of this work
+> reported a +2.36 Likert-point response-quality gain from supplying the IssueSpec. That
+> comparison was confounded: its two arms were written by different deterministic template
+> composers rather than by one model, so it measured the composer as much as the specification.
+> A corrected same-model comparison gives **+0.03 (p = 0.38)**. The superseded response files
+> are kept in `data/processed/responses/` and marked; see that folder's README.
+
+| Result | Value | Status |
+|---|---|---|
+| Stage-1 classifier (Cohen's κ vs 3-rater human gold) | 0.163 → **0.592** | holds |
+| Stage-1 on the 307 reviews the classifier never saw | **0.616** | holds |
+| Stage-3 template-fill, with vs without type routing | **0.96** vs 0.69 | holds |
+| Stage-3 rubric, all 100 specs, LLM judge | **3.94 / 5** | holds |
+| Stage-4 IssueSpec-in-RAG quality gain | **+0.03** Likert (p = 0.38) | **withdrawn, was +2.36** |
+| Stage-2 knowledge graph vs count-matched flat clustering | flat wins on DB, CH, silhouette | negative |
+| SpecCov vs human faithfulness judgement | ρ = 0.15 (p = 0.26) | negative, withdrawn |
+| Stage-5 CMDP quality-vs-compliance trade-off | not demonstrated | negative |
+| Cross-family replication | 4 LLMs, 3 families | ordering only, not significant at n=14 |

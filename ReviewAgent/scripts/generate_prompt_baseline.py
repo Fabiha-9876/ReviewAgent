@@ -8,8 +8,8 @@ import json
 import re
 from pathlib import Path
 
-INPUT = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/responses/sample_100_reviews_with_rag.json")
-OUTPUT = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/responses/responses_prompt_baseline.json")
+INPUT = Path(str(Path(__file__).resolve().parent) + "/data/processed/responses/sample_100_reviews_with_rag.json")
+OUTPUT = Path(str(Path(__file__).resolve().parent) + "/data/processed/responses/responses_prompt_baseline.json")
 
 # ---------------------------------------------------------------------------
 # Lightweight keyword extraction so responses stay specific to each review.

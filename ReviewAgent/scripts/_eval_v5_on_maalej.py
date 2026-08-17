@@ -18,7 +18,7 @@ import numpy as np
 
 LABELS = ["bug_report", "feature_request", "performance", "usability",
           "compatibility", "praise", "other"]
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+BASE = Path(__file__).resolve().parent
 MAALEJ_PATH = BASE / "data/raw/maalej/maalej_labeled.json"
 MODEL_PATH = BASE / "models/stage1_classifier_v5"
 OUT_PATH = BASE / "data/processed/ablations/v5_on_maalej.json"

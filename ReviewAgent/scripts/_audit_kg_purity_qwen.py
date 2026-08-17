@@ -13,7 +13,7 @@ from pathlib import Path
 
 import torch
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+BASE = Path(__file__).resolve().parent
 CLUSTERS_PATH = BASE / "data/processed/kg_hierarchical/hierarchical_clusters.json"
 OUT_PATH = BASE / "data/processed/kg_hierarchical/llm_judge_purity_audit_qwen.json"
 MODEL_ID = "Qwen/Qwen2.5-3B-Instruct"

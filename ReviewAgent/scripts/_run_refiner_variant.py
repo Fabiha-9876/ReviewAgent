@@ -13,7 +13,7 @@ from pathlib import Path
 
 import torch
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+BASE = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE))
 
 # Load existing single-shot responses

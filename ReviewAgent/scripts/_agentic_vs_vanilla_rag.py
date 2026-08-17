@@ -17,7 +17,7 @@ from statistics import mean
 
 import torch
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+BASE = Path(__file__).resolve().parent
 SRC = BASE / "data/processed/responses/responses_reviewagent_full.json"
 OUT = BASE / "data/processed/ablations/agentic_vs_vanilla_rag.json"
 OUT.parent.mkdir(parents=True, exist_ok=True)

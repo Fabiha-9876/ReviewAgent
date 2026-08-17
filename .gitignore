@@ -82,3 +82,17 @@ ReviewAgent/data/processed/rlhf/dpo_model/
 ReviewAgent/data/processed/rlhf/constrained_proxy/
 ReviewAgent/data/processed/rlhf/lagrangian_ppo/
 ReviewAgent/data/processed/rlhf/sft_base/checkpoint-*/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.spl
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# extracted reproduction bundle (the .tar.gz is the artifact)
+ReviewAgent/issuespec-data-bundle-v2/

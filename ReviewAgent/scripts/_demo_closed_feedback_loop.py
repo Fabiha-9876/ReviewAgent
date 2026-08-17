@@ -23,7 +23,7 @@ from pathlib import Path
 
 import numpy as np
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+BASE = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE))
 from src.stage5.feedback_propagator import FeedbackPropagator
 

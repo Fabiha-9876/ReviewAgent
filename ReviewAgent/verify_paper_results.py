@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 from collections import Counter
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+BASE = Path(__file__).resolve().parent
 DP = BASE / "data" / "processed"
 sys.path.insert(0, str(BASE / "scripts"))
 
@@ -141,8 +141,10 @@ def segment_5():
 
 
 def segment_6():
-    banner(6, "Stage 4 — Human eval (Table 10)")
-    print("Paper: rrgen 2.31, prompt 2.98, no_spec 2.26, full 4.62; +2.36 full vs no_spec")
+    banner(6, "Stage 4 — Human eval, lead author only (historical)")
+    print("Lead-author-only view. The paper reports the three-rater pooled numbers;")
+    print("see Segment 13 for those. Paper (3 raters): rrgen 2.31, prompt 2.98,")
+    print("no_spec 2.24, full 4.59; +2.35 full vs no_spec.")
     print()
     with open(DP / "experiments/exp2_human_eval.json") as f:
         s4 = json.load(f)
@@ -242,23 +244,224 @@ def segment_11():
           f"   [matches paper 55/66]")
 
 
+
+
+def segment_12():
+    banner(12, "Stage 1 gold — three human raters (Section 4.2)")
+    print("Paper: Fleiss kappa 0.968 on the Y/N verdict, 0.979 on the 7-class label;")
+    print("classifiers vs the majority-vote gold: 0.165 / 0.334 / 0.590")
+    print()
+    path = DP / "inter_annotator/round2_agreement.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_round2_agreement.py first "
+              "(needs the three annotator sheets)")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    print(f"  items: {rep['n_items']}, usable for label-level stats: "
+          f"{rep['n_usable_label_level']}")
+    for pair, v in rep["pairwise_verdict"].items():
+        print(f"  verdict  {pair:10s} Cohen kappa {v['cohen_kappa']:.4f} "
+              f"(raw {v['raw_agreement']*100:.1f}%)")
+    print(f"  verdict  Fleiss kappa (3 raters): {rep['fleiss_verdict']['kappa']:.4f}")
+    print(f"  label    Fleiss kappa (3 raters): {rep['fleiss_label']['kappa']:.4f}")
+    print(f"  label    Krippendorff alpha:      {rep['krippendorff_alpha_label']:.4f}")
+    print(f"  majority gold: {rep['majority_gold']['n']} items, "
+          f"{rep['majority_gold']['n_three_way_ties']} three-way ties")
+
+
+def segment_13():
+    banner(13, "Stage 4 — three-rater response evaluation (Table 10, Table 12)")
+    print("Paper: pooled gain +2.35 (CI [+2.17, +2.51]); per rater +2.36 / +2.33 / +2.35;")
+    print("quality weighted kappa 0.970-0.986; helpful alpha 0.781")
+    print()
+    path = DP / "inter_annotator/round2_response_agreement.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_round2_response_agreement.py first "
+              "(needs the three rating sheets)")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    print(f"  {'condition':<25s}" + "".join(f"{n:>9s}" for n in rep["raters"]) + f"{'pooled':>9s}")
+    for c, pooled in rep["pooled_condition_means"].items():
+        row = f"  {c:<25s}"
+        for n in rep["raters"]:
+            row += f"{rep['per_rater'][n]['condition_means'][c]['quality']:>9.2f}"
+        print(row + f"{pooled['quality']:>9.2f}")
+    print()
+    for n in rep["raters"]:
+        g = rep["per_rater"][n]["full_vs_nospec_quality"]
+        print(f"  rater {n}: gain {g['mean_gain']:+.2f} "
+              f"CI [{g['ci95'][0]:+.2f}, {g['ci95'][1]:+.2f}] p={g['wilcoxon_p']:.1e}")
+    g = rep["pooled_full_vs_nospec_quality"]
+    print(f"  pooled : gain {g['mean_gain']:+.2f} "
+          f"CI [{g['ci95'][0]:+.2f}, {g['ci95'][1]:+.2f}] p={g['wilcoxon_p']:.1e}")
+    print()
+    for pair, v in rep["inter_rater"].items():
+        print(f"  {pair}: quality weighted kappa "
+              f"{v['quality_1_to_5']['quadratic_weighted_kappa']:.3f}, "
+              f"within-1 {v['quality_1_to_5']['within1_pct']:.1f}%, "
+              f"helpful kappa {v['helpful_y_n']['cohen_kappa']:.3f}")
+    print(f"  helpful Krippendorff alpha: {rep['helpful_krippendorff_alpha']:.3f}")
+
+
+def segment_14():
+    banner(14, "Cross-family five-dimension rubric (Table 4)")
+    print("Paper Panel A: Claude 4.09, Llama 3.96, Qwen-3B 3.83, Qwen-1.5B 3.77")
+    print("Paper Panel B: Claude 4.01, Llama 3.64")
+    print()
+    path = DP / "ablations/cross_family_rubric.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_cross_family_rubric.py first (needs the local judge)")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    for key in ("panel_a", "panel_b"):
+        print(f"  {rep[key]['description']} (n_clusters={rep[key]['n_clusters']})")
+        for name, v in rep[key]["results"].items():
+            print(f"    {name:<26s} n={v['n_scored']:<4d} mean={v['overall_mean']:.2f}")
+    print(f"  caveat: {rep['caveat']}")
+
+
+
+
+def segment_15():
+    banner(15, "SpecCov validation against human judgement (Section 5.1)")
+    print("Paper: no significant rank correlation (rho = +0.045 / +0.015 / +0.226 per rater,")
+    print("+0.147 pooled); flagged vs clean SpecCov 3.64 vs 3.93, Mann-Whitney p = 0.34;")
+    print("SpecCov ranks taxonomy highest, humans rank the human reference highest")
+    print()
+    path = DP / "ablations/speccov_validation.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_speccov_validation.py first "
+              "(needs the three returned rating sheets)")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    print(f"  n specs: {rep['n_specs']}")
+    for code, v in rep["per_rater"].items():
+        line = (f"  rater {code}: Spearman rho={v['spearman_rho']:+.3f} "
+                f"(p={v['spearman_p']:.3f}), mean human {v['mean_human']:.2f}, "
+                f"flagged {v['n_flagged']}/{v['n_flagged'] + v['n_clean']}")
+        if "mannwhitney_p" in v:
+            line += (f", SpecCov flagged {v['speccov_mean_flagged']:.2f} vs clean "
+                     f"{v['speccov_mean_clean']:.2f} (p={v['mannwhitney_p']:.3f})")
+        print(line)
+    print(f"  pooled: Spearman rho={rep['pooled']['spearman_rho']:+.3f} "
+          f"(p={rep['pooled']['spearman_p']:.3f})")
+    print(f"  {'condition':16s}{'SpecCov':>10s}{'human (A)':>12s}")
+    for c, v in rep["by_condition"].items():
+        print(f"  {c:16s}{v['speccov_mean']:>10.2f}{v['human_mean_A']:>12.2f}")
+
+
+
+
+def segment_16():
+    banner(16, "CMDP with a binding constraint (Section 5.3)")
+    print("Paper: 13/90 binding steps, lambda 0 -> 0.65 monotone, quality 0.565 -> 0.590,")
+    print("compliance 0.997 -> 0.989; capability probe 5.0% vs the paper's own 5.2%")
+    print()
+    path = DP / "rlhf/cppo_binding/training_log.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_cppo_binding_constraint.py first")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    lam = [r["lambda"] for r in rep["log"]]
+    print(f"  policy: {rep['model']}   tau={rep['tau']}   steps={rep['steps']}")
+    print(f"  binding steps: {rep['binding_steps']}/{rep['steps']} ({rep['binding_pct']}%)")
+    print(f"  lambda: start {lam[0]}  max {rep['max_lambda']}  final {rep['final_lambda']}"
+          f"  monotone non-decreasing: {all(b >= a for a, b in zip(lam, lam[1:]))}")
+    print(f"  compliance {rep['compliance_first_half']:.4f} -> {rep['compliance_second_half']:.4f}")
+    print(f"  quality    {rep['quality_first_half']:.4f} -> {rep['quality_second_half']:.4f}")
+    print(f"  constraint engaged: {rep['constraint_engaged']}")
+    probe = DP / "rlhf/constraint_probe_qwen15b.json"
+    if probe.exists():
+        with open(probe) as f:
+            pr = json.load(f)
+        print(f"  capability probe: {pr['violations']}/{pr['n']} "
+              f"({100 * pr['violations'] / pr['n']:.1f}%) zero-shot violations, "
+              f"mean compliance {pr['mean']:.3f}")
+
+
+
+
+def segment_17():
+    banner(17, "Five-dimension rubric on the full spec set (Table 5)")
+    print("Paper: taxonomy 3.94 over all 100 specs (28-spec subsample 3.89, delta +0.05);")
+    print("lead-author reference 3.45 over all 20")
+    print()
+    path = DP / "ablations/qwen_judge_5dim_rubric_full.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_full_rubric_100.py first")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    for label, key in (("taxonomy", "taxonomy_full"), ("lead-author ref", "reference_full")):
+        v = rep[key]
+        dims = "  ".join(f"{d[:5]} {v['per_dim'][d]:.2f}" for d in rep["rubric_dimensions"])
+        print(f"  {label:16s} n={v['n']:<4d} mean={v['overall_mean']:.2f} "
+              f"sd={v['overall_sd']:.2f}   {dims}")
+    sc = rep["subsample_comparison"]
+    print(f"  subsample check: {sc['previous_n']}-spec {sc['previous_mean']:.2f} vs "
+          f"full {sc['full_mean']:.2f} (delta {sc['delta']:+.2f})")
+    print("  per issue type:")
+    for t, v in rep["taxonomy_per_issue_type"].items():
+        print(f"    {str(t):18s} n={v['n']:<4d} mean={v['overall_mean']:.2f}")
+
+
+def segment_18():
+    banner(18, "Stage-3 run-to-run variance (Section 6.3)")
+    print("Paper: strict fill mean 0.673, sd 0.029, range 0.067 over three seeds")
+    print()
+    path = DP / "ablations/stage3_variance.json"
+    if not path.exists():
+        print("  [skip] run scripts/run_stage3_variance.py first")
+        return
+    with open(path) as f:
+        rep = json.load(f)
+    print(f"  {rep['model']}  temperature={rep['temperature']}  "
+          f"{rep['n_clusters']} clusters x {rep['runs']} runs")
+    for r in rep["per_run"]:
+        print(f"    run {r['run']}: fill={r['mean_strict_fill']:.3f} "
+              f"speccov={r['mean_speccov']:.3f} parse_fails={r['parse_failures']}")
+    for key in ("strict_fill", "speccov"):
+        v = rep[key]
+        print(f"  {key:12s} mean {v['mean']:.3f}  sd {v['sd']:.3f}  range {v['range']:.3f}")
+
+
 SEGMENTS = {
     "1": segment_1, "2": segment_2, "3": segment_3, "4": segment_4, "5": segment_5,
     "6": segment_6, "7": segment_7, "8": segment_8, "9": segment_9, "10": segment_10,
-    "11": segment_11,
+    "11": segment_11, "12": segment_12, "13": segment_13, "14": segment_14, "15": segment_15, "16": segment_16, "17": segment_17, "18": segment_18,
 }
 
 
 def main():
     selected = sys.argv[1:] if len(sys.argv) > 1 else SEGMENTS.keys()
+    failed = []
     for s in selected:
         fn = SEGMENTS.get(s)
-        if fn:
+        if fn is None:
+            print(f"unknown segment: {s}", file=sys.stderr)
+            continue
+        try:
             fn()
-        else:
-            print(f"Unknown segment: {s}", file=sys.stderr)
-    print("\n" + "=" * 72)
-    print("  DONE")
+        except FileNotFoundError as e:
+            failed.append((s, f"missing data file: {e.filename}"))
+            print(f"\n  [SKIP] segment {s}: missing data file {e.filename}")
+            print("         this segment needs a file that is not in the released bundle")
+        except Exception as e:
+            failed.append((s, repr(e)))
+            print(f"\n  [FAIL] segment {s}: {e!r}")
+    print()
+    print("=" * 72)
+    if failed:
+        print(f"  DONE with {len(failed)} segment(s) skipped or failed:")
+        for s, why in failed:
+            print(f"    segment {s}: {why}")
+    else:
+        print("  DONE")
     print("=" * 72)
 
 

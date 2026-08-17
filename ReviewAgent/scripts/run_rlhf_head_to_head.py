@@ -21,7 +21,7 @@ import numpy as np
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-ROOT = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+ROOT = Path(__file__).resolve().parent
 SAMPLE = ROOT / "data/processed/responses/sample_100_reviews_with_rag.json"
 RR = ROOT / "data/processed/rrgen_v5_relabeled/rrgen_v5_relabeled.json"
 OUT_DIR = ROOT / "data/processed/rlhf/head_to_head"

@@ -196,7 +196,7 @@ cd "Review Agent/ReviewAgent"
 #    https://doi.org/10.5281/zenodo.20320410
 tar -xzf ~/Downloads/issuespec-data-bundle.tar.gz
 
-# 2. Run all 10 verification segments
+# 2. Run all 18 verification segments
 python3 verify_paper_results.py
 
 # Or run a single segment:
@@ -359,7 +359,7 @@ claim. Ten segments cover:
 | 2 | Stage 1 κ progression | Table 8: V2 0.163, cleanlab 0.333, V5 0.592 |
 | 3 | Stage 2 cluster quality | Table 11: DB, CH, 5.4× and 1.9× ratios |
 | 4 | A1b ablation | §5.5 count-matched flat-605 vs KG-605 |
-| 5 | SpecCov scorer | §4.4 4.16/3.33/5.00/4.00 (all 4 conditions) |
+| 5 | SpecCov scorer | 4.19/3.38 for the two LLM conditions; the baselines are 4.47/3.45 once the per-condition floors are removed |
 | 6 | Stage 4 human eval | Table 10: 2.31/2.98/2.26/4.62; +2.36 paired Δ |
 | 7 | A5 no-RAG ablation | §5.5 ΔBLEU/ROUGE/BERTScore |
 | 8 | Agentic vs vanilla | §5.2 0.58→0.70, 0%→60% citation |

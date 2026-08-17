@@ -19,11 +19,11 @@ from pathlib import Path
 from typing import Iterable
 
 INPUT = Path(
-    "/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/"
+    str(Path(__file__).resolve().parent) + "/"
     "data/processed/responses/sample_100_reviews_with_rag.json"
 )
 OUTPUT = Path(
-    "/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/"
+    str(Path(__file__).resolve().parent) + "/"
     "data/processed/responses/responses_reviewagent_no_spec.json"
 )
 

@@ -16,7 +16,7 @@ from copy import deepcopy
 
 import numpy as np
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent/data/processed/issue_specs")
+BASE = Path(str(Path(__file__).resolve().parent) + "/data/processed/issue_specs")
 
 # Default §3.8.1.x criteria
 DEFAULT = {

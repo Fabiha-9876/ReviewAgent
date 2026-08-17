@@ -1,0 +1,242 @@
+{
+  "llm_free_form:c_00040": {
+    "condition": "llm_free_form",
+    "speccov": 2
+  },
+  "llm_free_form:c_00187": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00045": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "llm_free_form:c_00075": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00177": {
+    "condition": "llm_taxonomy",
+    "speccov": 3
+  },
+  "llm_taxonomy:c_00049": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "human_ref:c_00005": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_free_form:c_00158": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00068": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "human_ref:c_00161": {
+    "condition": "human_ref",
+    "speccov": 3
+  },
+  "llm_taxonomy:c_00092": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "human_ref:c_00099": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_free_form:c_00026": {
+    "condition": "llm_free_form",
+    "speccov": 3
+  },
+  "llm_taxonomy:c_00142": {
+    "condition": "llm_taxonomy",
+    "speccov": 2
+  },
+  "human_ref:c_00066": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00047": {
+    "condition": "llm_taxonomy",
+    "speccov": 4
+  },
+  "llm_free_form:c_00023": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "human_ref:c_00132": {
+    "condition": "human_ref",
+    "speccov": 3
+  },
+  "llm_taxonomy:c_00032": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "llm_free_form:c_00018": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_free_form:c_00068": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00076": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "llm_free_form:c_00051": {
+    "condition": "llm_free_form",
+    "speccov": 3
+  },
+  "human_ref:c_00045": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00053": {
+    "condition": "llm_taxonomy",
+    "speccov": 4
+  },
+  "human_ref:c_00145": {
+    "condition": "human_ref",
+    "speccov": 1
+  },
+  "human_ref:c_00026": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "human_ref:c_00121": {
+    "condition": "human_ref",
+    "speccov": 2
+  },
+  "human_ref:c_00019": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_free_form:c_00140": {
+    "condition": "llm_free_form",
+    "speccov": 2
+  },
+  "human_ref:c_00111": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_free_form:c_00109": {
+    "condition": "llm_free_form",
+    "speccov": 2
+  },
+  "human_ref:c_00065": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00098": {
+    "condition": "llm_taxonomy",
+    "speccov": 4
+  },
+  "llm_free_form:c_00055": {
+    "condition": "llm_free_form",
+    "speccov": 3
+  },
+  "human_ref:c_00097": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00159": {
+    "condition": "llm_taxonomy",
+    "speccov": 4
+  },
+  "human_ref:c_00008": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00016": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "llm_free_form:c_00159": {
+    "condition": "llm_free_form",
+    "speccov": 3
+  },
+  "llm_free_form:c_00046": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00011": {
+    "condition": "llm_taxonomy",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00018": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "llm_free_form:c_00185": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00065": {
+    "condition": "llm_taxonomy",
+    "speccov": 4
+  },
+  "llm_free_form:c_00098": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "human_ref:c_00187": {
+    "condition": "human_ref",
+    "speccov": 2
+  },
+  "llm_free_form:c_00016": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_free_form:c_00127": {
+    "condition": "llm_free_form",
+    "speccov": 4
+  },
+  "llm_free_form:c_00074": {
+    "condition": "llm_free_form",
+    "speccov": 5
+  },
+  "human_ref:c_00087": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_free_form:c_00146": {
+    "condition": "llm_free_form",
+    "speccov": 3
+  },
+  "llm_taxonomy:c_00048": {
+    "condition": "llm_taxonomy",
+    "speccov": 4
+  },
+  "human_ref:c_00188": {
+    "condition": "human_ref",
+    "speccov": 2
+  },
+  "human_ref:c_00004": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "human_ref:c_00194": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00122": {
+    "condition": "llm_taxonomy",
+    "speccov": 3
+  },
+  "human_ref:c_00144": {
+    "condition": "human_ref",
+    "speccov": 4
+  },
+  "llm_taxonomy:c_00095": {
+    "condition": "llm_taxonomy",
+    "speccov": 5
+  },
+  "llm_taxonomy:c_00157": {
+    "condition": "llm_taxonomy",
+    "speccov": 3
+  }
+}

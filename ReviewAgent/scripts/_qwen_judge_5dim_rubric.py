@@ -11,7 +11,7 @@ from pathlib import Path
 
 import torch
 
-BASE = Path("/Users/fabihajalal/Desktop/Review Agent/ReviewAgent")
+BASE = Path(__file__).resolve().parent
 OUT = BASE / "data/processed/ablations/qwen_judge_5dim_rubric.json"
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
