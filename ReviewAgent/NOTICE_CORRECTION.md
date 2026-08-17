@@ -49,3 +49,38 @@ The second round passes the same check. Both rounds and the check are released, 
 
 The corrected reproduction bundle is Zenodo DOI 10.5281/zenodo.21982774 (v2.0). It supersedes
 10.5281/zenodo.20320410, which predates this correction.
+
+## Second round of corrections (third audit pass)
+
+Four further defects were found by auditing the revised manuscript against the artifact.
+
+1. **Cluster-quality intrinsic metrics for the flat baseline are withdrawn.**
+   `scripts/compute_cluster_quality_metrics.py` drew the flat baseline's cluster labels as a
+   random subsample of 10,000 reviews across all 194 clusters, but collected the review texts to
+   embed by walking the clusters in order. The first flat cluster contains 10,507 reviews, so
+   every embedding came from one cluster while the labels spanned 194. The reported DB of 12.15
+   and CH of 0.98 measure random labelling, not the flat partition, and the "5.4x lower
+   Davies-Bouldin" claim built on them is withdrawn. The KG column was correctly paired. The
+   script now refuses to report metrics unless texts and labels align by review index. The
+   count-controlled A1b ablation uses a different, correctly paired script and is unaffected.
+
+2. **The "structurally biased noise" finding is corrected.** We described the 25% LLM
+   mislabelling rate as concentrated on minority classes. Per stratum on the verified anchor,
+   1,302 of 1,307 disagreements fall in the `praise` stratum, the largest class, at 25.8%,
+   against 0.5% on `performance`. What survives is narrower: the labeller never emits two of its
+   seven classes across the corpus (8 compatibility and 184 performance labels in 215,583
+   reviews), and systematic class omission is what a small verified anchor repairs.
+
+3. **The per-class F1 table did not match the released data.** Four of seven V5 cells and the
+   macro F1 disagreed with `annotator_materials/gold_standard_report.txt`. The table now carries
+   the released values (V5 macro F1 0.65, not 0.68).
+
+4. **The GenAI disclosure understated the use.** It said all pipeline code, experimental scripts
+   and analysis were written by the human authors. 38 of this repository's 47 commits carry a
+   `Co-Authored-By: Claude` trailer, including commits adding pipeline stages, the constrained-PPO
+   trainer, and analysis scripts. The disclosure in the manuscript now states that Claude was used
+   throughout implementation and analysis under author direction, and explains why the earlier
+   wording was wrong.
+
+Also corrected: the aspect-coverage figures now use the deduplicated 55% and 66% rather than the
+double-counted 74% and 96%.

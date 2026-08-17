@@ -114,7 +114,20 @@ def main():
     print(f"n reviews scored: {len(flat_idxs)}, n clusters: {n_flat}")
 
     # Re-encode the review texts
-    flat_texts = []
+    # NOTE: texts must be collected in the same order as flat_idxs. An earlier version walked
+    # the clusters in order while the labels were a random subsample, so the embeddings and the
+    # labels described different reviews. See NOTICE_CORRECTION.md.
+    idx_to_text = {}
+    for c in flat_clusters:
+        for i, t in zip(c.get("review_global_idxs", c.get("review_idxs", [])),
+                        c.get("review_texts", [])):
+            idx_to_text[i] = t
+    flat_texts_aligned = [idx_to_text.get(i) for i in flat_idxs]
+    if all(t is not None for t in flat_texts_aligned):
+        flat_texts = flat_texts_aligned
+    else:
+        raise SystemExit("cannot align flat texts to sampled labels; refusing to report metrics")
+    _unused = []
     for c in flat_clusters:
         for t in c.get("review_texts", []):
             flat_texts.append(t)
