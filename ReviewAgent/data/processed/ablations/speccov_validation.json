@@ -1,0 +1,61 @@
+{
+  "n_specs": 60,
+  "sheet_versions": {
+    "A": "corrected sheet, full evidence",
+    "D": "earlier sheet, partial evidence",
+    "E": "earlier sheet, partial evidence"
+  },
+  "per_rater": {
+    "A": {
+      "mean_human": 3.85,
+      "spearman_rho": 0.0449,
+      "spearman_p": 0.7333950135528879,
+      "pearson_r": 0.0502,
+      "pearson_p": 0.7032870799673794,
+      "n_flagged": 45,
+      "n_clean": 15,
+      "speccov_mean_flagged": 3.644,
+      "speccov_mean_clean": 3.933,
+      "mannwhitney_p": 0.3414652592614993
+    },
+    "D": {
+      "mean_human": 3.283,
+      "spearman_rho": 0.0146,
+      "spearman_p": 0.9121345284846303,
+      "pearson_r": 0.0362,
+      "pearson_p": 0.7834557430992174,
+      "n_flagged": 60,
+      "n_clean": 0
+    },
+    "E": {
+      "mean_human": 3.55,
+      "spearman_rho": 0.2264,
+      "spearman_p": 0.08198188201321278,
+      "pearson_r": 0.2136,
+      "pearson_p": 0.10125970688380787,
+      "n_flagged": 60,
+      "n_clean": 0
+    }
+  },
+  "pooled": {
+    "spearman_rho": 0.1475,
+    "spearman_p": 0.2605949444119611
+  },
+  "by_condition": {
+    "llm_taxonomy": {
+      "n": 20,
+      "speccov_mean": 4.2,
+      "human_mean_A": 3.5
+    },
+    "llm_free_form": {
+      "n": 20,
+      "speccov_mean": 3.5,
+      "human_mean_A": 3.95
+    },
+    "human_ref": {
+      "n": 20,
+      "speccov_mean": 3.45,
+      "human_mean_A": 4.1
+    }
+  }
+}

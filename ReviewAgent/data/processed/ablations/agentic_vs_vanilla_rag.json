@@ -1,0 +1,85 @@
+{
+  "method": "Agentic vs vanilla RAG empirical comparison. Vanilla = existing single-shot reviewagent_full responses (Claude Opus 4.7). Agentic = same baseline + Qwen2.5-3B-Instruct SelfRefiner with up to 2 critique-revise iterations. Stratified 10-review sample (2 per issue type).",
+  "n_reviews": 10,
+  "max_iterations": 2,
+  "vanilla_rag": {
+    "mean_quality": 0.58,
+    "mean_word_count": 52.7,
+    "mean_lex_diversity": 0.885,
+    "pct_with_citation": 0
+  },
+  "agentic_rag": {
+    "mean_quality": 0.7,
+    "mean_word_count": 47.2,
+    "mean_lex_diversity": 0.903,
+    "pct_with_citation": 60.0
+  },
+  "delta_agentic_minus_vanilla": {
+    "mean_quality": 0.12,
+    "mean_word_count": -5.5
+  },
+  "n_iterations_avg": 2,
+  "interpretation": "Empirical agentic-RAG vs vanilla-RAG comparison (closes the empirical gap noted in Sec. 'What we compare against'). Direction matters: positive delta means refinement adds value at PoC scale; near-zero delta means single-shot is already near the local optimum. Headline 400-pair eval uses vanilla.",
+  "samples": [
+    {
+      "response_id": "resp_f4_c_00032",
+      "issue_type": "bug_report",
+      "review": "download doesn't progress it happen many time .",
+      "vanilla_response": "Apologies for the friction you've hit \u2014 we hear you and we want to dig into this further. What you're describing \u2014 downloads stall, progress numbers go backwards, some files never start, and the ui does not reflect the true transfer state \u2014 points at Download manager: progress tracking and resume lo",
+      "agentic_response": "We understand the frustration you've experienced with your downloads stalling, going backward, or failing to start, as well as issues where files do not accurately reflect their transfer state within our Download Manager. These issues point to problems with progress tracking and resume logic, which ",
+      "n_iterations": 2,
+      "iters": [
+        {
+          "iter": 1,
+          "critique": "<Specificity>: pass  \nThe response mentions the issue of downloads stalling multiple times, which is specific to the problem reported.\n<Compliance>: pass  \nThe response does not make any unauthorized ",
+          "revised_preview": "We understand the frustration you\u2019ve experienced with your downloads stalling, going backward, or failing to start, and "
+        },
+        {
+          "iter": 2,
+          "critique": "1. **Specificity**: \n   - Response: \"We understand the frustration you\u2019ve experienced with your downloads stalling, going backward, or failing to start, and files not reflecting their true transfer st",
+          "revised_preview": "We understand the frustration you've experienced with your downloads stalling, going backward, or failing to start, as w"
+        }
+      ]
+    },
+    {
+      "response_id": "resp_f4_c_00027",
+      "issue_type": "bug_report",
+      "review": "uc mini be a good browser but recently it have be behave like an addware . it download other <app> without permission . even if i uninstalled uc browser it download and install itself as soon as i con",
+      "vanilla_response": "We're really sorry \u2014 getting locked out at a critical moment is exactly the kind of failure we work hardest to prevent, and we hear you. What you're describing \u2014 other apps are pushed to the device silently, uc news cannot be removed from the homepage, refresh fails \u2014 points at UC Browser core: sile",
+      "agentic_response": "We're really sorry \u2014 getting locked out at a critical moment is exactly the kind of failure we work hardest to prevent, and we hear you. Your description highlights specific issues with UC Browser: other apps being pushed to your device silently, UC News integrated in a way that it can't be easily r",
+      "n_iterations": 2,
+      "iters": [
+        {
+          "iter": 1,
+          "critique": "1. **Specificity**: \n   - uc mini (UC Browser) has been behaving like adware, downloading other apps without permission.\n   - The response mentions \"other apps\" but does not specify which ones or how ",
+          "revised_preview": "We're really sorry \u2014 getting locked out at a critical moment is exactly the kind of failure we work hardest to prevent, "
+        },
+        {
+          "iter": 2,
+          "critique": "1. **Specificity**: \n   - uc mini be a good browser but recently it have be behave like an addware . it download other <app> without permission . even if i uninstalled uc browser it download and insta",
+          "revised_preview": "We're really sorry \u2014 getting locked out at a critical moment is exactly the kind of failure we work hardest to prevent, "
+        }
+      ]
+    },
+    {
+      "response_id": "resp_f4_c_00116",
+      "issue_type": "feature_request",
+      "review": "i be will to deal with the awkward save and storage feature and even will to deal with the lack of share to messenger feature . but instal additional span lade app of chargemaster on mymphone without ",
+      "vanilla_response": "Thanks for sharing this with us \u2014 your feedback helps us prioritise what to improve next. If we're reading you right, the ask is essentially: as a casual editor, i want a one-tap action that does not require sharing or internet, so that i can finish edits and keep working without losing context, and",
+      "agentic_response": "Thanks for sharing this with us \u2014 your feedback helps us prioritize what to improve next. Based on your input, it seems like you're looking for a streamlined editing experience where a single tap action saves your edits locally without requiring sharing or accessing the internet. This would allow yo",
+      "n_iterations": 2,
+      "iters": [
+        {
+          "iter": 1,
+          "critique": "1. **Specificity**: \n   - Specificity: Fail  \n   - Suggestion: The response should more clearly reference the specific issues mentioned (awkward save and storage feature, lack of share to Messenger fe",
+          "revised_preview": "Thanks for sharing this with us \u2014 your feedback helps us prioritize what to improve next. Based on your input, it seems "
+        },
+        {
+          "iter": 2,
+          "critique": "1. **Specificity**: \n   - Specificity: Fail  \n   - Suggestion: The response should more specifically address the issues mentioned (awkward save and storage feature, lack of share to Messenger feature)",
+          "revised_preview": "Thanks for sharing this with us \u2014 your feedback helps us prioritize what to improve next. Based on your input, it seems "
+        }
+      ]
+    }
+  ]
+}

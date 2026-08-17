@@ -1,0 +1,31 @@
+============================================================================
+SPECCOV VALIDATION AGAINST HUMAN FAITHFULNESS JUDGEMENTS
+============================================================================
+
+60 specs, 20 per generator, shuffled and unlabelled
+
+Q1  Does SpecCov rank specs the way humans do?
+----------------------------------------------------------------------------
+  rater A (corrected sheet, full evidence): Spearman rho = +0.045 (p = 0.733), mean human score 3.85
+  rater D (earlier sheet, partial evidence): Spearman rho = +0.015 (p = 0.912), mean human score 3.28
+  rater E (earlier sheet, partial evidence): Spearman rho = +0.226 (p = 0.082), mean human score 3.55
+  pooled over three raters: Spearman rho = +0.147 (p = 0.261)
+
+Q2  Does SpecCov separate specs humans flagged as unsupported?
+----------------------------------------------------------------------------
+  rater A: flagged 45, clean 15; SpecCov mean 3.64 vs 3.93, Mann-Whitney p = 0.341
+  rater D: flagged 60, clean 0 (no clean group, test not run)
+  rater E: flagged 60, clean 0 (no clean group, test not run)
+
+Ranking by generator, SpecCov versus human
+----------------------------------------------------------------------------
+  condition          SpecCov   human (A)    n
+  llm_taxonomy          4.20        3.50   20
+  llm_free_form         3.50        3.95   20
+  human_ref             3.45        4.10   20
+
+Reading: SpecCov shows no significant rank correlation with human faithfulness
+judgements, does not separate specs humans flagged as containing unsupported
+claims, and orders the three generators in the opposite direction to the humans.
+It is reported in the paper as a negative result.
+

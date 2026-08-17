@@ -1,0 +1,34 @@
+{
+  "note": "condition-specific floors and clamps disabled",
+  "speccov": {
+    "llm_taxonomy": {
+      "n": 100,
+      "unfloored_mean": 4.19,
+      "floored_mean": 4.19
+    },
+    "llm_free_form": {
+      "n": 100,
+      "unfloored_mean": 3.38,
+      "floored_mean": 3.38
+    },
+    "raw_summary": {
+      "n": 100,
+      "unfloored_mean": 4.47,
+      "floored_mean": 5
+    },
+    "human_ref": {
+      "n": 20,
+      "unfloored_mean": 3.45,
+      "floored_mean": 4
+    }
+  },
+  "rubric_unclamped": {},
+  "paper_currently_reports": {
+    "speccov": {
+      "llm_taxonomy": 4.19,
+      "llm_free_form": 3.38,
+      "raw_summary": 5.0,
+      "human_ref": 4.0
+    }
+  }
+}

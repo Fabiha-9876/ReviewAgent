@@ -1,0 +1,1100 @@
+{
+  "judge": "Qwen/Qwen2.5-3B-Instruct",
+  "rubric_dimensions": [
+    "completeness",
+    "accuracy",
+    "actionability",
+    "specificity",
+    "clarity"
+  ],
+  "panel_a": {
+    "description": "four-way, clusters covered by all four generators (bug_report only)",
+    "n_clusters": 14,
+    "results": {
+      "Claude (Anthropic)": {
+        "n_scored": 14,
+        "overall_mean": 4.086,
+        "per_dim": {
+          "completeness": 4.0,
+          "accuracy": 4.5,
+          "actionability": 3.71,
+          "specificity": 4.36,
+          "clarity": 3.86
+        },
+        "rows": [
+          {
+            "cluster_id": "c_00004",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00005",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 5,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00008",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00011",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00016",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 5,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00018",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00019",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00021",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00026",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00027",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00045",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00047",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00048",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00053",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          }
+        ]
+      },
+      "Llama-3.3-70B (Meta)": {
+        "n_scored": 14,
+        "overall_mean": 3.957,
+        "per_dim": {
+          "completeness": 3.86,
+          "accuracy": 4.5,
+          "actionability": 4.07,
+          "specificity": 3.86,
+          "clarity": 3.5
+        },
+        "rows": [
+          {
+            "cluster_id": "c_00004",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00005",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00008",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00011",
+            "issue_type": "bug_report",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00016",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00018",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00019",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00021",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00026",
+            "issue_type": "bug_report",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00027",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00045",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00047",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00048",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00053",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 3,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 2
+          }
+        ]
+      },
+      "Qwen2.5-3B (Alibaba)": {
+        "n_scored": 14,
+        "overall_mean": 3.829,
+        "per_dim": {
+          "completeness": 3.07,
+          "accuracy": 4.5,
+          "actionability": 4.0,
+          "specificity": 3.86,
+          "clarity": 3.71
+        },
+        "rows": [
+          {
+            "cluster_id": "c_00004",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00005",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00008",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00011",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00016",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00018",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00019",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00021",
+            "issue_type": "bug_report",
+            "completeness": 2,
+            "accuracy": 3,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00026",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00027",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00045",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00047",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00048",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00053",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          }
+        ]
+      },
+      "Qwen2.5-1.5B (Alibaba)": {
+        "n_scored": 13,
+        "overall_mean": 3.769,
+        "per_dim": {
+          "completeness": 3.0,
+          "accuracy": 4.15,
+          "actionability": 4.46,
+          "specificity": 3.62,
+          "clarity": 3.62
+        },
+        "rows": [
+          {
+            "cluster_id": "c_00004",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00005",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00008",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00011",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00016",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00018",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00019",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00021",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00026",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00027",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00045",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00047",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00053",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 4
+          }
+        ]
+      }
+    }
+  },
+  "panel_b": {
+    "description": "Claude vs Llama-3.3-70B, stratified across five issue types",
+    "n_clusters": 28,
+    "results": {
+      "Claude (Anthropic)": {
+        "n_scored": 28,
+        "overall_mean": 4.014,
+        "per_dim": {
+          "completeness": 3.86,
+          "accuracy": 4.54,
+          "actionability": 3.75,
+          "specificity": 4.29,
+          "clarity": 3.64
+        },
+        "rows": [
+          {
+            "cluster_id": "c_00019",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00025",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00037",
+            "issue_type": "bug_report",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00041",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00046",
+            "issue_type": "bug_report",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 3,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00047",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00060",
+            "issue_type": "feature_request",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00069",
+            "issue_type": "feature_request",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00075",
+            "issue_type": "feature_request",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00097",
+            "issue_type": "feature_request",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00099",
+            "issue_type": "feature_request",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00116",
+            "issue_type": "feature_request",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 5,
+            "specificity": 5,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00121",
+            "issue_type": "performance",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00137",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00140",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00142",
+            "issue_type": "performance",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00144",
+            "issue_type": "performance",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00146",
+            "issue_type": "performance",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00160",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 5,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00161",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00180",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 5,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00183",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00187",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00188",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00191",
+            "issue_type": "compatibility",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00192",
+            "issue_type": "compatibility",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00193",
+            "issue_type": "compatibility",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 5,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00194",
+            "issue_type": "compatibility",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          }
+        ]
+      },
+      "Llama-3.3-70B (Meta)": {
+        "n_scored": 28,
+        "overall_mean": 3.636,
+        "per_dim": {
+          "completeness": 3.39,
+          "accuracy": 4.46,
+          "actionability": 3.14,
+          "specificity": 3.82,
+          "clarity": 3.36
+        },
+        "rows": [
+          {
+            "cluster_id": "c_00019",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00025",
+            "issue_type": "bug_report",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00037",
+            "issue_type": "bug_report",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00041",
+            "issue_type": "bug_report",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00046",
+            "issue_type": "bug_report",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00047",
+            "issue_type": "bug_report",
+            "completeness": 5,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 5
+          },
+          {
+            "cluster_id": "c_00060",
+            "issue_type": "feature_request",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00069",
+            "issue_type": "feature_request",
+            "completeness": 2,
+            "accuracy": 4,
+            "actionability": 3,
+            "specificity": 3,
+            "clarity": 2
+          },
+          {
+            "cluster_id": "c_00075",
+            "issue_type": "feature_request",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 3,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00097",
+            "issue_type": "feature_request",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00099",
+            "issue_type": "feature_request",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00116",
+            "issue_type": "feature_request",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 3,
+            "clarity": 4
+          },
+          {
+            "cluster_id": "c_00121",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 5,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00137",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 3,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00140",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00142",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00144",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00146",
+            "issue_type": "performance",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00160",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 3,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00161",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 3,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00180",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00183",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00187",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00188",
+            "issue_type": "usability",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 2,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00191",
+            "issue_type": "compatibility",
+            "completeness": 3,
+            "accuracy": 4,
+            "actionability": 3,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00192",
+            "issue_type": "compatibility",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00193",
+            "issue_type": "compatibility",
+            "completeness": 3,
+            "accuracy": 5,
+            "actionability": 4,
+            "specificity": 4,
+            "clarity": 3
+          },
+          {
+            "cluster_id": "c_00194",
+            "issue_type": "compatibility",
+            "completeness": 4,
+            "accuracy": 5,
+            "actionability": 3,
+            "specificity": 4,
+            "clarity": 4
+          }
+        ]
+      }
+    }
+  },
+  "caveat": "The judge is Qwen2.5-3B-Instruct and one judged generator is also Qwen2.5-3B-Instruct; that row carries a self-preference risk."
+}

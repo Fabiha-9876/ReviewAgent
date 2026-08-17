@@ -1,0 +1,117 @@
+{
+  "method": "Qwen2.5-3B-Instruct as 5-dim rubric judge on 100 IssueSpecs (taxonomy condition). Calibration: same judge applied to 20 lead-author reference specs. Rubric: completeness, accuracy, actionability, specificity, clarity (1-5 each).",
+  "n_scored": 28,
+  "overall_mean_per_dim_taxonomy_condition": {
+    "completeness": 3.79,
+    "accuracy": 4.39,
+    "actionability": 3.71,
+    "specificity": 4.07,
+    "clarity": 3.5
+  },
+  "overall_mean_score": 3.89,
+  "per_issue_type": {
+    "bug_report": {
+      "completeness": 4.17,
+      "accuracy": 4.67,
+      "actionability": 4,
+      "specificity": 4,
+      "clarity": 3.67
+    },
+    "feature_request": {
+      "completeness": 3.5,
+      "accuracy": 4,
+      "actionability": 4.33,
+      "specificity": 3.83,
+      "clarity": 3.5
+    },
+    "performance": {
+      "completeness": 4.67,
+      "accuracy": 4.83,
+      "actionability": 3.67,
+      "specificity": 4.83,
+      "clarity": 3.83
+    },
+    "usability": {
+      "completeness": 3,
+      "accuracy": 4,
+      "actionability": 3,
+      "specificity": 3.67,
+      "clarity": 3.17
+    },
+    "compatibility": {
+      "completeness": 3.5,
+      "accuracy": 4.5,
+      "actionability": 3.5,
+      "specificity": 4,
+      "clarity": 3.25
+    }
+  },
+  "calibration_lead_author_reference": {
+    "n": 20,
+    "mean_per_dim": {
+      "completeness": 3.05,
+      "accuracy": 3.75,
+      "actionability": 4.7,
+      "specificity": 3.8,
+      "clarity": 3
+    }
+  },
+  "interpretation": "Rubric scores on the taxonomy-condition specs. The lead-author reference set calibrates the Qwen judge: if the reference specs (which the lead author wrote as a high bar) score similarly to the LLM-generated specs, the judge is treating both as comparable; large gaps would indicate the LLM specs are systematically below human-quality on a dimension. Full multi-annotator validation on 200-300 specs is the v2 dataset extension queued in Future Work.",
+  "scored_samples": [
+    {
+      "spec_id": "is_c_00032",
+      "issue_type": "bug_report",
+      "scores": {
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      }
+    },
+    {
+      "spec_id": "is_c_00027",
+      "issue_type": "bug_report",
+      "scores": {
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 4
+      }
+    },
+    {
+      "spec_id": "is_c_00042",
+      "issue_type": "bug_report",
+      "scores": {
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      }
+    },
+    {
+      "spec_id": "is_c_00037",
+      "issue_type": "bug_report",
+      "scores": {
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      }
+    },
+    {
+      "spec_id": "is_c_00022",
+      "issue_type": "bug_report",
+      "scores": {
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 3,
+        "clarity": 3
+      }
+    }
+  ]
+}

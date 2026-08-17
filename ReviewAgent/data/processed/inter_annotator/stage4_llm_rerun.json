@@ -1,0 +1,165 @@
+{
+  "n_rows": 200,
+  "raters": [
+    "A",
+    "D",
+    "E"
+  ],
+  "design": "same LLM, same retrieved context, IssueSpec present or absent",
+  "independence": {
+    "pairwise": {
+      "A_vs_D": {
+        "rows_differing": 133,
+        "pct_differing": 66.5,
+        "max_abs_diff": 4.0
+      },
+      "A_vs_E": {
+        "rows_differing": 145,
+        "pct_differing": 72.5,
+        "max_abs_diff": 3.0
+      },
+      "D_vs_E": {
+        "rows_differing": 143,
+        "pct_differing": 71.5,
+        "max_abs_diff": 2.0
+      }
+    },
+    "D_deviations_from_A": 133,
+    "E_deviations_from_A": 145,
+    "overlap_observed": 101,
+    "overlap_expected_if_independent": 96.4,
+    "D_magnitudes": {
+      "1.0": 73,
+      "2.0": 39,
+      "3.0": 20,
+      "4.0": 1
+    },
+    "E_magnitudes": {
+      "1.0": 85,
+      "2.0": 56,
+      "3.0": 4
+    }
+  },
+  "per_rater": {
+    "A": {
+      "condition_means": {
+        "reviewagent_no_spec_LLM": {
+          "quality": 4.04,
+          "specificity": 4.28,
+          "helpful_pct": 94.0
+        },
+        "reviewagent_full_LLM": {
+          "quality": 4.6,
+          "specificity": 4.67,
+          "helpful_pct": 94.0
+        }
+      },
+      "n_pairs": 100,
+      "mean_gain": 0.56,
+      "ci95": [
+        0.44,
+        0.68
+      ],
+      "wilcoxon_p": 2.216743614033008e-11,
+      "cohens_dz": 0.896,
+      "cliffs_delta": 0.461,
+      "wins": 59,
+      "losses": 5,
+      "ties": 36
+    },
+    "D": {
+      "condition_means": {
+        "reviewagent_no_spec_LLM": {
+          "quality": 3.87,
+          "specificity": 3.57,
+          "helpful_pct": 98.0
+        },
+        "reviewagent_full_LLM": {
+          "quality": 3.58,
+          "specificity": 3.34,
+          "helpful_pct": 94.0
+        }
+      },
+      "n_pairs": 100,
+      "mean_gain": -0.29,
+      "ci95": [
+        -0.56,
+        -0.01
+      ],
+      "wilcoxon_p": 0.06253268856242153,
+      "cohens_dz": -0.206,
+      "cliffs_delta": -0.132,
+      "wins": 20,
+      "losses": 35,
+      "ties": 45
+    },
+    "E": {
+      "condition_means": {
+        "reviewagent_no_spec_LLM": {
+          "quality": 3.57,
+          "specificity": 3.72,
+          "helpful_pct": 89.0
+        },
+        "reviewagent_full_LLM": {
+          "quality": 3.42,
+          "specificity": 3.56,
+          "helpful_pct": 93.0
+        }
+      },
+      "n_pairs": 100,
+      "mean_gain": -0.15,
+      "ci95": [
+        -0.33,
+        0.03
+      ],
+      "wilcoxon_p": 0.09033442305698741,
+      "cohens_dz": -0.166,
+      "cliffs_delta": -0.084,
+      "wins": 19,
+      "losses": 28,
+      "ties": 53
+    }
+  },
+  "pooled": {
+    "n_pairs": 100,
+    "mean_gain": 0.04,
+    "ci95": [
+      -0.103,
+      0.18
+    ],
+    "wilcoxon_p": 0.37621793002533677,
+    "cohens_dz": 0.055,
+    "cliffs_delta": 0.043,
+    "wins": 43,
+    "losses": 33,
+    "ties": 24,
+    "mean_full": 3.867,
+    "mean_no_spec": 3.827
+  },
+  "reliability": {
+    "A_vs_D": {
+      "quality_exact_pct": 33.5,
+      "quality_within1_pct": 70.0,
+      "quality_weighted_kappa": 0.03,
+      "quality_pearson": 0.041,
+      "helpful_exact_pct": 92.0,
+      "helpful_cohen_kappa": 0.16
+    },
+    "A_vs_E": {
+      "quality_exact_pct": 27.5,
+      "quality_within1_pct": 70.0,
+      "quality_weighted_kappa": 0.035,
+      "quality_pearson": 0.058,
+      "helpful_exact_pct": 86.0,
+      "helpful_cohen_kappa": -0.006
+    },
+    "D_vs_E": {
+      "quality_exact_pct": 28.5,
+      "quality_within1_pct": 89.5,
+      "quality_weighted_kappa": 0.501,
+      "quality_pearson": 0.551,
+      "helpful_exact_pct": 87.0,
+      "helpful_cohen_kappa": -0.059
+    }
+  }
+}

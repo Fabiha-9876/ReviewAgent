@@ -1,0 +1,78 @@
+{
+  "method": "Count-controlled comparison on the 1,815 representative reviews (3 reps per KG sub-cluster, 605 sub-clusters). KG labels inherited from aspect/sub_cluster assignment; flat = HDBSCAN tuned to give comparable n_clusters; agglomerative = forced 605 clusters.",
+  "n_reps": 1815,
+  "kg_605": {
+    "silhouette_cosine": -0.23371057212352753,
+    "davies_bouldin": 2.241728962639304,
+    "calinski_harabasz": 1.8472306017994633,
+    "n_used": 1815,
+    "n_clusters": 605
+  },
+  "flat_hdbscan_best": {
+    "min_cluster_size": 2,
+    "silhouette_cosine": 0.3613564074039459,
+    "davies_bouldin": 1.3198340456769506,
+    "calinski_harabasz": 8.459870840766412,
+    "n_used": 452,
+    "n_clusters": 105
+  },
+  "agglomerative_605": {
+    "silhouette_cosine": 0.148243248462677,
+    "davies_bouldin": 1.1176548142881537,
+    "calinski_harabasz": 4.2140297917810825,
+    "n_used": 1815,
+    "n_clusters": 605
+  },
+  "delta_kg_minus_flat": {
+    "silhouette_cosine": -0.5950669795274734,
+    "davies_bouldin": 0.9218949169623534,
+    "calinski_harabasz": -6.612640238966948
+  },
+  "delta_kg_minus_agglomerative": {
+    "silhouette_cosine": -0.38195382058620453,
+    "davies_bouldin": 1.1240741483511503,
+    "calinski_harabasz": -2.366799189981619
+  },
+  "hdbscan_attempts": [
+    {
+      "min_cluster_size": 2,
+      "n_clusters": 105,
+      "non_noise": 452
+    },
+    {
+      "min_cluster_size": 3,
+      "n_clusters": 2,
+      "non_noise": 1431
+    },
+    {
+      "min_cluster_size": 4,
+      "n_clusters": 7,
+      "non_noise": 646
+    },
+    {
+      "min_cluster_size": 5,
+      "n_clusters": 3,
+      "non_noise": 602
+    },
+    {
+      "min_cluster_size": 7,
+      "n_clusters": 2,
+      "non_noise": 710
+    },
+    {
+      "min_cluster_size": 10,
+      "n_clusters": 2,
+      "non_noise": 603
+    },
+    {
+      "min_cluster_size": 15,
+      "n_clusters": 2,
+      "non_noise": 446
+    }
+  ],
+  "interpretation": [
+    "KG-605 DB is higher (worse) vs count-matched Agglomerative-605 on the same reps (KG DB=2.24 vs agg=1.12).",
+    "KG-605 CH is lower (worse) vs Agglomerative-605 (KG CH=1.85 vs agg=4.21).",
+    "KG-605 silhouette=-0.234 vs agg=0.148."
+  ]
+}

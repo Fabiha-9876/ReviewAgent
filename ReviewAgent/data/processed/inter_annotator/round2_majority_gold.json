@@ -1,0 +1,2450 @@
+{
+  "gold": {
+    "393": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "1737": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "1823": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "1982": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "2197": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "2255": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "2722": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "2868": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "3083": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "3204": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "3459": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "3485": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "3885": {
+      "label": "compatibility",
+      "votes": 2,
+      "unanimous": false
+    },
+    "4289": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "4403": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "4607": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "5812": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "6247": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "6416": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "6423": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "7521": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "7527": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "7845": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "8843": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "9634": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "10091": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "10923": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "11573": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "12405": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "12924": {
+      "label": "bug_report",
+      "votes": 2,
+      "unanimous": false
+    },
+    "13112": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "13847": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "16712": {
+      "label": "bug_report",
+      "votes": 2,
+      "unanimous": false
+    },
+    "16985": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "17240": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "17378": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "17616": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "17946": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "18010": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "18587": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "18659": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "18682": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "19361": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "19717": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "20209": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "20350": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "20513": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "20618": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "20631": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "20719": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "21098": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "21613": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "21661": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "21734": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "21848": {
+      "label": "bug_report",
+      "votes": 2,
+      "unanimous": false
+    },
+    "22584": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "23474": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "23872": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "24176": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "24375": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "24639": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "24693": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "24976": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "25023": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "25314": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "25576": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "25611": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "25769": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "26937": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "27246": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "27311": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "27929": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "28328": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "29072": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "29237": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "30348": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "30425": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "30504": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "30966": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "31305": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "31585": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "32795": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "32877": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "33476": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "34546": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "35884": {
+      "label": "bug_report",
+      "votes": 2,
+      "unanimous": false
+    },
+    "36516": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "36772": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "37697": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "38135": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "38591": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "38797": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "39927": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "39995": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "40122": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "40877": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "41206": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "41754": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "42545": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "43056": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "43402": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "43497": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "44527": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "44887": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "46122": {
+      "label": "other",
+      "votes": 2,
+      "unanimous": false
+    },
+    "46236": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "46598": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "47103": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "47938": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "48010": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "48020": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "48411": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "48909": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "49136": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "49388": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "49400": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "50113": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "50697": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "51262": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "51779": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "54522": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "54640": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "54791": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "54975": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "55505": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "56856": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "56861": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "56992": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "57130": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "58084": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "58542": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "58802": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "59489": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "60156": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "61940": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "62295": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "63441": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "64000": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "64261": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "64620": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "64904": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "65219": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "65226": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "65320": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "65541": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "65770": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "65885": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "66461": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "67243": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "67311": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "67315": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "67323": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "67798": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "68245": {
+      "label": "bug_report",
+      "votes": 2,
+      "unanimous": false
+    },
+    "68403": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "68543": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "68875": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "69096": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "69651": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "70092": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "71049": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "71129": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "71180": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "71245": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "71391": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "71994": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "72913": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "73064": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "73843": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "74049": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "74202": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "74328": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "74600": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "74839": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "75295": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "75462": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "75577": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "75779": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "75821": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "76065": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "76204": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "76864": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "77076": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "77666": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "78326": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "78418": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "78524": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "78599": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "78854": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "79003": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "79393": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "79591": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "79805": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "80320": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "81350": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "82110": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "83231": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "83685": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "83874": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "85845": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "86167": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "87132": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "87527": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "88050": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "88106": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "88404": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "88699": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "89424": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "89742": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "90795": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "90813": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "91397": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "91766": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "92842": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "93100": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "93461": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "94763": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "95012": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "95868": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "96083": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "96139": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "97625": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "97904": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "98172": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "98563": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "98678": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "98926": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "100532": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "100856": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "101310": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "101377": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "101621": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "101835": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "101960": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "102184": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "103837": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "104723": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "104977": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "105025": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "105883": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "105968": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "106290": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "106544": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "106888": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "106913": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "106957": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "107457": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "107769": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "108586": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "109330": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "109592": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "109599": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "109894": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "110505": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "110625": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "111575": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "111616": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "111826": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "112851": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "113328": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "113917": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "113924": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "114041": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "115555": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "115652": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "115677": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "116189": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "116290": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "116836": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "117656": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "118346": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "119277": {
+      "label": "praise",
+      "votes": 2,
+      "unanimous": false
+    },
+    "121284": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "121617": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "121712": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "122284": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "123268": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "123440": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "124650": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "124768": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "125713": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "125848": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "126624": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "126686": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "126743": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "126936": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "126980": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "127353": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "127482": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "127578": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "127686": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "127816": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "128108": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "128772": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "129711": {
+      "label": "praise",
+      "votes": 2,
+      "unanimous": false
+    },
+    "130118": {
+      "label": "bug_report",
+      "votes": 2,
+      "unanimous": false
+    },
+    "131169": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "131210": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "131219": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "131580": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "132744": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "132794": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "133051": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "133184": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "133247": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "133296": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "133569": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "133672": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "135290": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "135302": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "136761": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "136817": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "137323": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "137357": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "137801": {
+      "label": "bug_report",
+      "votes": 2,
+      "unanimous": false
+    },
+    "138022": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "138313": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "138517": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "139875": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "140240": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "140837": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "141079": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "141437": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "141474": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "142330": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "142486": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "142800": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "143121": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "143533": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "143638": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "143780": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "144622": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "144825": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "145164": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "145201": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "145467": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "146041": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "146572": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "146732": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "147547": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "148021": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "148505": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "148595": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "148825": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "149510": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "149612": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "149740": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "149860": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "149976": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "150205": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "151257": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "151683": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "151826": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "152732": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "152781": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "153102": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "153648": {
+      "label": "praise",
+      "votes": 2,
+      "unanimous": false
+    },
+    "153868": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "154151": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "154448": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "154499": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "155613": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "155977": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "156141": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "157174": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "157766": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "158016": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "158122": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "158606": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "159020": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "159419": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "159962": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "160193": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "160488": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "160790": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "161140": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "161905": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "163112": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "163148": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "165578": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "165853": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "166039": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "166560": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "167069": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "167384": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "167598": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "167866": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "168048": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "168791": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "168856": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "169281": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "169851": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "170209": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "170548": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "170971": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "171576": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "171909": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "172154": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "173966": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "173978": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "174273": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "175139": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "175141": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "175200": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "175289": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "175609": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "176310": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "177033": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "177913": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "178714": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "178767": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "178991": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "180185": {
+      "label": "praise",
+      "votes": 2,
+      "unanimous": false
+    },
+    "180258": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "180361": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "180392": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "180531": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "180607": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "181105": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "181353": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "181421": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "181589": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "181686": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "182015": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "182124": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "182197": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "182253": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "182697": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "183408": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "184198": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "184822": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "185204": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "185357": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "185584": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "185931": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "186404": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "186596": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "187000": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "187308": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "187628": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "190770": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "190883": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "191151": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "191186": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "191542": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "192146": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "193803": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "194560": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "194781": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "195335": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "195818": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "196474": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "197353": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "198286": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "199765": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "199847": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "200537": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "201072": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "201157": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "201407": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "203604": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "203605": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "203776": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "203847": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "204422": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "204889": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "205083": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "205965": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "206176": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "206846": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "206917": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "207080": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "207148": {
+      "label": "feature_request",
+      "votes": 3,
+      "unanimous": true
+    },
+    "207166": {
+      "label": "usability",
+      "votes": 3,
+      "unanimous": true
+    },
+    "207320": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "207326": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "207411": {
+      "label": "bug_report",
+      "votes": 3,
+      "unanimous": true
+    },
+    "208946": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "210396": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "210400": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "210949": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "210977": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "211095": {
+      "label": "performance",
+      "votes": 3,
+      "unanimous": true
+    },
+    "211253": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "211264": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    },
+    "211535": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "213157": {
+      "label": "praise",
+      "votes": 3,
+      "unanimous": true
+    },
+    "214137": {
+      "label": "compatibility",
+      "votes": 3,
+      "unanimous": true
+    },
+    "215367": {
+      "label": "other",
+      "votes": 3,
+      "unanimous": true
+    }
+  },
+  "ties": []
+}

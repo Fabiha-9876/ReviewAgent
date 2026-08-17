@@ -1,0 +1,15 @@
+==========================================================================
+STAGE-3 RUN-TO-RUN VARIANCE
+==========================================================================
+
+model: Qwen/Qwen2.5-3B-Instruct   temperature: 0.7
+15 clusters, regenerated 3 times with different seeds
+
+   run   strict fill    SpecCov  parse fails
+     1         0.685      2.733            0
+     2         0.700      2.667            0
+     3         0.634      3.000            0
+
+  strict fill: mean 0.673, sd 0.029, range 0.067
+  SpecCov    : mean 2.800, sd 0.144, range 0.333
+

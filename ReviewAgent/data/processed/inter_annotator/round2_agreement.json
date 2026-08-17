@@ -1,0 +1,75 @@
+{
+  "n_items": 490,
+  "n_usable_label_level": 489,
+  "raters": [
+    "A",
+    "D",
+    "E"
+  ],
+  "pairwise_verdict": {
+    "A_vs_D": {
+      "raw_agreement": 0.9857142857142858,
+      "cohen_kappa": 0.9689317222514086
+    },
+    "A_vs_E": {
+      "raw_agreement": 0.9897959183673469,
+      "cohen_kappa": 0.9778083730367203
+    },
+    "D_vs_E": {
+      "raw_agreement": 0.9795918367346939,
+      "cohen_kappa": 0.9558844713339095
+    }
+  },
+  "pairwise_label": {
+    "A_vs_D": {
+      "raw_agreement": 0.9856850715746421,
+      "cohen_kappa": 0.9829457982293125
+    },
+    "A_vs_E": {
+      "raw_agreement": 0.9856850715746421,
+      "cohen_kappa": 0.9829562429046586
+    },
+    "D_vs_E": {
+      "raw_agreement": 0.9754601226993865,
+      "cohen_kappa": 0.9707747092661305
+    }
+  },
+  "fleiss_verdict": {
+    "kappa": 0.9675163573321227,
+    "p_bar": 0.9850340136054422,
+    "p_e": 0.5392762274978018,
+    "n": 490
+  },
+  "fleiss_label": {
+    "kappa": 0.978891595709474,
+    "p_bar": 0.9822767552828903,
+    "p_e": 0.16037022632428305,
+    "n": 489,
+    "categories": [
+      "bug_report",
+      "compatibility",
+      "feature_request",
+      "other",
+      "performance",
+      "praise",
+      "usability"
+    ]
+  },
+  "krippendorff_alpha_label": 0.9789059845331214,
+  "krippendorff_alpha_verdict": 0.9675384550482232,
+  "unanimous_verdict": 479,
+  "unanimous_label": 476,
+  "majority_gold": {
+    "n": 489,
+    "n_three_way_ties": 0,
+    "distribution": {
+      "other": 117,
+      "feature_request": 35,
+      "praise": 84,
+      "performance": 63,
+      "usability": 60,
+      "compatibility": 50,
+      "bug_report": 80
+    }
+  }
+}

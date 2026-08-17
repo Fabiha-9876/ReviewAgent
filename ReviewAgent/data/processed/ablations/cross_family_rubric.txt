@@ -1,0 +1,20 @@
+==============================================================================
+CROSS-FAMILY 5-DIMENSION RUBRIC (judge: Qwen2.5-3B-Instruct)
+==============================================================================
+
+PANEL A - four-way, 14 matched bug_report clusters
+------------------------------------------------------------------------------
+  generator                    n   mean  compl  accur  actio  speci  clari
+  Claude (Anthropic)          14   4.09   4.00   4.50   3.71   4.36   3.86
+  Llama-3.3-70B (Meta)        14   3.96   3.86   4.50   4.07   3.86   3.50
+  Qwen2.5-3B (Alibaba)        14   3.83   3.07   4.50   4.00   3.86   3.71
+  Qwen2.5-1.5B (Alibaba)      13   3.77   3.00   4.15   4.46   3.62   3.62
+
+PANEL B - Claude vs Llama, 28 clusters, all five types
+------------------------------------------------------------------------------
+  generator                    n   mean  compl  accur  actio  speci  clari
+  Claude (Anthropic)          28   4.01   3.86   4.54   3.75   4.29   3.64
+  Llama-3.3-70B (Meta)        28   3.64   3.39   4.46   3.14   3.82   3.36
+
+Caveat: The judge is Qwen2.5-3B-Instruct and one judged generator is also Qwen2.5-3B-Instruct; that row carries a self-preference risk.
+

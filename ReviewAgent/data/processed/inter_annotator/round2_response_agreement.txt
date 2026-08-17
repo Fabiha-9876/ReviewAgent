@@ -1,0 +1,42 @@
+==============================================================================
+STAGE-4 RESPONSE EVALUATION — 3 HUMAN RATERS
+==============================================================================
+
+400 blinded ratings (100 reviews x 4 conditions), identical rows for all three raters
+
+------------------------------------------------------------------------------
+MEAN QUALITY BY CONDITION
+------------------------------------------------------------------------------
+  condition                     A        D        E   pooled
+  rrgen baseline             2.31     2.37     2.26     2.31
+  prompt baseline            2.98     2.97     2.99     2.98
+  RAG, no IssueSpec          2.26     2.24     2.23     2.24
+  RAG + IssueSpec            4.62     4.57     4.58     4.59
+
+------------------------------------------------------------------------------
+HEADLINE GAIN, RAG + IssueSpec vs RAG without it (quality)
+------------------------------------------------------------------------------
+  rater A: +2.36  CI95 [+2.19, +2.53]  Wilcoxon p=3.27e-18  d_z=2.68  delta=0.882  (95W/1L/4T)
+  rater D: +2.33  CI95 [+2.15, +2.50]  Wilcoxon p=4.68e-18  d_z=2.53  delta=0.882  (95W/1L/4T)
+  rater E: +2.35  CI95 [+2.16, +2.53]  Wilcoxon p=5.01e-18  d_z=2.48  delta=0.882  (95W/1L/4T)
+  pooled : +2.35  CI95 [+2.17, +2.51]  Wilcoxon p=5.20e-18  d_z=2.63  delta=0.885  (96W/1L/3T)
+
+------------------------------------------------------------------------------
+INTER-RATER RELIABILITY (400 rows)
+------------------------------------------------------------------------------
+  A_vs_D
+    quality_1_to_5       exact  96.0%  within-1 100.0%  weighted kappa 0.986  r 0.986
+    specificity_1_to_5   exact  96.2%  within-1  99.8%  weighted kappa 0.980  r 0.980
+    helpful_y_n          exact  92.0%  Cohen kappa 0.836
+  A_vs_E
+    quality_1_to_5       exact  95.2%  within-1 100.0%  weighted kappa 0.984  r 0.984
+    specificity_1_to_5   exact  96.2%  within-1  99.8%  weighted kappa 0.985  r 0.985
+    helpful_y_n          exact  91.5%  Cohen kappa 0.826
+  D_vs_E
+    quality_1_to_5       exact  91.2%  within-1 100.0%  weighted kappa 0.970  r 0.971
+    specificity_1_to_5   exact  92.5%  within-1  99.5%  weighted kappa 0.965  r 0.965
+    helpful_y_n          exact  84.5%  Cohen kappa 0.678
+
+  helpful, 3-rater Krippendorff alpha: 0.781
+  helpful, unanimous on 336/400 rows
+

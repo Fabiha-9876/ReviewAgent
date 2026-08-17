@@ -1,0 +1,215 @@
+{
+  "n_rows": 400,
+  "n_reviews": 100,
+  "raters": [
+    "A",
+    "D",
+    "E"
+  ],
+  "per_rater": {
+    "A": {
+      "condition_means": {
+        "rrgen_baseline": {
+          "quality": 2.31,
+          "specificity": 2.31,
+          "helpful_pct": 19.0
+        },
+        "prompt_baseline": {
+          "quality": 2.98,
+          "specificity": 2.96,
+          "helpful_pct": 84.0
+        },
+        "reviewagent_no_spec": {
+          "quality": 2.26,
+          "specificity": 2.26,
+          "helpful_pct": 31.0
+        },
+        "reviewagent_full": {
+          "quality": 4.62,
+          "specificity": 4.62,
+          "helpful_pct": 92.0
+        }
+      },
+      "full_vs_nospec_quality": {
+        "mean_gain": 2.36,
+        "ci95": [
+          2.18975,
+          2.53
+        ],
+        "wilcoxon_p": 3.2713082160142747e-18,
+        "cohens_dz": 2.675293677651529,
+        "cliffs_delta": 0.8816,
+        "wins": 95,
+        "losses": 1,
+        "ties": 4
+      }
+    },
+    "D": {
+      "condition_means": {
+        "rrgen_baseline": {
+          "quality": 2.37,
+          "specificity": 2.33,
+          "helpful_pct": 28.000000000000004
+        },
+        "prompt_baseline": {
+          "quality": 2.97,
+          "specificity": 2.96,
+          "helpful_pct": 83.0
+        },
+        "reviewagent_no_spec": {
+          "quality": 2.24,
+          "specificity": 2.26,
+          "helpful_pct": 40.0
+        },
+        "reviewagent_full": {
+          "quality": 4.57,
+          "specificity": 4.55,
+          "helpful_pct": 87.0
+        }
+      },
+      "full_vs_nospec_quality": {
+        "mean_gain": 2.33,
+        "ci95": [
+          2.15,
+          2.5
+        ],
+        "wilcoxon_p": 4.682443144543174e-18,
+        "cohens_dz": 2.5278406989866067,
+        "cliffs_delta": 0.8822,
+        "wins": 95,
+        "losses": 1,
+        "ties": 4
+      }
+    },
+    "E": {
+      "condition_means": {
+        "rrgen_baseline": {
+          "quality": 2.26,
+          "specificity": 2.28,
+          "helpful_pct": 27.0
+        },
+        "prompt_baseline": {
+          "quality": 2.99,
+          "specificity": 2.96,
+          "helpful_pct": 81.0
+        },
+        "reviewagent_no_spec": {
+          "quality": 2.23,
+          "specificity": 2.28,
+          "helpful_pct": 37.0
+        },
+        "reviewagent_full": {
+          "quality": 4.58,
+          "specificity": 4.61,
+          "helpful_pct": 93.0
+        }
+      },
+      "full_vs_nospec_quality": {
+        "mean_gain": 2.35,
+        "ci95": [
+          2.16,
+          2.53
+        ],
+        "wilcoxon_p": 5.014443936282548e-18,
+        "cohens_dz": 2.4819971513188586,
+        "cliffs_delta": 0.8825,
+        "wins": 95,
+        "losses": 1,
+        "ties": 4
+      }
+    }
+  },
+  "pooled_condition_means": {
+    "rrgen_baseline": {
+      "quality": 2.3133333333333335,
+      "specificity": 2.3066666666666666,
+      "helpful_pct": 24.666666666666668
+    },
+    "prompt_baseline": {
+      "quality": 2.98,
+      "specificity": 2.96,
+      "helpful_pct": 82.66666666666667
+    },
+    "reviewagent_no_spec": {
+      "quality": 2.243333333333333,
+      "specificity": 2.2666666666666666,
+      "helpful_pct": 36.0
+    },
+    "reviewagent_full": {
+      "quality": 4.59,
+      "specificity": 4.593333333333334,
+      "helpful_pct": 90.66666666666666
+    }
+  },
+  "pooled_full_vs_nospec_quality": {
+    "mean_gain": 2.3466666666666667,
+    "ci95": [
+      2.1666666666666665,
+      2.5133333333333336
+    ],
+    "wilcoxon_p": 5.202908594279992e-18,
+    "cohens_dz": 2.6254216499809715,
+    "cliffs_delta": 0.8846,
+    "wins": 96,
+    "losses": 1,
+    "ties": 3
+  },
+  "inter_rater": {
+    "A_vs_D": {
+      "quality_1_to_5": {
+        "exact_pct": 96.0,
+        "within1_pct": 100.0,
+        "quadratic_weighted_kappa": 0.9863332550342736,
+        "pearson_r": 0.9864106107907261
+      },
+      "specificity_1_to_5": {
+        "exact_pct": 96.25,
+        "within1_pct": 99.75,
+        "quadratic_weighted_kappa": 0.980379611857539,
+        "pearson_r": 0.9804588126253271
+      },
+      "helpful_y_n": {
+        "exact_pct": 92.0,
+        "cohen_kappa": 0.8359479134625244
+      }
+    },
+    "A_vs_E": {
+      "quality_1_to_5": {
+        "exact_pct": 95.25,
+        "within1_pct": 100.0,
+        "quadratic_weighted_kappa": 0.9840669523434159,
+        "pearson_r": 0.9843368174604546
+      },
+      "specificity_1_to_5": {
+        "exact_pct": 96.25,
+        "within1_pct": 99.75,
+        "quadratic_weighted_kappa": 0.984707206728829,
+        "pearson_r": 0.984720868221794
+      },
+      "helpful_y_n": {
+        "exact_pct": 91.5,
+        "cohen_kappa": 0.8256946580539322
+      }
+    },
+    "D_vs_E": {
+      "quality_1_to_5": {
+        "exact_pct": 91.25,
+        "within1_pct": 100.0,
+        "quadratic_weighted_kappa": 0.9703024903483094,
+        "pearson_r": 0.9706304054879806
+      },
+      "specificity_1_to_5": {
+        "exact_pct": 92.5,
+        "within1_pct": 99.5,
+        "quadratic_weighted_kappa": 0.9649077759233107,
+        "pearson_r": 0.9649345957096486
+      },
+      "helpful_y_n": {
+        "exact_pct": 84.5,
+        "cohen_kappa": 0.6783898744683058
+      }
+    }
+  },
+  "helpful_krippendorff_alpha": 0.78050092106317,
+  "unanimous_helpful": 336
+}

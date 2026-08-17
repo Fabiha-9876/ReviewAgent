@@ -1,0 +1,25 @@
+{
+  "method": "centroid-based proxy from 5 representative_reviews per cluster",
+  "caveat": "Not the full A1b intrinsic-metric comparison (which needs per-review embeddings of all 215K reviews and a count-matched fine-thresholded flat run). This is a representative-review-only proxy that tells you which design produces more semantically cohesive AND more separated centroids.",
+  "hierarchical_kg": {
+    "n_clusters": 605,
+    "n_clusters_with_metric": 605,
+    "mean_intra_cohesion": 0.3932940661907196,
+    "median_intra_cohesion": 0.3850889205932617,
+    "mean_inter_centroid_sim": 0.37588968873023987,
+    "separation_ratio_intra_over_inter": 1.0463018417358398
+  },
+  "flat_umap_hdbscan": {
+    "n_clusters": 194,
+    "n_clusters_with_metric": 194,
+    "mean_intra_cohesion": 0.5740119814872742,
+    "median_intra_cohesion": 0.5771832466125488,
+    "mean_inter_centroid_sim": 0.3100607991218567,
+    "separation_ratio_intra_over_inter": 1.8512884378433228
+  },
+  "delta_hier_minus_flat": {
+    "intra_cohesion": -0.18071791529655457,
+    "inter_centroid_sim": 0.06582888960838318,
+    "separation_ratio": -0.8049865961074829
+  }
+}

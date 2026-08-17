@@ -1,0 +1,1189 @@
+{
+  "judge": "Qwen/Qwen2.5-3B-Instruct",
+  "rubric_dimensions": [
+    "completeness",
+    "accuracy",
+    "actionability",
+    "specificity",
+    "clarity"
+  ],
+  "taxonomy_full": {
+    "n": 100,
+    "overall_mean": 3.936,
+    "overall_sd": 0.595,
+    "per_dim": {
+      "completeness": 3.72,
+      "accuracy": 4.43,
+      "actionability": 3.86,
+      "specificity": 4.15,
+      "clarity": 3.52
+    }
+  },
+  "reference_full": {
+    "n": 20,
+    "overall_mean": 3.45,
+    "overall_sd": 0.414,
+    "per_dim": {
+      "completeness": 3.2,
+      "accuracy": 4.1,
+      "actionability": 2.85,
+      "specificity": 4.05,
+      "clarity": 3.05
+    }
+  },
+  "taxonomy_per_issue_type": {
+    "bug_report": {
+      "n": 30,
+      "overall_mean": 4.02,
+      "overall_sd": 0.639,
+      "per_dim": {
+        "completeness": 3.8,
+        "accuracy": 4.5,
+        "actionability": 3.93,
+        "specificity": 4.2,
+        "clarity": 3.67
+      }
+    },
+    "compatibility": {
+      "n": 4,
+      "overall_mean": 3.75,
+      "overall_sd": 0.536,
+      "per_dim": {
+        "completeness": 3.5,
+        "accuracy": 4.5,
+        "actionability": 3.5,
+        "specificity": 4,
+        "clarity": 3.25
+      }
+    },
+    "feature_request": {
+      "n": 30,
+      "overall_mean": 3.94,
+      "overall_sd": 0.532,
+      "per_dim": {
+        "completeness": 3.63,
+        "accuracy": 4.3,
+        "actionability": 4.33,
+        "specificity": 3.9,
+        "clarity": 3.53
+      }
+    },
+    "performance": {
+      "n": 20,
+      "overall_mean": 4.23,
+      "overall_sd": 0.577,
+      "per_dim": {
+        "completeness": 4.35,
+        "accuracy": 4.75,
+        "actionability": 3.65,
+        "specificity": 4.7,
+        "clarity": 3.7
+      }
+    },
+    "usability": {
+      "n": 16,
+      "overall_mean": 3.45,
+      "overall_sd": 0.25,
+      "per_dim": {
+        "completeness": 3,
+        "accuracy": 4.12,
+        "actionability": 3.19,
+        "specificity": 3.88,
+        "clarity": 3.06
+      }
+    }
+  },
+  "subsample_comparison": {
+    "previous_n": 28,
+    "previous_mean": 3.89,
+    "note": "same judge and rubric; the difference measures subsample error",
+    "full_mean": 3.936,
+    "delta": 0.046
+  },
+  "rows": {
+    "taxonomy": [
+      {
+        "cluster_id": "c_00004",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00008",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00019",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00005",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 5,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00045",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00026",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00018",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00016",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 5,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00047",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00048",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00042",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00053",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00011",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00021",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00027",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00051",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00039",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00046",
+        "issue_type": "bug_report",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00040",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00032",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00041",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00025",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00022",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00055",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00044",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00038",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00037",
+        "issue_type": "bug_report",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00049",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00023",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00058",
+        "issue_type": "bug_report",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00065",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00099",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00066",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00097",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00087",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 3,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00111",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00096",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 3,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00074",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00079",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 4,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00075",
+        "issue_type": "feature_request",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00069",
+        "issue_type": "feature_request",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00092",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 4,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00081",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00114",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00116",
+        "issue_type": "feature_request",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00100",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 3,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00076",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00101",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 3,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00064",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00073",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 3,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00098",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00105",
+        "issue_type": "feature_request",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00094",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00068",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00109",
+        "issue_type": "feature_request",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00095",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00088",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00117",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00070",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00060",
+        "issue_type": "feature_request",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00121",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00144",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00145",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00132",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00122",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00153",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00137",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00151",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00142",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00146",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00157",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00127",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 5,
+        "specificity": 5,
+        "clarity": 5
+      },
+      {
+        "cluster_id": "c_00140",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00158",
+        "issue_type": "performance",
+        "completeness": 4,
+        "accuracy": 5,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00159",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00124",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00129",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00135",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00134",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00138",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 5,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00187",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00188",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00161",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00177",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00189",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00179",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 3,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00160",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 5,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00185",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00183",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00184",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 5,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00180",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00171",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 5,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00173",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00166",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00168",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00170",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00194",
+        "issue_type": "compatibility",
+        "completeness": 3,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00193",
+        "issue_type": "compatibility",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00192",
+        "issue_type": "compatibility",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00191",
+        "issue_type": "compatibility",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      }
+    ],
+    "reference": [
+      {
+        "cluster_id": "c_00004",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00008",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00019",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00005",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00045",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00026",
+        "issue_type": "bug_report",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00065",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 3,
+        "specificity": 4,
+        "clarity": 2
+      },
+      {
+        "cluster_id": "c_00099",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00066",
+        "issue_type": "feature_request",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00097",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 3,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00087",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 2,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00111",
+        "issue_type": "feature_request",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 4,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00121",
+        "issue_type": "performance",
+        "completeness": 5,
+        "accuracy": 5,
+        "actionability": 4,
+        "specificity": 5,
+        "clarity": 4
+      },
+      {
+        "cluster_id": "c_00144",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 5,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00145",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00132",
+        "issue_type": "performance",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00187",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00188",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00161",
+        "issue_type": "usability",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 5,
+        "clarity": 3
+      },
+      {
+        "cluster_id": "c_00194",
+        "issue_type": "compatibility",
+        "completeness": 3,
+        "accuracy": 4,
+        "actionability": 2,
+        "specificity": 4,
+        "clarity": 3
+      }
+    ]
+  }
+}

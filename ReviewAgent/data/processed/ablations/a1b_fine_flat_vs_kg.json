@@ -1,0 +1,66 @@
+{
+  "method": "Global HDBSCAN with binary-searched min_cluster_size to hit ~605 clusters, compared against KG-hierarchical 605 on identical 384-dim sentence embeddings of the actionable-class subset (n=117,958).",
+  "kg_605": {
+    "silhouette_cosine": null,
+    "davies_bouldin": null,
+    "calinski_harabasz": null,
+    "n_used": 0,
+    "n_clusters": 0
+  },
+  "flat_fine": {
+    "min_cluster_size": 30,
+    "silhouette_cosine": 0.6034793257713318,
+    "davies_bouldin": 0.501059812949191,
+    "calinski_harabasz": 24229.214312835447,
+    "n_used": 70377,
+    "n_clusters": 250
+  },
+  "delta_kg_minus_flat": {
+    "silhouette_cosine": null,
+    "davies_bouldin": null,
+    "calinski_harabasz": null
+  },
+  "attempts": [
+    {
+      "min_cluster_size": 265,
+      "n_clusters": 49,
+      "seconds": 21.8
+    },
+    {
+      "min_cluster_size": 147,
+      "n_clusters": 81,
+      "seconds": 15.3
+    },
+    {
+      "min_cluster_size": 88,
+      "n_clusters": 104,
+      "seconds": 15.6
+    },
+    {
+      "min_cluster_size": 58,
+      "n_clusters": 156,
+      "seconds": 11.5
+    },
+    {
+      "min_cluster_size": 43,
+      "n_clusters": 203,
+      "seconds": 11.1
+    },
+    {
+      "min_cluster_size": 36,
+      "n_clusters": 229,
+      "seconds": 10.6
+    },
+    {
+      "min_cluster_size": 32,
+      "n_clusters": 242,
+      "seconds": 10.3
+    },
+    {
+      "min_cluster_size": 30,
+      "n_clusters": 250,
+      "seconds": 11.3
+    }
+  ],
+  "interpretation": []
+}

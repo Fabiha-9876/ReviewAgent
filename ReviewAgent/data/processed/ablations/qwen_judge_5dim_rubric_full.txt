@@ -1,0 +1,20 @@
+==========================================================================
+FIVE-DIMENSION RUBRIC ON THE FULL SPEC SET
+==========================================================================
+
+judge: Qwen/Qwen2.5-3B-Instruct
+
+  set                 n   mean     sd   compl   accur   actio   speci   clari
+  taxonomy          100   3.94   0.59    3.72    4.43    3.86    4.15    3.52
+  lead-author ref    20   3.45   0.41    3.20    4.10    2.85    4.05    3.05
+
+  per issue type (taxonomy condition)
+  ------------------------------------------------------------
+  bug_report         n=30   mean=4.02
+  compatibility      n=4    mean=3.75
+  feature_request    n=30   mean=3.94
+  performance        n=20   mean=4.23
+  usability          n=16   mean=3.45
+
+  28-spec subsample: 3.89   full 100-spec: 3.94   delta +0.05
+

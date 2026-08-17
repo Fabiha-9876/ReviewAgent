@@ -1,0 +1,45 @@
+==============================================================================
+ROUND-2 INTER-ANNOTATOR AGREEMENT — 3 HUMAN RATERS
+==============================================================================
+
+Sample: 490 reviews (stratified, 70 per class x 7 classes)
+Raters: A (lead author), D, E — independent, identical item set
+Usable for label-level statistics: 489
+
+------------------------------------------------------------------------------
+UNIT 1 — VERIFICATION DECISION (Y/N)
+------------------------------------------------------------------------------
+  Cohen kappa A_vs_D     0.9689   (raw 98.6%)
+  Cohen kappa A_vs_E     0.9778   (raw 99.0%)
+  Cohen kappa D_vs_E     0.9559   (raw 98.0%)
+  Fleiss kappa (3 raters)   0.9675
+  Krippendorff alpha        0.9675
+  Unanimous on 479/490 items
+
+------------------------------------------------------------------------------
+UNIT 2 — EFFECTIVE 7-CLASS LABEL
+------------------------------------------------------------------------------
+  Cohen kappa A_vs_D     0.9829   (raw 98.6%)
+  Cohen kappa A_vs_E     0.9830   (raw 98.6%)
+  Cohen kappa D_vs_E     0.9708   (raw 97.5%)
+  Fleiss kappa (3 raters)   0.9789
+  Krippendorff alpha        0.9789
+  Unanimous on 476/489 items
+
+Interpretation, Landis-Koch (kappa): >0.81 almost perfect, 0.61-0.80 substantial,
+0.41-0.60 moderate, 0.21-0.40 fair, <0.20 slight.
+Krippendorff: >=0.800 strong, >=0.667 acceptable.
+
+------------------------------------------------------------------------------
+MAJORITY-VOTE GOLD STANDARD
+------------------------------------------------------------------------------
+  Items with a majority label: 489
+  Three-way ties (excluded):   0
+  Distribution:
+    other               117
+    praise               84
+    bug_report           80
+    performance          63
+    usability            60
+    compatibility        50
+    feature_request      35

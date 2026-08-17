@@ -14,3 +14,12 @@ dist/
 build/
 .ruff_cache/
 notebooks/.ipynb_checkpoints/
+
+# correction-round artifacts that must stay public (see NOTICE_CORRECTION.md)
+!data/processed/responses/README.md
+!data/processed/inter_annotator/
+!data/processed/inter_annotator/*.json
+!data/processed/inter_annotator/*.txt
+!data/processed/ablations/
+!data/processed/ablations/*.json
+!data/processed/ablations/*.txt

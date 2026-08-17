@@ -1,0 +1,225 @@
+{
+  "n_maalej": 5008,
+  "v5_distribution_on_maalej": {
+    "other": 605,
+    "bug_report": 626,
+    "compatibility": 432,
+    "usability": 912,
+    "feature_request": 431,
+    "performance": 16,
+    "praise": 1986
+  },
+  "maalej_gold_distribution": {
+    "bug_report": 864,
+    "praise": 2389,
+    "feature_request": 444,
+    "usability": 607,
+    "other": 704
+  },
+  "overlapping_classes": [
+    "bug_report",
+    "feature_request",
+    "usability",
+    "praise",
+    "other"
+  ],
+  "n_overlapping_evaluable": 4560,
+  "v5_vs_maalej_classification_report": {
+    "bug_report": {
+      "precision": 0.722,
+      "recall": 0.801,
+      "f1-score": 0.76,
+      "support": 564.0
+    },
+    "feature_request": {
+      "precision": 0.536,
+      "recall": 0.636,
+      "f1-score": 0.582,
+      "support": 363.0
+    },
+    "other": {
+      "precision": 0.747,
+      "recall": 0.655,
+      "f1-score": 0.698,
+      "support": 690.0
+    },
+    "praise": {
+      "precision": 0.877,
+      "recall": 0.742,
+      "f1-score": 0.804,
+      "support": 2345.0
+    },
+    "usability": {
+      "precision": 0.444,
+      "recall": 0.677,
+      "f1-score": 0.536,
+      "support": 598.0
+    },
+    "accuracy": 0.7195175438596492,
+    "macro avg": {
+      "precision": 0.665,
+      "recall": 0.703,
+      "f1-score": 0.676,
+      "support": 4560.0
+    },
+    "weighted avg": {
+      "precision": 0.754,
+      "recall": 0.72,
+      "f1-score": 0.73,
+      "support": 4560.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "bug_report",
+      "feature_request",
+      "usability",
+      "praise",
+      "other"
+    ],
+    "matrix": [
+      [
+        452,
+        48,
+        17,
+        15,
+        32
+      ],
+      [
+        70,
+        231,
+        27,
+        7,
+        28
+      ],
+      [
+        21,
+        23,
+        405,
+        140,
+        9
+      ],
+      [
+        43,
+        83,
+        394,
+        1741,
+        84
+      ],
+      [
+        40,
+        46,
+        69,
+        83,
+        452
+      ]
+    ],
+    "rows_are_gold_cols_are_pred": true
+  },
+  "v5_compat_predictions_on_maalej": {
+    "n_predicted_compat": 432,
+    "fraction_of_corpus": 0.0863,
+    "top_20_by_confidence": [
+      {
+        "text": "7.2 completely crashes on startup on iphone 5 and ipad 3.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Ever since the iOS 7 update, the app crashes whenever I try to look at my notifications.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Every since I updated to iOS7, this app crashes my whole iPad.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "But since IOS7, it crashes and freezes on a website at least once a week.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Mixed review\tThis game works great on my HTC Desire X but not on my samsung galaxy tab3 (Stock Jellybean) (weapons and everything else goes invisible and is near impossible to play) Please fix this as its a great game. If you want more info about the issue please reply",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "feature_request"
+      },
+      {
+        "text": "Doesn't start up\tThe app gets to the loading screen and then force closes, please fix. Running Android 4.4.2 kit kat on a nexus 7 2013. I'm assuming it force closes as I'm using ART runtime. Please update to work with ART! :-)",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "feature_request"
+      },
+      {
+        "text": "I have had the iPhone 4S and 5s, with both of them I had loading issues when saving an image that would freeze and continue to load hours after I have exited the app.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Can I go back to older version?\tLoved the app, was quick and always connected until the last update.  Have tried every suggestion.  When I first open it, nothing happens, it just sits at an empty screen.  Have to close and reopen several times and it is so slow to connect now.  H",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "feature_request"
+      },
+      {
+        "text": "Ever since iOS 7 update, Dropbox has not worked; constantly crashes, when it does run it is EXTREMELY slow, and there are problems with camera uploading.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Crashes constantly and will occasionally crash my iPad 3.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Latest update crashes every time on startup on 5S.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Prior to the update, it was crashing frequently, shutting down my iPad, then rebooting.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "The new version crashes on startup on my iPhone and iPad.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "New version crashes on both iPad 2 and iPhone 4S.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Ever since the latest update my iPad app crashes several times a session when clicking on specific pins.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "but since upgrading to iOS 7, the app frequently crashes.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Once again Evernote has launched an update that crashes on both my iPad and iPhone 5S.",
+        "v5_compat_prob": 1.0,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Recent update causes Evernote on iOS to fail.",
+        "v5_compat_prob": 0.999,
+        "maalej_label": "bug_report"
+      },
+      {
+        "text": "Functionality is as advertised, but still buggy\tI use DSLR controller via wifi on a 6D. During operation varying function such as aperture control, white balance, etc would cease to react irreproducably. Timed bulb exposure (being the only advantage over Canon's own app and the r",
+        "v5_compat_prob": 0.999,
+        "maalej_label": "feature_request"
+      },
+      {
+        "text": "Can't login in on my iPad 3, tells me my password is incorrect.",
+        "v5_compat_prob": 0.999,
+        "maalej_label": "bug_report"
+      }
+    ]
+  }
+}
