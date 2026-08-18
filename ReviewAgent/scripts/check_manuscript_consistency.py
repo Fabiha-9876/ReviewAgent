@@ -38,6 +38,13 @@ CANON = {
     # 0.1369 / 0.0896 - 1 = 52.79%, so +53%. The old "+52%" came from dividing the
     # rounded table values (0.137 / 0.090) and must not come back.
     "constrained-proxy BLEU-1 gain": (r"\+5[23]\\%", {"+53\\%"}, []),
+    # The 0.451 was produced by a Krippendorff implementation that credited each rating
+    # with a coincidence against itself. Correct value 0.285, matching the reference
+    # package. It may appear only in the sentence that documents the correction.
+    "LLM-panel Krippendorff alpha": (r"\\alpha = 0\.(?:285|451)", {"\\alpha = 0.285"},
+                                    ["mis-implemented", "We reported this row"]),
+    # Table 12 mean cluster sizes, recomputed from per-cluster review counts.
+    "mean cluster sizes": (r"471\.0|15\.9", {"471.0", "15.9"}, []),
 }
 
 # strings that belonged to a withdrawn claim and must never reappear

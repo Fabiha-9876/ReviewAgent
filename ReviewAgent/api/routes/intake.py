@@ -1,9 +1,18 @@
 """POST /reviews/intake — process raw reviews through Stage 1."""
 
-from fastapi import APIRouter
+import os
+from pathlib import Path
+
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 router = APIRouter()
+
+# The pipeline in the paper runs on Gemini/Qwen/Claude, not gpt-4o. Read the provider from
+# the environment so the endpoint uses whatever key the deployment actually has, instead of
+# hardcoding a provider for which this repository ships no key.
+LLM_PROVIDER = os.getenv("ISSUESPEC_LLM_PROVIDER", "anthropic")
+LLM_MODEL = os.getenv("ISSUESPEC_LLM_MODEL", "claude-sonnet-4-5")
 
 
 class ReviewInput(BaseModel):
@@ -29,9 +38,22 @@ async def intake_reviews(reviews: list[ReviewInput]):
     from src.stage1.entity_extractor import EntityExtractor
     from src.stage1.pipeline import Stage1Pipeline
 
-    llm = LLMClient(provider="openai", model="gpt-4o")
+    # Use the released V5 checkpoint. Constructing ReviewClassifier() with no argument
+    # falls back to an untrained roberta-base head, which returns arbitrary labels
+    # (a crash report comes back as "praise") while six trained checkpoints sit unused.
+    repo = Path(__file__).resolve().parents[2]
+    ckpt = repo / "models/stage1_classifier_v5"
+    if not ckpt.exists():
+        raise HTTPException(
+            status_code=503,
+            detail=f"Stage-1 checkpoint not found at {ckpt}. Fetch it from the Hugging Face "
+                   "release before calling this endpoint; refusing to classify with an "
+                   "untrained head.",
+        )
+
+    llm = LLMClient(provider=LLM_PROVIDER, model=LLM_MODEL)
     pipeline = Stage1Pipeline(
-        classifier=ReviewClassifier(),
+        classifier=ReviewClassifier.load(str(ckpt)),
         aspect_analyzer=AspectSentimentAnalyzer(llm),
         entity_extractor=EntityExtractor(llm),
     )

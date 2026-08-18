@@ -1,9 +1,16 @@
 """POST /responses/generate — generate a response for a review."""
 
+import os
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 
 router = APIRouter()
+
+# Same reasoning as api/routes/intake.py: do not hardcode a provider this repository has
+# no key for. See ISSUESPEC_LLM_PROVIDER / ISSUESPEC_LLM_MODEL.
+LLM_PROVIDER = os.getenv("ISSUESPEC_LLM_PROVIDER", "anthropic")
+LLM_MODEL = os.getenv("ISSUESPEC_LLM_MODEL", "claude-sonnet-4-5")
 
 
 class ResponseRequest(BaseModel):
@@ -27,7 +34,7 @@ async def generate_response(req: ResponseRequest):
     from datetime import datetime
     import uuid
 
-    llm = LLMClient(provider="openai", model="gpt-4o")
+    llm = LLMClient(provider=LLM_PROVIDER, model=LLM_MODEL)
     generator = ResponseGenerator(llm)
     refiner = SelfRefiner(llm)
 

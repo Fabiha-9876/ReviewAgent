@@ -406,7 +406,7 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   risk-coverage behaviour, so the citation is background rather than a description of what runs.
 
   LLM annotation noise is the main challenge here. On the
-  5{,}041-review praise stratum, 25\% of LLM labels are wrong,
+  5{,}038-review praise stratum, 25.8\% of LLM labels are wrong,
   concentrated on minority classes. Discarding them wastes annotation;
   using them as-is poisons training. We apply confident
   learning~\cite{northcutt2021confident} against a verified anchor of
@@ -453,7 +453,10 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   of representative reviews stored per cluster and a subsample artifact respectively, not cluster
   sizes. One scale caveat belongs here too: the knowledge graph is built over a 10{,}000-review
   sample that yields 8{,}404 usable reviews, not the full 215{,}583-review corpus, so every
-  Stage-2 number in this paper describes 3.9\% of the corpus. The third layer prioritizes via
+  KG-hierarchical number in this paper describes 3.9\% of the corpus. The flat baseline it is set
+  against was not run on that sample: it clusters 91{,}368 reviews from the full corpus. The two
+  Stage-2 designs therefore never saw the same input, which is why we do not treat their intrinsic
+  metrics as a head-to-head result (Section~\ref{results}). The third layer prioritizes via
   PageRank~\cite{brin1998anatomy, page1999pagerank} on the bipartite
   review-aspect graph, ranking aspects by cross-review prevalence so
   developers see the most-affected first. Each
@@ -585,7 +588,12 @@ Stage~5 frames alignment as a CMDP~\cite{altman2021constrained, dai2024safe}:
 \subsection{Dataset, Deduplication, and Annotation Provenance}
 We use the RRGen corpus~\cite{gao2019automating}: 310{,}031 review-response pairs from 58 Android applications. After exact-text deduplication that removes $94{,}448$ duplicate reviews ($-30.5\%$ of the raw corpus), 215{,}583 unique reviews form the working corpus, labeled across the seven Maalej~\cite{maalej2015bug} classes. Evaluation additionally uses a 490-review expert gold standard (70 per class $\times$ 7 classes) and 100 stratified clusters for Stage~3 evaluation.
 
-\textbf{Annotation provenance (full corpus, 215{,}583 reviews).} Of the working corpus, 79.49\% of labels come from the V2 LLM annotator with no override, 18.08\% are cleanlab-corrected against the verified anchor, and 2.43\% are directly human-verified by the lead author. The lead-author-versus-V2-LLM deviation is 25\%, replicated independently across two strata: the 5{,}041-review praise stratum and the 5{,}230-row human-verified anchor subset (Table~\ref{tab:annot-deviation}). This $\approx 25\%$ deviation rate, an order of magnitude higher than i.i.d.\ label-noise assumptions, motivates the confident-learning procedure of Stage~1.
+\textbf{Annotation provenance (full corpus, 215{,}583 reviews).} Of the working corpus, 79.49\% of labels come from the V2 LLM annotator with no override, 18.08\% are cleanlab-corrected against the verified anchor, and 2.43\% are directly human-verified by the lead author. The lead-author-versus-V2-LLM deviation is 25\% on the 5{,}230-row human-verified anchor
+(1{,}307 deviations, 24.99\%). We previously described this as replicated across two independent
+strata, the praise stratum and the anchor, on a combined 10{,}271 rows. That was wrong: the praise
+stratum is 5{,}038 of the anchor's 5{,}230 rows, so it is 96\% of the same sample rather than a
+second one, and the combined figure double-counted it. The rate is one measurement on one sample,
+and the praise stratum alone deviates at 25.84\% (Table~\ref{tab:annot-deviation}). This $\approx 25\%$ deviation rate, an order of magnitude higher than i.i.d.\ label-noise assumptions, motivates the confident-learning procedure of Stage~1.
 
 \subsection{Annotation Methodology}
 Five kinds of annotator contribute, following the multi-annotator convention of Gilardi et al.~\cite{gilardi2023chatgpt} and Pangakis et al.~\cite{pangakis2023automated} who treat LLM annotators as independent raters for inter-rater statistics.
@@ -646,13 +654,13 @@ Table~\ref{tab:annot-deviation} consolidates agreement and disagreement across a
 
 \begin{table}[t]\centering\footnotesize
   \caption{Annotator-vs-LLM and inter-annotator deviation. The $\approx 25\%$ deviation is
-  replicated on two independent strata; the $\kappa$-progression reaches moderate
+  measured on the human-verified anchor; the $\kappa$-progression reaches moderate
   agreement~\cite{landis1977measurement}; the V5 endorsement row is a consistency check, not independent validation, since V5 trained on those corrections;
   LLM-judge calibration $\Delta$ bounds judge bias.}\label{tab:annot-deviation}
   \begin{tabular}{@{}p{4.0cm}p{1.5cm}p{2.5cm}@{}}\toprule
   Annotator pair & sample & agreement / deviation \\\midrule
-  Lead-author vs V2 LLM & 10{,}271 & 75\% / \textbf{25\%} mislabeled \\
-  Lead vs V2 / cleanlab / V5 & 490 gold & $\kappa$: $0.163 \to 0.333 \to \mathbf{0.592}$ \\
+  Lead-author vs V2 LLM & 5{,}230 & 75\% / \textbf{25\%} mislabeled \\
+  Lead vs V2 / cleanlab / V5 & 489 gold & $\kappa$: $0.163 \to 0.333 \to \mathbf{0.592}$ \\
   3 human raters, Y/N verdict & 490 gold & Fleiss $\kappa = \mathbf{0.968}$; 479/490 unanimous on the verdict, 476/489 on the label \\
   3 human raters, 7-class label & 489 gold & Fleiss $\kappa = \mathbf{0.979}$; $\alpha = 0.979$ \\
   V2 LLM vs V5; cleanlab vs V5 & 215{,}583 & 71.96\% / 86.77\% agree \\
@@ -660,11 +668,18 @@ Table~\ref{tab:annot-deviation} consolidates agreement and disagreement across a
   V5 vs gold, strictly held out & 307 & $\kappa = \mathbf{0.616}$ \\
   3 human raters (Stage~4 quality) & 400 rated rows & weighted $\kappa$ 0.970--0.986; within-1 100\% \\
   3 human raters (Stage~4 helpful) & 400 rated rows & $\kappa$ 0.678--0.836; $\alpha = 0.781$ \\
-  3-rater \emph{LLM-assisted} purity check (lead + 2 Qwen prompts) & 99 reviews & Krippendorff $\alpha = 0.451$ \\
+  3-rater \emph{LLM-assisted} classification check (lead + 2 Qwen prompts) & 99 reviews & Krippendorff $\alpha = 0.285$ \\
   Lead vs Qwen-judge (purity, rubric) & 50 / 28 & $\Delta = -0.035$ / $+0.23$ \\
   \bottomrule\end{tabular}\end{table}
 
-Ratings are persisted as spreadsheets with JSON master keys, blinding shuffles conditions per pair, and the assignment unseals only at aggregation. Two distinct three-rater statistics appear in Table~\ref{tab:annot-deviation} and should not be conflated. The classification gold uses three independent \emph{human} raters on 490 reviews and reaches Fleiss $\kappa = 0.968$ on the Y/N verdict and $0.979$ on the effective seven-class label, with no three-way ties. The $\alpha = 0.451$ row is a separate cluster-purity check on 99 reviews that uses the lead author plus two Qwen2.5-3B prompts (concise and chain-of-thought) as raters.
+Ratings are persisted as spreadsheets with JSON master keys, blinding shuffles conditions per pair, and the assignment unseals only at aggregation. Two distinct three-rater statistics appear in Table~\ref{tab:annot-deviation} and should not be conflated. The classification gold uses three independent \emph{human} raters on 490 reviews and reaches Fleiss $\kappa = 0.968$ on the Y/N verdict and $0.979$ on the effective seven-class label, with no three-way ties. The $\alpha = 0.285$ row is a separate check on 99 reviews that uses the lead author plus two
+Qwen2.5-3B prompts (concise and chain-of-thought) as raters, measuring seven-class classification
+agreement rather than cluster purity. We reported this row as $\alpha = 0.451$ and as a purity
+check; both were wrong. The value came from an implementation that credited each rating with a
+coincidence against itself, inflating observed agreement; the corrected figure agrees with the
+reference \texttt{krippendorff} package to four decimals. The three Cohen's $\kappa$ in the same
+table were computed with scikit-learn and are unaffected. The correction moves the row from the
+moderate band into the fair band, which weakens the LLM-rater panel rather than any claim we make.
 
 \subsection{Multi-LLM Bias Control}\label{multi-llm-setup}
  A single-LLM headline raises a structural-bias concern: results from any one model may not
@@ -973,9 +988,9 @@ reconstruction can be checked. The choice of confident-learning thresholds is no
   trajectory is not an artifact of a single annotator.}\label{tab:kappa}
   \begin{tabular}{lrrlr}\toprule
   classifier & $n$ & Cohen's $\kappa$ & Landis-Koch band & $\kappa$ vs 3-rater gold \\\midrule
-  V2 LLM original & 490 & 0.163 & slight & 0.165 \\
-  cleanlab-corrected V2 & 490 & 0.333 & fair & 0.334 \\
-  \textbf{V5 classifier} & 490 & \textbf{0.592} & \textbf{moderate} & \textbf{0.590} \\
+  V2 LLM original & 489 & 0.163 & slight & 0.165 \\
+  cleanlab-corrected V2 & 489 & 0.333 & fair & 0.334 \\
+  \textbf{V5 classifier} & 489 & \textbf{0.592} & \textbf{moderate} & \textbf{0.590} \\
   \bottomrule\end{tabular}\end{table}
 
 \begin{table}[t]\centering\footnotesize
@@ -1070,7 +1085,7 @@ This design cannot separate those, and we do not assert either.
 \begin{table}[t]\centering\footnotesize
 \caption{Stage-4 re-run, same model with and without the IssueSpec, 100 paired reviews, three
 raters, all 200 rows scored by each. All figures are unadjusted, so the gain column equals the difference of the two condition
-columns; slot-stratified values are in the released JSON and differ by at most 0.04. The pooled
+columns; slot-stratified values are in the released JSON and differ by at most 0.03. The pooled
 effect is null, and the disagreement between the lead author and the two independent raters is
 larger than the effect being measured.}\label{tab:stage4-rerun}
 \begin{tabular}{@{}lrrrrr@{}}\toprule
@@ -1192,8 +1207,13 @@ downstream payoff in response generation.
 \end{figure}
 
   Stage~2 was redesigned from a flat UMAP+HDBSCAN baseline (194 clusters, mean size 471.0) to the
-   three-layer KG-hierarchical design (605 sub-clusters, mean size 15.9), both over the
-   8{,}404-review sample the knowledge graph is built on. We compute two
+   three-layer KG-hierarchical design (605 sub-clusters, mean size 15.9). The two were not run
+   over the same reviews, and we state that plainly because it bears on how the table below should
+   be read: the flat baseline clusters 91{,}368 reviews (117{,}958 in, 26{,}590 assigned to
+   HDBSCAN noise) drawn from the full relabelled corpus, whereas the KG-hierarchical design is
+   built on the 8{,}404-review knowledge-graph sample, of which 5{,}689 distinct reviews land in a
+   sub-cluster. A sixteen-fold difference in the underlying review set is a third reason, on top
+   of the two given below, why the head-to-head intrinsic comparison is not a comparison. We compute two
   complementary validity axes. \emph{Intrinsic geometry},
   Davies-Bouldin~\cite{davies1979cluster}, Calinski-Harabasz~\cite{calinski1974dendrite},
   silhouette~\cite{rousseeuw1987silhouettes}, follows standard IR/clustering
@@ -1427,7 +1447,7 @@ Three claims travel beyond app reviews. \emph{First}, LLM annotation noise on
 \emph{Internal.} The count-versus-structure confound is exposed and resolved by the A1b ablation, which reframes the knowledge graph's contribution as centrality-based prioritization rather than intrinsic geometry. A second internal threat we did not remove is that the 100 clusters carrying the Stage~3 and Stage~4 results were produced by the KG pipeline, the same layer A1b and A2 find wanting. Since flat clustering scores higher on purity (Figure~\ref{fig:purity}), the headline gains may be measured on a slightly worse partition than a simpler system would produce, which would understate rather than inflate them. Re-running Stages~3 and~4 over flat clusters would settle it and is the cheapest open experiment in the paper.
 \emph{External.} RRGen contains 58 anonymized Android apps; V5 transfers zero-shot to the Maalej label space. Stage~2--4 cross-corpus transfer remains to be validated. The headline LLM is Claude Opus, with Llama-3.3-70B and Qwen2.5-\{3B, 1.5B\} as cross-family bias controls; GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}).
 \emph{Conclusion.} The three-rater agreement on the classification gold ($\kappa = 0.968$ on the Y/N verdict) sits well above what free-labeling studies of app reviews report, which invites the question of whether the raters were genuinely independent. Three properties of the design account for the gap. The raters verify a supplied label rather than choose one from seven, which collapses most of the decision space; a 20-review calibration round with adjudicated disagreements precedes the main task; and the written protocol fixes eight boundary rules that carry the cases annotators most often split on. Residual disagreement is rater-specific rather than random, one rater accounts for most of the \texttt{usability} reassignments, which is the pattern independent annotation produces. Stage~4 sits differently. All three raters scored the complete 200-row re-run, and the gain does \emph{not} reproduce per rater: the lead author measures $+0.56$ and the two independent raters $-0.29$ and $-0.15$. That disagreement, not the pooled null, is the honest summary of what we know about Stage~4.
-\emph{Reliability, and which $\alpha$ belongs to what.} Three agreement statistics appear in this paper and they measure different things, so a single ``moderate $\alpha$'' reading would be wrong. The classification gold is annotated by three humans and reaches Fleiss $\kappa = 0.968$ on the verdict and $0.979$ on the seven-class label. The Stage-4 response set that we report is rated by the same three humans on all 200 rows, with quality weighted $\kappa$ of 0.03, 0.04 and 0.50. That is low, and it is the number to quote: the 0.970 to 0.986 range belongs to the discarded round, where one arm was visibly broken and agreement was easy. The one moderate figure, $\alpha = 0.451$, comes from a different and deliberately weaker panel: a cluster-purity check whose three raters are the lead author plus two Qwen2.5-3B prompts, following the LLM-as-rater convention of Gilardi et al.~\cite{gilardi2023chatgpt}. It bounds how far an LLM rater tracks a human on a subjective sub-theme judgement; it is not the reliability of any headline result, and no claim in this paper rests on it alone.
+\emph{Reliability, and which $\alpha$ belongs to what.} Three agreement statistics appear in this paper and they measure different things, so a single pooled reading of them would be wrong. The classification gold is annotated by three humans and reaches Fleiss $\kappa = 0.968$ on the verdict and $0.979$ on the seven-class label. The Stage-4 response set that we report is rated by the same three humans on all 200 rows, with quality weighted $\kappa$ of 0.03, 0.04 and 0.50. That is low, and it is the number to quote: the 0.970 to 0.986 range belongs to the discarded round, where one arm was visibly broken and agreement was easy. The weakest figure, $\alpha = 0.285$ (corrected from a mis-implemented 0.451), comes from a deliberately weaker panel: a seven-class classification check whose three raters are the lead author plus two Qwen2.5-3B prompts, following the LLM-as-rater convention of Gilardi et al.~\cite{gilardi2023chatgpt}. It bounds how far an LLM rater tracks a human on a subjective sub-theme judgement; it is not the reliability of any headline result, and no claim in this paper rests on it alone.
 \emph{Statistical.} Experiment~2 now reports a null, so the relevant question is power rather than correction for multiplicity. With 100 paired reviews and the observed per-review spread, the 95\% bootstrap interval $[-0.10, +0.18]$ excludes effects larger than about a fifth of a Likert point in either direction. We can therefore rule out a large effect, not a small one; an effect of a tenth of a point would need several times this sample.
 
 \subsection{Reproducibility and Extensibility}\label{reproducibility}
@@ -1439,14 +1459,22 @@ Every numerical claim in Section~\ref{results} is backed by a saved data file, a
 \item the count-controlled A1b output;
 \item the \textsc{SpecCov} scorer plus the 60-spec, three-rater human faithfulness ratings and the validation analysis;
 \item the CMDP-RLHF testbed (KTO, DPO, constrained-proxy, and Lagrangian Constrained PPO trainers);
-\item the 100-cluster benchmark, with the 99-review LLM-assisted purity subsample ($\alpha = 0.451$) kept separate from the all-human agreement sets;
+\item the 100-cluster benchmark, with the 99-review LLM-assisted classification subsample ($\alpha = 0.285$) kept separate from the all-human agreement sets;
 \item a pinned-environment Docker image (single-command build on any CUDA~12.x host);
 \item a nineteen-segment verifier that recomputes the numerical claims in Section~\ref{results}
 from the saved data files, including the corrected Stage-4 re-run, the three-rater agreement
 statistics, the cross-family rubric, the \textsc{SpecCov} validation, the binding-constraint run,
-and the generation-variance sweep. Two tables are not covered by it, the per-class F1 breakdown
-and the multi-model template-fill row, and we say so rather than claim complete coverage. The
-discarded Stage-4 round retains its own segment, labelled as withdrawn.
+and the generation-variance sweep. The discarded Stage-4 round retains its own segment, labelled
+as withdrawn. We audited the verifier itself rather than trusting it, and its coverage is
+narrower than we previously stated. Three segments recompute a value from the underlying data and
+assert it; the remainder load a stored summary and print it, which checks that the manuscript
+agrees with the released file but not that the file is right. Uncovered numbers include the
+Stage-3 template-fill table, the held-out $\kappa$ of 0.616, the Qwen-judge purity figures, the
+Maalej cross-protocol row, the per-dimension cells of the cross-family rubric, and most of the
+secondary statistics in Sections~\ref{exp2-results} and~\ref{exp3-results}. We list this rather
+than repeat the earlier and much smaller claim that only two tables were uncovered. The verifier
+now exits non-zero on any mismatch, and every number in it that we could turn into an assertion
+we did; the rest a reader should check against the released files directly.
 \end{itemize}
 The pipeline is composable by construction: because each stage emits a typed intermediate, components (classifier, clusterer, taxonomy template, alignment trainer) can be substituted independently without breaking downstream contracts. Future researchers can adopt or replace any single component while keeping the rest of the IR-centered evaluation harness intact. Deterministic components (clustering, classifier training) use fixed seeds; the LLM-dependent stages (annotation, IR generation, and response generation) reproduce statistically rather than bit-identically. We measured how large that sampling variance is. Regenerating Stage~3 specs three times over the same 15 stratified clusters with the local Qwen2.5-3B generator at temperature 0.7, changing only the seed, gives strict template-fill 0.685, 0.700, and 0.634 (mean 0.673, sd 0.029, range 0.067) and \textsc{SpecCov} 2.73, 2.67, and 3.00 (mean 2.80, sd 0.144, range 0.333), with no JSON parse failures in any run. Run-to-run noise on template-fill is therefore around three points on a 0--1 scale for this generator and prompt. That is the yardstick a reader should hold up against the differences we report. The gaps the paper rests on clear it comfortably: 0.96 versus 0.69 for taxonomy grounding, and 0.96 versus 0.48 across the model families. The withdrawn Stage-4 effect illustrates the opposite case, and is worth stating in these terms: at $+0.04$ it sits an order of magnitude below this noise floor, which is another way of saying there is nothing there to measure. Differences of a few hundredths between adjacent conditions, such as the 4.09 versus 3.96 at the top of the cross-family rubric, do not clear it and should not be read as a stable ordering on their own. Two limits remain: the headline Claude generations were not repeated, because that needs API budget rather than new code, and Stage~4 response generation was not repeated either. The released script runs both sweeps unchanged.
 
@@ -1579,7 +1607,10 @@ set. The authors verified all technical content, experimental results, and claim
   template-generated synthetic reviews (device, OS, and screen templates) plus 100 keyword-mined
   RRGen reviews, all human-checked. Stage~2 embeds with Sentence-BERT, reduces with UMAP, and
   clusters with HDBSCAN, aspect-first, producing 605 sub-clusters of mean size 15.9 against 194
-  flat clusters of mean size 471.0, over an 8{,}404-review sample rather than the full corpus; PageRank runs on the bipartite review-aspect graph. Stage~3
+  flat clusters of mean size 471.0. The KG-hierarchical side runs over an 8{,}404-review sample
+  rather than the full corpus; the flat baseline runs over 91{,}368 clustered reviews drawn from
+  the full corpus, so the two sides describe different review sets (Section~\ref{results}).
+  PageRank runs on the bipartite review-aspect graph. Stage~3
   routes to one of five templates and re-prompts once with dimension-level feedback on any
   rubric failure. Stage~4 retrieves over a 15{,}100-document ChromaDB index built from five
   sources, with the IssueSpec injected per query rather than pre-indexed. Stage~5 trains five

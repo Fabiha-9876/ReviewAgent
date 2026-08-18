@@ -1,48 +1,49 @@
 {
-  "n_triples": 99,
-  "raters": {
-    "Annotator-1 (E)": "Lead author (expert) \u2014 from annotator_A.numbers",
-    "Annotator-2 (L1)": "Qwen/Qwen2.5-3B-Instruct with concise role-based prompt",
-    "Annotator-3 (L2)": "Qwen/Qwen2.5-3B-Instruct with chain-of-thought prompt"
+ "n_triples": 99,
+ "raters": {
+  "Annotator-1 (E)": "Lead author (expert) \u2014 from annotator_A.numbers",
+  "Annotator-2 (L1)": "Qwen/Qwen2.5-3B-Instruct with concise role-based prompt",
+  "Annotator-3 (L2)": "Qwen/Qwen2.5-3B-Instruct with chain-of-thought prompt"
+ },
+ "cohen_kappa": {
+  "expert_vs_llm_concise": 0.275,
+  "expert_vs_llm_cot": 0.3826,
+  "llm_concise_vs_llm_cot": 0.2608
+ },
+ "krippendorff_alpha_3raters": 0.2847,
+ "interpretation": {
+  "kappa_landis_koch": "<0.20 slight; 0.21-0.40 fair; 0.41-0.60 moderate; 0.61-0.80 substantial; >0.81 almost-perfect",
+  "alpha_krippendorff": "\u22650.667 acceptable; \u22650.80 strong (Krippendorff 2004)"
+ },
+ "label_distribution": {
+  "expert": {
+   "other": 24,
+   "performance": 17,
+   "bug_report": 19,
+   "compatibility": 9,
+   "praise": 15,
+   "feature_request": 6,
+   "usability": 9
   },
-  "cohen_kappa": {
-    "expert_vs_llm_concise": 0.275,
-    "expert_vs_llm_cot": 0.3826,
-    "llm_concise_vs_llm_cot": 0.2608
+  "llm_concise": {
+   "bug_report": 45,
+   "usability": 27,
+   "feature_request": 9,
+   "performance": 2,
+   "praise": 6,
+   "other": 7,
+   "compatibility": 3
   },
-  "krippendorff_alpha_3raters": 0.4509,
-  "interpretation": {
-    "kappa_landis_koch": "<0.20 slight; 0.21-0.40 fair; 0.41-0.60 moderate; 0.61-0.80 substantial; >0.81 almost-perfect",
-    "alpha_krippendorff": "\u22650.667 acceptable; \u22650.80 strong (Krippendorff 2004)"
-  },
-  "label_distribution": {
-    "expert": {
-      "other": 24,
-      "performance": 17,
-      "bug_report": 19,
-      "compatibility": 9,
-      "praise": 15,
-      "feature_request": 6,
-      "usability": 9
-    },
-    "llm_concise": {
-      "bug_report": 45,
-      "usability": 27,
-      "feature_request": 9,
-      "performance": 2,
-      "praise": 6,
-      "other": 7,
-      "compatibility": 3
-    },
-    "llm_cot": {
-      "other": 37,
-      "usability": 25,
-      "feature_request": 7,
-      "bug_report": 6,
-      "performance": 9,
-      "praise": 11,
-      "compatibility": 4
-    }
-  },
-  "methodology_note": "Following Gilardi et al. 2023 (PNAS) and Pangakis et al. 2023, we use LLMs as additional independent annotators alongside the human expert. This produces tractable inter-rater statistics in the absence of multiple human annotators. Pairwise Cohen \u03ba between expert and LLM raters quantifies whether expert annotation falls within the inter-rater agreement envelope a naive LLM annotator would produce."
+  "llm_cot": {
+   "other": 37,
+   "usability": 25,
+   "feature_request": 7,
+   "bug_report": 6,
+   "performance": 9,
+   "praise": 11,
+   "compatibility": 4
+  }
+ },
+ "methodology_note": "Following Gilardi et al. 2023 (PNAS) and Pangakis et al. 2023, we use LLMs as additional independent annotators alongside the human expert. This produces tractable inter-rater statistics in the absence of multiple human annotators. Pairwise Cohen \u03ba between expert and LLM raters quantifies whether expert annotation falls within the inter-rater agreement envelope a naive LLM annotator would produce.",
+ "correction_note": "Previously reported as 0.4509. The repository's hand-rolled krippendorff_alpha double-counted diagonal coincidences (each rating was credited with a coincidence against itself), inflating observed agreement. The corrected implementation matches the reference `krippendorff` package to four decimals: 0.2847. The three Cohen's kappas in this file were computed with scikit-learn and are unaffected."
 }

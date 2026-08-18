@@ -168,10 +168,18 @@ def krippendorff_alpha(annotations: list[list[str]], categories: list[str]) -> f
                    if annotations[r][j] in cat_idx]
         m = len(ratings)
         if m < 2: continue
-        for r in ratings:
-            for s in ratings:
-                if r != s or ratings.count(r) > 1:
-                    coincidence[cat_idx[r]][cat_idx[s]] += 1.0 / (m - 1)
+        # Coincidences are counted over ORDERED PAIRS OF DISTINCT RATERS. An earlier
+        # version iterated over the value list crossed with itself and guarded with
+        # `if r != s or ratings.count(r) > 1`, which credits each rating with a
+        # coincidence against itself: the diagonal got count(r)^2/(m-1) instead of
+        # count(r)*(count(r)-1)/(m-1). That inflates observed agreement and therefore
+        # alpha. On the 99-review LLM-assisted panel it returned 0.451 where the
+        # correct value is 0.285 (confirmed against the `krippendorff` package).
+        for x in range(m):
+            for y in range(m):
+                if x == y:
+                    continue
+                coincidence[cat_idx[ratings[x]]][cat_idx[ratings[y]]] += 1.0 / (m - 1)
     n_coincidence = sum(sum(row) for row in coincidence)
     if n_coincidence == 0: return 0.0
     # Marginals

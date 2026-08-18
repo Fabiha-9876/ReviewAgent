@@ -6,7 +6,11 @@ from fastapi import APIRouter, HTTPException
 
 router = APIRouter()
 
-SPECS_PATH = Path("data/processed/stage3_issue_specs.json")
+# Resolve from the repo root rather than the server's cwd, and point at the path the
+# repository actually ships. The previous value ("data/processed/stage3_issue_specs.json")
+# exists nowhere in the release, so this endpoint could only ever report "no issues yet".
+REPO = Path(__file__).resolve().parents[2]
+SPECS_PATH = REPO / "data/processed/issue_specs/specs_with_taxonomy.json"
 
 
 @router.get("/")

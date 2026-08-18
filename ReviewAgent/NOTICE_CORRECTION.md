@@ -84,3 +84,49 @@ Four further defects were found by auditing the revised manuscript against the a
 
 Also corrected: the aspect-coverage figures now use the deduplicated 55% and 66% rather than the
 double-counted 74% and 96%.
+
+## Correction 6 (2026-08-17): Krippendorff's alpha on the LLM-assisted panel
+
+Table 4's three-rater row was reported as Krippendorff alpha = 0.451. The correct value is
+**0.285**.
+
+The repository's `krippendorff_alpha` in `scripts/run_inter_annotator_agreement.py` built its
+coincidence matrix by iterating a unit's rating list crossed with itself, guarded by
+`if r != s or ratings.count(r) > 1`. That credits every rating with a coincidence against
+itself: the diagonal received `count(r)^2 / (m-1)` where the definition calls for
+`count(r) * (count(r)-1) / (m-1)`, over ordered pairs of *distinct* raters. Observed agreement,
+and therefore alpha, came out too high.
+
+The corrected implementation returns 0.2847 on the 99 triples, matching the reference
+`krippendorff` package to four decimals. The three Cohen's kappa in the same table were computed
+with scikit-learn and are unaffected, as are the round-2 agreement scripts, which use a separate
+and correct implementation.
+
+The row was also mislabelled. It was described as a "cluster-purity check"; the underlying data
+(`data/processed/inter_annotator/llm_annotations.json`) is seven-class **classification**
+agreement between the lead author and two Qwen2.5-3B prompt variants on 99 reviews drawn from
+the 490-review gold. No clusters are involved. Both the value and the description are corrected
+in the manuscript.
+
+The correction moves the row from the moderate band into the fair band. No claim in the paper
+rests on it; the effect is to weaken the LLM-rater panel, not any reported result.
+
+## Correction 7 (2026-08-17): Stage-2 review sets were never matched
+
+The paper stated that the flat UMAP+HDBSCAN baseline and the KG-hierarchical design were both
+run "over the 8,404-review sample". They were not. `data/processed/clusters_umap/cluster_stats.json`
+records the flat baseline's input as the full relabelled corpus: 117,958 reviews in, 26,590
+assigned to HDBSCAN noise, **91,368 clustered** across 194 clusters (mean 471.0). The KG side
+covers 5,689 distinct reviews of the 8,404-review graph sample across 605 sub-clusters
+(mean 15.9). The two designs therefore never saw the same input, a roughly sixteen-fold
+difference, which is a further reason the intrinsic head-to-head comparison — already withdrawn
+for a separate label-alignment defect — is not a comparison. The count-matched A1b ablation,
+which the Stage-2 conclusion rests on, embeds representatives on both sides and is unaffected.
+
+## Correction 8 (2026-08-17): the 25% deviation is one sample, not two strata
+
+The paper described the 25% lead-author-versus-LLM deviation as "replicated independently across
+two strata", the praise stratum and the human-verified anchor, on a combined 10,271 rows. The
+praise stratum is 5,038 of the anchor's 5,230 rows, i.e. 96% of the same sample, so the combined
+figure double-counted it. The rate is a single measurement on 5,230 rows (1,307 deviations,
+24.99%); the praise stratum alone deviates at 25.84%. The rate itself is unchanged.

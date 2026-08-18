@@ -29,6 +29,22 @@ def banner(n, title):
 
 
 # ----------------------------------------------------------------------
+FAILURES = []
+
+
+def check(label, computed, expected, tol=0.0):
+    """Assert a computed value against the manuscript's, and record any mismatch.
+
+    Segments that merely print a stored summary verify nothing. Every numeric claim a
+    segment can recompute should go through here so that a mismatch fails the run.
+    """
+    ok = abs(computed - expected) <= tol if isinstance(computed, (int, float)) else computed == expected
+    print(f"    [{'OK ' if ok else 'DIFF'}] {label}: computed {computed}, paper {expected}")
+    if not ok:
+        FAILURES.append(f"{label}: computed {computed}, paper says {expected}")
+    return ok
+
+
 def segment_1():
     banner(1, "Corpus + annotation provenance")
     print("Paper: 215,583 working corpus; 5,230 anchor; 79.49/18.08/2.43%")
@@ -72,8 +88,11 @@ def segment_2():
 
 
 def segment_3():
-    banner(3, "Stage 2 — Cluster quality (Table 11)")
-    print("Paper: flat DB=12.15, CH=0.98; hier DB=2.24, CH=1.85")
+    banner(3, "Stage 2 — Cluster quality (Table 12)")
+    print("Paper: hier DB=2.24, CH=1.85. The flat intrinsic column (DB=12.15, CH=0.98) is")
+    print("WITHDRAWN: the script that produced it embedded reviews from one cluster while")
+    print("labelling them across 194, so it measured random labelling. The ratios below are")
+    print("printed only to show what the withdrawn comparison was; do not cite them.")
     print()
     with open(DP / "clusters_umap/quality_metrics_flat_vs_hierarchical.json") as f:
         qm = json.load(f)
@@ -94,8 +113,37 @@ def segment_3():
             / hier["intrinsic_metrics"]["davies_bouldin"])
     r_ch = (hier["intrinsic_metrics"]["calinski_harabasz"]
             / flat["intrinsic_metrics"]["calinski_harabasz"])
-    print(f"\n5.4x lower DB -> {r_db:.2f}x")
-    print(f"1.9x higher CH -> {r_ch:.2f}x")
+    print(f"\n  [WITHDRAWN] DB ratio {r_db:.2f}x, CH ratio {r_ch:.2f}x — not a valid comparison")
+
+    # The mean sizes in this summary file are not the paper's: it stores representative
+    # reviews per cluster and a subsample artifact. Table 12's 471.0 and 15.9 come from
+    # review_count in the full cluster files, so recompute them from those.
+    import statistics
+    full_flat = DP / "clusters_umap/clusters_full.json"
+    if full_flat.exists():
+        with open(full_flat) as f:
+            flat_counts = [c["review_count"] for c in json.load(f)]
+        with open(DP / "kg_hierarchical/hierarchical_clusters_full.json") as f:
+            hier_full = json.load(f)
+        hier_counts = [c["review_count"] for c in hier_full]
+        h_tot = len({i for c in hier_full for i in c["review_ids"]})
+    else:
+        # The 14 MB full cluster files are not in the released bundle; the bundle ships
+        # the per-cluster counts instead, which is all the mean needs.
+        with open(DP / "clusters_umap/cluster_size_counts.json") as f:
+            cc = json.load(f)
+        flat_counts = cc["flat_umap_hdbscan"]["review_counts"]
+        hier_counts = cc["kg_hierarchical"]["review_counts"]
+        h_tot = cc["kg_hierarchical"]["n_distinct_reviews"]
+    fm = statistics.mean(flat_counts)
+    hm = statistics.mean(hier_counts)
+    f_tot = sum(flat_counts)
+    print(f"\n  mean cluster size (Table 12): flat {fm:.1f} (paper 471.0), "
+          f"hier {hm:.1f} (paper 15.9)")
+    check("flat mean cluster size", round(fm, 1), 471.0)
+    check("hier mean cluster size", round(hm, 1), 15.9)
+    print(f"  review sets are NOT matched: flat clusters {f_tot:,} reviews, "
+          f"KG covers {h_tot:,} distinct reviews of the 8,404-review sample")
 
 
 def segment_4():
@@ -189,7 +237,7 @@ def segment_8():
 
 def segment_9():
     banner(9, "Stage 5 — RLHF 5 policies")
-    print("Paper §5.3: SFT 0.090, KTO 0.068, DPO 0.084, constrained-proxy 0.137 (+52%), "
+    print("Paper §5.3: SFT 0.090, KTO 0.068, DPO 0.084, constrained-proxy 0.137 (+53%), "
           "Lagrangian PPO 0.087")
     print()
     with open(DP / "rlhf/head_to_head/metrics.json") as f:
@@ -210,12 +258,12 @@ def segment_9():
     cp_b = (rlhf["constrained_proxy"].get("bleu_1")
             or rlhf["constrained_proxy"].get("bleu_1_mean"))
     print(f"\nconstrained-proxy vs SFT-base BLEU-1 gain: "
-          f"+{(cp_b - sft_b) / sft_b * 100:.1f}% (paper: +52%)")
+          f"+{(cp_b - sft_b) / sft_b * 100:.1f}% (paper: +53%)")
 
 
 def segment_10():
     banner(10, "Inter-rater Krippendorff alpha (3 raters)")
-    print("Paper Table 4: alpha = 0.451 on 99 reviews")
+    print("Paper Table 4: alpha = 0.285 on 99 reviews (corrected from a mis-implemented 0.451)")
     print()
     with open(DP / "inter_annotator/agreement_summary.json") as f:
         ia = json.load(f)
@@ -223,8 +271,25 @@ def segment_10():
     print("Pairwise Cohen kappa:")
     for k, v in ia["cohen_kappa"].items():
         print(f"  {k}: {v:.4f}")
-    print(f"\nKrippendorff alpha (3 raters): "
-          f"{ia['krippendorff_alpha_3raters']:.4f} -> rounds to 0.451")
+    # Recompute rather than read back: the stored value was wrong once already.
+    # Lift the shipped scorer out of the script with ast rather than importing the module,
+    # which pulls in src/ and is not present in the released data bundle.
+    import ast
+    src = (BASE / "scripts/run_inter_annotator_agreement.py").read_text()
+    fn = next(n for n in ast.parse(src).body
+              if isinstance(n, ast.FunctionDef) and n.name == "krippendorff_alpha")
+    ns = {}
+    exec(compile(ast.Module(body=[fn], type_ignores=[]), "run_inter_annotator_agreement.py",
+                 "exec"), ns)
+    mod = type("mod", (), ns)
+    with open(DP / "inter_annotator/llm_annotations.json") as f:
+        raw = json.load(f)
+    rows = [raw["expert_labels"], raw["llm_concise_labels"], raw["llm_cot_labels"]]
+    cats = sorted({x for r in rows for x in r if x})
+    idx = [j for j in range(len(rows[0])) if all(r[j] in cats for r in rows)]
+    alpha = mod.krippendorff_alpha([[r[j] for j in idx] for r in rows], cats)
+    print(f"\nKrippendorff alpha (3 raters), recomputed on {len(idx)} triples: {alpha:.4f}")
+    check("Krippendorff alpha (LLM-assisted panel)", round(alpha, 3), 0.285)
 
 
 def segment_11():
@@ -529,10 +594,17 @@ def main():
         print(f"  DONE with {len(failed)} segment(s) skipped or failed:")
         for s, why in failed:
             print(f"    segment {s}: {why}")
+    elif FAILURES:
+        print(f"  DONE, but {len(FAILURES)} value(s) disagree with the manuscript:")
+        for why in FAILURES:
+            print(f"    {why}")
     else:
         print("  DONE")
     print("=" * 72)
+    # Exit non-zero on any skip, failure, or value mismatch, so this can gate a release
+    # rather than always reporting success.
+    return 1 if (failed or FAILURES) else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

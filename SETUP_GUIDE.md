@@ -58,7 +58,7 @@ Review Agent/
 
 | Tool | Minimum version | Why |
 |---|---|---|
-| **Python** | 3.10+ | Project tooling |
+| **Python** | 3.13+ | Project tooling (`pyproject.toml` sets `requires-python = ">=3.13"`; `pip install -e .` fails on 3.10-3.12) |
 | **Git** | 2.x | Clone repo |
 | **pip** | 22+ | Install dependencies |
 | **LaTeX** (optional) | TeX Live 2023+ | Compile the paper PDF |
@@ -98,7 +98,8 @@ released separately (see §4.2–§4.4).
 
 The raw 310,031 review-response pairs come from:
 - **Original release:** Gao et al., *"Automating App Review Response Generation"*,
-  ASE 2019. See https://github.com/CuriousG102/rrgen.
+  ASE 2019. (The original release at github.com/CuriousG102/rrgen now 404s; the
+  corpus we use ships in this repository at `data/raw/rrgen/`.)
 - **Pre-processed CSV** (single 46 MB file): `RRGen_Full_Dataset.csv` — placed
   one level above the cloned `ReviewAgent/` folder (so the relative path
   `../RRGen_Full_Dataset.csv` works from `ReviewAgent/`).
@@ -157,7 +158,7 @@ For most reproductions you only need **V5** (the headline production model).
 cd "Review Agent/ReviewAgent"
 pip install -e .          # uses pyproject.toml
 # or:
-pip install -r requirements.txt    # if a flat requirements file is preferred
+# (there is no requirements.txt; dependencies live in pyproject.toml)
 ```
 
 Key packages: `torch`, `transformers`, `sentence-transformers`, `umap-learn`,
@@ -213,6 +214,30 @@ recomputed value, all matching within rounding.
 
 This re-runs the entire five-stage pipeline. Allow ~6 hours on a single
 GPU-equipped workstation.
+
+> **Read this before starting.** Section 6's verification path is turnkey from a clean
+> clone; this section is not. We walked it from a fresh clone and several commands below
+> fail there, because they consume intermediates that are gitignored and are in neither
+> the repository nor the Zenodo bundle:
+>
+> | command | missing input |
+> |---|---|
+> | `compute_cluster_quality_metrics.py` | `data/processed/clusters_umap/clusters_full.json` (14 MB) |
+> | `ablation_a1b_fine_flat_vs_kg.py` | `data/processed/embeddings_cache.npy` |
+> | `build_compat_data.py` | `data/processed/rrgen_full_labeled/rrgen_full_labeled.json` |
+> | `ingest_verified_labels.py` | `Synthetic_Data_Verification_RRGen.xlsx` |
+> | `compute_3rater_krippendorff.py` | `responses/llm_as_judge_full_400.json` |
+>
+> `cleanlab_find_label_issues.py` additionally requires `--verified --noisy --out-dir`,
+> which the example invocation below omits. Two Stage-2 scripts
+> (`ablation_a1b_fine_flat_vs_kg.py`, `audit_hierarchical_cluster_purity_llm.py`) need an
+> `ANTHROPIC_API_KEY` that `.env.example` does not list, and `set -euo pipefail` means
+> `run_pipeline.sh` aborts the whole run at that point.
+>
+> Rebuilding those intermediates requires re-running the generation stages against a paid
+> API. The stored results they feed are all regenerable by the analysis scripts, and every
+> paper number is checkable via Section 6, but reproduction from raw data is not currently
+> possible from the release alone. See the manuscript's reproducibility section.
 
 **One-command orchestrator** (`run_pipeline.sh`) runs the stages in order:
 ```bash
@@ -434,6 +459,6 @@ This work is under review at CIKM 2026 and is not yet published.
 ## 12. Where to ask for help
 
 - **Code / scripts:** open an issue at https://github.com/Fabiha-9876/ReviewAgent/issues
-- **Data / models:** check `RELEASE.md` in the cloned repo
+- **Data / models:** see the Zenodo record and the Hugging Face model page linked above
 - **Paper claims:** the `verify_paper_results.py` script returns the
   ground-truth recomputed value for every numerical claim.

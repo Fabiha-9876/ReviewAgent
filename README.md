@@ -29,7 +29,7 @@ tar -xzf issuespec-data-bundle-v2.tar.gz   # or download it from the Zenodo DOI 
 python3 verify_paper_results.py
 ```
 
-Each of the eighteen segments prints the recomputed value next to the paper claim. Segments
+Each of the nineteen segments prints the recomputed value next to the paper claim. Segments
 that need a data file you do not have print `[SKIP]` and name the file rather than crashing.
 
 ## Run the full pipeline
