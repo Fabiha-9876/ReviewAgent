@@ -267,7 +267,7 @@ The main contributions of this work, each mapped to the gaps above, are:
   sentence-embedding-based clustering~\cite{reimers2019sentence, mcinnes2018umap,
   mcinnes2017hdbscan}, and PageRank centrality~\cite{page1999pagerank, brin1998anatomy}; the top-five aspects cover 74\% of all review-aspect mentions, roughly $10^3\times$ concentration in the developer's reading order.
 
-  \item \textbf{We evaluate} the framework end-to-end on 215{,}583 reviews from 58 Android apps: IssueSpec achieves $3.94/5$ on a five-dimension issue-specification rubric over all 100 specs, while a corrected downstream comparison finds no measurable response-quality gain from the IR ($+0.04$, $p = 0.38$) and neither retrieval nor the IR shows a measurable downstream effect; a four-LLM cross-family replication (Section~\ref{exp1-results}) rules out single-model bias.  
+  \item \textbf{We evaluate} the framework end-to-end on 215{,}583 reviews from 58 Android apps: IssueSpec achieves $3.94/5$ on a five-dimension issue-specification rubric over all 100 specs, while a corrected downstream comparison finds no measurable response-quality gain from the IR ($+0.04$, $p = 0.54$) and neither retrieval nor the IR shows a measurable downstream effect; a four-LLM cross-family replication (Section~\ref{exp1-results}) rules out single-model bias.  
 
   \item \textbf{We release} a CMDP-grounded RLHF testbed (KTO~\cite{ethayarajh2024kto} to
   DPO~\cite{rafailov2023direct} to Lagrangian Constrained PPO~\cite{schulman2017proximal, dai2024safe}), formulated as a Constrained Markov Decision Process~\cite{altman2021constrained, dai2024safe} that separates quality reward from compliance constraints, together with a benchmark dataset of 100 stratified clusters, a 490-review classification gold standard, 400 paired ratings, and a 99-review three-rater Krippendorff $\alpha = 0.285$ subsample.
@@ -282,7 +282,7 @@ pipeline.
 contribution & headline evidence & released artifact \\\midrule
 IssueSpec & 0.96 vs 0.69 template-fill, i.e.\ schema conformance not quality (Table~\ref{tab:stage3}); 5-dim rubric 3.94/5 on all 100 specs, LLM judge (Table~\ref{tab:rubric}) & type-routed schema (Table~\ref{tab:templates}) \\
 \textsc{SpecCov} (negative) & no rank correlation with human faithfulness ($\rho=0.15$, $p=0.26$); orders generators backwards (\S\ref{speccov-validation}) & the scorer plus 60 specs rated by three humans \\
-IR downstream payoff (withdrawn) & the $+2.35$ gain came from a confounded design; a same-model comparison gives $+0.04$ ($p=0.38$) with raters disagreeing in direction (\S\ref{exp2-results}) & both rating rounds, the generated replies, and the independence check \\
+IR downstream payoff (withdrawn) & the $+2.35$ gain came from a confounded design; a same-model comparison gives $+0.04$ ($p=0.54$) with raters disagreeing in direction (\S\ref{exp2-results}) & both rating rounds, the generated replies, and the independence check \\
 verified anchor & $\kappa$ 0.16$\to$0.59 (Table~\ref{tab:kappa}); per-class F1 recovery
   (Table~\ref{tab:perclass-f1}); $\kappa = 0.616$ on the 307 strictly held-out gold reviews & 5{,}230-review
   verified anchor + cleanlab correction procedure + V5 classifier \\
@@ -312,7 +312,7 @@ We organize related work by the five gaps identified in Section~\ref{introductio
 Maalej and Nabil~\cite{maalej2015bug} established the canonical seven-class taxonomy for app reviews. Subsequent systems, AR-Miner~\cite{chen2014ar}, CLAP~\cite{villarroel2016release}, SURF~\cite{di2017surf}, BERT/RCNN hybrids~\cite{kaur2023bert, shah2020mining}, and per-aspect sentiment analysis~\cite{guzman2014users}, refined classification accuracy and added aspect-level granularity. Dąbrowski et al.~\cite{dkabrowski2022analysing} surveyed nineteen years of such work and concluded that label quality, not model capacity, is the F1 ceiling at 0.75--0.85, an observation we corroborate in Section~\ref{exp1-results}. \emph{What breaks for review-to-issue translation:} none of these systems emits a typed developer-routable artifact downstream of the classification label. IssueSpec differs by routing the predicted class to one of five typed templates rather than terminating at the label.
 
 \subsection{Response Generation and Retrieval-Augmented Generation}
-RRGen~\cite{gao2019automating} and CoRe~\cite{gao2021automating} pioneered end-to-end neural response generation on (review, response) pairs without an explicit structured intermediate. Vanilla RAG~\cite{lewis2020retrieval} retrieves relevant past responses in a single pass. \emph{Agentic RAG} variants, Self-RAG~\cite{asai2024self} and DEMONSTRATE-SEARCH-PREDICT (DSP)~\cite{khattab2022demonstrate}, introduce iterative critique-revise loops that, in principle, could close the structured-intermediate gap. \emph{What breaks for review-to-issue translation:} none of these systems names the underlying defect, and our $n=10$ feasibility study (Appendix~\ref{appendix:settings}) shows that agentic iteration without a typed intermediate adds a small gain on a rule-based scorer (0.58$\to$0.70, ten reviews). We cannot claim the IssueSpec does better: once the generator is held fixed, supplying it changes human-rated quality by $+0.04$ ($p = 0.38$, Section~\ref{exp2-results}). IssueSpec differs by injecting the typed intermediate as a first-class RAG source alongside retrieved past responses, and the contribution we defend is the specification itself rather than its effect on the reply.
+RRGen~\cite{gao2019automating} and CoRe~\cite{gao2021automating} pioneered end-to-end neural response generation on (review, response) pairs without an explicit structured intermediate. Vanilla RAG~\cite{lewis2020retrieval} retrieves relevant past responses in a single pass. \emph{Agentic RAG} variants, Self-RAG~\cite{asai2024self} and DEMONSTRATE-SEARCH-PREDICT (DSP)~\cite{khattab2022demonstrate}, introduce iterative critique-revise loops that, in principle, could close the structured-intermediate gap. \emph{What breaks for review-to-issue translation:} none of these systems names the underlying defect, and our $n=10$ feasibility study (Appendix~\ref{appendix:settings}) shows that agentic iteration without a typed intermediate adds a small gain on a rule-based scorer (0.58$\to$0.70, ten reviews). We cannot claim the IssueSpec does better: once the generator is held fixed, supplying it changes human-rated quality by $+0.04$ ($p = 0.54$, Section~\ref{exp2-results}). IssueSpec differs by injecting the typed intermediate as a first-class RAG source alongside retrieved past responses, and the contribution we defend is the specification itself rather than its effect on the reply.
 
 \subsection{Agentic Software Engineering}
 SWE-Agent~\cite{yang2024swe}, RepairAgent~\cite{bouzenia2025repairagent}, and HyperAgent~\cite{phan2024hyperagent} consume well-structured GitHub issues to produce code patches through multi-step planning and tool use. \emph{What breaks for review-to-issue translation:} the issue specification is the input contract for all three systems; how a defect-tracker entry is constructed from noisy user-facing text is out of scope. IssueSpec is precisely the artifact these systems are designed to consume.
@@ -758,7 +758,7 @@ they are findings rather than caveats.}\label{tab:findings}
 & finding & evidence \\\midrule
 F1 & Type routing, not the language model, is what produces tracker-ready fields: removing it collapses strict fill from 0.96 to 0.69 and the per-type structural metrics to zero. & \S\ref{exp1-results}, A3 \\
 F2 & \emph{Corrected.} We reported that LLM annotation noise concentrates on minority classes. Per stratum it does the opposite: 1{,}302 of 1{,}307 disagreements are in the largest class. What holds is that the labeller omits two classes entirely, which is the failure a verified anchor repairs. & \S\ref{exp1-results} \\
-F3 & \emph{Negative, and it overturns our own earlier claim.} With the generator held fixed, adding the typed IR changes response quality by $+0.04$ ($p=0.38$); the $+2.35$ we previously reported was an artifact of comparing two different text composers. & \S\ref{exp2-results} \\
+F3 & \emph{Negative, and it overturns our own earlier claim.} With the generator held fixed, adding the typed IR changes response quality by $+0.04$ ($p=0.54$); the $+2.35$ we previously reported was an artifact of comparing two different text composers. & \S\ref{exp2-results} \\
 F4 & Generator capability shows up mostly as whether fields get filled, not as the quality of the text once filled: template-fill spans 0.96--0.48 across four models while rubric quality spans 4.09--3.77. & \S\ref{exp1-results} \\
 F5 & \emph{Negative.} The knowledge graph loses to count-matched flat clustering on all three intrinsic metrics; its defensible role is centrality-based prioritization. & \S\ref{cluster-validation-results}, A1b \\
 F6 & \emph{Negative.} Extractive coverage does not measure faithfulness: \textsc{SpecCov} shows no rank correlation with human judgement and orders generators backwards. & \S\ref{speccov-validation} \\
@@ -775,7 +775,15 @@ determined entirely by the issue-type mix: $(30 \cdot 4/7 + 30 \cdot 4/6 + 40 \c
 0.691$, with zero variance across specs and a strict-minus-loose difference of exactly zero. The
 0.69 is therefore a constant, not a measurement, and the 0.96-versus-0.69 gap says that routing
 produces type-specific fields at all. It carries no information about whether the routed text is
-better written. Under strict content-validity criteria (at
+better written. We put a number on that limit by adversarial construction. Scoring the same
+conditions on bare field presence instead of the strict criteria gives 1.000 for the routed
+condition against 0.678 for free-form, versus 0.959 and 0.678 under the strict criteria: for the
+free-form arm the content thresholds remove exactly nothing, so the whole reported gap is schema
+conformance. And a hand-written bug specification whose description is the word ``something''
+repeated thirty-five times, with three five-word steps built from the criterion's own action-verb
+list, passes all seven fields and scores 1.000, above our headline. We keep the word substantive
+for the criterion because it is the name of the thresholds, but a reader should treat 0.96 as
+schema conformance and nothing more. Under strict content-validity criteria (at
 least three reproduction steps with action verbs, descriptions $\geq 30$ words, and a full
 As-a/I-want/So-that triple for user stories), the LLM-with-taxonomy condition achieves a
 substantive template-fill rate of 0.96 (Table~\ref{tab:stage3}). Free-form LLM reaches 0.69, the same as the lead-author reference set ($n=20$). Raw concatenation lands at 0.34, and real GitHub issues mined from three open-source Android projects reach 0.53. The LLM-vs-GitHub gap reflects coverage rather than content quality: the LLM is prompted to fill every field, whereas humans leave optional fields blank. A very-strict sensitivity sweep preserves the ordering, Claude drops from 0.97 to 0.71, with the Claude-vs-GitHub gap shifting only $-0.085$.
@@ -841,9 +849,14 @@ pairwise differences reaches significance (Wilcoxon $p$ between 0.18 and 0.75), 
 gaps are the same size as the run-to-run generation noise measured in
 Section~\ref{reproducibility}. The four-way ordering is therefore consistent with the
 template-fill result rather than independent confirmation of it. The Claude-versus-Llama
-comparison in Panel B, which has twice the sample and spans all five issue types, does reach
-significance at $+0.38$ ($p = 0.015$), and that is the one cross-family quality difference we
-assert. The spread is much narrower than the template-fill spread (0.96 to 0.48),
+comparison in Panel B, which has twice the sample and spans all five issue types, reaches a
+nominal $+0.38$ ($p = 0.015$). We previously asserted this as the one cross-family quality
+difference we stand behind. We withdraw that assertion. It belongs to a family of seven Wilcoxon
+tests reported in the same tables with the same judge and rubric, and Bonferroni or Holm
+correction over that family puts it at $p = 0.104$. An exact sign test on the same 28 pairs,
+which ignores magnitude and counts only direction, gives $p = 0.078$. The difference is therefore
+descriptive, like the rest of Panel A, and we no longer claim a cross-family quality difference
+at all. The spread is much narrower than the template-fill spread (0.96 to 0.48),
 which is informative in itself: the capability gap between these models shows up mostly as
 whether fields get filled at all, not as the quality of the text once they are. Completeness is
 the dimension that separates them (4.00 down to 3.00), while accuracy is nearly flat (4.50 for
@@ -948,7 +961,29 @@ sd across specs & 0.59 & -- & 0.41 \\
   \end{tabular}
   \end{table}
 
-\textbf{Stage~1 Classification Recovery.} The Cohen's $\kappa$ trajectory against the 490-review expert gold crosses three Landis-Koch~\cite{landis1977measurement} agreement bands (Table~\ref{tab:kappa}): the V2 LLM achieves $\kappa = 0.163$ (slight); after cleanlab correction~\cite{northcutt2021confident} $\kappa = 0.333$ (fair); the V5 classifier retrained on the corrected labels reaches $\kappa = 0.592$ (moderate, just below the substantial threshold). The trajectory does not depend on any single annotator. Scored against the majority-vote gold of the three-rater human panel ($n = 489$ after excluding one review left without a correction label), the same three classifiers reach $\kappa = 0.165$, $0.334$, and $0.590$, within $0.002$ of the lead-author values at every step (Table~\ref{tab:kappa}). On the strictly held-out 307-review subset (183 of the 490 entered training via the verified anchor), V5 reaches $\kappa = 0.616$, slightly above the 0.592 on the full 490, ruling out a contamination artifact.
+\textbf{Stage~1 Classification Recovery.} The Cohen's $\kappa$ trajectory against the 490-review expert gold crosses three Landis-Koch~\cite{landis1977measurement} agreement bands (Table~\ref{tab:kappa}): the V2 LLM achieves $\kappa = 0.163$ (slight); after cleanlab correction~\cite{northcutt2021confident} $\kappa = 0.333$ (fair); the V5 classifier retrained on the corrected labels reaches $\kappa = 0.592$ (moderate, just below the substantial threshold). The trajectory does not depend on any single annotator. Scored against the majority-vote gold of the three-rater human panel ($n = 489$ after excluding one review left without a correction label), the same three classifiers reach $\kappa = 0.165$, $0.334$, and $0.590$, within $0.002$ of the lead-author values at every step (Table~\ref{tab:kappa}). On the held-out 307-review subset (183 of the 490 entered training, mostly through the stratified
+cap rather than the anchor proper), V5 reaches $\kappa = 0.616$. We previously wrote that this is
+``slightly above the 0.592 on the full 490, ruling out a contamination artifact.'' Two audits of
+that sentence make it untenable as written, and we replace it with a weaker claim that the data
+does support.
+
+First, ``held out'' is not exactly true. All 100 keyword-mined \texttt{compatibility} rows in the
+training augmentation are verbatim copies of reviews already in the corpus, appended past index
+215{,}583 with the label changed. Eight of them duplicate a held-out review, seven with the same
+label the expert assigned, and the index-based replay cannot see this because it filters on
+position rather than text. Dropping those eight gives $\kappa = 0.609$ on $n = 298$.
+
+Second, and more seriously, the split is a replay rather than a recorded fact, and 0.616 is the
+most favourable replay. The reconstruction shuffles each class with seed 42 and iterates classes
+in Python dictionary insertion order. Iterating them in sorted order instead, changing nothing
+else, gives $\kappa = 0.594$; seeds 0, 1, 2, 7, 123 and 2024 give 0.602, 0.605, 0.617, 0.590,
+0.583 and 0.606. The published figure is at the top of that range, and the direction of the
+inequality against 0.592 flips under most alternatives.
+
+What survives is the weaker statement: held-out $\kappa$ is indistinguishable from full-set
+$\kappa$, across replays and after removing the duplicated rows. That still argues against
+memorisation, which is what the sentence was for, but it does not do so by being larger, and we
+should not have leaned on a direction this fragile.
 
 The per-class recovery story (Table~\ref{tab:perclass-f1}) makes the structural collapse visible. On the two minority classes the V2 LLM cannot see at all, F1 jumps to 0.83 for \texttt{compatibility} and 0.77 for \texttt{performance}. Applied across the full 215{,}583-review corpus, V5 agrees with the cleanlab correction on
 88.66\% of the 40{,}291 corrected cases. We want to be exact about what that number is and is
@@ -1017,7 +1052,23 @@ reconstruction can be checked. The choice of confident-learning thresholds is no
   macro F1 & 0.22 & 0.38 & \textbf{0.65} \\
   \bottomrule\end{tabular}\end{table}
 
-To rule out memorization of the 200 synthetic compatibility templates used during V5 training, we evaluate V5 against Maalej's 5{,}008 labels under a label-space cross-protocol test. Review texts appear in the anchor under the RRGen seven-class taxonomy, but predictions are scored against Maalej's separate taxonomy, which contains no \texttt{compatibility} class, making any compatibility predictions out-of-distribution with respect to the evaluation labels. On the five overlapping classes ($n=4{,}560$), V5 achieves macro F1~=~0.676, weighted F1~=~0.730, and accuracy~=~72.0\%. V5 also flags 432 reviews (8.6\%) as \texttt{compatibility}; the top-twenty-confidence flags read as canonical compatibility complaints (``crashes on iphone 5 and ipad 3'', ``works on HTC Desire X but not Samsung Galaxy Tab 3''), all labeled \texttt{bug\_report} in Maalej because Maalej offers no alternative class. The detector is performing concept-recognition, not template-matching.
+To rule out memorization of the 200 synthetic compatibility templates used during V5 training, we evaluate V5 against Maalej's 5{,}008 labels under a label-space cross-protocol test. Review texts appear in the anchor under the RRGen seven-class taxonomy, but predictions are scored against Maalej's separate taxonomy, which contains no \texttt{compatibility} class, making any compatibility predictions out-of-distribution with respect to the evaluation labels. On the five overlapping classes ($n=4{,}560$), V5 achieves macro F1~=~0.676, weighted F1~=~0.730, and accuracy~=~72.0\%. V5 also flags 432 reviews (8.6\%) as \texttt{compatibility}; the top-twenty-confidence flags read as canonical compatibility complaints (``crashes on iphone 5 and ipad 3'', ``works on HTC Desire X but not Samsung Galaxy Tab 3''), all labeled \texttt{bug\_report} in Maalej because Maalej offers no alternative class. On this
+out-of-distribution evaluation the detector is performing concept-recognition rather than
+template-matching.
+
+We have to add a caveat about the class itself, which we found by auditing the training file
+rather than by reasoning about it. Of the 310 \texttt{compatibility} rows V5 trains on, 300 are
+augmentation: 200 template-generated and 100 keyword-mined. The corpus is lowercased and
+lemmatised throughout, and we verified that not one of its 215{,}583 rows contains a single
+uppercase character, whereas 194 of the 200 synthetic rows do. V5 is a cased RoBERTa, so any
+capital letter is a free and perfect marker for ``synthetic compatibility''. The internal test
+F1 of 0.74 for this class is therefore not a meaningful number and we withdraw it. The
+gold-standard compatibility F1 of 0.83 is not affected by the cue, because the gold is lowercase
+corpus text where it never fires; it is carried instead by the 100 mined rows, which are the
+verbatim duplicates described above. The cross-protocol result in this paragraph stands, since
+Maalej's text is also not drawn from the synthetic set, but a reader should treat every
+compatibility number in this paper as resting on 300 augmented rows rather than on natural
+corpus evidence.
 
 \subsection{Is the IR Load-Bearing? A Result We Had to Withdraw}\label{exp2-results}
 
@@ -1055,7 +1106,7 @@ difference is itself significant (paired Wilcoxon $p = 6 \times 10^{-8}$), which
 when discussing what the lead author's preference tracks. Three raters scored all 200 blinded rows.
 
 \textbf{The IssueSpec does not measurably improve response quality.} Pooled over the three raters the gain is $+0.04$ Likert points, 95\% bootstrap CI
-$[-0.10, +0.18]$, paired Wilcoxon $p = 0.38$ on 100 pairs, Cliff's $\delta = 0.04$. Each review's two replies are shown in a randomised order, and we call the two display positions
+$[-0.10, +0.18]$, paired Wilcoxon $p = 0.54$ on 100 pairs, Cliff's $\delta = 0.04$. Each review's two replies are shown in a randomised order, and we call the two display positions
 slots. The assignment came out 64/36 rather than balanced and the raters show a small preference
 for the first slot,
 so we also report a slot-stratified estimate, which moves the pooled figure to $+0.03$ and each
@@ -1075,7 +1126,14 @@ cannot see it, not that it is zero.
 Table~\ref{tab:stage4-rerun} breaks the result out. The lead author, who designed the system,
 prefers the IssueSpec arm decisively: $+0.56$ quality ($p = 2 \times 10^{-11}$, 59 wins, 5
 losses, 36 ties) and $+0.39$ specificity ($p < 10^{-7}$). The two independent raters lean the
-other way, $-0.29$ and $-0.15$, neither significant at $\alpha = 0.05$ ($p = 0.06$ and $0.09$).
+other way, $-0.29$ and $-0.15$, neither significant at $\alpha = 0.05$ under the zero-handling
+scipy applies by default ($p = 0.06$ and $0.09$; the first rater has 45 tied rows of 100, and
+under Pratt's method that becomes $p = 0.044$). Table~\ref{tab:stage4-rerun}'s bootstrap interval
+for the first of the two, $[-0.56, -0.01]$, excludes zero, so the test and the interval disagree
+at the boundary. We state both rather than pick the one that reads better: on this rater the
+evidence sits exactly on $\alpha = 0.05$ and moves either side of it depending on defensible
+choices. That is itself the point of the section, since the disagreement between raters is larger
+than the effect under measurement.
 Inter-rater reliability is correspondingly low, quadratic-weighted $\kappa$ of 0.03, 0.04 and
 0.50, against 0.97 in the discarded template-based round. High agreement there was a symptom of
 the confound: when one arm is visibly broken, raters agree easily. Here they do not.
@@ -1101,7 +1159,7 @@ rater & no\_spec & full & gain & 95\% CI & Wilcoxon $p$ \\\midrule
 lead author & 4.04 & 4.60 & $+0.56$ & $[+0.44, +0.68]$ & $2 \times 10^{-11}$ \\
 independent rater 1 & 3.87 & 3.58 & $-0.29$ & $[-0.56, -0.01]$ & 0.06 \\
 independent rater 2 & 3.57 & 3.42 & $-0.15$ & $[-0.33, +0.03]$ & 0.09 \\\midrule
-\textbf{pooled} & 3.83 & 3.87 & $\mathbf{+0.04}$ & $[-0.10, +0.18]$ & \textbf{0.38} \\
+\textbf{pooled} & 3.83 & 3.87 & $\mathbf{+0.04}$ & $[-0.10, +0.18]$ & \textbf{0.54} \\
 \bottomrule\end{tabular}\end{table}
 
 \textbf{Why we believe the raters this time, and what the check does and does not show.} In the
@@ -1152,13 +1210,29 @@ downstream payoff in response generation.
   policies at every threshold, with the first binding $\tau$ undefined for those four; only
   SFT-base ever dips, to 99\% at $\tau \geq 0.9$. A model of this size cannot plausibly violate
   the rubric, so the constraint has no work to do and the CMDP machinery is untested under
-  binding conditions. The $+53\%$ BLEU-1 figure for the constrained proxy is therefore a
+  binding conditions. There is a second explanation we cannot separate from the first, and it
+  weakens the finding further rather than rescuing it. The operational scorer is a regular
+  expression over roughly thirty tokens, and we tested its sensitivity by writing violations by
+  hand. Nine replies that plainly breach the four rubric dimensions, phrased away from the
+  patterns (``Our engineers have committed to a permanent resolution by Friday'', ``Ticket
+  ENG-4412 in our tracker covers this regression'', ``We will reimburse the amount you were
+  charged''), all score a perfect 1.00. Empty output, whitespace, and gibberish also score 1.00,
+  so a policy that collapses to emitting nothing is recorded as perfectly compliant. The quality
+  scorer has the mirror defect: a bare list of eleven rubric keywords scores 1.000 against 0.672
+  for a genuine reply. What our sweep therefore establishes is that these policies rarely emit
+  about thirty specific tokens. Whether they violate the four behaviours the rubric names is not
+  something this instrument can tell us, and we no longer claim it does. The compliance numbers
+  in this section should be read as properties of the detector. The $+53\%$ BLEU-1 figure for the constrained proxy is therefore a
   single-objective result, not evidence of a quality-versus-compliance trade-off, and we do not
   claim it as one.
 
-  \textbf{The constraint binds once the policy can violate it.} The obstacle is not parameter
-  count, it is capability: distilGPT2 never produces the fluent developer-relations phrasing the
-  rubric penalises, so it cannot violate and the constraint has nothing to hold back. We
+  \textbf{The constraint binds once the policy can violate it, as this instrument measures
+  violation.} We originally read the obstacle as capability rather than parameter count:
+  distilGPT2 never produces the fluent developer-relations phrasing the rubric penalises, so it
+  cannot violate and the constraint has nothing to hold back. That reading is still available,
+  but given the detector's measured insensitivity above it is not the only one, and we cannot
+  distinguish a policy that does not violate from a policy whose violations this scorer does not
+  see. Every violation rate in this paragraph should be read with that ambiguity attached. We
   measured this directly. We first justified this by observing that 5.2\% of our own Stage-4
   generations trip the scorer. That figure is from the four withdrawn template-composed arms
   (21 violations in 400 replies). Scored the same way, the two model-generated arms we actually
@@ -1305,7 +1379,7 @@ A2 & hierarchical sub-clustering & purity 0.625 flat vs 0.390 KG & \textbf{again
 A3 & taxonomy grounding, so the LLM writes free-form & strict fill $0.96 \to 0.69$; per-type structure to zero & \textbf{justifies routing} \\
 A4 & HITL-2 review of specs & no change to benchmark scores & no effect at benchmark time \\
 A5 & retrieval, keeping the IssueSpec & all automatic metrics move $<1\%$ & \textbf{against RAG} \\
-A6 & the IssueSpec, keeping retrieval & quality $3.87 \to 3.83$ ($-0.04$, $p=0.38$) & \textbf{no measurable effect} (\S\ref{exp2-results}) \\
+A6 & the IssueSpec, keeping retrieval & quality $3.87 \to 3.83$ ($-0.04$, $p=0.54$) & \textbf{no measurable effect} (\S\ref{exp2-results}) \\
 A7 & single-stream RLHF feedback & not run & deferred \\
 \bottomrule\end{tabular}\end{table}
 
@@ -1383,7 +1457,7 @@ principal driver of Stage~3 quality: removing taxonomy grounding (A3) drops stri
 from 0.96 to 0.69, and the structural per-field metrics collapse to zero because an unrouted
 generator does not emit the reproduction-step list or the As-a/I-want/So-that triple at all. By
 contrast the typed IR is \emph{not} a demonstrated driver of Stage~4 quality: under a same-model
-comparison removing it moves quality by $0.04$ points ($p = 0.38$, Section~\ref{exp2-results}),
+comparison removing it moves quality by $0.04$ points ($p = 0.54$, Section~\ref{exp2-results}),
 and removing retrieval instead (A5) moves every automatic metric by less than one point
 absolute. Our earlier reading of the retrieval arm does not survive either, and the error was
 ours to make twice. We first reported that retrieval alone was indistinguishable from a
@@ -1529,7 +1603,7 @@ run wants a longer horizon and a policy with a higher base violation rate, on an
   agentic software engineering assumes the spec exists, knowledge graphs emit no typed schema,
   and RLHF has not addressed dev-rel compliance. We set out to show that the typed IR is the load-bearing component of spec-aware response
   generation, and we cannot. An isolation experiment that holds the generator fixed moves
-  human-rated quality by $+0.04$ Likert points ($p = 0.38$, three raters, 100 paired reviews),
+  human-rated quality by $+0.04$ Likert points ($p = 0.54$, three raters, 100 paired reviews),
   and the raters disagree in direction. The $+2.35$ we previously reported came from a comparison
   whose two arms were written by different template composers. Nor does the negative half of our original hypothesis survive. We had reported that
   retrieval alone falls below a no-context baseline; against the arm that actually has no

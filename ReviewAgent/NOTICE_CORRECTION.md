@@ -130,3 +130,88 @@ two strata", the praise stratum and the human-verified anchor, on a combined 10,
 praise stratum is 5,038 of the anchor's 5,230 rows, i.e. 96% of the same sample, so the combined
 figure double-counted it. The rate is a single measurement on 5,230 rows (1,307 deviations,
 24.99%); the praise stratum alone deviates at 25.84%. The rate itself is unchanged.
+
+## Correction 9 (2026-08-18): Stage-4 pooled p, and a floating-point tie bug
+
+The pooled Stage-4 Wilcoxon p was reported as **0.38**. The correct value is **0.54**.
+
+Each row of the pooled test is the mean of three integer Likert scores, so every paired
+difference is a multiple of 1/3. In binary floating point, two mathematically equal differences
+can carry different bit patterns (`0.33333333333333304` vs `0.3333333333333335`), and Wilcoxon
+then ranks them as distinct magnitudes instead of tying them. On this data that split 7 true
+magnitudes into 14. `scripts/run_stage4_llm_rerun.py` now rounds before testing.
+
+The effect and interval are unchanged (+0.04, 95% CI [-0.10, +0.18]). The conclusion is a null
+either way, and the corrected p makes it a firmer null, not a weaker one.
+
+## Correction 10 (2026-08-18): the cross-family quality difference is withdrawn
+
+The paper asserted "+0.38 (p = 0.015) ... the one cross-family quality difference we assert".
+That claim is withdrawn. It belongs to a family of seven Wilcoxon tests reported in the same
+tables with the same judge and rubric; Bonferroni or Holm correction over that family gives
+p = 0.104. An exact sign test on the same 28 pairs gives p = 0.078. The comparison is now
+reported as descriptive.
+
+## Correction 11 (2026-08-18): the held-out kappa claim is weakened
+
+The paper wrote that held-out kappa of 0.616 is "slightly above the 0.592 on the full 490, ruling
+out a contamination artifact". Two problems:
+
+1. All 100 keyword-mined compatibility rows in the training augmentation are verbatim copies of
+   corpus reviews, appended past index 215,583 with the label changed. Eight duplicate a held-out
+   review, seven with the expert's own label. The replay filters on index, not text, so it cannot
+   see them. Removing them gives kappa = 0.609 on n = 298.
+2. The split is a replay, and 0.616 is its most favourable form. Iterating classes in sorted
+   order rather than dictionary insertion order gives 0.594; seeds 0, 1, 2, 7, 123, 2024 give
+   0.602, 0.605, 0.617, 0.590, 0.583, 0.606. The direction of the inequality against 0.592 flips
+   under most alternatives.
+
+The claim is now the weaker and supportable one: held-out kappa is indistinguishable from
+full-set kappa.
+
+## Correction 12 (2026-08-18): the compatibility class carries a trivial cue
+
+Of the 310 compatibility rows V5 trains on, 300 are augmentation. The corpus is lowercased and
+lemmatised: **0 of 215,583 rows contain an uppercase character**, while 194 of the 200 synthetic
+compatibility rows do. V5 is a cased RoBERTa, so capitalisation is a perfect marker for the
+synthetic class. The internal test F1 of 0.74 for compatibility is withdrawn. The gold-standard
+0.83 is unaffected by the cue (the gold is lowercase corpus text) but rests on the 100 mined
+rows described in Correction 11.
+
+## Correction 13 (2026-08-18): two Bradley-Terry implementations were wrong
+
+Neither fed a number in the manuscript, but both shipped in the release.
+
+`src/evaluation/statistical_tests.py::bradley_terry` incremented winner and loser by
+`strengths[x]/total`, two terms that sum to 1 per comparison regardless of outcome. The fixed
+point depended only on how often each model appeared: a model that won 50-0 came back with
+P(win) = 0.5, and a preference list and its exact reversal returned identical strengths. Its
+unit test passed vacuously. Replaced with the Zermelo/MM update, verified against
+`choix.ilsr_pairwise`.
+
+`scripts/score_rlhf_policies_with_rubric.py::bradley_terry_mle` used a denominator equal to
+`n_ij * pi_j / (pi_i + pi_j)`, an extra factor of `pi_j`. The recursion has no fixed point and
+drifts until it saturates: it shipped theta = +21.52 for constrained_proxy against -5.30 for
+sft_base, implying P(win) = 1 - 2e-12 where the empirical rate is 79/100. Corrected values are
+-0.196, -0.399, +0.015, +1.056, -0.477, agreeing with `choix` to ~1e-6.
+`data/processed/rlhf/policy_preference_analysis.json` has been regenerated. The ranking is
+unchanged.
+
+## Correction 14 (2026-08-18): what the compliance and template-fill scorers actually measure
+
+Both are reported in the paper as instruments; adversarial testing shows what they detect.
+
+The operational compliance scorer is a regular expression over roughly thirty tokens. Nine
+hand-written replies that plainly breach the four rubric dimensions, phrased away from the
+patterns, all score a perfect 1.00. Empty output, whitespace and gibberish also score 1.00. The
+quality scorer scores a bare list of eleven rubric keywords at 1.000 against 0.672 for a genuine
+reply. The "constraint never binds" finding cannot distinguish a policy that does not violate
+from violations this scorer does not see.
+
+The strict template-fill criterion behind 0.96 vs 0.69 does no content work in that comparison:
+scoring on bare field presence gives 1.000 vs 0.678 against the strict criteria's 0.959 vs 0.678,
+so the free-form arm loses nothing to the content thresholds. A bug specification whose
+description is the word "something" repeated thirty-five times, with three five-word steps built
+from the criterion's own action-verb list, scores 1.000 — above the headline.
+
+Both are now stated in the manuscript.

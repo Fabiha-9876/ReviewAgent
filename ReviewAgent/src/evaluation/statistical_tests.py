@@ -70,18 +70,33 @@ def bradley_terry(preferences: list[tuple[int, int]], n_models: int = 3) -> dict
         preferences: list of (winner_idx, loser_idx) pairs
         n_models: number of models being compared
     """
+    # Zermelo/MM update: pi_i <- W_i / sum_j n_ij / (pi_i + pi_j), where W_i is i's win
+    # count and n_ij the number of times i and j met.
+    #
+    # An earlier version incremented BOTH players by strengths[x]/total. Those two terms
+    # sum to exactly 1 per comparison regardless of who won, so the fixed point depended
+    # only on how often each model appeared and never on the outcome: a model that won
+    # 50-0 came back with P(win) = 0.5, and a preference list and its exact reversal
+    # returned identical strengths.
+    wins = np.zeros(n_models)
+    meetings = np.zeros((n_models, n_models))
+    for winner, loser in preferences:
+        wins[winner] += 1
+        meetings[winner][loser] += 1
+        meetings[loser][winner] += 1
+
     strengths = np.ones(n_models)
-
-    # Iterative MLE
-    for _ in range(100):
-        new_strengths = np.zeros(n_models)
-        for winner, loser in preferences:
-            total = strengths[winner] + strengths[loser]
-            new_strengths[winner] += 1.0 / total * strengths[winner]
-            new_strengths[loser] += 1.0 / total * strengths[loser]
-
+    for _ in range(1000):
+        new_strengths = np.empty(n_models)
+        for i in range(n_models):
+            denom = sum(meetings[i][j] / (strengths[i] + strengths[j])
+                        for j in range(n_models) if j != i and meetings[i][j])
+            # A model that never won, or never played, has no finite MLE strength;
+            # hold it at a small positive value rather than dividing by zero.
+            new_strengths[i] = wins[i] / denom if denom > 0 and wins[i] > 0 else 1e-9
         new_strengths = new_strengths / new_strengths.sum() * n_models
-        if np.allclose(strengths, new_strengths, atol=1e-6):
+        if np.allclose(strengths, new_strengths, atol=1e-9):
+            strengths = new_strengths
             break
         strengths = new_strengths
 

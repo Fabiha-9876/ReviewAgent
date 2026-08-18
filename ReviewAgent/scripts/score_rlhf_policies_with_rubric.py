@@ -91,23 +91,31 @@ def score_safety_strict(text):
 
 def bradley_terry_mle(wins, n_items, alpha=0.01, n_iter=200):
     """wins[i][j] = number of times i beat j. Returns log-strengths."""
-    theta = np.zeros(n_items)
-    for _ in range(n_iter):
-        new_theta = np.zeros(n_items)
+    # Zermelo/MM update in strength space: pi_i <- W_i / sum_j n_ij / (pi_i + pi_j).
+    #
+    # An earlier version used a denominator of (n_ij + 2a) / (exp(theta_i - theta_j) + 1),
+    # which equals n_ij * pi_j / (pi_i + pi_j) -- an extra factor of pi_j. That recursion
+    # has no fixed point and drifts until it saturates: on the repo's own head-to-head data
+    # it returned theta = +21.52 for constrained_proxy against -5.30 for sft_base, implying
+    # P(win) = 1 - 2e-12 where the empirical rate is 79/100. Values now agree with
+    # choix.ilsr_pairwise to ~1e-6.
+    pi = np.ones(n_items)
+    for _ in range(max(n_iter, 1000)):
+        new_pi = np.empty(n_items)
         for i in range(n_items):
             num = sum(wins[i][j] + alpha for j in range(n_items) if j != i)
             den = sum(
-                (wins[i][j] + wins[j][i] + 2 * alpha) / (np.exp(theta[i] - theta[j]) + 1)
+                (wins[i][j] + wins[j][i] + 2 * alpha) / (pi[i] + pi[j])
                 for j in range(n_items) if j != i
             )
-            new_theta[i] = np.log(num / max(den, 1e-9))
-        # center
-        new_theta -= new_theta.mean()
-        if np.allclose(new_theta, theta, atol=1e-6):
-            theta = new_theta
+            new_pi[i] = num / den if den > 0 else 1e-9
+        new_pi = new_pi / new_pi.sum() * n_items
+        if np.allclose(new_pi, pi, atol=1e-10):
+            pi = new_pi
             break
-        theta = new_theta
-    return theta
+        pi = new_pi
+    theta = np.log(pi)
+    return theta - theta.mean()
 
 
 # --- McNemar test for paired binary outcomes ------------------------------

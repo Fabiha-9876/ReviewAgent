@@ -29,7 +29,9 @@ CANON = {
     "rater D gain": (r"[-−]0\.2[69]", {"-0.29"}, []),
     "rater E gain": (r"[-−]0\.1[58](?![0-9])", {"-0.15"}, ["[-0.33"]),
     "kappa progression": (r"0\.16[0-9]|0\.33[0-9]|0\.59[0-9]",
-                          {"0.163", "0.333", "0.592", "0.165", "0.334", "0.590"}, []),
+                          {"0.163", "0.333", "0.592", "0.165", "0.334", "0.590"},
+                          # the replay-sensitivity sentence quotes alternative-seed kappas
+                          ["seeds 0, 1, 2, 7", "sorted order instead"]),
     "held-out kappa": (r"0\.616", {"0.616"}, []),
     "template fill, routed": (r"0\.96(?![0-9])", {"0.96"}, []),
     "rubric, full set": (r"3\.9[34]", {"3.94", "3.93"}, []),

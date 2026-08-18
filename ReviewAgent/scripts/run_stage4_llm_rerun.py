@@ -223,7 +223,15 @@ def main():
         if f and n:
             pooled_full.append(f[0])
             pooled_no.append(n[0])
-    diff = np.array(pooled_full) - np.array(pooled_no)
+    # Each row is the mean of three integer Likert scores, so every difference is a
+    # multiple of 1/3. In binary floating point two mathematically equal differences can
+    # land on different bit patterns (0.33333333333333304 vs 0.3333333333333335), which
+    # Wilcoxon then ranks as distinct magnitudes instead of tying them. On this data that
+    # split 7 true magnitudes into 14 and moved the pooled p from 0.544 to 0.376. Round
+    # before testing so equal differences tie.
+    pooled_full = np.round(np.array(pooled_full), 10)
+    pooled_no = np.round(np.array(pooled_no), 10)
+    diff = pooled_full - pooled_no
     boot = np.array([rng.choice(diff, size=len(diff), replace=True).mean() for _ in range(BOOT)])
     report["pooled"] = {
         "n_pairs": len(diff), "mean_gain": round(float(diff.mean()), 3),
