@@ -3,8 +3,8 @@ Highlights
 Typed Issue Specifications from App Reviews: What Scales, and a Downstream Benefit That Does Not Replicate
 Fabiha Jalal, Sadia Tasnim Dhruba, Tazrian Zaman Tushti, Ajwad Abrar, Md Kamrul Hasan, Hasan Mahmud
 
-- Typed intermediate representation turns noisy app reviews into tracker-ready issues.
+- A typed intermediate representation routes app reviews into five issue templates.
 - A verified-anchor procedure lifts Cohen's kappa from 0.163 to 0.592 at corpus scale.
-- Template-field fill rate reaches 0.96 against 0.69 without type routing.
-- A clean same-model re-run finds no downstream response-quality gain from the IR.
-- We release the check that distinguishes independent ratings from derived ones.
+- LLM annotation noise concentrates on omitted classes, not on uniform per-item error.
+- A clean same-model re-run finds no downstream reply-quality gain from the typed spec.
+- Template-fill measures schema conformance, not the quality of the text in the fields.

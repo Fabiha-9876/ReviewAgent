@@ -215,3 +215,34 @@ description is the word "something" repeated thirty-five times, with three five-
 from the criterion's own action-verb list, scores 1.000 — above the headline.
 
 Both are now stated in the manuscript.
+
+## Correction 15 (2026-08-18): corrections had not been propagated out of the body text
+
+An adversarial reviewer pass and a threats-completeness pass independently reported the same
+structural problem. Earlier corrections were written into the results prose but not carried into
+the captions, summary tables, abstract, highlights, and conclusion, so the manuscript asserted in
+its furniture what it retracted in its body. Fixed:
+
+- The cross-family rubric caption still stated "+0.38 for Claude over Llama, p = 0.015" as a
+  separation, forty lines after the body withdrew it for failing multiplicity correction.
+- Section 5's held-out paragraph reasserted that 0.616 is "slightly *above* the 0.592", the exact
+  sentence retracted earlier in the same section. The abstract, the contributions list, and the
+  agreement table all still said "strictly held out" or "reviews the classifier never saw".
+- The contributions table claimed quality and compliance are "measurably in tension"; the results
+  section reports rho = -0.12, p = 0.25. Section 5.7's closing paragraph made the same claim.
+- The data-availability statement said the bundle "reproduces every numerical claim"; the
+  reproducibility section says most verifier segments print stored summaries.
+- The conclusion said the work "closes the five existing research gaps", two of which are the
+  paper's own negative results, and that cross-family replication rules out single-model bias,
+  when none of the six pairwise differences is significant.
+- The PageRank paragraph said a developer "completes three-quarters of the complaint volume after
+  reading five aspect buckets", which is the double-counted 74% the same paragraph had just told
+  the reader not to use. Corrected to 55%. The accompanying "roughly 1000x concentration ratio"
+  against random aspect ordering is withdrawn; it was never computed, and frequency ordering
+  rather than random ordering is the relevant baseline.
+- Table 3's stage grades read "weakly" for Stage 4 and "partly" for Stage 5. On the corrected
+  evidence both are "no", and Section 6.1 now says plainly that Stage 4 contributes nothing we
+  can measure rather than that its conditioning earns its place.
+- A table cell reported a purity figure as "queued"; changed to "not run".
+- Highlights rewritten. The template-fill bullet stated 0.96 vs 0.69 without saying it is a
+  schema-conformance measure.

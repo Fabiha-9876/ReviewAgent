@@ -93,7 +93,7 @@ by different template composers, then with the generator held fixed so that only
 all 200 blinded rows scored by three raters.
 
 \textbf{Results.} Production works. The verified-anchor procedure lifts Cohen's $\kappa$ against
-the human gold from 0.163 to 0.592, and to 0.616 on reviews the classifier never saw. Type
+the human gold from 0.163 to 0.592, and holds at that level (0.616) on held-out reviews. Type
 routing reaches 0.96 template-fill against 0.69 without it, a schema-conformance measure rather than a quality one. The downstream benefit does not. The
 first round measured $+2.35$ Likert points, but its arms differed in authorial register as much
 as in information, one emitting lemmatised text at 78 words and the other polished prose at 123;
@@ -239,8 +239,8 @@ positive half and a negative half, and separating them is more useful than blend
   system emits one (Table~\ref{tab:cross-category}).
   \item \textbf{A verified-anchor procedure that makes the IR producible from noisy labels at
   corpus scale.} Confident learning against a 5{,}230-review human anchor lifts Cohen's $\kappa$
-  against a three-rater human gold from 0.163 to 0.592, and to 0.616 on the reviews the
-  classifier never saw. It works because the labeller omits two of its seven classes
+  against a three-rater human gold from 0.163 to 0.592, holding at 0.616 on the reviews the
+  classifier did not see in training. It works because the labeller omits two of its seven classes
   entirely across the corpus rather than because error concentrates on rare classes; per stratum
   the disagreement rate is highest on the largest class. Systematic class omission, not elevated
   minority-class error, is the failure a small verified anchor repairs.
@@ -272,12 +272,13 @@ IssueSpec & 0.96 vs 0.69 template-fill, i.e.\ schema conformance not quality (Ta
 \textsc{SpecCov} (negative) & no rank correlation with human faithfulness ($\rho=0.15$, $p=0.26$); orders generators backwards (\S\ref{speccov-validation}) & the scorer plus 60 specs rated by three humans \\
 IR downstream payoff (withdrawn) & the $+2.35$ gain came from a confounded design; a same-model comparison gives $+0.04$ ($p=0.54$) with raters disagreeing in direction (\S\ref{exp2-results}) & both rating rounds, the generated replies, and the independence check \\
 verified anchor & $\kappa$ 0.16$\to$0.59 (Table~\ref{tab:kappa}); per-class F1 recovery
-  (Table~\ref{tab:perclass-f1}); $\kappa = 0.616$ on the 307 strictly held-out gold reviews & 5{,}230-review
+  (Table~\ref{tab:perclass-f1}); $\kappa = 0.616$ on the 307 held-out gold reviews, indistinguishable from the full-set 0.592 & 5{,}230-review
   verified anchor + cleanlab correction procedure + V5 classifier \\
 KG prioritization (weak) & count-matched flat clustering beats the KG on all three intrinsic metrics (A1b); top-5 PageRank aspects cover 55\% of reviews & three-layer KG construction + count-controlled A1b output \\
 CMDP RLHF testbed (partial) & constraint never binds at distilGPT2 scale; with a policy able to
   violate it binds on 13/90 steps and $\lambda$ rises monotonically to 0.65, with quality and
-  compliance measurably in tension, but the loop back to compliance is not closed
+  compliance not shown to be in tension ($\rho = -0.12$, $p = 0.25$), on a detector that scores
+  hand-written violations as compliant
   (\S\ref{exp3-results}) & CMDP formulation, KTO/DPO/constrained-proxy/CPPO trainers, capability
   probe, binding-constraint re-run, threshold sweep, benchmark \\
 \bottomrule\end{tabular}\end{table}
@@ -360,8 +361,8 @@ stage & the problem it must solve & why it cannot be skipped & measured verdict 
 1 Intake & the corpus label is wrong 25\% of the time, concentrated on minority classes & Stage~3 routes on the issue type, so a wrong type produces the wrong template & \textbf{justified}: $\kappa$ $0.163 \to 0.592$ \\
 2 KG & 215{,}583 reviews cannot be triaged one at a time; developers need an order & a spec is written per cluster, so reviews must be grouped and ranked & \textbf{partly}: prioritization yes, cluster quality no (A1b, A2) \\
 3 IR & trackers need typed fields, not prose & this is where the typed record is produced & \textbf{justified}: fill 0.96 vs 0.69 without routing (A3) \\
-4 RAG & a reply needs house voice and precedent, not just the defect & supplies phrasing the spec does not carry & \textbf{weakly}: removing it moves metrics $<1\%$ (A5) \\
-5 CMDP & replies must not over-promise or leak internals & compliance is a hard constraint, not a reward term & \textbf{partly}: constraint binds, trade-off unshown \\
+4 RAG & a reply needs house voice and precedent, not just the defect & supplies phrasing the spec does not carry & \textbf{no}: retrieval moves metrics $<1\%$ (A5) and conditioning is null (A6) \\
+5 CMDP & replies must not over-promise or leak internals & compliance is a hard constraint, not a reward term & \textbf{no}: constraint never binds, and the detector scores written violations as compliant \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[t]\centering\footnotesize
@@ -665,7 +666,7 @@ Table~\ref{tab:annot-deviation} consolidates agreement and disagreement across a
   3 human raters, 7-class label & 489 gold & Fleiss $\kappa = \mathbf{0.979}$; $\alpha = 0.979$ \\
   V2 LLM vs V5; cleanlab vs V5 & 215{,}583 & 71.96\% / 86.77\% agree \\
   cleanlab vs V5 (consistency, not independent) & 40{,}291 & 88.66\% support \\
-  V5 vs gold, strictly held out & 307 & $\kappa = \mathbf{0.616}$ \\
+  V5 vs gold, held out (replay-dependent, see \S\ref{exp1-results}) & 307 & $\kappa = \mathbf{0.616}$ \\
   3 human raters (Stage~4 quality) & 400 rated rows & weighted $\kappa$ 0.970--0.986; within-1 100\% \\
   3 human raters (Stage~4 helpful) & 400 rated rows & $\kappa$ 0.678--0.836; $\alpha = 0.781$ \\
   3-rater \emph{LLM-assisted} classification check (lead + 2 Qwen prompts) & 99 reviews & Krippendorff $\alpha = 0.285$ \\
@@ -864,9 +865,11 @@ Table~\ref{tab:rubric}, on matched clusters. Panel A is the four-way comparison 
 covered by every generator (bug reports only). Panel B widens the Claude-versus-Llama comparison
 to all five issue types. The Panel-A ordering matches the template-fill ordering in
 Table~\ref{tab:multi-llm}, but none of its six pairwise differences is significant at $n=14$
-(Wilcoxon $p$ from 0.18 to 0.75), so read it as descriptive. Panel B, with twice the sample and
-all five issue types, does separate: $+0.38$ for Claude over Llama, Wilcoxon
-$p = 0.015$.}\label{tab:xfam-rubric}
+(Wilcoxon $p$ from 0.18 to 0.75), so read it as descriptive. Panel B widens the comparison to
+all five issue types and gives a nominal $+0.38$ for Claude over Llama at Wilcoxon
+$p = 0.015$; we withdraw that as a claim, because it fails Bonferroni or Holm correction over
+the seven tests in this table ($p = 0.104$) and an exact sign test ($p = 0.078$). Read both
+panels as descriptive.}\label{tab:xfam-rubric}
 \begin{tabular}{@{}lrrrrrrr@{}}\toprule
 generator & $n$ & mean & compl. & accur. & action. & spec. & clarity \\\midrule
 \multicolumn{8}{@{}l}{\emph{Panel A, four-way, 14 matched bug-report clusters}} \\
@@ -995,9 +998,10 @@ label, which is what $\kappa$ is computed against, the unseen 307 still spans al
 and includes 38 \texttt{compatibility}, 32 \texttt{usability}, and 31 \texttt{performance}
 reviews, so the held-out comparison does cover the classes carrying the recovery. What it cannot
 rule out is a subtler selection effect: the reviews V5 predicted confidently into large classes
-are over-represented among the unseen, and those may be easier. On the unseen reviews V5 reaches $\kappa = 0.616$, computed on the 306 of them that carry a gold label,
-slightly \emph{above} the 0.592 it scores on the full 490. A model that had merely memorised its
-training labels would fall on unseen items rather than hold. One caveat belongs with this. The
+are over-represented among the unseen, and those may be easier. On the unseen reviews V5 reaches $\kappa = 0.616$, computed on the 306 of them that carry a gold
+label, against 0.592 on the full 490. As the replay analysis above shows, that ordering is not
+stable, so the defensible reading is that the two are indistinguishable. A model that had merely
+memorised its training labels would fall on unseen items rather than hold at the same level. One caveat belongs with this. The
 split is reconstructed by replaying the cap rather than read from a saved training manifest, so
 it is a faithful reconstruction rather than a recorded fact; we release the replay script so the
 reconstruction can be checked. The choice of confident-learning thresholds is not load-bearing: a full $3\times 3$ grid over $(\text{anchor\_conf}, \text{max\_llm\_prob}) \in \{0.65, 0.70, 0.75\}\times\{0.15, 0.20, 0.25\}$ keeps V5 endorsement in an 82.7--91.0\% band, with the headline $(0.70, 0.20)$ at 88.66\% sitting near the grid center.
@@ -1257,7 +1261,8 @@ downstream payoff in response generation.
   arrives every seven steps, and 90 steps of LoRA updates at this learning rate do not accumulate
   enough constraint pressure to reverse the drift. So the correct statement is narrower than a
   confirmed RQ3 and wider than the earlier null: the dual objective engages, the multiplier
-  responds monotonically to violations, and the tension between the objectives is measurable,
+  responds monotonically to the tokens it matches, while the tension between the objectives is
+  not measurable on our data ($\rho = -0.12$, $p = 0.25$),
   while closing the loop back to compliance needs a longer horizon or a higher base violation
   rate than a 1.5B instruct model supplies.
 
@@ -1334,7 +1339,7 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   mean cluster size & $\sim$16{,}933 & 471.0 & \textbf{15.9} \\
   Davies-Bouldin ($\downarrow$) & n/a & \emph{withdrawn} & 2.24 \\
   Calinski-Harabasz ($\uparrow$) & n/a & \emph{withdrawn} & 1.85 \\
-  Y/P/N purity (lead-author) & n/a & 0.66 & queued \\
+  Y/P/N purity (lead-author) & n/a & 0.66 & not run \\
   Y/P/N purity (Qwen-judge) & n/a & 0.625 & 0.390 \\
   \bottomrule\end{tabular}\end{table}
   
@@ -1350,10 +1355,14 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   \textbf{Where the KG actually wins.} On the prioritization axis the story reverses. Of the
   10{,}534 aspect nodes in the KG, the top five by PageRank are touched by 55\% of reviews and
   the top ten by 66\%. We give the deduplicated figures; counting a review once per aspect it
-  mentions inflates these to 74\% and 96\%, and that inflated pair should not be used. A developer triaging in PageRank
-  order completes three-quarters of the complaint volume after reading five aspect buckets,
-  whereas random aspect ordering would require thousands of buckets to reach the same coverage,
-  a roughly $10^3\times$ concentration ratio. The KG additionally enables per-aspect drill-down,
+  mentions inflates these to 74\% and 96\%, and that inflated pair should not be used. A developer
+  triaging in PageRank order therefore reaches 55\% of the complaint volume after reading five
+  aspect buckets and 66\% after ten. We previously wrote ``three-quarters'' in this sentence,
+  which was the discarded 74\% reappearing two lines after we told the reader not to use it. We
+  also previously claimed a ``roughly $10^3\times$ concentration ratio'' against random aspect
+  ordering. We withdraw that too: we never computed it, and random ordering is the wrong baseline
+  in any case, since the operative comparison is against ordering aspects by raw frequency, which
+  we did not run. The KG additionally enables per-aspect drill-down,
    distinguishing \texttt{battery}$\to$Samsung-drain from \texttt{battery}$\to$fast-charge.
 
 \subsection{Ablations}\label{ablations}
@@ -1487,10 +1496,13 @@ withdraw it as a measure rather than defend it.
 \emph{What this means for the framework claim.} The contribution that survives ablation is the
 typed IR and the type-routed templating that produces it, together with the verified-anchor
 procedure that makes the IR producible from noisy labels at corpus scale. Stages~2 and~5 are
-supporting infrastructure with honestly mixed evidence. A reader who wants the smallest system that reproduces the headline result needs Stage~1, Stage~3,
-and a generator conditioned on the resulting specification. That is less than Stage~4 as we built
-it: A5 shows the retrieval layer inside Stage~4 contributes under one percent on automatic
-metrics, so the part of Stage~4 that earns its place is the conditioning, not the retrieval.
+supporting infrastructure with honestly mixed evidence. A reader who wants the smallest system that reproduces what survives needs Stage~1 and Stage~3.
+Stage~4 as we built it is not part of that: A5 shows the retrieval layer contributes under one
+percent on automatic metrics, and A6 shows the conditioning on the specification, which we had
+identified as the part of Stage~4 that earns its place, is exactly the component our corrected
+experiment measures at null. We should state the consequence rather than soften it. On our
+evidence Stage~4 contributes nothing we can measure, and a reader building on this work should
+treat the reply-generation layer as unproven rather than as a component with a small effect.
 
 \subsection{Implications}
 Three claims travel beyond app reviews. \emph{First}, LLM annotation noise on
@@ -1595,7 +1607,8 @@ run wants a longer horizon and a policy with a higher base violation rate, on an
 
  
   We proposed \textbf{IssueSpec}, a knowledge-graph-grounded typed intermediate representation
-  that closes the five existing research gaps identified in Section~\ref{introduction}:
+  aimed at five gaps identified in Section~\ref{introduction}. We close the first three and
+  report negative results against the last two:
   classification stops at the label, response generation skips the structured intermediate,
   agentic software engineering assumes the spec exists, knowledge graphs emit no typed schema,
   and RLHF has not addressed dev-rel compliance. We set out to show that the typed IR is the load-bearing component of spec-aware response
@@ -1607,9 +1620,13 @@ run wants a longer horizon and a policy with a higher base violation rate, on an
   context it scores 2.24 against 2.31 at $p = 0.90$, and that comparison sits inside the
   discarded round in any case. Stage~4 yields one usable result, which is the null. A
   verified-anchor procedure makes the IR producible at corpus scale from noisy LLM labels,
-  lifting Cohen's $\kappa$ from 0.163 to 0.592, and to 0.616 on the strictly held-out gold, with 88.66\% classifier endorsement
-  of corrections. Cross-family replication on four LLMs (Claude, Llama, Qwen-3B, Qwen-1.5B)
-  preserves the rank order, ruling out single-model bias. Two findings travel beyond app
+  lifting Cohen's $\kappa$ from 0.163 to 0.592, and to 0.616 on a held-out subset whose value is
+  replay-dependent and indistinguishable from the full-set figure. Classifier endorsement of the
+  corrections is 88.66\%, which is a consistency check rather than independent validation, since
+  the classifier trained on those corrections. Cross-family replication on four LLMs (Claude,
+  Llama, Qwen-3B, Qwen-1.5B) preserves the rank order descriptively; none of the pairwise
+  differences is significant, so it is weak evidence against single-model bias rather than a
+  ruling-out. Two findings travel beyond app
   reviews: an LLM labeller on software-engineering text can omit whole classes rather than merely
   err on them, and that a structured intermediate can be demonstrably better as an artifact while
   leaving the text generated from it indistinguishable, a distinction that pipeline evaluations
@@ -1652,7 +1669,8 @@ relationships that could have appeared to influence the work reported in this pa
 
 \section*{Data availability}
 All code, configuration files, and analysis scripts are available in the project repository.
-A verification bundle that reproduces every numerical claim in this paper is archived on Zenodo
+A verification bundle that recomputes or reproduces the numerical claims in
+Section~\ref{results}, with the coverage limits stated in Section~\ref{reproducibility}, is archived on Zenodo
 (DOI 10.5281/zenodo.21982774, v2.0), and the Stage-1 V5 classifier is released on Hugging Face.
 That bundle supersedes an earlier release (DOI 10.5281/zenodo.20320410) which predates the
 Stage-4 correction described in Section~\ref{exp2-results}; both versions remain resolvable, and
