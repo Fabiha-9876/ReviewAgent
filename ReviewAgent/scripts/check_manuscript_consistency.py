@@ -35,6 +35,9 @@ CANON = {
     "rubric, full set": (r"3\.9[34]", {"3.94", "3.93"}, []),
     "SpecCov unfloored": (r"4\.19|3\.38|4\.47|3\.45", {"4.19", "3.38", "4.47", "3.45"}, []),
     "lambda max": (r"0\.65(?![0-9])", {"0.65"}, []),
+    # 0.1369 / 0.0896 - 1 = 52.79%, so +53%. The old "+52%" came from dividing the
+    # rounded table values (0.137 / 0.090) and must not come back.
+    "constrained-proxy BLEU-1 gain": (r"\+5[23]\\%", {"+53\\%"}, []),
 }
 
 # strings that belonged to a withdrawn claim and must never reappear

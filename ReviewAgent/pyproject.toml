@@ -26,7 +26,9 @@ dependencies = [
     "bert-score>=0.3",
     "nltk>=3.9",
     # RLHF
-    "trl>=0.13",
+    # TRL 1.0 removed PPOConfig/PPOTrainer/AutoModelForCausalLMWithValueHead, which
+    # src/stage5/constrained_ppo.py targets. KTO and DPO still work on 1.x.
+    "trl>=0.13,<1.0",
     "peft>=0.14",
     # API
     "fastapi>=0.115",

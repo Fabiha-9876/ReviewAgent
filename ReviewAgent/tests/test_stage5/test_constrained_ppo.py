@@ -10,192 +10,46 @@ import pytest
 
 
 def _make_ppo_instance():
-    """Create a minimal ConstrainedPPOTrainer-like object without importing trl."""
+    """Bind to the SHIPPED heuristics in src/stage5/constrained_ppo.py.
 
-    # Import the module source directly, bypassing __init__.py
-    import importlib.util
+    The module imports trl at top level and TRL 1.0 removed the PPO API it targets,
+    so we cannot import it normally in every environment. Instead of hand-copying the
+    logic (which would let these tests pass even if the real code changed or vanished),
+    we parse the module with `ast`, lift the three pure-Python methods out of the
+    ConstrainedPPOTrainer class body, and exec only those. If a method is renamed,
+    removed, or its body stops parsing, these tests fail rather than silently testing
+    a stale copy.
+    """
+    import ast
+    import textwrap
     from pathlib import Path
 
     spec_path = Path(__file__).resolve().parents[2] / "src" / "stage5" / "constrained_ppo.py"
+    tree = ast.parse(spec_path.read_text())
 
-    # We can't import the module normally because it imports trl at top level.
-    # Instead, read the source and extract just the methods we need.
-    source = spec_path.read_text()
+    cls = next((n for n in tree.body
+                if isinstance(n, ast.ClassDef) and n.name == "ConstrainedPPOTrainer"), None)
+    assert cls is not None, "ConstrainedPPOTrainer not found in src/stage5/constrained_ppo.py"
 
-    # Build a minimal object with the heuristic methods
-    class MinimalPPO:
+    wanted = {"compute_constrained_reward", "_score_quality", "_score_compliance"}
+    methods = {n.name: n for n in cls.body
+               if isinstance(n, ast.FunctionDef) and n.name in wanted}
+    missing = wanted - set(methods)
+    assert not missing, f"shipped ConstrainedPPOTrainer is missing {sorted(missing)}"
+
+    ns = {"re": re}
+    body = "\n".join(textwrap.dedent(ast.unparse(methods[name])) for name in sorted(wanted))
+    exec(compile(ast.parse(body), str(spec_path), "exec"), ns)
+
+    class ExtractedPPO:
         compliance_threshold = 0.95
         compliance_penalty = 5.0
         quality_reward_model = None
         compliance_reward_model = None
 
-        def compute_constrained_reward(self, quality_score, compliance_score):
-            constraint_violation = max(0, self.compliance_threshold - compliance_score)
-            return quality_score - self.compliance_penalty * constraint_violation
-
-        def _score_quality(self, text):
-            lower = text.lower()
-            score = 0.0
-            max_score = 0.0
-
-            length = len(text)
-            max_score += 1.0
-            if length < 20:
-                score += 0.1
-            elif length < 50:
-                score += 0.3
-            elif length <= 300:
-                score += 1.0
-            elif length <= 500:
-                score += 0.8
-            else:
-                score += 0.6
-
-            specificity_markers = [
-                "version", "v3.", "v2.", "update", "android", "ios", "device",
-                "samsung", "pixel", "iphone", "crash", "login", "battery",
-                "fix", "resolved", "identified", "issue", "bug",
-            ]
-            specific_count = sum(1 for m in specificity_markers if m in lower)
-            max_score += 1.0
-            score += min(1.0, specific_count * 0.2)
-
-            empathy_markers = [
-                "sorry", "apologize", "understand", "frustrating", "inconvenience",
-                "appreciate", "thank you", "thank", "feedback", "patience",
-            ]
-            empathy_count = sum(1 for m in empathy_markers if m in lower)
-            max_score += 1.0
-            score += min(1.0, empathy_count * 0.3)
-
-            action_markers = [
-                "please try", "you can", "we recommend", "update the app",
-                "clear cache", "reinstall", "contact support", "settings",
-                "next update", "working on", "will be", "check",
-            ]
-            action_count = sum(1 for m in action_markers if m in lower)
-            max_score += 1.0
-            score += min(1.0, action_count * 0.3)
-
-            generic_markers = [
-                "thank you for your feedback",
-                "we appreciate your review",
-                "please contact us",
-            ]
-            max_score += 1.0
-            is_generic = any(g in lower for g in generic_markers) and length < 80
-            score += 0.2 if is_generic else 1.0
-
-            return round(score / max_score, 4) if max_score > 0 else 0.5
-
-        def _score_compliance(self, text):
-            lower = text.lower()
-
-            promise_score = 1.0
-            hard_promises = [
-                "we guarantee", "guaranteed", "we promise", "100%",
-                "definitely will", "for sure will", "we assure you",
-            ]
-            if any(p in lower for p in hard_promises):
-                promise_score = 0.1
-            elif any(p in lower for p in [
-                "will be fixed in", "will be resolved in", "fix will be included in",
-                "releasing next week", "shipping in the next", "coming in version",
-                "will be available in", "expect a fix by",
-            ]):
-                promise_score = 0.4
-            elif any(p in lower for p in [
-                "we will fix", "will be fixed", "will be resolved",
-                "we will address", "will be included in the next update",
-                "a fix will be", "we are going to fix",
-            ]):
-                promise_score = 0.6
-            elif any(p in lower for p in [
-                "working on a fix", "investigating", "looking into",
-                "we aim to", "we hope to", "we plan to",
-                "our team is working", "actively working",
-            ]):
-                promise_score = 0.85
-
-            info_score = 1.0
-            hard_leaks = [
-                "production server", "database schema", "api key",
-                "deployment pipeline", "jenkins", "docker", "kubernetes",
-                "source code", "codebase", "git repo", "pull request",
-                "null pointer", "stack trace", "exception in",
-            ]
-            if any(p in lower for p in hard_leaks):
-                info_score = 0.1
-            elif any(p in lower for p in [
-                "our engineer", "our developer", "our backend team",
-                "server-side", "our team member", "sprint",
-                "jira", "slack channel", "internal",
-            ]):
-                info_score = 0.4
-            elif any(p in lower for p in [
-                "our technical team", "our development team",
-                "our team has identified", "our team found",
-                "we identified a bug in", "root cause",
-            ]):
-                info_score = 0.75
-
-            tone_score = 1.0
-            hard_tone = [
-                "that's your problem", "that is your problem",
-                "not our fault", "not our problem",
-                "you should have", "your fault",
-                "stop complaining", "deal with it", "too bad",
-                "read the manual", "figure it out", "not my problem",
-            ]
-            if any(t in lower for t in hard_tone):
-                tone_score = 0.1
-            elif any(t in lower for t in [
-                "obviously", "clearly you", "as i said",
-                "i already told you", "not sure what you expect",
-            ]):
-                tone_score = 0.4
-            elif len(text) < 30 and not any(w in lower for w in ["sorry", "thank", "apologize"]):
-                tone_score = 0.7
-
-            empathy_words = ["sorry", "apologize", "understand", "frustrating", "inconvenience"]
-            if any(w in lower for w in empathy_words):
-                tone_score = min(1.0, tone_score + 0.1)
-
-            legal_score = 1.0
-            legal_hard = [
-                r"\bwe accept liability\b", r"\bwe are liable\b",
-                r"\bwe admit fault\b", r"\bour fault entirely\b",
-                r"\bwe take full responsibility for (?:the |any )?damage\b",
-                r"\blawsuit\b", r"\bsue us\b",
-            ]
-            if any(re.search(p, lower) for p in legal_hard):
-                legal_score = 0.1
-            elif any(p in lower for p in [
-                "compensation", "refund guaranteed", "we owe you",
-                "we accept responsibility", "our liability",
-                "our fault entirely", "we are at fault",
-            ]):
-                legal_score = 0.4
-            elif any(p in lower for p in [
-                "we take responsibility", "this is on us", "our mistake",
-            ]):
-                legal_score = 0.7
-
-            dim_scores = [promise_score, info_score, tone_score, legal_score]
-            weights = [0.35, 0.25, 0.20, 0.20]
-            weighted_avg = sum(w * s for w, s in zip(weights, dim_scores))
-            min_score = min(dim_scores)
-
-            if min_score < 0.5:
-                final_score = min(weighted_avg, min_score * 1.2)
-            elif min_score < 0.8:
-                final_score = 0.5 * weighted_avg + 0.5 * min_score
-            else:
-                final_score = weighted_avg
-
-            return round(final_score, 4)
-
-    return MinimalPPO()
+    for name in wanted:
+        setattr(ExtractedPPO, name, ns[name])
+    return ExtractedPPO()
 
 
 @pytest.fixture

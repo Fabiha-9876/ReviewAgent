@@ -284,7 +284,7 @@ for cond, r in results.items():
           f"{r['n_feats']:>8} {r['feat_userstory_loose_pct']:>18.1f} {r['feat_userstory_strict_pct']:>20.1f}")
 
 # Save results
-out_path = Path(str(Path(__file__).resolve().parent) + "/data/processed/issue_specs_5dim/strict_validity_recomputation.json")
+out_path = Path(str(Path(__file__).resolve().parent.parent) + "/data/processed/issue_specs_5dim/strict_validity_recomputation.json")
 out_path.parent.mkdir(parents=True, exist_ok=True)
 with open(out_path, "w") as f:
     json.dump(results, f, indent=2)

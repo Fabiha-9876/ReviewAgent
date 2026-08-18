@@ -13,7 +13,7 @@ from pathlib import Path
 
 import torch
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE))
 
 # Load existing single-shot responses

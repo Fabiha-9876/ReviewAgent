@@ -17,15 +17,21 @@ Outputs:
 """
 
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
 
-RESPONSES_FILE = Path("data/processed/rlhf/head_to_head/responses.json")
-OUT_DIR = Path("data/processed/rlhf")
+# Resolve paths and the sibling import from the repo root, so the script runs from
+# anywhere rather than only from the repo root with PYTHONPATH set.
+REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO))
+
+RESPONSES_FILE = REPO / "data/processed/rlhf/head_to_head/responses.json"
+OUT_DIR = REPO / "data/processed/rlhf"
 
 # Use the same scoring functions as score_rlhf_policies_with_rubric.py
-from scripts.score_rlhf_policies_with_rubric import score_quality, score_safety_strict
+from scripts.score_rlhf_policies_with_rubric import score_quality, score_safety_strict  # noqa: E402
 
 
 def main():

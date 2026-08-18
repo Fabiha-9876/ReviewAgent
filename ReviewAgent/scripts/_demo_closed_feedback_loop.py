@@ -23,7 +23,7 @@ from pathlib import Path
 
 import numpy as np
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE))
 from src.stage5.feedback_propagator import FeedbackPropagator
 

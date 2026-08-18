@@ -401,7 +401,11 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
 \textbf{Stage 1: Intake, Classification, and Aspect Extraction.}
   Stage~1 produces three outputs per review. The first is a multi-label class from a RoBERTa
   head fine-tuned on Maalej~\cite{maalej2015bug} and Guzman~\cite{guzman2014users}. Labels are
-  multi-label because reviews mix concerns, as when a bug report also asks for a feature. The
+  multi-label because reviews mix concerns, as when a bug report also asks for a feature. In
+  practice this capacity is almost never exercised: on the 10{,}000-review generation subset only
+  5 reviews (0.05\%) receive more than one label, and the corpus-scale relabelling artifact stores
+  a single argmax label per review. The architecture is multi-label; the released runs are
+  effectively single-label. The
   second is aspect-level sentiment~\cite{guzman2014users}, which keeps ``great UI but terrible
   battery'' as two separate pairs instead of averaging it into one star rating. The third is
   entity extraction for devices, OS versions, and named features. Stage~3 needs those entities
@@ -1122,7 +1126,7 @@ downstream payoff in response generation.
   \textbf{constrained-proxy 0.137~/~0.131~/~0.806}; Lagrangian PPO 0.087~/~0.091~/~0.798. The
   constrained proxy leads three of four metrics (BLEU-1, ROUGE-L, BERTScore F1; the rule-based
   safety-violation rate is uninformative here because compliance is satisfied at
-  initialization), with $+52\%$ BLEU-1 over SFT-base. KTO underperforms here, consistent with
+  initialization), with $+53\%$ BLEU-1 over SFT-base. KTO underperforms here, consistent with
   its small-data assumption breaking on a 296-pair training set.
 
   \textbf{The dual-objective claim is not demonstrated, and we report that as the result.} At
@@ -1136,7 +1140,7 @@ downstream payoff in response generation.
   policies at every threshold, with the first binding $\tau$ undefined for those four; only
   SFT-base ever dips, to 99\% at $\tau \geq 0.9$. A model of this size cannot plausibly violate
   the rubric, so the constraint has no work to do and the CMDP machinery is untested under
-  binding conditions. The $+52\%$ BLEU-1 figure for the constrained proxy is therefore a
+  binding conditions. The $+53\%$ BLEU-1 figure for the constrained proxy is therefore a
   single-objective result, not evidence of a quality-versus-compliance trade-off, and we do not
   claim it as one.
 
@@ -1438,7 +1442,7 @@ Three claims travel beyond app reviews. \emph{First}, LLM annotation noise on
 \emph{Statistical.} Experiment~2 now reports a null, so the relevant question is power rather than correction for multiplicity. With 100 paired reviews and the observed per-review spread, the 95\% bootstrap interval $[-0.10, +0.18]$ excludes effects larger than about a fifth of a Likert point in either direction. We can therefore rule out a large effect, not a small one; an effect of a tenth of a point would need several times this sample.
 
 \subsection{Reproducibility and Extensibility}\label{reproducibility}
-Every numerical claim in Section~\ref{results} is backed by a saved data file and runs end-to-end from raw RRGen to Stage~4 output in approximately six hours on a single GPU-equipped workstation. The release bundles:
+Every numerical claim in Section~\ref{results} is backed by a saved data file, and the full path from raw RRGen to Stage~4 output takes approximately six hours on a single GPU-equipped workstation. Re-running the released analysis scripts regenerates roughly sixty stored result files bit-identically, including every statistical test behind RQ1 and RQ2. What those scripts consume is not itself regenerable from the release: the Stage-3 specification sets, the 100-cluster sample, and the Stage-4 RAG sample ship as artifacts with no standalone producer, because producing them requires the proprietary-API generation pass. The analysis layer is reproducible from the middle outward; the data-generation layer is reproducible only against a paid API. The GitHub-mined human-written comparison set does not pin at all: it is re-queried live and returns a different issue mix on each run. The release bundles:
 \begin{itemize}\setlength{\itemsep}{1pt}
 \item V1--V5 classifier checkpoints + cleanlab correction procedure;
 \item the 5{,}230-record verified anchor, which covers 5{,}229 distinct corpus rows and 490-review classification gold;

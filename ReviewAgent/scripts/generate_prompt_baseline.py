@@ -8,8 +8,8 @@ import json
 import re
 from pathlib import Path
 
-INPUT = Path(str(Path(__file__).resolve().parent) + "/data/processed/responses/sample_100_reviews_with_rag.json")
-OUTPUT = Path(str(Path(__file__).resolve().parent) + "/data/processed/responses/responses_prompt_baseline.json")
+INPUT = Path(str(Path(__file__).resolve().parent.parent) + "/data/processed/responses/sample_100_reviews_with_rag.json")
+OUTPUT = Path(str(Path(__file__).resolve().parent.parent) + "/data/processed/responses/responses_prompt_baseline.json")
 
 # ---------------------------------------------------------------------------
 # Lightweight keyword extraction so responses stay specific to each review.
@@ -274,7 +274,9 @@ def main() -> None:
                 "issue_type": r["issue_type"],
                 "review_text": r["review_text"],
                 "response_text": resp_text,
-                "condition": "prompt_baseline",
+                # The released artifact labels this arm "core_baseline"; keep the string
+                # identical so a regenerated file is a drop-in replacement.
+                "condition": "core_baseline",
             }
         )
 

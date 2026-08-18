@@ -20,7 +20,7 @@ import json, sys, time
 from pathlib import Path
 import numpy as np
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent.parent
 KG_PATH = BASE / "data/processed/kg_hierarchical/hierarchical_clusters_full.json"
 OUT_PATH = BASE / "data/processed/ablations/a1b_repbased.json"
 OUT_PATH.parent.mkdir(parents=True, exist_ok=True)

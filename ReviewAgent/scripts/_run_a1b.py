@@ -10,7 +10,7 @@ import json, sys, time
 from pathlib import Path
 import numpy as np
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent.parent
 EMB_PATH = BASE / "data/processed/embeddings_cache.npy"
 IDX_PATH = BASE / "data/processed/embeddings_cache_index.json"
 KG_PATH = BASE / "data/processed/kg_hierarchical/hierarchical_clusters_full.json"

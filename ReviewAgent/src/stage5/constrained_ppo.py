@@ -5,7 +5,17 @@ from __future__ import annotations
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModelForSequenceClassification
 from peft import LoraConfig, get_peft_model
-from trl import PPOConfig, PPOTrainer, AutoModelForCausalLMWithValueHead
+try:
+    from trl import PPOConfig, PPOTrainer, AutoModelForCausalLMWithValueHead
+except ImportError as exc:  # pragma: no cover - environment dependent
+    raise ImportError(
+        "src/stage5/constrained_ppo.py targets the TRL PPO API (PPOConfig, PPOTrainer, "
+        "AutoModelForCausalLMWithValueHead), which TRL 1.0 removed. Install trl<1.0 to use "
+        "this trainer. The Lagrangian constrained-PPO results reported in the paper were NOT "
+        "produced by this class: they come from scripts/run_lagrangian_ppo_active_constraint.py, "
+        "which implements REINFORCE with a KL penalty and Lagrangian dual ascent directly and "
+        "has no TRL PPO dependency."
+    ) from exc
 from datasets import Dataset
 
 
