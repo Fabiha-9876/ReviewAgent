@@ -114,13 +114,20 @@
   correction, the \textsc{SpecCov} extractive-coverage scorer, and a Constrained Markov
   Decision Process (CMDP)-based alignment trainer for downstream response generation under
   quality and compliance constraints. We evaluate the framework on 215{,}583 reviews from 58
-  Android apps; on a stratified  28-spec subsample, it achieves $3.94/5$ on a five-dimension issue-specification rubric. When
-  these validated IssueSpecs are used as input to Retrieval-Augmented Generation (RAG),
-  human-rated response quality improves by $+2.35$ Likert points over retrieval alone (5-point
-  scale, $n=100$ paired comparisons from a 400-row blinded rating set, $p<0.001$), consistent across four LLMs from three model
-  families. We release the IssueSpec schema, large-scale benchmark dataset, \textsc{SpecCov}
-  faithfulness metric, verified-anchor resource, and a CMDP-based RLHF testbed to support future
-   research on structured information extraction and constrained generation.
+  Android apps. A verified-anchor procedure lifts Cohen's $\kappa$ against a three-rater human gold
+  from 0.163 to 0.592, and type routing reaches 0.96 template-fill against 0.69 without it, which
+  is a schema-conformance measure rather than a quality one. The specifications score $3.94/5$ on
+  a five-dimension rubric over all 100 specs.
+  We also report a result we withdraw. An earlier version of this work found that supplying the
+  typed specification to a response generator raised human-rated reply quality by $+2.35$ Likert
+  points. That comparison was confounded: its two arms came from different deterministic template
+  composers rather than from one model. Re-run with the generator held fixed and three raters
+  scoring 200 blinded rows, the gain is $+0.04$ ($p = 0.54$), and the raters disagree in
+  direction. Three further components of our own pipeline also fail their tests, and we report
+  each rather than removing it. We release the IssueSpec schema, the benchmark dataset, the
+  \textsc{SpecCov} scorer together with the validation showing it does not track human
+  faithfulness judgements, the verified-anchor resource, both rating rounds, and a CMDP-based
+  RLHF testbed.
   \end{abstract}
 %% ---- CCS Concepts ----
 \begin{CCSXML}
@@ -163,7 +170,9 @@
 App stores are where users talk back to developers. A single popular app pulls in thousands of reviews a week, and the global stream runs into millions a day~\cite{maalej2015bug, gao2019automating, dkabrowski2022analysing}. These reviews carry the signals developers need to act on: bug reports (a crash on Samsung S8 after an update), feature requests (dark mode), performance complaints (battery drain), and regression notes (voice search no longer works). The information is real, but it shows up as messy free-form text, usually without the details required to reproduce a bug or scope a new feature.
 
 To turn any of this into work, developers rely on defect trackers such as JIRA or GitHub Issues. Those tools, though, can't work with raw text; they need structured fields such as issue type, steps to reproduce, severity, and affected component~\cite{chaparro2017detecting,
-zimmermann2010makes}. Filling those fields by hand does not scale with the volume modern apps face. Years of work on automated review pipelines has helped with the surrounding tasks like classification, summarization, and response generation, but no system actually produces the structured report a developer can paste directly into a tracker. D{\k a}browski et al.'s nineteen-year survey of the field~\cite{dkabrowski2022analysing} confirms the same boundary.
+zimmermann2010makes}. Filling those fields by hand does not scale with the volume modern apps face. Years of work on automated review pipelines has helped with the surrounding tasks like classification, summarization, and response generation, but no system actually produces the structured report a developer can paste directly into a tracker. D{\k a}browski et al.'s systematic review of 182 papers published between 2012 and
+2020~\cite{dkabrowski2022analysing} surveys this literature; it does not itself name this gap, and
+we state the gap as our own reading of the work it covers.
 
 Prior work has tackled several pieces of this problem separately.
   Classifiers~\cite{maalej2015bug, chen2014ar, villarroel2016release, di2017surf} take a review
@@ -179,9 +188,9 @@ Prior work has tackled several pieces of this problem separately.
 
 But none of these reaches the developer-ready issue report a defect tracker needs. The
   Maalej-Nabil classifier taxonomy~\cite{maalej2015bug} and its successors~\cite{chen2014ar,
-  villarroel2016release, di2017surf, kaur2023bert, shah2020mining} have settled at an F1
-   ceiling around 0.75--0.85, a label-quality limit (not a model-capacity one) per D{\k
-  a}browski et al.'s~\cite{dkabrowski2022analysing} nineteen-year survey. The label is only the
+  villarroel2016release, di2017surf, kaur2023bert, shah2020mining} reach, in D{\k a}browski et
+  al.'s aggregation~\cite{dkabrowski2022analysing}, a median precision above 81\% and median
+  recall around 83\%. The label is only the
   first piece of what a tracker entry needs; the remaining fields (steps to reproduce, severity,
    affected component) have to come from somewhere, and classification-only pipelines leave that
    downstream step to manual triage. Response generators like RRGen~\cite{gao2019automating} and
@@ -310,7 +319,12 @@ CMDP RLHF testbed (partial) & constraint never binds at distilGPT2 scale; with a
 We organize related work by the five gaps identified in Section~\ref{introduction}, naming what each field does, what assumption breaks for review-to-issue translation, and how IssueSpec differs.
 
 \subsection{App Review Classification and Mining}
-Maalej and Nabil~\cite{maalej2015bug} established the canonical seven-class taxonomy for app reviews. Subsequent systems, AR-Miner~\cite{chen2014ar}, CLAP~\cite{villarroel2016release}, SURF~\cite{di2017surf}, BERT/RCNN hybrids~\cite{kaur2023bert, shah2020mining}, and per-aspect sentiment analysis~\cite{guzman2014users}, refined classification accuracy and added aspect-level granularity. Dąbrowski et al.~\cite{dkabrowski2022analysing} surveyed nineteen years of such work and concluded that label quality, not model capacity, is the F1 ceiling at 0.75--0.85, an observation we corroborate in Section~\ref{exp1-results}. \emph{What breaks for review-to-issue translation:} none of these systems emits a typed developer-routable artifact downstream of the classification label. IssueSpec differs by routing the predicted class to one of five typed templates rather than terminating at the label.
+Maalej and Nabil~\cite{maalej2015bug} established a four-class taxonomy for app reviews (bug
+report, feature request, user experience, rating). The seven-class label set we use is our own
+extension of it, adding \texttt{performance}, \texttt{usability}, and \texttt{compatibility} as
+separate classes and renaming the rating class \texttt{praise}; we are not aware of an established
+seven-class app-review taxonomy, and the extension should be read as ours rather than as
+canonical. Subsequent systems, AR-Miner~\cite{chen2014ar}, CLAP~\cite{villarroel2016release}, SURF~\cite{di2017surf}, BERT/RCNN hybrids~\cite{kaur2023bert, shah2020mining}, and per-aspect sentiment analysis~\cite{guzman2014users}, refined classification accuracy and added aspect-level granularity. D{\k a}browski et al.~\cite{dkabrowski2022analysing} systematically reviewed 182 papers from 2012 to 2020 and report a median classification precision above 81\% with median recall around 83\%. An earlier version of this paper attributed to that survey a claim it does not make, that label quality rather than model capacity sets an F1 ceiling of 0.75 to 0.85. The survey reports precision and recall rather than F1 and attributes limitations to evaluation-dataset size; the label-quality argument is ours, and Section~\ref{exp1-results} is evidence for it rather than a corroboration of theirs. \emph{What breaks for review-to-issue translation:} none of these systems emits a typed developer-routable artifact downstream of the classification label. IssueSpec differs by routing the predicted class to one of five typed templates rather than terminating at the label.
 
 \subsection{Response Generation and Retrieval-Augmented Generation}
 RRGen~\cite{gao2019automating} and CoRe~\cite{gao2021automating} pioneered end-to-end neural response generation on (review, response) pairs without an explicit structured intermediate. Vanilla RAG~\cite{lewis2020retrieval} retrieves relevant past responses in a single pass. \emph{Agentic RAG} variants, Self-RAG~\cite{asai2024self} and DEMONSTRATE-SEARCH-PREDICT (DSP)~\cite{khattab2022demonstrate}, introduce iterative critique-revise loops that, in principle, could close the structured-intermediate gap. \emph{What breaks for review-to-issue translation:} none of these systems names the underlying defect, and our $n=10$ feasibility study (Appendix~\ref{appendix:settings}) shows that agentic iteration without a typed intermediate adds a small gain on a rule-based scorer (0.58$\to$0.70, ten reviews). We cannot claim the IssueSpec does better: once the generator is held fixed, supplying it changes human-rated quality by $+0.04$ ($p = 0.54$, Section~\ref{exp2-results}). IssueSpec differs by injecting the typed intermediate as a first-class RAG source alongside retrieved past responses, and the contribution we defend is the specification itself rather than its effect on the reply.
@@ -370,7 +384,7 @@ two of the five turn out not to justify themselves.
 justify themselves on our own evidence, and we say so.}\label{tab:why-stages}
 \begin{tabular}{@{}p{1.5cm}p{3.4cm}p{3.4cm}p{2.6cm}@{}}\toprule
 stage & the problem it must solve & why it cannot be skipped & measured verdict \\\midrule
-1 Intake & the corpus label is wrong 25\% of the time, concentrated on minority classes & Stage~3 routes on the issue type, so a wrong type produces the wrong template & \textbf{justified}: $\kappa$ $0.163 \to 0.592$ \\
+1 Intake & the corpus label is wrong 25\% of the time, and the labeller omits two classes entirely & Stage~3 routes on the issue type, so a wrong type produces the wrong template & \textbf{justified}: $\kappa$ $0.163 \to 0.592$ \\
 2 KG & 215{,}583 reviews cannot be triaged one at a time; developers need an order & a spec is written per cluster, so reviews must be grouped and ranked & \textbf{partly}: prioritization yes, cluster quality no (A1b, A2) \\
 3 IR & trackers need typed fields, not prose & this is where the typed record is produced & \textbf{justified}: fill 0.96 vs 0.69 without routing (A3) \\
 4 RAG & a reply needs house voice and precedent, not just the defect & supplies phrasing the spec does not carry & \textbf{no}: retrieval moves metrics $<1\%$ (A5) and conditioning is null (A6) \\
@@ -419,7 +433,9 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
 
   LLM annotation noise is the main challenge here. On the
   5{,}038-review praise stratum, 25.8\% of LLM labels are wrong,
-  concentrated on minority classes. Discarding them wastes annotation;
+  and the labeller omits \texttt{compatibility} and \texttt{performance} almost entirely. Per
+  stratum the errors fall in the largest class, not the minority ones; what a verified anchor
+  repairs is the omission. Discarding these labels wastes annotation;
   using them as-is poisons training. We apply confident
   learning~\cite{northcutt2021confident} against a verified anchor of
   5{,}230 expert-labeled reviews plus 5{,}008 from
@@ -482,7 +498,7 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   issue type because a bug report needs reproduction steps, a feature
   request needs acceptance criteria, and a performance complaint needs
   latency or memory numbers; a shared template would be incomplete or
-  padded. The five templates are Zimmermann bug
+  padded. The five templates are tracker-standard bug
   reports~\cite{zimmermann2010makes}, Cohn user stories~\cite{cohn2004user}
   with BDD acceptance criteria~\cite{hellesoy2017cucumber}, ISO/IEC~25010
   non-functional categories~\cite{international2011systems}, Nielsen
@@ -521,10 +537,14 @@ released pipeline and because the negative result only makes sense against its d
   \toprule
   Issue type & Template (citation) & Justification \\
   \midrule
-  \texttt{bug\_report} & Zimmermann~\cite{zimmermann2010makes}: title, severity,
-  steps\_to\_reproduce, expected, actual, component & Standard in GitHub Issues, JIRA, defect
-  trackers; Chaparro et al.~\cite{chaparro2017detecting} confirm these are the most-requested
-  bug-report fields \\
+  \texttt{bug\_report} & title, severity, steps\_to\_reproduce, expected, actual, component &
+  The tracker-standard field set in GitHub Issues and JIRA. Chaparro et
+  al.~\cite{chaparro2017detecting} support three of the six (observed behaviour, expected
+  behaviour, steps to reproduce). We previously attributed the whole set to
+  Zimmermann et al.~\cite{zimmermann2010makes}; that was wrong twice over. They propose no
+  template, and in their developer survey severity ranks last at 0\% importance and component at
+  3\%, against 83\% for steps to reproduce. We keep both fields because trackers require them, not
+  because developers report finding them useful \\
   \texttt{feature\_request} & Cohn user-story~\cite{cohn2004user} (As-a / I-want / So-that) +
   behavior-driven development (BDD) acceptance criteria~\cite{hellesoy2017cucumber} & Dominant
   industry format (Agile, Scrum, SAFe); BDD standardizes testable outcomes \\
@@ -838,7 +858,7 @@ durmus2020feqa} is the direction we would now take. We release the scorer, the 6
 ratings, and this analysis, because a documented negative result on a plausible-looking metric
 is more useful to the next person than a metric that was never tested.
 
-\textbf{Cross-LLM replication (bias control).} Table~\ref{tab:multi-llm} reports four uses across three model families. Llama-3.3-70B reaches 0.80 template-fill, Qwen2.5-3B 0.74, and Qwen2.5-1.5B 0.48 under the same strict criteria; the templated~$>$~free-form~$>$~raw ordering holds across all four models with capability-scaled magnitudes. On two per-class structural-compliance checks, Llama-3.3-70B attains complete template compliance on the stratified sample: all 29 bug specs include three or more reproduction steps with action verbs (vs.\ Claude's 73\%), and all 30 feature specs include the As-a/I-want/So-that triple (vs.\ Claude's 97\%). These measure structural template compliance (does the field exist with the required form?), not content correctness, content quality is reported separately under the five-dimension rubric. The structural-bias control that matters here is cross-family rank preservation: the IssueSpec contract transports across families rather than depending on a single proprietary generator.
+\textbf{Cross-LLM replication (bias control).} Table~\ref{tab:multi-llm} reports these uses across three model families, with the two caveats its caption records. Llama-3.3-70B reaches 0.80 template-fill, Qwen2.5-3B 0.74, and Qwen2.5-1.5B 0.48 under the same strict criteria; the templated~$>$~free-form~$>$~raw ordering holds across all four models with capability-scaled magnitudes. On two per-class structural-compliance checks, Llama-3.3-70B attains complete template compliance on the stratified sample: all 29 bug specs include three or more reproduction steps with action verbs (vs.\ Claude's 73\%), and all 30 feature specs include the As-a/I-want/So-that triple (vs.\ Claude's 97\%). These measure structural template compliance (does the field exist with the required form?), not content correctness, content quality is reported separately under the five-dimension rubric. The structural-bias control that matters here is cross-family rank preservation: the IssueSpec contract transports across families rather than depending on a single proprietary generator.
 
 \textbf{Cross-family rubric quality.} Template-fill measures whether a generator emits the
 required fields; it says nothing about whether the content is any good. We therefore ran the same
@@ -892,11 +912,22 @@ Llama-3.3-70B (Meta) & 28 & 3.64 & 3.39 & 4.46 & 3.14 & 3.82 & 3.36 \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[t]\centering\footnotesize
-\caption{Multi-LLM evidence summary across three model families (Anthropic, Meta, Alibaba). Cross-family rank preservation across Stage~3 and Stage~4 is the structural-bias control; LLM-as-judge calibration $\Delta$ vs the lead author bounds judge bias.}\label{tab:multi-llm}
+\caption{Multi-LLM evidence summary across three model families (Anthropic, Meta, Alibaba).
+Cross-family rank preservation in Stage~3 is the structural-bias control; LLM-as-judge
+calibration $\Delta$ vs the lead author bounds judge bias. \emph{Two rows carry caveats a reader
+needs.} The Stage-4 row previously reported 0.61 versus 0.54 for ``Claude'' against Qwen-3B. We
+withdraw it: the file labelled Claude is \texttt{responses\_rrgen\_baseline.json}, which our own
+release notes record as the output of a deterministic template composer rather than of any
+language model, so the row compared a template against a generation. This is the same confound we
+withdrew in Experiment~2 and we had not noticed it here. The Stage-3 row is a real cross-family
+comparison but is not matched: Claude is scored on 100 clusters and Llama on 99, both spanning
+five issue types, whereas both Qwen conditions are 15 clusters of \texttt{bug\_report} only. The
+0.96-versus-0.48 span therefore compares a five-type mean against a single-type mean and should be
+read as an ordering, not as a magnitude.}\label{tab:multi-llm}
 \begin{tabular}{@{}p{2.7cm}p{2.9cm}p{2.4cm}@{}}\toprule
 Use & Model (family) & Result \\\midrule
 Stage~3 generate & Claude (Anthropic) / Llama-3.3-70B (Meta) / Qwen-3B (Alibaba) / Qwen-1.5B (Alibaba) & 0.96 / 0.80 / 0.74 / 0.48 \\
-Stage~4 generate & Claude / Qwen-3B & 0.61 / 0.54 \\
+Stage~4 generate & \emph{withdrawn} (see note) & \emph{withdrawn} \\
 5-dim rubric judge & Qwen-3B, all 100 specs & 3.94/5 (28-spec subsample: 3.89) \\
 Cross-family rubric & Claude / Llama / Qwen-3B / Qwen-1.5B & 4.09 / 3.96 / 3.83 / 3.77 (Table~\ref{tab:xfam-rubric}) \\
 Y/P/N purity judge & Qwen-3B vs lead-author & 0.625 vs 0.66; $\Delta=-0.035$ \\

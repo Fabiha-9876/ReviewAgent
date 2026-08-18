@@ -124,8 +124,7 @@ should be justified on what it produces rather than on an effect a fair comparis
 
 \begin{keyword}
 App review mining \sep Issue report generation \sep Intermediate representation \sep
-Knowledge graph \sep Retrieval-augmented generation \sep Reinforcement learning from human
-feedback \sep Empirical software engineering
+Knowledge graph \sep Retrieval-augmented generation \sep Empirical software engineering
 \end{keyword}
 
 \end{frontmatter}
@@ -137,7 +136,9 @@ feedback \sep Empirical software engineering
 App stores are where users talk back to developers. A single popular app pulls in thousands of reviews a week, and the global stream runs into millions a day~\cite{maalej2015bug, gao2019automating, dkabrowski2022analysing}. These reviews carry the signals developers need to act on: bug reports (a crash on Samsung S8 after an update), feature requests (dark mode), performance complaints (battery drain), and regression notes (voice search no longer works). The information is real, but it shows up as messy free-form text, usually without the details required to reproduce a bug or scope a new feature.
 
 To turn any of this into work, developers rely on defect trackers such as JIRA or GitHub Issues. Those tools, though, can't work with raw text; they need structured fields such as issue type, steps to reproduce, severity, and affected component~\cite{chaparro2017detecting,
-zimmermann2010makes}. Filling those fields by hand does not scale with the volume modern apps face. Years of work on automated review pipelines has helped with the surrounding tasks like classification, summarization, and response generation, but no system actually produces the structured report a developer can paste directly into a tracker. D{\k a}browski et al.'s nineteen-year survey of the field~\cite{dkabrowski2022analysing} confirms the same boundary.
+zimmermann2010makes}. Filling those fields by hand does not scale with the volume modern apps face. Years of work on automated review pipelines has helped with the surrounding tasks like classification, summarization, and response generation, but no system actually produces the structured report a developer can paste directly into a tracker. D{\k a}browski et al.'s systematic review of 182 papers published between 2012 and
+2020~\cite{dkabrowski2022analysing} surveys this literature; it does not itself name this gap, and
+we state the gap as our own reading of the work it covers.
 
 Prior work has tackled several pieces of this problem separately.
   Classifiers~\cite{maalej2015bug, chen2014ar, villarroel2016release, di2017surf} take a review
@@ -153,9 +154,9 @@ Prior work has tackled several pieces of this problem separately.
 
 But none of these reaches the developer-ready issue report a defect tracker needs. The
   Maalej-Nabil classifier taxonomy~\cite{maalej2015bug} and its successors~\cite{chen2014ar,
-  villarroel2016release, di2017surf, kaur2023bert, shah2020mining} have settled at an F1
-   ceiling around 0.75--0.85, a label-quality limit (not a model-capacity one) per D{\k
-  a}browski et al.'s~\cite{dkabrowski2022analysing} nineteen-year survey. The label is only the
+  villarroel2016release, di2017surf, kaur2023bert, shah2020mining} reach, in D{\k a}browski et
+  al.'s aggregation~\cite{dkabrowski2022analysing}, a median precision above 81\% and median
+  recall around 83\%. The label is only the
   first piece of what a tracker entry needs; the remaining fields (steps to reproduce, severity,
    affected component) have to come from somewhere, and classification-only pipelines leave that
    downstream step to manual triage. Response generators like RRGen~\cite{gao2019automating} and
@@ -298,7 +299,12 @@ CMDP RLHF testbed (partial) & constraint never binds at distilGPT2 scale; with a
 We organize related work by the five gaps identified in Section~\ref{introduction}, naming what each field does, what assumption breaks for review-to-issue translation, and how IssueSpec differs.
 
 \subsection{App Review Classification and Mining}
-Maalej and Nabil~\cite{maalej2015bug} established the canonical seven-class taxonomy for app reviews. Subsequent systems, AR-Miner~\cite{chen2014ar}, CLAP~\cite{villarroel2016release}, SURF~\cite{di2017surf}, BERT/RCNN hybrids~\cite{kaur2023bert, shah2020mining}, and per-aspect sentiment analysis~\cite{guzman2014users}, refined classification accuracy and added aspect-level granularity. Dąbrowski et al.~\cite{dkabrowski2022analysing} surveyed nineteen years of such work and concluded that label quality, not model capacity, is the F1 ceiling at 0.75--0.85, an observation we corroborate in Section~\ref{exp1-results}. \emph{What breaks for review-to-issue translation:} none of these systems emits a typed developer-routable artifact downstream of the classification label. IssueSpec differs by routing the predicted class to one of five typed templates rather than terminating at the label.
+Maalej and Nabil~\cite{maalej2015bug} established a four-class taxonomy for app reviews (bug
+report, feature request, user experience, rating). The seven-class label set we use is our own
+extension of it, adding \texttt{performance}, \texttt{usability}, and \texttt{compatibility} as
+separate classes and renaming the rating class \texttt{praise}; we are not aware of an established
+seven-class app-review taxonomy, and the extension should be read as ours rather than as
+canonical. Subsequent systems, AR-Miner~\cite{chen2014ar}, CLAP~\cite{villarroel2016release}, SURF~\cite{di2017surf}, BERT/RCNN hybrids~\cite{kaur2023bert, shah2020mining}, and per-aspect sentiment analysis~\cite{guzman2014users}, refined classification accuracy and added aspect-level granularity. D{\k a}browski et al.~\cite{dkabrowski2022analysing} systematically reviewed 182 papers from 2012 to 2020 and report a median classification precision above 81\% with median recall around 83\%. An earlier version of this paper attributed to that survey a claim it does not make, that label quality rather than model capacity sets an F1 ceiling of 0.75 to 0.85. The survey reports precision and recall rather than F1 and attributes limitations to evaluation-dataset size; the label-quality argument is ours, and Section~\ref{exp1-results} is evidence for it rather than a corroboration of theirs. \emph{What breaks for review-to-issue translation:} none of these systems emits a typed developer-routable artifact downstream of the classification label. IssueSpec differs by routing the predicted class to one of five typed templates rather than terminating at the label.
 
 \subsection{Response Generation and Retrieval-Augmented Generation}
 RRGen~\cite{gao2019automating} and CoRe~\cite{gao2021automating} pioneered end-to-end neural response generation on (review, response) pairs without an explicit structured intermediate. Vanilla RAG~\cite{lewis2020retrieval} retrieves relevant past responses in a single pass. \emph{Agentic RAG} variants, Self-RAG~\cite{asai2024self} and DEMONSTRATE-SEARCH-PREDICT (DSP)~\cite{khattab2022demonstrate}, introduce iterative critique-revise loops that, in principle, could close the structured-intermediate gap. \emph{What breaks for review-to-issue translation:} none of these systems names the underlying defect, and our $n=10$ feasibility study (Appendix~\ref{appendix:settings}) shows that agentic iteration without a typed intermediate adds a small gain on a rule-based scorer (0.58$\to$0.70, ten reviews). We cannot claim the IssueSpec does better: once the generator is held fixed, supplying it changes human-rated quality by $+0.04$ ($p = 0.54$, Section~\ref{exp2-results}). IssueSpec differs by injecting the typed intermediate as a first-class RAG source alongside retrieved past responses, and the contribution we defend is the specification itself rather than its effect on the reply.
@@ -358,7 +364,7 @@ two of the five turn out not to justify themselves.
 justify themselves on our own evidence, and we say so.}\label{tab:why-stages}
 \begin{tabular}{@{}p{1.5cm}p{3.4cm}p{3.4cm}p{2.6cm}@{}}\toprule
 stage & the problem it must solve & why it cannot be skipped & measured verdict \\\midrule
-1 Intake & the corpus label is wrong 25\% of the time, concentrated on minority classes & Stage~3 routes on the issue type, so a wrong type produces the wrong template & \textbf{justified}: $\kappa$ $0.163 \to 0.592$ \\
+1 Intake & the corpus label is wrong 25\% of the time, and the labeller omits two classes entirely & Stage~3 routes on the issue type, so a wrong type produces the wrong template & \textbf{justified}: $\kappa$ $0.163 \to 0.592$ \\
 2 KG & 215{,}583 reviews cannot be triaged one at a time; developers need an order & a spec is written per cluster, so reviews must be grouped and ranked & \textbf{partly}: prioritization yes, cluster quality no (A1b, A2) \\
 3 IR & trackers need typed fields, not prose & this is where the typed record is produced & \textbf{justified}: fill 0.96 vs 0.69 without routing (A3) \\
 4 RAG & a reply needs house voice and precedent, not just the defect & supplies phrasing the spec does not carry & \textbf{no}: retrieval moves metrics $<1\%$ (A5) and conditioning is null (A6) \\
@@ -408,7 +414,9 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
 
   LLM annotation noise is the main challenge here. On the
   5{,}038-review praise stratum, 25.8\% of LLM labels are wrong,
-  concentrated on minority classes. Discarding them wastes annotation;
+  and the labeller omits \texttt{compatibility} and \texttt{performance} almost entirely. Per
+  stratum the errors fall in the largest class, not the minority ones; what a verified anchor
+  repairs is the omission. Discarding these labels wastes annotation;
   using them as-is poisons training. We apply confident
   learning~\cite{northcutt2021confident} against a verified anchor of
   5{,}230 expert-labeled reviews plus 5{,}008 from
@@ -474,7 +482,7 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   issue type because a bug report needs reproduction steps, a feature
   request needs acceptance criteria, and a performance complaint needs
   latency or memory numbers; a shared template would be incomplete or
-  padded. The five templates are Zimmermann bug
+  padded. The five templates are tracker-standard bug
   reports~\cite{zimmermann2010makes}, Cohn user stories~\cite{cohn2004user}
   with BDD acceptance criteria~\cite{hellesoy2017cucumber}, ISO/IEC~25010
   non-functional categories~\cite{international2011systems}, Nielsen
@@ -513,10 +521,14 @@ released pipeline and because the negative result only makes sense against its d
   \toprule
   Issue type & Template (citation) & Justification \\
   \midrule
-  \texttt{bug\_report} & Zimmermann~\cite{zimmermann2010makes}: title, severity,
-  steps\_to\_reproduce, expected, actual, component & Standard in GitHub Issues, JIRA, defect
-  trackers; Chaparro et al.~\cite{chaparro2017detecting} confirm these are the most-requested
-  bug-report fields \\
+  \texttt{bug\_report} & title, severity, steps\_to\_reproduce, expected, actual, component &
+  The tracker-standard field set in GitHub Issues and JIRA. Chaparro et
+  al.~\cite{chaparro2017detecting} support three of the six (observed behaviour, expected
+  behaviour, steps to reproduce). We previously attributed the whole set to
+  Zimmermann et al.~\cite{zimmermann2010makes}; that was wrong twice over. They propose no
+  template, and in their developer survey severity ranks last at 0\% importance and component at
+  3\%, against 83\% for steps to reproduce. We keep both fields because trackers require them, not
+  because developers report finding them useful \\
   \texttt{feature\_request} & Cohn user-story~\cite{cohn2004user} (As-a / I-want / So-that) +
   behavior-driven development (BDD) acceptance criteria~\cite{hellesoy2017cucumber} & Dominant
   industry format (Agile, Scrum, SAFe); BDD standardizes testable outcomes \\
@@ -830,7 +842,7 @@ durmus2020feqa} is the direction we would now take. We release the scorer, the 6
 ratings, and this analysis, because a documented negative result on a plausible-looking metric
 is more useful to the next person than a metric that was never tested.
 
-\textbf{Cross-LLM replication (bias control).} Table~\ref{tab:multi-llm} reports four uses across three model families. Llama-3.3-70B reaches 0.80 template-fill, Qwen2.5-3B 0.74, and Qwen2.5-1.5B 0.48 under the same strict criteria; the templated~$>$~free-form~$>$~raw ordering holds across all four models with capability-scaled magnitudes. On two per-class structural-compliance checks, Llama-3.3-70B attains complete template compliance on the stratified sample: all 29 bug specs include three or more reproduction steps with action verbs (vs.\ Claude's 73\%), and all 30 feature specs include the As-a/I-want/So-that triple (vs.\ Claude's 97\%). These measure structural template compliance (does the field exist with the required form?), not content correctness, content quality is reported separately under the five-dimension rubric. The structural-bias control that matters here is cross-family rank preservation: the IssueSpec contract transports across families rather than depending on a single proprietary generator.
+\textbf{Cross-LLM replication (bias control).} Table~\ref{tab:multi-llm} reports these uses across three model families, with the two caveats its caption records. Llama-3.3-70B reaches 0.80 template-fill, Qwen2.5-3B 0.74, and Qwen2.5-1.5B 0.48 under the same strict criteria; the templated~$>$~free-form~$>$~raw ordering holds across all four models with capability-scaled magnitudes. On two per-class structural-compliance checks, Llama-3.3-70B attains complete template compliance on the stratified sample: all 29 bug specs include three or more reproduction steps with action verbs (vs.\ Claude's 73\%), and all 30 feature specs include the As-a/I-want/So-that triple (vs.\ Claude's 97\%). These measure structural template compliance (does the field exist with the required form?), not content correctness, content quality is reported separately under the five-dimension rubric. The structural-bias control that matters here is cross-family rank preservation: the IssueSpec contract transports across families rather than depending on a single proprietary generator.
 
 \textbf{Cross-family rubric quality.} Template-fill measures whether a generator emits the
 required fields; it says nothing about whether the content is any good. We therefore ran the same
@@ -849,7 +861,7 @@ tests reported in the same tables with the same judge and rubric, and Bonferroni
 correction over that family puts it at $p = 0.104$. An exact sign test on the same 28 pairs,
 which ignores magnitude and counts only direction, gives $p = 0.078$. The difference is therefore
 descriptive, like the rest of Panel A, and we no longer claim a cross-family quality difference
-at all. The spread is much narrower than the template-fill spread (0.96 to 0.48),
+at all. The spread is much narrower than the (unmatched) template-fill spread,
 which is informative in itself: the capability gap between these models shows up mostly as
 whether fields get filled at all, not as the quality of the text once they are. Completeness is
 the dimension that separates them (4.00 down to 3.00), while accuracy is nearly flat (4.50 for
@@ -884,11 +896,22 @@ Llama-3.3-70B (Meta) & 28 & 3.64 & 3.39 & 4.46 & 3.14 & 3.82 & 3.36 \\
 \bottomrule\end{tabular}\end{table}
 
 \begin{table}[t]\centering\footnotesize
-\caption{Multi-LLM evidence summary across three model families (Anthropic, Meta, Alibaba). Cross-family rank preservation across Stage~3 and Stage~4 is the structural-bias control; LLM-as-judge calibration $\Delta$ vs the lead author bounds judge bias.}\label{tab:multi-llm}
+\caption{Multi-LLM evidence summary across three model families (Anthropic, Meta, Alibaba).
+Cross-family rank preservation in Stage~3 is the structural-bias control; LLM-as-judge
+calibration $\Delta$ vs the lead author bounds judge bias. \emph{Two rows carry caveats a reader
+needs.} The Stage-4 row previously reported 0.61 versus 0.54 for ``Claude'' against Qwen-3B. We
+withdraw it: the file labelled Claude is \texttt{responses\_rrgen\_baseline.json}, which our own
+release notes record as the output of a deterministic template composer rather than of any
+language model, so the row compared a template against a generation. This is the same confound we
+withdrew in Experiment~2 and we had not noticed it here. The Stage-3 row is a real cross-family
+comparison but is not matched: Claude is scored on 100 clusters and Llama on 99, both spanning
+five issue types, whereas both Qwen conditions are 15 clusters of \texttt{bug\_report} only. The
+0.96-versus-0.48 span therefore compares a five-type mean against a single-type mean and should be
+read as an ordering, not as a magnitude.}\label{tab:multi-llm}
 \begin{tabular}{@{}p{2.7cm}p{2.9cm}p{2.4cm}@{}}\toprule
 Use & Model (family) & Result \\\midrule
 Stage~3 generate & Claude (Anthropic) / Llama-3.3-70B (Meta) / Qwen-3B (Alibaba) / Qwen-1.5B (Alibaba) & 0.96 / 0.80 / 0.74 / 0.48 \\
-Stage~4 generate & Claude / Qwen-3B & 0.61 / 0.54 \\
+Stage~4 generate & \emph{withdrawn} (see note) & \emph{withdrawn} \\
 5-dim rubric judge & Qwen-3B, all 100 specs & 3.94/5 (28-spec subsample: 3.89) \\
 Cross-family rubric & Claude / Llama / Qwen-3B / Qwen-1.5B & 4.09 / 3.96 / 3.83 / 3.77 (Table~\ref{tab:xfam-rubric}) \\
 Y/P/N purity judge & Qwen-3B vs lead-author & 0.625 vs 0.66; $\Delta=-0.035$ \\
@@ -1531,7 +1554,8 @@ Three claims travel beyond app reviews. \emph{First}, LLM annotation noise on
 \subsection{Threats to Validity}
 \emph{Construct.} Template-fill measures coverage rather than content correctness, and Section~\ref{speccov-validation} shows that \textsc{SpecCov} does not fill that gap: it is a lexical-grounding proxy that does not track human faithfulness judgement~\cite{grusky2018newsroom, maynez2020faithfulness, kryscinski2020evaluating, ji2023survey}. The paper therefore has no validated content-correctness measure for Stage~3, and the five-dimension rubric carries that burden alone. NLI- and QA-based faithfulness measurement~\cite{laban2022summac, honovich2022true, durmus2020feqa} is the clear next step.
 \emph{Internal.} The count-versus-structure confound is exposed and resolved by the A1b ablation, which reframes the knowledge graph's contribution as centrality-based prioritization rather than intrinsic geometry. A second internal threat we did not remove is that the 100 clusters carrying the Stage~3 and Stage~4 results were produced by the KG pipeline, the same layer A1b and A2 find wanting. Since flat clustering scores higher on purity (Figure~\ref{fig:purity}), the headline gains may be measured on a slightly worse partition than a simpler system would produce, which would understate rather than inflate them. Re-running Stages~3 and~4 over flat clusters would settle it and is the cheapest open experiment in the paper.
-\emph{External.} RRGen contains 58 anonymized Android apps; V5 transfers zero-shot to the Maalej label space. Stage~2--4 cross-corpus transfer remains to be validated. The headline LLM is Claude Opus, with Llama-3.3-70B and Qwen2.5-\{3B, 1.5B\} as cross-family bias controls; GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}).
+\emph{External.} RRGen contains 58 Android apps, named by real package identifier rather than
+anonymised; V5 transfers zero-shot to the Maalej label space. Stage~2--4 cross-corpus transfer remains to be validated. The headline LLM is Claude Opus, with Llama-3.3-70B and Qwen2.5-\{3B, 1.5B\} as cross-family bias controls; GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}).
 \emph{Conclusion.} The three-rater agreement on the classification gold ($\kappa = 0.968$ on the Y/N verdict) sits well above what free-labeling studies of app reviews report, which invites the question of whether the raters were genuinely independent. Three properties of the design account for the gap. The raters verify a supplied label rather than choose one from seven, which collapses most of the decision space; a 20-review calibration round with adjudicated disagreements precedes the main task; and the written protocol fixes eight boundary rules that carry the cases annotators most often split on. Residual disagreement is rater-specific rather than random, one rater accounts for most of the \texttt{usability} reassignments, which is the pattern independent annotation produces. Stage~4 sits differently. All three raters scored the complete 200-row re-run, and the gain does \emph{not} reproduce per rater: the lead author measures $+0.56$ and the two independent raters $-0.29$ and $-0.15$. That disagreement, not the pooled null, is the honest summary of what we know about Stage~4.
 \emph{Reliability, and which $\alpha$ belongs to what.} Three agreement statistics appear in this paper and they measure different things, so a single pooled reading of them would be wrong. The classification gold is annotated by three humans and reaches Fleiss $\kappa = 0.968$ on the verdict and $0.979$ on the seven-class label. The Stage-4 response set that we report is rated by the same three humans on all 200 rows, with quality weighted $\kappa$ of 0.03, 0.04 and 0.50. That is low, and it is the number to quote: the 0.970 to 0.986 range belongs to the discarded round, where one arm was visibly broken and agreement was easy. The weakest figure, $\alpha = 0.285$ (corrected from a mis-implemented 0.451), comes from a deliberately weaker panel: a seven-class classification check whose three raters are the lead author plus two Qwen2.5-3B prompts, following the LLM-as-rater convention of Gilardi et al.~\cite{gilardi2023chatgpt}. It bounds how far an LLM rater tracks a human on a subjective sub-theme judgement; it is not the reliability of any headline result, and no claim in this paper rests on it alone.
 \emph{Statistical.} Experiment~2 now reports a null, so the relevant question is power rather than correction for multiplicity. With 100 paired reviews and the observed per-review spread, the 95\% bootstrap interval $[-0.10, +0.18]$ excludes effects larger than about a fifth of a Likert point in either direction. We can therefore rule out a large effect, not a small one; an effect of a tenth of a point would need several times this sample.
@@ -1562,7 +1586,7 @@ than repeat the earlier and much smaller claim that only two tables were uncover
 now exits non-zero on any mismatch, and every number in it that we could turn into an assertion
 we did; the rest a reader should check against the released files directly.
 \end{itemize}
-The pipeline is composable by construction: because each stage emits a typed intermediate, components (classifier, clusterer, taxonomy template, alignment trainer) can be substituted independently without breaking downstream contracts. Future researchers can adopt or replace any single component while keeping the rest of the IR-centered evaluation harness intact. Deterministic components (clustering, classifier training) use fixed seeds; the LLM-dependent stages (annotation, IR generation, and response generation) reproduce statistically rather than bit-identically. We measured how large that sampling variance is. Regenerating Stage~3 specs three times over the same 15 stratified clusters with the local Qwen2.5-3B generator at temperature 0.7, changing only the seed, gives strict template-fill 0.685, 0.700, and 0.634 (mean 0.673, sd 0.029, range 0.067) and \textsc{SpecCov} 2.73, 2.67, and 3.00 (mean 2.80, sd 0.144, range 0.333), with no JSON parse failures in any run. Run-to-run noise on template-fill is therefore around three points on a 0--1 scale for this generator and prompt. That is the yardstick a reader should hold up against the differences we report. The gaps the paper rests on clear it comfortably: 0.96 versus 0.69 for taxonomy grounding, and 0.96 versus 0.48 across the model families. The withdrawn Stage-4 effect illustrates the opposite case, and is worth stating in these terms: at $+0.04$ it sits an order of magnitude below this noise floor, which is another way of saying there is nothing there to measure. Differences of a few hundredths between adjacent conditions, such as the 4.09 versus 3.96 at the top of the cross-family rubric, do not clear it and should not be read as a stable ordering on their own. Two limits remain: the headline Claude generations were not repeated, because that needs API budget rather than new code, and Stage~4 response generation was not repeated either. The released script runs both sweeps unchanged.
+The pipeline is composable by construction: because each stage emits a typed intermediate, components (classifier, clusterer, taxonomy template, alignment trainer) can be substituted independently without breaking downstream contracts. Future researchers can adopt or replace any single component while keeping the rest of the IR-centered evaluation harness intact. Deterministic components (clustering, classifier training) use fixed seeds; the LLM-dependent stages (annotation, IR generation, and response generation) reproduce statistically rather than bit-identically. We measured how large that sampling variance is. Regenerating Stage~3 specs three times over the same 15 stratified clusters with the local Qwen2.5-3B generator at temperature 0.7, changing only the seed, gives strict template-fill 0.685, 0.700, and 0.634 (mean 0.673, sd 0.029, range 0.067) and \textsc{SpecCov} 2.73, 2.67, and 3.00 (mean 2.80, sd 0.144, range 0.333), with no JSON parse failures in any run. Run-to-run noise on template-fill is therefore around three points on a 0--1 scale for this generator and prompt. That is the yardstick a reader should hold up against the differences we report. The gap the paper rests on clears it comfortably: 0.96 versus 0.69 for taxonomy grounding. We previously also cited the 0.96-versus-0.48 cross-family span here; that comparison is not matched on sample or issue type (Table~\ref{tab:multi-llm}), so we no longer use it as a magnitude. The withdrawn Stage-4 effect illustrates the opposite case, and is worth stating in these terms: at $+0.04$ it sits an order of magnitude below this noise floor, which is another way of saying there is nothing there to measure. Differences of a few hundredths between adjacent conditions, such as the 4.09 versus 3.96 at the top of the cross-family rubric, do not clear it and should not be read as a stable ordering on their own. Two limits remain: the headline Claude generations were not repeated, because that needs API budget rather than new code, and Stage~4 response generation was not repeated either. The released script runs both sweeps unchanged.
 
 \subsection{Future Work}\label{future-work}
 Five extensions map directly to the limitations above; each starts from a resource released with this paper.
@@ -1637,22 +1661,6 @@ run wants a longer horizon and a policy with a higher base violation rate, on an
   follow-on research.
 
 %% =====================================================================
-\section*{GenAI Usage Disclosure}
-We disclose all uses of generative AI in this work in line with Elsevier policy on the use of generative AI in scientific writing. \emph{Writing and code assistance.} An earlier version of this disclosure said that Claude
-assisted only with grammatical refinement, caption polishing, and LaTeX formatting, and that all
-pipeline code, experimental scripts, and analysis were written by the human authors. That
-understated the use, and the repository we release contradicts it: 38 of the 47 commits carry a
-\texttt{Co-Authored-By: Claude} trailer, including commits that add pipeline stages, the
-constrained-PPO trainer, the analysis scripts, and the correction passes described in
-Section~\ref{exp2-results}. The accurate statement is that Anthropic's Claude was used
-throughout implementation and analysis as a coding assistant, under author direction and review,
-and also for manuscript editing. Every design decision, every experimental choice, and every
-claim in this paper is the authors' own, and the numbers were produced by running the released
-code on the released data. We prefer to correct this here rather than leave a disclosure that
-the artifact refutes. Every structural, framing, experimental-design, and claim decision was made by the authors, and every reported number was produced by author-written code run under human supervision and verified against saved data files. \emph{Models inside the system.} Several generative models are themselves pipeline components and are reported as such in the body: Claude (Opus 4.7) is the headline Stage~3 generator (Table~\ref{tab:stage3}); Llama-3.3-70B-Instruct (via Groq) and Qwen2.5-\{3B, 1.5B\}-Instruct are cross-family Stage~3 comparators (Table~\ref{tab:multi-llm}); Qwen2.5-3B-Instruct is the LLM-as-judge for the five-dimension rubric and the Y/P/N cluster-purity audit, both calibrated against the lead author (Tables~\ref{tab:rubric}, \ref{tab:cluster-quality}). The V2 corpus labels in Section~\ref{exp1-results} are LLM-generated and explicitly treated as
-   noisy, which is precisely what motivates the verified-anchor procedure of Stage~1. \emph{Human verification.} No reported numerical result, expert annotation, or ground-truth label was automatically generated by AI without human verification. The 5{,}230-review verified anchor, the 490-review classification gold, the 99-review three-rater purity ratings, and the 20 lead-author IssueSpec references were all produced and reviewed by human annotators (Section~\ref{experiments}).
-
-%% =====================================================================
 \section*{CRediT authorship contribution statement}
 \textbf{Fabiha Jalal:} Conceptualization, Methodology, Software, Validation, Formal analysis,
 Investigation, Data curation, Writing -- original draft, Writing -- review and editing,
@@ -1675,8 +1683,43 @@ Section~\ref{results}, with the coverage limits stated in Section~\ref{reproduci
 That bundle supersedes an earlier release (DOI 10.5281/zenodo.20320410) which predates the
 Stage-4 correction described in Section~\ref{exp2-results}; both versions remain resolvable, and
 the earlier one should not be used.
-The underlying review corpus derives from the publicly released RRGen dataset of Gao et al.;
-derived artifacts are redistributed subject to the terms of that original release.
+The underlying review corpus derives from the RRGen dataset of Gao et al. That release is
+access-gated behind a request form, states academic use only, and carries no licence granting
+redistribution, so we do not redistribute it. We also do not redistribute the Maalej and Nabil or
+Guzman corpora. An earlier version of our repository did redistribute all three; we removed them,
+and \texttt{DATA\_NOTICE.md} records what was removed and how to obtain each corpus from its
+original authors. Derived artifacts that embed verbatim review text carry the same restriction as
+the source and are not offered under an open licence; original code is released under MIT.
+
+\section*{Ethics, consent, and data protection}
+\emph{Human participants.} Three people annotated for this study: the lead author and two
+collaborators. The annotation protocol, released with the artifact, states that participation was
+voluntary, that annotators could withdraw at any time, that no personal information was collected
+beyond a name and email for attribution, and that compensation took the form of authorship credit.
+Both additional annotators are consequently co-authors of this paper, which we state explicitly
+because the paper's discussion of rater independence should be read with it in mind. The work was
+not submitted to an institutional review board. Under our institution's practice a study of this
+kind, involving colleagues rating text with no collection of sensitive personal data, does not
+require review; we record that as our reading rather than as a formal exemption, since no
+exemption number was issued.
+
+\emph{Review authors.} The corpora we work with are user-generated public reviews whose authors
+did not consent to research use and cannot practically be contacted. We took three positions on
+this. We do not redistribute any of the three source corpora, for the licensing reasons in the
+data-availability statement and because the Maalej and Nabil files contain unredacted email
+addresses, telephone numbers, and personal names. Derived files we do release contain review text
+as RRGen supplies it, lowercased and lemmatised with digits masked; that masking is imperfect, and
+we found a small number of surviving transaction identifiers in the source, which anyone
+re-releasing derived text should re-scan for. We report no result at the level of an individual
+review author, and no reviewer identifier appears in any released file.
+
+\emph{Machine-generated replies.} The replies this system produces read as human-written. Any
+deployment should label them as machine-assisted, which we regard as a condition of use rather
+than a recommendation.
+
+\section*{Role of the funding source}
+This research did not receive any specific grant from funding agencies in the public,
+commercial, or not-for-profit sectors.
 
 \section*{Acknowledgements}
 We thank the human annotators who produced the verified anchor and the lead-author reference
@@ -1684,6 +1727,28 @@ set. The authors verified all technical content, experimental results, and claim
 
 %% =====================================================================
 \bibliographystyle{elsarticle-num}
+\section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
+During the preparation of this work the authors used Anthropic's Claude in order to assist with
+manuscript editing, code implementation, and analysis scripting. After using this tool, the
+authors reviewed and edited the content as needed and take full responsibility for the content of
+the publication.
+
+We disclose all uses of generative AI in this work in line with Elsevier policy on the use of generative AI in scientific writing. \emph{Writing and code assistance.} An earlier version of this disclosure said that Claude
+assisted only with grammatical refinement, caption polishing, and LaTeX formatting, and that all
+pipeline code, experimental scripts, and analysis were written by the human authors. That
+understated the use, and the repository we release contradicts it: 47 of the 56 commits carry a
+\texttt{Co-Authored-By: Claude} trailer, including commits that add pipeline stages, the
+constrained-PPO trainer, the analysis scripts, and the correction passes described in
+Section~\ref{exp2-results}. The accurate statement is that Anthropic's Claude was used
+throughout implementation and analysis as a coding assistant, under author direction and review,
+and also for manuscript editing. Every design decision, every experimental choice, and every
+claim in this paper is the authors' own, and the numbers were produced by running the released
+code on the released data. We prefer to correct this here rather than leave a disclosure that
+the artifact refutes. Every structural, framing, experimental-design, and claim decision was made by the authors, and every reported number was produced by author-written code run under human supervision and verified against saved data files. \emph{Models inside the system.} Several generative models are themselves pipeline components and are reported as such in the body: Claude (Opus 4.7) is the headline Stage~3 generator (Table~\ref{tab:stage3}); Llama-3.3-70B-Instruct (via Groq) and Qwen2.5-\{3B, 1.5B\}-Instruct are cross-family Stage~3 comparators (Table~\ref{tab:multi-llm}); Qwen2.5-3B-Instruct is the LLM-as-judge for the five-dimension rubric and the Y/P/N cluster-purity audit, both calibrated against the lead author (Tables~\ref{tab:rubric}, \ref{tab:cluster-quality}). The V2 corpus labels in Section~\ref{exp1-results} are LLM-generated and explicitly treated as
+   noisy, which is precisely what motivates the verified-anchor procedure of Stage~1. \emph{Human verification.} No reported numerical result, expert annotation, or ground-truth label was automatically generated by AI without human verification. The 5{,}230-review verified anchor, the 490-review classification gold, the 99-review three-rater purity ratings, and the 20 lead-author IssueSpec references were all produced and reviewed by human annotators (Section~\ref{experiments}).
+
+%% =====================================================================
+
 \bibliography{references}
 
 \appendix

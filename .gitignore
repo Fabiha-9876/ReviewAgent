@@ -96,3 +96,12 @@ ReviewAgent/data/processed/rlhf/sft_base/checkpoint-*/
 
 # extracted reproduction bundle (the .tar.gz is the artifact)
 ReviewAgent/issuespec-data-bundle-v2/
+
+# Third-party review corpora. NOT redistributable: see DATA_NOTICE.md.
+# RRGen is access-gated and academic-use-only with no redistribution grant;
+# the Maalej files contain unredacted names, emails and phone numbers.
+RRGen_Full_Dataset.csv
+RRGen_Full_Annotator_Review.xlsx
+RRGen_LLM_Verification_59K.xlsx
+ReviewAgent/data/raw/maalej/
+ReviewAgent/data/raw/guzman/
