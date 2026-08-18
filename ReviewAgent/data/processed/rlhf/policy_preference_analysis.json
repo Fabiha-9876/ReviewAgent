@@ -1,0 +1,194 @@
+{
+  "method": "Rubric-based proxy for human preference (\u00a73.7.5 scorers + BT + McNemar)",
+  "n_prompts": 100,
+  "policies": [
+    "sft_base",
+    "kto_model",
+    "dpo_model",
+    "constrained_proxy",
+    "lagrangian_ppo"
+  ],
+  "per_policy_aggregates": {
+    "sft_base": {
+      "quality_mean": 0.11205006634209157,
+      "quality_std": 0.05064329167834046,
+      "safety_mean": 0.998,
+      "violation_rate": 0.01,
+      "n_violations": 1,
+      "mean_response_length_words": 53.86
+    },
+    "kto_model": {
+      "quality_mean": 0.11538819395488371,
+      "quality_std": 0.06795378858724381,
+      "safety_mean": 1.0,
+      "violation_rate": 0.0,
+      "n_violations": 0,
+      "mean_response_length_words": 50.34
+    },
+    "dpo_model": {
+      "quality_mean": 0.11796378520244423,
+      "quality_std": 0.05340199120484606,
+      "safety_mean": 1.0,
+      "violation_rate": 0.0,
+      "n_violations": 0,
+      "mean_response_length_words": 52.83
+    },
+    "constrained_proxy": {
+      "quality_mean": 0.21364418387085204,
+      "quality_std": 0.11861456316021059,
+      "safety_mean": 1.0,
+      "violation_rate": 0.0,
+      "n_violations": 0,
+      "mean_response_length_words": 52.66
+    },
+    "lagrangian_ppo": {
+      "quality_mean": 0.1044133156992263,
+      "quality_std": 0.054769730626120006,
+      "safety_mean": 1.0,
+      "violation_rate": 0.0,
+      "n_violations": 0,
+      "mean_response_length_words": 55.89
+    }
+  },
+  "bradley_terry_strengths": {
+    "sft_base": -0.1955370178577086,
+    "kto_model": -0.3991583487020732,
+    "dpo_model": 0.015283312907333951,
+    "constrained_proxy": 1.0560267781383168,
+    "lagrangian_ppo": -0.476614724485869
+  },
+  "bradley_terry_ranking": [
+    "constrained_proxy",
+    "dpo_model",
+    "sft_base",
+    "kto_model",
+    "lagrangian_ppo"
+  ],
+  "mcnemar_safety_violations": [
+    {
+      "policy_a": "sft_base",
+      "policy_b": "kto_model",
+      "a_violates_only": 1,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "sft_base",
+      "policy_b": "dpo_model",
+      "a_violates_only": 1,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "sft_base",
+      "policy_b": "constrained_proxy",
+      "a_violates_only": 1,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "sft_base",
+      "policy_b": "lagrangian_ppo",
+      "a_violates_only": 1,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "kto_model",
+      "policy_b": "dpo_model",
+      "a_violates_only": 0,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "kto_model",
+      "policy_b": "constrained_proxy",
+      "a_violates_only": 0,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "kto_model",
+      "policy_b": "lagrangian_ppo",
+      "a_violates_only": 0,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "dpo_model",
+      "policy_b": "constrained_proxy",
+      "a_violates_only": 0,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "dpo_model",
+      "policy_b": "lagrangian_ppo",
+      "a_violates_only": 0,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "policy_a": "constrained_proxy",
+      "policy_b": "lagrangian_ppo",
+      "a_violates_only": 0,
+      "b_violates_only": 0,
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "significant": false
+    }
+  ],
+  "wilcoxon_quality_vs_sft_base": [
+    {
+      "policy": "kto_model",
+      "reference": "sft_base",
+      "delta_quality": 0.0033381276127921466,
+      "wilcoxon_stat": 1813.0,
+      "p_value": 0.9493398595042257,
+      "significant_05": false
+    },
+    {
+      "policy": "dpo_model",
+      "reference": "sft_base",
+      "delta_quality": 0.0059137188603526625,
+      "wilcoxon_stat": 1053.0,
+      "p_value": 0.101937533504196,
+      "significant_05": false
+    },
+    {
+      "policy": "constrained_proxy",
+      "reference": "sft_base",
+      "delta_quality": 0.10159411752876048,
+      "wilcoxon_stat": 633.0,
+      "p_value": 7.744133055664304e-11,
+      "significant_05": true
+    },
+    {
+      "policy": "lagrangian_ppo",
+      "reference": "sft_base",
+      "delta_quality": -0.007636750642865273,
+      "wilcoxon_stat": 1633.5,
+      "p_value": 0.09571589517601142,
+      "significant_05": false
+    }
+  ],
+  "ties_excluded_from_bt": 95
+}
