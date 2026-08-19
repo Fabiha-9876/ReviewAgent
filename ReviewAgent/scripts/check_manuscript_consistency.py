@@ -76,7 +76,11 @@ def main():
                 val = m.group(0).replace("−", "-")
                 if val in allowed:
                     continue
-                if any(ctx in line for ctx in exempt_contexts):
+                # Exempt on a small window rather than the single line: LaTeX wraps
+                # freely, so the context phrase that licenses a value often sits on a
+                # neighbouring line.
+                window = " ".join(lines[max(0, i - 3):i + 2])
+                if any(ctx in window for ctx in exempt_contexts):
                     continue
                 offenders.append((i, val, line.strip()[:70]))
         if offenders:
