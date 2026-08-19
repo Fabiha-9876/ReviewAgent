@@ -284,3 +284,38 @@ Two results were reported before the code that produces them was committed: the 
 figures (paper 11 May, script 24 May) and the Krippendorff alpha (paper 6 May, script 18 May).
 Both of those numbers were later found wrong and are corrected above, which is the argument for
 not doing it in that order.
+
+## Correction 17 (2026-08-18): method descriptions that did not match the code
+
+A spot-check that sampled claims by position rather than by importance found that our corrections
+had been applied where the numbers live and not where the descriptions live. Five method
+statements did not describe the released system.
+
+1. **UMAP is not in the KG-hierarchical pipeline.** The method section and the appendix both said
+   Stage 2 "embeds with Sentence-BERT, reduces with UMAP, and clusters with HDBSCAN".
+   `run_kg_hierarchical_clustering.py`, the script that produced the 605 sub-clusters, runs HDBSCAN
+   directly on the 384-dimensional embeddings. UMAP is used only in the flat baseline. A reader
+   reconstructing Stage 2 from our appendix would have built the wrong system.
+2. **The two purity audits are not the same rubric.** We wrote that the KG's 0.39 and the flat
+   baseline's 0.625 come from "the same Qwen judge". The flat audit judges 44 clusters with five
+   representatives (Y = all five); the KG audit judges 50 clusters with three, and the script
+   rewrites the rubric so Y = all three and P = two of three. The three-representative rubric is
+   harder. The asymmetry runs against the KG, so it does not flatter a result we claim, but the
+   comparison is weaker than we described.
+3. **The CMDP constraint was printed with the inequality reversed.** The displayed program read
+   `s.t. E[C] <= tau` while the text, the code, and the rest of the paper read `>=`. As printed,
+   the Lagrangian penalised high compliance. Corrected to `>=` with the sign of the multiplier term
+   fixed to match.
+4. **The seven-class taxonomy correction had not propagated.** Section 2.1 states correctly that
+   Maalej and Nabil is four-class and that the seven-class set is our extension, but the comparison
+   table, the experimental setup, and the annotator appendix still said "seven Maalej classes".
+5. **Aspect pruning is by frequency only**, not "by frequency and centrality". PageRank orders
+   aspects for processing; it never removes one.
+
+Also corrected: a lone round-up of 0.96 to 0.97 in the very-strict sweep sentence; a top-three
+PageRank list that skipped the second and fourth-ranked aspects; and the released verifier's
+segment 19, which printed the superseded +0.03 / p = 0.38 reference line and asserted none of the
+five values it recomputed. It now asserts all five.
+
+`DATA_NOTICE.md` and `LICENSE` were at the repository root but the data-availability statement
+points at the paper's own directory; both are now present in both places.

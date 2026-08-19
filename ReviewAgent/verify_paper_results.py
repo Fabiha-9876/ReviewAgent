@@ -529,8 +529,16 @@ def segment_18():
 
 def segment_19():
     banner(19, "Stage 4 — the REPORTED same-model re-run (Table 13)")
-    print("Paper: pooled +0.03 position-controlled (+0.04 uncontrolled), CI [-0.10, +0.18],")
-    print("Wilcoxon p = 0.38; per rater +0.53 / -0.26 / -0.18; weighted kappa 0.03 / 0.04 / 0.50")
+    print("Paper: pooled +0.04 (position-controlled +0.03), CI [-0.10, +0.18], Wilcoxon")
+    print("p = 0.54; per rater +0.56 / -0.29 / -0.15; weighted kappa 0.03 / 0.04 / 0.50")
+    _rr = json.load(open(DP / "inter_annotator/stage4_llm_rerun.json"))
+    check("pooled gain", round(_rr["pooled"]["mean_gain"], 2), 0.04)
+    check("pooled Wilcoxon p", round(_rr["pooled"]["wilcoxon_p"], 2), 0.54)
+    for _r, _want in (("A", 0.56), ("D", -0.29), ("E", -0.15)):
+        _st = _rr["per_rater"][_r]["position_strata"]
+        _g = (_st["full_at_A"]["n"] * _st["full_at_A"]["mean"]
+              + _st["full_at_B"]["n"] * _st["full_at_B"]["mean"]) / 100
+        check(f"rater {_r} gain", round(_g, 2), _want)
     print()
     path = DP / "inter_annotator/stage4_llm_rerun.json"
     if not path.exists():

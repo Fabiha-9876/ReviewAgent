@@ -5,6 +5,7 @@
 
 \documentclass[preprint,12pt]{elsarticle}
 
+\usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -17,7 +18,20 @@
 \usepackage{caption}
 \usepackage{longtable}
 \usepackage{tabularx}
+\usepackage{rotating}
 \usepackage{array}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+%% Float placement. With elsarticle's defaults (topnumber 2, totalnumber 3) sixteen tables
+%% queue up and flush after the bibliography and both appendices, 30-58 pages from where
+%% they are cited. These counters let the body absorb them.
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
 \usepackage{calc}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta}
@@ -35,6 +49,13 @@
  con-fi-dent cleanlab hi-er-ar-chi-cal cov-er-age IssueSpec}
 
 \journal{Information and Software Technology}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Typed Issue Specifications from App Reviews: What Scales, and a Downstream Benefit That Does Not Replicate},
+  pdfauthor={Fabiha Jalal; Sadia Tasnim Dhruba; Tazrian Zaman Tushti; Ajwad Abrar; Md Kamrul Hasan; Hasan Mahmud},
+  pdfsubject={Empirical software engineering; app review mining},
+  pdfkeywords={app review mining; issue report generation; intermediate representation; knowledge graph; retrieval-augmented generation; empirical software engineering}}
 
 \begin{document}
 
@@ -197,7 +218,7 @@ To address these challenges, we propose \textbf{IssueSpec}, a framework for stru
 
 \textbf{What is new, and what is assembled.} Several components of this pipeline are existing
 technique used as intended: RoBERTa for multi-label classification, confident
-learning~\cite{northcutt2021confident} for label noise, Sentence-BERT with UMAP and HDBSCAN for
+learning~\cite{northcutt2021confident} for label noise, Sentence-BERT with HDBSCAN for
 clustering, PageRank for centrality, retrieval-augmented generation for response drafting, and
 the CMDP formulation of Altman~\cite{altman2021constrained}. We do not claim any of these. Three things are
 new. \emph{First}, the typed intermediate representation itself: a review is routed by predicted
@@ -267,7 +288,8 @@ positive half and a negative half, and separating them is more useful than blend
 
 \begin{table}[!htbp]\centering\footnotesize
 \caption{Contribution-to-evidence-to-artifact map. Each contribution states a measurable headline result, the table or section that anchors it, and the named artifact released with this paper.}\label{tab:c2evidence}
-\begin{tabular}{@{}p{1.5cm}p{3.0cm}p{2.9cm}@{}}\toprule
+\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}p{2.4cm}LL@{}}\toprule
 contribution & headline evidence & released artifact \\\midrule
 IssueSpec & 0.96 vs 0.69 template-fill, i.e.\ schema conformance not quality (Table~\ref{tab:stage3}); 5-dim rubric 3.94/5 on all 100 specs, LLM judge (Table~\ref{tab:rubric}) & type-routed schema (Table~\ref{tab:templates}) \\
 \textsc{SpecCov} (negative) & no rank correlation with human faithfulness ($\rho=0.15$, $p=0.26$); orders generators backwards (\S\ref{speccov-validation}) & the scorer plus 60 specs rated by three humans \\
@@ -282,17 +304,20 @@ CMDP RLHF testbed (partial) & constraint never binds at distilGPT2 scale; with a
   hand-written violations as compliant
   (\S\ref{exp3-results}) & CMDP formulation, KTO/DPO/constrained-proxy/CPPO trainers, capability
   probe, binding-constraint re-run, threshold sweep, benchmark \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabularx}\end{table}
 
- \begin{figure}[t]\centering
-  \includegraphics[width=\textwidth]{fig_architecture.pdf}
+ %% Landscape: the source diagram is 1840pt wide, so at \textwidth it renders its labels
+ %% at about 2.5pt, which is below the print floor. Rotating gives it the page height and
+ %% roughly doubles the effective type size.
+ \begin{sidewaysfigure}\centering
+  \includegraphics[width=0.95\textheight]{fig_architecture.pdf}
   \caption{The IssueSpec five-stage pipeline. Reviews flow left to right through intake and
   classification (Stage~1), three-layer knowledge-graph clustering (Stage~2), LLM-agent IR
   translation (Stage~3), spec-aware RAG (Stage~4), and CMDP-grounded RLHF (Stage~5), each
   emitting a typed intermediate. Yellow checkpoints mark human-in-the-loop review under
   selective prediction~\cite{geifman2017selective, bansal2019beyond}; the red loop propagates Stage~5
   corrections upstream.}\label{fig:architecture}
-  \end{figure}
+  \end{sidewaysfigure}
 %% =====================================================================
 \section{Related Work}\label{related-work}
 
@@ -307,7 +332,7 @@ seven-class app-review taxonomy, and the extension should be read as ours rather
 canonical. Subsequent systems, AR-Miner~\cite{chen2014ar}, CLAP~\cite{villarroel2016release}, SURF~\cite{di2017surf}, BERT/RCNN hybrids~\cite{kaur2023bert, shah2020mining}, and per-aspect sentiment analysis~\cite{guzman2014users}, refined classification accuracy and added aspect-level granularity. D{\k a}browski et al.~\cite{dkabrowski2022analysing} systematically reviewed 182 papers from 2012 to 2020 and report a median classification precision above 81\% with median recall around 83\%. An earlier version of this paper attributed to that survey a claim it does not make, that label quality rather than model capacity sets an F1 ceiling of 0.75 to 0.85. The survey reports precision and recall rather than F1 and attributes limitations to evaluation-dataset size; the label-quality argument is ours, and Section~\ref{exp1-results} is evidence for it rather than a corroboration of theirs. \emph{What breaks for review-to-issue translation:} none of these systems emits a typed developer-routable artifact downstream of the classification label. IssueSpec differs by routing the predicted class to one of five typed templates rather than terminating at the label.
 
 \subsection{Response Generation and Retrieval-Augmented Generation}
-RRGen~\cite{gao2019automating} and CoRe~\cite{gao2021automating} pioneered end-to-end neural response generation on (review, response) pairs without an explicit structured intermediate. Vanilla RAG~\cite{lewis2020retrieval} retrieves relevant past responses in a single pass. \emph{Agentic RAG} variants, Self-RAG~\cite{asai2024self} and DEMONSTRATE-SEARCH-PREDICT (DSP)~\cite{khattab2022demonstrate}, introduce iterative critique-revise loops that, in principle, could close the structured-intermediate gap. \emph{What breaks for review-to-issue translation:} none of these systems names the underlying defect, and our $n=10$ feasibility study (Appendix~\ref{appendix:settings}) shows that agentic iteration without a typed intermediate adds a small gain on a rule-based scorer (0.58$\to$0.70, ten reviews). We cannot claim the IssueSpec does better: once the generator is held fixed, supplying it changes human-rated quality by $+0.04$ ($p = 0.54$, Section~\ref{exp2-results}). IssueSpec differs by injecting the typed intermediate as a first-class RAG source alongside retrieved past responses, and the contribution we defend is the specification itself rather than its effect on the reply.
+RRGen~\cite{gao2019automating} and CoRe~\cite{gao2021automating} pioneered end-to-end neural response generation on (review, response) pairs without an explicit structured intermediate. Vanilla RAG~\cite{lewis2020retrieval} retrieves relevant past responses in a single pass. \emph{Agentic RAG} variants, Self-RAG~\cite{asai2024self} and DEMONSTRATE-SEARCH-PREDICT (DSP)~\cite{khattab2022demonstrate}, introduce iterative critique-revise loops that, in principle, could close the structured-intermediate gap. \emph{What breaks for review-to-issue translation:} none of these systems names the underlying defect, and our $n=10$ feasibility study (\ref{appendix:settings}) shows that agentic iteration without a typed intermediate adds a small gain on a rule-based scorer (0.58$\to$0.70, ten reviews). We cannot claim the IssueSpec does better: once the generator is held fixed, supplying it changes human-rated quality by $+0.04$ ($p = 0.54$, Section~\ref{exp2-results}). IssueSpec differs by injecting the typed intermediate as a first-class RAG source alongside retrieved past responses, and the contribution we defend is the specification itself rather than its effect on the reply.
 
 \subsection{Agentic Software Engineering}
 SWE-Agent~\cite{yang2024swe}, RepairAgent~\cite{bouzenia2025repairagent}, and HyperAgent~\cite{phan2024hyperagent} consume well-structured GitHub issues to produce code patches through multi-step planning and tool use. \emph{What breaks for review-to-issue translation:} the issue specification is the input contract for all three systems; how a defect-tracker entry is constructed from noisy user-facing text is out of scope. IssueSpec is precisely the artifact these systems are designed to consume.
@@ -321,7 +346,7 @@ DPO~\cite{rafailov2023direct}, KTO~\cite{ethayarajh2024kto}, and PPO~\cite{schul
 \subsection{Cross-Category Positioning}
 Table~\ref{tab:cross-category} positions IssueSpec against representative prior systems across the five pipeline stages. Existing systems occupy at most two of the five stages; composing all five with a standardized issue schema, three theoretically-grounded HITL checkpoints, KG-centrality prioritization, and a CMDP-grounded RLHF formulation is the structural contribution of this work.
 
-\begin{table}[t]
+\begin{table}[!htbp]
   \centering
   \footnotesize
   \setlength{\tabcolsep}{4pt}
@@ -330,7 +355,8 @@ Table~\ref{tab:cross-category} positions IssueSpec against representative prior 
   HITL checkpoints grounded in selective prediction theory, KG-centrality prioritization, and a
   CMDP-grounded RLHF formulation. ``--'' denotes a stage absent from that system.}
   \label{tab:cross-category}
-  \begin{tabular}{lccccc}
+  \setlength{\tabcolsep}{3pt}\scriptsize
+  \begin{tabularx}{\textwidth}{@{}L ccccc@{}}
   \toprule
   System & Classify & Cluster & IssueSpec & Response & RLHF \\
   \midrule
@@ -339,27 +365,27 @@ Table~\ref{tab:cross-category} positions IssueSpec against representative prior 
   SURF~\cite{di2017surf} & intention & LDA & -- & summary & -- \\
   RRGen~\cite{gao2019automating} & -- & -- & -- & seq2seq & -- \\
   CoRe~\cite{gao2021automating} & -- & -- & -- & context-aware retrieval & -- \\
-  Maalej~\cite{maalej2015bug} & 7-class & -- & -- & -- & -- \\
+  Maalej~\cite{maalej2015bug} & 4-class & -- & -- & -- & -- \\
   ReviewGraph~\cite{de2025reviewgraph} & rating & KG & -- & -- & -- \\
   SWE-Agent~\cite{yang2024swe} & -- & -- & consumes (not produces) & -- & -- \\
   Safe-RLHF~\cite{dai2024safe} & -- & -- & -- & general & dual-CMDP (general) \\
   \textbf{IssueSpec (ours)} & \textbf{V5 corrected} & \textbf{KG + PageRank} &
   \textbf{type-routed schema} & \textbf{spec-aware RAG} & \textbf{dual-CMDP (dev-rel)} \\
   \bottomrule
-  \end{tabular}
+  \end{tabularx}
   \end{table}
 
 %% =====================================================================
 \section{The IssueSpec Pipeline}\label{system-design}
 
-The IssueSpec pipeline (Fig.~\ref{fig:architecture}) is a five-stage information-extraction cascade~\cite{hearst1999untangling, sarawagi2008information}. Stages~1--3 produce the typed IR from raw reviews. Stage~4 uses it to drive spec-aware response generation. Stage~5 aligns the response generator via constrained RLHF. We describe each stage in turn, with the verified-by-citation taxonomy templates in Table~\ref{tab:templates}. Table~\ref{tab:acronyms} collects every abbreviation used in the paper, so a reader can enter at any section. This section describes the framework only. Evaluation design, baselines, and metrics are in Section~\ref{experiments}, exact settings and hyperparameters are in Appendix~\ref{appendix:settings}, and results are in Section~\ref{results}.
+The IssueSpec pipeline (Fig.~\ref{fig:architecture}) is a five-stage information-extraction cascade~\cite{hearst1999untangling, sarawagi2008information}. Stages~1--3 produce the typed IR from raw reviews. Stage~4 uses it to drive spec-aware response generation. Stage~5 aligns the response generator via constrained RLHF. We describe each stage in turn, with the verified-by-citation taxonomy templates in Table~\ref{tab:templates}. Table~\ref{tab:acronyms} collects every abbreviation used in the paper, so a reader can enter at any section. This section describes the framework only. Evaluation design, baselines, and metrics are in Section~\ref{experiments}, exact settings and hyperparameters are in \ref{appendix:settings}, and results are in Section~\ref{results}.
 
 Before the stages themselves, Table~\ref{tab:why-stages} answers the question a five-stage
 pipeline invites: what forces each stage to exist, and what breaks without it. We answer it with
 the ablation that removes each one, so the justification is measured rather than asserted, and
 two of the five turn out not to justify themselves.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{Why each stage exists, and what the ablation says when it is removed. Two stages do not
 justify themselves on our own evidence, and we say so.}\label{tab:why-stages}
 \begin{tabular}{@{}p{1.5cm}p{3.4cm}p{3.4cm}p{2.6cm}@{}}\toprule
@@ -371,9 +397,9 @@ stage & the problem it must solve & why it cannot be skipped & measured verdict 
 5 CMDP & replies must not over-promise or leak internals & compliance is a hard constraint, not a reward term & \textbf{no}: constraint never binds, and the detector scores written violations as compliant \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{Abbreviations used in this paper, with the section that introduces each.}\label{tab:acronyms}
-\begin{tabular}{@{}llc@{}}\toprule
+\begin{tabularx}{\textwidth}{@{}lXc@{}}\toprule
 term & expansion & first used \\\midrule
 IR & Intermediate Representation, the typed issue spec & \S\ref{introduction} \\
 IssueSpec & one filled instance of the typed IR & \S\ref{introduction} \\
@@ -389,7 +415,7 @@ PPO & Proximal Policy Optimization; CPPO is its constrained form & \S\ref{aim3} 
 SFT & Supervised Fine-Tuning, the RLHF starting policy & \S\ref{aim3} \\
 NFR & Non-Functional Requirement (ISO/IEC~25010) & \S\ref{aim1} \\
 DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-validation-results} \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabularx}\end{table}
 
 \subsection{Producing the IR}\label{aim1}
 
@@ -421,7 +447,7 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   learning~\cite{northcutt2021confident} against a verified anchor of
   5{,}230 expert-labeled reviews plus 5{,}008 from
   Maalej~\cite{maalej2015bug}, gated by a confidence threshold on the anchor and a probability
-  ceiling on the LLM label (Appendix~\ref{appendix:settings}); this keeps the good labels and
+  ceiling on the LLM label (\ref{appendix:settings}); this keeps the good labels and
   corrects only the wrong ones. The compatibility class needs a separate fix:
   only 8 of 215{,}583 LLM labels are tagged \texttt{compatibility}, and
   Maalej has none. We seed it with 200 template-generated synthetic
@@ -453,9 +479,11 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   rather than what we implement.
 
   The second layer clusters reviews first by aspect, then sub-clusters
-  within each aspect using sentence
-  embeddings~\cite{reimers2019sentence}, UMAP~\cite{mcinnes2018umap},
-  and HDBSCAN~\cite{mcinnes2017hdbscan}. Aspect-first keeps each
+  within each aspect using sentence embeddings~\cite{reimers2019sentence} and
+  HDBSCAN~\cite{mcinnes2017hdbscan} directly on the 384-dimensional vectors. Earlier versions of
+  this paper also named UMAP~\cite{mcinnes2018umap} here; that was wrong. UMAP is used in the flat
+  baseline this design is compared against, not in the released KG-hierarchical run, which applies
+  no dimensionality reduction. Aspect-first keeps each
   sub-cluster on one theme: a flat clusterer mixes ``battery on Samsung''
   with ``battery in dark mode'' because both share lexical content. The result is 605 aspect-grounded sub-clusters of mean size 15.9, against 194 flat clusters of
   mean size 471.0. An earlier version of this paper reported 3.0 and 51.5; those were the number
@@ -510,14 +538,15 @@ tokens in its source cluster. It is not a faithfulness classifier, and Section~\
 reports the experiment that establishes this. We describe it here because it is part of the
 released pipeline and because the negative result only makes sense against its definition.
 
-\begin{table}[t]
+\begin{table}[!htbp]
   \centering
   \footnotesize
   \caption{IssueSpec standardized issue schema. Each issue type follows the dominant industry or
   HCI standard. Each template is drawn from a published standard or reference and reproduces its
   named fields; we ran no conformance check against the standards documents themselves, so
   ``drawn from'' should not be read as ``certified against''.}\label{tab:templates}
-  \begin{tabular}{@{}p{2.2cm}p{8.5cm}p{6.0cm}@{}}
+  \setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\textwidth}{@{}p{2.7cm}LL@{}}
   \toprule
   Issue type & Template (citation) & Justification \\
   \midrule
@@ -545,7 +574,7 @@ released pipeline and because the negative result only makes sense against its d
   versions)~\cite{joorabchi2013real} & Device/OS fragmentation is the canonical mobile-QA
   reporting axis \\   
   \bottomrule
-  \end{tabular}
+  \end{tabularx}
   \end{table}
 
 \subsection{Using the IR in Response Generation}\label{aim2}
@@ -563,13 +592,13 @@ Stage~5 frames alignment as a CMDP~\cite{altman2021constrained, dai2024safe}:
   maximize a quality reward subject to a compliance constraint,
   \[
   \max_\theta \mathbb{E}_{\pi_\theta}[R_{\text{quality}}] \quad
-  \text{s.t.} \quad \mathbb{E}_{\pi_\theta}[C_{\text{compliance}}] \le
+  \text{s.t.} \quad \mathbb{E}_{\pi_\theta}[C_{\text{compliance}}] \ge
   \tau,
   \] 
   with the Lagrangian relaxation
   \[
-  \mathcal{L}(\theta,\lambda) = \mathbb{E}_{\pi_\theta}[R - \lambda(C -
-  \tau)]    
+  \mathcal{L}(\theta,\lambda) = \mathbb{E}_{\pi_\theta}[R + \lambda(C -
+  \tau)]
   \]
   collapsing gracefully to single-objective optimization whenever the
   constraint is already satisfied. We use a CMDP rather than a scalar
@@ -599,7 +628,7 @@ Stage~5 frames alignment as a CMDP~\cite{altman2021constrained, dai2024safe}:
 \section{Experimental Setup}\label{experiments}
 
 \subsection{Dataset, Deduplication, and Annotation Provenance}
-We use the RRGen corpus~\cite{gao2019automating}: 310{,}031 review-response pairs from 58 Android applications. After exact-text deduplication that removes $94{,}448$ duplicate reviews ($-30.5\%$ of the raw corpus), 215{,}583 unique reviews form the working corpus, labeled across the seven Maalej~\cite{maalej2015bug} classes. Evaluation additionally uses a 490-review expert gold standard (70 per class $\times$ 7 classes) and 100 stratified clusters for Stage~3 evaluation.
+We use the RRGen corpus~\cite{gao2019automating}: 310{,}031 review-response pairs from 58 Android applications. After exact-text deduplication that removes $94{,}448$ duplicate reviews ($-30.5\%$ of the raw corpus), 215{,}583 unique reviews form the working corpus, labeled across our seven-class extension of the Maalej taxonomy~\cite{maalej2015bug} (Section~\ref{related-work}). Evaluation additionally uses a 490-review expert gold standard (70 per class $\times$ 7 classes) and 100 stratified clusters for Stage~3 evaluation.
 
 \textbf{Annotation provenance (full corpus, 215{,}583 reviews).} Of the working corpus, 79.49\% of labels come from the V2 LLM annotator with no override, 18.08\% are cleanlab-corrected against the verified anchor, and 2.43\% are directly human-verified by the lead author. The lead-author-versus-V2-LLM deviation is 25\% on the 5{,}230-row human-verified anchor
 (1{,}307 deviations, 24.99\%). We previously described this as replicated across two independent
@@ -655,7 +684,7 @@ the same reason we disclose the Stage-4 case in Section~\ref{exp2-results}: a pa
 check for non-independent ratings should say where its own artifact failed that check. Both
 rounds are released.
 
-\textbf{(ii)~Independent human rater panel (three raters).} The 490-review classification gold is annotated independently by the lead author and two further human raters on the identical item set. Each rater sees the classifier's predicted label and marks it correct (Y) or wrong (N), supplying the correct class when N. All three complete a shared 20-review calibration round with adjudicated disagreements before the main task opens, and work from the same written decision rules (Appendix~\ref{appendix:annotators}). The gold label for each review is the majority vote over the three raters. This is a verification task rather than open labeling, which is why agreement is high relative to free-labeling studies of app reviews.
+\textbf{(ii)~Independent human rater panel (three raters).} The 490-review classification gold is annotated independently by the lead author and two further human raters on the identical item set. Each rater sees the classifier's predicted label and marks it correct (Y) or wrong (N), supplying the correct class when N. All three complete a shared 20-review calibration round with adjudicated disagreements before the main task opens, and work from the same written decision rules (\ref{appendix:annotators}). The gold label for each review is the majority vote over the three raters. This is a verification task rather than open labeling, which is why agreement is high relative to free-labeling studies of app reviews.
 
 \textbf{(iii)~Stage~4 rater panel (same three people).} Stage~4 was rated twice. The first round scored a 400-row set whose conditions were produced by template composers; we discarded it, for reasons given in Section~\ref{exp2-results}. The round we report is a 200-row set in which both arms come from the same model and differ only in whether the IssueSpec was supplied. All three raters scored all 200 rows independently, blind to the condition behind each reply, and we release both rounds together with the independence check that separates them. Three human annotators contribute in total, the lead author and two collaborators; categories (iv) and (v) are model raters, not people.
 
@@ -665,7 +694,7 @@ rounds are released.
 
 Table~\ref{tab:annot-deviation} consolidates agreement and disagreement across all pairs.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
   \caption{Annotator-vs-LLM and inter-annotator deviation. The $\approx 25\%$ deviation is
   measured on the human-verified anchor; the $\kappa$-progression reaches moderate
   agreement~\cite{landis1977measurement}; the V5 endorsement row is a consistency check, not independent validation, since V5 trained on those corrections;
@@ -756,7 +785,7 @@ Sections~\ref{exp1-results}, \ref{exp2-results}, and~\ref{load-bearing}.
 Table~\ref{tab:findings} states what we take away from the section before the evidence for it,
 so a reader can decide which subsections to read.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{What the experiments establish, in one line each. Negative findings are marked, and
 they are findings rather than caveats.}\label{tab:findings}
 \begin{tabular}{@{}p{0.6cm}p{7.6cm}p{2.4cm}@{}}\toprule
@@ -791,7 +820,7 @@ for the criterion because it is the name of the thresholds, but a reader should 
 schema conformance and nothing more. Under strict content-validity criteria (at
 least three reproduction steps with action verbs, descriptions $\geq 30$ words, and a full
 As-a/I-want/So-that triple for user stories), the LLM-with-taxonomy condition achieves a
-substantive template-fill rate of 0.96 (Table~\ref{tab:stage3}). Free-form LLM reaches 0.69, the same as the lead-author reference set ($n=20$). Raw concatenation lands at 0.34, and real GitHub issues mined from three open-source Android projects reach 0.53. The LLM-vs-GitHub gap reflects coverage rather than content quality: the LLM is prompted to fill every field, whereas humans leave optional fields blank. A very-strict sensitivity sweep preserves the ordering, Claude drops from 0.97 to 0.71, with the Claude-vs-GitHub gap shifting only $-0.085$.
+substantive template-fill rate of 0.96 (Table~\ref{tab:stage3}). Free-form LLM reaches 0.69, the same as the lead-author reference set ($n=20$). Raw concatenation lands at 0.34, and real GitHub issues mined from three open-source Android projects reach 0.53. The LLM-vs-GitHub gap reflects coverage rather than content quality: the LLM is prompted to fill every field, whereas humans leave optional fields blank. A very-strict sensitivity sweep preserves the ordering, Claude drops from 0.96 to 0.71, with the Claude-vs-GitHub gap shifting only $-0.085$.
 
 \textbf{\textsc{SpecCov} scores, and a correction to how they were computed.} An earlier
 version of our scorer applied per-condition floors, raising \texttt{raw\_summary} to 5 and the
@@ -805,7 +834,9 @@ them; the floors had inflated the two comparison conditions, so removing them ma
 system look better rather than worse, and we note that explicitly so the direction of the
 correction is on the record. Read on their own these numbers rank raw concatenation highest at 4.47, which is the trivial
 upper bound obtained by copying the source, with the taxonomy condition second at 4.19. Section~\ref{speccov-validation} shows they should not be read on their own. Top-ranked aspects by PageRank centrality are
-\texttt{ad} (0.040), \texttt{phone} (0.011), and \texttt{battery} (0.007).
+\texttt{ad} (0.040), \texttt{phone} (0.011), and \texttt{ads} (0.010), with \texttt{edit}
+(0.009) and \texttt{battery} (0.007) next. An earlier version listed \texttt{battery} third,
+skipping the two above it.
 
 \subsubsection*{SpecCov does not measure faithfulness}\label{speccov-validation}
 An extractive-coverage score is only useful if it agrees with what a person calls faithful. We
@@ -871,7 +902,7 @@ caveats belong with these numbers. The four-way panel is bug-report clusters onl
 is where the two Qwen runs overlap, and the judge is itself Qwen2.5-3B-Instruct, so the
 Qwen2.5-3B row carries a self-preference risk that the others do not.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{Cross-family five-dimension rubric, same Qwen2.5-3B judge as
 Table~\ref{tab:rubric}, on matched clusters. Panel A is the four-way comparison on clusters
 covered by every generator (bug reports only). Panel B widens the Claude-versus-Llama comparison
@@ -895,7 +926,7 @@ Claude (Anthropic) & 28 & \textbf{4.01} & 3.86 & 4.54 & 3.75 & 4.29 & 3.64 \\
 Llama-3.3-70B (Meta) & 28 & 3.64 & 3.39 & 4.46 & 3.14 & 3.82 & 3.36 \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{Multi-LLM evidence summary across three model families (Anthropic, Meta, Alibaba).
 Cross-family rank preservation in Stage~3 is the structural-bias control; LLM-as-judge
 calibration $\Delta$ vs the lead author bounds judge bias. \emph{Two rows carry caveats a reader
@@ -939,7 +970,7 @@ type-routed generator, which is the same effect the 0.96-versus-0.53 template-fi
 against real GitHub issues. It is not evidence that the specs are better than expert judgement
 on content, and we do not read it that way.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{Experiment~1 five-dimension rubric (Qwen-judge, 1--5 scale) on the \emph{complete}
 spec set: all 100 taxonomy specs and all 20 lead-author reference specs, scored in one run so
 the two columns are directly comparable. The middle column repeats the earlier stratified
@@ -958,7 +989,7 @@ overall mean & \textbf{3.94} & 3.89 & 3.45 \\
 sd across specs & 0.59 & -- & 0.41 \\
 \bottomrule\end{tabular}\end{table}
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
   \caption{Experiment~1 substantive template-fill (strict criteria). The 0.96 vs 0.53
   LLM-vs-GitHub gap is coverage, not content quality; the strict-vs-very-strict sweep preserves
   ordering. The exact-zero cells in \texttt{bugs:repro} and \texttt{features:story} columns for
@@ -1029,7 +1060,7 @@ split is reconstructed by replaying the cap rather than read from a saved traini
 it is a faithful reconstruction rather than a recorded fact; we release the replay script so the
 reconstruction can be checked. The choice of confident-learning thresholds is not load-bearing: a full $3\times 3$ grid over $(\text{anchor\_conf}, \text{max\_llm\_prob}) \in \{0.65, 0.70, 0.75\}\times\{0.15, 0.20, 0.25\}$ keeps V5 endorsement in an 82.7--91.0\% band, with the headline $(0.70, 0.20)$ at 88.66\% sitting near the grid center.
 
-\begin{figure}[t]\centering
+\begin{figure}[!ht]\centering
   \includegraphics[width=\linewidth]{fig_kappa_progression.png}
   \caption{Stage-1 classifier recovery and the gold standard it is measured against. \emph{Left:}
   Cohen's $\kappa$ for the three classifier versions, plotted twice, once against the
@@ -1042,7 +1073,7 @@ reconstruction can be checked. The choice of confident-learning thresholds is no
   \label{fig:kappa}
 \end{figure}
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
   \caption{Cohen's $\kappa$ progression vs the 490-review expert gold. Three
   Landis-Koch~\cite{landis1977measurement} bands crossed; cleanlab correction follows the
   confident-learning procedure of~\cite{northcutt2021confident}. The final column repeats the
@@ -1055,7 +1086,7 @@ reconstruction can be checked. The choice of confident-learning thresholds is no
   \textbf{V5 classifier} & 489 & \textbf{0.592} & \textbf{moderate} & \textbf{0.590} \\
   \bottomrule\end{tabular}\end{table}
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
   \caption{Per-class F1 against the 490-review expert gold. V2 LLM is blind to the two minority
   classes (compatibility, performance). The verified-anchor procedure with targeted augmentation
   recovers them.}\label{tab:perclass-f1}
@@ -1167,7 +1198,7 @@ general reader has no reason to weigh, in which case the right evaluation asks d
 than readers. Or the preference may be expectancy on the part of the person who built the system.
 This design cannot separate those, and we do not assert either.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{Stage-4 re-run, same model with and without the IssueSpec, 100 paired reviews, three
 raters, all 200 rows scored by each. All figures are unadjusted, so the gain column equals the difference of the two condition
 columns; slot-stratified values are in the released JSON and differ by at most 0.03. The pooled
@@ -1296,7 +1327,7 @@ downstream payoff in response generation.
 
 \subsection{Cluster Quality and Purity}\label{cluster-validation-results}
 
-\begin{figure}[t]\centering
+\begin{figure}[!ht]\centering
   \includegraphics[width=\linewidth]{fig_cluster_purity.png}
   \caption{Extrinsic cluster purity for the flat baseline and the KG hierarchy, from the saved
   judge audit. \emph{Left:} weighted purity per issue type, flat-194 against KG-605. The KG loses
@@ -1340,13 +1371,19 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   a second reason not to reinstate the comparison, and the count-matched A1b ablation, which
   embeds representatives on both sides, is the only intrinsic comparison we report. The count-controlled A1b ablation below is unaffected, uses a separate
   correctly paired script, and is what our Stage-2 conclusion now rests on. Extrinsic purity is
-  also unaffected: the KG's finer clusters score 0.39 against the flat baseline's 0.625 under the
-  same Qwen judge. By Landis-Koch~\cite{landis1977measurement} convention adapted to weighted purity, the flat baseline's
+  also unaffected in direction, but the two audits are not the same measurement and we should not
+  have written that they were. The flat audit judges 44 clusters with five representative reviews
+  each under a rubric where Y means all five share the sub-theme. The KG audit judges 50 clusters
+  with three representatives each, and the script rewrites the rubric accordingly, so Y means all
+  three and P needs two of three rather than three of five. The three-representative rubric is the
+  harder of the two. The KG's 0.39 against the flat baseline's 0.625 therefore compares
+  differently-scored sets; the asymmetry runs against the KG, so it does not flatter the result we
+  report, but the comparison is weaker than a single-rubric one would be. By Landis-Koch~\cite{landis1977measurement} convention adapted to weighted purity, the flat baseline's
   0.66 lead-author purity sits in the substantial-agreement band ($\geq 0.61$) and KG-605's 0.39
    in the fair band ($\geq 0.21$), reflecting the granularity-vs-coherence trade-off the A1b
   ablation makes explicit.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
   \caption{Stage~2 designs head-to-head, comparing Pure HDBSCAN (without UMAP), original flat
   UMAP+HDBSCAN, and KG-hierarchical. Intrinsic metrics (Davies-Bouldin~\cite{davies1979cluster},
    Calinski-Harabasz~\cite{calinski1974dendrite}, silhouette~\cite{rousseeuw1987silhouettes})
@@ -1397,7 +1434,7 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   seven came back against the design and a summary line would hide that.
   Table~\ref{tab:ablation-summary} collects the verdicts.
 
-\begin{table}[t]\centering\footnotesize
+\begin{table}[!htbp]\centering\footnotesize
 \caption{Ablation summary. ``Removing this hurts'' is the only outcome that justifies a
 component. Three of the seven do not clear that bar, and we report them as findings.}\label{tab:ablation-summary}
 \begin{tabular}{@{}p{0.9cm}p{3.6cm}p{3.6cm}p{2.3cm}@{}}\toprule
@@ -1736,7 +1773,7 @@ the publication.
 We disclose all uses of generative AI in this work in line with Elsevier policy on the use of generative AI in scientific writing. \emph{Writing and code assistance.} An earlier version of this disclosure said that Claude
 assisted only with grammatical refinement, caption polishing, and LaTeX formatting, and that all
 pipeline code, experimental scripts, and analysis were written by the human authors. That
-understated the use, and the repository we release contradicts it: 47 of the 56 commits carry a
+understated the use, and the repository we release contradicts it: at the time of writing 49 of 58 commits (84\%) carry a
 \texttt{Co-Authored-By: Claude} trailer, including commits that add pipeline stages, the
 constrained-PPO trainer, the analysis scripts, and the correction passes described in
 Section~\ref{exp2-results}. The accurate statement is that Anthropic's Claude was used
@@ -1861,7 +1898,7 @@ the artifact refutes. Every structural, framing, experimental-design, and claim 
   role-based and chain-of-thought) served as the second and third raters in the 99-review
   cluster-purity Krippendorff $\alpha$ calibration, which is an LLM-assisted panel and not one of
   the human rounds. For the 5{,}230-record verified anchor, which covers 5{,}229 distinct corpus rows, annotators classified each review into
-  one of seven Maalej-Nabil classes (\texttt{bug\_report}, \texttt{feature\_request},
+  one of the seven classes in our extension of the Maalej-Nabil taxonomy (\texttt{bug\_report}, \texttt{feature\_request},
   \texttt{performance}, \texttt{usability}, \texttt{compatibility}, \texttt{praise},
   \texttt{other}) with multi-label assignment permitted when a review carried multiple concerns;
    reviews below the ``fairly confident'' threshold were skipped and excluded from the anchor.

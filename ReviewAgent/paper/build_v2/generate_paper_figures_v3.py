@@ -31,7 +31,8 @@ KG_AUDIT = REPO / "data/processed/kg_hierarchical/llm_judge_purity_audit_qwen.js
 AGREEMENT = REPO / "data/processed/inter_annotator/round2_agreement.json"
 
 GREY, BLUE, ORANGE = "#9CA3AF", "#3B82F6", "#D97706"
-GREEN, AMBER, RED = "#10B981", "#FBBF24", "#EF4444"
+# CVD-safe (Paul Tol bright): distinguishable under deuteranopia and in greyscale
+GREEN, AMBER, RED = "#4477AA", "#DDAA33", "#BB5566"
 
 
 def fig_kappa():
@@ -39,13 +40,17 @@ def fig_kappa():
     lead = [0.163, 0.333, 0.592]
     panel = [0.165, 0.334, 0.590]
 
-    fig, (ax, ax2) = plt.subplots(1, 2, figsize=(12, 4.5), dpi=150)
-    bands = [(0.00, 0.20, "#FDF2F8", "slight (<0.20)"),
-             (0.20, 0.40, "#FEFCE8", "fair (0.20-0.40)"),
-             (0.40, 0.60, "#FFF7ED", "moderate (0.40-0.60)"),
-             (0.60, 0.80, "#ECFDF5", "substantial (0.60-0.80)")]
-    for lo, hi, colour, label in bands:
-        ax.axhspan(lo, hi, color=colour, label=label, zorder=0)
+    fig, (ax, ax2) = plt.subplots(1, 2, figsize=(6.5, 3.4), dpi=150)
+    # Hatched rather than tinted: the four band fills were all ~245-250 luminance, so in
+    # greyscale and under common colour-vision deficiencies they were a single flat tone
+    # and the band identity was carried by colour alone.
+    bands = [(0.00, 0.20, "", "slight (<0.20)"),
+             (0.20, 0.40, "//", "fair (0.20-0.40)"),
+             (0.40, 0.60, "\\\\", "moderate (0.40-0.60)"),
+             (0.60, 0.80, "xx", "substantial (0.60-0.80)")]
+    for lo, hi, hatch, label in bands:
+        ax.axhspan(lo, hi, facecolor="none", edgecolor="#9CA3AF", hatch=hatch,
+                   linewidth=0.4, label=label, zorder=0)
 
     x = np.arange(len(stages))
     w = 0.36
@@ -102,7 +107,7 @@ def fig_human_eval():
     spec_err = [0.66, 0.74, 0.61, 0.40]
     colours = [GREY, BLUE, AMBER, RED]
 
-    fig, (ax_q, ax_h) = plt.subplots(1, 2, figsize=(12, 4.5), dpi=150)
+    fig, (ax_q, ax_h) = plt.subplots(1, 2, figsize=(6.5, 3.4), dpi=150)
     x = np.arange(len(conds))
     w = 0.36
     b1 = ax_q.bar(x - w / 2, quality, w, yerr=qual_err, capsize=4, color="#4B5563",
@@ -152,7 +157,7 @@ def fig_cluster_purity():
         n = entry["Y"] + entry["P"] + entry["N"]
         return (entry["Y"] + 0.5 * entry["P"]) / n if n else float("nan")
 
-    fig, (ax_p, ax_b) = plt.subplots(1, 2, figsize=(12, 4.5), dpi=150)
+    fig, (ax_p, ax_b) = plt.subplots(1, 2, figsize=(6.5, 3.4), dpi=150)
 
     x = np.arange(len(classes))
     w = 0.38

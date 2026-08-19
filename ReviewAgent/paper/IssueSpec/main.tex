@@ -231,7 +231,7 @@ To address these challenges, we propose \textbf{IssueSpec}, a framework for stru
 
 \textbf{What is new, and what is assembled.} Several components of this pipeline are existing
 technique used as intended: RoBERTa for multi-label classification, confident
-learning~\cite{northcutt2021confident} for label noise, Sentence-BERT with UMAP and HDBSCAN for
+learning~\cite{northcutt2021confident} for label noise, Sentence-BERT with HDBSCAN for
 clustering, PageRank for centrality, retrieval-augmented generation for response drafting, and
 the CMDP formulation of Altman~\cite{altman2021constrained}. We do not claim any of these. Three things are
 new. \emph{First}, the typed intermediate representation itself: a review is routed by predicted
@@ -359,7 +359,7 @@ Table~\ref{tab:cross-category} positions IssueSpec against representative prior 
   SURF~\cite{di2017surf} & intention & LDA & -- & summary & -- \\
   RRGen~\cite{gao2019automating} & -- & -- & -- & seq2seq & -- \\
   CoRe~\cite{gao2021automating} & -- & -- & -- & context-aware retrieval & -- \\
-  Maalej~\cite{maalej2015bug} & 7-class & -- & -- & -- & -- \\
+  Maalej~\cite{maalej2015bug} & 4-class & -- & -- & -- & -- \\
   ReviewGraph~\cite{de2025reviewgraph} & rating & KG & -- & -- & -- \\
   SWE-Agent~\cite{yang2024swe} & -- & -- & consumes (not produces) & -- & -- \\
   Safe-RLHF~\cite{dai2024safe} & -- & -- & -- & general & dual-CMDP (general) \\
@@ -472,9 +472,11 @@ DB / CH & Davies-Bouldin / Calinski-Harabasz cluster indices & \S\ref{cluster-va
   rather than what we implement.
 
   The second layer clusters reviews first by aspect, then sub-clusters
-  within each aspect using sentence
-  embeddings~\cite{reimers2019sentence}, UMAP~\cite{mcinnes2018umap},
-  and HDBSCAN~\cite{mcinnes2017hdbscan}. Aspect-first keeps each
+  within each aspect using sentence embeddings~\cite{reimers2019sentence} and
+  HDBSCAN~\cite{mcinnes2017hdbscan} directly on the 384-dimensional vectors. Earlier versions of
+  this paper also named UMAP~\cite{mcinnes2018umap} here; that was wrong. UMAP is used in the flat
+  baseline this design is compared against, not in the released KG-hierarchical run, which applies
+  no dimensionality reduction. Aspect-first keeps each
   sub-cluster on one theme: a flat clusterer mixes ``battery on Samsung''
   with ``battery in dark mode'' because both share lexical content. The result is 605 aspect-grounded sub-clusters of mean size 15.9, against 194 flat clusters of
   mean size 471.0. An earlier version of this paper reported 3.0 and 51.5; those were the number
@@ -579,13 +581,13 @@ Stage~5 frames alignment as a CMDP~\cite{altman2021constrained, dai2024safe}:
   maximize a quality reward subject to a compliance constraint,
   \[
   \max_\theta \mathbb{E}_{\pi_\theta}[R_{\text{quality}}] \quad
-  \text{s.t.} \quad \mathbb{E}_{\pi_\theta}[C_{\text{compliance}}] \le
+  \text{s.t.} \quad \mathbb{E}_{\pi_\theta}[C_{\text{compliance}}] \ge
   \tau,
   \] 
   with the Lagrangian relaxation
   \[
-  \mathcal{L}(\theta,\lambda) = \mathbb{E}_{\pi_\theta}[R - \lambda(C -
-  \tau)]    
+  \mathcal{L}(\theta,\lambda) = \mathbb{E}_{\pi_\theta}[R + \lambda(C -
+  \tau)]
   \]
   collapsing gracefully to single-objective optimization whenever the
   constraint is already satisfied. We use a CMDP rather than a scalar
@@ -615,7 +617,7 @@ Stage~5 frames alignment as a CMDP~\cite{altman2021constrained, dai2024safe}:
 \section{Experimental Setup}\label{experiments}
 
 \subsection{Dataset, Deduplication, and Annotation Provenance}
-We use the RRGen corpus~\cite{gao2019automating}: 310{,}031 review-response pairs from 58 Android applications. After exact-text deduplication that removes $94{,}448$ duplicate reviews ($-30.5\%$ of the raw corpus), 215{,}583 unique reviews form the working corpus, labeled across the seven Maalej~\cite{maalej2015bug} classes. Evaluation additionally uses a 490-review expert gold standard (70 per class $\times$ 7 classes) and 100 stratified clusters for Stage~3 evaluation.
+We use the RRGen corpus~\cite{gao2019automating}: 310{,}031 review-response pairs from 58 Android applications. After exact-text deduplication that removes $94{,}448$ duplicate reviews ($-30.5\%$ of the raw corpus), 215{,}583 unique reviews form the working corpus, labeled across our seven-class extension of the Maalej taxonomy~\cite{maalej2015bug} (Section~\ref{related-work}). Evaluation additionally uses a 490-review expert gold standard (70 per class $\times$ 7 classes) and 100 stratified clusters for Stage~3 evaluation.
 
 \textbf{Annotation provenance (full corpus, 215{,}583 reviews).} Of the working corpus, 79.49\% of labels come from the V2 LLM annotator with no override, 18.08\% are cleanlab-corrected against the verified anchor, and 2.43\% are directly human-verified by the lead author. The lead-author-versus-V2-LLM deviation is 25\% on the 5{,}230-row human-verified anchor
 (1{,}307 deviations, 24.99\%). We previously described this as replicated across two independent
@@ -807,7 +809,7 @@ for the criterion because it is the name of the thresholds, but a reader should 
 schema conformance and nothing more. Under strict content-validity criteria (at
 least three reproduction steps with action verbs, descriptions $\geq 30$ words, and a full
 As-a/I-want/So-that triple for user stories), the LLM-with-taxonomy condition achieves a
-substantive template-fill rate of 0.96 (Table~\ref{tab:stage3}). Free-form LLM reaches 0.69, the same as the lead-author reference set ($n=20$). Raw concatenation lands at 0.34, and real GitHub issues mined from three open-source Android projects reach 0.53. The LLM-vs-GitHub gap reflects coverage rather than content quality: the LLM is prompted to fill every field, whereas humans leave optional fields blank. A very-strict sensitivity sweep preserves the ordering, Claude drops from 0.97 to 0.71, with the Claude-vs-GitHub gap shifting only $-0.085$.
+substantive template-fill rate of 0.96 (Table~\ref{tab:stage3}). Free-form LLM reaches 0.69, the same as the lead-author reference set ($n=20$). Raw concatenation lands at 0.34, and real GitHub issues mined from three open-source Android projects reach 0.53. The LLM-vs-GitHub gap reflects coverage rather than content quality: the LLM is prompted to fill every field, whereas humans leave optional fields blank. A very-strict sensitivity sweep preserves the ordering, Claude drops from 0.96 to 0.71, with the Claude-vs-GitHub gap shifting only $-0.085$.
 
 \textbf{\textsc{SpecCov} scores, and a correction to how they were computed.} An earlier
 version of our scorer applied per-condition floors, raising \texttt{raw\_summary} to 5 and the
@@ -821,7 +823,9 @@ them; the floors had inflated the two comparison conditions, so removing them ma
 system look better rather than worse, and we note that explicitly so the direction of the
 correction is on the record. Read on their own these numbers rank raw concatenation highest at 4.47, which is the trivial
 upper bound obtained by copying the source, with the taxonomy condition second at 4.19. Section~\ref{speccov-validation} shows they should not be read on their own. Top-ranked aspects by PageRank centrality are
-\texttt{ad} (0.040), \texttt{phone} (0.011), and \texttt{battery} (0.007).
+\texttt{ad} (0.040), \texttt{phone} (0.011), and \texttt{ads} (0.010), with \texttt{edit}
+(0.009) and \texttt{battery} (0.007) next. An earlier version listed \texttt{battery} third,
+skipping the two above it.
 
 \subsubsection*{SpecCov does not measure faithfulness}\label{speccov-validation}
 An extractive-coverage score is only useful if it agrees with what a person calls faithful. We
@@ -1351,8 +1355,14 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   a second reason not to reinstate the comparison, and the count-matched A1b ablation, which
   embeds representatives on both sides, is the only intrinsic comparison we report. The count-controlled A1b ablation below is unaffected, uses a separate
   correctly paired script, and is what our Stage-2 conclusion now rests on. Extrinsic purity is
-  also unaffected: the KG's finer clusters score 0.39 against the flat baseline's 0.625 under the
-  same Qwen judge. By Landis-Koch~\cite{landis1977measurement} convention adapted to weighted purity, the flat baseline's
+  also unaffected in direction, but the two audits are not the same measurement and we should not
+  have written that they were. The flat audit judges 44 clusters with five representative reviews
+  each under a rubric where Y means all five share the sub-theme. The KG audit judges 50 clusters
+  with three representatives each, and the script rewrites the rubric accordingly, so Y means all
+  three and P needs two of three rather than three of five. The three-representative rubric is the
+  harder of the two. The KG's 0.39 against the flat baseline's 0.625 therefore compares
+  differently-scored sets; the asymmetry runs against the KG, so it does not flatter the result we
+  report, but the comparison is weaker than a single-rubric one would be. By Landis-Koch~\cite{landis1977measurement} convention adapted to weighted purity, the flat baseline's
   0.66 lead-author purity sits in the substantial-agreement band ($\geq 0.61$) and KG-605's 0.39
    in the fair band ($\geq 0.21$), reflecting the granularity-vs-coherence trade-off the A1b
   ablation makes explicit.
@@ -1730,7 +1740,7 @@ We thank the human annotators who produced the verified anchor and the lead-auth
   role-based and chain-of-thought) served as the second and third raters in the 99-review
   cluster-purity Krippendorff $\alpha$ calibration, which is an LLM-assisted panel and not one of
   the human rounds. For the 5{,}230-record verified anchor, which covers 5{,}229 distinct corpus rows, annotators classified each review into
-  one of seven Maalej-Nabil classes (\texttt{bug\_report}, \texttt{feature\_request},
+  one of the seven classes in our extension of the Maalej-Nabil taxonomy (\texttt{bug\_report}, \texttt{feature\_request},
   \texttt{performance}, \texttt{usability}, \texttt{compatibility}, \texttt{praise},
   \texttt{other}) with multi-label assignment permitted when a review carried multiple concerns;
    reviews below the ``fairly confident'' threshold were skipped and excluded from the anchor.
