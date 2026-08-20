@@ -64,7 +64,7 @@ specifics.
 
 ## Contact
 
-Questions? Email Fabiha at farhansaif488@gmail.com.
+Questions? Email Fabiha at fabihajalal@iut-dhaka.edu.
 
 ## Once you're done
 

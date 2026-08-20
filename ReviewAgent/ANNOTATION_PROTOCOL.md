@@ -140,6 +140,6 @@ This ensures the gold-standard set covers the full range of LLM behavior, includ
 
 ---
 
-**Contact:** Fabiha Jalal — farhansaif488@gmail.com
+**Contact:** Fabiha Jalal — fabihajalal@iut-dhaka.edu
 **Advisor:** Hasan Mahmud
 **Project repository:** https://github.com/Fabiha-9876/ReviewAgent
