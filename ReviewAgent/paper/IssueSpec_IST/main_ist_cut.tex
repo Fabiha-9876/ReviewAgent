@@ -62,34 +62,35 @@
             country={Bangladesh}}
 
 \begin{abstract}
-\textbf{Context.} Developers receive millions of noisy app reviews, but defect trackers require
-typed fields (issue type, steps to reproduce, severity, affected component) and cannot consume
-free text. Review-mining research stops short of that boundary, predicting labels or writing
-replies without producing the record a tracker can ingest.
+\textbf{Context.} Defect trackers require typed fields (issue type, steps to reproduce, severity,
+affected component) and cannot consume the free text users write in app reviews. Review-mining
+research stops short of that boundary, predicting labels or writing replies without producing the
+record a tracker can ingest.
 
 \textbf{Objectives.} Can a typed intermediate representation (IR) of a review be produced at
 corpus scale from noisy labels, and does supplying it to a response generator improve the reply
-the user receives? We answer the first yes and the second no, correcting a claim we made
-ourselves.
+the user receives?
 
 \textbf{Methods.} IssueSpec routes each review by issue class into one of five standards-body
 templates and repairs the noisy labels the routing depends on against a human-verified anchor. We
 study 215,583 reviews from 58 Android apps with a 5,230-review anchor, a 490-review three-rater
 gold standard, seven ablations and four language models. The downstream evaluation was run twice,
-the second time with the generator held fixed so that only the IR varies.
+the second time holding the generator fixed.
 
-\textbf{Results.} Production works. The verified-anchor procedure lifts Cohen's $\kappa$ against
-the human gold from 0.163 to 0.592, holding at that level on held-out reviews. Type routing
+\textbf{Results.} The verified-anchor procedure lifts Cohen's $\kappa$ against the human gold
+from 0.163 to 0.592, holding at that level on held-out reviews. Type routing
 reaches 0.96 template-fill against 0.69 without it, a schema-conformance measure rather than a
-quality one. The downstream benefit does not hold. The first round measured $+2.35$ Likert points,
-but its two arms came from different template composers rather than one model; corrected, the gain
-is $+0.04$ ($p = 0.54$), with the three raters disagreeing in direction. Three
-further components fail their own tests: the knowledge-graph layer loses to count-matched flat
-clustering, our faithfulness scorer shows no rank correlation with human judgement, and the
-constrained alignment layer never demonstrates its intended trade-off.
+quality one. The downstream benefit does not hold. An earlier round measured $+2.35$ Likert
+points, but its two arms came from different template composers rather than one model; corrected,
+the gain is $+0.04$ ($p = 0.54$), with the three raters disagreeing in direction. Three further
+components fail their own tests: the knowledge-graph layer loses to count-matched flat clustering,
+our faithfulness scorer shows no rank correlation with human judgement, and the constrained
+alignment layer never demonstrates its intended trade-off.
 
 \textbf{Conclusion.} Typed issue specifications are producible at corpus scale, and that is the
-contribution we defend. Their claimed downstream payoff is not.
+contribution we defend. Pipelines of this shape should be evaluated on what the intermediate
+representation produces rather than on its effect downstream, and a same-model comparison should
+be the default before any such effect is claimed.
 
 \end{abstract}
 
@@ -207,6 +208,20 @@ rating-provenance check & separate independent ratings from derived ones & the d
   corrections upstream.}\label{fig:architecture}
   \end{figure}
 %% =====================================================================
+
+To help others replicate or extend this work, we release the code, the annotation instruments,
+both rating rounds, and a verification script that recomputes the numbers in
+Section~\ref{results} from the released data. The data-availability statement gives the archived
+DOI.
+
+The remainder of this paper is organised as follows. Section~\ref{related-work} positions the
+work against review mining, response generation, knowledge graphs, and constrained alignment.
+Section~\ref{system-design} describes the pipeline and the typed representation it produces.
+Section~\ref{experiments} gives the study design: the research questions, the corpora, the
+annotation protocol, the metrics, and the analysis procedure. Section~\ref{results} answers each
+research question in turn. Section~\ref{discussion} discusses what survives and what does not,
+Section~\ref{threats} addresses threats to validity, and Section~\ref{conclusion} concludes.
+
 \section{Related Work}\label{related-work}
 
 We organize related work by the five gaps of Section~\ref{introduction}, naming what each field
@@ -578,7 +593,7 @@ measuring, and Section~\ref{exp3-results} answers RQ3 in the negative.
 Sections~\ref{cluster-validation-results} and~\ref{ablations} test individual components, and
 Section~\ref{load-bearing} states which earn their place.
 
-\subsection{Is the IR Producible at Scale?}\label{exp1-results}
+\subsection{RQ1: Can a typed IR reach the substantive completeness of human-written GitHub issues?}\label{exp1-results}
 
 Under strict content-validity criteria (three or more action-verb reproduction steps,
 descriptions $\geq 30$ words, a full As-a/I-want/So-that triple), the LLM-with-taxonomy condition
@@ -818,7 +833,7 @@ cross-protocol result stands, since Maalej's text is also not from the synthetic
 should treat every compatibility number in this paper as resting on 300 augmented rows rather than
 on natural corpus evidence.
 
-\subsection{Is the IR Load-Bearing? A Result We Had to Withdraw}\label{exp2-results}
+\subsection{RQ2: Does conditioning a response generator on the IssueSpec improve human-rated response quality?}\label{exp2-results}
 
 An earlier version of this experiment reported that adding the IssueSpec to the response
 generator raised human-rated quality by $2.35$ Likert points. That number was wrong, not in its
@@ -927,7 +942,7 @@ template-composer round in any case, so none supports a claim in either directio
 a null and nothing else; Stage~3's contribution stands on its own evidence in
 Section~\ref{exp1-results} and no longer has a demonstrated downstream payoff.
 
-\subsection{Aligning the IR-Aware Generator at Scale}\label{exp3-results}
+\subsection{RQ3: Can a CMDP-grounded RLHF loop jointly optimize helpfulness and compliance?}\label{exp3-results}
 
   Five policies were trained on distilGPT2 (settings in Appendix~\ref{appendix:settings}).
   Head-to-head on a 100-review test set, BLEU-1~/~ROUGE-L~/~BERTScore~F1 are 0.090~/~0.097~/~0.802
@@ -1147,14 +1162,6 @@ Three claims travel beyond app reviews. \emph{First}, LLM annotation noise on
   minimum reporting standard is a count-matched baseline paired with a domain-utility metric
   (PageRank coverage here).
 
-\subsection{Threats to Validity}
-\emph{Construct.} Template-fill measures coverage rather than content correctness, and \textsc{SpecCov} does not fill that gap (Section~\ref{speccov-validation}), being a lexical-grounding proxy that does not track human faithfulness judgement~\cite{grusky2018newsroom, maynez2020faithfulness, kryscinski2020evaluating, ji2023survey}. The paper therefore has no validated content-correctness measure for Stage~3 and the rubric carries that burden alone; NLI- and QA-based measurement~\cite{laban2022summac, honovich2022true, durmus2020feqa} is the next step.
-\emph{Internal.} The count-versus-structure confound is exposed and resolved by A1b, which reframes the knowledge graph's contribution as prioritization rather than geometry. A threat we did not remove is that the 100 clusters carrying the Stage~3 and Stage~4 results come from the KG pipeline, the layer A1b and A2 find wanting; since flat clustering scores higher on purity, the headline gains may be measured on a slightly worse partition, which would understate rather than inflate them, and re-running Stages~3 and~4 over flat clusters is the cheapest open experiment in the paper. Two further internal threats are stated with the Stage-1 results: the gold standard is seeded with V5's predicted label and stratified over V5's predicted classes (Section~\ref{experiments}), and every \texttt{compatibility} figure rests on 300 augmented training rows, one figure from which we withdraw outright (Section~\ref{exp1-results}).
-\emph{External.} RRGen contains 58 Android apps, named by real package identifier rather than anonymised; V5 transfers zero-shot to the Maalej label space, but Stage~2--4 cross-corpus transfer remains unvalidated, GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}), and every KG-hierarchical number describes a 3.9\% sample of the corpus (Section~\ref{aim1}).
-\emph{Conclusion.} The three-rater agreement on the classification gold ($\kappa = 0.968$) sits well above what free-labeling studies report, which invites the question of whether the raters were genuinely independent. Three properties of the design account for the gap: raters verify a supplied label rather than choose one of seven, collapsing most of the decision space; a 20-review calibration round with adjudicated disagreements precedes the main task; and the protocol fixes eight boundary rules. Residual disagreement is rater-specific rather than random, one rater accounting for most \texttt{usability} reassignments, which is the pattern independent annotation produces.
-\emph{Reliability, and which coefficient belongs to what.} The three agreement statistics here measure different things. The classification gold reaches Fleiss $\kappa = 0.968$ and $0.979$ across three human raters. The reported Stage-4 set, rated by the same three humans on all 200 rows, has quality weighted $\kappa$ of 0.03, 0.04 and 0.50; that is low and it is the number to quote, because the 0.970 to 0.986 range belongs to the discarded round where one arm was visibly broken. The weakest figure, $\alpha = 0.285$ (corrected from a mis-implemented 0.451, Section~\ref{experiments}), comes from a deliberately weaker LLM-assisted panel~\cite{gilardi2023chatgpt}; no claim rests on it alone.
-\emph{Statistical.} Experiment~2 reports a null, so the question is power rather than multiplicity: the design rules out a large effect and not a small one (Section~\ref{exp2-results}). In the other direction, the one cross-family quality difference reaching nominal significance does not survive multiplicity correction and is withdrawn (Section~\ref{exp1-results}).
-
 \subsection{Reproducibility and Extensibility}\label{reproducibility}
 Every numerical claim in Section~\ref{results} is backed by a saved data file, and the full path
 from raw RRGen to Stage~4 output takes about six hours on one GPU workstation. We audited what a
@@ -1198,7 +1205,7 @@ issue type (Table~\ref{tab:multi-llm}), so we no longer use it as a magnitude. T
 neither the headline Claude generations nor Stage~4 response generation was repeated, because that
 needs API budget rather than new code, and the released script runs both sweeps unchanged.
 
-\subsection{Future Work}\label{future-work}
+\subsection*{Future work}\label{future-work}
 Five extensions start from released resources.
 \textbf{(0)}~Replace \textsc{SpecCov} with an entailment-based faithfulness
 measure~\cite{laban2022summac, honovich2022true, durmus2020feqa}, validated against the 60-spec
@@ -1218,7 +1225,18 @@ HyperAgent~\cite{phan2024hyperagent} for defect repair; a spec-level dispatch st
 across all five issue types, and end-to-end patch evaluation is the next step.
 
 %% =====================================================================
-\section{Conclusion}\label{conclusion}
+\section{Threats to Validity}\label{threats}
+We organise threats using the classification of Wohlin et al.~\cite{wohlin2012experimentation},
+and state after each what we did about it.
+
+\subsection{Construct validity} Template-fill measures coverage rather than content correctness, and \textsc{SpecCov} does not fill that gap (Section~\ref{speccov-validation}), being a lexical-grounding proxy that does not track human faithfulness judgement~\cite{grusky2018newsroom, maynez2020faithfulness, kryscinski2020evaluating, ji2023survey}. To mitigate this we validated \textsc{SpecCov} against 60 human faithfulness ratings rather than assuming it worked, and we withdraw it on that evidence rather than reporting it. What remains unmitigated is that Stage~3 then has no validated content-correctness measure at all and the LLM rubric carries that burden alone; NLI- and QA-based measurement~\cite{laban2022summac, honovich2022true, durmus2020feqa} is the next step.
+\subsection{Internal validity} The count-versus-structure confound is exposed and resolved by A1b, which reframes the knowledge graph's contribution as prioritization rather than geometry. A threat we did not remove is that the 100 clusters carrying the Stage~3 and Stage~4 results come from the KG pipeline, the layer A1b and A2 find wanting; since flat clustering scores higher on purity, the headline gains may be measured on a slightly worse partition, which would understate rather than inflate them, and re-running Stages~3 and~4 over flat clusters is the cheapest open experiment in the paper. We mitigate this only partially, by reporting the direction of the bias rather than leaving it unstated: because flat clustering scores higher on purity, this threat works against our numbers rather than for them. Two further internal threats are stated with the Stage-1 results: the gold standard is seeded with V5's predicted label and stratified over V5's predicted classes (Section~\ref{experiments}), and every \texttt{compatibility} figure rests on 300 augmented training rows. We mitigated the first by scoring every classifier against a three-rater majority gold as well as the lead author's, and the second by auditing the augmentation rather than trusting it, which is how we found the capitalisation cue and withdrew the internal F1 that depended on it (Section~\ref{exp1-results}).
+\subsection{External validity} RRGen contains 58 Android apps, named by real package identifier rather than anonymised; V5 transfers zero-shot to the Maalej label space, but Stage~2--4 cross-corpus transfer remains unvalidated, GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}), and every KG-hierarchical number describes a 3.9\% sample of the corpus (Section~\ref{aim1}). We mitigate the single-model threat with a four-model cross-family replication, though its differences are not significant and we report the ordering as descriptive only. The single-corpus threat we do not mitigate; it is the study's main limit on generality.
+\subsection{Conclusion validity} The three-rater agreement on the classification gold ($\kappa = 0.968$) sits well above what free-labeling studies report, which invites the question of whether the raters were genuinely independent. Three properties of the design account for the gap: raters verify a supplied label rather than choose one of seven, collapsing most of the decision space; a 20-review calibration round with adjudicated disagreements precedes the main task; and the protocol fixes eight boundary rules. Residual disagreement is rater-specific rather than random, one rater accounting for most \texttt{usability} reassignments, which is the pattern independent annotation produces. We mitigate the remaining doubt by releasing the per-item votes so a reader can recompute any of these figures, and by disclosing that an earlier round of this annotation failed our own independence check and was discarded. Two of the three raters are co-authors, which we cannot mitigate within this study.
+\emph{Reliability, and which coefficient belongs to what.} The three agreement statistics here measure different things. The classification gold reaches Fleiss $\kappa = 0.968$ and $0.979$ across three human raters. The reported Stage-4 set, rated by the same three humans on all 200 rows, has quality weighted $\kappa$ of 0.03, 0.04 and 0.50; that is low and it is the number to quote, because the 0.970 to 0.986 range belongs to the discarded round where one arm was visibly broken. The weakest figure, $\alpha = 0.285$ (corrected from a mis-implemented 0.451, Section~\ref{experiments}), comes from a deliberately weaker LLM-assisted panel~\cite{gilardi2023chatgpt}; no claim rests on it alone.
+\emph{Statistical.} Experiment~2 reports a null, so the question is power rather than multiplicity: the design rules out a large effect and not a small one (Section~\ref{exp2-results}). In the other direction, the one cross-family quality difference reaching nominal significance does not survive multiplicity correction and is withdrawn (Section~\ref{exp1-results}).
+
+\section{Conclusion and future work}\label{conclusion}
 
   We proposed \textbf{IssueSpec}, a knowledge-graph-grounded typed intermediate representation
   aimed at the five gaps of Section~\ref{introduction}, closing the first three and reporting
