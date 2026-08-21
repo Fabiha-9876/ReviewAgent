@@ -183,9 +183,11 @@ def segment_5():
                                  condition=None)["speccov_score"]
                   for s in specs]
         m = sum(scores) / len(scores)
-        match = "OK" if abs(m - paper) < 0.05 else "DIFF"
-        print(f"  [{match}] {cond:<15s} n={len(scores):3d} "
+        ok = abs(m - paper) < 0.05
+        print(f"  [{'OK' if ok else 'DIFF'}] {cond:<15s} n={len(scores):3d} "
               f"computed={m:.2f}  paper={paper}")
+        if not ok:
+            FAILURES.append(f"SpecCov {cond}: computed {m:.2f}, paper says {paper}")
 
 
 def segment_6():
@@ -360,8 +362,11 @@ def segment_12():
             pred = [str(lab.get(i, lab.get(str(i)))).strip().lower().replace(" ", "_")
                     for i in ids]
             k = kappa(pred, truth)
-            flag = "OK " if abs(k - claimed) < 0.005 else "DIFF"
-            print(f"    [{flag}] {name:20s} n={len(ids)}  kappa={k:.4f}  paper={claimed}")
+            ok = abs(k - claimed) < 0.005
+            print(f"    [{'OK ' if ok else 'DIFF'}] {name:20s} n={len(ids)}  "
+                  f"kappa={k:.4f}  paper={claimed}")
+            if not ok:
+                FAILURES.append(f"{name} kappa: computed {k:.4f}, paper says {claimed}")
 
 
 def segment_13():

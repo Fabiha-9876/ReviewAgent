@@ -1,0 +1,82 @@
+To:  Sadia Tasnim Dhruba; Tazrian Zaman Tushti; Ajwad Abrar; Md Kamrul Hasan; Hasan Mahmud
+Subject: IssueSpec paper: the main result is withdrawn, and I need your sign-off before we submit
+
+Dear all,
+
+Before we submit to Information and Software Technology I have to tell you that the paper has
+changed substantially, and not in the direction any of us wanted. I would rather you hear this
+from me now than from a reviewer.
+
+THE SHORT VERSION
+
+Our headline downstream result was wrong. We reported that supplying the IssueSpec to the
+response generator raised human-rated reply quality by +2.35 Likert points. The two conditions in
+that experiment were not produced by the same model. One came from a template composer that
+emitted lemmatised text averaging 78 words, the other from a composer that produced polished
+prose averaging 123 words with cleanup passes the first never received. A rater comparing them
+was separating two writing styles, not measuring the specification.
+
+I re-ran it with the generator held fixed. The gain is +0.04, p = 0.54. It is a null. The three
+raters also disagree in direction, and I am the only one who prefers the specification arm.
+
+WHAT ELSE CHANGED
+
+Three further claims are withdrawn:
+  - the cross-family quality difference (+0.38, p = 0.015), which fails multiplicity correction
+    over the seven tests it belongs to
+  - the compatibility internal F1 of 0.74, because 194 of the 200 synthetic training rows carry
+    capital letters and not one of the 215,583 corpus rows does, so the model had a free cue
+  - the intrinsic cluster-quality comparison, which compared two designs never run on the same
+    reviews
+
+A Krippendorff alpha we reported as 0.451 is actually 0.285. Our implementation was crediting
+each rating with a coincidence against itself.
+
+The title is now "Typed Issue Specifications from App Reviews: What Scales, and a Downstream
+Benefit That Does Not Replicate". The paper is now an honest negative-replication paper. What
+survives is the typed intermediate representation and the verified-anchor procedure.
+
+There are seventeen numbered corrections in NOTICE_CORRECTION.md in the repository. I would ask
+each of you to read that file rather than take my summary for it.
+
+TWO THINGS THAT AFFECT YOU DIRECTLY
+
+Sadia and Tazrian, two items concern your work and I want you to see them before a reviewer does.
+
+First, the paper now states in its ethics section that you were annotators and are also
+co-authors, and that compensation took the form of authorship. I added this because our argument
+about rater independence has to be read alongside it. Tell me if you would put it differently.
+
+Second, the paper discloses that the first annotation round produced sheets identical to mine
+cell for cell, that I discarded that round, and that we ran a clean second round. I report it
+because a paper that offers a check for non-independent ratings should say where its own artifact
+failed that check. I am not attributing fault to either of you and the text does not. If you want
+to see exactly how it is worded before it goes out, say so and I will send that paragraph.
+
+WHAT I NEED FROM YOU
+
+1. Confirm you are willing to stay on the paper as it now stands. Nobody should be an author on a
+   paper whose main claim they have not seen withdrawn.
+
+2. IST caps submissions at 15,000 words counting each figure and table as 200. Our manuscript is
+   23,392, so it would be returned without review. I have prepared a 14,903-word version that
+   keeps every withdrawal and every declaration but merges four overlapping summary tables and
+   drops five tables and two figures whose values move into prose. I need a decision on which
+   version we submit.
+
+3. The bigger question. The strongest objection a reviewer will raise is that no developer,
+   tracker, or downstream agent ever consumes an IssueSpec anywhere in the paper, even though the
+   whole motivation is the tracker boundary. We can submit now and take that criticism, or spend
+   four to six weeks running a small study with eight to ten developers measuring triage time on
+   IssueSpecs against matched unstructured summaries. That would turn our surviving contribution
+   from a schema into a measured claim. I lean toward running it, but the timeline is yours as
+   much as mine and I would like your view.
+
+Repository and artifact are current. I have also removed the RRGen and Maalej corpora from the
+repository, including from its history, because we had no right to redistribute them and the
+Maalej files contained unredacted personal data of the people who wrote those reviews.
+
+Happy to walk any of you through any of this on a call.
+
+Best,
+Fabiha
