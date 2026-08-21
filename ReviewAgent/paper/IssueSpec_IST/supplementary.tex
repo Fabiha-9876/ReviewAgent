@@ -1,0 +1,165 @@
+%% supplementary.tex --- Supplementary material for the IST submission
+%% Compile standalone with pdfLaTeX. Not counted toward the journal's word limit.
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\title{Supplementary material for\\
+\emph{Typed Issue Specifications from App Reviews: What Scales, and a Downstream Benefit That
+Does Not Replicate}}
+\author{Fabiha Jalal \and Sadia Tasnim Dhruba \and Tazrian Zaman Tushti \and Ajwad Abrar \and
+Md Kamrul Hasan \and Hasan Mahmud}
+\date{}
+
+\begin{document}
+\maketitle
+
+This file carries the implementation settings and the annotator instruments. It is referenced
+from the manuscript and is not required to follow the argument there. We separate it because an
+audit of the manuscript against its own text found that every instrument was named but not
+specified, so a reader could reconstruct the architecture and not a single number. What follows
+is the repair, at a level of detail the manuscript has no room for.
+
+\section{Implementation Settings}\label{appendix:settings}
+
+  Section~\ref{system-design} states what each stage does and why. This appendix gives the
+  settings. An audit of this paper against its own text found that every instrument was named but
+  not specified, so a reader could reconstruct the architecture and not a single number. What
+  follows is the repair. Values are as they appear in the released code; where a setting is a
+  default we say so.
+
+  \textbf{Stage 1, classification.} Backbone \texttt{roberta-base} (cased, 125M), multi-label
+  sigmoid head over seven classes, per-label cut 0.5. Fine-tuning: 3 epochs, learning rate
+  $2\times10^{-5}$, batch size 16, max sequence length 256, AdamW at library defaults, seed 42.
+  Training corpus is the relabelled corpus under a stratified per-class cap of 15{,}000 rows,
+  shuffled at seed 42; class order follows Python dictionary insertion order, which
+  Section~\ref{exp1-results} shows is load-bearing for the held-out split. HITL-1 routes a review
+  to a human when top-class probability $< 0.70$ or the top-two margin $< 0.15$.
+
+  \textbf{Stage 1, the V2 annotator.} The noisy corpus labels come from
+  \texttt{gemini-2.0-flash} at temperature 0.1, 150 max output tokens, prompted for a single
+  primary class plus a self-reported confidence, with four written tie-break rules (device-specific
+  faults route to \texttt{compatibility}, ``slow'' and ``lag'' to \texttt{performance}, and so on).
+  The prompt is released in full. On any API error or parse failure the caller returns
+  \texttt{other} with confidence 0.0, so a reader cannot distinguish a genuine \texttt{other} from
+  a failed call; this is a defect we report rather than a design choice. V1, V3 and V4 are
+  intermediate checkpoints kept for the record and carry no reported result.
+
+  \textbf{Stage 1, the verified-anchor procedure.} Because this is the contribution we defend, we
+  state it as an algorithm. (i) The anchor is 5{,}230 reviews the lead author labelled by hand,
+  drawn from the strata where the V2 labeller was least productive; 5{,}038 of them are
+  \texttt{praise}, so the anchor is not a balanced sample and we do not claim it is one. (ii)
+  Out-of-sample predicted probabilities come from \texttt{sklearn.cross\_val\_predict} with
+  5 folds over a TF-IDF plus linear pipeline. (iii) \texttt{cleanlab.filter.find\_label\_issues}
+  is called with those probabilities and the noisy labels, ranked by self-confidence, and
+  \texttt{get\_label\_quality\_scores} supplies a per-row score. (iv) A flagged row is corrected to
+  the anchor's label only when the anchor's confidence is $\geq 0.70$ and the V2 label's
+  probability is $\leq 0.20$; otherwise the original label is kept. (v) Rows the anchor does not
+  cover, which is 97.6\% of the corpus, are corrected to cleanlab's argmax under the same
+  probability ceiling. The $3\times3$ grid over $(0.65, 0.70, 0.75) \times (0.15, 0.20, 0.25)$ in
+  Section~\ref{exp1-results} sweeps (iv). ``Anchor confidence'' is the annotator's recorded
+  confidence in their own label, not a model quantity.
+
+  \textbf{Stage 1, compatibility augmentation.} 200 template-generated synthetic reviews (device,
+  OS, and screen templates) plus 100 keyword-mined RRGen reviews. Section~\ref{exp1-results}
+  reports two defects in this augmentation that a reader needs before using the class.
+
+  \textbf{Stage 2.} Embeddings from \texttt{all-MiniLM-L6-v2}. UMAP with
+  \texttt{n\_components}~=~50, \texttt{min\_dist}~=~0.0, \texttt{metric}~=~cosine, and
+  \texttt{n\_neighbors} tuned per class (30 for \texttt{bug\_report}, 25 for
+  \texttt{feature\_request}, 20 for \texttt{performance} and \texttt{usability}, 10 for
+  \texttt{compatibility}). HDBSCAN on the reduced space with Euclidean metric and per-class
+  \texttt{min\_cluster\_size} / \texttt{min\_samples} of 200/20, 100/10, 60/8, 60/8, and 10/3
+  respectively. Aspects are spaCy noun chunks filtered against a curated keyword list, released
+  with the code. PageRank runs undirected on the bipartite review-aspect graph at NetworkX
+  defaults (damping 0.85). The KG-hierarchical side runs over an 8{,}404-review sample; the flat
+  baseline runs over 91{,}368 clustered reviews from the full corpus, so the two describe
+  different review sets (Section~\ref{results}).
+
+  \textbf{Stage 3.} Headline generator \texttt{claude-opus-4-7}; comparators
+  \texttt{llama-3.3-70b-versatile} via Groq at temperature 0.2 and 1500 max tokens, and
+  \texttt{Qwen/Qwen2.5-3B-Instruct} and \texttt{Qwen/Qwen2.5-1.5B-Instruct} decoded greedily at
+  600 max tokens. None of these identifiers is a dated snapshot, which is a reproducibility defect
+  we should have avoided. The generation prompt is released in full and is byte-identical across
+  the local comparators. Routing uses the V5 predicted class of the cluster; \texttt{praise} and
+  \texttt{other} have no template and fall back to the bug-report form, which means the pipeline
+  emits no meaningful specification for the corpus's largest class. The pipeline re-prompts at
+  most twice with dimension-level feedback when the mean rubric score is below 3.0.
+
+  \textbf{Stage 4.} ChromaDB over 15{,}100 documents from five sources (10{,}000 RRGen pairs,
+  5{,}000 similar responses, 60 changelogs, 40 FAQ entries, and the IssueSpec injected per query
+  rather than pre-indexed). The re-run generator is \texttt{claude-opus-4-7} in both arms. Neither
+  arm's file stores its prompt or its retrieved context, so the manipulation is not recoverable
+  from the artifact; Section~\ref{exp2-results} states what follows from that.
+
+  \textbf{Stage 5.} Five policies on distilGPT2 (82M) from 400 SFT samples, 296 KTO pairs, and 100
+  DPO pairs; the Lagrangian loop runs 30 steps at batch size 4 with KL coefficient 0.05, and the
+  compliance sweep covers $\tau \in \{0.0, 0.5, 0.7, 0.9, 1.0\}$. The binding-constraint re-run
+  uses \texttt{Qwen/Qwen2.5-1.5B-Instruct} with LoRA ($r$~=~8, $\alpha$~=~16, on
+  \texttt{q,k,v,o\_proj}) for 90 steps.
+
+  \textbf{Instruments.} Strict template-fill requires, per field: title $\geq 4$ words;
+  description $\geq 30$ words; $\geq 3$ reproduction steps, each $\geq 5$ words and containing one
+  of a 33-verb action list released with the code; expected and actual behaviour $\geq 8$ words
+  each; $\geq 3$ acceptance criteria of $\geq 8$ words; a severity in P0--P3; and an affected
+  component of $\geq 2$ words not on a 10-item generic stoplist. All comparisons are
+  ``at least''. \textsc{SpecCov} counts substantive-token overlap with the source cluster, tokens
+  of length $\geq 5$ after stop-word filtering, with quoted-string and coverage bonuses, banded to
+  1--5; Section~\ref{speccov-validation} withdraws it as a faithfulness measure. The
+  five-dimension rubric and the Y/P/N purity rubric are scored by
+  \texttt{Qwen/Qwen2.5-3B-Instruct} decoded greedily; both judge prompts are released, the judge
+  does not see the source reviews when scoring the accuracy dimension, and a spec whose output
+  does not parse into all five dimensions is dropped without a counter. The compliance scorer is a
+  regular expression over roughly thirty tokens across four dimensions; Section~\ref{exp3-results}
+  reports what it does and does not detect.
+
+\section{Annotator Guidelines}\label{appendix:annotators}
+
+  The lead author (PhD in software engineering with prior mobile-app review-mining experience)
+  served as primary annotator across all five annotation tasks. The 490-review classification
+  gold was additionally annotated by two further independent human raters on the identical item
+  set, aligned by review id; all three first completed a shared 20-review calibration round,
+  disagreements were adjudicated before the main task opened, and the released gold label is the
+  majority vote over the three raters. All human annotation in this work is carried out by
+  those same three people. For Stage~4, all three raters scored all 200 rows of the reported
+  re-run independently and blind to condition; the discarded 400-row round had the lead author as
+  primary rater with one additional rater on a 30-pair subset, and is described here only because
+  the paper reports its withdrawal. Separately, two Qwen2.5-3B-Instruct prompts (concise
+  role-based and chain-of-thought) served as the second and third raters in the 99-review
+  cluster-purity Krippendorff $\alpha$ calibration, which is an LLM-assisted panel and not one of
+  the human rounds. For the 5{,}230-record verified anchor, which covers 5{,}229 distinct corpus rows, annotators classified each review into
+  one of the seven classes in our extension of the Maalej-Nabil taxonomy (\texttt{bug\_report}, \texttt{feature\_request},
+  \texttt{performance}, \texttt{usability}, \texttt{compatibility}, \texttt{praise},
+  \texttt{other}) with multi-label assignment permitted when a review carried multiple concerns;
+   reviews below the ``fairly confident'' threshold were skipped and excluded from the anchor.
+  For the 490-review classification gold standard, a stratified sample of 70 reviews per class
+  was drawn from the working corpus, and the lead author re-labeled each review independently
+  and blinded to the V2 LLM prediction; the 490 gold labels serve as the held-out evaluation set
+   for Cohen's $\kappa$ progression (Table~\ref{tab:kappa}) and per-class F1
+  (Table~\ref{tab:perclass-f1}). For the 5-dimension IssueSpec rubric (all 100 specs; an earlier stratified $n=28$ subsample, 6 per issue
+   type plus 2 extras), each spec was scored on a 1--5 Likert scale across five dimensions:
+  \emph{completeness} (are all required template fields filled?), \emph{accuracy} (do field
+  values correctly reflect the source cluster?), \emph{actionability} (would a developer know
+  what to do?), \emph{specificity} (does the spec name concrete entities rather than generic
+  terms?), and \emph{clarity} (is the spec easy to read and unambiguous?), with each dimension
+  scored independently. For the reported Stage~4 evaluation (100 reviews $\times$ 2 conditions,
+  the same model with and without the IssueSpec, 200 rows), all three raters rated
+  \emph{quality} (1--5), \emph{specificity} (1--5), and \emph{helpful} (Y/N) while blinded to
+  the generation method; the superseded 400-row round used four template-composed conditions and
+  is retained in the release for comparison. In both rounds condition labels were replaced with random A/B/C/D codes and unsealed
+  only at aggregation, with the assignment persisted as spreadsheets with JSON master keys for
+  audit. A second human rater independently scored a 30-pair (\texttt{no\_spec}, \texttt{full})
+  subset for inter-rater calibration. For the Y/P/N cluster-purity rubric (initial 50-cluster
+  audit; 99-cluster three-rater subsample), annotators read 5 representative reviews per cluster
+   and assigned \emph{Y} (all 5 share the same sub-theme within the cluster's aspect), \emph{P}
+  (3 or 4 of 5 share the sub-theme), or \emph{N} (fewer than 3 share); weighted purity is
+  $\mathrm{purity}_w = (|Y| + 0.5|P|)/(|Y|+|P|+|N|)$, with $Y$ contributing 1.0, $P$
+  contributing 0.5, and $N$ contributing 0. All comparative evaluations were blinded throughout
+  the rating window and unsealed only at aggregation; reviews or specs below the annotator
+  confidence threshold were marked as ``skip'' and excluded from downstream analysis.
+
+\end{document}

@@ -62,40 +62,35 @@
             country={Bangladesh}}
 
 \begin{abstract}
-\textbf{Context.} Developers receive millions of noisy app reviews, but defect trackers such as
-JIRA and GitHub Issues cannot consume free text. They require structured fields such as issue
-type, steps to reproduce, severity, and affected component. Review-mining research stops short of
-that boundary, predicting labels or writing replies without producing the record a tracker can
-ingest.
+\textbf{Context.} Developers receive millions of noisy app reviews, but defect trackers require
+typed fields (issue type, steps to reproduce, severity, affected component) and cannot consume
+free text. Review-mining research stops short of that boundary, predicting labels or writing
+replies without producing the record a tracker can ingest.
 
-\textbf{Objective.} Can a typed intermediate representation (IR) of a review be produced at
-corpus scale from noisy labels, and does supplying it to a response generator improve the reply a
-user receives? We answer the first yes and the second no, and the second answer corrects a claim
-we made ourselves.
+\textbf{Objectives.} Can a typed intermediate representation (IR) of a review be produced at
+corpus scale from noisy labels, and does supplying it to a response generator improve the reply
+the user receives? We answer the first yes and the second no, correcting a claim we made
+ourselves.
 
-\textbf{Method.} IssueSpec routes each review by issue class into one of five standards-body
-templates, repairs the noisy labels the routing depends on with a verified-anchor procedure, and
-feeds the result to a retrieval-augmented generator. We study 215,583 reviews from 58 Android
-apps with a 5,230-review verified anchor, a 490-review three-rater gold standard, seven ablations,
-and four language models. The downstream evaluation was run twice: first with conditions written
-by different template composers, then with the generator held fixed so that only the IR varies,
-all 200 blinded rows scored by three raters.
+\textbf{Methods.} IssueSpec routes each review by issue class into one of five standards-body
+templates and repairs the noisy labels the routing depends on against a human-verified anchor. We
+study 215,583 reviews from 58 Android apps with a 5,230-review anchor, a 490-review three-rater
+gold standard, seven ablations and four language models. The downstream evaluation was run twice,
+the second time with the generator held fixed so that only the IR varies.
 
 \textbf{Results.} Production works. The verified-anchor procedure lifts Cohen's $\kappa$ against
-the human gold from 0.163 to 0.592, and holds at that level (0.616) on held-out reviews. Type
-routing reaches 0.96 template-fill against 0.69 without it, a schema-conformance measure rather
-than a quality one. The downstream benefit does not. The first round measured $+2.35$ Likert
-points, but its arms differed in authorial register as much as in information, one emitting
-lemmatised text at 78 words and the other polished prose at 123; the corrected comparison gives
-$+0.04$ ($p = 0.54$), with raters disagreeing in direction. Three further components fail their
-own tests: the knowledge-graph layer loses to count-matched flat clustering, our
-extractive-coverage faithfulness scorer shows no rank correlation with human judgement, and the
-constrained alignment layer never demonstrates the trade-off it was built to expose.
+the human gold from 0.163 to 0.592, holding at that level on held-out reviews. Type routing
+reaches 0.96 template-fill against 0.69 without it, a schema-conformance measure rather than a
+quality one. The downstream benefit does not hold. The first round measured $+2.35$ Likert points,
+but its two arms came from different template composers rather than one model; corrected, the gain
+is $+0.04$ ($p = 0.54$), with the three raters disagreeing in direction. Three
+further components fail their own tests: the knowledge-graph layer loses to count-matched flat
+clustering, our faithfulness scorer shows no rank correlation with human judgement, and the
+constrained alignment layer never demonstrates its intended trade-off.
 
-\textbf{Conclusions.} Typed issue specifications are producible from noisy reviews at corpus
-scale, and that is the contribution we defend. Their claimed downstream payoff is not. We release
-the arithmetic check that distinguishes our two rating rounds, because a structured intermediate
-should be justified on what it produces rather than on an effect a fair comparison removes.
+\textbf{Conclusion.} Typed issue specifications are producible at corpus scale, and that is the
+contribution we defend. Their claimed downstream payoff is not.
+
 \end{abstract}
 
 \begin{highlights}
@@ -1314,7 +1309,12 @@ set. The authors verified all technical content, experimental results, and claim
 
 %% =====================================================================
 \bibliographystyle{elsarticle-num}
-\section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+During the preparation of this work the authors used Anthropic's Claude in order to assist with
+manuscript editing, code implementation, and analysis scripting. After using this tool, the authors
+reviewed and edited the content as needed and take full responsibility for the content of the
+publication.
+
 We disclose all uses of generative AI in this work in line with Elsevier policy.
 \emph{Writing and code assistance.} An earlier version of this disclosure said that Claude
 assisted only with grammatical refinement, caption polishing, and LaTeX formatting, and that all
@@ -1345,45 +1345,13 @@ IssueSpec references were all produced and reviewed by human annotators
 
 \appendix
 
-  \section{Implementation Settings}\label{appendix:settings}
-
-  Section~\ref{system-design} states what each stage does and why; this appendix collects the
-  settings. Stage~1 fine-tunes a RoBERTa multi-label head; confident-learning correction against
-  the verified anchor is gated by anchor confidence $\geq 0.70$ and LLM probability $\leq 0.20$,
-  with the $3\times3$ sensitivity grid over $(0.65, 0.70, 0.75) \times (0.15, 0.20, 0.25)$ reported
-  in Section~\ref{exp1-results}, and the \texttt{compatibility} stratum is seeded as described in
-  Section~\ref{aim1}. Stage~2 embeds with Sentence-BERT and clusters with HDBSCAN
-  aspect-first over the 8{,}404-review sample with no dimensionality reduction, against a flat
-  UMAP+HDBSCAN baseline over 91{,}368 reviews from the full corpus, so the two describe different
-  review sets; PageRank runs
-  on the bipartite review-aspect graph. Stage~3 routes to one of five templates and re-prompts
-  once with dimension-level feedback on any rubric failure.
-  Stage~4 retrieves over a 15{,}100-document ChromaDB index built from five sources, with the
-  IssueSpec injected per query; the agentic-RAG feasibility study uses 10 stratified reviews, two
-  per issue type, with Qwen2.5-3B as critic and reviser and up to two iterations. Stage~5 trains
-  five policies on distilGPT2 (82M parameters) from 400 SFT samples, 296 KTO pairs, and 100 DPO
-  pairs; the Lagrangian loop runs 30 steps at batch size 4 with KL coefficient 0.05, and the
-  compliance threshold sweep covers $\tau \in \{0.0, 0.5, 0.7, 0.9, 1.0\}$. The binding-constraint
-  re-run uses Qwen2.5-1.5B-Instruct with LoRA adapters over the attention projections, the frozen
-  base as KL reference, $\tau = 1.0$, and 90 steps, with scorers, dual-ascent rule, and batch size
-  unchanged. \textsc{SpecCov} counts substantive-token overlap with the source cluster, tokens of
-  length $\geq 5$ after stop-word filtering, with quoted-string and coverage bonuses.
-
-\section{Annotator Guidelines}\label{appendix:annotators}
-
-  Section~\ref{experiments} describes who annotated what; this appendix records the instruments.
-  Anchor and gold annotation assign one of seven classes (\texttt{bug\_report},
-  \texttt{feature\_request}, \texttt{performance}, \texttt{usability}, \texttt{compatibility},
-  \texttt{praise}, \texttt{other}), multi-label permitted, with items below a ``fairly confident''
-  threshold skipped. The IssueSpec rubric scores each spec 1--5 and independently per dimension on
-  \emph{completeness} (are all required template fields filled?), \emph{accuracy} (do field values
-  reflect the source cluster?), \emph{actionability} (would a developer know what to do?),
-  \emph{specificity} (does the spec name concrete entities?), and \emph{clarity}. The Stage~4
-  instrument is \emph{quality} (1--5), \emph{specificity} (1--5), and \emph{helpful} (Y/N). The
-  Y/P/N cluster-purity rubric reads 5 representative reviews per cluster and assigns \emph{Y} (all
-  5 share the sub-theme), \emph{P} (3 or 4 share), or \emph{N} (fewer than 3), with weighted
-  purity $\mathrm{purity}_w = (|Y| + 0.5|P|)/(|Y|+|P|+|N|)$. All comparative evaluations were
-  blinded throughout the rating window, condition labels replaced by random codes and unsealed
-  only at aggregation.
+  \section{Implementation settings and annotator instruments}\label{appendix:settings}
+Every setting behind the results, and both annotator instruments, are in the supplementary
+material accompanying this submission: the classifier checkpoint and its hyperparameters, the
+annotator model and prompt behind the noisy corpus labels, the verified-anchor procedure stated
+as an algorithm, the embedding and clustering parameters, every generator and judge model string
+with its decoding settings, and every threshold in the scoring instruments. They are also in the
+released repository. We put them there rather than here because the journal's length limit does
+not leave room, and because a reader following the argument does not need them.
 
 \end{document}
