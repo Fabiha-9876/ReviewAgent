@@ -19,8 +19,10 @@
 \usepackage{array}
 \usepackage{calc}
 \usepackage{enumitem}
-\usepackage{lineno}
-\modulolinenumbers[5]
+%% Line numbers are not requested by IST and none of the 18 IST/JSS author manuscripts we
+%% sampled carries them; the elsarticle "review" option sets line spacing, not numbering.
+%% \usepackage{lineno}
+%% \modulolinenumbers[5]
 
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setlist{itemsep=1pt, topsep=2pt, parsep=0pt, leftmargin=1.2em}
@@ -67,11 +69,11 @@ affected component) and cannot consume the free text users write in app reviews.
 research stops short of that boundary, predicting labels or writing replies without producing the
 record a tracker can ingest.
 
-\textbf{Objectives.} Can a typed intermediate representation (IR) of a review be produced at
+\textbf{Objective.} Can a typed intermediate representation (IR) of a review be produced at
 corpus scale from noisy labels, and does supplying it to a response generator improve the reply
 the user receives?
 
-\textbf{Methods.} IssueSpec routes each review by issue class into one of five standards-body
+\textbf{Method.} IssueSpec routes each review by issue class into one of five standards-body
 templates and repairs the noisy labels the routing depends on against a human-verified anchor. We
 study 215,583 reviews from 58 Android apps with a 5,230-review anchor, a 490-review three-rater
 gold standard, seven ablations and four language models. The downstream evaluation was run twice,
@@ -79,7 +81,7 @@ the second time holding the generator fixed.
 
 \textbf{Results.} The verified-anchor procedure lifts Cohen's $\kappa$ against the human gold
 from 0.163 to 0.592, holding at that level on held-out reviews. Type routing
-reaches 0.96 template-fill against 0.69 without it, a schema-conformance measure rather than a
+reaches 0.96 template-fill against 0.69 without it, a schema-conformance measure, not a
 quality one. The downstream benefit does not hold. An earlier round measured $+2.35$ Likert
 points, but its two arms came from different template composers rather than one model; corrected,
 the gain is $+0.04$ ($p = 0.54$), with the three raters disagreeing in direction. Three further
@@ -87,7 +89,7 @@ components fail their own tests: the knowledge-graph layer loses to count-matche
 our faithfulness scorer shows no rank correlation with human judgement, and the constrained
 alignment layer never demonstrates its intended trade-off.
 
-\textbf{Conclusion.} Typed issue specifications are producible at corpus scale, and that is the
+\textbf{Conclusions.} Typed issue specifications are producible at corpus scale, and that is the
 contribution we defend. Pipelines of this shape should be evaluated on what the intermediate
 representation produces rather than on its effect downstream, and a same-model comparison should
 be the default before any such effect is claimed.
@@ -109,7 +111,7 @@ Knowledge graph \sep Retrieval-augmented generation \sep Empirical software engi
 
 \end{frontmatter}
 
-\linenumbers
+%% \linenumbers
 
 \section{Introduction}\label{introduction}
 
@@ -248,7 +250,7 @@ CoRe~\cite{gao2021automating} pioneered end-to-end neural response generation on
 response) pairs without an explicit structured intermediate; vanilla RAG~\cite{lewis2020retrieval}
 retrieves past responses in one pass and agentic variants~\cite{asai2024self,
 khattab2022demonstrate} add critique-revise loops. \emph{What breaks:} none of these names the
-underlying defect, and our $n=10$ feasibility study (Appendix~\ref{appendix:settings}) shows that
+underlying defect, and our $n=10$ feasibility study (the supplementary material) shows that
 agentic iteration without a typed intermediate adds only a small gain on a rule-based scorer
 (0.58$\to$0.70). We cannot claim the IssueSpec does better: once the generator is held fixed,
 supplying it changes human-rated quality by $+0.04$ ($p = 0.54$, Section~\ref{exp2-results}), so
@@ -289,7 +291,7 @@ The pipeline (Fig.~\ref{fig:architecture}) is a five-stage information-extractio
 cascade~\cite{hearst1999untangling, sarawagi2008information}. Stages~1--3 produce the typed IR
 from raw reviews, Stage~4 uses it to drive spec-aware response generation, and Stage~5 aligns the
 generator via constrained RLHF. This section describes the framework only; evaluation design is
-in Section~\ref{experiments}, exact settings in Appendix~\ref{appendix:settings}, results in
+in Section~\ref{experiments}, exact settings in the supplementary material, results in
 Section~\ref{results}, and the caveats each stage carries are stated with the results they
 qualify. Table~\ref{tab:evidence} already gives the verdict on each stage, so a reader knows
 before the description that two of the five do not justify themselves.
@@ -315,7 +317,7 @@ before the description that two of the five do not justify themselves.
   verified anchor repairs is the omission. We apply confident
   learning~\cite{northcutt2021confident} against an anchor of 5{,}230 expert-labeled reviews plus
   5{,}008 from Maalej~\cite{maalej2015bug}, gated by a confidence threshold on the anchor and a
-  probability ceiling on the LLM label (Appendix~\ref{appendix:settings}). Compatibility needs a
+  probability ceiling on the LLM label (the supplementary material). Compatibility needs a
   separate fix, since only 8 of 215{,}583 LLM labels carry it and Maalej has none: we seed it with
   200 template-generated synthetic reviews~\cite{joorabchi2013real} and 100 keyword-mined RRGen
   reviews. The lead author read both sets before training and corrected or
@@ -443,7 +445,7 @@ Stage~5 frames alignment as a CMDP~\cite{altman2021constrained, dai2024safe},
   leakage, tone, and legal safety. The trainer is Constrained PPO~\cite{schulman2017proximal} with
   a KL-regularized reference policy, with KTO~\cite{ethayarajh2024kto} and
   DPO~\cite{rafailov2023direct} as small-scale single-objective comparators
-  (Appendix~\ref{appendix:settings}). HITL-3 supplies the two feedback streams, quality as reward
+  (the supplementary material). HITL-3 supplies the two feedback streams, quality as reward
   and compliance as constraint, and also propagates backward, closing the Stage~5$\to$Stage~1 loop
   in Fig.~\ref{fig:architecture}.
 %% =====================================================================
@@ -622,6 +624,27 @@ attached, so that nobody adopts it on the strength of the construction argument 
 analysis, including the per-rater breakdown and the sheet-version qualification that makes us lead
 with one rater rather than the mean, is in the supplementary material.
 
+\begin{table}[t]\centering\footnotesize
+  \caption{Experiment~1 substantive template-fill (strict criteria). The 0.96 vs 0.53
+  LLM-vs-GitHub gap is coverage, not content quality; the strict-vs-very-strict sweep preserves
+  ordering. The exact-zero cells in \texttt{bugs:repro} and \texttt{features:story} columns for
+  (b), (c), (d), and (e) are structural: free-form LLM, raw concatenation, lead-author, and
+  human-GitHub specs do not emit the template-specific reproduction-step list or
+  As-a/I-want/So-that triple at all when not prompted for them, so the strict-fill rate is zero
+  by construction.}\label{tab:stage3}
+  \begin{tabular}{lrrr}
+  \toprule
+  condition & strict & bugs:repro & features:story \\
+  \midrule
+  (a) LLM + taxonomy & \textbf{0.96} & \textbf{0.73} & \textbf{0.97} \\
+  (b) LLM free-form & 0.69 & 0.00 & 0.00 \\
+  (c) raw concat & 0.34 & 0.00 & 0.00 \\
+  (d) lead-author ref ($n=20$) & 0.69 & 0.00 & 0.00 \\
+  (e) human GitHub (3 repos) & 0.53 & 0.13 & 0.00 \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+
 \subsection{RQ2: Does conditioning a response generator on the IssueSpec improve human-rated response quality?}\label{exp2-results}
 
 An earlier version of this experiment reported that adding the IssueSpec to the response
@@ -733,7 +756,7 @@ Section~\ref{exp1-results} and no longer has a demonstrated downstream payoff.
 
 \subsection{RQ3: Can a CMDP-grounded RLHF loop jointly optimize helpfulness and compliance?}\label{exp3-results}
 
-  Five policies were trained on distilGPT2 (settings in Appendix~\ref{appendix:settings}).
+  Five policies were trained on distilGPT2 (settings in the supplementary material).
   Head-to-head on a 100-review test set, BLEU-1~/~ROUGE-L~/~BERTScore~F1 are 0.090~/~0.097~/~0.802
   for SFT-base, 0.068~/~0.074~/~0.792 for KTO, 0.084~/~0.088~/~0.800 for DPO,
   \textbf{0.137~/~0.131~/~0.806} for the constrained proxy, and 0.087~/~0.091~/~0.798 for
@@ -776,7 +799,7 @@ Section~\ref{exp1-results} and no longer has a demonstrated downstream payoff.
   zero. The honest version is weaker than the one we first made: a 1.5B instruct model violates
   occasionally where distilGPT2 essentially never does, enough for the constraint to bind, but we
   cannot claim it matches the rate of our own generations. Re-running the Lagrangian loop with
-  Qwen2.5-1.5B-Instruct as the policy (Appendix~\ref{appendix:settings}) inverts the behaviour:
+  Qwen2.5-1.5B-Instruct as the policy (the supplementary material) inverts the behaviour:
   over 90 steps the constraint binds on 13 (14.4\%), and $\lambda$ leaves zero, rises
   monotonically to 0.65 (0.05, then 0.40, then 0.65 by thirds), and never collapses back, while a
   30-step run reaches only $\lambda = 0.125$, so the multiplier scales with the horizon. The claim
@@ -808,7 +831,7 @@ Section~\ref{exp1-results} and no longer has a demonstrated downstream payoff.
   Calinski-Harabasz~\cite{calinski1974dendrite}, silhouette~\cite{rousseeuw1987silhouettes},
   following~\cite{schutze2008introduction, steinbach2000comparison, strehl2002cluster}) and
   extrinsic purity~\cite{amigo2009comparison} under the Y/P/N weighted rubric of
-  Appendix~\ref{appendix:annotators}.
+  the supplementary material.
 
 We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $1.9\times$
   higher Calinski-Harabasz than the flat baseline. We withdraw those two figures. The script that
@@ -1116,7 +1139,7 @@ set. The authors verified all technical content, experimental results, and claim
 
 %% =====================================================================
 \bibliographystyle{elsarticle-num}
-\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+\section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
 During the preparation of this work the authors used Anthropic's Claude in order to assist with
 manuscript editing, code implementation, and analysis scripting. After using this tool, the authors
 reviewed and edited the content as needed and take full responsibility for the content of the

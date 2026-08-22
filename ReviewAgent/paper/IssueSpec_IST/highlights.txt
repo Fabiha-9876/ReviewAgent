@@ -1,10 +1,5 @@
-Highlights
-
-Typed Issue Specifications from App Reviews: What Scales, and a Downstream Benefit That Does Not Replicate
-Fabiha Jalal, Sadia Tasnim Dhruba, Tazrian Zaman Tushti, Ajwad Abrar, Md Kamrul Hasan, Hasan Mahmud
-
-- A typed intermediate representation routes app reviews into five issue templates.
-- A verified-anchor procedure lifts Cohen's kappa from 0.163 to 0.592 at corpus scale.
-- LLM annotation noise concentrates on omitted classes, not on uniform per-item error.
-- A clean same-model re-run finds no downstream reply-quality gain from the typed spec.
-- Template-fill measures schema conformance, not the quality of the text in the fields.
+A typed intermediate representation routes app reviews into five issue templates.
+A verified-anchor procedure lifts Cohen's kappa from 0.163 to 0.592 at corpus scale.
+LLM annotation noise concentrates on omitted classes, not on uniform per-item error.
+A clean same-model re-run finds no downstream reply-quality gain from the typed spec.
+Template-fill measures schema conformance, not the quality of the text in the fields.

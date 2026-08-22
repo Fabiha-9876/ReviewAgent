@@ -313,26 +313,7 @@ content, and we do not read it that way.
 
 
 
-\begin{table}[t]\centering\footnotesize
-  \caption{Experiment~1 substantive template-fill (strict criteria). The 0.96 vs 0.53
-  LLM-vs-GitHub gap is coverage, not content quality; the strict-vs-very-strict sweep preserves
-  ordering. The exact-zero cells in \texttt{bugs:repro} and \texttt{features:story} columns for
-  (b), (c), (d), and (e) are structural: free-form LLM, raw concatenation, lead-author, and
-  human-GitHub specs do not emit the template-specific reproduction-step list or
-  As-a/I-want/So-that triple at all when not prompted for them, so the strict-fill rate is zero
-  by construction.}\label{tab:stage3}
-  \begin{tabular}{lrrr}
-  \toprule
-  condition & strict & bugs:repro & features:story \\
-  \midrule
-  (a) LLM + taxonomy & \textbf{0.96} & \textbf{0.73} & \textbf{0.97} \\
-  (b) LLM free-form & 0.69 & 0.00 & 0.00 \\
-  (c) raw concat & 0.34 & 0.00 & 0.00 \\
-  (d) lead-author ref ($n=20$) & 0.69 & 0.00 & 0.00 \\
-  (e) human GitHub (3 repos) & 0.53 & 0.13 & 0.00 \\
-  \bottomrule
-  \end{tabular}
-  \end{table}
+
 
 \textbf{Stage~1 Classification Recovery.} The Cohen's $\kappa$ trajectory against the 490-review
 expert gold crosses three Landis-Koch~\cite{landis1977measurement} agreement bands
