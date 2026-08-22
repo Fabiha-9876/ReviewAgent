@@ -184,11 +184,7 @@ Table~\ref{tab:evidence} is the single map from component to claim to evidence t
 replaces the several overlapping summaries an earlier version carried.
 
 \begin{table}[!htbp]\centering\scriptsize
-\caption{Component-to-claim-to-evidence map, with the ablation that tests each component and the
-verdict it returns. ``Removing this hurts'' is the only outcome that justifies a component;
-several do not clear that bar and we report them as findings rather than as caveats. Ablation
-identifiers (A1--A7) are defined in Section~\ref{ablations}; released artifacts are listed in
-Section~\ref{reproducibility}.}\label{tab:evidence}
+
 \begin{tabular}{@{}p{1.5cm}p{2.9cm}p{4.4cm}p{2.1cm}@{}}\toprule
 component & what it must do & evidence, and the ablation that tests it & verdict \\\midrule
 Stage 1 intake, verified anchor & repair a corpus label wrong 25\% of the time that omits two classes entirely, because Stage~3 routes on the type & $\kappa$ $0.163 \to 0.592$ against the three-rater gold, 0.616 held out (replay-dependent); macro F1 $0.22 \to 0.65$ with the two omitted classes recovered (\S\ref{exp1-results}) & \textbf{justified} \\
@@ -198,7 +194,12 @@ Stage 4 spec-aware RAG & supply house voice and precedent on top of the defect &
 Stage 5 CMDP RLHF & hold compliance as a constraint rather than a reward term & constraint never binds at distilGPT2 scale; with a policy able to violate it, binds on 13/90 steps and $\lambda$ rises to 0.65, with no measured tension ($\rho = -0.12$, $p = 0.25$), on a detector that scores hand-written violations as compliant (\S\ref{exp3-results}) & \textbf{partial testbed} \\
 \textsc{SpecCov} scorer & rank specs the way a human judge of faithfulness does & no rank correlation with human faithfulness ($\rho=0.15$, $p=0.26$); orders generators backwards (\S\ref{speccov-validation}) & \textbf{withdrawn} \\
 rating-provenance check & separate independent ratings from derived ones & the discarded round shows a single deviation magnitude and the reported round four (\S\ref{exp2-results}) & \textbf{released} \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}
+\caption{Component-to-claim-to-evidence map, with the ablation that tests each component and the
+verdict it returns. ``Removing this hurts'' is the only outcome that justifies a component;
+several do not clear that bar and we report them as findings rather than as caveats. Ablation
+identifiers (A1--A7) are defined in Section~\ref{ablations}; released artifacts are listed in
+Section~\ref{reproducibility}.}\label{tab:evidence}\end{table}
 
  \begin{figure}[t]\centering
   \includegraphics[width=\textwidth]{fig_architecture.pdf}
@@ -385,10 +386,7 @@ that negative result only makes sense against this definition.
 \begin{table}[t]
   \centering
   \footnotesize
-  \caption{IssueSpec standardized issue schema. Each issue type follows the dominant industry or
-  HCI standard. Each template is drawn from a published standard or reference and reproduces its
-  named fields; we ran no conformance check against the standards documents themselves, so
-  ``drawn from'' should not be read as ``certified against''.}\label{tab:templates}
+  
   \begin{tabular}{@{}p{2.2cm}p{8.5cm}p{6.0cm}@{}}
   \toprule
   Issue type & Template (citation) & Justification \\
@@ -418,6 +416,10 @@ that negative result only makes sense against this definition.
   reporting axis \\
   \bottomrule
   \end{tabular}
+\caption{IssueSpec standardized issue schema. Each issue type follows the dominant industry or
+  HCI standard. Each template is drawn from a published standard or reference and reproduces its
+  named fields; we ran no conformance check against the standards documents themselves, so
+  ``drawn from'' should not be read as ``certified against''.}\label{tab:templates}
   \end{table}
 
 \subsection{Using the IR in Response Generation}\label{aim2}
@@ -625,13 +627,7 @@ analysis, including the per-rater breakdown and the sheet-version qualification 
 with one rater rather than the mean, is in the supplementary material.
 
 \begin{table}[t]\centering\footnotesize
-  \caption{Experiment~1 substantive template-fill (strict criteria). The 0.96 vs 0.53
-  LLM-vs-GitHub gap is coverage, not content quality; the strict-vs-very-strict sweep preserves
-  ordering. The exact-zero cells in \texttt{bugs:repro} and \texttt{features:story} columns for
-  (b), (c), (d), and (e) are structural: free-form LLM, raw concatenation, lead-author, and
-  human-GitHub specs do not emit the template-specific reproduction-step list or
-  As-a/I-want/So-that triple at all when not prompted for them, so the strict-fill rate is zero
-  by construction.}\label{tab:stage3}
+  
   \begin{tabular}{lrrr}
   \toprule
   condition & strict & bugs:repro & features:story \\
@@ -643,6 +639,13 @@ with one rater rather than the mean, is in the supplementary material.
   (e) human GitHub (3 repos) & 0.53 & 0.13 & 0.00 \\
   \bottomrule
   \end{tabular}
+\caption{Experiment~1 substantive template-fill (strict criteria). The 0.96 vs 0.53
+  LLM-vs-GitHub gap is coverage, not content quality; the strict-vs-very-strict sweep preserves
+  ordering. The exact-zero cells in \texttt{bugs:repro} and \texttt{features:story} columns for
+  (b), (c), (d), and (e) are structural: free-form LLM, raw concatenation, lead-author, and
+  human-GitHub specs do not emit the template-specific reproduction-step list or
+  As-a/I-want/So-that triple at all when not prompted for them, so the strict-fill rate is zero
+  by construction.}\label{tab:stage3}
   \end{table}
 
 \subsection{RQ2: Does conditioning a response generator on the IssueSpec improve human-rated response quality?}\label{exp2-results}
@@ -701,7 +704,7 @@ $p = 0.044$, while its bootstrap interval $[-0.56, -0.01]$ excludes zero). We st
 than pick the one that reads better: on that rater the evidence sits exactly on $\alpha = 0.05$
 and moves either side depending on defensible choices. The disagreement between raters is larger
 than the effect under measurement, and inter-rater reliability is correspondingly low,
-quadratic-weighted $\kappa$ of 0.03, 0.04 and 0.50 against 0.97 in the discarded template-based
+quadratic-weighted $\kappa$~\cite{cohen1968weighted} of 0.03, 0.04 and 0.50 against 0.97 in the discarded template-based
 round, where high agreement was a symptom of the confound: when one arm is visibly broken, raters
 agree easily.
 
@@ -715,18 +718,19 @@ the preference is expectancy on the part of the person who built the system. Thi
 separate them, and we assert neither.
 
 \begin{table}[t]\centering\footnotesize
-\caption{Stage-4 re-run, same model with and without the IssueSpec, 100 paired reviews, three
-raters, all 200 rows scored by each. All figures are unadjusted, so the gain column equals the difference of the two condition
-columns; slot-stratified values are in the released JSON and differ by at most 0.03. The pooled
-effect is null, and the disagreement between the lead author and the two independent raters is
-larger than the effect being measured.}\label{tab:stage4-rerun}
+
 \begin{tabular}{@{}lrrrrr@{}}\toprule
 rater & no\_spec & full & gain & 95\% CI & Wilcoxon $p$ \\\midrule
 lead author & 4.04 & 4.60 & $+0.56$ & $[+0.44, +0.68]$ & $2 \times 10^{-11}$ \\
 independent rater 1 & 3.87 & 3.58 & $-0.29$ & $[-0.56, -0.01]$ & 0.06 \\
 independent rater 2 & 3.57 & 3.42 & $-0.15$ & $[-0.33, +0.03]$ & 0.09 \\\midrule
 \textbf{pooled} & 3.83 & 3.87 & $\mathbf{+0.04}$ & $[-0.10, +0.18]$ & \textbf{0.54} \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}
+\caption{Stage-4 re-run, same model with and without the IssueSpec, 100 paired reviews, three
+raters, all 200 rows scored by each. All figures are unadjusted, so the gain column equals the difference of the two condition
+columns; slot-stratified values are in the released JSON and differ by at most 0.03. The pooled
+effect is null, and the disagreement between the lead author and the two independent raters is
+larger than the effect being measured.}\label{tab:stage4-rerun}\end{table}
 
 \textbf{Why we believe the raters this time, and what the check does and does not show.} In the
 discarded round the two additional raters deviated from the lead author on only 16 and 19 of 400
@@ -1044,7 +1048,7 @@ and state after each what we did about it.
 \subsection{Construct validity} Template-fill measures coverage rather than content correctness, and \textsc{SpecCov} does not fill that gap (Section~\ref{speccov-validation}), being a lexical-grounding proxy that does not track human faithfulness judgement~\cite{grusky2018newsroom, maynez2020faithfulness, kryscinski2020evaluating, ji2023survey}. To mitigate this we validated \textsc{SpecCov} against 60 human faithfulness ratings rather than assuming it worked, and we withdraw it on that evidence rather than reporting it. What remains unmitigated is that Stage~3 then has no validated content-correctness measure at all and the LLM rubric carries that burden alone; NLI- and QA-based measurement~\cite{laban2022summac, honovich2022true, durmus2020feqa} is the next step.
 \subsection{Internal validity} The count-versus-structure confound is exposed and resolved by A1b, which reframes the knowledge graph's contribution as prioritization rather than geometry. A threat we did not remove is that the 100 clusters carrying the Stage~3 and Stage~4 results come from the KG pipeline, the layer A1b and A2 find wanting; since flat clustering scores higher on purity, the headline gains may be measured on a slightly worse partition, which would understate rather than inflate them, and re-running Stages~3 and~4 over flat clusters is the cheapest open experiment in the paper. We mitigate this only partially, by reporting the direction of the bias rather than leaving it unstated: because flat clustering scores higher on purity, this threat works against our numbers rather than for them. Two further internal threats are stated with the Stage-1 results: the gold standard is seeded with V5's predicted label and stratified over V5's predicted classes (Section~\ref{experiments}), and every \texttt{compatibility} figure rests on 300 augmented training rows. We mitigated the first by scoring every classifier against a three-rater majority gold as well as the lead author's, and the second by auditing the augmentation rather than trusting it, which is how we found the capitalisation cue and withdrew the internal F1 that depended on it (Section~\ref{exp1-results}).
 \subsection{External validity} RRGen contains 58 Android apps, named by real package identifier rather than anonymised; V5 transfers zero-shot to the Maalej label space, but Stage~2--4 cross-corpus transfer remains unvalidated, GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}), and every KG-hierarchical number describes a 3.9\% sample of the corpus (Section~\ref{aim1}). We mitigate the single-model threat with a four-model cross-family replication, though its differences are not significant and we report the ordering as descriptive only. The single-corpus threat we do not mitigate; it is the study's main limit on generality.
-\subsection{Conclusion validity} The three-rater agreement on the classification gold ($\kappa = 0.968$) sits well above what free-labeling studies report, which invites the question of whether the raters were genuinely independent. Three properties of the design account for the gap: raters verify a supplied label rather than choose one of seven, collapsing most of the decision space; a 20-review calibration round with adjudicated disagreements precedes the main task; and the protocol fixes eight boundary rules. Residual disagreement is rater-specific rather than random, one rater accounting for most \texttt{usability} reassignments, which is the pattern independent annotation produces. We mitigate the remaining doubt by releasing the per-item votes so a reader can recompute any of these figures, and by disclosing that an earlier round of this annotation failed our own independence check and was discarded. Two of the three raters are co-authors, which we cannot mitigate within this study.
+\subsection{Conclusion validity} The three-rater agreement on the classification gold ($\kappa = 0.968$) sits well above what free-labeling studies report, which invites the question of whether the raters were genuinely independent. It also sits in the region where $\kappa$ becomes sensitive to marginal imbalance~\cite{feinstein1990high}, so we report raw agreement alongside it. Three properties of the design account for the gap: raters verify a supplied label rather than choose one of seven, collapsing most of the decision space; a 20-review calibration round with adjudicated disagreements precedes the main task; and the protocol fixes eight boundary rules. Residual disagreement is rater-specific rather than random, one rater accounting for most \texttt{usability} reassignments, which is the pattern independent annotation produces. We mitigate the remaining doubt by releasing the per-item votes so a reader can recompute any of these figures, and by disclosing that an earlier round of this annotation failed our own independence check and was discarded. Two of the three raters are co-authors, which we cannot mitigate within this study.
 \emph{Reliability, and which coefficient belongs to what.} The three agreement statistics here measure different things. The classification gold reaches Fleiss $\kappa = 0.968$ and $0.979$ across three human raters. The reported Stage-4 set, rated by the same three humans on all 200 rows, has quality weighted $\kappa$ of 0.03, 0.04 and 0.50; that is low and it is the number to quote, because the 0.970 to 0.986 range belongs to the discarded round where one arm was visibly broken. The weakest figure, $\alpha = 0.285$ (corrected from a mis-implemented 0.451, Section~\ref{experiments}), comes from a deliberately weaker LLM-assisted panel~\cite{gilardi2023chatgpt}; no claim rests on it alone.
 \emph{Statistical.} Experiment~2 reports a null, so the question is power rather than multiplicity: the design rules out a large effect and not a small one (Section~\ref{exp2-results}). In the other direction, the one cross-family quality difference reaching nominal significance does not survive multiplicity correction and is withdrawn (Section~\ref{exp1-results}).
 
@@ -1152,7 +1156,7 @@ pipeline code, experimental scripts, and analysis were written by the human auth
 understated the use, and the repository we release contradicts it: at the time of writing 49 of
 58 commits (84\%) carry a \texttt{Co-Authored-By: Claude} trailer, including commits that add pipeline stages, the
 constrained-PPO trainer, the analysis scripts, and the correction passes described in
-Section~\ref{exp2-results}. The accurate statement is that Anthropic's Claude was used
+Section~\ref{exp2-results}. The accurate statement is that Anthropic's Claude~\cite{anthropic2025claude} was used
 throughout implementation and analysis as a coding assistant, under author direction and review,
 and also for manuscript editing. We prefer to correct this here rather than leave a disclosure
 that the artifact refutes. Every structural, framing, experimental-design, and claim decision was
