@@ -6,6 +6,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
@@ -171,6 +172,15 @@ submission inside the journal's length limit; every number the manuscript's argu
 relies on is stated in its text, and these carry the per-cell detail.
 
 \begin{table}[t]\centering\footnotesize
+
+\begin{tabular}{@{}p{2.7cm}p{2.9cm}p{2.4cm}@{}}\toprule
+Use & Model (family) & Result \\\midrule
+Stage~3 generate & Claude (Anthropic) / Llama-3.3-70B (Meta) / Qwen-3B (Alibaba) / Qwen-1.5B (Alibaba) & 0.96 / 0.80 / 0.74 / 0.48 \\
+Stage~4 generate & \emph{withdrawn} (see note) & \emph{withdrawn} \\
+5-dim rubric judge & Qwen-3B, all 100 specs & 3.94/5 (28-spec subsample: 3.89) \\
+Cross-family rubric & Claude / Llama / Qwen-3B / Qwen-1.5B & 4.09 / 3.96 / 3.83 / 3.77 (\S\ref{exp1-results}) \\
+Y/P/N purity judge & Qwen-3B vs lead-author & 0.625 vs 0.66; $\Delta=-0.035$ \\
+\bottomrule\end{tabular}
 \caption{Multi-LLM evidence summary across three model families (Anthropic, Meta, Alibaba).
 Cross-family rank preservation in Stage~3 is the structural-bias control; LLM-as-judge
 calibration $\Delta$ vs the lead author bounds judge bias. \emph{Two rows carry caveats a reader
@@ -182,24 +192,10 @@ withdrew in Experiment~2 and we had not noticed it here. The Stage-3 row is a re
 comparison but is not matched: Claude is scored on 100 clusters and Llama on 99, both spanning
 five issue types, whereas both Qwen conditions are 15 clusters of \texttt{bug\_report} only. The
 0.96-versus-0.48 span therefore compares a five-type mean against a single-type mean and should be
-read as an ordering, not as a magnitude.}\label{tab:multi-llm}
-\begin{tabular}{@{}p{2.7cm}p{2.9cm}p{2.4cm}@{}}\toprule
-Use & Model (family) & Result \\\midrule
-Stage~3 generate & Claude (Anthropic) / Llama-3.3-70B (Meta) / Qwen-3B (Alibaba) / Qwen-1.5B (Alibaba) & 0.96 / 0.80 / 0.74 / 0.48 \\
-Stage~4 generate & \emph{withdrawn} (see note) & \emph{withdrawn} \\
-5-dim rubric judge & Qwen-3B, all 100 specs & 3.94/5 (28-spec subsample: 3.89) \\
-Cross-family rubric & Claude / Llama / Qwen-3B / Qwen-1.5B & 4.09 / 3.96 / 3.83 / 3.77 (\S\ref{exp1-results}) \\
-Y/P/N purity judge & Qwen-3B vs lead-author & 0.625 vs 0.66; $\Delta=-0.035$ \\
-\bottomrule\end{tabular}\end{table}
+read as an ordering, not as a magnitude.}\label{tab:multi-llm}\end{table}
 
 \begin{table}[t]\centering\footnotesize
-\caption{Experiment~1 five-dimension rubric (Qwen-judge, 1--5 scale) on the \emph{complete}
-spec set: all 100 taxonomy specs and all 20 lead-author reference specs, scored in one run so
-the two columns are directly comparable. The middle column repeats the earlier stratified
-28-spec subsample under the same judge and rubric; the gap between it and the full set is
-$+0.05$, which is the subsample error. The LLM-as-judge protocol follows the
-calibration-against-reference convention of~\cite{gilardi2023chatgpt, pangakis2023automated,
-zheng2023judging}.}\label{tab:rubric}
+
 \begin{tabular}{lrrr}\toprule
 dimension & taxonomy, $n=100$ & taxonomy, $n=28$ & lead-author ref, $n=20$ \\\midrule
 completeness & \textbf{3.72} & 3.79 & 3.20 \\
@@ -209,14 +205,17 @@ specificity & \textbf{4.15} & 4.07 & 4.05 \\
 clarity & \textbf{3.52} & 3.50 & 3.05 \\\midrule
 overall mean & \textbf{3.94} & 3.89 & 3.45 \\
 sd across specs & 0.59 & -- & 0.41 \\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}
+\caption{Experiment~1 five-dimension rubric (Qwen-judge, 1--5 scale) on the \emph{complete}
+spec set: all 100 taxonomy specs and all 20 lead-author reference specs, scored in one run so
+the two columns are directly comparable. The middle column repeats the earlier stratified
+28-spec subsample under the same judge and rubric; the gap between it and the full set is
+$+0.05$, which is the subsample error. The LLM-as-judge protocol follows the
+calibration-against-reference convention of~\cite{gilardi2023chatgpt, pangakis2023automated,
+zheng2023judging}.}\label{tab:rubric}\end{table}
 
 \begin{table}[t]\centering\footnotesize
-  \caption{Annotator-vs-LLM and inter-annotator deviation. The $\approx 25\%$ deviation is
-  measured on the human-verified anchor; the $\kappa$-progression reaches moderate
-  agreement~\cite{landis1977measurement}; the V5 endorsement row is a consistency check, not independent validation, since V5 trained on those corrections;
-  LLM-judge calibration $\Delta$ bounds judge bias. The $\alpha = 0.285$ row is an LLM-assisted
-  panel, corrected from a mis-implemented 0.451 as described in the text.}\label{tab:annot-deviation}
+  
   \begin{tabular}{@{}p{4.0cm}p{1.5cm}p{2.5cm}@{}}\toprule
   Annotator pair & sample & agreement / deviation \\\midrule
   Lead-author vs V2 LLM & 5{,}230 & 75\% / \textbf{25\%} mislabeled \\
@@ -232,7 +231,12 @@ sd across specs & 0.59 & -- & 0.41 \\
   3 human raters (Stage~4 helpful, discarded round) & 400 rated rows & $\kappa$ 0.678--0.836; $\alpha = 0.781$ \\
   3-rater \emph{LLM-assisted} classification check (lead + 2 Qwen prompts) & 99 reviews & Krippendorff $\alpha = 0.285$ \\
   Lead vs Qwen-judge (purity, rubric) & 50 / 28 & $\Delta = -0.035$ / $+0.23$ \\
-  \bottomrule\end{tabular}\end{table}
+  \bottomrule\end{tabular}
+\caption{Annotator-vs-LLM and inter-annotator deviation. The $\approx 25\%$ deviation is
+  measured on the human-verified anchor; the $\kappa$-progression reaches moderate
+  agreement~\cite{landis1977measurement}; the V5 endorsement row is a consistency check, not independent validation, since V5 trained on those corrections;
+  LLM-judge calibration $\Delta$ bounds judge bias. The $\alpha = 0.285$ row is an LLM-assisted
+  panel, corrected from a mis-implemented 0.451 as described in the text.}\label{tab:annot-deviation}\end{table}
 
 
 \section{Full \textsc{SpecCov} validation}
@@ -387,6 +391,140 @@ carried instead by the 100 mined rows, which are the verbatim duplicates describ
 cross-protocol result stands, since Maalej's text is also not from the synthetic set, but a reader
 should treat every compatibility number in this paper as resting on 300 augmented rows rather than
 on natural corpus evidence.
+
+
+
+\section{Cluster purity by issue type}
+
+\begin{figure}[!ht]\centering
+  \includegraphics[width=\linewidth]{fig_cluster_purity.png}
+  \caption{Extrinsic cluster purity for the flat baseline and the KG hierarchy, from the saved
+  judge audit. \emph{Left:} weighted purity per issue type, flat-194 against KG-605. The KG loses
+  on four of five types, which is the finer-granularity cost we report rather than a result in
+  its favour. \emph{Right:} the underlying Y/P/N verdict counts behind the two overall numbers,
+  0.625 for flat and 0.390 for the KG. This figure is the evidence for the A2 ablation and for
+  the claim in Section~\ref{load-bearing} that the KG's contribution is prioritization, not
+  cluster quality.}
+  \label{fig:purity}
+\end{figure}
+
+
+\section{Stage-5 alignment, full results}
+
+This is the analysis Section~5 summarises.
+
+
+
+  Five policies were trained on distilGPT2 (settings in the supplementary material).
+  Head-to-head on a 100-review test set, BLEU-1~/~ROUGE-L~/~BERTScore~F1 are 0.090~/~0.097~/~0.802
+  for SFT-base, 0.068~/~0.074~/~0.792 for KTO, 0.084~/~0.088~/~0.800 for DPO,
+  \textbf{0.137~/~0.131~/~0.806} for the constrained proxy, and 0.087~/~0.091~/~0.798 for
+  Lagrangian PPO, so the constrained proxy leads three of four metrics with $+53\%$ BLEU-1 over
+  SFT-base; the rule-based safety-violation rate is uninformative here because compliance is
+  satisfied at initialisation.
+
+  \textbf{The dual-objective claim is not demonstrated, and we report that as the result.} At
+  distilGPT2 scale the compliance scorer is satisfied at initialisation ($C = 0.94 \geq \tau$), so
+  $\lambda$ collapses to zero and the update reduces to single-objective optimisation. Two further
+  experiments show this is a property of the regime rather than of one threshold choice: a re-run
+  with the four operational compliance checks and $\tau$ tightened from 0.50 to 0.90 records 0
+  binding steps out of 30 and one violation across the run, and a sweep over $\tau \in \{0.0, 0.5,
+  0.7, 0.9, 1.0\}$ leaves the pass rate at 100\% for four of the five policies at every threshold,
+  only SFT-base dipping to 99\% at $\tau \geq 0.9$. A model of this size cannot plausibly violate
+  the rubric, so the CMDP machinery is untested under binding conditions. A second explanation we
+  cannot separate from the first weakens the finding further rather than rescuing it. The
+  operational scorer is a regular expression over roughly thirty tokens, and we tested its
+  sensitivity by hand: nine replies that plainly breach the four rubric dimensions but are phrased
+  away from the patterns (``Our engineers have committed to a permanent resolution by Friday'')
+  all score a perfect 1.00, and empty output, whitespace, and gibberish score 1.00 too, so a
+  policy that collapses to emitting nothing is recorded as perfectly compliant. The quality scorer
+  has the mirror defect: eleven rubric keywords in a bare list score 1.000 against 0.672 for a
+  genuine reply. Our sweep therefore establishes only that these policies rarely emit about thirty
+  specific tokens; whether they violate the four behaviours the rubric names this instrument
+  cannot tell us, and we no longer claim it does. Every compliance number here is a property of
+  the detector, and the $+53\%$ BLEU-1 figure is a single-objective result, not evidence of a
+  quality-versus-compliance trade-off.
+
+  \textbf{The constraint binds once the policy can violate it, as this instrument measures
+  violation.} We originally read the obstacle as capability rather than parameter count:
+  distilGPT2 never produces the fluent phrasing the rubric penalises, so it cannot violate. Given
+  the detector's insensitivity that reading is not the only one, and every violation rate below
+  carries that ambiguity. We first justified it by observing that 5.2\% of our own Stage-4
+  generations trip the scorer. That figure is from the four withdrawn template-composed arms (21
+  violations in 400 replies); scored the same way, the two model-generated arms we actually defend
+  violate on 4 of 200 replies, 2.0\%, one of them an information leak rather than an over-promise.
+  The zero-shot Qwen2.5-1.5B probe gives 2 violations in 40 replies, 5.0\%, whose 95\% interval of
+  roughly 1--17\% cannot be distinguished from 2.0\% either way, and distilGPT2 gives roughly
+  zero. The honest version is weaker than the one we first made: a 1.5B instruct model violates
+  occasionally where distilGPT2 essentially never does, enough for the constraint to bind, but we
+  cannot claim it matches the rate of our own generations. Re-running the Lagrangian loop with
+  Qwen2.5-1.5B-Instruct as the policy (the supplementary material) inverts the behaviour:
+  over 90 steps the constraint binds on 13 (14.4\%), and $\lambda$ leaves zero, rises
+  monotonically to 0.65 (0.05, then 0.40, then 0.65 by thirds), and never collapses back, while a
+  30-step run reaches only $\lambda = 0.125$, so the multiplier scales with the horizon. The claim
+  that the CMDP degenerates to single-objective optimisation is therefore a property of the
+  proof-of-concept policy, not of the formulation.
+
+  \textbf{What is and is not shown.} Quality moves from 0.565 to 0.590 and compliance from 0.997
+  to 0.989 while $\lambda$ climbs, but we do not call this a trade-off: the step-level correlation
+  between the two is $\rho = -0.12$ ($p = 0.25$), two separate trends over one run with no
+  measured coupling. Nor can we show the multiplier growing large enough to pull the policy back
+  into compliance; at a 5\% base violation rate and a batch of four, roughly one violating sample
+  arrives every seven steps, and 90 LoRA steps do not accumulate enough pressure to reverse the
+  drift. So the dual objective engages and the multiplier responds monotonically to the tokens it
+  matches, the tension between objectives is not measurable on our data, and closing the loop
+  needs a longer horizon or a higher base violation rate than a 1.5B instruct model supplies. What
+  this layer contributes is the formulation instantiated over four dev-rel constraints, a trainer
+  that runs, the threshold sweep, the capability probe, the binding-constraint re-run, and the
+  released testbed.
+
+
+
+\section{Cluster quality, full results}
+
+
+
+  Stage~2 was redesigned from a flat UMAP+HDBSCAN baseline (194 clusters, mean size 471.0) to the
+   three-layer KG-hierarchical design (605 sub-clusters, mean size 15.9), but the two were not run
+   over the same reviews: the flat baseline clusters 91{,}368 reviews from the full relabelled
+   corpus, whereas the KG design is built on the 8{,}404-review sample, of which 5{,}689 land in a
+   sub-cluster. That sixteen-fold difference is a third reason, on top of the two below, why the
+   head-to-head intrinsic comparison is not a comparison.
+   We compute intrinsic geometry (Davies-Bouldin~\cite{davies1979cluster},
+  Calinski-Harabasz~\cite{calinski1974dendrite}, silhouette~\cite{rousseeuw1987silhouettes},
+  following~\cite{schutze2008introduction, steinbach2000comparison, strehl2002cluster}) and
+  extrinsic purity~\cite{amigo2009comparison} under the Y/P/N weighted rubric of
+  the supplementary material.
+
+We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $1.9\times$
+  higher Calinski-Harabasz than the flat baseline. We withdraw those two figures. The script that
+  produced the flat baseline's intrinsic metrics draws its cluster labels as a random subsample of
+  10{,}000 reviews spanning all 194 clusters, but collects the review texts to embed by walking
+  the clusters in order, and the first flat cluster alone contains 10{,}507 reviews. The
+  embeddings therefore come from one cluster while the labels span 194, so the flat DB of 12.15
+  and CH of 0.98 measure random labelling rather than the flat partition, and the comparison was a
+  valid measurement (the KG's DB 2.24 and CH 1.85, on a correctly paired set) against a broken
+  one. Repairing the alignment would not make the two comparable anyway, since the flat side
+  embeds 10{,}000 full reviews and the KG side three representatives per cluster. The count-matched
+  A1b ablation, which embeds representatives on both sides, is the only intrinsic comparison we
+  report, and it is unaffected. Extrinsic purity is also unaffected: the KG's finer clusters score 0.39 against
+  the flat baseline's 0.625 under the same Qwen judge, and the flat baseline's 0.66 lead-author
+  purity sits in the substantial-agreement band ($\geq 0.61$) against KG-605's fair band ($\geq
+  0.21$) on the Landis-Koch~\cite{landis1977measurement} convention adapted to weighted purity,
+  reflecting the granularity-versus-coherence trade-off A1b makes explicit. Per issue type the KG
+  loses on four of five.
+
+  \textbf{Where the KG actually wins.} On the prioritisation axis the story reverses: of the
+  10{,}534 aspect nodes, the top five by PageRank are touched by 55\% of reviews and the top ten
+  by 66\%, so a developer triaging in that order reaches 55\% of the complaint volume after five
+  aspect buckets. These are the deduplicated figures; counting a review once per aspect it
+  mentions inflates them to 74\% and 96\%, and that pair should not be used. We previously wrote
+  ``three-quarters'' here, the discarded 74\% reappearing two lines after we told the reader not to
+  use it, and also claimed a ``roughly $10^3\times$ concentration ratio'' against random aspect
+  ordering. We withdraw that too: we never computed it, and random ordering is the wrong baseline
+  anyway, since the operative comparison is ordering by raw frequency, which we did not run. The KG
+  additionally enables per-aspect drill-down, distinguishing \texttt{battery}$\to$Samsung-drain
+  from \texttt{battery}$\to$fast-charge.
 
 
 \end{document}

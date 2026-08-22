@@ -256,7 +256,7 @@ its furniture what it retracted in its body. Fixed:
 
 ## Correction 16 (2026-08-18): traceability gaps a history audit found
 
-A forensic pass over all 57 commits compared every numeric claim in the manuscript against the
+A forensic pass over the full commit history at that point (57 commits) compared every numeric claim in the manuscript against the
 data files at each revision. Most movements were already documented here. Four were not, and are
 recorded now so the numeric record closes.
 

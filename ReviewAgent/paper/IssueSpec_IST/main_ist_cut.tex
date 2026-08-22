@@ -56,10 +56,10 @@
 
 \cortext[cor1]{Corresponding author.}
 
-\affiliation[inst1]{organization={Department of Computer Science, Islamic University of Technology (IUT)},
+\affiliation[inst1]{organisation={Department of Computer Science, Islamic University of Technology (IUT)},
             city={Gazipur},
             country={Bangladesh}}
-\affiliation[inst2]{organization={Systems and Software Lab (SSL), Department of Computer Science and Engineering, Islamic University of Technology (IUT)},
+\affiliation[inst2]{organisation={Systems and Software Lab (SSL), Department of Computer Science and Engineering, Islamic University of Technology (IUT)},
             city={Gazipur},
             country={Bangladesh}}
 
@@ -115,14 +115,14 @@ Knowledge graph \sep Retrieval-augmented generation \sep Empirical software engi
 
 \section{Introduction}\label{introduction}
 
-App stores are where users talk back to developers, and the global stream runs into millions of
+App stores are where users talk back to developers, and the global stream runs into millions of\footnote{Abbreviations: IR, intermediate representation; KG, knowledge graph; RAG, retrieval-augmented generation; RLHF, reinforcement learning from human feedback; CMDP, constrained Markov decision process; HITL, human-in-the-loop; IRB, institutional review board.}
 reviews a day~\cite{maalej2015bug, gao2019automating, dkabrowski2022analysing}. Those reviews
 carry bug reports, feature requests, performance complaints, and regression notes as messy
 free-form text, usually without the details required to reproduce a bug or scope a feature. Defect
 trackers such as JIRA or GitHub Issues cannot consume raw text; they need structured fields such
 as issue type, steps to reproduce, severity, and affected component~\cite{chaparro2017detecting,
 zimmermann2010makes}, and filling those by hand does not scale. Years of work on automated review
-pipelines has helped with classification, summarization, and response generation, but no system
+pipelines has helped with classification, summarisation, and response generation, but no system
 produces the structured report a developer can paste into a tracker. D{\k a}browski et al.'s systematic review of 182 papers~\cite{dkabrowski2022analysing}
 surveys this literature; it does not itself name this gap, and we state the gap as our own reading
 of the work it covers. Section~\ref{related-work} treats each strand in turn: classifiers stop at
@@ -135,7 +135,7 @@ relations.
 This work pursues three aims, stated as research questions.
 
 \textbf{RQ1 (Translation Quality).} Can a typed IR, produced by a three-layer framework
-(knowledge-graph construction, hierarchical clustering, standardized schema mapping), reach the
+(knowledge-graph construction, hierarchical clustering, standardised schema mapping), reach the
 substantive completeness of human-written GitHub issues?
 
 \textbf{RQ2 (Downstream Load-Bearing).} Does conditioning a response generator on the validated
@@ -143,7 +143,7 @@ IssueSpec measurably improve human-rated response quality over RAG alone?
 Section~\ref{exp2-results} answers no, correcting our own earlier claim.
 
 \textbf{RQ3 (Dual-Objective Alignment).} Can a CMDP-grounded RLHF loop through KTO, DPO, and
-Constrained PPO jointly optimize response helpfulness and policy compliance for developer
+Constrained PPO jointly optimise response helpfulness and policy compliance for developer
 relations? Section~\ref{exp3-results} answers no at the scale we can train, and reports what that
 rules out.
 
@@ -188,7 +188,7 @@ replaces the several overlapping summaries an earlier version carried.
 \begin{tabular}{@{}p{1.5cm}p{2.9cm}p{4.4cm}p{2.1cm}@{}}\toprule
 component & what it must do & evidence, and the ablation that tests it & verdict \\\midrule
 Stage 1 intake, verified anchor & repair a corpus label wrong 25\% of the time that omits two classes entirely, because Stage~3 routes on the type & $\kappa$ $0.163 \to 0.592$ against the three-rater gold, 0.616 held out (replay-dependent); macro F1 $0.22 \to 0.65$ with the two omitted classes recovered (\S\ref{exp1-results}) & \textbf{justified} \\
-Stage 2 knowledge graph & group and rank 215{,}583 reviews so a developer has an order to work in & count-matched flat clustering beats the KG on all three intrinsic metrics (A1b) and on purity (A2); top-5 PageRank aspects cover 55\% of reviews & \textbf{prioritization yes, cluster quality no} \\
+Stage 2 knowledge graph & group and rank 215{,}583 reviews so a developer has an order to work in & count-matched flat clustering beats the KG on all three intrinsic metrics (A1b) and on purity (A2); top-5 PageRank aspects cover 55\% of reviews & \textbf{prioritisation yes, cluster quality no} \\
 Stage 3 typed IR & emit typed tracker fields rather than prose & strict fill 0.96 vs 0.69 without routing, i.e.\ schema conformance and not quality (A3, Table~\ref{tab:stage3}); 5-dim rubric 3.94/5 on all 100 specs, LLM judge (Table S2 in the supplementary material) & \textbf{justified} \\
 Stage 4 spec-aware RAG & supply house voice and precedent on top of the defect & retrieval moves automatic metrics $<1\%$ (A5); conditioning on the IR moves quality $+0.04$, $p=0.54$ (A6, \S\ref{exp2-results}), overturning the $+2.35$ we reported & \textbf{withdrawn / null} \\
 Stage 5 CMDP RLHF & hold compliance as a constraint rather than a reward term & constraint never binds at distilGPT2 scale; with a policy able to violate it, binds on 13/90 steps and $\lambda$ rises to 0.65, with no measured tension ($\rho = -0.12$, $p = 0.25$), on a detector that scores hand-written violations as compliant (\S\ref{exp3-results}) & \textbf{partial testbed} \\
@@ -227,7 +227,7 @@ Section~\ref{threats} addresses threats to validity, and Section~\ref{conclusion
 
 \section{Related Work}\label{related-work}
 
-We organize related work by the five gaps of Section~\ref{introduction}, naming what each field
+We organise related work by the five gaps of Section~\ref{introduction}, naming what each field
 does, what assumption breaks for review-to-issue translation, and how IssueSpec differs.
 
 \emph{App review classification and mining.} Maalej and Nabil~\cite{maalej2015bug} established a
@@ -267,11 +267,11 @@ these systems are designed to consume.
 
 \emph{Knowledge graphs for app reviews.} ReviewGraph~\cite{de2025reviewgraph} learns KG embeddings
 for rating prediction, KGCPN~\cite{yu2024knowledge} produces extractive summaries, and Keertipati
-et al.~\cite{keertipati2016approaches} apply centrality for coarse feature prioritization.
+et al.~\cite{keertipati2016approaches} apply centrality for coarse feature prioritisation.
 \emph{What breaks:} none maps KG nodes to a typed, developer-actionable schema. Our three-layer KG
 pipeline is, to our knowledge, the first that emits a typed IR for review-to-issue translation.
 
-\emph{RLHF and constrained optimization.} DPO~\cite{rafailov2023direct},
+\emph{RLHF and constrained optimisation.} DPO~\cite{rafailov2023direct},
 KTO~\cite{ethayarajh2024kto}, and PPO~\cite{schulman2017proximal} compress quality and compliance
 into one scalar reward; Altman's CMDP framework~\cite{altman2021constrained} separates them, and
 Safe-RLHF~\cite{dai2024safe} applies CMDP to general LLM safety with a domain-agnostic compliance
@@ -281,8 +281,8 @@ Stage~5 formulation instantiates these four constraints inside the Lagrangian an
 proof-of-concept training loop.
 
 Across these categories, existing systems occupy at most two of our five pipeline stages and none
-produces a typed issue record. Composing all five with a standardized issue schema, three HITL
-checkpoints, KG-centrality prioritization, and a CMDP-grounded RLHF formulation is the structural
+produces a typed issue record. Composing all five with a standardised issue schema, three HITL
+checkpoints, KG-centrality prioritisation, and a CMDP-grounded RLHF formulation is the structural
 contribution.
 
 %% =====================================================================
@@ -327,7 +327,7 @@ before the description that two of the five do not justify themselves.
   flag it because 300 of the 310 \texttt{compatibility} rows in V5's training set come from here,
   so the per-class F1 of 0.83 rests on data whose verification is asserted rather than evidenced.
 
-  \textbf{Stage 2: Three-Layer Knowledge Graph.} Stage~2 builds, clusters, and prioritizes. The
+  \textbf{Stage 2: Three-Layer Knowledge Graph.} Stage~2 builds, clusters, and prioritises. The
   first layer links each review node to its aspects, with edges typed for sentiment and recency
   where available, but the released run populated less than that: the builder supports entity
   nodes and signed sentiment edges, yet the run behind our results passes empty entity lists and a
@@ -352,11 +352,11 @@ before the description that two of the five do not justify themselves.
   corpus, while the flat baseline it is set against clusters 91{,}368 reviews from the full
   corpus. The two Stage-2 designs never saw the same input, which is why we do not treat their
   intrinsic metrics as a head-to-head result (Section~\ref{cluster-validation-results}). The third
-  layer prioritizes via PageRank~\cite{brin1998anatomy, page1999pagerank} on the bipartite
+  layer prioritises via PageRank~\cite{brin1998anatomy, page1999pagerank} on the bipartite
   review-aspect graph, and each cluster maps to the schema in Table~\ref{tab:templates} with a
   centrality-derived priority score.
 
-  \textbf{Stage 3: Review-to-Issue Translation.} An LLM agent reads the standardized cluster
+  \textbf{Stage 3: Review-to-Issue Translation.} An LLM agent reads the standardised cluster
   schema and writes a specification using the type-routed templates in
   Table~\ref{tab:templates}: an LLM rather than rule-based extraction because reviews vary too
   much for fixed rules, and routed by issue type because a bug report needs reproduction steps, a
@@ -376,7 +376,7 @@ before the description that two of the five do not justify themselves.
 
 \textbf{\textsc{SpecCov} faithfulness metric.} We release \textsc{SpecCov}, an extractive-coverage
 scorer over substantive-token overlap (length~$\geq 5$, stop-word filtered) with quoted-string and
-coverage bonuses, following news-summarization conventions~\cite{grusky2018newsroom}; it targets
+coverage bonuses, following news-summarisation conventions~\cite{grusky2018newsroom}; it targets
 the extractive-coverage sub-type of faithfulness~\cite{maynez2020faithfulness}, a lexical
 correlate of factual consistency~\cite{kryscinski2020evaluating} (other hallucination sub-types
 in~\cite{ji2023survey} are out of scope). It is a lexical-grounding proxy, not a faithfulness
@@ -400,12 +400,12 @@ that negative result only makes sense against this definition.
   3\%, against 83\% for steps to reproduce. We keep both fields because trackers require them, not
   because developers report finding them useful \\
   \texttt{feature\_request} & Cohn user-story~\cite{cohn2004user} (As-a / I-want / So-that) +
-  behavior-driven development (BDD) acceptance criteria~\cite{hellesoy2017cucumber} & Dominant
-  industry format (Agile, Scrum, SAFe); BDD standardizes testable outcomes \\
+  behaviour-driven development (BDD) acceptance criteria~\cite{hellesoy2017cucumber} & Dominant
+  industry format (Agile, Scrum, SAFe); BDD standardises testable outcomes \\
   \texttt{performance} & Fields are \texttt{latency}, \texttt{startup\_time},
   \texttt{memory\_consumption}, \texttt{battery\_drain}, \texttt{network\_usage}, mapped onto
   ISO/IEC~25010~\cite{international2011systems} performance-efficiency sub-characteristics: the
-  first two to time behaviour, the last three to resource utilization; capacity is not covered &
+  first two to time behaviour, the last three to resource utilisation; capacity is not covered &
   International standard for software-quality NFR taxonomy. The field names are ours, chosen for
   mobile-app vocabulary, and are mapped to ISO categories rather than reproducing ISO terms \\
   \texttt{usability} & Nielsen-10 heuristics~\cite{nielsen1994usability} (visibility, match-real-world,
@@ -416,7 +416,7 @@ that negative result only makes sense against this definition.
   reporting axis \\
   \bottomrule
   \end{tabular}
-\caption{IssueSpec standardized issue schema. Each issue type follows the dominant industry or
+\caption{IssueSpec standardised issue schema. Each issue type follows the dominant industry or
   HCI standard. Each template is drawn from a published standard or reference and reproduces its
   named fields; we ran no conformance check against the standards documents themselves, so
   ``drawn from'' should not be read as ``certified against''.}\label{tab:templates}
@@ -439,13 +439,13 @@ Stage~5 frames alignment as a CMDP~\cite{altman2021constrained, dai2024safe},
   \]
   with the Lagrangian relaxation
   $\mathcal{L}(\theta,\lambda) = \mathbb{E}_{\pi_\theta}[R + \lambda(C - \tau)]$
-  collapsing to single-objective optimization whenever the constraint is already satisfied. We use
+  collapsing to single-objective optimisation whenever the constraint is already satisfied. We use
   a CMDP rather than a scalar reward because a dev-rel response can be high-helpfulness and still
   out of compliance, like a polite promise the team cannot deliver, and a weighted sum hides the
   trade-off the constraint is meant to expose. The compliance scorer tracks four domain-specific
   dimensions absent from prior general-safety RLHF~\cite{dai2024safe}: promise safety, information
   leakage, tone, and legal safety. The trainer is Constrained PPO~\cite{schulman2017proximal} with
-  a KL-regularized reference policy, with KTO~\cite{ethayarajh2024kto} and
+  a KL-regularised reference policy, with KTO~\cite{ethayarajh2024kto} and
   DPO~\cite{rafailov2023direct} as small-scale single-objective comparators
   (the supplementary material). HITL-3 supplies the two feedback streams, quality as reward
   and compliance as constraint, and also propagates backward, closing the Stage~5$\to$Stage~1 loop
@@ -515,7 +515,7 @@ Stage~4 was likewise rated twice: a first 400-row round whose conditions came fr
 composers, discarded for the reasons in Section~\ref{exp2-results}, and the 200-row round we
 report, in which both arms come from the same model and differ only in whether the IssueSpec was
 supplied, all rows scored independently by all three raters blind to condition. Ratings are
-persisted as spreadsheets with JSON master keys, blinding shuffles conditions per pair, and the
+persisted as spreadsheets with JSON answer keys, blinding shuffles conditions per pair, and the
 assignment unseals only at aggregation. Table S3 in the supplementary material consolidates agreement
 across all pairs.
 
@@ -648,6 +648,19 @@ with one rater rather than the mean, is in the supplementary material.
   by construction.}\label{tab:stage3}
   \end{table}
 
+\begin{figure}[!ht]\centering
+  \includegraphics[width=\linewidth]{fig_kappa_progression.png}
+  \caption{Stage-1 classifier recovery and the gold standard it is measured against. \emph{Left:}
+  Cohen's $\kappa$ for the three classifier versions, plotted twice, once against the
+  lead-author gold (solid) and once against the three-rater majority-vote gold (hatched). The
+  two are within 0.002 at every step, so the 0.163 to 0.592 trajectory does not depend on any
+  single annotator. Background bands are the Landis-Koch~\cite{landis1977measurement} agreement
+  ranges. \emph{Right:} agreement among the three human raters on the same 490 reviews, pairwise
+  and as a three-rater Fleiss $\kappa$, all above the almost-perfect threshold. Read the left
+  panel for the result and the right panel for the reliability of the yardstick it uses.}
+  \label{fig:kappa}
+\end{figure}
+
 \subsection{RQ2: Does conditioning a response generator on the IssueSpec improve human-rated response quality?}\label{exp2-results}
 
 An earlier version of this experiment reported that adding the IssueSpec to the response
@@ -758,114 +771,38 @@ template-composer round in any case, so none supports a claim in either directio
 a null and nothing else; Stage~3's contribution stands on its own evidence in
 Section~\ref{exp1-results} and no longer has a demonstrated downstream payoff.
 
-\subsection{RQ3: Can a CMDP-grounded RLHF loop jointly optimize helpfulness and compliance?}\label{exp3-results}
+\subsection{RQ3: Can a CMDP-grounded RLHF loop jointly optimise helpfulness and compliance?}\label{exp3-results}
+No, and the reason is that the constraint never binds, so the question goes untested rather than
+answered. Five policies were trained on distilGPT2. Head-to-head on 100 reviews the constrained
+proxy leads three of four metrics, at $+53\%$ BLEU-1 over SFT-base, but that is a single-objective
+result: at this scale the compliance scorer is satisfied at initialisation ($C = 0.94 \geq \tau$),
+so $\lambda$ collapses to zero and the dual update reduces to ordinary optimisation. Tightening
+$\tau$ from 0.50 to 0.90 records 0 binding steps in 30, and a sweep over
+$\tau \in \{0.0, 0.5, 0.7, 0.9, 1.0\}$ leaves four of five policies at a 100\% pass rate. Re-running
+on a 1.5B model with zero tolerance changes nothing.
 
-  Five policies were trained on distilGPT2 (settings in the supplementary material).
-  Head-to-head on a 100-review test set, BLEU-1~/~ROUGE-L~/~BERTScore~F1 are 0.090~/~0.097~/~0.802
-  for SFT-base, 0.068~/~0.074~/~0.792 for KTO, 0.084~/~0.088~/~0.800 for DPO,
-  \textbf{0.137~/~0.131~/~0.806} for the constrained proxy, and 0.087~/~0.091~/~0.798 for
-  Lagrangian PPO, so the constrained proxy leads three of four metrics with $+53\%$ BLEU-1 over
-  SFT-base; the rule-based safety-violation rate is uninformative here because compliance is
-  satisfied at initialization.
+A second explanation we cannot separate from the first weakens the finding further. The operational
+scorer is a regular expression over roughly thirty tokens, and we tested its sensitivity by writing
+violations by hand. Nine replies that plainly breach the four rubric dimensions, phrased away from
+the patterns, all score a perfect 1.00, as do empty output and gibberish. What the sweep establishes
+is that these policies rarely emit about thirty specific tokens; whether they violate the four
+behaviours the rubric names is not something this instrument can tell us. The compliance figures
+here are properties of the detector, and the supplementary material carries the full trajectories.
 
-  \textbf{The dual-objective claim is not demonstrated, and we report that as the result.} At
-  distilGPT2 scale the compliance scorer is satisfied at initialization ($C = 0.94 \geq \tau$), so
-  $\lambda$ collapses to zero and the update reduces to single-objective optimization. Two further
-  experiments show this is a property of the regime rather than of one threshold choice: a re-run
-  with the four operational compliance checks and $\tau$ tightened from 0.50 to 0.90 records 0
-  binding steps out of 30 and one violation across the run, and a sweep over $\tau \in \{0.0, 0.5,
-  0.7, 0.9, 1.0\}$ leaves the pass rate at 100\% for four of the five policies at every threshold,
-  only SFT-base dipping to 99\% at $\tau \geq 0.9$. A model of this size cannot plausibly violate
-  the rubric, so the CMDP machinery is untested under binding conditions. A second explanation we
-  cannot separate from the first weakens the finding further rather than rescuing it. The
-  operational scorer is a regular expression over roughly thirty tokens, and we tested its
-  sensitivity by hand: nine replies that plainly breach the four rubric dimensions but are phrased
-  away from the patterns (``Our engineers have committed to a permanent resolution by Friday'')
-  all score a perfect 1.00, and empty output, whitespace, and gibberish score 1.00 too, so a
-  policy that collapses to emitting nothing is recorded as perfectly compliant. The quality scorer
-  has the mirror defect: eleven rubric keywords in a bare list score 1.000 against 0.672 for a
-  genuine reply. Our sweep therefore establishes only that these policies rarely emit about thirty
-  specific tokens; whether they violate the four behaviours the rubric names this instrument
-  cannot tell us, and we no longer claim it does. Every compliance number here is a property of
-  the detector, and the $+53\%$ BLEU-1 figure is a single-objective result, not evidence of a
-  quality-versus-compliance trade-off.
-
-  \textbf{The constraint binds once the policy can violate it, as this instrument measures
-  violation.} We originally read the obstacle as capability rather than parameter count:
-  distilGPT2 never produces the fluent phrasing the rubric penalises, so it cannot violate. Given
-  the detector's insensitivity that reading is not the only one, and every violation rate below
-  carries that ambiguity. We first justified it by observing that 5.2\% of our own Stage-4
-  generations trip the scorer. That figure is from the four withdrawn template-composed arms (21
-  violations in 400 replies); scored the same way, the two model-generated arms we actually defend
-  violate on 4 of 200 replies, 2.0\%, one of them an information leak rather than an over-promise.
-  The zero-shot Qwen2.5-1.5B probe gives 2 violations in 40 replies, 5.0\%, whose 95\% interval of
-  roughly 1--17\% cannot be distinguished from 2.0\% either way, and distilGPT2 gives roughly
-  zero. The honest version is weaker than the one we first made: a 1.5B instruct model violates
-  occasionally where distilGPT2 essentially never does, enough for the constraint to bind, but we
-  cannot claim it matches the rate of our own generations. Re-running the Lagrangian loop with
-  Qwen2.5-1.5B-Instruct as the policy (the supplementary material) inverts the behaviour:
-  over 90 steps the constraint binds on 13 (14.4\%), and $\lambda$ leaves zero, rises
-  monotonically to 0.65 (0.05, then 0.40, then 0.65 by thirds), and never collapses back, while a
-  30-step run reaches only $\lambda = 0.125$, so the multiplier scales with the horizon. The claim
-  that the CMDP degenerates to single-objective optimization is therefore a property of the
-  proof-of-concept policy, not of the formulation.
-
-  \textbf{What is and is not shown.} Quality moves from 0.565 to 0.590 and compliance from 0.997
-  to 0.989 while $\lambda$ climbs, but we do not call this a trade-off: the step-level correlation
-  between the two is $\rho = -0.12$ ($p = 0.25$), two separate trends over one run with no
-  measured coupling. Nor can we show the multiplier growing large enough to pull the policy back
-  into compliance; at a 5\% base violation rate and a batch of four, roughly one violating sample
-  arrives every seven steps, and 90 LoRA steps do not accumulate enough pressure to reverse the
-  drift. So the dual objective engages and the multiplier responds monotonically to the tokens it
-  matches, the tension between objectives is not measurable on our data, and closing the loop
-  needs a longer horizon or a higher base violation rate than a 1.5B instruct model supplies. What
-  this layer contributes is the formulation instantiated over four dev-rel constraints, a trainer
-  that runs, the threshold sweep, the capability probe, the binding-constraint re-run, and the
-  released testbed.
-
-\subsection{Cluster Quality and Purity}\label{cluster-validation-results}
-
-  Stage~2 was redesigned from a flat UMAP+HDBSCAN baseline (194 clusters, mean size 471.0) to the
-   three-layer KG-hierarchical design (605 sub-clusters, mean size 15.9), but the two were not run
-   over the same reviews: the flat baseline clusters 91{,}368 reviews from the full relabelled
-   corpus, whereas the KG design is built on the 8{,}404-review sample, of which 5{,}689 land in a
-   sub-cluster. That sixteen-fold difference is a third reason, on top of the two below, why the
-   head-to-head intrinsic comparison is not a comparison.
-   We compute intrinsic geometry (Davies-Bouldin~\cite{davies1979cluster},
-  Calinski-Harabasz~\cite{calinski1974dendrite}, silhouette~\cite{rousseeuw1987silhouettes},
-  following~\cite{schutze2008introduction, steinbach2000comparison, strehl2002cluster}) and
-  extrinsic purity~\cite{amigo2009comparison} under the Y/P/N weighted rubric of
-  the supplementary material.
-
-We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $1.9\times$
-  higher Calinski-Harabasz than the flat baseline. We withdraw those two figures. The script that
-  produced the flat baseline's intrinsic metrics draws its cluster labels as a random subsample of
-  10{,}000 reviews spanning all 194 clusters, but collects the review texts to embed by walking
-  the clusters in order, and the first flat cluster alone contains 10{,}507 reviews. The
-  embeddings therefore come from one cluster while the labels span 194, so the flat DB of 12.15
-  and CH of 0.98 measure random labelling rather than the flat partition, and the comparison was a
-  valid measurement (the KG's DB 2.24 and CH 1.85, on a correctly paired set) against a broken
-  one. Repairing the alignment would not make the two comparable anyway, since the flat side
-  embeds 10{,}000 full reviews and the KG side three representatives per cluster. The count-matched
-  A1b ablation, which embeds representatives on both sides, is the only intrinsic comparison we
-  report, and it is unaffected. Extrinsic purity is also unaffected: the KG's finer clusters score 0.39 against
-  the flat baseline's 0.625 under the same Qwen judge, and the flat baseline's 0.66 lead-author
-  purity sits in the substantial-agreement band ($\geq 0.61$) against KG-605's fair band ($\geq
-  0.21$) on the Landis-Koch~\cite{landis1977measurement} convention adapted to weighted purity,
-  reflecting the granularity-versus-coherence trade-off A1b makes explicit. Per issue type the KG
-  loses on four of five.
-
-  \textbf{Where the KG actually wins.} On the prioritization axis the story reverses: of the
-  10{,}534 aspect nodes, the top five by PageRank are touched by 55\% of reviews and the top ten
-  by 66\%, so a developer triaging in that order reaches 55\% of the complaint volume after five
-  aspect buckets. These are the deduplicated figures; counting a review once per aspect it
-  mentions inflates them to 74\% and 96\%, and that pair should not be used. We previously wrote
-  ``three-quarters'' here, the discarded 74\% reappearing two lines after we told the reader not to
-  use it, and also claimed a ``roughly $10^3\times$ concentration ratio'' against random aspect
-  ordering. We withdraw that too: we never computed it, and random ordering is the wrong baseline
-  anyway, since the operative comparison is ordering by raw frequency, which we did not run. The KG
-  additionally enables per-aspect drill-down, distinguishing \texttt{battery}$\to$Samsung-drain
-  from \texttt{battery}$\to$fast-charge.
+\subsection{Cluster quality and purity}\label{cluster-validation-results}
+Stage~2's clustering is the one component that loses to its own baseline. A count-matched flat
+clusterer beats the knowledge graph on all three intrinsic
+metrics~\cite{davies1979cluster, calinski1974dendrite, rousseeuw1987silhouettes} (A1b), and under the same judge
+the KG's finer clusters score 0.39 on weighted purity~\cite{amigo2009comparison, strehl2002cluster} against the flat baseline's 0.625, though
+the two audits use different rubrics and sample sizes and are therefore not strictly
+comparable~\cite{schutze2008introduction, steinbach2000comparison}
+(supplementary material). We previously reported that the KG achieved $5.4\times$ lower
+Davies-Bouldin and $1.9\times$ higher Calinski-Harabasz; we withdraw both figures, because the
+script producing the flat column drew its labels across 194 clusters while embedding reviews from
+one, so it measured random labelling. The two designs were also never run on the same reviews:
+the flat baseline clusters 91{,}368 reviews from the full corpus, the KG covers 5{,}689 of an
+8{,}404-review sample. What survives is prioritisation, not cluster geometry: the top five aspects
+by PageRank are touched by 55\% of reviews and the top ten by 66\%.
 
 \subsection{Ablations}\label{ablations}
 
@@ -885,7 +822,7 @@ We reported that KG-hierarchical achieves $5.4\times$ lower Davies-Bouldin and $
   Davies-Bouldin 1.12 against 2.24 (lower is better), Calinski-Harabasz 4.21 against 1.85 (higher
   is better), and silhouette $+0.148$ against $-0.234$ (a negative value means the average point
   sits closer to a neighbouring cluster than to its own). The KG does not produce geometrically
-  better clusters; what it produces is an ordering, and prioritization is the only cluster-layer
+  better clusters; what it produces is an ordering, and prioritisation is the only cluster-layer
   claim we make.
 
   \textbf{A2, remove hierarchical sub-clustering.} Weighted Y/P/N purity is 0.625 for the flat
@@ -941,10 +878,10 @@ either. Nothing about retrieval survives from Stage~4 beyond the null.
 \emph{Not load-bearing, and reported as such.} The knowledge graph does not win on intrinsic
 cluster geometry: under count matching (A1b) flat agglomerative clustering beats it on all three
 metrics, and sub-cluster purity is lower at the KG's finer granularity (A2). Its defensible
-contribution is centrality-based prioritization, and even that goes less far than it appears,
+contribution is centrality-based prioritisation, and even that goes less far than it appears,
 since PageRank runs on the bipartite review-aspect graph and nothing shows it needs the
 hierarchical sub-clustering layer, a configuration we did not test. Stage~2 as built is therefore
-justified in prioritization and unjustified in sub-clustering. Stage~5 sits in between: the
+justified in prioritisation and unjustified in sub-clustering. Stage~5 sits in between: the
 constraint does bind once the policy can violate it and the dual update engages, but no
 quality-versus-compliance trade-off is demonstrated at the scale we can train at
 (Section~\ref{exp3-results}), so it ships as a testbed with a partial result. \textsc{SpecCov}
@@ -980,33 +917,22 @@ Three claims travel beyond app reviews. \emph{First}, LLM annotation noise on
 
 \subsection{Reproducibility and Extensibility}\label{reproducibility}
 Every numerical claim in Section~\ref{results} is backed by a saved data file, and the full path
-from raw RRGen to Stage~4 output takes about six hours on one GPU workstation. We audited what a
-reader can check without that run by execution rather than assumption. Re-running the released
-analysis scripts regenerates roughly sixty stored result files bit-identically, including every
-statistical test behind RQ1 and RQ2, but what those scripts consume is not itself regenerable: the
-Stage-3 specification sets, the 100-cluster sample, and the Stage-4 RAG sample ship as artifacts
-with no standalone producer script, since producing them requires the proprietary-API generation
-pass. The analysis layer is therefore reproducible from the middle outward and the data-generation
+from raw RRGen to Stage~4 output takes about six hours on one GPU workstation. We audited this by
+execution rather than assumption. Re-running the released analysis scripts regenerates roughly
+sixty stored result files bit-identically, including every statistical test behind RQ1 and RQ2.
+What those scripts consume is not itself regenerable: the Stage-3 specification sets, the
+100-cluster sample and the Stage-4 RAG sample ship with no standalone producer, because producing
+them needs the proprietary-API pass. The analysis layer is therefore reproducible from the middle outward and the data-generation
 layer only against a paid API. One artifact does not pin at all: the GitHub-mined comparison set
 is re-queried live and returns a different issue mix each run, so the \texttt{human\_github}
 condition rests on a snapshot we can release but not regenerate.
 
-The release bundles the V1--V5 checkpoints and cleanlab procedure, the verified anchor and gold,
-both Stage-4 rating rounds with the generated replies and the rating-provenance check, the A1b
-output, the \textsc{SpecCov} scorer with its 60-spec faithfulness ratings, the CMDP-RLHF testbed,
-the 100-cluster benchmark with the LLM-assisted subsample kept separate from the all-human sets, a
-pinned Docker image, and a nineteen-segment verifier that recomputes numerical claims from the
-saved files, the discarded Stage-4 round retained as a segment labelled withdrawn. We audited the
+The data availability statement itemises the release. We audited the
 verifier itself, and its coverage is narrower than we
 previously stated: three segments recompute a value from the underlying data and assert it, while
 the remainder load a stored summary and print it, which checks that the manuscript agrees with the
-released file but not that the file is right. Uncovered numbers include the Stage-3 template-fill
-table, the held-out $\kappa$ of 0.616, the Qwen-judge purity figures, the Maalej cross-protocol
-row, the per-dimension cells of the cross-family rubric, and most secondary statistics in
-Sections~\ref{exp2-results} and~\ref{exp3-results}. We list this rather than repeat the earlier
-and much smaller claim that only two tables were uncovered.
+released file but not that the file is right. Uncovered numbers include the Stage-3 template-fill table, the held-out $\kappa$, the purity figures, and most secondary statistics in Sections~\ref{exp2-results} and~\ref{exp3-results}.
 
-Because each stage emits a typed intermediate, components can be substituted independently.
 Deterministic components use fixed seeds; the LLM-dependent stages reproduce statistically rather
 than bit-identically, and we measured that variance. Regenerating Stage~3 specs three times over
 the same 15 stratified clusters with the local Qwen2.5-3B generator at temperature 0.7, changing
@@ -1021,7 +947,7 @@ issue type (Table S1 in the supplementary material), so we no longer use it as a
 neither the headline Claude generations nor Stage~4 response generation was repeated, because that
 needs API budget rather than new code, and the released script runs both sweeps unchanged.
 
-\subsection*{Future work}\label{future-work}
+\subsection{Future work}\label{future-work}
 Five extensions start from released resources.
 \textbf{(0)}~Replace \textsc{SpecCov} with an entailment-based faithfulness
 measure~\cite{laban2022summac, honovich2022true, durmus2020feqa}, validated against the 60-spec
@@ -1046,8 +972,13 @@ We organise threats using the classification of Wohlin et al.~\cite{wohlin2012ex
 and state after each what we did about it.
 
 \subsection{Construct validity} Template-fill measures coverage rather than content correctness, and \textsc{SpecCov} does not fill that gap (Section~\ref{speccov-validation}), being a lexical-grounding proxy that does not track human faithfulness judgement~\cite{grusky2018newsroom, maynez2020faithfulness, kryscinski2020evaluating, ji2023survey}. To mitigate this we validated \textsc{SpecCov} against 60 human faithfulness ratings rather than assuming it worked, and we withdraw it on that evidence rather than reporting it. What remains unmitigated is that Stage~3 then has no validated content-correctness measure at all and the LLM rubric carries that burden alone; NLI- and QA-based measurement~\cite{laban2022summac, honovich2022true, durmus2020feqa} is the next step.
-\subsection{Internal validity} The count-versus-structure confound is exposed and resolved by A1b, which reframes the knowledge graph's contribution as prioritization rather than geometry. A threat we did not remove is that the 100 clusters carrying the Stage~3 and Stage~4 results come from the KG pipeline, the layer A1b and A2 find wanting; since flat clustering scores higher on purity, the headline gains may be measured on a slightly worse partition, which would understate rather than inflate them, and re-running Stages~3 and~4 over flat clusters is the cheapest open experiment in the paper. We mitigate this only partially, by reporting the direction of the bias rather than leaving it unstated: because flat clustering scores higher on purity, this threat works against our numbers rather than for them. Two further internal threats are stated with the Stage-1 results: the gold standard is seeded with V5's predicted label and stratified over V5's predicted classes (Section~\ref{experiments}), and every \texttt{compatibility} figure rests on 300 augmented training rows. We mitigated the first by scoring every classifier against a three-rater majority gold as well as the lead author's, and the second by auditing the augmentation rather than trusting it, which is how we found the capitalisation cue and withdrew the internal F1 that depended on it (Section~\ref{exp1-results}).
-\subsection{External validity} RRGen contains 58 Android apps, named by real package identifier rather than anonymised; V5 transfers zero-shot to the Maalej label space, but Stage~2--4 cross-corpus transfer remains unvalidated, GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}), and every KG-hierarchical number describes a 3.9\% sample of the corpus (Section~\ref{aim1}). We mitigate the single-model threat with a four-model cross-family replication, though its differences are not significant and we report the ordering as descriptive only. The single-corpus threat we do not mitigate; it is the study's main limit on generality.
+\subsection{Internal validity} The count-versus-structure confound is exposed and resolved by A1b, which reframes the knowledge graph's contribution as prioritisation rather than geometry. A threat we did not remove is that the 100 clusters carrying the Stage~3 and Stage~4 results come from the KG pipeline, the layer A1b and A2 find wanting; since flat clustering scores higher on purity, the headline gains may be measured on a slightly worse partition, which would understate rather than inflate them, and re-running Stages~3 and~4 over flat clusters is the cheapest open experiment in the paper. We mitigate this only partially, by reporting the direction of the bias rather than leaving it unstated: because flat clustering scores higher on purity, this threat works against our numbers rather than for them. Two further internal threats are stated with the Stage-1 results: the gold standard is seeded with V5's predicted label and stratified over V5's predicted classes (Section~\ref{experiments}), and every \texttt{compatibility} figure rests on 300 augmented training rows. We mitigated the first by scoring every classifier against a three-rater majority gold as well as the lead author's, and the second by auditing the augmentation rather than trusting it, which is how we found the capitalisation cue and withdrew the internal F1 that depended on it (Section~\ref{exp1-results}).
+\subsection{External validity}
+We report no sex- or gender-based analysis. The unit of analysis is a review or a specification,
+not a person, and the corpora carry no demographic attributes, so no such analysis is possible
+here. The three annotators are too few for their demographics to support any inference. Whether
+reviewer or annotator demographics shape the labels or the ratings is an open question this study
+cannot answer. RRGen contains 58 Android apps, named by real package identifier rather than anonymised; V5 transfers zero-shot to the Maalej label space, but Stage~2--4 cross-corpus transfer remains unvalidated, GPT-4o and Gemini-1.5-Pro replication is queued (Section~\ref{future-work}), and every KG-hierarchical number describes a 3.9\% sample of the corpus (Section~\ref{aim1}). We mitigate the single-model threat with a four-model cross-family replication, though its differences are not significant and we report the ordering as descriptive only. The single-corpus threat we do not mitigate; it is the study's main limit on generality.
 \subsection{Conclusion validity} The three-rater agreement on the classification gold ($\kappa = 0.968$) sits well above what free-labeling studies report, which invites the question of whether the raters were genuinely independent. It also sits in the region where $\kappa$ becomes sensitive to marginal imbalance~\cite{feinstein1990high}, so we report raw agreement alongside it. Three properties of the design account for the gap: raters verify a supplied label rather than choose one of seven, collapsing most of the decision space; a 20-review calibration round with adjudicated disagreements precedes the main task; and the protocol fixes eight boundary rules. Residual disagreement is rater-specific rather than random, one rater accounting for most \texttt{usability} reassignments, which is the pattern independent annotation produces. We mitigate the remaining doubt by releasing the per-item votes so a reader can recompute any of these figures, and by disclosing that an earlier round of this annotation failed our own independence check and was discarded. Two of the three raters are co-authors, which we cannot mitigate within this study.
 \emph{Reliability, and which coefficient belongs to what.} The three agreement statistics here measure different things. The classification gold reaches Fleiss $\kappa = 0.968$ and $0.979$ across three human raters. The reported Stage-4 set, rated by the same three humans on all 200 rows, has quality weighted $\kappa$ of 0.03, 0.04 and 0.50; that is low and it is the number to quote, because the 0.970 to 0.986 range belongs to the discarded round where one arm was visibly broken. The weakest figure, $\alpha = 0.285$ (corrected from a mis-implemented 0.451, Section~\ref{experiments}), comes from a deliberately weaker LLM-assisted panel~\cite{gilardi2023chatgpt}; no claim rests on it alone.
 \emph{Statistical.} Experiment~2 reports a null, so the question is power rather than multiplicity: the design rules out a large effect and not a small one (Section~\ref{exp2-results}). In the other direction, the one cross-family quality difference reaching nominal significance does not survive multiplicity correction and is withdrawn (Section~\ref{exp1-results}).
@@ -1088,14 +1019,17 @@ editing. \textbf{Hasan Mahmud:} Supervision, Resources, Project administration, 
 review and editing.
 
 \section*{Declaration of competing interest}
-The authors declare that they have no known competing financial interests or personal
+Two of the three raters of the Stage-4 outputs are co-authors of this paper, and the lead author
+designed the system she also rated; Section~\ref{threats} discusses what that does to the result.
+Beyond that, the authors declare that they have no known competing financial interests or personal
 relationships that could have appeared to influence the work reported in this paper.
 
 \section*{Data availability}
-All code, configuration files, and analysis scripts are available in the project repository.
+All code, configuration files, and analysis scripts are available at
+\url{https://github.com/Fabiha-9876/ReviewAgent}~\cite{jalal2026issuespeccode}.
 A verification bundle that recomputes or reproduces the numerical claims in
-Section~\ref{results}, with the coverage limits stated in Section~\ref{reproducibility}, is archived on Zenodo
-(DOI 10.5281/zenodo.22048738, v3), and the Stage-1 V5 classifier is released on Hugging Face.
+Section~\ref{results}, with the coverage limits stated in Section~\ref{reproducibility}, is archived on Zenodo~\cite{jalal2026issuespecdata}
+(DOI 10.5281/zenodo.22048738, v3), and the Stage-1 V5 classifier is released on Hugging Face~\cite{jalal2026issuespecmodel}.
 That bundle supersedes two earlier releases (DOI 10.5281/zenodo.21982774 and DOI 10.5281/zenodo.20320410), the first of which redistributed corpus-scale review text we had no right to redistribute and the second of which also predates the
 Stage-4 correction described in Section~\ref{exp2-results}; both versions remain resolvable, and
 the earlier one should not be used.
@@ -1110,17 +1044,25 @@ the source and are not offered under an open licence; original code is released 
 \section*{Ethics, consent, and data protection}
 \emph{Human participants.} Three people annotated for this study: the lead author and two
 collaborators. The annotation protocol, released with the artifact, states that participation was
-voluntary, that annotators could withdraw at any time, that no personal information was collected
-beyond a name and email for attribution, and that compensation took the form of authorship credit.
-Both additional annotators are consequently co-authors of this paper, which we state explicitly
-because the paper's discussion of rater independence should be read with it in mind. The work was
-not submitted to an institutional review board. Under our institution's practice a study of this
-kind, involving colleagues rating text with no collection of sensitive personal data, does not
-require review; we record that as our reading rather than as a formal exemption, since no
-exemption number was issued.
+voluntary, that annotators could withdraw at any time without consequence, that participation was
+neither required nor rewarded by anything other than the credit their contribution earns, and that
+no personal information was collected beyond a name and email for attribution. All three are
+co-authors, and they qualify on contribution: beyond rating, they participated in the calibration
+round, the adjudication of disagreements, the boundary rules that govern the protocol, and the
+review of this manuscript, which are the roles the CRediT statement records. We state their dual
+role explicitly because the paper's discussion of rater independence must be read alongside it.
+Annotators were informed of the study's purpose before starting, and consented to the release of
+their per-item ratings, which the artifact contains.
 
-\emph{Review authors.} The corpora we work with are user-generated public reviews whose authors
-did not consent to research use and cannot practically be contacted. We took three positions on
+The work was not submitted to an institutional review board. Under our institution's practice a
+study of this kind, involving colleagues rating text with no collection of sensitive personal data,
+does not require review. We record that as our own reading rather than as a granted exemption,
+because no exemption number was issued, and we would rather state the gap than imply an approval
+we did not obtain.
+
+\emph{Review authors.} The corpora we work with are user-generated public reviews whose authors did not consent to
+research use and cannot practically be contacted. We process them under the exemption for
+scientific research purposes, and took three positions on it. We took three positions on
 this. We do not redistribute any of the three source corpora, for the licensing reasons in the
 data-availability statement and because the Maalej and Nabil files contain unredacted email
 addresses, telephone numbers, and personal names. Derived files we do release contain review text
@@ -1138,43 +1080,30 @@ This research did not receive any specific grant from funding agencies in the pu
 commercial, or not-for-profit sectors.
 
 \section*{Acknowledgements}
-We thank the human annotators who produced the verified anchor and the lead-author reference
-set. The authors verified all technical content, experimental results, and claims in this paper.
+The annotators for this study are among its authors and are credited in the CRediT statement
+rather than here. The authors verified all technical content, experimental results, and claims in
+this paper.
 
 %% =====================================================================
-\bibliographystyle{elsarticle-num}
 \section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
-During the preparation of this work the authors used Anthropic's Claude in order to assist with
+During the preparation of this work the authors used Anthropic's Claude~\cite{anthropic2025claude} in order to assist with
 manuscript editing, code implementation, and analysis scripting. After using this tool, the authors
 reviewed and edited the content as needed and take full responsibility for the content of the
 publication.
 
-We disclose all uses of generative AI in this work in line with Elsevier policy.
-\emph{Writing and code assistance.} An earlier version of this disclosure said that Claude
-assisted only with grammatical refinement, caption polishing, and LaTeX formatting, and that all
-pipeline code, experimental scripts, and analysis were written by the human authors. That
-understated the use, and the repository we release contradicts it: at the time of writing 49 of
-58 commits (84\%) carry a \texttt{Co-Authored-By: Claude} trailer, including commits that add pipeline stages, the
-constrained-PPO trainer, the analysis scripts, and the correction passes described in
-Section~\ref{exp2-results}. The accurate statement is that Anthropic's Claude~\cite{anthropic2025claude} was used
-throughout implementation and analysis as a coding assistant, under author direction and review,
-and also for manuscript editing. We prefer to correct this here rather than leave a disclosure
-that the artifact refutes. Every structural, framing, experimental-design, and claim decision was
-made by the authors, and every reported number was produced by author-written code run under
-human supervision and verified against saved data files. \emph{Models inside the system.} Several
-generative models are pipeline components and are reported as such in the body
-(Table S1 in the supplementary material): Claude Opus 4.7 as the headline Stage~3 generator, Llama-3.3-70B and
-Qwen2.5-\{3B, 1.5B\} as cross-family comparators, and Qwen2.5-3B as the LLM-as-judge for the
-rubric and the purity audit, both calibrated against the lead author. The V2 corpus labels are
-LLM-generated and explicitly treated as noisy, which motivates the verified-anchor procedure of
-Stage~1. \emph{Human verification.} No reported numerical result, expert annotation, or ground-truth label was
-automatically generated by AI without human verification. The 5{,}230-review verified anchor, the
-490-review classification gold, the 99-review three-rater ratings, and the 20 lead-author
-IssueSpec references were all produced and reviewed by human annotators
-(Section~\ref{experiments}).
+An earlier version of this disclosure said Claude assisted only with grammatical refinement and
+formatting, and that all code and analysis were written by the human authors. The repository
+contradicts that: the large majority of commits carry a \texttt{Co-Authored-By: Claude}
+trailer, including commits adding pipeline stages, trainers,
+analysis scripts, and the correction passes of Section~\ref{exp2-results}. We correct it here
+rather than leave a disclosure the artifact refutes. Every structural, experimental-design and
+claim decision was made by the authors, and every reported number was recomputed from saved data
+files by the verifier we release.
 
-%% =====================================================================
+Generative models are also components of the system under study rather than writing aids, and are
+reported as such in Section~\ref{system-design} and the supplementary material.
 
+\bibliographystyle{elsarticle-num}
 \bibliography{references}
 
 \appendix
